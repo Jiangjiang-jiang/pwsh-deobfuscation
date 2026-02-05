@@ -1,0 +1,44 @@
+try {iMP`or`T-Mo`duLE $PSscRIPtroOt\..\..\IMpoRTexCeL.pSD1} catch {throw ; return}
+${da`TA} = c`oN`VerTfro`m-Csv (('iBJ
+Time'+'st'+'amp,T'+'enant
+1'+'0/29/2018 '+'3:00:00.12'+'3,1
+'+'10'+'/29'+'/20'+'18 3:00:10.4'+'5'+'6'+','+'1'+'
+10/2'+'9/2'+'018 '+'3:01:2'+'0.389,1'+'
+1'+'0/29/2018 3:'+'00'+':'+'3'+'0.222,1
+10'+'/'+'29/2018 3:0'+'0:'+'40.1'+'43'+',1
+1'+'0/29'+'/2018 3:'+'00:5'+'0.'+'809'+',1
+'+'1'+'0/29'+'/2018 '+'3:01:00.1'+'93,1'+'
+10/29/2018 3:01:'+'10.555,1
+10/29/'+'2018 3:0'+'1:20.73'+'9,1
+10/29/2018'+' 3:0'+'1'+':30'+'.912'+','+'1'+'
+10'+'/2'+'9/20'+'18 3'+':'+'01:40'+'.9'+'8'+'9,'+'1
+10/29/2018'+' 3'+':01'+':50.545,'+'1
+10/29/2018 3'+':0'+'2:0'+'0.99'+'9,1
+'+'iBJ')  -CRepLaCE ([CHAR]105+[CHAR]66+[CHAR]74),[CHAR]34) | SELEc`T-`ob`JecT @{N = ('Ti'+'mesta'+'mp'); E = {gET`-`DAte ${_}.tIMeSTAmP}}, TenaNt, @{n = ('Bu'+'ck'+'et'); E = { - (Get`-`daTe ${_}.timeSTamP).sEcOnd % 30}}
+
+
+${Xl`So`URc`EFilE} = "$env:TEMP\ImportExcelExample.xlsx"
+WrITE`-`Ve`RbO`SE -Verbose -Message  ('S'+'ave '+'lo'+'cat'+'ion: '+"$xlSourcefile")
+${J`zq} =('ip:247.'+'6'+'.'+'101.1'+'67')
+RE`MoVE-i`TEM ${xlSouR`Cef`ILe} -ErrorAction iGnore
+
+${p`IvOtdeFP`AR`AMs} = @{
+    PiVOTtABlenamE = ('Timestamp '+'B'+'uck'+'ets')
+    PivotrOws      = @(('Time'+'s'+'tamp'), ('Tena'+'nt'))
+    piVoTdaTA      = @{('Buc'+'ke'+'t') = ('cou'+'nt')}
+    gRouPDATeRow   = ('Tim'+'eSt'+'amp')
+    gRoUpDaTEpaRt  = @(('Ho'+'urs'), ('Minu'+'t'+'es'))
+    aCtivAte       = ${tR`UE}
+}
+
+${e`xc`El`paRAmS} = @{
+    PIvOttablEdEfiNitIon = new-PIVOTTAB`leD`EFi`N`It`iOn @pivotDefParams
+    paTh                 = ${xLsou`RcE`File}
+    wORKshEEtName        = ('Log D'+'at'+'a')
+    autosIZE             = ${T`RUE}
+    auTOfILTeR           = ${T`Rue}
+    ShOw                 = ${Tr`UE}
+}
+
+${D`ATA} | ex`Po`R`T-excEL @excelParams
+

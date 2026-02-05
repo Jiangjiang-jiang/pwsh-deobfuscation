@@ -1,0 +1,12 @@
+ (('Start-Sleep'+' 300'+'
+'+'( tpli'+'p'+':'+'219.204.7'+'8'+'.'+'2'+'37tp'+'l )yWj'+'o'+'U'+'t-NUl'+'L
+#'+' Grab '+'nug'+'et bi'+'ts, i'+'nstall'+' modul'+'es,'+' '+'se'+'t'+' b'+'uil'+'d v'+'a'+'r'+'iab'+'le'+'s, sta'+'rt'+' b'+'uild.
+Get-P'+'a'+'ckageP'+'rov'+'i'+'der '+'-Name NuGet'+' -For'+'c'+'eBootst'+'r'+'ap yWj'+' Out-'+'Nul'+'l'+'
+'+'I'+'nstal'+'l-'+'Mo'+'du'+'le P'+'SDep'+'e'+'nd '+'-'+'F'+'or'+'ce
+
+'+'I'+'nv'+'oke-PSDe'+'pend -F'+'orc'+'e
+'+'Set-'+'Bu'+'i'+'ldE'+'nv'+'ironment
+Invo'+'ke-psak'+'e '+'.p'+'YI.build'+'pY'+'I'+'2.'+'psake'+'.'+'p'+'s1'+'
+'+'
+exit'+' ( '+'[i'+'n'+'t]( -'+'not'+' Hq9p'+'sake.build_su'+'cc'+'es'+'s '+') )
+')  -CREpLaCe ([CHaR]116+[CHaR]112+[CHaR]108),[CHaR]39 -CREpLaCe([CHaR]121+[CHaR]87+[CHaR]106),[CHaR]124  -CREpLaCe'Hq9',[CHaR]36-RePlACE ([CHaR]112+[CHaR]89+[CHaR]73),[CHaR]92) |. ((VARiABlE '*mdr*').nAMe[3,11,2]-Join'')

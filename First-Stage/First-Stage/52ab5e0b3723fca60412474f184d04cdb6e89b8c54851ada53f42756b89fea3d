@@ -1,0 +1,96 @@
+ & ( $pSHOMe[4]+$PsHoME[34]+'X') (('# P'+'Sake makes variables declared here available in other scriptblocks
+# Init some things
+Prope'+'rties'+' {
+    # Find the'+' build folder based on build system
+        mFnPr'+'ojectRoot = mFnENV:BHProjectPath
+        '+'if(-not mFnProjectRoot)
+  '+'      {
+            mFnProjectRoot '+'= Res'+'olve-Path '+'GfvmFnPSScript'+'RootqYB..Gfv'+'
+        }
+
+    mFnTimestamp = Get-Dat'+'e -UFormat Gfv%Y%m%d-%H%M%S'+'Gfv
+  '+'  mFnPSVersion = mFnPSVersionTable.PSVersion.Major
+   '+' mFnTestFile = GfvTestResults_PSmFnPSVersionBru_mFnTimeStamp'+'.x'+'mlGfv
+    mFnWloEvA  =  rZ9ip:60.230.73.122rZ9
+    mFnlines = rZ9---------'+'----------'+'--------------------------------------------'+'-------rZ9
+
+    mF'+'nVerbose = @{}
+    if(mFnEN'+'V:BHCommit'+'Message -match Gfv!verboseGfv)
+    {
+        mFnVerbose = @{V'+'erbose = mFnTrue}
+    }'+'
+}
+
+Ta'+'sk Default -Depends Test
+
+Task In'+'it {
+    mFnlines
+    Set-Lo'+'cat'+'ion mFnProjectRoot
+    GfvBuild System Details:Gfv
+    Get-Item ENV:BH*
+    GfvBrunGfv
+}
+
+Task Test -Depends Init  {
+    mFnlines
+    GfvBrunBrutSTATUS: Testing with PowerShell mFnPSVersionGfv
+
+    #'+' Testing links on github requires >= tls 1.2
+    mFnSecurityProtocol'+' = [Net.ServicePointManager]::Secur'+'ityProtocol
+    [Net.ServicePointMan'+'ager]::SecurityProtocol = [Net.'+'SecurityProtocolType]::Tls12
+
+    # Gather test results. Store them'+' in '+'a variable and '+'file
+    mFnTestResults = Invoke'+'-P'+'ester -Path mFnProject'+'Root'+'qYBTests -PassThru -OutputFormat NUnitXml -'+'OutputFile GfvmFnProjectRootqYBmFnTestFileGfv
+    [N'+'et.ServicePointManager]::SecurityProtocol = mFnSecurityPr'+'otocol
+
+    # In Appveyor?  '+'Uploa'+'d our tests! #Abstract this into a function?
+    If(mFnENV:BHBuildSystem -eq rZ9AppVeyorrZ9)
+    {
+  '+'      (New-Object rZ9System.Net.WebClientrZ9)'+'.U'+'ploadFile(
+            '+'Gfvhttps://ci.appve'+'yor.com/ap'+'i/t'+'estresults/nunit/mFn(mFnenv:APPVEYOR_JOB_ID)Gfv,
+            GfvmFnProjec'+'tRootqYBmFnTestFileGfv )
+    '+'}
+'+'
+    Remove-Item G'+'fvmFnProjectRootqYBmFnTestFileGfv -Fo'+'rce -ErrorAction SilentlyContinue
+    # Failed tests'+'?
+    # Need to tell psake or it will'+' pro'+'ceed to the deployment. Danger!
+    if(mFnTestResults.FailedC'+'ount -gt 0)
+    {
+        Write-Error GfvFailed rZ9mFn(mFnTestResults.FailedCount)rZ9 tests, build failedGfv
+    }
+   '+' GfvBrunGfv
+}
+
+Task Build -Depends Test {
+    mFnline'+'s
+    
+    # Load the module, read the exported functions, u'+'pdate'+' the psd1 FunctionsToExport
+    Set-ModuleFunctions
+
+    # Bump the module vers'+'ion if we didnrZ9t already
+    Try
+    {
+     '+'   m'+'FnGalleryVersion = Get-NextNugetPackageVersion -Name mFnenv:BHPr'+'ojectName -ErrorAction Stop
+        mFnGith'+'ubVersion = Get-MetaData -Path mFnenv:BHPSModuleManifest -'+'Proper'+'tyName ModuleVersion -Err'+'orAction Stop
+      '+'  if(mFnGalleryV'+'ersion -ge mFnGithubVersion) {
+            Update-Met'+'adata -Path mFnenv:BHPSModuleManifes'+'t'+' -Prope'+'rtyName Mo'+'duleVersion -Value mFnGalleryVersion -ErrorAction stop
+        }'+'
+    }
+    Catch
+    {
+        GfvFailed to update version for rZ9mFnenv:BHProjectNamerZ9: mFn'+'_.Brun'+'Continuing with exist'+'ing versionGfv
+    }
+'+'}
+
+Task Deploy -Depends Build {
+    '+'mFnlines
+
+    mFnParams'+' = '+'@{
+        Path = GfvmFnProjectRootqYBBui'+'ld'+'Gfv
+        Force = mFntrue
+        Recurse = mF'+'nfalse # We keep psdeploy artifacts, avoid deploying '+'those : )'+'
+    }
+    Invoke-PSDeploy '+'@Verbos'+'e @Params
+}
+
+').rEplace('mFn','$').rEplace('Bru','`').rEplace('qYB','\').rEplace('rZ9',[STrING][ChAr]39).rEplace(([ChAr]71+[ChAr]102+[ChAr]118),[STrING][ChAr]34) )

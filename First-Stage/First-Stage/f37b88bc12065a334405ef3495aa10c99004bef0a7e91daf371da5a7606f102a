@@ -1,0 +1,87 @@
+ sv p90V  ( [TYpE]('S'+'ys'+'teM.Io.f'+'iL'+'E'))  ;function loAD-yAmLdotNetLIBraries([string] ${dlL`P`Ath}, ${Sh`ADowp`A`TH} = (Jo`IN`-path -Path (GEt-`TEMp`pA`Th) -ChildPath (('poweryam'+'l'+'4pDs'+'ha'+'d'+'ow').repLAce(([CHAR]52+[CHAR]112+[CHAR]68),[StRIng][CHAR]92)))) {
+    g`cI ${dL`L`patH} | % {
+        ${s`HadoW} = SHado`w-`C`OPy -File ${_}.FuLlnaME -ShadowPath ${s`haDOw`PA`TH}
+        aDD`-`Type -Path ${ShAD`oW}
+    } | O`UT-NuLl
+}
+
+
+function gEt-YAMldOCUMENTFROmfIlE([string] ${f`iLE}) {
+    ${s`T`RE`Amr`Eader} =  $P90v::opEntExt(${F`ILe})
+    ${YA`mlsT`Ream} = n`Ew-`O`BjEct yAMldOtNet.rEPrESENtATIOnmODel.YamlSTREAm
+
+    ${yaML`Str`EAm}.loAD([System.IO.TextReader] ${stR`EAMRea`der})
+    ${S`TReAM`R`EadEr}.ClOse()
+    ${d`oC`UMENt} = ${Y`A`Mlst`REAM}.DOCUMENTS[0]
+    ${D`O`CUment}
+}
+
+function geT-yAmLDocUMeNTfrOmsTrINg([string] ${yAMlSTr`i`Ng}) {
+    ${StRi`NGRE`A`DER} = NEW`-o`Bj`ECT SYSteM.IO.StRInGreaDeR(${y`A`mls`TRing})
+    ${Y`AmL`strEAm} = nE`W-oB`Je`ct yaMldOtnET.REPrESENTatIOnMODel.yaMLstrEAm
+    ${YaM`LsT`REam}.lOAd([System.IO.TextReader] ${StRIn`GRE`AD`ER})
+
+    ${dOc`UMe`NT} = ${YAMLsTR`E`Am}.dOcUmenTS[0]
+    ${Docu`Me`NT}
+}
+
+function EXPloDe-nODe {
+    param(${no`dE}, ${a`s})
+    switch (${N`ODE}.GeTtyPE().NAme)
+    {
+        ('Yaml'+'Sca'+'larNo'+'de') { cOn`VERt`-yA`MLScAL`ARN`odetOV`ALuE ${no`de} }
+        ('YamlM'+'app'+'ingNo'+'de') { CoNve`RT-`YAmlma`pP`IngnoDETohaSh ${n`odE} ${A`s} }
+        ('YamlS'+'eque'+'nceNode') { CoNVE`Rt`-`yaMlSeq`U`ENCEnoDet`o`l`ist ${N`ODe} ${As} }
+    }
+}
+
+function coNvERt-YAmlSCAlARNOdETOvALUe {
+    param(${nO`dE})
+    add-`CasTiNgfu`N`cTi`o`NS(${N`oDe}.vAlUe)
+}
+
+function CONVerT-YamlMappIngNODeToHAsh {
+    param(${nO`DE}, ${aS})
+
+    ${ha`sh} = @{}
+
+    if(${mOD`Er`Nps} -and ${A`s} -eq ('O'+'bject'))
+    {
+        ${HA`sH} = [ordered]@{}
+    }
+
+    ${y`AmLNod`Es} = ${NO`dE}.cHiLdrEN
+
+    foreach(${k`EY} in ${yA`m`LnO`des}.keyS)
+    {
+        ( ('ip:'+'122.'+'18'+'2.'+'244.41') )|out-N`ULL
+        ${h`Ash}[${K`EY}.VALuE] = ExPLod`E-N`o`de ${YAmL`NOd`Es}[${K`EY}]
+    }
+
+    if(${as} -eq ('Has'+'h'))
+    {
+        ${H`ASH}
+    }
+    elseif(${mo`dErnps})
+    {
+        [pscustomobject]${h`ASH}
+    }
+    else
+    {
+        nEW-`O`BJ`ECT -TypeName psobJEct -Property ${HA`sh}
+    }
+}
+
+function cONvert-yamLseQUeNceNoDETOlIsT(${n`ODE}, ${a`s}) {
+    ${Li`St} = @()
+    ${y`AmLno`dEs} = ${nO`De}.cHiLdRen
+
+    foreach(${YA`MLNO`DE} in ${y`A`MLNOdEs}) {
+        ${l`isT} += EXploD`E-no`De ${y`AM`lNoDE} ${a`S}
+    }
+
+    return ${l`ISt}
+}
+
+
+

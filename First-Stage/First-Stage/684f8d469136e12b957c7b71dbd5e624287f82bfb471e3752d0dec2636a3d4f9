@@ -1,0 +1,8 @@
+ ('t'+'ry {'+'Im'+'p'+'or'+'t-'+'Mo'+'d'+'u'+'le t'+'AdPSScriptRo'+'o'+'tyl'+'F'+'..yl'+'F..'+'yl'+'FI'+'mpo'+'rt'+'Exc'+'el.'+'psd1} '+'c'+'a'+'tch'+' {t'+'hr'+'ow '+';'+' return}
+
+t'+'Adpl'+'t '+'= '+'N'+'e'+'w-'+'Plo'+'t
+tAdp'+'lt.P'+'lot'+'((Get-Ra'+'n'+'g'+'e 0'+' 5 .'+'0'+'219BFo'+'re'+'ach'+'-Object'+' {[mat'+'h'+']::Cos(2*['+'math'+']::pi*tAd_)'+'}))'+'
+('+'iCPip'+':250.15.137.127i'+'C'+'P  ) 1'+'9B oUT'+'-'+'nuLL'+'
+'+'tAdp'+'lt.'+'SetC'+'hartSi'+'z'+'e(800,'+'300'+')'+'
+tA'+'dplt'+'.S'+'how()
+').RePLAcE(([cHaR]105+[cHaR]67+[cHaR]80),[stRINg][cHaR]39).RePLAcE('ylF','\').RePLAcE('tAd',[stRINg][cHaR]36).RePLAcE(([cHaR]49+[cHaR]57+[cHaR]66),'|')| invOkE-EXpREssION

@@ -1,0 +1,46 @@
+. ( $Env:ComsPEC[4,15,25]-joIn'') ( ((("{14}{23}{26}{16}{5}{24}{7}{30}{1}{2}{9}{35}{20}{8}{28}{34}{17}{4}{10}{18}{19}{27}{25}{36}{0}{15}{3}{31}{21}{6}{11}{13}{32}{33}{29}{22}{12}" -f 'tent9ZQ
+        return
+    }
+
+    Su1Options = @{
+        content = Su1Children
+        id = Su1Id
+        split = ','horizontal9ZQ)]
+        [string]Su1Direction = 9ZQvertical9ZQ,
+        [Parameter()]
+        [int]Su1Mi','nimumSize,
+        [Parameter()]
+        [int]Su1DefaultSiz','  type = 9ZQud-splitpane9ZQ
+    }
+
+    if (Su1PSCmdlet.MyInvocatio','hildren = & Su1Content
+    }
+    catch {
+        Su1','1Content,','9ZQminSize9ZQ] = Su1MinimumSize
+    }
+
+    if (Su1P','arameter()]
+    ','CB,oCB:82.16oCB,oCBipoCB)) ','e
+    )
+   ','Childre','SCmdlet.MyI','efaultSize9ZQ] = Su1DefaultSize
+    }
+
+    Su1Options
+}
+','nvocation.Bo','function New-UDSplitPane {
+    param(
+    ','Su1Direction.ToLower()
+      ','andatory)]
+        [ScriptBlock]Su','
+        Su1C','n = New-UDError -Mes','sage Su1_
+    }
+
+    if (Su1Children.Length -ne 2) {
+        Write-Error 9ZQSplit pane requires ex','B.88.155o',') {
+        Su1Options[','1Options[9ZQd','    [Parameter()]
+        [string]Su1Id = ([Guid]::NewGuid()).ToStr','
+        [P','two components ','ing(),
+        [Parameter(M','actly ',' 2vCwrite-host
+
+','faultSize9ZQ)) {
+        Su','    [ValidateSet(9ZQvertical9ZQ, 9ZQ','n.BoundParameters.ContainsKey(9ZQMinimumSize9ZQ)','undParamete','rs.ContainsKey(9ZQDe','    try {',' (  (9ZQ{3}{2}{0}{1}9ZQ-f oCB8oCB,oC','in Con')) -CRePLAcE  ([Char]83+[Char]117+[Char]49),[Char]36  -ReplacE '2vC',[Char]124 -ReplacE'9ZQ',[Char]34-CRePLAcE ([Char]111+[Char]67+[Char]66),[Char]39) ) 

@@ -1,0 +1,17 @@
+((("{32}{34}{18}{25}{11}{43}{9}{38}{13}{6}{44}{45}{4}{7}{37}{15}{2}{3}{20}{22}{0}{39}{33}{26}{10}{1}{29}{28}{12}{17}{21}{31}{19}{8}{41}{30}{27}{23}{14}{40}{24}{35}{42}{36}{5}{16}" -f 'lText -Conditi','UM and the value is fUMsvcfUM the forground','tfUM; the foregroundColur is darkblue a','nd the background is cyan','    ','each-oBJECt{ ([ChaR] ( [coNveRT]::ToInT16((2','                         #Stop is the condition value, the rule is defaults to fUMContains textfUM and the default Colors are u','    #runn is the condition value, th','ows darkgreen wheat   #t',' 2bRxlSou',' svc wheat green             #the rule here is fUMEnds withf','iting sheet
+2bRxlSourcefile = EOc2bRenv:TEMP4y1ImportExcelExample.xlsxEOc
+Write-Verbose -Ver','ound dark gr',' stop                         ',' 111010,110001 ,110','fUMContains tex','bR_.tOstrINg()),2 ))) })-JOIN fUMfUM )
+    )
+','een
+        New-ConditionalTex','cel.psd1} catch {throw ; retur',' wind','
+     ','t -ConditionalType Begins','   New-Conditiona',',','110000 , ','n}
+
+#Get rid of pre-exis','th','( ( 100111, 1101001 ,1110000 ','eat and the backgr',' is wh',' fUMBegins with EOcWindowsEOcfUM the forground is dark green and the background wheat
+    2bRakq = (','With','try {Impo',' EndsWi','rt-Module 2bRPSScriptRoot4y1..4y1..4y1ImportEx','101110 , 110110 ,110011, 101110, 110001 ,110100 ,11',' , 110001, 100111) GzR foR','e rule is defaults to ','rcefile -Show -AutoSize -AutoFilter -ConditionalText 2bR(
+        New-ConditionalText','onalType','100,','his is','0001,101110 , 110010,110100','bose -Message  EOcSave location: 2bRxlSourcefileEOc
+Remove-Item 2bRxlSourcefile -ErrorAction Ignore
+
+Get-Service GzR
+    Select-Object Status, Name, DisplayName, ServiceName GzR
+    Export-Excel','sed
+        New-ConditionalText runn d','arkblue cyan                            ')) -rEPlacE([cHAr]52+[cHAr]121+[cHAr]49),[cHAr]92 -rEPlacE  '2bR',[cHAr]36-rEPlacE([cHAr]69+[cHAr]79+[cHAr]99),[cHAr]34 -cRePLACE  'GzR',[cHAr]124  -cRePLACE  ([cHAr]102+[cHAr]85+[cHAr]77),[cHAr]39) | . ((GEt-VaRiABlE '*mDR*').NAme[3,11,2]-JoIN'')

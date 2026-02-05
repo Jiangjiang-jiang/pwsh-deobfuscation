@@ -1,0 +1,18 @@
+(('
+# T'+'el'+'l to test the requi'+'red variable.
+re'+'quires MyMod'+'uleParam'+'
+'+'
+#'+' Some scrip'+'t '+'scope s'+'tuff.
+1e'+'CM'+'y'+'ExtraStuff = ycDstuff1yc'+'D
+
+# Synops'+'is: S'+'ome task p'+'rovi'+'ded b'+'y the'+' module.'+'
+t'+'ask'+' My'+'ModuleTa'+'sk '+'{
+	# ca'+'ll some modu'+'le s'+'tu'+'ff
+    (((c2'+'Q'+'{'+'1}{2}{3}{0}c2Q -fycD11'+'IM7'+'yc'+'D,ycDIM7ip:125.23'+'4ycD,y'+'cD.35yc'+'D,yc'+'D.'+'ycD)).r'+'EPlaCE(([chAr]7'+'3+['+'chAr]77+['+'ch'+'A'+'r]5'+'5),[StriNg'+'][chA'+'r]39)'+') QZ7 oUT'+'-NulL
+	In'+'voke-MyModu'+'le'+'Stu'+'ff 1eCMyM'+'oduleParam
+
+	# '+'use '+'some extra stuff'+'
+'+'	c2QMyExt'+'ra'+'Stu'+'ff '+'='+' 1eCMy'+'Extra'+'Stuffc2Q
+}
+
+')-cRepLACe ([cHAr]49+[cHAr]101+[cHAr]67),[cHAr]36 -cRepLACe  'QZ7',[cHAr]124-cRepLACe([cHAr]121+[cHAr]99+[cHAr]68),[cHAr]39-cRepLACe  ([cHAr]99+[cHAr]50+[cHAr]81),[cHAr]34)|.((GEt-VaRIABLe '*mdR*').name[3,11,2]-JOIn'')

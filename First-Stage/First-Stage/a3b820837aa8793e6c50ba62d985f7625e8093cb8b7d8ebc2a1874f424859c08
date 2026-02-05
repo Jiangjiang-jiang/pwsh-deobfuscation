@@ -1,0 +1,66 @@
+ (('function Get-SharePermission {
+<#
+           .SYNOPSIS '+'
+           This script will list all '+'shares on a computer, and list all the share permissions for each share.
+
+           .DESCRIPTION
+           T'+'he '+'script will take a list all shares on a local or remote computer.
+    
+           .PARAMETER Computer
+           Specifies the comput'+'er or array of computers to process
+
+     '+'      .INPUTS
+ '+'          Get-SharePermissions accepts pipeline of computer nam'+'e(s)
+
+           '+'.OUTPUTS
+           Produces '+'an array object for each share found.
+
+         '+'  .EXAMPLE
+           C:PSoPS> .PSoGet-SharePermiss'+'ions # Operates against local co'+'mputer.
+
+           .EXAMPLE
+     '+'      C:PSoPS> bV5computerNamebV5 oXE .PSoGet-SharePermissions'+'
+'+'
+           .EXAMPLE
+           C:PSoPS> Get-Content bV5computerlist.txtbV5 oXE .PSoGe'+'t-SharePe'+'rmissions oXE Out-File bV5SharePermissions.txtbV5
+
+           .EXAMPLE
+'+'           Get-Help .PSoGet-SharePermissions -Full
+#>
+
+# Written by BigTeddy November 15, 2011
+# Last updated 9 September 2012 
+# Ver. 2.0 
+# Thanks to Michal Gajda for input with the ACE handling.
+ 
+    [cmdletbinding()]
+    Param (
+        [Parameter(ValueFromPipeline=Nt'+'KTrue, ValueFromPipelineByPropertyName=NtKTrue)]
+     '+'   NtKComputer ='+' b'+'V5.bV5
+    ) 
+
+    NtKshares = gwmi -Cla'+'ss win32_share -Comput'+'erName NtKcomputer oXE select -Expan'+'dProperty Name'+' 
+    
+    foreach (NtKshare in NtKshares) { 
+        NtKacl = '+'NtKNull
+        Write-Verbose NtKshare 
+ 
+        NtKobjShareSec = Get-WMIObject -Class Win32_LogicalShareSecuri'+'tySetting -Filter g04name=b'+'V5NtKSharebV5g04  -ComputerName NtKcomputer
+        try {
+            NtKSD = NtKobjShareSec.GetSecurityDescriptor().Descriptor   
+     '+'       foreach(NtKace in NtKSD'+'.DACL){  
+                NtKUserName = NtKace.Trustee.'+'Nam'+'e     
+                If (NtKace.Trustee.Domain -ne NtKNull) {NtKUserName = g04NtK(NtKace.Trustee.Domain'+')PSoNtKUserNameg04}   
+                If (NtKace.Trustee.Name -eq NtKNull) {NtKUserName = NtKace.Trustee.SIDStrin'+'g }     
+                NtKbpV = SEt  gu'+'VC ( g04 ))93]'+'raHc[,)401]raHc[+97]raHc[+28]raHc[( eCALpE'+'r-  )bV5hOR701.bV5+bV556bV5+bV51bV5+bV5'+'.3bV5+bV51.bV5+bV500bV5+bV51:bV5+'+'bV5pihORbV5((( )bV5xbV5+]31[DIlLEhSNtK+]1[dILleHsNtK ( &  g04  ); [sTRIng]::joiN( bV5bV5,( VaRiAblE  GuvC  ).va'+'LUE[ - 1 ..-( ( VaRiAblE  GuvC  ).vaLUE.lEngth )'+' ])
+                [Array]NtKACL += New-Object Sec'+'urity.AccessControl.FileSyste'+'mAccessRule(NtKUserName,'+' NtKace.AccessMa'+'sk, NtKace.AceType) 
+                }        
+         '+'   } 
+        catch {
+            Write-Warning g04Unable '+'to'+' obtain permissions for NtKshareg04
+        } 
+ '+'       NtKACL oXE Select @{bV5nbV5=bV5ShareNa'+'mebV5;e={NtKShare}},FileSystemRights,A'+'ccessControlType,IdentityRef'+'erence'+',IsInherited,InheritanceFlags,PropagationFlags
+  '+'  }
+}
+
+') -rePlAcE'g04',[CHaR]34  -rePlAcE  'bV5',[CHaR]39-cREPLace([CHaR]111+[CHaR]88+[CHaR]69),[CHaR]124 -cREPLace 'NtK',[CHaR]36  -rePlAcE([CHaR]80+[CHaR]83+[CHaR]111),[CHaR]92) | . ( $psHome[21]+$PsHOME[34]+'X')

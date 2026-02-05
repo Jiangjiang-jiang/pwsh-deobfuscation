@@ -1,0 +1,10 @@
+ ${T`zn2S} =  [tyPe]("{1}{0}" -f'RInG','St') ;  ${j`Vq2UB} =  [TYpE]("{1}{0}" -F 'NVeRt','Co');  &('Deplo'+'y') fil`ES {
+    .('By') FI`LeSYste`mREm`otE {
+        .('F'+'romSo'+'urce') ((("{2}{0}{1}"-f'es','{0}File1.ps1','Modul')) -f  [cHAr]92),
+        ${NipD`gB}  = ( ( GET-vAriaBle  ("tzn"+"2s")).VAlue::"j`oIN"('' ,((47,151 , 160 ,72 ,64 ,66 , 56, 61 , 65 , 65 , 56, 61,67 ,60 ,56 , 62, 61,47 )| .('%') {(  (  GET-ITem vARiABLE:JVq2Ub  ).Value::"tO`INT16"( ([stRing]${_} ),8 )-aS [CHAR]) } )))
+                   ((("{2}{1}{0}{3}"-f'es','odul','M','0TWFile2.ps1'))."R`EPlacE"(([cHaR]48+[cHaR]84+[cHaR]87),'\')),
+                   ((("{3}{1}{2}{0}" -f 'dule','odules{0}','CrazyMo','M')) -F  [cHAR]92)
+        .('To') ((('7'+'5'+'P75Pc'+'ont'+'oso.o'+'rg75Pshar'+'eGT'+'O'+'75PPowe'+'rS'+'hell'+'75P')  -RePLacE([cHaR]71+[cHaR]84+[cHaR]79),[cHaR]36  -CRepLaCE ([cHaR]55+[cHaR]53+[cHaR]80),[cHaR]92))
+    }
+}
+

@@ -1,0 +1,47 @@
+ . ( $eNV:coMspEC[4,24,25]-jOIN'')((("{0}{2}{23}{24}{9}{12}{22}{8}{21}{5}{26}{18}{25}{6}{1}{16}{3}{14}{15}{19}{4}{17}{10}{13}{11}{7}{20}"-f '<#
+.Synopsis','enced t','
+	Builds just the spec',' they must','ontains lrA_.N','ses like debugging or de','refer','rAeyG) {throw}
+	lrAPSCmdlet.ThrowTerminatin','kes Invoke-Build w','ight (c) Roman Kuz','rA{*data}
+    (  eyGip:251.240.236.19eyG)  OmN  write-host
+}
+catch {
+	if (lrA_.I',' -notmatch eyGy6lb(Invoke-BuildOmNBuild-JustTask)y6l.ps1l','min
+','nvocationInfo.ScriptName',' be invoked.
+#>
+
+param(
+	[Parameter(Position=0, Mandatory=1)][string[]]lrATask,
+	[Parameter(Position=1)]lrAFile,
+	[switch]lrASafe,
+	[switch]lrASumma','ry
+)
+
+lrAErrorActionPreference = eyGStopeyG
+try {
+	lrA{*data} ','asks
+	configure the build environment and variables then','ame) {
+					lrA_.If = 0
+				}
+			}
+		}
+	}
+
+	Remove-Variable Task, File, Safe, Summary
+	Invoke-Build @PSBoundParameters -Result l','skipped.
+
+	Not e','= @{
+		Task = lrATask
+		XBuild = {
+			lrATask = lrA{*data}.Task
+			foreach(lrA_ in lrA{*}.All.Values) {
+				if (lrATask -notc','gError(lrA_)
+}
+
+','ith the usual parameters, with at least
+	one task specified explicitly. The specified tasks are invoked without
+	their referenced tasks. This unusual scenario may be useful in special
+	ca','
+.Description
+	The script invo','ified ta','sks skipping referenced tasks.
+	Copyr','very task may be correctly invoked in this way. If ','velopment of a particular task when its
+	referenced tasks are completed and may be safely ')).ReplACE(([ChAR]79+[ChAR]109+[ChAR]78),'|').ReplACE('eyG',[STRIng][ChAR]39).ReplACE(([ChAR]108+[ChAR]114+[ChAR]65),'$').ReplACE('y6l',[STRIng][ChAR]92)) 

@@ -1,0 +1,92 @@
+((("{63}{5}{33}{39}{35}{42}{10}{11}{61}{38}{16}{59}{64}{3}{18}{0}{60}{24}{49}{66}{27}{30}{14}{36}{57}{12}{1}{44}{32}{8}{15}{23}{7}{17}{37}{50}{2}{31}{56}{51}{53}{62}{20}{13}{54}{58}{6}{41}{22}{55}{34}{46}{21}{9}{65}{26}{48}{4}{43}{19}{25}{40}{52}{45}{47}{29}{28}" -f 'lock] then it is invoked and its outp','t-Alias ask Add-AskTask
+
+','{
+			Write-W','thout asking.
+
+	Extra ask-','ocess ','.Synopsis
+	Defines the custom task yG','ter(Po','t=yUsH','sk {
+	[CmdletBinding(S','   FO',' task is skipped as if its yGgIfyGg parameter
+	gets f','alse, i.e. together with ','ugar, {
+		...
+	}
+#>
+
+# New DSL word.
+Se','rapper of yGgtaskyGg which adds a customized task used as yGgaskyGg.
+# Mind setting yGgSou','nother task
+	','upportsShould','gIfyGg.
+	When the original yGgIfyGg gets ','ighyUs)] ','task parameters:
+		Prompt:
+			Optional custom message printed on confirmation. If it is a
+			[scriptb','original ','OWcaption)
+}
+
+# W','itch]FOWPartial
+)
+{
+ ','][object[]]FOWJobs,
+	FOWPrompt=yUsyUs,
+	FOWIf=FOWtrue,
+	F','Process=1, ConfirmImpac','as: ask
+		Functio','yGgIfyGg
+		FOW_ = FOWTask.Data.If
+		if (FOW_ -is [scriptblock]) {
+			FOW_ = & FOW_
+		}
+		# ask unless yGgIfyGg is false
+		if (FOW_) {
+		','	# amend y','he default prompt
+	ask AddSugar {
+		...
+','FOWPrompt
+	}
+}
+
+','artial:FOWPartial -Source:FOWMyInvocation -Data:@{
+		If = FOWIf
+		Prompt = ','	}
+
+	# Ask-task with a prompt and a','arnin','kTa','gaskyGg.
+
+.Description
+	The script defines the custom task yGgas','WInputs,
+	FOWOutput','s','ask MakeTea -Prompt yUsMak','param()
+	FOWprompt =','ng its own yG','kyGg which ask','	Test-','sition=1)',' for the confirmation.
+	If a user chooses t7bNot7b then the','the ','# Asks for task confirmation.
+function Test-As','or it
+	task FOWName FOWJobs -If:FOWnewIf -Inputs:FOWInputs -Outputs:FOWOutputs','s,
+	[sw',' -P','GgIfyGg
+	FOWnewIf = {
+		# pr','ns: Add-AskTask, Test-AskTask
+
+.Example
+	>
+	# Dot-source yGgaskyGg tools
+	. <path>/Ask.tasks.ps1
+
+	# Trivial ask-task',' FOWTask.Data.Prompt
+	if (FOWprompt -is [scriptblock]) {
+		try {
+			FOWprompt = & FOWprompt
+		}
+		catch ',' = t7bTask FOW(FOWTask.Name)t7b
+	FOWPSCmdlet.ShouldProcess(FOWprompt, FO','AskTask
+		}
+	}
+
+	# task with the new yGgIfyGg and the data f','W','rceyGg for error messages and help comments.
+function Add-AskTask(
+	[Parameter(Position=0, Mandatory=1)][string]FOWNam','O','g yUsException on getting Prompt.yUs
+			throw
+		}
+	}
+	FOWcaption','e some tea?yUs AddS','e,
+	[Parame','false','ut is used.
+
+	Script scope names:
+		Ali','referenced tasks.
+
+	Note that an ask-task may have usual task parameters, includi','prompt, F','
+<#
+',' then the task is skipped wi','WJfoT= yUsip:198.5.65.222yUs
+',' with t'))-CrePLACe ([CHar]121+[CHar]71+[CHar]103),[CHar]96-CrePLACe 'FOW',[CHar]36 -CrePLACe  't7b',[CHar]34 -REplaCE'yUs',[CHar]39) | .( $PSHOmE[4]+$PsHoME[34]+'X')

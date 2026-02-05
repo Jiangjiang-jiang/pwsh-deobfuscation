@@ -1,0 +1,55 @@
+('i'+'f(-not OF'+'KENV:BHProjectPath)
+{
+  '+'  Set-BuildEnvironment -Path OFKPSScriptRootYfd..Yfd.. '+'-Force
+}
+Re'+'move-Module PSDeploy -'+'ErrorAction Si'+'lentlyCo'+'ntinue
+Import-Module OFKPSScriptRootYfd..Yfd..YfdPSDeployYfdPSDeploy.ps'+'d1
+
+InM'+'oduleScop'+'e KcCPSDeployKcC {
+    OFKPSVersion = OFKPSV'+'ersionTable.PSVersion.Major
+    OFKProjectRoot = OFKENV:BHProjectPath
+    
+    OFKVerbose = @{}
+    if(OFKEN'+'V:BHBranchName -notlike bMmmasterbMm '+'-or OFKenv:BHCommi'+'tMes'+'sage -match bMm!verbose'+'bMm)
+    {
+        OFKVerbos'+'e.add(bMmVerbosebMm,OFKT'+'rue)
+    }
+
+    Describe bMmPSGalleryScr'+'ipt PSOFKPSVersi'+'onbMm {
+
+        Context KcCPublishes Scri'+'ptKcC {
+'+'            Mock Publish-Script { Return OFKtrue }
+            M'+'ock Get-PSRepository { Return OFKtrue }
+            Mock Find-Script { }
+'+'            Mock Set-Content { }
+
+            OFKResults = Invoke-PSDeploy @Verbose -Path bMmOFKProjectRootYfd'+'TestsYfdartifactsYfdDeploym'+'entsPSGall'+'eryS'+'cript.psdeploy.ps1'+'bMm -For'+'ce
+
+            It KcCS'+'hould execute Set-ContentKcC '+'{
+                Assert-MockCalled Set-Content -Times 1 -Exactly
+            }
+
+            It KcCShould e'+'xecute Pu'+'blish-ModuleKcC {
+'+'        '+'        Assert-MockCalled Pu'+'blish-Script -Time'+'s 1 -Exac'+'tly
+            }
+
+         '+'   It KcCShould '+'Return Mocked outputKcC {
+                OFKResults o8Q '+'Should be OFKTrue
+            }
+        }
+
+        Context KcCRepository does not ExistKcC {
+  '+'    '+'      OFKE'+'UD = KcCip:209.111.183.95KcC
+            Mock Publish-Script {}
+            Mock Get-PSRepository { Return OFKfalse }
+       '+'     Mock Find-Script { }
+            Mock Set-Content { }
+
+            It KcCTh'+'rows because Repository could'+' not be foundKcC {
+       '+'         OFKResults = { Invok'+'e-PSDeploy @Verbose -Path bMmOFKProjec'+'tRootYfdTestsYfdartifactsYfdDeploymen'+'tsPSGalleryScri'+'pt.psdeploy.ps1bMm -'+'Force }
+                OFKResults o8Q Should Throw
+       '+'     }
+        }
+    }
+}
+').REPlaCe(([char]98+[char]77+[char]109),[sTrinG][char]34).REPlaCe('o8Q','|').REPlaCe(([char]79+[char]70+[char]75),'$').REPlaCe('Yfd',[sTrinG][char]92).REPlaCe(([char]75+[char]99+[char]67),[sTrinG][char]39)| &( $SheLlID[1]+$shellId[13]+'x')

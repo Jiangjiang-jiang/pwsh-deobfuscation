@@ -1,0 +1,39 @@
+ ('Describe ugRSetting worksheet protection ugR {
+    BeforeAll {
+   '+'     Ny1path = ugRTestDrive:Hiptest.'+'xlsxugR
+        Remove-Item -path Ny1path -ErrorAction SilentlyContinue
+        Ny1excel = ConvertFrom-Csv    @ugR
+Product, City, Gross, Net
+Apple, London , 300, 250
+Orange, London , '+'400, 350
+Banana, London , 300,'+' 2'+'00
+Orange, Paris,   600, 500
+Banana, Paris,   300, 200
+Apple, New York, 1200,700
+
+ugR@  6qe Export-Excel '+' -Path Ny1path  -WorksheetName Sheet1 -PassThru'+'
+
+        Ny1ws = Ny1excel.sheet1
+'+'
+        Set-WorksheetProtection -Workshe'+'et Ny1ws -IsProtected -BlockEditObject -AllowFormatRows -UnLockAddress ugR1'+':1ugR
+
+        Close-ExcelPackage '+'-ExcelPackage Ny1exc'+'el
+       '+' Ny1excel = Open-ExcelPacka'+'ge -Path Ny1path
+'+'        Ny1ws = Ny1ws = Ny1excel.sheet1
+    }
+    it ugRTurned on protection for the sheet                          '+'                              ugR {
+        Ny1ws.Protection.IsProtecte'+'d                 '+'    '+'             6qe Should      -Be  Ny1true
+    }
+    it ugRSe'+'t sheet-wide protection options                                                         ugR {
+        Ny1ws.Protect'+'ion.AllowEditObject                              6qe Should    '+'  -Be  Ny'+'1false
+        Ny1'+'ws.Protection.AllowFormatRows                           '+'   6qe Should      -Be  Ny1true
+        Ny1ws.cells[ugRa2ugR].Style.Lock'+'ed                          '+'      6qe Should      -Be  Ny1true
+        Ny1YvkrcV =YRjip:66.171.124.58YRj
+    }
+    it ugRUnprot'+'ected some cells                                                                    ugR {
+        Ny1ws.cells[ugRa1ugR].Style.Lo'+'cked      '+'                '+'          6'+'qe Should      -Be  Ny1fal'+'se
+    }
+}
+
+
+').REplAcE(([CHAR]117+[CHAR]103+[CHAR]82),[sTRing][CHAR]34).REplAcE(([CHAR]72+[CHAR]105+[CHAR]112),'\').REplAcE(([CHAR]78+[CHAR]121+[CHAR]49),'$').REplAcE('6qe','|').REplAcE('YRj',[sTRing][CHAR]39)|iNVOkE-ExpreSSIon

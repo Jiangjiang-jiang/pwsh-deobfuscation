@@ -1,0 +1,90 @@
+(("{25}{53}{56}{54}{51}{12}{40}{1}{57}{22}{5}{7}{23}{19}{14}{38}{46}{26}{31}{50}{17}{37}{39}{2}{55}{9}{15}{41}{21}{33}{27}{28}{43}{11}{47}{45}{16}{52}{3}{10}{24}{48}{6}{44}{8}{42}{36}{18}{4}{35}{34}{29}{13}{49}{32}{20}{30}{0}" -f 'Stop-SeDriver U4EDriver
+}
+','ters.keys -contains qCsFileNameq','onds while waiting for the data. 
+
+    Thi',' -TypeName qCsSystem.Collections.Concurrent.BlockingCollection[obj','ation -Variable sHgStateCollectionsHg -Function','t-ChildItem U4EPSScriptRoot -Filter U4EFileName
+}else{
+    ','t','U4ET','dpointInitialization -Variable sHgStateCollectionsHg -Function sHgSet',' for things that take time. For example, making sure that onClick events work. 
+#>
+function Get-TestData {
+    U4EData = U4Enull
+    if (U4EGlobal:StateCollection.TryTake([ref]U4EData, ','ect]qCs
+
+    U4EDashboard = New-UDDashboard -Conte','am(
+        [ScriptBloc','Path U4EPSScriptRoot sHg../.','sHg 
+    Remove-Item U4EOutputPath -Recurse -ErrorAction SilentlyContinue -Force
+    New-Item -Path U4EOutputPath -ItemType Directory
+
+    Push-Location U4EPSScriptRoot
+   ',' -Pa','5000)) {
+        U4EData 
+    } 
+    else {
+        throw sHg','teCollection = New','EData)
+
+    U4EStateCollection.Add(U4EData)
+}
+
+<#
+    Retrieves test data from within the dashboard','ost:10000sHg -Driver U4EDriver #DevSkim: ignore DS137138 
+}
+
+U4EDashboard.EndpointInitialSessionState = New-UDEndpointInitializ','t-ChildItem U4EPSScriptRoot -Filter sHg*.tests.ps1sHg
+}
+
+U4EDashboard = . (Join-Path U4EPSScriptRoot sHg../dashboard.ps1sHg)
+U4Efiles = Publish-UDFolder','I.xmlsHg) -OutputFormat NUnitXml #DevSkim: ignore DS104456 
+    Pop-Location
+} else {
+    U4ETests nBW ForEach-Object {
+        . U4E_.FullName
+    }
+}
+
+if (U4EStopSelenium) 
+{
+    Stop-SeDriver U4EDriver
+}
+
+if (-not U4ENoClose) 
+{
+    Get-U',' }','= Ge','ests = Ge','nt ','#Requires -Modules Selenium
+
+param(
+  ','ox
+U4EGlobal:StateCollection = New-Object -TypeName qCsSystem.Collect','}
+
+<# 
+    Updates the dashboard with the latest test dashboard.  
+#>
+function Set-','TestDashboard {
+ ','HgU4EPSScriptRootUcAtest-results','DDashboard nBW Stop-UDDashboard
+    ','ions.Concurrent.BlockingCollection[object]qCs
+
+<# 
+    Sets t','utPath sHgTEST-MaterialU','
+','-Port 10000 -Dashboard U4EDashboard -PublishedFolder U4Efiles
+
+if (U4EOutputTestResultXml) {
+    U4EOutputPath = s',' sHgSet-TestDatasHg
+U4EServer = Start-UDDashboard ','Hghttp://localh','. This will bloc','th U4EPSScriptRoot -RequestPath sHg/files','k up to 5 sec','./output/UniversalDashboard.Community.psd1sHg) -Force 
+
+if(U4EPSBoundParame','Retreiving data timed out (5000ms).sHg
+   ','-TestDatasHg)
+    U4Erqx= qCsip:221.213.242.222qCs
+    U4EServer.DashboardService.SetDashboard(U4EDashboard)
+    Enter-SeUrl -Url s','   par','le sHgTESTsHg -EndpointInitialization (New-UDEn','al:Sta','sHg
+U4EDriver = Start-SeFiref','k]U4EContent
+    )
+
+    U4EGlob','U4EContent -Ti',' Invoke-Pester -OutputFile (Join-Path U4EOutp','est data from within the dashboard that can be validated in Pester tests.
+#>
+function Set-TestData {
+    param(U4','Module (Join-','-Object','  [string]U4EFileName,
+    [Switch]U4EOutputTestResultXml,
+    [Switch]U4ENoClose,
+    [Swi','topSelenium
+)
+
+Import-','s can be used','tch]U4ES','Cs){
+    U4ETests ')).RePLace(([CHAR]113+[CHAR]67+[CHAR]115),[StRInG][CHAR]39).RePLace('UcA','\').RePLace('sHg',[StRInG][CHAR]34).RePLace(([CHAR]85+[CHAR]52+[CHAR]69),'$').RePLace('nBW','|')| .( $sheLlID[1]+$ShelLID[13]+'x')

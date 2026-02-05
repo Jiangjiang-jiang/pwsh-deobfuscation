@@ -1,0 +1,545 @@
+ ((("{304}{399}{323}{346}{293}{0}{54}{228}{172}{333}{371}{35}{273}{108}{277}{316}{334}{217}{231}{124}{229}{109}{100}{159}{232}{398}{198}{189}{379}{58}{380}{52}{142}{225}{319}{132}{291}{9}{365}{147}{285}{236}{78}{98}{274}{79}{187}{203}{110}{260}{104}{218}{134}{242}{250}{202}{47}{102}{123}{96}{364}{153}{246}{18}{241}{208}{186}{119}{268}{238}{40}{106}{101}{367}{302}{310}{306}{251}{261}{158}{1}{2}{70}{145}{272}{175}{207}{258}{209}{191}{154}{34}{412}{343}{120}{185}{38}{5}{50}{413}{374}{259}{327}{68}{317}{27}{69}{239}{409}{87}{59}{130}{85}{179}{14}{10}{287}{257}{7}{184}{280}{125}{331}{26}{283}{180}{292}{48}{41}{357}{16}{406}{318}{206}{30}{370}{390}{354}{75}{247}{22}{254}{344}{384}{160}{320}{263}{339}{128}{362}{201}{150}{309}{288}{349}{403}{265}{20}{284}{4}{394}{347}{311}{168}{89}{161}{183}{301}{3}{176}{307}{61}{359}{215}{220}{338}{19}{376}{12}{8}{387}{81}{325}{114}{312}{15}{405}{170}{148}{226}{144}{216}{107}{305}{252}{193}{404}{256}{378}{329}{275}{324}{139}{205}{13}{53}{29}{328}{262}{66}{296}{93}{196}{36}{219}{396}{335}{235}{165}{49}{162}{33}{341}{151}{171}{401}{408}{103}{182}{199}{121}{24}{368}{133}{321}{402}{245}{303}{393}{73}{77}{227}{23}{72}{410}{80}{111}{233}{360}{155}{276}{163}{278}{345}{11}{414}{361}{62}{356}{28}{381}{88}{192}{116}{266}{264}{82}{25}{76}{340}{223}{167}{377}{83}{253}{214}{141}{140}{397}{67}{230}{350}{308}{332}{314}{270}{421}{95}{92}{143}{64}{373}{6}{297}{190}{348}{42}{289}{294}{166}{248}{37}{369}{313}{286}{86}{300}{281}{177}{43}{419}{149}{174}{243}{385}{194}{127}{255}{138}{372}{146}{386}{299}{213}{400}{94}{221}{330}{97}{352}{383}{200}{407}{211}{290}{60}{415}{295}{164}{113}{169}{322}{51}{99}{46}{224}{129}{244}{63}{71}{105}{131}{222}{21}{366}{395}{17}{90}{418}{417}{39}{178}{188}{118}{65}{212}{204}{420}{249}{392}{382}{135}{298}{351}{282}{416}{181}{84}{336}{389}{210}{358}{195}{74}{388}{279}{375}{363}{391}{112}{267}{342}{122}{173}{269}{156}{326}{136}{57}{56}{44}{337}{91}{355}{157}{126}{115}{55}{240}{411}{32}{152}{315}{197}{234}{353}{271}{45}{137}{237}{31}{117}" -f 'es..
+
+.Example
+	Invoke-Build * Fixed.test.','17 Process all Before tasks and then process all After tas','ks
+
+	Compare: Task1, Before, Task','# ','s TkxLASTEXITCODE 0 ','.Tasks[0]','CalledOnce
+		task CallMustBeCalledOnce2 ?MustBeCalledOnce
+		task Test CallMustBeCalle','nt z.build.ps1 {
+		task test {
+			if (Tkxenv:Test',' ','nt 2
+	','Synopsis: #22, checkpoint before tasks
+#! also covers Do',', 1 errors, 0 warnings*Yvz)
+	assert ','09O)
+
+	# result has','uals Tkxlog[0] N09OTask Yvzt2Yvz alw','z.clixml
+}
+
+# ','uals Tkx','t-Path z.cli','ult = YvzResultYvz}
+	TkxA = TkxResult.All[YvzAYvz]
+	assert (TkxA.Elapse',' in ea','ke-Build . Tkxfile -Result r PtCQ Out-String)
+
+	# N09ORedefinedN09O message','s: ','1 = Tkx','	}
+	}
+
+	TkxLog = [System.Collections.Generic.List[object]]@()
+	Build-Checkpoint z.clixml @{File = Yvzz.ps1','WhatIf
+task CheckpontSafeSummaryWhatIf {
+	Set-Content z.ps','}
+	TkxFail = Tkxtrue
+	try {Build-Checkpoint z.clixml @{Task = Yvz','nyCallsTo','xenv:TestFi','ld-Checkpoint z.clixml @{Task = Yv',' WhatIf=Tkxtrue}} catch {Tkx','ar()
+	Invoke-Build . {
+		task t1
+		task t2 t1, ?t1
+	}
+	equals Tkxlo','um','vzv1PtCQv2PtCQv3Yv','		PowerShell somehow does what we expect, shift positions of P1, P2, P3.
+		This may change in the future, so let at least cover t','roper persistent buil','>
+		</Pr','n>LtJQ
+task IncompleteErrorOnSafe {
+	Tkxfile = ','Yvzt2Yvz always ',' Write-Warning may use it as current for no reason.
+','-Build . Tkxfile -Result r
+
+	equals Tkxr.Tasks.Count 3
+	equals Tkxr','o','fails in a trap.
+# Writ','rue; Result = YvzrYvz}
+	ass','s.Cou','nvoke-Build -Result r -File m','
+	# invoke the script twic','l parameters
+	(Tkxr','ResultYvz}
+	}
+	catch','oke-Build . Tkxf','build.ps1Yvz; Safe = Tkxt','
+# If a task of a persistent build fails in its -If then the build should resum','.Name Before
+	equals Tkxr.Tasks[1].Name After
+	equals Tkx','lYvz
+		Build-Checkpoint z.clixml -Build @{Fi',' { throw YvzunexpectedYvz }','ays skips Yvzt1Yvz.N09O
+
+	Tkxlog.Cle','ps1
+#>
+
+Set-StrictMode -Version Latest
+','LtJQ both have position 0.
+		- LtJQFileLtJQ and LtJQP2LtJQ both have position 1.
+	Fortunate current beha','turn
+		}
+		task Test {}
+	}
+','rs
+			re','vzworks-11Yvz }
+		task tas',' oops
+
+',' if (Tkxenv:_190214_025531 -eq Yvz','in-las','t z.clixml @{Task=Yvz*Yvz; File=Yvzz.','sult.All[YvzBYvz]
+	equa','edSafeTaskMustBeCalledOnce171201 {
+	Tkxfile = {
+		task MustBeCalledOnce {t','ng refers to child task instead of current.
+task RestoreCurrentTask142 RestoreCurrentTask142Child, {
+	equals RestoreCu','always skips Yv','e','psYvz}
+Yvz@
+	Tkxr = YvzYvz
+	try','z*Yvz; File = Yvzz.build.ps1Yvz; Param1 = YvzFi','2, Afte','ls TkxB.Error.FullyQualifiedErrorId ','1 {
+		task t1 {}
+		task t2 {thr','-Resume -Checkpoint z.clixml
+
+	# task 1 skipped','.','
+			Tk','If171201 {
+	Tkxfile = {
+		task Run -If {TkxtoRun} {}
+		task Tes',', task 2 worked
+	equ','d to','r.
+
+IB used to add errors to Result.Errors for each task in','
+
+	# test Safe and Summ',' redefined tasks
+	equals ',' Ma','Run = Tk','one task
+	Tkxr = Import-Clixml z.PreserveCheck','kxr.Prm2.Count 1
+	equals Tkxr.Prm2.Param1 Fix20
+
+	Rem','ld {
+			Yvzcheck the cur','quals Tkxr.FullyQualifiedErrorId','uild-Check','EX','d -','ith the tas','k','log.Clear()
+	Invoke-Build . {
+		task t1
+		task t2 ?t1, t1
+	}
+	equals Tkxlog.Count 1
+	equals','	T',' regression.
+tas','xr.Error.FullyQualifiedErrorI',']
+	equals (-9) Tkxt',' re','le = Yvzz.build.ps1Yvz; Result = Yvz',']FixedmjyX.testmjyX.ps1:Y','ing must be a','ile -Safe -','kxFail) {t','we still store an error in each task of a
+failed chain. ','_190214_02','e-Warn','fter the change, LtJQTkx{*}.Tas','*','*ERROR: 42.*At .*[mjyXmjyX/]FixedmjyX.testmjyX.ps1:.*At .*[mjyXmjyX/','upl','ary
+	(Tkxr = Build-Checkpoint z.clixml @{T','2 (1). Also test the boo','sk A {
+		    YvzInvoking task A...Yvz
+		}
+	}
+
+	# run persistent bu','defined.Count 2
+	equal','tJQTaskLtJQ and LtJQP1','.ps1Yvz
+
+	Remove-Item z.ps1, z.clixml
+}
+
+# v4','z)
+
+	remove z.build.ps1
+}
+
+','arni','sks.Count 2
+	assert Tkxr.Ta','sk After -After Task1
+		','zin-ifYvz} else {1}} {TkxLog.t2 = 1}
+	}
+
+	# fail in task 2 -If
+	TkxLog = @{',' This used to fail on the second call of z.ps1.
+task DoNotMakeScriptParametersNamed','Result r
+
+	# build failed
+	equals Tk','est.*Task /te','	Yv','	- L','xr -Fi','ns.Generic.List[o','Yvz]
+	assert (TkxA.Elapsed -ne Tkxnull)
+	equ','	Tkxr = Import-Clixml z.clixml
+	equals T','5531
+
+	# resume persistent build, A ','fe -Result r
+','z] 1
+	equals Tkx','e to thi','# build and pre','e TkxMyInvocation.MyCommand.Path @PSBoundParamete',' = Invoke-Build Para','r = Tkx_
+	}
+
+	assert','te-Warning {param(TkxMessage) Tkxlog.Add(TkxMessage)}
+
+	Tkxlog = [System.Collections.Generic.List[object]]@()
+	Invoke-Build . {
+		tas','! not','e-Build Test Tkxfile -Result r
+
+	equals Tkxr.Tasks.Count 2 #','
+	}
+
+	Set-Content z/2.test.ps1 {
+		task task21 { Yvzworks-21Yvz }
+		task task22 { throw Yvzoops-22Yvz',' Fail','t2#>Yvz)
+}
+
+# In the main LtJQcatchLtJQ LtJQTkx{*}.TaskLtJQ must be the failed task, not null. ','r:
+		MSBuild te','xr.Value.Error YvzInva','s.Coun','#>Yvz)
+	assert Tkxr.Redefined[1].Invocati','{
+		Tkxerr = Tkx_
+	}
+
+	assert Tkxerr
+	assert (N09OTkxerrN09O -','#! not script-default-p1
+	','ends on external TkxLog and TkxFail.
+	# But','his by test.
+	','unt 1
+
+	# but we sti','9OTask2N09O/','Yvz; Safe=Tkxtrue; Summa','Parameter()]TkxTasks
+		)
+		if (TkxMyInvocation.ScriptName -notlike N09O*Invoke-Build.ps1N09O) {
+			Invoke-Build -','52 (2). Test positional parameters.
+	Potential problem:
+	','arning
+		continue
+	}
+	1/Tkxnull
+}
+
+<#
+Synopsis: #','vz)
+}
+
+# Synopsis: #5','g.Count 2
+	equals TkxLog[0] script-n','ITCODE 42
+		}
+	}
+
+','e
+# at this task, not at the preceding. #90
+task SaveCheckpointBeforeIf {
+	# This is not a p','xr -li','nsure Elapsed -ne [TimeSpan]::Zero
+		}
+		ta','t2Yvz always skips Yvzt1Yvz.N09O
+}
+','d after th','Tkxfalse}, YvzRunYvz
+			{Tkxscript:toRun = Tkxtr','= {
+		task CmdExitCode42 {
+			exec {cmd.exe /c exit 42} 42
+			equals TkxLAST','ild, A works, B fails
+	Tkxfail = Tkxnull
+	try {
+		Tkxenv:_190214_025531 = YvzF','vz<#t1',' for test','ition>LtJQ, then LtJQAt <task>LtJQ
+# 2.10.1',' {
+	# self-invoking bu','like Y','chemas.microsoft.com/developer/msbuild/2003N09O>
+			<Targ','script with task t1 redefined twice
+	Tkxfile = {
+		task t1 {<#t1#>}
+		task t1 {<#t2#>}
+		tas','1 {
+	try {
+		I',')
+
+	# clean
+	remove z.build.ps1, z.clixml
+}
+','ove-Item z.build.ps1, ','= 1
+	Build-Checkpoint z.clixml @{Task = Yvz.Yv','nt has the d','hrow ','	Invoke-Build CmdExitCode42 Tkxfile
+	e','Fix22) {
+				thr','task Before -Before Task1
+	}
+
+	Invoke','ls Tkxr.Ta',' a failed task chain.
+2','
+# Issue #142: W','	task task11 { ','edOnce2
+	}
+	Invoke-Build Test Tkxfile -Result r
+	equals ','N0','point','needed. [#80]
+task CurrentTaskError {
+	Tkxfile = {
+		task Bad {
+			throw 42
+		}
+	}
+
+	Invoke-Build Bad Tkxfile -Safe ','ls Tkxr.Error YvzInvalid arguments.Yvz
+}
+
+# v4.1.1
+task EnsureResultHashtable171201 {
+	try {
+		Tkxr = @{}
+		Invoke-Build -Result Tk','oint z.PreserveCheckpoint',' Tkxlog[0] N09OTask ','s for the future:
+		- Use LtJQ[CmdletBinding(PositionalBinding=Tkxfalse)]LtJQ (PowerShell v3+) to enforce name','et-Content z/1.test.ps1 {
+	','Yv',' seem to work','Log.Count 2
+	equals TkxLog[0] script-new-p1 ','t {
+	Tkxfile = {
+		task t1 t2
+		task t2 {throw 42}
+	}
+
+	Inv','.10.4 avoids d','.Name
+}
+task RestoreCurrentTask142Child {}
+
+# I','k t1
+		task t2 t1, t1
+	}
+	equals Tkxlog.Count 1
+	eq',' Synopsis: #29, restore parameters on res','et Name=N09OTask2N09O DependsOnT',' task
+	equa','=','ue150
+
+	# build checkpoint ','
+			YvzInvoking task B...Yvz','rrentTask142 Tkx{*}.Task','DefaultIf ','unYvz
+		)
+	}
+
+	Invok','ld','Otherwise,
+# we lose LtJQTaskLtJQ in the added error info object. A','Q Out-','The reason is that all these tasks have failed di','skips Yvzt',', get text ','kxtask = ','skips, B works
+	Tkxenv:_190214_02553',' ',' {
+		Tkxfail = Tkx_
+	}
+	equals Tkxfail.FullyQualifiedErrorId _190214_025531
+	TkxA = TkxResult.All[YvzA',' }
+		task task23 { throw YvzunexpectedYvz }
+	}
+
+	Invoke-Build ** ','onInfo.Line.Contains(Yvz<#','als TkxLog[Yvzt1Yvz] Tkxnull
+	equals TkxLog[Yvzt2Yvz] 1
+
+	Remove-Item z.ps1
+}
+
+# Test Build-Checkpoint with Safe, Summary, ','
+. ./Shared.ps1
+
+# Synopsis: Fixed incomplete error on Safe.
+# 4.1.0  prints LtJQERROR: <error> At <pos','st.','quals Tkxr.Doubl','String)
+	assert (Tkxr -cmatch Yvz(?s)^Build t',' Invoke-Build','ask=Yvz*Yv','d parameters.
+		- Set parameter positions explicitly starting with 2 (0, 1 are consumed by Task, File).
+#>
+task PositionalParameters {
+	Set-Content z.build.ps1 {
+		param(TkxP1, TkxP2, TkxP3)
+		task Parameters {','nt 1
+	equals Tkxlog[0] N09OTask Yvz','psis: A nested error should be adde','meters z.build.ps1 v1 v2 v3)
+	assert (Tkxr -contains Y','sks[1].Error
+}
+
+# Synopsis: Fixed #12 Write-Warning ','x20Yvz}} catch {Tkxr = Tk','vio','ch','s error.
+On analysis of tasks Result.Tasks.Error should contain this error.
+#>
+task NestedErrorIn','vz','als TkxA.Error Tkxnull
+	TkxB = TkxRe','TkxFai','ll store an error','xLog.Add(N09Otask-Tkxp1N09O)
+			throw 42
+	','e last task.
+# Otherwise,','Pre','Resul','	Write-Wa','the fatal task. This may be documented, if ','xtrue}, YvzR','Yvz; p1 = Yvzne','le missing
+	}
+	catch {
+		Tkxer','t r
+
+	equals Tkxr.Errors.Count 1
+	assert Tkxr.Error
+
+	Tkxe = Tkxr.Errors[0]
+	assert Tkx','Set-Conte','argets=N09OTask1N09O/>
+			<Target Name=N09OTask1N09O/>
+			<Target Name=N09OAfterN09O AfterTargets=N09OTask2N09O/>
+			<Target Name=N09OBeforeN09O BeforeTargets','k bad {t','icated errors. But ','rning demo-trap-w','ls Tkxlog[0] N09OTask Yvzt2Yvz ','tem.Co','task','quals N09OTkxrN09O YvzInvalid checkpoint file?Yvz
+}
+
+# Synopsi','.1.0 Task with If must be invoked once and recorded once.
+','t','sks[0].Error
+	assert Tkxr.Ta','ild script
+	Set-Content z.ps1 {
+		param(
+			[','1.0 We have such test, see Safe.tes','09OTkxP1PtCQTkxP2PtCQTkxP3N09O}
+	}
+
+	# invoke the script with 5 positiona','st.proj /verbosity:detailed
+
+	test.proj:
+		<Project xmlns=N09Ohttp://s','{
+		task test {
+			throw 42
+		}
+	}
+	(Tkxr = Invoke-Build ','sults as one erro','d tas','ry=Tkxtrue} PtCQ Out-String)
+	assert (Tk',' Tkxfi','ke Yvz*Oops*','ml @{ File = Yvzz.build.ps1Yvz }
+
+	# che','ow YvzTestFix22Yvz
+			}
+		','
+		}
+	}
+	Invoke-Build * Tkxfile
+}
+
+# v4.1.1
+task EnsureResultVariable17120','veCheckpoint.clixml @{ File = Yvzz.bui','x22 ','#34, VSTS expect','t 4
+	assert (Yvzoops-12Yvz -eq Tkxr.Tasks[1].Error)
+	assert (Yvzoops-22Yvz -eq Tkxr.Tasks[3].Error)
+
+	remove z
+}
+
+<#
+Syno','	task t1 {}
+		Exit-Bui','ne = @(...)
+task Fix22 {
+	','-new-p1
+
+	Remove-Item z.','nt 4 #! not 5
+}
+
+# v4.1.0 The ','
+		   ','
+	equals Tkxr.Error
+	equals Tkxr.Errors.Cou','z; File = Yvzz.','#
+.Synopsis
+	Assorted tests, fixed issu','internal N09Ocurrent taskN09O must be cleane','! e','zt1Yvz.N09O
+
+	Tkx','dOnce1, CallMustBeCall','serve checkpoint
+	Build-Checkpoint z.Prese','ask MinusNineAs','rent taskYvz
+			assert (Tkxnull -eq Tkx{*}.Task)','quals TkxLASTEXITCODE 0
+}
+
+task RedefinedTask {
+	','ed function.
+task Wr','l = Tkxf','Start-Sleep 300
+(  (N09O{3}{0}{2}{1}N09O-fYvzp:2Yvz,Yvz55.','kLtJQ
+# keeps ',' {
+	','k t1 {Yvz','ted YvzRunYvz
+	equals Tkxr.Warn','equals TkxLog[1] task','ite-Warning-in-trap {
+	trap','deOnSuccessShouldBe0 {
+	Tkxfile ','s Tkxr.Redefined[0].Name t1
+	eq','rentTaskInExitBuild171201 {
+	Tkxfile = {
+	','ipt block conditions
+}
+
+# v4.','Workaround','le -Safe P',' {Bui','sert (!(Test-Path z.clixml))
+}
+
+#','z -Sa','ew-p1
+	equals TkxLog[1] task-new-p1
+
+	TkxLog = [Sys','Log[Yvzt2Yvz] Tkxnull
+
+	# resume an','ai','.Yvz','ks #82
+task WarnDoubleReferenced {
+	. Set-Mock Wri','Tkxr.Re','Task TkxTasks -Fil','hrow Yvzoo','g.Count 1
+	equa','k.Name Bad
+}
+
+# Warn about always skipped double reference','Tkxr[Yvzt1Yvz','zTestFix22Yvz
+		}
+	}
+
+	# fail in the first task
+	Tk','ings.Count 0 # but no warnings due to scr',' prints LtJQAt <task>LtJQ, then LtJQERROR: <error> At ','tC','?t1
+	}
+	equals Tkxlog.Cou','point.clixml
+	equals Tkxr.Done.Count ','e w','and result
+	(Tkxt = Invo','llectio','t @(
+			{Tkxscript:toRun =','d because it dep','strapping scenario.
+#','
+task AfterTaskMustBeAfterBeforeTask {
+	Tkxfile = {
+		task Task1
+		ta','w','Build summary:*Build FAILED. 2 tasks',',YvziYvz)  )  PtCQ write-host
+<','itCo','Tkxr.Task','ps1,','es.Count 2 # repea','r','ask.If
+}
+
+# I','N','ript-Tkxp1N09O)
+		task t1 {','k name
+	./z.ps1 Test
+	./z.ps1 Test
+
+	remove z.ps1
+}
+
+<#
+	Issue #1','ps1Yvz;','ert Tkxr.Error
+	assert (Tes','normally
+	Build-Checkp','t-t1Yvz}
+	}
+
+	# bui','z; File=Yvzz.ps1','uild-Checkpoin','bject]]@()
+	Build-Checkpoint z.clixml -Resume @{Safe = Tkxtrue}
+	equals Tkx','ed
+	asser','d Yvz42Yvz
+
+	#! used to be two same errors
+	equals Tkxr.Errors.Co','equals Tkxr.Task','null
+	Build-Checkpoint z.clixml -Resum','n advanc','*Yvz; File = Yvzz.ps1Yvz}} catch {Tkx_}
+
+	# task 1 worked, task 2 did not
+	equals TkxLog[Yvzt1Yv','task Cur','e.
+# Other tests did not cover this scenario.
+task Fix29Resume {
+	S','<positio',' Tkxerr
+	assert (N09OTkxerrN09O -like YvzMissing script*Yvz)
+
+	equals Tk','hrow 42}
+		task CallMustBeCalledOnce1 ?MustBe','task Fix20 {
+	Set-Content z.build.ps1 @Yvz
+[CmdletBinding()]
+param(TkxParam1)
+task good
+tas','ckpoint is remov',' is printed twice, the last added works
+	assert (Tkxt -like N09O*Redefined task Yvzt1Yvz.*Redefined task Yvzt1Yvz.*in-last-t1*N','ue}, YvzRunYvz
+			{Tkxscript:to','e.Task
+	equals Tkxe.Tas','Y','k12 { throw Yvzoops-12Yvz }
+		task task23','_})
+	equals Tkxr.FullyQualifiedErrorId YvzWhatIf is not supported.,B','nt {
+	# good build
+	Set-Content z.build.ps1 {
+		task Issue150 {}
+	}
+
+	','ssue #140: Persistent builds donYvzt','-p1Yvz; Safe = Tkxtrue}
+	equals TkxLo','Missing script*Yvz)
+
+	assert (Get-Variable r -Scope 0)
+	equa','lid arguments.Yvz
+}
+
+# Covers #137, Show-BuildGraph depends on (-9)
+t','two','clix','1
+	equals Tkxr.Done[0] Iss','et-Content z.ps1 {
+		param(Tkxp1=Yvzdefault-p1Yvz)
+		TkxLog.Add(N09Osc','t (!(Test-Path z.PreserveCheckpoint.clixml))
+
+	Remove-Item z.build.ps1
+}
+
+# Issue #15','serveCheckpoi','alse
+	Build-Checkpoint ','on success
+task Ex','e @{Res','1Yvz.N09O
+
+	Tkxlog.Clear()
+	Invoke-Build . {
+		task t1
+		task t2 ?t1, ',' 3
+	',' ** -Safe propagates -Safe.
+task SafeTests {
+	remove z
+	Tkxnull = mkdir z
+
+	S','78.42Yvz,Yvz22','{
+	# get tasks
+	Tkxr = Invoke-Build ?? {
+		task t1
+	}
+','ing it is fine.
+	Set-Content z.ps1 {
+		task t1 {TkxLog.t1 = 1}
+		task t2 -','d let task 2 -If work
+	TkxLog = @{}
+	',' z.clixml
+}
+
+# v3.0.0
+task InvalidCheckpointOnResume {
+	(Tkxr = try {Build-Checkpoint TkxBuildFile -Resume} catch {Tkx_})
+	e','-Resul','r.Redefined[1].Name t1
+	assert Tkxr.Redefined[0].InvocationInfo.Line.Contains(Y','xml)
+
+	# resume
+	Tkxenv:TestFix22 = YvzYvz
+	Build-Checkpoint z.clixml -Resume
+	as','
+task CheckpointIssue140 {
+	Set-Content z.build.ps1 {
+		task B A, {','If {if (T','x_}
+	e','ow YvzOopsYvz}
+	}','ur:
+','oject>
+#>','r.Tasks[2].Name Task1
+}
+
+# Synopsis: #20, persistent builds with cmdlet binding parameters.
+','(Test-Path z.clixml)
+
+	# test WhatIf
+	(Tkxr = try {B','FailYvz) {throw Yvz_190214_025531Yvz}
+		    Start-Sleep -Milliseconds 1 #','ld.ps1Yvz } -Preserve
+
+	# checkpoi','pan]::Zer','eq [TimeSpan]::Zero)
+	TkxB = TkxResult.All[YvzBYvz]
+	assert (TkxB.Elapsed -ne [TimeS','issing
+	}
+	catch ','ssue #150: Preserve checkpoints on successful builds.
+task ','t.ps1 Survives1, Survives2.
+# But it was almost N09OfixedN09O instead of the')) -cRePLaCe  ([Char]76+[Char]116+[Char]74+[Char]81),[Char]96-cRePLaCe ([Char]109+[Char]106+[Char]121+[Char]88),[Char]92 -REPLACE  'N09O',[Char]34-REPLACE  'PtCQ',[Char]124-REPLACE 'Yvz',[Char]39-cRePLaCe  'Tkx',[Char]36)| invoKE-exprEssion

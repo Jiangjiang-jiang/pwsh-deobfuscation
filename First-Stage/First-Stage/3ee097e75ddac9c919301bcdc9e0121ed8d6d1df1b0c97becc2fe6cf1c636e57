@@ -1,0 +1,48 @@
+ (('function Test'+'-APIReadXls {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute(n7aPSUseSingularNounsn7a, n7an7a, Just'+'ifi'+'cation=n7aFalse Positiven7a)]
+    param(
+        [parameter(Mandatory)]
+        QgIXl'+'Filename,
+        QgIWorksheetName = pjSSheet1pj'+'S
+  '+'  )
+
+   '+' QgIt'+'estFileName = n7a{0}.tests.ps1n7a -f (Ge'+'t-date).ToString(n7ayyyyMMddHHmmssn7a)
+
+    QgIrecords = Import-Excel QgI'+'XlFilename
+
+    QgIparams = @{}'+'
+    ( (((n7'+'a{4}{6}{3}{1}{2}{5}{0}n7a -fpjS6pjS,pjS125pjS,pjS.pjS,pjS.3.pjS,pjS'+'8A6ip:pjS,pjS938ApjS,pjS159pjS))-REpLACe  pjS8A6pj'+'S,['+'cHaR]39)  )'+'Idg  write-host
+'+'
+    QgIblocks = QgI(foreach (QgIrecord in QgIrecords) {
+            foreach (QgIpropertyName in '+'QgIrecord.p'+'sobject.properties'+'.name) {'+'
+                if (QgIpropertyName -notmatch pjSExpectedResultIdgQueryStr'+'ingpjS) {
+                    QgIparams.QgIpropertyName = QgIrecord.QgIpropertyName
+                }
+            }
+
+'+'            if (QgIrecord.QueryString) {
+                QgIparams.Uri '+'+'+'= n7a'+'?{0}n7a -f Qg'+'I'+'record.QueryStr'+'ing
+            }
+
+            @n7a
+
+    it n7aShould have the expected result pjSQgI(QgIre'+'cord.ExpectedResult)pjSn7a {
+        Rc'+'lQgItarget = pjSQgI(QgIparams Idg ConvertTo-Json -compre'+'ss)pjS I'+'dg C'+'onvertFrom-Json
+
+        RclQgItarget.psobject.Properties.name Idg ForEach-Object {RclQgIp=@{}} {RclQ'+'gIp.RclQgI'+'_=RclQgI(RclQgItarget.Rc'+'lQgI_)}
+
+        Inv'+'oke-RestMethod @p Idg Should -Be'+' pj'+'SQgI(QgIrecord.ExpectedResu'+'lt)pjS
+    }
+
+n7a@
+        })
+
+   '+' @n7a
+Descr'+'ibe n7aTests from QgI(Q'+'gIXlFilename) in Qg'+'I(QgIWor'+'ksheetName)n7a {
+Qg'+'I(QgI'+'blocks)
+}'+'
+n7a@ Idg Set-Content -Encoding Ascii QgItestF'+'ileName
+
+    (Get-ChildItem QgItestFileName).FullName
+}
+')  -rePLacE  ([ChAR]110+[ChAR]55+[ChAR]97),[ChAR]34  -crEPLAcE([ChAR]81+[ChAR]103+[ChAR]73),[ChAR]36 -rePLacE ([ChAR]73+[ChAR]100+[ChAR]103),[ChAR]124 -crEPLAcE  ([ChAR]112+[ChAR]106+[ChAR]83),[ChAR]39-rePLacE'Rcl',[ChAR]96) | . ( $sHelLiD[1]+$shelLiD[13]+'X')

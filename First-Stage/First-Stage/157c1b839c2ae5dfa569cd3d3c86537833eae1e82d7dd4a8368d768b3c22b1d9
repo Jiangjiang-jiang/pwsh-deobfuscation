@@ -1,0 +1,30 @@
+ .((gET-vARiaBlE '*mDr*').nAME[3,11,2]-JoiN'') (((("{33}{17}{26}{28}{9}{13}{11}{1}{23}{29}{10}{27}{2}{6}{32}{7}{18}{15}{31}{16}{22}{25}{21}{24}{4}{30}{3}{8}{5}{0}{19}{12}{14}{20}"-f 'ls','ing with colors in charts.
+#>
+
+Import-Module UniversalDashboard
+
+aVeData = @(
+    @{Animal=QqkFrogQqk;Count=10}','lorsQqk -Content {
+    New-UDChart -Title QqkLine ChartQqk -','        aVeData VjM Out-UDChartData -LabelPropert','erfillQqk -Type QqkLineQqk ','        New-UDLineChartDataset -Label QqkAnima','Type QqkLineQqk -En','oint {
+        aVeData VjM Out-UD','y QqkAnimalQqk  -Dataset @(
+    ','es an exam','{Animal=QqkFoxQqk;Count=20}
+)
+
+aVeDashboard = New-UDDashboa','k','orderWidth 3 -','ple of wor','Fill aVefalse
+        )
+','qk  -Dataset @(
+            New-UDLin','nimalsQqk -DataProperty Count -Backgroun','r{0jwr+jwr}ip:jwr+jwr','ChartData -LabelProperty QqkAnimalQ','Qqk -DataProperty Count  -BorderColor Qqk#35FF8AQqk -B','    }
+}
+
+Start-UDDashboard -Dashboard aVeDashboard -Port 8080
+','E2Qqk -BorderColor Qqk#35FF8AQqk -BorderWidth 3
+        )
+    }
+
+    New-UDChart -','dColor','
+    @{Animal=QqkTigerQqk;Count=1}
+    @{Animal=QqkBat','Title QqkLine Chart without Und',' Qqk#234F','150jwr+jwr.24jwr+jwr6.161.jwr+jwr183{0}jwr)','rd -Title QqkCharts - Co','  -F[cHAr]39)
+<#
+    Provid','Qqk;Count=34}
+    @','-Endpoint {
+','eChartDataset -Label QqkA','dp','aVeebZAts=  ((jw')) -REPLaCE'Qqk',[cHaR]34-cRepLACE  'aVe',[cHaR]36-REPLaCE  ([cHaR]106+[cHaR]119+[cHaR]114),[cHaR]39  -cRepLACE([cHaR]86+[cHaR]106+[cHaR]77),[cHaR]124)) 

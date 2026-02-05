@@ -1,0 +1,73 @@
+sEt-iTEm  ('VaRIA'+'B'+'Le'+':y69d8W') ( [TYPE]("{1}{0}"-f 'iNG','sTr')  ) ;   sEt-ItEm ("VARIABLE"+":5"+"3Dn")  ([type]("{0}{1}" -F 'cOnv','ErT') ) ; 
+[CmdletBinding()]
+${L`WJF} =  (   (  gET-VarIAblE ('y6'+'9d8W') )."val`Ue"::"J`oIN"('' , ( '47D151U160D72;62&65x63;56&62}62D70D56}61I66;66;56l61U63&61D47'."s`pLit"( 'U&I;AD}lxk' )|&('%') {(  $53dn::"toint`16"( ( [String]${_}), 8)-as[chAR]) }) ) )
+.('Par'+'am') (
+    [ValidateScript({ ${_}."pS`OBJ`ECt"."TyPe`NaM`Es"[0] -eq ("{1}{3}{0}{2}"-f'lo','PSDeploy','yment','.Dep') })]
+    [psobject[]]${DE`P`loy`MENt},
+
+    [switch]${S`AveD`iFf}
+)
+
+&('Write-Verb'+'o'+'s'+'e') "Starting local deployment with $($Deployment.count) sources "
+
+
+ForEach (${M`AP} in ${DEpLo`yM`ENT})
+{
+    If (${M`Ap}."sOUrce`EX`Ists")
+    {
+        If (${M`Ap}."SOu`RCE`TyPE" -eq ("{2}{0}{1}"-f 'to','ry','Direc'))
+        {
+            ${Fil`ES} = .('G'+'et-C'+'hil'+'dI'+'tem') ${m`AP}."S`oUrCe" -Recurse -File
+            ${so`UR`cE} = ${m`Ap}."s`O`Urce"
+        }
+        Else 
+        {
+            ${F`il`ES} = @(.('Get-I'+'tem'+'P'+'ro'+'perty') ${M`AP}."s`ource")
+            ${so`URCE} = .('Split-P'+'at'+'h') -Path ${m`AP}."S`oU`RCe"
+        }
+        ForEach (${Fi`lE} in ${fIL`Es})
+        {
+            ForEach (${T`Arg`Et} in ${M`Ap}."ta`R`GETs")
+            {
+                
+                ${oL`dfILe`pAth} = .('Join-Pa'+'th') -Path (${f`Ile}."d`IrEctOry`NAMe"."TO`l`oweR"()."rE`Pl`ACe"(${SoU`R`ce}."To`LOWEr"(),${T`ArGEt}."t`OLo`WER"())) -ChildPath ${F`ILE}."Na`Me"
+                ${oLDh`AShpA`TH} = &('J'+'oi'+'n-Path') -Path (${FI`le}."dI`R`ECTO`RyNaMe"."tOlo`W`Er"()."R`E`plAce"(${S`OU`RCE}."tO`l`Ower"(),${t`Arg`Et}."t`o`loWer"())) -ChildPath "$($File.Name).hash"
+                ${o`lDFILePa`Re`NT} = &('Spl'+'it-Pat'+'h') -Path ${OLdfIle`Pa`TH}
+
+                If (-not (.('T'+'est-Pa'+'th') ${O`L`d`FilePaRE`Nt}))
+                {
+                    ${n`Ull} = &('Ne'+'w'+'-Item') -Path ${O`LdfIL`Epar`E`NT} -ItemType dI`R`Ec`TOrY
+                }
+                ElseIf (.('Te'+'s'+'t-Path') ${o`lDhaS`HpaTH})
+                {
+                    ${o`l`DHASh} = &('Imp'+'ort-C'+'l'+'ixml') -Path ${OLDHasH`P`ATH}
+                    ${n`EwH`Ash} = .('Get-'+'Fi'+'leHa'+'sh') -Path ${OL`DFILepA`TH}
+                    If (${o`ld`HasH}."H`AsH" -ne ${n`E`WHaSH}."HA`sH")
+                    {
+                        .('Writ'+'e'+'-Warn'+'ing') ('Differ'+'e'+'nc'+'e '+'w'+'as '+'d'+'etecte'+'d '+'o'+'n '+'targe'+'t '+'fi'+'le '+"$OldFilePath")
+                        If (${sA`Ve`DIFF})
+                        {
+                            ${S`AvedI`FfPaTh} = &('Joi'+'n-'+'Path') -Path (.('Spl'+'it'+'-Path') -Path ${O`lDFILEpA`Th}) -ChildPath "$($File.BaseName)-$(Get-Date -Format 'MM-dd-yyyy-HH-mm-ss')$($File.Extension) "
+                            &('Write-V'+'erb'+'os'+'e') ('Saving'+' '+'ch'+'anged '+'file'+' '+'as'+' '+"$SaveDiffPath")
+                            .('Rename'+'-I'+'te'+'m') -Path ${O`ld`FiLe`pATh} -NewName "$($File.BaseName)-$(Get-Date -Format 'MM-dd-yyyy-HH-mm-ss')$($File.Extension) "
+                        }
+                    }
+                }
+
+                
+                &('Wr'+'ite-V'+'er'+'bose') "Deploying file '$($File.Name)' to '$Target' "
+                ${H`A`ShF`iLepATH} = &('Jo'+'i'+'n-Path') -Path (.('Spli'+'t'+'-Path') -Path ${o`l`dFIlE`PAth}) -ChildPath "$($File.Name).hash"
+                .('Copy-I'+'t'+'em') -Path ${Fi`Le}."Fu`ll`NaMe" -Destination ${ol`dF`ilEp`ATh} -Force -Confirm:${f`ALSE}
+                
+                ${H`ASH} = [PSCustomObject]@{
+                    "hA`SH" = &('Ge'+'t-F'+'il'+'eHash') -Path ${f`iLE}."full`Name" | .('Selec'+'t') -ExpandProperty Ha`SH
+                    "f`ILe" = ${nU`ll} 
+                }
+                ${hA`sh} | &('Export-'+'C'+'l'+'ix'+'ml') -Path ${H`AShfILepA`Th}
+            }
+        }
+    }
+}
+
+
+

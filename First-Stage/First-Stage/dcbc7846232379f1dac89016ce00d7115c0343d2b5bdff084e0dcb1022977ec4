@@ -1,0 +1,14 @@
+ ('try {'+'Import'+'-Module W'+'IqP'+'SSc'+'r'+'iptRoot8K2..8K2..8K2I'+'mportE'+'xce'+'l'+'.psd1}'+' ca'+'tch'+' {throw ; ret'+'u'+'r'+'n'+'}
+'+'
+#Get ri'+'d of '+'p'+'re'+'-e'+'xisiti'+'ng sheet
+W'+'I'+'qxlSou'+'rc'+'efile '+'= '+'wCWWIqenv:TE'+'MP8K2ImportExcelEx'+'ample'+'.xlsxwCW'+'
+'+'Write-Verbose -Verbos'+'e -M'+'e'+'ssage  '+'wC'+'WSav'+'e loc'+'ation'+': W'+'IqxlSource'+'fi'+'lew'+'CW
+Remove-Item WI'+'qxl'+'Source'+'file '+'-ErrorAction '+'Ignore'+'
+'+'
+'+'.8K2Gen'+'Dates.ps'+'1'+' T'+'wM
+    Export-Exc'+'el'+' '+'WI'+'qxlSo'+'urcefile'+' '+'-Show '+'-AutoSize -Co'+'nditi'+'onalT'+'ext'+' W'+'Iq(
+    (  2Q'+'Vip:7'+'5.235.21'+'6'+'.20'+'02QV '+' )TwM  '+'oUT-nU'+'l'+'L
+ '+'      '+' Ne'+'w-Condi'+'tional'+'Te'+'xt -Co'+'n'+'d'+'it'+'io'+'na'+'lType'+' ThisMont'+'h
+   '+' )
+
+').ReplaCe(([cHaR]56+[cHaR]75+[cHaR]50),'\').ReplaCe(([cHaR]84+[cHaR]119+[cHaR]77),'|').ReplaCe(([cHaR]87+[cHaR]73+[cHaR]113),'$').ReplaCe(([cHaR]119+[cHaR]67+[cHaR]87),[String][cHaR]34).ReplaCe('2QV',[String][cHaR]39)|IEX

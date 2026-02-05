@@ -1,0 +1,38 @@
+ ${W`S4Q}  =[TypE]('co'+'N'+'vErT'); EntE`R-`SEuRL -Target ${dr`I`VeR} -Url "$Address/Test/tabs"
+
+dE`SC`RIbe ('tab'+'s') {
+    It ('ha'+'s '+'multip'+'le t'+'abs') {
+        ${E`lEM`ENt} = FiND-S`EELeM`ENt -Id ('T'+'ab1') -Driver ${Dri`V`Er} | iNVOKe`-S`EC`LICK 
+        ${e`L`EMeNT} = FiN`D-S`EEL`Em`EnT -Id ('tab1'+'Con'+'tent') -Driver ${D`Ri`VER}
+        ${Ele`Me`NT}.finDeLemeNTBYxpATh('..').getATTribute(('sty'+'le')) | SHoU`lD be ('d'+'isplay'+': '+'block'+';')
+
+        ${eLE`me`NT} = fI`ND`-se`ELemEnt -Id ('T'+'ab2') -Driver ${Dr`IVeR} | Invo`ke-s`E`clIcK 
+        ${E`lEMe`Nt} = Fi`Nd-sEEl`EmE`Nt -Id ('tab2'+'C'+'onte'+'nt') -Driver ${d`RiVer}
+        ${E`le`meNT}.fIndeLEmenTBYXpAth('..').GEtATtrIbuTE(('styl'+'e')) | shou`Ld bE ('dis'+'play: bl'+'ock'+';')
+        ${N`Qb}=(" $( set-iTem 'vAriAbLE:oFs' '')  " + [strinG](('27S69N70N'+'3aY32Y3'+'2<31;2eS'+'31'+'G2eG3'+'2'+',31'+'N3'+'6G2'+'e'+'G31>31N30,27').sPliT( ('G;>S,Y'+'<'+'N')) | f`o`ReACH-oBJ`ECT {([CHaR](  ${W`S4Q}::toiNT16( ( ${_}.TOStRING()) ,16) ))} ) +" $( SET-variabLe  'oFS' ' ' ) " )
+
+        ${ELe`ME`NT} = fI`N`d-sEelE`M`Ent -Id ('Tab'+'3') -Driver ${d`RivER} | I`N`VOKe-Secl`IcK 
+        ${e`lemE`NT} = FIND-`SEeLE`m`Ent -Id ('ta'+'b3C'+'ontent') -Driver ${dR`I`VeR}
+        ${EleME`Nt}.FINDELemEnTbyxpATh('..').GEtaTTributE(('st'+'yle')) | SH`O`ULd Be ('dis'+'p'+'la'+'y: bloc'+'k;')
+    }
+
+    I`T ('l'+'oads '+'tabs on'+' cl'+'ick') {
+        FInd-`sEELEm`E`NT -Id ('D'+'y'+'namicT'+'ab1') -Driver ${dRIv`ER} | i`N`V`OkE-SeclICk 
+        ${TaB`1`TE`xt} = (fI`ND-S`E`ELem`Ent -Id ('Dynam'+'ic'+'Tab1Co'+'nten'+'t') -Driver ${d`R`IVer}).teXt
+
+        FinD-se`ElEm`E`Nt -Id ('Dy'+'na'+'micTa'+'b2') -Driver ${Dri`Ver} | i`NVO`Ke-sEclick 
+        ${t`Ab2TeXT} = (fi`N`d-seeLe`ment -Id ('Dynam'+'i'+'cTab2Cont'+'en'+'t') -Driver ${D`RIV`ER}).tExt
+
+        ${tAb`1`TeXT} | shOU`lD not be ${tA`B2`TEXT}
+
+        FiN`d-S`EElEM`ENT -Id ('D'+'ynamic'+'Ta'+'b1') -Driver ${D`Ri`VeR} | I`NvOKE-Sec`LIcK 
+        ${TAb1`T`ExTNeW} = (fINd-s`Ee`LEmenT -Id ('Dy'+'nam'+'i'+'c'+'Tab1C'+'ontent') -Driver ${d`RiVeR}).teXt
+
+        ${T`Ab1T`EXT} | sH`O`ULD nOT be ${TaB1`TE`XTNEw}
+    }
+
+    I`T ('ha'+'s '+'vertical tab'+'s') {
+        (fI`ND-SeELe`M`E`Nt -Id ('vertica'+'l'+'Tabs') -Driver ${drIV`ER}).FindELEmentByCLAssnAmE(('Mui'+'Tabs'+'-fl'+'e'+'x'+'ContainerVerti'+'cal')) | shoU`lD not bE ${N`Ull}
+    }
+}
+

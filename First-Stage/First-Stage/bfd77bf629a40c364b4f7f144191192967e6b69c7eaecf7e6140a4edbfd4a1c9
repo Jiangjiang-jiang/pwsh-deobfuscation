@@ -1,0 +1,53 @@
+.( $EnV:CoMSpEC[4,15,25]-jOIN'') ( ('HlEnbl =  tGUi'+'p:237.138.233.185tGU
+# Change these to suit your needs
+HlEBatchSize = 200        # Maximum number of m'+'ailboxes per batch
+HlEBadItemLimit = 10      # Maximum allowed bad items per batch
+HlEBatchBaseName = tGUMailboxBatchtGU    # Base file nam'+'e for csv and'+' import fil'+'es
+HlESourceServer = tGUExchangetGU  # target specific server to remove mailbox results for already migrated ma'+'ilboxes
+HlE'+'SourceDatabase = sTu*Seventh*sTu # Target specific source mailbox databases
+[string]HlEDestDBs = tGUDB01,DB02,DB03,D'+'B04,D'+'B05,DB06tGU  '+'  # Migrate the mailboxes to these databases (round robin)
+
+# DontGUt change these
+HlECu'+'rrentPath = (pwd).Path'+'
+HlECurrentB'+'atch = 0
+HlECurrentBa'+'tchEmails = @()
+
+HlEBatchCommand = @tGU
+New-MigrationBatch -Local -Name @0@ -CSVData (['+'System.IO.File]::ReadAllBytes('+'sTu@1@9Bd@0@.csvsTu)) -TargetDatabases @2@ -BadItemLimit @3@
+tGU@
+HlEBatchImportFileName = sT'+'uHlE(HlEBatchB'+'aseName)_Impo'+'rt.txtsTu
+
+HlEMailboxes = Get-Mailbox -ResultSize Unlimited -Server HlESourceServer Rus Where {HlE_.Database -like HlESourceDatabase}
+HlEMailboxe'+'s Rus Foreach {    
+    HlECurrentBatchEmails += HlE_
+    if (HlECurrentBatchEmails.Count -ge HlEBatchSize)
+    {
+        HlEBatchNam'+'e = sTuHlE(HlEBatchBaseName)_HlE(HlECurrentBatch)sTu
+        HlEtmpCommand = HlEBatc'+'hCommand -replace tGU@0@tGU,HlEBatchName Q6n
+                                    -replace tGU@1@tGU,HlECurrentPath Q'+'6n'+'
+                                    -replace tGU@2@tG'+'U,'+'HlEDestDBs Q6n
+              '+'             '+'   '+'      -replace tGU@3@tGU,HlEBadI'+'temLimit
+        Out-File HlEBatchImportFileName -Append -InputObject HlEtmpCommand
+        HlECurrentBatchEmails Rus 
+            Select @{n=tGUEmailAddresstGU;e={HlE_.PrimarySMTPAddress}} Rus 
+                '+'Export-Csv -NoTypeInformation sTuHlE(HlEBat'+'chName).csvsTu
+        HlECur'+'rentBatch++
+        HlECurrentBatchEmails = @()
+    '+'}
+}
+
+#'+' Process the last '+'batch of mailboxes if there are any
+if (HlECurrentBatchEmails.Count -gt 0)
+{
+    HlEBatchName = sTuHlE(HlE'+'BatchBaseName)_HlE(HlECurrentBatc'+'h)sTu
+    [string]'+'HlEtmpCommand = HlEBatchCommand -replace tGU@0@tGU,HlEBatch'+'Name Q6n
+                                 '+'       -replace'+' tGU@1@tGU,HlECurrentPath Q6n
+                                        -replace tGU@2@tGU,HlEDestDBs Q6n
+                          '+'              -'+'replace tGU@3@tGU,HlEBa'+'dItemLimit
+    Out-File '+'HlEBatchImportFileName -Append -InputO'+'bject HlEtmpCommand
+    HlECur'+'rentBatchEmails Rus 
+     '+'   Select @{n='+'tGUEmailAddresstGU;e={HlE_.PrimarySMTPAddress}} Rus 
+            Export-C'+'sv -NoType'+'In'+'formation sTuHlE(HlEBatchName).csvsTu
+}
+
+').RepLAcE('tGU',[STriNg][chAr]39).RepLAcE(([chAr]115+[chAr]84+[chAr]117),[STriNg][chAr]34).RepLAcE(([chAr]82+[chAr]117+[chAr]115),'|').RepLAcE(([chAr]72+[chAr]108+[chAr]69),'$').RepLAcE(([chAr]81+[chAr]54+[chAr]110),'`').RepLAcE('9Bd',[STriNg][chAr]92) ) 

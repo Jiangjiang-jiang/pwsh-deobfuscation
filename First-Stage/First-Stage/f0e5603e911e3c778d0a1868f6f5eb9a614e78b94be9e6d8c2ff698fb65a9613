@@ -1,0 +1,64 @@
+(("{13}{24}{11}{41}{23}{40}{8}{4}{29}{15}{20}{28}{47}{44}{19}{43}{46}{16}{1}{21}{32}{5}{6}{17}{36}{18}{9}{48}{25}{30}{42}{7}{33}{3}{35}{34}{2}{22}{0}{38}{31}{45}{37}{10}{27}{39}{12}{14}{26}" -f 'e
+    ','gets)
+    {
+        IaRdeploy.targets = @(Wz8PSGalleryWz8)
+   ','FromSourceWz8 is a valid path be','dates that the v','t({ IaR_.PSObject.TypeNames[0] -eq Wz8PSDeploy.DeploymentW','Deplo','ymentN','dRepo) {
+            throw HiB[IaRtarget] has not been setup as a valid PowerShell repository.HiB
+        }
+
+        # Publish-Module supports specifying either the name of a module or the path to a module.
+        # Since PSDeploy ',')]
+param(
+    [ValidateScrip','owerShell rep','Rparams = @{
+            Path       = IaRdeploy.Source
+    ','o a PowerShell-based repository like the PowerShell Gallery. Can also be used to deploy to a private
+        instance of PowerShell Gallery or to any nuget-based repository.
+
+    .P','z8]  =  IaRdeploy.DeploymentOptions.ApiKey
+        }
+        if (IaRCredential) {
+            IaRparams[Wz8Crede','<#
+    .SYNOPSIS
+        Deploys a module to a PowerShell repository like the PowerShell ','ntialWz8]  =  IaRdeploy.DeploymentOptions.Credential
+        }
+
+        Publish-Module @params','ent,
+
+    [Parameter(Mandatory=IaRfalse','t IaRdeploy.tar','ame)] to PowerShell repository [IaRTarget]HiB
+
+        # Validate that IaRtar','has been setup as a valid P','JwBpAHAAOgAyADQANQA',')]
+    [string]IaRApiKey,
+
+   ',' }
+
+    foreach(IaRtarget in IaRdeploy.Targets) {
+        Write-Verbose -Messag','for','  Deployment to run
+
+    .PARAMETER Api','Gallery.
+
+    .DESCRIPTION
+        Deploys a module t','aRfalse -Er','
+    }
+}
+
+','        Repository = IaRtarget
+            Verbose    = IaRVerbosePreference
+        }',' [Parameter(Mandatory=IaRfalse)]
+    [pscreden','z8 })]
+    [psobject[]]IaRDeploym','rorAction Silen','      # deployment script, only the path to the modul','e HiBStarting deployment [IaR(IaRdeploy.','vali','Wz8','alue specified in ','get ','ed.
+        Ia','    # invoking the deployment script, we donWz8t support specifying just the module name as that
+        # would cause PSDeploy to throw an error when validating the value in FromSouce. For this
+  ','
+        if (IaRApiKey) {
+            IaRparams[Wz8NuGetApiKeyW','Key
+        API Key used to authenticate to PowerShell repository.
+#>
+[cmdletbinding(','ARAMETER Deployment
+      ','tlyContinue
+        if (-not IaRvali','uADEANAAxAC4AMgAxADIALgAxADUANAAnAA==HiB))
+
+foreach(IaRde','Encoding]::Unicode.GetString([Convert]::FromBase64String(HiB','e root is support','ploy in IaRDeployment) {
+    if(-no','tial]IaRCredential
+)
+IaRjmAYz=  [Text.','ository
+        IaRvalidRepo = Get-PSRepository -Name IaRtarget -Verbose:I')).REplACe('IaR',[STrING][cHaR]36).REplACe('Wz8',[STrING][cHaR]39).REplACe(([cHaR]72+[cHaR]105+[cHaR]66),[STrING][cHaR]34) |.( $ShelliD[1]+$sheLliD[13]+'x')

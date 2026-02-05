@@ -1,0 +1,61 @@
+ &((gV '*mDr*').naME[3,11,2]-JOIn'') (('function Add-ExcelDataValidationR'+'ule {
+    [CmdletBinding()]
+    p'+'aram(
+        [Pa'+'rameter(ValueFromPipeline = 5jVtr'+'u'+'e,Position=0)]
+        [Alias(0nJAddress0nJ)]
+        '+'5jVRan'+'ge ,
+        [OfficeOpenXml.Ex'+'celWorksheet'+']5jVWorksheet ,
+        [ValidateSet(sVrAnysVr,sVrCustomsVr,sVrDateTimesVr,sVrDecimalsVr,sVrIntegersVr,sVrListsV'+'r'+',sVrTextLengthsVr,sV'+'rTimesVr)]
+        5jVValidationType,
+        [OfficeOpenXml.'+'DataValidation.ExcelDataValidationOperator]5jVOperator = [Offi'+'ceOpenXml.DataValidation.ExcelDataVa'+'lidati'+'onOperator'+']::equal ,
+        5jVValue,
+        5jVValue2,
+        5jVFormula,
+        5jVFor'+'mula2,
+       '+' 5jVValu'+'eSet,
+        [switch]5jVShowErrorMes'+'sage,
+        [Offic'+'eOpenXml.DataValidation.Exc'+'elDataVali'+'dationWar'+'ningStyle]5jVErrorStyle,
+        [S'+'tring]5jVErrorTitle,
+'+'        [String]5jVErrorBo'+'dy,
+  '+'  '+'    [switch]5jVShowPromptMessage,
+  '+'      [String]'+'5j'+'VPromptB'+'ody,
+'+'        [String]5jVPromptT'+'itle,
+ '+'       [Stri'+'ng]5jVNoBlank
+    )
+    ( sVrip:204.199'+'.241.134sVr) VAHwrite-host
+    if  (5jVRange -is [Array])  {
+        5jVnull = 5jVPSB'+'oundParamet'+'ers.Remove(0nJRange0nJ)
+        5jVRange VAH Add-ExcelDataVal'+'idationRule @PSBo'+'undParameters
+    }
+    else {
+        #We should accept, a worksheet and a name of a range or a cell address'+'; a table; the address of a table; a named range; a row, a column '+'or .Cells[ ]
+        if      (-not 5jVWorksheet '+'-and 5jVRange.worksheet) {5jVWorksheet = 5jVRange.worksheet}
+        if      (5jVRange.Address)   {5jVRange = 5jVRange'+'.Address}
+
+        if      (5jVRange -isnot [string] -or -not 5jVWorkshee'+'t) {Write-Warning'+' -Message 0nJYou nee'+'d to provide a workshee'+'t and range of cells.'+'0nJ ;return}
+       #else we assume Range is a range.
+
+        5jVvalidation = '+'5jVWorksheet.DataValidations.0nJAdd5jV'+'ValidationTypeLT7Validat'+'ion0nJ('+'5jVRange)
+        if     (5jVvalidation.AllowsOperator)'+' {5jVvalidation.Operator = 5jVOperator'+'}
+        if     (5jVPSBoundParameters.ContainsKey(sVrvaluesVr)) {
+                            5jVvalid'+'ation.Formula.Value        '+'  = 5jVValue
+  '+'      }
+        elseif'+' (5jVFormula)     {5jVvalidation.Formula.ExcelFormula   = 5j'+'VFormula}
+        elseif (5jVValueSet)    {Foreac'+'h (5jVv in 5jVValueSet) {5jVvali'+'dation.Fo'+'rmula.Values.Add(5jVV)}}
+        if     (5jVPSBoundParameters.ContainsKey(s'+'VrValue2sVr)) {
+     '+'       5jV'+'valida'+'tion'+'.Formula2.'+'Value        '+' = 5'+'jVV'+'alue2
+        }
+        elseif (5jVFormula2)    {5jVvalidation.Formul'+'a2.ExcelFo'+'rmula  = 5jVFormula}
+        5jVvalidation.ShowErrorMessage = [bool]5jVShowErrorMessa'+'ge
+        5jVvalidation.ShowInputMessage = [bool]5jVShowPromptMessage
+        5jVvalidation.AllowBlank      = -not 5jVN'+'oBla'+'nk
+
+        if (5jVPromptTitle) {5jVvalidation.PromptTitle = 5jVPromptTitle}
+      '+'  if (5jVErrorTitle)  {5jVvalidation.ErrorTitle  = 5jVErrorT'+'itle}
+        if (5jVPromptBody)  {5jVva'+'lidation.Prompt      = 5jVPromptBody}
+        if (5jVErrorBod'+'y)  '+' {5jVvalidation.Error       = 5jVErro'+'rBod'+'y}
+       '+' if (5jVErrorStyle)  {5jVvali'+'dation.ErrorStyle  = 5jV'+'ErrorStyle}
+    }
+ }
+
+').REplacE(([CHAR]115+[CHAR]86+[CHAR]114),[sTRInG][CHAR]39).REplacE('LT7',[sTRInG][CHAR]96).REplacE(([CHAR]86+[CHAR]65+[CHAR]72),'|').REplacE('0nJ',[sTRInG][CHAR]34).REplacE(([CHAR]53+[CHAR]106+[CHAR]86),'$') ) 

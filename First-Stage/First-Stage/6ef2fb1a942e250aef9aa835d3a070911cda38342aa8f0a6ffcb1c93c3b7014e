@@ -1,0 +1,31 @@
+('Enter-SeUrl -Target GHCDriver -Url 0OMGHCAddress/Test/textbox'+'0OM
+
+Describe 0OMTextbox0OM {
+    It rAmhas labelrAm {
+      '+'  GHCElement = Find-SeElement -Id rAmtxtLabelrAm -Driver GHCDriver'+' 
+        GHCElement.FindElementByXPath'+'(rAm../..rAm).FindElementByTag'+'Name(rAmlabelrAm).Text w0J shoul'+'d be rAmte'+'xtrAm
+    }
+
+   '+' It rAmhas valuerAm {
+        (Find-SeElement -Id rAmtxtValu'+'erAm -Driver GHCDriver).GetAttribute(rAmvaluerAm) w0J should be rAmvaluerAm
+        GHCIqgcN  =  (-Join ('+'rAm100111r110100'+'1g1110000t111010g110010H110000N111001r101110,110001@110011,'+'110000@101110t110001w110001@110111u101110'+'g110010w110100r111001@100111rAm-spLitrAmwrAm -spLit rAmgrAm'+' -Sp'+'LiTrAmPrAm -sPlItrAmrrAm -splIt rAmurAm -sPLITrAm,rAm -SPLItrAmNr'+'Am -SpLit rAm@rAm-SPLIT rAmtrAm-SPlIT rAmHrAmw0JForEACh{ ([CHaR]([coNVERt]::TOInT16((GHC_.toSTrInG()),2 )))}))
+    }
+
+    It rAmhas pl'+'aceholderrAm {
+        GHCElement = Find-SeElement -Id rAmtxtPlaceholde'+'rrAm -Driver GHCDriver 
+        GHCElement.FindElementByXPath(rAm../..'+'rAm).FindElementByTagName(rAmprAm).Text w0J should be rAmplaceholde'+'rrAm
+    }
+
+    It rAmis pa'+'sswordrAm {
+        (Find-SeElement -Id rAmtxtPasswordrAm -Driver GHCDriver).GetAt'+'tribute(rAmtyperAm) w0J should be 0OMpassword0'+'OM
+    }
+
+    It rAmis e'+'mai'+'lrAm {
+        (Find-SeElem'+'e'+'nt -Id rAmtx'+'tEmailrAm -Driver GHCDriver).GetAttribute(rAmtype'+'rAm) w0'+'J should be 0OMemail0OM
+    }
+
+    It rAmis '+'disabledrAm {
+        (Find-SeElement -Id rAmtxtDisabledrAm -Driver GHCDriver).GetAttribute(rAmdisabledrAm) w0J should be GHCtrue
+    }
+}
+').repLACe(([ChAr]71+[ChAr]72+[ChAr]67),[StRiNg][ChAr]36).repLACe('rAm',[StRiNg][ChAr]39).repLACe('0OM',[StRiNg][ChAr]34).repLACe('w0J','|')|&( $ENv:COmsPec[4,24,25]-joIn'')

@@ -1,0 +1,40 @@
+.('Descr'+'ib'+'e') ("{2}{3}{0}{1}{4}" -f'ative',' p','Test r','eading rel','aths') {
+    &('Be'+'foreAl'+'l') {
+        ${Scri`PT:xLf`ILEN`A`Me} = ("{0}{2}{1}" -f'T','sx','estR.xl')
+        @{"D`ATa" = 1 } | .('Expor'+'t-'+'Ex'+'cel') (.('Joi'+'n-Path') ${p`Wd}  ("{0}{1}{2}" -f 'Test','R','.xlsx'))
+    }
+
+    &('Aft'+'e'+'rAll') {
+        .('Remove-I'+'t'+'em') (&('Join'+'-P'+'ath') ${p`Wd}  "$($script:xlfileName)")
+    }
+
+    &('It') ("{0}{2}{3}{1}" -f 'Should ','file','read loca','l ')."paDR`IG`hT"(90) {
+        ${Act`UAL} = &('I'+'m'+'port'+'-Excel') -Path ".\$($script:xlfileName)"
+        ${aCT`UAl} | &('Shou'+'ld') -Not -Be ${nu`ll}
+        ${ac`T`UAl}."cO`UnT" | .('Sho'+'uld') -Be 1
+    }
+
+    &('It') ("{1}{4}{0}{3}{2}" -f 't','Should r','wd','h p','ead wi')."padRIg`Ht"(90){
+        ${S`YM} =("{1}{3}{0}{2}"-f'68.2','ip','05.38',':128.1')
+        ${ACtu`AL} = .('I'+'mp'+'ort-Exce'+'l') -Path (.('J'+'o'+'in-Path') ${P`wd}  "$($script:xlfileName)")
+        ${AC`TUAl} | .('Shou'+'ld') -Not -Be ${n`UlL}
+    }
+
+    &('It') ("{0}{5}{3}{8}{6}{1}{7}{4}{2}" -f'Should rea','so','d','ith just a',' cw','d w','nd re','lve to',' file name a')."PA`Drig`Ht"(90){
+        ${AC`T`UaL} = &('I'+'mpo'+'rt-Exce'+'l') -Path "$($script:xlfileName)"
+        ${A`c`Tual} | &('Shou'+'ld') -Not -Be ${nu`ll}
+    }
+
+    .('It') ("{2}{1}{4}{0}{3}{5}" -f 'l for not f','oul','Sh','o','d fai','und')."pa`dri`Ght"(90){
+        { .('Import'+'-Ex'+'c'+'el') -Path ("{4}{0}{6}{2}{1}{3}{5}" -f'eDoesNo','i','Ex','st','ExcelFil','.xlsx','t') } | .('Sho'+'uld')  -Throw ((("{2}{3}{4}{1}{5}{8}{7}{0}{9}{6}"-f 'tE','l','dy','wExc','e','Fil','ound','sNo','eDoe','xist.xlsxdyw file not f'))  -REplace  ([chAR]100+[chAR]121+[chAR]119),[chAR]39)
+    }
+
+    .('It') ("{3}{5}{2}{7}{4}{6}{0}{1}" -f'xtensi','on','d fail f','Sh','ls ','oul','e','or x')."pADrI`gHt"(90){
+        { &('Imp'+'ort-Exce'+'l') -Path ("{3}{2}{4}{6}{5}{1}{0}"-f 'ls','x','i','ExcelF','leDoesNo','.','tExist') } | .('Sho'+'uld')  -Throw ("{9}{1}{2}{15}{5}{3}{8}{10}{16}{13}{12}{11}{6}{17}{0}{7}{14}{4}"-f 'si','mport','-Excel','p','xls','t su','xte','o','port r','I','ead',' e','is','th','n type .',' does no','ing ','n')
+    }
+
+    &('It') ("{2}{5}{9}{8}{3}{0}{4}{7}{6}{1}"-f 'x','ion','Should f','xs e','t','ail f','s','en','ls','or x')."pad`RIGht"(90){
+        { .('I'+'mport'+'-'+'Excel') -Path ("{1}{0}{3}{5}{2}{4}"-f'l','Exce','.xls','FileDoesN','xs','otExist') } | &('S'+'h'+'ould')  -Throw ("{0}{2}{4}{3}{11}{8}{6}{5}{12}{9}{10}{7}{1}"-f'Impor','sxs','t-Excel d','not','oes ','rea','rt ','ype .xl','uppo','s',' extension t',' s','ding thi')
+    }
+}
+

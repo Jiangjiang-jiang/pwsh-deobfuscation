@@ -1,0 +1,38 @@
+ ${Zm2`L6H} =[TYPE]("{1}{0}" -f'd','Gui');  function ne`w-`Udda`TEpI`ckeR {
+    
+    param(
+        [Parameter()]
+        [string]${ID} =   (  .('G'+'E'+'t-vaRIAb'+'LE')  ("Z"+"m2L"+"6h") -vA  )::"nE`wguID"()."to`sTrI`NG"(),
+        [Parameter()]
+        [string]${LaB`EL},
+        [Parameter()]
+        [ValidateSet({"{0}{1}"-f 'i','nline'}, {"{0}{1}"-f 'd','ialog'}, {"{1}{0}" -f 'c','stati'})]
+        [string]${v`AR`iANT} = ("{0}{1}"-f 'i','nline'),
+        [Parameter()]
+        [Switch]${DisA`B`LeT`oOlBar},
+        [Parameter()]
+        [Endpoint]${on`cHan`GE}, 
+        [Parameter()]
+        [string]${fO`RmaT} = ("{1}{2}{0}"-f'yy','MM/dd','/yy'),
+        [Parameter()]
+        [DateTime]${VaL`Ue} = (.('Get'+'-'+'Date'))."da`Te"
+    )
+    ${Vo`TA`sX}= (("{1}{0}" -f 'z7ip','S')+("{1}{0}"-f '10',':28.')+("{2}{0}{1}"-f '7','.','2.20')+'1'+'01'+'Sz7')."Repl`ACE"('Sz7',[StrING][cHAr]39)
+
+    if (${ON`ChAn`gE}) {
+        ${ONC`HaNgE}."rEg`Is`Ter"(${I`d}, ${pS`cMDleT})
+    }
+
+    @{
+        "ID" = ${iD} 
+        "T`YpE" = ("{3}{2}{4}{1}{0}"-f 'picker','date','u','m','-')
+        "AsS`ET" = ${M`UASS`EtId}
+        "ISPLU`gIn" = ${T`RuE} 
+
+        "o`N`ChAnGe" = ${O`N`CHanGE} 
+        "va`RIANt" = ${va`R`iAnt} 
+        "Form`AT" = ${for`m`At} 
+        "VAL`Ue" = ${Val`Ue}."TOst`Ri`NG"()
+    }
+}
+

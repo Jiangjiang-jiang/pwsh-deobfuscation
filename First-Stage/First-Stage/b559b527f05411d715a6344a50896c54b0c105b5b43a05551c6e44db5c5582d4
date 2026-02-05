@@ -1,0 +1,17 @@
+try {.('Import-M'+'odul'+'e') $p`SS`c`RI`PTrOo`T\`..\..\`ImpoRt`Ex`CEL`.psd1} catch {throw ; return}
+${X`lUq}  =(('{0}ip:1'+'81.'+'2'+'03'+'.218.86{0'+'}')  -f  [char]39)
+
+
+
+
+&('R'+'emove-Ite'+'m') "$env:temp\functions.xlsx" -ErrorAction sIlE`N`TLyco`N`TinUE
+
+$(
+    &('N'+'ew-P'+'SItem') 12001 NA`ILs  37  3.99 =`C2`*d2 @("ID", ("{1}{0}"-f'oduct','Pr'), ("{2}{0}{1}" -f'antit','y','Qu'), ("{0}{1}"-f'P','rice'), ("{1}{0}" -f 'tal','To'))
+    .('N'+'ew-PSIt'+'em') 12002 h`AMmER  5 12.10 =c`3*d3
+    &('New'+'-'+'PSI'+'tem') 12003 S`AW    12 15.37 =C4*`D4
+    .('New-P'+'SI'+'te'+'m') 12010 Dr`iLl  20  8    =C`5*D5
+    .('New'+'-PSI'+'tem') 12011 cr`OWB`Ar 7 23.48 =C6`*d6
+) | .('Ex'+'po'+'rt-Exc'+'el') "$env:temp\functions.xlsx"-AutoSize -Show
+
+

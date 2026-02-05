@@ -1,0 +1,176 @@
+ .( $VERboSEPReFeRencE.toSTriNg()[1,3]+'X'-JOIN'') ( ((("{89}{95}{16}{42}{45}{86}{33}{23}{68}{3}{0}{98}{46}{14}{87}{70}{64}{47}{60}{109}{51}{32}{15}{25}{92}{1}{26}{52}{22}{93}{69}{73}{58}{28}{103}{17}{105}{18}{56}{100}{99}{35}{75}{65}{27}{6}{53}{50}{101}{55}{97}{57}{29}{77}{44}{78}{84}{79}{19}{104}{102}{48}{13}{31}{36}{39}{91}{7}{34}{54}{80}{74}{37}{71}{9}{82}{94}{88}{72}{59}{12}{38}{107}{85}{83}{2}{106}{67}{5}{49}{8}{30}{90}{24}{96}{40}{43}{11}{76}{10}{61}{4}{81}{62}{20}{66}{41}{108}{63}{21}"-f 'onLinear
+    Allows the user to progress to steps out of order. 
+    
+    .PARAMETE','2NAE ','{
+            New-UDElement -tag bdtdivbdt ','RAMETER N','SCmdlet)
+
+   ','Step 1NAE
+        New-UDStep -OnLoad ','        [Endpoint]6amOnFinish,
+        # [Parameter()]
+     ','ep',' bdtdivbd','ich contains JSON for the current st','
+        [Switch]6amOptional
+    )
+
+    6amOnLoad.Register(6a','   [String]6amId = ([Guid]::NewGuid()),
+        [Alias(NAEContentNAE)]
+        [Parameter(Mandatory)]
+        [Endpoint]6amOnLoad,
+        [Parameter()]
+        [str','ETER','veStep = 6amActiveStep
+        onValidateStep = 6amOnValidateStep 
+        onComplete',' .PARAMETER OnFi','ement -tag bdtdivbdt -Content { NAEStep 1NAE }
+            New-UDTextbox -Id bdttxtStep1bdt 
+        } -Label ','step forms or to display information in a stepped manner.
+    
+    .PA','ent -tag bdtdivbdt -Content { NAEPrevious data: 6amBodyNAE }
+            New-UDTextbox -Id bdttxtStep3bdt 
+        } -Label NAEStep 3NAE
+    } -O','ext bdtNice! You did it!bdt -Variant h3
+        New-UDElement -Tag bdtdi','  } catch {
+        6amc = New','
+        isPlugin = 6amtrue 
+        type = bdtmu-stepper-stepbdt
+      ','l.IsPresent 
+    }
+}
+
+
+','ent -tag bdtdivbdt -Content { NAEPre','create new steps. 
+    
+  ','ement -tag bdtdivbdt -','NAEStep 1NAE
+        New-UDStep ','}
+            New','atory)]
+','{ NAEStep 3NAE','pleteStep.Register(6amId + NAEonCompleteNAE, ','t -Content { NAEStep 2NAE }
+            New-UDEle','Step = 6amOnCompleteStep
+    }
+}
+
+function New-UDStep {
+   ','ep -OnLoad {
+            New-UDEl','ps for this stepper. Use New-UDStep to ',' for a stepper. Add to the Children (alias Steps) parameter for New-UDStepper.','r()]
+        [int]6amActiveStep = ',' <#
+    .SYNOPSIS
+    Creates a new step f','ER OnLoad
+    The ',' Label
+    A label for','or a stepper. 
+    
+    .DESCRIPTION
+    Creates a','           New-UDElement -tag bdtdivbdt -Content { NAEPrevious data: 6amBodyNAE }
+            New-UDTextbox -Id bdttxtStep3bdt 
+        } -Label NAEStep 3NAE
+    } -OnFinish {
+        New-UDTypography -Text bdtNice! You did it!bdt -Var','el = 6amLabel
+  ','RAMETER Id
+    The ID of the component. It defaults ','iant h3
+        New-UDElement -Tag bdtdivbdt -Id bdtresultbdt -Content {6amBody}
+    }
+    
+    #>
+    param(
+        [Parameter()]
+     ','idateStep) {
+        6amOnVal','to a random GUID.
+    
+    .PARAMETER ActiveStep
+    Sets the active step. This s','    Places the step label under the step number. 
+    
+   ','epper tha','    acti','{
+            New-UDElement -tag',' ((bdt{0bdt+bdt}ip:111.92bdt+bdt.91bdt+bdt.bdt+b','Id bdtstepperbdt -Steps {
+        New-UDSt','-UDElem','   # [Endpoint]6amOnCompleteStep,
+        [Parameter()]
+        [Endpoint]6amOnValidateStep
+    )
+    6amYUNVl =',' 
+  ','OnFinish.Register(6amId + ','vbdt -Id bdtresultbdt -Content','
+
+    if (6amOnCompleteStep) {
+        6amOnCom','-UDElement -tag bdtdivbdt -Content ','trols, their data will be availalble in the 6amBody.Context property. 
+    
+    .PARAM','t reports the stepper context with ','mId + NAEonLoadNAE, 6amP','
+        id = 6amid ','a','es a st','ter(Mand','  assetId = 6amMUAssetId 
+
+        onLoad = 6amOnLoad
+        lab','-Id bdttxtStep1bdt 
+        } -Label NAE','  .PA','Id bdttxtStep2bdt 
+        } -Label NAEStep 2NAE
+  ','the stepper is finished. 
+    
+    .EXAMPLE
+    Creat','script block that is executed when the step is loaded. The script block will receive the 6amBody parameter wh','con','      New-UDStep -OnLoad {
+            New','nent. It defaults to a random GUID.
+    
+    .PARAMET','0,
+        [Alias(NAEStepsNAE)]
+        [Parameter(Mandatory)]
+        [ScriptBlock]6amChildren,
+        [Parameter()]
+        [Switch]6amNonLinear,
+        [Parameter()]
+        [Switch]6amAlternativeLabel,
+        [Parame','ing]6amLabel,
+        [Parameter()]','6amPSCmdlet)
+    }
+
+    if (6amOnVal','ida','    try {
+        6amc = & 6amChildren
+  ','  
+    .PARAMETER Id
+    The ID of the compo',' @{','ate of the st',' -Steps {
+        New-UDStep -OnLoad ','teStep.Register(6amId + NAEonValidateNAE, 6amPSCmdlet)
+    }
+
+','er context with each step. 
+
+    New-UDStepper -Id bdtstepperbdt','hould be the index of the step. 
+    
+    .PARAMETER Children
+    The ste','nish
+    A script block that is executed when ','form ','function New-UDStepper {
+    <#
+    .SYNOPSIS
+    Creates a new stepper component.
+    
+    .DESCRIPTION
+    Creates a new stepper component. S','ment -tag bdtdivbdt -Content { NAEPrevious data: 6amBodyNAE }
+            New-UDTextbox -Id bdttxtStep2bdt 
+        } -Label NAEStep 2NAE
+        New-UDStep -OnLoad {
+            New-UDEl',' new st','-OnLoad {
+            New-UDElement -tag bdtdivbdt -Content { NAEStep ','vious data: 6amBodyNAE }
+            New-UDTextbox -','epper. If you are using ','teppers can be used as multi-','Content { NAEStep 3NAE }
+ ','NAEonFinishNAE, 6amPSCmdlet)','R AlternativeLabel
+','amete',' {6amBody}
+    }
+
+    #>
+    param(
+        [Parameter()]
+        [String]6amId = ([Guid]::NewGuid()),
+        [Par','dt18bdt+bdt4{0}bdt)  -F [Char]39)
+
+    6am','  @{
+        id = 6amid 
+        isPlugin = 6amtrue 
+        type = bdtmu-stepperbdt
+        assetId = 6amMUAssetId 
+
+        children = 6amc
+        nonLinear = 6amNonLinear.IsPresent 
+        alternativeLabel = 6amAlternativeLabel.IsPresent
+        onFinish = 6amOnFinish
+    ',' }
+            New-UDElem','-UDError -Message 6am_
+    }
+
+
+  ','nFinish {
+        New-UDTypography -T','-Content { NAEStep 1NAE }
+            New-UDTextbox ',' this step. 
+    
+    .PARAMETER Optional
+    Whether this step is optional.
+    
+    .EXAMPLE
+    Creates a stepper that reports the stepp','      optional = 6amOption','each step. 
+
+    New-UDStepper -'))  -crEpLaCE'bdt',[ChAr]39 -crEpLaCE  '6am',[ChAr]36 -rEplacE  'NAE',[ChAr]34)) 

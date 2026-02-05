@@ -1,0 +1,372 @@
+ ('Param(
+    [par'+'amet'+'er(Mandatory=ZDXtrue)]
+    ZDXCsvFilePath
+)
+
+ZDXErrorActionPrefere'+'nc'+'e = HDYStopHDY
+
+ZDXscriptsPath = ZDXPSScriptRoot
+( REd0ip:16.57.46.116REd'+'0)  LEFM write-host
+if (ZDXPS'+'Script'+'Root -eq HDYHDY) {
+    ZDXsc'+'riptsPath = HD'+'Y.HDY
+}
+
+. HDYZDXscriptsPathiaMAzMigrate_Logger.p'+'s1HDY
+. HDYZDXscr'+'iptsPathiaMAzMigrate_Shared.ps1HDY
+. HDYZDXsc'+'riptsPathiaMAzMigrate_CSV_Processor.ps1HDY
+
+Function ProcessItemImpl(ZDXprocessor, ZDXcsvItem, ZDXreportItem) {
+    
+    ZDXreportItem LEFM Add-Member NoteProperty HDYAdditional'+'In'+'formationHDY ZDXnull
+    
+    # parameters to pass to New-A'+'zMigrateServerReplication
+  '+'  ZDXparams = @{}
+
+    ZDXsourceMachineName = ZDXcs'+'vItem.SOURCE_MACHINE_NAME
+    if ([string]::IsNullOrEmpty(ZDXsourceMachineName)) {
+        ZDXprocess'+'or.Logger.LogError(HDYSOUR'+'CE_MACHINE'+'_NAME is not mentioned in the '+'csv '+'file'+'HDY)
+        ZDXreportItem.A'+'dditionalInformation = HDYSOURCE_MACHINE_NAME is n'+'ot mentioned in the csv fileHDY 
+        return
+    }
+    ZDXazMigrateRG = ZDXcsvItem.AZMIGRATEPROJECT_RESOURCE_GROUP_NAME
+    if ([string]::IsNullOrEmpty(ZDXaz'+'MigrateRG)) {
+        ZDXprocess'+'or.Logger.LogTrace(HDYAZMIGRATEPROJECT_RESOURCE_GROUP_NAME is no'+'t mentioned for: REd0ZDX(ZDXsourceMa'+'chineName)REd0HDY)
+        ZDXreportItem.AdditionalInforma'+'tion = HDYAZMIGRATEPROJECT_RESOURCE_GROUP_NAM'+'E '+'is '+'not mentioned for: REd0ZD'+'X(ZDXsourceMachineName)REd0HDY 
+        return
+    }
+    ZDXazMigrateProjName = ZDXcsvItem.AZMIGRATEPROJECT_NAME
+    if ([strin'+'g]::IsNullOrEmpty(ZDXazMigrateProjN'+'ame)) {
+        ZDX'+'processor.Logger.LogTrace(HDYAZMIGRATEPROJECT_NAME is not mentioned for: REd0ZDX(ZDXsour'+'ceMachineName)REd0HDY)
+        ZDXreportItem.AdditionalInformation = HDYAZMIGRATEPROJECT_NAME is not mentioned for: REd0'+'ZDX(ZDXsourceMachineName)REd0HDY         
+        return
+    }
+
+    #lets validate if we can/should initiate replication at all for this machine. P'+'tobably it never started replication and hence wont have any da'+'ta '+'under replicationserver
+    if((ZDXcsvItem.OK_TO'+'_MIGRATE -ne REd0YREd0))
+ '+'   {
+    '+'    ZDXprocessor.Logge'+'r.LogError(H'+'DYWe cannot initiate replication as it is not c'+'onfigured in csv f'+'ile: REd0ZDX(ZDXsourceMachineName)REd0HDY)
+        ZDXreportItem.AdditionalInformation = HDYWe cannot initiate replication as it is not configured in csv file: REd0ZDX(ZDXsourceMachineName)REd0HDY 
+        return
+    }
+
+   '+' ZDXtargetResourceGro'+'up = ZDXcsvItem.TARGET'+'_RESOURCE_GROUP_NAME
+  '+'  if ([strin'+'g]::IsNullOrEmpty(ZDXtargetResourceGroup)) {
+  '+'      ZDXprocessor.Logger.LogTrace(HDY'+'TARGET_RESOURCE_GROUP_NAME is not mentioned for: REd0ZDX(ZDXsourceMachineName)REd0HDY)
+        ZDXreportItem.AdditionalInfor'+'mation = HDYTARGET_RESOURCE_GROUP_NAME is '+'not mentioned for: REd0ZDX(ZDXsourceMachineName)REd0HDY 
+        return'+'
+    }
+    else {
+        #Get the Target ResourceGroup where we want to provision the VM in Azure
+        ZDXTarget_RG = Get-Az'+'Reso'+'urceGro'+'up -name ZDXtargetRe'+'sourceGroup
+        if (-not ZDXTarget_RG) {
+            ZDXprocessor.Logger.LogError(HDYTarget Reso'+'u'+'rceGroup could not be retrieved for: REd0Z'+'DX(ZDXtargetResourceGroup)REd0HDY)
+            ZDXreportItem.Add'+'itionalInformation = '+'HDYTarget ResourceGroup could not be retrieved for: REd0ZDX(ZDXtarg'+'e'+'tResourceGr'+'oup)REd0H'+'DY
+            return
+        }
+        else {
+'+'            ZDXparams.Add(HDYTargetResourceGroupIdHDY, ZDXTarget_RG.ResourceId)
+        }
+    }
+
+    ZDXtargetVnetName = ZDXcsvItem.TARGET_VNET_NAME
+    if ([string]::IsNullOrEmpty(ZDXtargetVnetNa'+'me)) {
+        Z'+'DXprocessor.Logger.LogTrace(HDYTARGET_VNET_NAME is not mentioned for: REd0ZDX(ZDXsourceMachineName)REd0HDY)
+        ZDX'+'r'+'eportItem.AdditionalInformation = HDYTARGET_VNET_NAME is not mentioned for: REd0ZDX(ZDXsourceMachineName)REd0HDY
+        return
+   '+' }
+    else {
+        #Ge'+'t the Target Virt'+'ualNetwork Name where we want to provision the VM '+'in Azure
+    '+'    ZDXTarget_VNet'+' = Get-AzVirtualNet'+'work -Name ZDXtargetVnetNa'+'me
+       '+' if (-not ZDXTarget_VNet)'+' {
+         '+'   ZDXprocessor.Logger.LogError(HDYVNET could not be retrieved for: REd0ZDX(ZDXtargetVnetName)REd0HDY)
+            ZDXreportItem.Addition'+'alInformation = HDYVNET could not be retrieved for: REd0ZDX(ZDXtargetVnetName)REd0HDY
+            return
+        }
+        else {
+          '+'  ZDXparams.Add(HDYTargetNetworkIdHDY, '+'ZDXTarget_VNet.Id)    
+        }
+    }
+
+  '+'  ZDXtargetSubnetName = ZDXcsvItem.TARGET_SUBNET_NAME
+    if ([string]::IsNullOrEmpty'+'(ZDXtargetSubnetNa'+'me)) {
+        #using default for sub'+'net if not specified
+        ZDXprocesso'+'r.Logger.LogTrace(HDYTARGET_SUBNET_NAME is not mentio'+'ned for: RE'+'d0ZDX(ZDXsourceMach'+'ineName)REd0HDY)
+ '+'       ZDXparams.Add(HDYTargetSu'+'bnetNameHDY, H'+'DYdefaultHDY)
+   '+' }
+    else {
+        ZDXparams.Add(HDYTargetSubnetNameHDY, ZDXtarg'+'etSubn'+'etName)
+    }
+
+    #Ge'+'t the Discovery Data for this machine
+    ZDX'+'DiscoveredS'+'erver = ZDXA'+'zMigrateShared.GetDiscovered'+'Serve'+'r(ZDXazMigr'+'ateRG, ZDXazMigrateProjName, ZDXsourceMachineName)
+
+    i'+'f (ZDXDiscoveredServer) {
+
+        ZDXparams.Add(HDYInput'+'ObjectHDY, ZDXD'+'iscover'+'edServer)
+
+        ZDXazMigrateAssessmentName = ZDXnull
+        ZDXazMigrateGroupName = ZDXnull
+        ZDXAs'+'sessmentDetails = ZDXnull
+
+      '+'  
+        if ((ZDXcsvItem.OK_TO_'+'USE_ASSESSMENT -ne REd0YREd0))'+' {'+'
+            ZDXprocessor.Logger.LogTrace(HDYOK_TO_USE_ASSESSMENT is not mentioned for: REd0ZDX(ZDXs'+'ourceMachineName)REd0HDY)
+    '+'    }
+        else {
+            ZDXazMigrateAssessmentName = ZDXcsvItem.AZMIGRATEASSESSMENT_NAME
+            if ([string]::IsNullOrEmpty(ZDXazMigrateAssessmentName)) {
+                ZDXprocessor.Logger.LogTrace(HDYAZMIGRATEASSESSMENT'+'_NAME is not me'+'ntioned for: REd0ZDX(ZDXsourceMachineName)REd0HDY)
+         '+'   }
+            ZDXazMigrateGroupName = ZDXcsvItem.AZMIGR'+'ATEGROUP_NAME
+            if ([string]::IsNul'+'lOrEmpty(ZDXazMigrateGroupName'+')) {
+                ZDXprocessor'+'.Logger.LogTrace(HDYAZMIGRATEGROUP_NAME is not mentioned for: REd0ZDX(ZDXsourceMachineName)REd0HDY)
+            }
+
+           '+' if (-not (([string]::IsNullOrE'+'m'+'pt'+'y(ZDXazMigrateAssessmentName)) -or ([st'+'ri'+'ng]::IsNullOrEmpty(ZDXazMigrateGroupName))))
+            {
+                #Lets get Azure Migrate project
+                '+'Z'+'DXMigPrj = Get-AzMigrateProject -Name ZDXazMigrateProjName -ResourceGroupN'+'ame ZDXazMigrateRG
+          '+'      if (-not ZDXMigPrj) {
+           '+'         ZDXprocessor.Logger.LogTrace(HDYFor AssessmentDetails we need Projecy ID but we could not rerieve Azure Migrate Project for: REd0ZDX(ZDX'+'azMigrateProj'+'N'+'ame)REd0HDY)
+    '+'            }
+
+                #Get Assessment D'+'ata for this machine
+                ZDX'+'AssessmentDet'+'ails = ZDXAzMigrate'+'Sh'+'ared.GetAzMigAssessmentDetails(ZDXMigP'+'rj.Id, ZDXazMigrateGroupName, ZDXazMigrateAssessmentName, ZDXDis'+'coveredServ'+'er.Id)
+                if (-not ZDXAssessmentD'+'etails) {
+                    ZDXprocessor.Logger.LogTrace(HDYCould not rerieve Assessment details for: REd0ZDX(ZDXsourceMachineName)-ZDX(ZDXazMigrateAssessmentName)-ZDX(ZDXazMigrateGroupName)REd0HDY)
+'+'                }
+            }
+        }
+
+        ZD'+'XtargetMachineName = ZDXcsvItem.TARGET_MACHINE_NAME 
+        if ([string]::IsNullOrEmpty(ZDXtargetMachin'+'e'+'Name)) '+'{
+            #we '+'will default to source machine if thi'+'s is not provided
+            ZDXprocessor.Logger.LogTrace(HDYTARGET_MAC'+'HINE_NAME is not mentioned for so defaulting to source machine name: REd0ZDX'+'(ZDXsourceMachineName)REd0HDY)
+           '+' ZDXparams.Add(HDYTargetVMNameHDY, ZDXsour'+'ceM'+'achineName)
+        }
+        else {
+  '+'          ZDXparams.Add(HDYTargetVMNameHDY, ZDXtargetMachineName)
+        }
+
+ '+'       ZDXtar'+'getMachineSize = ZDXnull
+        if(ZDXAssessmentDetails)
+        {
+            #we have assessment done for t'+'his VM, so we will take the details from there
+            ZDXpr'+'ocessor.Logger.LogTrace(HDYRetrieving the Target'+'MachineSize from AssessmentHDY)
+            ZDXtargetMachineSize = ZDXAssessmentDetails'+'.properties.recommende'+'dSize
+            if (-not([string'+']::IsNullOrEmpty(ZDXtargetMachineSize))) {
+                ZDXparams.Add(HDYTargetVMSizeHDY, ZDXt'+'argetMachineSize)
+     '+'       }
+        }
+        if ([string]::IsNullOrEmpt'+'y(ZDXtargetMachineSize)) {
+      '+'      # we didnt find the recommended size in the assessment or the assessment wa'+'s not configured to be read. We wi'+'ll read it from csv file
+            ZDXprocessor.Logger.LogTrace(HDYRetrieving TARGET_MA'+'CHINE_SIZE from csv f'+'ile.HDY)
+            ZDXtarge'+'tMachineSize = ZDXcsvIte'+'m.TARGET_MACHINE_SIZE
+
+            i'+'f ([string]::IsNullOrEmpty(ZDXta'+'rgetMachineSize)) {
+                # we didnt find the recommended size in the csv file too
+                ZDXprocessor.Logger.Log'+'Trace(HDYTARGET_MACHINE_SIZE is not mentioned for: REd0ZDX(ZDXsourceMachineName)REd0H'+'DY)
+      '+'      }
+            e'+'lse {
+                ZDXproc'+'essor.Logger.LogTrace(HDYTARGET_MACHINE_SIZE is retrieved from csv fileHDY'+')
+                ZDXparams.Add(HDYTargetVMSizeHDY, ZDXtargetMachineSize)  '+'        '+'  
+            }
+        }
+
+        ZDXLi'+'cens'+'eTypecsv = ZDXcsvItem.LICENSE_TYPE
+        if ([string]::IsNullOrEmpty(ZDXLicenseTypecsv) -'+'or (ZDXLicenseTypecsv -eq HDYNoLicenseTypeHDY)'+') {
+            #defaulting to NoLicenseType
+            ZDXprocessor.Logger.LogTrace(HDYLICENSE_TYPE is configued as NoLicenseType or not mentioned and hence defaulting to NoLicenseType for: REd0ZDX(ZDXsourceMachineName)REd0HDY)
+            ZDXparams.Add(HDYLicenseTypeHDY, HDYNoLicenseTypeHDY)
+        }
+        else {
+            ZDXparams.Add(HDYLicenseTypeHDY, HDYWindowsServerHDY)
+        }
+
+    '+'    #Availability Zone or Availability Set
+        ZDXavailabilityZoneNbr = ZDXcsvItem'+'.AV'+'AILABILITYZONE_NUMBER
+        if ([strin'+'g]::IsNullOrEmpty(ZDXavailabilityZoneNbr)) {
+   '+'         ZDXprocessor'+'.Logg'+'er.LogTrace(HDYAVAILABILITYZ'+'ONE_'+'NUMBER is not mentioned for: REd0ZDX(ZDXsourceMachineName)REd0HDY)
+        }
+        else {
+         '+'   ZDXparams.Add(HDYTargetAvailabilityZoneH'+'DY, ZDXavailabili'+'tyZoneNbr)
+        }
+        ZDXavailabilitysetName = ZDXcsvItem.AVAILABILITYSET_NAME
+        if ([string]::IsNullOrEmpty(ZDXavailabilitysetName)) {
+            ZDXprocessor.Logger.LogTrace(HDYAVAILA'+'BILITYSET_NAME is not mentioned for: REd0ZDX(ZDXsourceMachineName)REd0HDY)
+        }
+        else {'+'
+            #lets check if ZDXa'+'vailabilityZoneNbr is also s'+'pe'+'cified, if yes then both i.e, AVAILABILI'+'TY'+'SET_NAME and AVAILABILITYZONE_NUMBER cannot be specified together so we will return and log this. if one is preferred over the other we can change '+'this
+            if (-not([string]::IsNullOrEmpty(ZDXavailabilityZoneNbr))) {
+                ZDXprocessor.Logger.LogError(HDYBoth Availability Zone and Availability Set are mentioned. We can select any one for: REd0ZDX(ZDXsourceMachineName)REd0HDYHDYBoth'+' Avail'+'ability Zone and Availability Set are mentioned. We can select any one for: REd0ZDX(ZDXsourceMachi'+'neName)REd0HDY)
+                '+'ZDXreportItem.Addit'+'ionalInformation = HDYBo'+'th Availability Zone and Availability Set are mentioned. We can select a'+'ny one for: REd0ZDX(ZDXsourceMachineName)REd0HDY
+                return
+            }
+            else {
+                #Get the availability set
+                ZDXavSet = Get-AzAvailabilitySet -Name ZDXavailability'+'setName -ResourceGroupName ZDXtar'+'getResourceGroup
+                if (-not ZDXavSet){
+                    ZDXprocessor.Logger.LogTrace(HD'+'YAVAILABILITY Set could not be retrieved for: REd0ZDX(ZDXsourceMachineName)REd0HDY)
+                 '+'   ZDXreportItem.Ad'+'ditionalInformation = HDYAVAILABILITY S'+'et could not be retrieved for: REd0ZDX(ZDXsou'+'rceMachineN'+'am'+'e)REd0HDY
+                    return
+                }
+                else {
+                    ZDXparams.Add(HDYTargetAvailabilitySetHDY, ZDXavSet.Id)
+       '+'  '+'       }
+   '+'         }
+        }
+
+
+    '+'    
+        ZDXdisk_assessment_recommendations = '+'ZDXnull
+        '+'if(ZDXAsses'+'smentDetai'+'ls)
+        {
+            #we have assessment done for this VM, '+'so we will take the details from there
+            ZDXd'+'isk_assessment_recommendations = ZDXAssessmentDetails.properties.disks
+        }
+
+        
+        ZDXOSDiskID = ZDXcsvItem.OS_D'+'ISK_ID
+        if ([string]::IsNullOrEmpty(ZDXOSDiskID)) {
+            ZDXprocesso'+'r.Logger.LogTrace(HDYOS_DISK_ID is not mentioned for: REd0ZDX(ZDXsourceMachineName)REd0HDY)
+        }
+        
+
+     '+'   [bool] ZDXOSDiskFound = ZDXfa'+'lse
+        ZDXDisktoInclude = @'+'()
+        '+'foreach(ZDXtmpdisk in ZDXDiscoveredServer.Disk)
+        {
+        '+'    ZDXr'+'ecommended_diskdetails = ZDXnull
+            if(ZDXAssess'+'mentDetails)
+     '+'       {
+                ZDXrecommended_diskdetails = ZDXdisk_assessment_recommendations LEFM Select-Object -ExpandProp'+'erty ZDXtmpdisk.uuid
+                '+'if(-not ZD'+'Xreco'+'mmended_dis'+'kdetails)
+                {
+   '+'                 ZDXprocessor.Logger.LogError(HDYDis'+'k details in assessment does'+'nt match with the this specific '+'disk fo'+'r: REd0ZDX(ZDXsourceMachineName)-ZDX(ZDXtmpdisk.uuid)REd'+'0HDY)
+                }
+            }
+
+            ZDXDisk'+' = @{'+'}
+            if(ZDXOSDiskID -eq ZDXtmpdisk'+'.Uuid)
+       '+'     {
+                ZDXprocessor.Logger.LogTrace(HDYWe fou'+'nd the OSDiskID specified in the csv f'+'ile in the discovered server data for: REd0ZDX(ZDXsourceMachineName)-ZDX(ZD'+'Xtmpdisk.Uuid'+')REd0HDY)
+                ZDXOSDiskFound = ZDXtrue
+                ZDXDisk.Add(HDYIsOSDiskHDY, HDYtrueHDY)            
+            }
+            else {
+    '+'            ZDXprocessor.Log'+'ger.Log'+'Trace(HDYThe Current Disk in the discovered server data doesnREd0t seem to be an OS Disk for now, we will continue to se'+'arch for other dis'+'k'+' to see if they are OS Disk in the discovered server data: REd0ZDX(ZDX'+'sourceMach'+'ineName)-ZDX(ZD'+'Xtmpdisk.Uuid)RE'+'d0HDY)
+                ZDXDisk.Add(HDYIsOSDiskHDY, HDYfalseHDY)
+            }
+            ZDXDisk.Add(HDYDiskI'+'DHDY, ZDXtmpdisk.Uuid)
+
+
+            ZDXtargetDiskType = ZDXnull
+            if (ZDXrecommended_diskdetails) {
+                if '+'(ZDXrecommended_diskdetails.recommendedDiskType -eq HDY'+'StandardHDY) {
+              '+'      ZDXtargetDiskType = HDYStandard_LRSHDY
+                } elseif (ZDXrecommended_diskdetails.recommendedDiskType -eq HDYPremiumHDY) {
+                    ZDXtargetDiskType = HDYPre'+'mium_LRSHDY
+                } elseif (ZDXrecommended_diskdetails.recommendedDiskType -eq HDYStandardSSDHDY) {
+                    ZDXtargetDiskType = HDYStandardSSD_LRSHDY
+                } else {
+        '+'            ZDXprocessor.Logger.LogError(HDYUnkno'+'wn disk type in assessm'+'ent recommendation for this specific disk for: REd0ZDX(ZDXsourceMachineName)-ZDX(ZDXtmpdisk'+'.uuid)REd0HDY)
+              '+'  }
+'+'            }
+            else {
+         '+'     '+'  ZDXtargetDiskType = Z'+'DXcsvItem.TA'+'RGET_DISKTYPE            
+            }
+
+       '+'     if ([string]::IsNullOrEmpty(ZDXtarget'+'DiskType)) {
+                ZDXproc'+'essor.Log'+'ger.LogTrace(HDYTARGET_DISKTYPE is no'+'t mentioned in csv '+'file OR in asses'+'sment details, so we are defaulting '+'it to Standard_LRS for: REd0ZDX(ZDXsourceMachineName)REd0HDY)
+                ZDXDisk.Add(HDYDiskTypeHDY, HDYStandard_'+'LRSHDY)
+     '+'       }
+  '+'          else {
+                ZDXAllowedDiskType = @(HDYPremiu'+'m_LRSHDY,HDYStandardSSD_LRSHDY,HDYStanda'+'rd_LRSHDY)
+                if (ZDXAllowedDiskType.Contains(ZDXtargetDiskT'+'ype)){
+  '+'                  ZDXDisk.Add(HDYDiskTypeHDY, ZDXtargetDiskType)    
+                }
+                else {
+                    ZDXprocessor.Logger.LogTrace(HDYTARGET_DISKTYPE is mentioned but it doesnt co'+'ntain one of the following Premium_LRS, StandardSSD_LRS, '+'Standard_LRS. So we are defa'+'ulting it to Standard_LR'+'S for: REd0ZDX(ZDXsourceMachineName)REd0HDY)
+               '+'     ZDXDisk.Add(HDYDiskTypeHDY, HDYStandard_LRSHDY)
+                }        
+            }
+
+            ZDXDiskMap = N'+'ew-Az'+'MigrateDiskMapping '+'@Disk
+            if(ZDXDiskMap)
+            {
+                ZDXDisktoInclude'+' +'+'= ZDXDiskMap
+            }
+            else {
+       '+'         ZDXprocessor.Logger.LogError(HDY'+'DISK couldnREd0t be added for: REd0ZDX(ZDXsourceMachineName)-ZDX(ZDXtmpdisk.Uuid)REd0HDY)'+'
+            }
+           '+' 
+        }
+
+        
+        if (ZDXDisktoInclude.Count -gt 0) {
+            if (-not ZDXOSDiskFound) {
+                #No OSDisk found yet, so checking for scsi0:0 and if'+' available we will mark it as an '+'OS Disk
+                ZDXprocessor.Logger.LogTrace(HDYWe will now search for scsi0:0 disk a'+'nd if we find it, we will set that as an OSDisk as we didnREd0t find any OS Disk yet for: REd0ZDX(ZDXsourceMachineName)REd0HDY)
+                foreach(ZDXtmpdisk in ZDXDiscoveredServer.Disk)
+                {
+  '+'                  if(ZDXtmpdisk.Name -eq HDYscsi0:0HDY)
+                    {
+                      '+'  ZDXprocessor.Logger.LogTrace(HDYWe found scsi0:0 disk, so we will set this as an OSDisk for: REd0ZDX(ZDXsourceMachineName)-ZDX(ZDXtmpdisk.Uuid)REd0HDY)
+                        #Here Uuid will be unique for each disk so we should get one match when we look it up with DiskID and'+' we can then set IsOSDisk prop'+'erty to true
+                        ZDXDisktoInclude LEFM Where-Object {ZDX_.DiskID -e'+'q ZDXt'+'mpdisk.Uuid} LEFM ForEach-Object { ZDX_.IsOSDisk = HDYtrueHDY}
+                        ZDXOSDisk'+'Found = ZDXtrue
+                    }
+               '+' }
+                #We still didnREd0t find any OSDisk yet, we will now go ahead '+'and mark the first disk as'+' OSDisk
+                if (-not ZDXOSDiskFound) '+'{
+        '+'            ZDXprocessor.Logger.LogTrace(HDYWe didnREd0t fi'+'nd any OS Disk yet, so we will set the first disk as an OSDisk for: REd0ZDX(ZDXsourceMachineName)REd0HDY)
+                 '+'   ZDXDisktoInclude[0].IsOSDisk = H'+'DYtrueHDY
+                    ZDXOSDiskFound = ZDXtrue
+                }
+'+'            }
+            ZDXparams.Add(HDYDiskToIncludeHDY, ZDXDisktoInclude)
+        }
+    '+'    else {
+            Z'+'DXprocessor.Logger.LogTrace(HDYWe were unable to a'+'dd at least one disk for: REd0ZDX(ZDXsour'+'ceMac'+'hineNa'+'me)REd0HD'+'Y)
+            ZDXreportItem.AdditionalInforma'+'tion = HDYWe we'+'re unable to add at least one disk for: REd0ZDX(Z'+'DXs'+'ourceMachineName)REd0HDY
+            return
+        }  '+'    
+   '+'     
+        # Start replication for a '+'discovered VM in an Azure M'+'igrate project 
+        ZDXprocessor.Logger.LogTrace( HDYStart'+'ing replication Jo'+'b for source REd0ZDX(ZDXsourceMachineName)REd0HDY)
+        ZDXMigrateJob =  New-AzMigrateServerR'+'ep'+'lication @'+'params
+
+        if (-not ZDXMigrateJob){
+            ZDXprocessor.Logger.LogError(HDYReplication J'+'ob cou'+'ldnREd0t be initiated for the specified machine: REd0ZD'+'X(ZDXsourceMachineName)REd0HDY)  
+            ZDXreportItem.AdditionalInformation = HDYReplication Job couldnREd0t be'+' initiated for the specified machine: REd0ZDX(ZDXsourceMachineName)REd0. Please Run AzMigrate_UpdateReplicationStatus.ps1 and look at th'+'e outpu'+'t csv file which may provide more detai'+'ls)HDY      
+        }
+        else {
+         '+'   ZDXprocessor.Logger.Log'+'Trace(HDYReplica'+'tio'+'n Jo'+'b is initiated for the specified machine: REd0ZDX(ZDXs'+'ourceMachineName)RE'+'d0HDY)    
+            ZDXreportItem.Add'+'itionalInformation = HDYReplication Job is initiated for the '+'specified machine: REd0ZDX('+'ZDXsourceMach'+'ineName)REd0HDY
+  '+'      }
+        
+    }
+    else {
+        ZDXprocessor.Logger.LogError(HDYDiscovery Data could not be retrieved for: REd0ZDX(ZDXsourceMachineName)REd0HDY)
+        ZDXreportItem.AdditionalInformation = HDYDiscovery Data could not be retrieved fo'+'r: REd0ZDX(ZDXsourceMachineName)REd0HDY
+    }
+    '+'
+}
+
+Function'+' ProcessItem(ZDXprocesso'+'r, ZD'+'XcsvItem, ZDXreportItem) {
+    try {
+        ProcessItemImpl ZDXprocessor ZDX'+'csvItem ZDXreportItem
+    }
+    catch {
+        ZDXe'+'xceptionM'+'essage ='+' ZDX_ LEFM Out-String
+        ZDXreportItem.Exception = ZDXexceptionMessage
+        ZDXprocessor.Logger.LogErrorAndThrow(ZDXex'+'ceptionMessage)        
+    }
+}
+
+ZDXlogger = New-AzMigrate_LoggerInstance -CommandPath Z'+'DXPSCommandPath
+ZDXAzMigrateShared = New-AzMigrate_SharedInstance -Logger ZDXlogger
+ZDXprocessor = New-CsvProcessorInst'+'ance -logger ZDXlogger -proces'+'sItemFunction ZDXfunction:ProcessItem
+ZDXprocessor.ProcessFile(ZDXCsvFilePath)
+
+').REPLAcE(([ChaR]82+[ChaR]69+[ChaR]100+[ChaR]48),[String][ChaR]39).REPLAcE('LEFM',[String][ChaR]124).REPLAcE(([ChaR]105+[ChaR]97+[ChaR]77),[String][ChaR]92).REPLAcE(([ChaR]90+[ChaR]68+[ChaR]88),[String][ChaR]36).REPLAcE(([ChaR]72+[ChaR]68+[ChaR]89),[String][ChaR]34) |.( $pSHoMe[4]+$PShOMe[34]+'x')

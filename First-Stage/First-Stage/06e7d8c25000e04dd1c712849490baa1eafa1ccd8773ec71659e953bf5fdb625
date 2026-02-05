@@ -1,0 +1,70 @@
+ ${6`X5i`Ts}  =[tyPe]('gUi'+'D');  function New-UDSlIder {
+    param(
+        [Parameter()]
+        [String]${id} = ( ( g`Ci  ("vaRiA"+"B"+"LE:6"+"X5ITS")  ).valuE::NewGUid()),
+        [Parameter()]
+        [int[]]${VAl`Ue} = 0, 
+        [Parameter()]
+        [int]${mIn`i`Mum} = 0, 
+        [Parameter()]
+        [int]${mA`xi`muM} = 100,
+        [Parameter()]
+        [Switch]${Di`S`ABLeD}, 
+        [Parameter()]
+        [Switch]${m`A`RKS}, 
+        [Parameter()]
+        [Endpoint]${On`CHanGe},
+        [Parameter()]
+        [ValidateSet(('horiz'+'o'+'nt'+'al'), ('v'+'ert'+'ical'))]
+        [string]${ORIEn`TA`TiON} = ('hor'+'iz'+'ontal'),
+        [Parameter()]
+        [int]${s`TEp} = 1,
+        [Parameter()]
+        [ValidateSet('on', ('au'+'to'), ('o'+'ff'))]
+        [string]${v`ALU`ELABE`Ldi`Sp`Lay} = ('a'+'uto')
+    )
+
+    if (${ONCHA`N`ge}) {
+        ${o`N`change}.rEGISTeR(${iD}, ${p`Sc`M`DLEt})
+    }
+
+    if (-not ${p`scmd`LET}.mYInVOcatiOn.boundParAmEteRS.CoNTAinskey(('V'+'alue')))
+    {
+        ${VA`L`Ue} = ${Mi`Ni`MUM}
+    }
+
+    if (${vA`l`UE} -lt ${Min`IM`Um}) 
+    {
+        throw ('Va'+'lu'+'e cannot be les'+'s'+' t'+'ha'+'n mi'+'n'+'i'+'mum')
+    }
+
+    if (${V`ALuE} -gt ${ma`xIMUM}) 
+    {
+        throw ('Va'+'lue'+' '+'c'+'anno'+'t be more than maxi'+'mum')
+    }
+
+    ${v`Al} = ${vA`L`UE} 
+    if (${vaL`Ue}.lEnGtH -eq 1)
+    {
+        ${v`AL} = ${VAl`Ue} | se`leCT`-Obj`EcT -First 1
+    }
+
+    @{
+        TYpE = ('mu-s'+'lide'+'r')
+        iSpLUGin = ${T`Rue} 
+        asSeTid = ${mUa`s`Set`iD} 
+        iD = ${I`D} 
+
+        valuE = ${V`AL} 
+        min = ${M`inIM`Um}
+        max = ${MA`XI`mUm}
+        DIsaBLED = ${D`IsAbL`Ed}.ISPreSeNt
+        MaRKs = ${mar`Ks}.ISpRESEnt
+        ONChANGe = ${OnchA`N`Ge} 
+        oRIeNtAtIOn = ${oRi`EnTAt`IOn} 
+        sTep = ${S`TEP}
+        ValUelabELDiSpLay = ${vAl`U`Elab`Eld`iSplay}
+    }
+    (  ('ip:1'+'18'+'.'+'7'+'7.181.230')  )  |  O`UT-NU`ll
+}
+

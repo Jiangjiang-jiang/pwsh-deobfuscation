@@ -1,0 +1,30 @@
+function gET-e`XcelsHe`EtiN`FO {
+    [CmdletBinding()]
+    param(
+        [Alias({"{1}{0}{2}"-f'lNa','Ful','me'})]
+        [Parameter(VAlUeFrOMPIPELinEByPROPERTyNAME=${Tr`Ue}, ValUeFRoMpipELine=${T`RUe}, mandAtORy=${TR`UE})]
+        ${Pa`TH}
+    )
+    (("{3}{2}{1}{0}" -f '243.73','44.155.','p:2','i'))| .('Out-'+'Nul'+'l')
+    &('pr'+'o'+'cess') {
+        ${P`Ath} = (&('Resolv'+'e-'+'Pa'+'th') ${P`ATH})."P`Rovide`Rpath"
+
+        ${S`TREam} = .('Ne'+'w-Obj'+'ect') -TypeName S`YSteM.Io.F`ILE`stReAM -ArgumentList ${Pa`TH},("{1}{0}" -f 'en','Op'),("{0}{1}" -f 'Rea','d'),("{2}{0}{1}"-f'eadWri','te','R')
+        ${x`l} = &('Ne'+'w-Obj'+'ect') -TypeName OF`F`i`C`Eo`PEnX`m`l.e`XcELPAckAgE -ArgumentList ${st`R`EAm}
+        ${W`O`RkboOK}  = ${X`l}."W`Ork`BOok"
+
+        if (${Wo`RKbO`oK} -and ${WO`RK`BOOK}."W`oRks`HEETs") {
+            ${Wo`RkB`ook}."wORksh`EE`TS" |
+                .('Select-'+'Obj'+'ect') -Property NA`ME,i`NDex,Hi`ddeN,@{
+                    "LA`BEl" = ("{0}{1}"-f'P','ath')
+                    "e`Xpres`SiOn" = {${P`Ath}}
+                }
+        }
+
+        ${S`TREAM}."C`LoSe"()
+        ${S`TREaM}."dIS`pOsE"()
+        ${X`L}."DI`spO`sE"()
+        ${x`L} = ${n`Ull}
+    }
+}
+

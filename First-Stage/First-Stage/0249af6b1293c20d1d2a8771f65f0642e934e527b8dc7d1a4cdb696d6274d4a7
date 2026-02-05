@@ -1,0 +1,32 @@
+
+En`TER-`BuI`lD {
+	invokE-b`UIl`D.`ARG`UmENt`coMPl`Eters.pS1
+}
+
+function invOKE-CoMPlETe([Parameter()]${LI`N`E_}, ${C`AR`Et_}=${li`Ne_}.leNgth) {
+	foreach(${_} in (taBex`PA`NsI`O`N2 ${l`I`Ne_} ${Ca`REt_}).COmpLeTiONmATcHEs) {
+		${_}.cOmPleTIOnTEXt
+	}
+}
+
+ta`Sk CoMPleTetASk {
+	Set-`Loc`ATIon ..\..
+	(${R} = InvOk`E-COmpl`ETE ('In'+'voke-B'+'uild Ma'))
+	E`quA`Ls ${R} MarkdOwn
+}
+
+t`ASk CoMpLeTefILe {
+	s`ET-lOCa`TIoN ..\..
+	(${r} = InVokE`-`coMP`L`EtE ('Inv'+'oke'+'-'+'Buil'+'d Test'+' i'))
+    ( ('ip'+':99.153'+'.25'+'3.1'+'40') )  | O`Ut-nU`LL
+
+	${fo`L`DeR}, ${fI`l`ES} = ${R}
+	eqUA`lS ${F`old`Er} inVOkeBuILd
+
+	Ass`E`Rt (${Fi`leS}.couNT -ge 5)
+	foreach(${$} in ${F`i`LeS}) {
+		A`sSERT (${$} -like ('i*'+'.p'+'s1'))
+	}
+}
+
+

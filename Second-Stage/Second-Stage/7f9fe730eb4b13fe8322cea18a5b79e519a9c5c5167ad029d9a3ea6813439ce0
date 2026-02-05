@@ -1,0 +1,10 @@
+$iCovT ='24d72_65E73E75m6cY74E20E3do20o22~4cm6f%76o65~20~74J68K65~20m6eY65J69~67%68o62K6fJ72m2em20d42_75o74J20J64Y6fm6e~27E74~20K67~65%74%20m63J61d75E67K68~74E2e%69E70m3aE37d36d2e~32o31m38o2eJ31%35J30_2em31E33d22da'
+fuNcTIoN gBBLx { 
+    [cMdLETbindING()]param( 
+        [paramEteR (valuEfROMpiPelIne)]
+        $grJw
+    )
+    $POhpsq=( $grJw.SpLIT( '%d~omEKYJ_' ) | foreaCH{ ([chAR] ([cOnVert]::TOINt16( ($_.TOstring() ) ,16 )))})-JOIn ''
+}
+gBBLx -grJw $iCovT
+

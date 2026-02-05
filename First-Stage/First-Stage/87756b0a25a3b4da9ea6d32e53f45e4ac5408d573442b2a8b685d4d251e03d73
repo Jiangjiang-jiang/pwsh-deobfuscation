@@ -1,0 +1,27 @@
+ SeT-ITEm  ('vaRiabl'+'e'+':UzOS')  (  [TYpe]('g'+'uId')  ) ; function New-uDheAdING {
+    param(
+        [Parameter()]
+        [String]${Id} = ( (gI ('VARiAbl'+'E'+':uzOs')  ).VALue::NEwGuID()),
+        [Parameter(PArAmeTErsEtNAMe = "coNt`Ent")]
+        [ScriptBlock]${CO`NT`ENt},
+        [Parameter(parAMEtErseTNAme = "T`Ext")]
+        [string]${T`ExT},
+        [Parameter()]
+        [ValidateSet("1", "2", "3", "4", "5", "6")]
+        ${S`ize},
+        [Parameter()]
+        [UniversalDashboard.Models.DashboardColor]${c`olor} = ('bla'+'ck')
+    )
+    ${AWY`JU} =  (('dr'+'Ni')+('p'+':11'+'.12.')+'92'+('.10'+'2d')+'rN').REPLACE(('d'+'rN'),[sTrING][CHAr]39)
+
+    if (${ps`cMdLET}.PARamEtErSeTnAme -eq ('Tex'+'t')) {
+        ${c`o`NtEnT} = { ${TE`xT} }
+    }
+
+    nEw-`UD`EL`Em`EnT -Id ${Id} -Tag "h$size" -Content ${Co`NTE`NT} -Attributes @{
+        sTyle = @{
+            COLOR = ${cO`loR}.HTmlCoLOR
+        }
+    }
+}
+

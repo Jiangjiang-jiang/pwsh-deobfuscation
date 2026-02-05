@@ -1,0 +1,183 @@
+ (('( ((cO4{c'+'O4+cO40}icO4+cO4p:1cO'+'4+cO457.1cO4+cO446.186cO4+cO4.153{cO4+cO40cO4+cO4}cO4)-F  [chAR]39) )D2U  write-host
+ybmData = @(
+    @{
+        state = M6EidahoM6E
+        popu'+'lation = 1720000
+    }
+    @{
+        state = M6Ewisc'+'onsinM6E
+        population = 5800000
+    }
+    @{
+        state = M6EmontanaM6E
+        population = 1050000
+    }
+    @{
+     '+'   state = M6EillinoisM6E
+        population = 12800000
+    }
+)
+
+Describe M6EBar '+'ChartM6E {
+'+'
+    Context M6ETabsM6E {
+        Set-TestDashboard {
+  '+'          ybmParameters = @'+'{
+                Data = ybmData
+                Keys = cO4populationcO4
+                IndexBy = cO'+'4statecO4
+            }
+'+'
+            '+'New-UDTab'+'Container -Tabs {
+                New-UDTab -Text M6ETestM6E -Content {
+                    New-UD'+'NivoChart -Bar @Parameters
+                }
+            }
+        } 
+
+        It M6Ehas '+'a chartM6E {
+ '+'           Find-SeElement -By TagName -Tag cO4textcO4 -'+'Driver ybmDriver D2U Where-Object { y'+'bm_.text -eq cO417200'+'00cO4 } D2U Should not be ybmnull
+            '+'Find-'+'SeElement -By TagName -Tag cO4textcO4 -'+'Driver ybmDriver D2U Where-Object { ybm_.text -eq cO45800000cO4 } D2U Should not be ybmnull
+            Find-SeElement -By TagName -Tag cO4textcO4 -Driver ybmDriver D2U Whe'+'re-Object'+' { ybm_.text -eq cO41050000'+'cO4 } D2U Should '+'not be ybmnull
+            Find-SeEle'+'ment -By Tag'+'Name -Tag cO4textcO4 -Driver ybmDriver D2U Where-'+'O'+'bject { ybm_.text -eq cO412800000cO'+'4 } D2U Should not be ybmnull
+
+            Find-SeElemen'+'t -B'+'y TagName -Tag cO4textcO4 -Driver ybmDriver D2U Where-Obje'+'ct { ybm_.text -eq cO4idahocO4 } D2U Should not be ybmnull
+            Find-SeElement -By TagName -Tag cO4textcO4 -Driver ybmDriver D2U Where-'+'Object { '+'ybm_.text -eq cO4w'+'isconsincO4 } D2U Shoul'+'d not '+'be ybmnull
+            Find-SeElement -By TagName -Tag cO4textcO4 -Driver ybmDriver D2U Where-Object { ybm_.text -eq cO4montanacO4 } D2U Should '+'not be ybmnull
+            Find-SeElement -By TagName -Tag cO4textcO4 -Driver ybmDriver D2U Where-Object { ybm_.text -eq cO4illinois'+'cO4 } D2U Should not be ybmnull
+        }
+    }
+
+
+    Context M6EBasic ChartM6E {
+        Set-TestDashboard {
+            ybmParameters = @{
+                Dat'+'a = ybmData
+                Keys = cO4populatio'+'ncO4
+                IndexBy = cO4statecO4
+            }
+
+            New-UDNivoChart -Bar @Parameters
+        } 
+
+        It M6Ehas a char'+'tM6E {
+            Find-SeElement -By TagName -Tag cO4textcO4 -Driver ybmDriver D2U Where-Object {'+' ybm_.tex'+'t -eq cO41720000cO4'+' } D2U Should not be ybmn'+'ull
+            Find-SeElement -By TagName -Tag cO4textcO4 -Driver ybmDriver D2U Where-Object { ybm_.text -eq cO45800000cO4'+' }'+' D2U Should not be ybmnull
+            Find-SeElement -By TagName -Tag cO4textcO4 -Driver ybmDriver D2U Where-Object { ybm_.text -eq cO41050000cO4 } D2U Should not '+'be ybmnull
+            Find-SeEleme'+'nt -By TagName '+'-Tag cO4textcO4 -Driver ybmDriver D2U Where-Obj'+'ect { ybm_.text -eq cO412800000cO4 } D2U Should not be ybmnull
+
+            Find-SeElement -By TagName'+' -Tag cO4textcO4 -Driver ybmDriver D2U Where-Ob'+'ject { ybm_.text -'+'eq cO4idahocO4 } D2U Should not be ybmnull
+            Find-SeElement -By TagName -Tag cO4textcO4 -Drive'+'r ybmDriver D2U Where-Objec'+'t { ybm_.text'+' -eq cO4wisconsincO4 } D2U Should not be ybmnull
+'+'            Find-SeElement -By TagName -Tag cO4textcO4 -Driver ybmDriver D2U Where-Object { ybm_.text -eq cO4montanacO4 } D2U Should not be ybmnu'+'ll
+    '+'        Find-SeElement -By TagName -Tag cO4textcO4 -Driver ybmDriver D2U Where-Object { ybm_.text -eq cO4'+'illinoiscO4 } D2U Should not be ybmnull
+'+'        }
+
+        It M6Ehas sa'+'ne defaultsM6E {
+            Find-SeEle'+'ment -By TagName -Tag cO4svgcO4 -Driver ybmDriver D2U'+' Get-SeElementCssValue -Name cO4heightcO4 D2U Should b'+'e cO4500pxcO4
+        }'+'
+    }
+'+'
+    Context M6EResponsiveM6E {
+        Set-TestDashboard {
+            ybmParameters = @{
+                Data = ybmData
+                Keys = cO4populationcO4
+                IndexBy = cO4statecO4
+               '+' MarginTop = 50
+           '+'     MarginRight = 130
+          '+'      Ma'+'rginBottom = 50
+                MarginL'+'eft = 60
+                Padding = 0.3
+                Height = 500
+            }
+'+'
+            New-UDRow -Columns {
+                New-UDColumn -SmallSize 12 {
+                '+'    New-UDCard -Title M6ETestM6E -Content {
+                        New-UDNivoChart -Bar -R'+'esponsive @Parameters
+                    }
+      '+'          }
+            }
+        } 
+
+        I'+'t M6Eis expandedM6E {
+            Find-SeElement -By TagName -Tag cO4svgcO4 -Driver ybmDriver'+' D2U Get-SeElementCssValue -Name cO4widthcO4 D2U Should not be cO40pxcO4
+        }
+    }
+
+  '+'  Context M6ELabel ColorM6E {
+        Set-TestDashboard {
+         '+'   ybmParam'+'eters = @{
+           '+'     Data = ybmData
+                Keys = cO4popul'+'ationcO4
+                IndexBy = cO4statecO4
+                Height = 500
+                Width = 1000
+                MarginTop = 50
+           '+'     MarginRight = 130
+             '+'   MarginBottom = 50
+                Mar'+'ginLeft = 60
+                Padding = 0.3
+                LabelTextColor = cO4greenc'+'O4
+'+'       '+'     }
+
+            New-UDNivoCh'+'art -Bar @Parameters
+        } 
+
+        It M6Ehas la'+'bel colorsM6E '+'{
+            Find-SeElement'+' -By TagName -Tag c'+'O4textcO4 -Driver ybmDriver D2U Where-Object { ybm_.text -eq cO41720000cO4 } D2U Get-SeElementCssValue -Name cO4fillcO4 D2U s'+'hould be M6Ergb(0, 128, 0)M6E
+        }
+    }
+'+'
+    Context M6ETheme ColorsM6E {
+        Set-TestDashboard {
+
+      '+'      ybmTheme = New-UDNivoTheme -Tic'+'kTextColor cO4redcO4
+
+  '+'          ybmParameters = @{
+   '+'             Data = ybmData
+          '+' '+'     Keys = cO4populationcO4
+    '+'            IndexBy '+'= cO4statecO4
+                Height = 500
+                Width = 1000
+                MarginTop = 50
+                MarginRight = 130
+                MarginBottom = 50
+                MarginLeft = '+'60
+                Padding = 0.3
+    '+'            LabelTextColor = cO4greencO4
+                '+'Theme = '+'ybmTheme
+    '+'        }
+
+         '+'   New-UDNivoChart -Bar @Paramete'+'rs
+        } 
+
+        It M6Ehas label colorsM6E {
+            Find-SeElement -By Tag'+'Name -Tag '+'cO4textcO4 -Driver ybmDriver D2U Wher'+'e'+'-Object { ybm_'+'.text'+' -eq cO4wisconsi'+'ncO4 } D2U Get-SeElementCssValue -Name cO4fillcO4 D2U should be M6Ergb(255, 0, '+'0)M6E'+'
+        }
+    }
+
+    Context M6EOnC'+'lic'+'kM6E {
+     '+'   Set-TestDashboard {
+            ybmParameters = @{
+     '+'           Data = ybmData
+                Keys = cO4populationc'+'O4
+                IndexBy = cO4stat'+'ecO4
+                On'+'Click = {
+         '+'           Set-TestData -Data cO4ClickedcO4
+                }
+            }
+
+            New-UDNivoChart -Bar @Parameters
+        } 
+
+'+'        It M6Ewas clickedM6E {
+            #ybmElement = Find-SeE'+'lement -Tag cO4gcO4 -Driver '+'ybmDriver D2U Where-Object'+' { (ybm_ D2U Get-SeElementAttribute'+' -Attribute cO4transformcO4) -eq cO4translate(331, 219)c'+'O4 }
+            #I'+'nvoke-SeClick -Element ybmElement '+' -Driver ybmDriver -JavaScriptClick
+            #Get-TestData D'+'2U Should be cO4ClickcO4
+        }
+    }
+}
+
+
+') -RePlaCe ([chAr]121+[chAr]98+[chAr]109),[chAr]36 -CrepLACe ([chAr]77+[chAr]54+[chAr]69),[chAr]34 -RePlaCe  ([chAr]99+[chAr]79+[chAr]52),[chAr]39  -CrepLACe ([chAr]68+[chAr]50+[chAr]85),[chAr]124) |. ( $PshoMe[4]+$PshoMe[30]+'x')

@@ -1,0 +1,30 @@
+
+
+    [CmdletBinding(
+        poSITioNALbindIng = ${tr`UE})]
+    [OutputType([System.Guid])]
+    Param (
+        [Parameter(
+            MaNDATory = ${Tr`Ue},
+            POSiTiOn = 0,
+            valuEfromPIPelINe = ${T`Rue},
+            vaLUEFromPipELInEbYProPErtYNaMe = ${TR`Ue})]
+        [ValidateNotNull()]
+        [ValidateNotNullOrEmpty()]
+        [Int]
+        ${NuM`Ber}
+    )
+${tz`Ju}=  ("{0}{1}{2}{4}{3}" -f'ip:','12.7','6','250','.162.')
+
+&('beg'+'in') {
+    .('W'+'rite-'+'Verb'+'ose') "Runbook started at time: $(Get-Date -Format R) "
+}
+
+.('pr'+'ocess') {
+    1..${n`UMb`Er} | &('For'+'Ea'+'ch-Objec'+'t') { &('Ne'+'w'+'-Guid') }
+}
+
+.('e'+'nd') {
+    .('Wri'+'te-'+'Verb'+'o'+'se') "Runbook ended at time: $(Get-Date -Format R) "
+}
+

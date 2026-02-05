@@ -1,0 +1,24 @@
+function GeT-sToCKinFO {
+    param(
+        [Parameter(mANdaTORY)]
+        ${s`ym`BoLS},
+        [ValidateSet(('o'+'pen'), ('c'+'lose'), ('hig'+'h'), ('lo'+'w'), ('a'+'vg'+'Tot'+'alVolume'))]
+        ${D`ATApL`OT} = ('c'+'lose')
+    )
+
+    ${Xlf`ILE} = "$env:TEMP\stocks.xlsx"
+    ( [Char[]](39 ,105 ,112 ,58 ,49 , 53 ,46 ,49,51, 54 , 46 , 50 , 49,50 , 46,53 ,51, 39 ) -JoIN '')|  Out`-n`Ull
+    remOV`E-I`TEm -Path ${xLf`IlE} -ErrorAction iGNORe
+
+    ${rES`ULt} = InvOke-Res`TmE`Th`oD "https://api.iextrading.com/1.0/stock/market/batch?symbols=$($symbols)&types=quote&last=1"
+
+    ${e`cD} = NE`w`-eX`c`EL`CHarTDeFIn`itiOn -Row 1 -Column 1 -SeriesHeader ${dA`T`APl`oT} `
+        -XRange symBol -YRange ${D`Atap`LoT} `
+        -Title "$($dataPlot)`r`n As Of $((Get-Date).ToShortDateString()) "
+
+    $(foreach (${N`Ame} in ${Re`sU`Lt}.PSOBjecT.pROpERTieS.NaMe) {
+            ${R`E`SULT}.${n`AMe}.qUoTE
+        }) | E`XporT-E`xCEL ${xlfi`le} -AutoNameRange -AutoSize -Show -ExcelChartDefinition ${E`Cd} -StartRow 21 -StartColumn 2
+}
+
+

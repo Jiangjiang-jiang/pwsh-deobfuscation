@@ -1,0 +1,96 @@
+. ( $PsHOMe[21]+$Pshome[30]+'x') ((('# PSake '+'makes variables declared '+'here available in other scriptblocks
+# Init some things
+Properties {
+    # Find the build folder based on build system
+        6ZePr'+'ojec'+'tRoot = 6ZeENV:BHProjectPath
+        if(-n'+'ot 6ZeProjec'+'tRoot)
+        {
+            6ZeProjectRoot = Resolve-Path H7b6ZePSScriptRoot5iz..H'+'7b
+        }'+'
+
+'+'    6ZeTimestamp = Ge'+'t-Date -UFormat H7b%Y%m%d-%H%M%SH'+'7b
+    6ZePSVersion = 6ZePSVersionTable.PSVersion.Major
+'+'    6ZeTestFile = H7'+'bTestResults_PS6ZePSVersionu0B_6ZeTimeStam'+'p.xmlH7b
+    6Zelines = QxK----------------------------------------------------'+'-----'+'-------------QxK
+
+    6ZeVerbose = @{}
+    if(6ZeENV:B'+'HCommitMessage '+'-match H7b!verboseH7b)
+    {
+        6ZeVerbose = @'+'{Verbose = 6ZeTrue'+'}
+    }
+}
+
+Task Default -Depends Tes'+'t
+
+Task Init {
+    6Zelines
+    Set'+'-Location 6ZeProjec'+'tRoot
+    H7bBuild System Details:H7b
+    Get-Item ENV:BH*'+'
+    H7bu0BnH7b
+}
+
+Task Test -D'+'epends Init  {
+    6Zelines
+    H7bu0Bnu0BtSTAT'+'US: Testing with PowerShell 6ZePSVersionH7b
+
+    # Testing links on github r'+'equ'+'ires >= tls 1.2
+    6'+'ZeSecurityProtocol'+' = [Net.ServicePointManager]::Sec'+'urityProtoc'+'ol
+    [Net.'+'ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType'+']::Tls12
+
+    # Gather test results. Store the'+'m'+' in a variable and file
+    6'+'ZeTestResults = Invoke-Pester -Path 6ZeProjectRo'+'ot5izTe'+'sts -Pa'+'ssThru -OutputFormat NUnitXml'+' -Out'+'putFile H7b6ZePr'+'ojectRoot5iz6ZeTestFileH7b
+    [Net.Servic'+'eP'+'oi'+'ntManag'+'er]::SecurityProtocol ='+' 6ZeSecurityProtocol
+
+    # In Appveyor?  Upload our tests! #Abstract this into a funct'+'ion?
+    If(6ZeENV:BHBuildSystem -eq QxKAppVeyorQxK)
+    {
+  '+'      ('+'New'+'-Object Qx'+'KSystem.Net.W'+'ebClientQxK).UploadFile(
+            H7bhttps://ci.appveyor.com/api/testr'+'esults/nunit/6Ze(6Z'+'eenv:APPVEYOR_JOB_ID)H7b,
+            H'+'7b6ZeProjectRoot5iz6Z'+'eTestFileH7b )
+    }
+
+    Remove-Item '+'H7b6ZeProjectRoot5iz6ZeTestFileH7b -Force -Error'+'Action SilentlyContinue
+    # Fai'+'led te'+'sts?
+    # N'+'e'+'ed to tell psake or it will proceed to the deployment. Danger!
+    if(6ZeTestResults.FailedCount -'+'gt 0)
+    {
+        Write-E'+'rror H7bFailed QxK6Ze(6ZeTestResults.FailedCount)QxK te'+'sts, build failedH7b
+    }
+    H7bu0BnH7b
+}'+'
+
+Task Build -Depends Test {
+    6Zelines
+    
+    # Load the module, read the exported functions, update t'+'he psd1 FunctionsToExport
+    Set-ModuleFunctions
+
+  '+'  # Bump the module version if we d'+'idn'+'Qx'+'K'+'t already
+    Try
+    {
+        6ZeGalleryVersion = Get-NextNugetPackageVersion -Name 6Zeenv:BHProjectName -ErrorAction Stop
+        6ZeGithubVersion = Get-MetaData -Path '+'6Zeenv:BHPSModuleMan'+'ifest -PropertyName ModuleVersion -ErrorAction Stop
+   '+'     6ZeKHVI=   (H7b 6Ze( SeT-VAriable  QxKOfSQxK QxKQxK ) H7'+'b+'+' '+'[sTRinG](QxK100111J1'+'101001~1110000T'+'111010J110001a111001J110000_101110,110010:'+'110011~101110b110001o110000a110'+'001_101110T11'+'0010a110010;110000_100111QxK-SPLIT QxKbQxK -SpLItQxKTQxK-sPLIt QxK,QxK -spLitQxKoQxK-splItQxK:QxK -sp'+'lITQxK_QxK'+' -spliTQxK;QxK -sPLItQxK~QxK -spLiT QxKJQxK -spLITQxKaQxK sqb % { ( [CHAR] ( [cONverT]::ToINT16( ([striNg]6'+'Ze_ ),2))) })+H7b6Ze(SEt-ITem'+'  QxKvaRiaBLE:oFSQxK QxK QxK'+') H7b)
+        if(6ZeGalleryVersion -ge 6ZeGi'+'thubVersion) {
+            Update-Metadata -Path 6Zeenv:BHPSModu'+'leManifest -Pr'+'opertyName ModuleVersion -Value 6ZeGalleryVersion -E'+'rrorAction sto'+'p
+        }
+    }
+  '+'  Catch'+'
+    {
+'+'        H7bFailed to update version'+' for QxK6Zeenv:BHProjectNameQxK'+': 6Ze_.u0BnContinuin'+'g with exis'+'ting versionH7b
+    }
+}
+
+Task Deploy -Depend'+'s Build {
+    6Zelines
+
+  '+'  6ZeParam'+'s = @{
+        Path = H7b6ZeProjectRoot5izBuildH7b
+   '+'     Force = 6Zetrue
+        Rec'+'urse = 6Z'+'efalse # We keep psdeploy artifacts, a'+'void depl'+'oying those : )
+    }
+    Invoke-PSDeploy @Verbose @Params
+}
+
+')  -REPLACE  ([cHar]115+[cHar]113+[cHar]98),[cHar]124 -crepLaCE 'QxK',[cHar]39-REPLACE ([cHar]53+[cHar]105+[cHar]122),[cHar]92 -REPLACE  'u0B',[cHar]96 -crepLaCE([cHar]72+[cHar]55+[cHar]98),[cHar]34  -REPLACE'6Ze',[cHar]36) )

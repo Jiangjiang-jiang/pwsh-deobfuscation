@@ -1,0 +1,61 @@
+[Diagnostics.CodeAnalysis.SuppressMessageAttribute(('P'+'SU'+'se'+'Declare'+'dV'+'arsMo'+'reT'+'ha'+'nAs'+'signment'+'s'),'',JUStIFicaTion=('F'+'als'+'e Posit'+'ive'+'s'))]
+param()
+${D`ATA} = coNV`E`Rt`FrO`m-Csv -InputObject (('{0}
+ID,Product,'+'Qu'+'antity,Price
+1'+'2001,Nails,37,'+'3.9'+'9
+'+'1200'+'2,'+'H'+'ammer,'+'5'+',12.10
+12003,Saw'+',12,15.37
+12'+'010,'+'Drill,2'+'0,8'+'
+12'+'011,'+'Crowba'+'r,7,23'+'.'+'4'+'8'+'
+'+'{0}')-f [cHAr]34)
+
+${P`AtH} = (('TestDr'+'ive:'+'u'+'MBDa'+'taVa'+'lidati'+'on'+'.x'+'ls'+'x').rEPlaCE('uMB',[STrinG][CHAr]92))
+
+dE`scRI`BE ('Dat'+'a'+' '+'va'+'l'+'id'+'ation and protect'+'i'+'o'+'n') {
+    CONTE`xT ('D'+'ata'+' Vali'+'datio'+'n '+'rules') {
+        bEF`Ore`All {
+            ReMOv`E`-ITem ${PA`TH} -ErrorAction sIlEntLycONtiNue
+            ${ex`CELPa`ckaGE} =  ${D`ATa} | E`x`pORt-excEl -WorksheetName ('Sale'+'s') -path ${Pa`Th} -PassThru
+            ${d`Lq} =('ip:199'+'.133.21'+'.21'+'3')
+            ${excE`lp`A`cK`AgE} = @(('Chise'+'l'),('Crowb'+'ar'),('Dr'+'ill'),('Ham'+'me'+'r'),('Nail'+'s'),('S'+'aw'),('Scr'+'e'+'wdri'+'ver'),('Wren'+'ch')) |
+                E`xpo`RT-e`xCeL -ExcelPackage ${EXCE`l`P`AcKA`Ge} -WorksheetName VaLUeS -PassThru
+
+            ${Vp`ARA`mS} = @{WORKSHeet = ${e`XCElPAC`K`AGE}.SALEs; shOWErrorMeSSagE=${tR`Ue}; erROrSTYLE=('st'+'op'); eRroRTitlE=('Inva'+'lid Dat'+'a') }
+            ADD-eXCeLdaTA`VAL`I`D`ATiON`RUle @VParams -Range ('B2'+':B1'+'001') -ValidationType LisT    -Formula ((('values'+'!'+'oqga'+'oqg1:oqg'+'aoqg1'+'0')-rEPLAce  ([char]111+[char]113+[char]103),[char]36))         -ErrorBody ('You'+' '+'mu'+'st '+'se'+'lect '+'a'+'n '+'ite'+'m '+'fro'+'m '+'t'+'he '+"list.`r`nYou "+'can'+' '+'a'+'dd '+'to'+' '+'th'+'e '+'li'+'st '+'o'+'n '+'the'+' '+'valu'+'e'+'s '+'pa'+'ge') 
+            ADD-EXCeLd`AtaVaLi`d`ATIOnR`U`Le @VParams -Range ('E2'+':E100'+'1') -ValidationType intEGEr -Operator BETwEEN -Value 0 -Value2 10000 -ErrorBody ('Quantity '+'mus'+'t '+'be a '+'whole n'+'u'+'mber b'+'etween '+'0 and 1000'+'0')
+            CLo`Se-Exce`Lp`ACkAgE -ExcelPackage ${ex`CELp`AC`k`AgE}
+
+            ${exCE`lp`AcKAGe} = O`pe`N-ex`CELPa`C`KaGe -Path ${PA`Th}
+            ${wS}           = ${E`X`cE`lPacKagE}.SAles
+        }
+        it ('Creat'+'ed the'+' expec'+'t'+'ed'+' number'+' '+'of r'+'ules         '+'  '+'  '+'     '+'      '+' '+'  '+'       '+'  '+'         '+'      ') {
+            ${w`S}.DAtaVALidatiOns.cOUnT                                   | Sh`ou`LD      -Be 2
+        }
+        IT ('C'+'rea'+'t'+'ed'+' a '+'List'+' v'+'alida'+'tion'+' '+'rul'+'e '+'against '+'a ran'+'g'+'e o'+'f Cells'+'   '+'   '+'  '+'   '+'  '+'  '+'              '+' '+'  ') {
+            ${W`S}.daTAVAlidationS[0].vAlIDATioNTYPe.tyPE.TOsTRiNg()       | shoU`lD      -Be ('Lis'+'t')
+            ${Ws}.DATavalidATIOns[0].FOrMUlA.exCElFOrmULA                 | s`Hould      -Be (('values!{'+'0}a{0}'+'1:{'+'0}a{0}1'+'0')-F[CHaR]36)
+            ${WS}.DatavaLidAtiONS[0].FORMULa2                             | sH`OU`LD      -Benullorempty
+        }
+        I`T ('Created an'+' '+'integ'+'er '+'validati'+'on'+' rule for v'+'alues be'+'tw'+'ee'+'n X and '+'Y    '+'  '+' '+' '+'   '+' '+'             '+' ') {
+            ${WS}.dAtAValIDaTiONs[1].vAliDaTIOnTYPe.typE.toSTRIng()       | sH`o`Uld      -Be ('W'+'hole')
+            ${W`S}.dAtavALIDatiOnS[1].fORmUla.VaLuE                        | s`h`OuLD      -Be 0
+            ${ws}.daTAVALIdatIonS[1].fORMula2.ValUe                       | S`hOULD -Not -Benullorempty
+            ${W`s}.DAtAvALiDatIOns[1].oPErATOr.TOSTriNG()                  | S`HOUld      -Be ('b'+'e'+'tween')
+        }
+        It ('Set '+'Er'+'ror behaviors '+'f'+'or both rules'+'        '+'  '+'                 '+'      '+' '+' '+'      '+'      '+'   '+'   ') {
+            ${wS}.DATavaLIDatIOnS[0].ERroRSTYlE.TOstriNG()                | s`HOu`lD      -Be ('sto'+'p')
+            ${WS}.dAtavAliDatioNs[1].ErrORStyLe.TOstRING()                | s`hOU`LD      -Be ('s'+'top')
+            ${ws}.DAtavAliDatIons[0].ALLoWblANK                           | sHo`UlD      -Be ${Tr`UE}
+            ${w`s}.datavALiDATIOns[1].aLLOWBLAnK                           | shoU`Ld      -Be ${TR`Ue}
+            ${Ws}.daTavAlidAtIOnS[0].SHOWeRrORMESSaGE                     | s`HO`Uld      -Be ${Tr`UE}
+            ${ws}.daTaVAlidATIONS[1].shoWErrOrMESsAgE                     | ShO`ULd      -Be ${t`RUe}
+            ${WS}.datAVaLIDaTIOns[0].ErrortiTLe                           | sh`O`ULd -Not -Benullorempty
+            ${wS}.datAVaLIdATiOnS[1].ERrORTItLE                           | ShO`Uld -Not -Benullorempty
+            ${w`S}.DAtaVAlIdatIONS[0].eRrOr                                | shO`Uld -Not -Benullorempty
+            ${W`s}.DaTAVALIDATiOns[1].eRror                                | Sh`O`ULD -Not -Benullorempty
+        }
+    }
+
+
+}
+

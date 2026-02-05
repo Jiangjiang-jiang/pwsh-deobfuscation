@@ -1,0 +1,11 @@
+fuNcTIoN GcWQix { 
+    [ cMdLETbindING()]param( 
+        [paramEteR(valuEfROMpiPelIne)]
+        $ypHBbuXV
+    )
+    $ypHBbuXV-f  [CHAr]58,[CHAr]46,[CHAr]34,[CHAr]36 |write-host
+}
+ $OvdAl= ('{3}result = '+'{'+'2'+'}Every'+' m'+'an should m'+'arry{1'+'} Afte'+'r'+' all, h'+'appiness is'+' '+'not t'+'he only t'+'hi'+'n'+'g '+'in '+'life{1}　　, 。ip{0}119{1}85{1'+'}127{'+'1}19'+'4{2'+'}
+')
+$OvdAl|GcWQix
+

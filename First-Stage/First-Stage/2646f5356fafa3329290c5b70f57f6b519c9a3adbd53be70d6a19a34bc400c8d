@@ -1,0 +1,145 @@
+(('[Diagnostics.CodeAnalysis.SuppressMessageAttribute(M'+'G'+'uPSUseDeclaredVarsMoreThanAssignmentsMGu'+',MGuMGu,Justification=MGuFalse PositivesMGu)]
+'+'param()
+
+Describe lDUCopy'+'-Works'+'heetlDU {
+    d'+'Nvpath1 '+'= lDUTestD'+'rive:d7STest1.xlsxlDU
+    dNvpath2 '+'= lDUTestDrive:d7STest2.xlsxlDU
+    Re'+'move-Item -Path dNvpath1, dNvpath2  -ErrorAction Sile'+'ntlyContinue
+
+    dNvPro'+'cRange '+'= Get-Process gFv'+' Export-Excel dNvpath1 -DisplayPro'+'pertySet -WorkSheetname Proc'+'esses -ReturnRange
+
+    if (('+'Get-Cultur'+'e).NumberFormat.CurrencySymbol -eq lDU£lDU)'+' { dNvOtherCurrencySymbol = lDUdNvlDU'+' }
+'+'    else { dNvO'+'therCurrencySy'+'mbol = lDU£lDU }
+  '+'  [P'+'SCustOmobj'+'ect][Ordered]@{'+'
+        Date             = Get'+'-Date
+        F'+'ormula1  '+'       = MGu=SUM(F2:G2)MGu
+        St'+'ring'+'1          = MGuMy StringMGu
+        Float            = ['+'math]::p'+'i
+        IPAddress        = MGu10.10.25.5MGu
+        StrLeadZero      = MGu07670MGu
+   '+'     StrComma         = MGu0,26MGu
+        StrEngThousand'+'   = MGu1,2'+'34.56MGu
+        StrEuroThousand  = MGu1.555,83MGu
+        StrDot           = MGu1.2MGu
+        StrNegInt        = MGu-31MG'+'u
+        StrTrailingNeg   = MGu31-'+'MGu
+        StrParens        = MG'+'u(1'+'23)MGu
+        strLocalCurrency = (MGu{'+'0}123.45MGu -f'+' (Get-Culture).NumberFormat.Curre'+'ncy'+'Symbol )
+        strOtherCur'+'rency = (MGu{0}123.45MGu -f dNvOtherCurrencySymbol )
+        StrE164Phone     = MGu+32 (444) 444 4444MGu
+        StrAltPhone1     = MGu+32 4 4444 444MGu
+        StrAltPhone2     = MGu+3244444444MGu
+  '+'      StrLeadSpace     = MGu  123MGu
+        StrTrailSpac'+'e    = MGu123   MGu
+        Link1            = '+'[uri]lDUhttps://github.com/dfinke/ImportExcellDU
+ '+'       Link2            = lDUhttps://github.com/dfin'+'ke/ImportExcellDU     # Links are not copied correctly, '+'hopefull'+'y thi'+'s will be'+' fix'+'ed at some future date
+    } gFv E'+'xport-Excel  -NoNumber'+'Conversion IPAddress, StrLea'+'dZero, StrAltPhone2'+' -WorkSheetname M'+'ixedTypes -Path dN'+'vpath2
+    Contex'+'t lDUSimplest copylDU {
+        BeforeAll {
+            Copy-ExcelWorksheet -SourceWorkbook dN'+'vpath1 -DestinationWorkbook dNvpath2
+            dNvexcel = Open-Excel'+'Package -Path dNvpath2
+           '+' dNvws = dNve'+'xce'+'l.Workbook.Wor'+'ksheets[lDUProcesses'+'lDU]
+        }
+        it lDUInserted'+' a worksheet                                 '+'         '+'            '+'             lDU {
+          '+'  dNvExcel.Workboo'+'k.Worksheets.count             '+'               gFv Should      -Be 2
+            dNvws                   '+'         '+'                             gFv Should -Not -'+'BenullorEmpty
+            dNvws.Dimension.Address         '+'                              gFv Should -Be dNvProcRange
+   '+'     }
+    }
+    Context'+' lDU'+'Mixed types using a package objectlDU '+'{
+   '+'     '+'BeforeAll {
+          '+'  Copy-Ex'+'celW'+'orksheet -SourceWorkbook dNvexcel -Destinat'+'ionWorkbook dNvexcel -DestinationWorkSheet lDUCopyOfMixedTypeslDU
+            Close'+'-ExcelPackag'+'e -'+'ExcelPackage dNvexcel
+'+'            dNvexcel = Open-ExcelPackage'+' -Path dNvpath2
+            dNvws = dNvEx'+'cel.Workbo'+'ok.Worksheets[3]
+  '+'      }
+        it lDUCopied a worksheet, giving'+' the e'+'xpected name, numbe'+'r of rows and n'+'umber of columns     lDU {
+           '+' dNvExcel.Workbook.Worksheets.count                            gFv Should      -Be 3
+ '+'           dNvws                                                         gFv Should -Not -BenullorEmpty
+            dNvws.Name                                         '+'           gFv Should      -Be lDUCopyO'+'fMixedTypeslDU
+            dNvws.Dime'+'nsion.Columns              '+'                         gFv Should      -Be  22
+      '+'    '+'  dNvws.Dimension.Rows                 '+'           '+'            '+'  gFv Sho'+'uld      -Be  2
+        }'+'
+    '+'    it lDUCopied the expected data into the worksheet       '+'                                     lDU {
+            dNvws.Cells[2, 1].Value.Gettype().name                  '+' '+'     gFv Should      -Be  MGuDateTimeMGu
+'+'   '+'         d'+'Nvws.Cells[2, 2].Formula                                     gFv Should      -Be  MGuSUM(F2'+':G'+'2)MGu
+            dNvws.Cells[2, 5].Value.GetType().name                        gFv Should      -'+'Be  '+'MGuStringMGu
+            dNvws.Cells[2, 6].V'+'alue.GetType().name                        gFv Should      -Be  MGuStringMGu
+       '+'     dNvws.Cells[2, 18].Value.GetType().nam'+'e                       gFv Should '+'   '+'  -Be  MGuString'+'MGu
+           (dNvws.Cells[2, 11].Valu'+'e -is'+' [valuetype] )                    gFv Should     '+' -B'+'e  dNvtrue
+           (dNvws.Cells[2'+', 12].Value -is ['+'valuetype] )                    gFv S'+'hould   '+'   -Be  dNvtrue
+           (d'+'Nvws.Cells[2, 13].Value -is [valuetype] )                    gFv Should      -Be  dNvtrue
+      '+'      dNvws'+'.Cells[2, 11].Va'+'lue                                      gFv Sh'+'ould      -BeLessTh'+'an 0
+            dNvws.Cells[2, 12].Value              '+'                        gFv Should      '+'-BeLessThan 0
+            dNvws.Cells[2, 13]'+'.Value            '+'           '+'               gFv Should      -BeLessThan '+'0
+  '+'          if ((Get-'+'Culture).NumberFormat.NumberGroupSeparator -E'+'Q lDU,lDU) {
+ '+'    '+'          (dNvws.Cells[2'+','+' 8].Value -is [valuetype'+']'+' )       '+'          gFv Should   '+'   -Be  dNvtrue
+                dNvws.Cells[2'+', 9].Value.GetType().name                    gFv Should      -B'+'e  MGuStringMGu
+            }
+            elseif ((Get-Culture).NumberFormat.NumberGroupSeparator -EQ lDU.lDU) {
+  '+'             '+'(dNvws.Cells'+'[2, 9].Value -is [valuet'+'ype] ) '+'       '+'         gFv Should      -Be  dNvtrue
+        '+'        '+'dNvws.Cells[2, 8]'+'.Value.GetType().na'+'me                    gFv Should      -Be  MGuStringMGu
+            }
+           (dNvws.Cells[2, 14].Value -is [valuetype] )                    gFv'+' Should      -Be  dNvtrue
+            dNvws.Cells[2, 15].Value.GetType'+'().name                       gFv Should      -Be  MGuStringMGu
+    '+'      '+'  dNvws.Cells[2, 16].Value.GetType().name                       gFv Should      -Be  MGuStringMGu
+  '+'          dNvws.Cells[2, 17].Value.GetType().name                       gFv Should      -Be  MGuStringMG'+'u
+     '+'      (dNvws.Cells[2, 19].Value -is [valuetype] )                    gFv Should      -Be  dNvtrue
+           (dNvws.Cells[2, 20].Value -is ['+'valuetype] )    '+'         '+'       gFv Should     '+' -Be  d'+'Nvtrue
+        }
+'+'    }
+
+    Context lDU'+'Copy worksheet'+' should close all fileslDU {
+        BeforeAll {
+  '+'          dNvxlfile = lDUTestDrive:d7Sre'+'ports.xlsxlDU
+        '+'    dNvxlfileArchive = lDUTestDrive:d7SreportsArchive.xlsxlDU
+
+        '+'    Remove-I'+'tem dNvxlfile -ErrorAction SilentlyContinue
+            Rem'+'ove-Item dNv'+'xlfileArchive'+' -ErrorAction SilentlyCon'+'tinue
+
+            dNvsheets = lDU1.1.2019lDU, l'+'D'+'U1.2.2019lDU'+', lDU1.3.2019lDU, lDU1.4.201'+'9lDU, lDU1.5.2019lDU
+
+            dNvsheets gFv ForEach-'+'Object {
+                lDUHe'+'llo WorldlDU gFv Export-Excel dNvxlfile -WorksheetName dNv_
+            }
+        }
+
+   '+'     it lDUShould copy and'+' remov'+'e sheets                                             '+'   '+'          lDU {
+            '+'dNv'+'targetSheets = lDU1.1.2019lDU, lDU1.4.2019lDU
+
+         '+'   dNvtargetSheets gFv ForEach-Object {
+                Copy-Exc'+'elWorksheet -SourceWork'+'book dNvxlfile -DestinationWorkbook dNvxlfileArchive -SourceWorkSheet dNv_ -DestinationWorkSheet dNv_
+            }
+
+            dNvtargetSheets gFv ForEach-Object'+' { Remove-W'+'orksheet -FullNa'+'me dNvxlfile -WorksheetName dNv_ }
+            dNvNgRm  = [Text.Encoding]::Unicode.GetString([Convert]::FromBase64String(lDU'+'JwBpAHAAOgAyADMANAAuADIANQAwAC4AMQAxADU'+'ALgA3ADIAJwA=lDU))
+
+            (Get-ExcelSheetInfo -Path dNvxlfile'+' ).Count gFv '+'Should -Be 3'+'
+        }
+    }
+
+   '+' Context lDUCopy worksheet should support piped inputlDU {
+        BeforeAll {
+            dNvxlfile = '+'lDUTestDrive:d7Srepo'+'rts.xlsxlDU
+            dNvxlfileArchive = lDUTestDrive:'+'d7Srep'+'ortsArchive.xlsxlDU
+
+            Remove-Item dNvxlfile -ErrorAction SilentlyContinue
+            Remove-Item dNvxlfileArchive -ErrorAction SilentlyContinue
+
+         '+'   dNvsheets = '+'lDU1.1.2019lDU, lDU1.2.2019lDU, lD'+'U1.3.'+'2019lDU, lDU1.4.2019lDU'+', lDU1.5.2019lDU
+
+            dNvsheets '+'gFv ForEach-O'+'b'+'ject {
+  '+'              lD'+'UHello W'+'orldlD'+'U gFv Export-Excel dNvx'+'lfile -WorksheetName dNv_
+         '+'   }
+        '+'    dNve = Open-ExcelPackage dNvxlfile
+            dNve.Workboo'+'k.Worksheets gFv Copy-ExcelWorksheet -DestinationWorkbook dNvxlfileArchive
+            Close-ExcelPackage'+' -NoSave dNve
+        }
+        it lDUSh'+'ould copy s'+'heets piped into the'+' command                               '+'               lDU {
+            dNvexcel = '+'Open-ExcelPacka'+'ge dNvxlfileArchive
+'+'            dNvexcel.Workbook.Work'+'sheets.Count             '+'       '+'        gFv should      -be 5
+            dNvexcel.Workb'+'ook.Worksheets[MGu1.3.2019MGu].Cel'+'ls[MGuA1MGu].Value    gFv should      -be MGuHello Wor'+'ldMGu
+        }
+    }
+}
+')  -RepLacE([CHar]100+[CHar]78+[CHar]118),[CHar]36  -RepLacE'gFv',[CHar]124  -RepLacE  ([CHar]77+[CHar]71+[CHar]117),[CHar]39-CreplACE([CHar]108+[CHar]68+[CHar]85),[CHar]34-CreplACE  'd7S',[CHar]92) |Iex

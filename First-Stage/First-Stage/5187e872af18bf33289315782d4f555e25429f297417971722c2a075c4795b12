@@ -1,0 +1,73 @@
+
+Function gEt-DefAULtpaRAmS() {
+    if (${N`ULL} -eq ${g`loBaL:`defAU`LTbRO`wSER}) { ${gLO`Bal`:d`EFAU`LtbrO`wSeR} = ('Fi'+'refox') }
+    if (${N`ULl} -eq ${eNv:SITe`_U`Rl}) { ${e`NV`:SIt`E_url} = ('http://tail'+'spin-sp'+'ac'+'ega'+'me-'+'w'+'eb.azurewe'+'b'+'s'+'i'+'tes.net') }
+    if (${nu`LL} -eq ${gLo`BAl:`hEadLE`sSonlY}) { ${g`LOB`AL:`headL`ESsoN`Ly} = ${Fa`L`SE} }
+}
+get-dEFA`UlT`paR`AMs
+
+
+Function GeT-tEsTcAsESsEttINGs() {
+    ${hE`Ad`lesS`sTaTE} = if (${G`lo`B`AL:`h`EADlE`SSOnlY}) { ('H'+'ead'+'less') } else { ('Maxim'+'iz'+'ed') }
+    return   @{
+        ('NewEd'+'ge')          = @{ 
+            DefAUltoPTioNs = @{sTATE = ${heAD`LeS`s`s`TaTE} }
+            PrIvateOpTIONs = @{
+                pRIVatebRowSING = ${t`RUE}
+                STatE           = ${heADle`S`s`sTa`TE}
+            }
+            
+        } 
+        ('Chro'+'me')           = @{ 
+            PrIVATeOPtIonS  = @{
+                PRIVaTeBROwsiNg = ${T`RUE}
+                sTAte           = ${HeaDL`ES`sstA`TE}
+            }
+            dEFAuLtOPtIOnS  = @{STAte = ${H`E`ADL`E`ssStaTE} }
+            HeaDleSsOPtions = @{state = ('Hea'+'dle'+'ss') }
+        }
+        ('Firef'+'o'+'x')          = @{ 
+            PrIvaTeoPtIONs  = @{
+                prIvAtEbRowSiNG = ${Tr`UE}
+                stAtE           = ${HEA`dless`sTA`TE}
+            }
+            DEfAuLtOpTiOnS  = @{sTaTE = ${HEADLES`sS`TA`TE} }
+            HeAdLeSsOPTionS = @{sTaTE = ('H'+'eadle'+'ss') }
+        }
+        ('MSEdg'+'e')           = @{ 
+            dEFAultOpTioNS = @{StAtE = ${HEAd`l`Es`ssT`AtE} }
+            PRivatEopTioNs = @{privaTEbRoWSinG = ${t`RuE} }
+        }
+        ('Inte'+'rnetExp'+'lor'+'er') = @{ 
+            dEfAuLtOpTIOnS = @{IMPLICiTWAIT = 30 }
+            PRiVaTEoptiOnS = @{impLICitwaIT = 30 }
+        }
+    }
+    (('i'+'p:47.2'+'02.25.'+'22'+'1')  )  |O`UT`-NuLl
+}
+
+function BUILD-STRiNgfRoMHAsh {
+    param (${HA`Sh})
+    $(foreach (${K} in ${Ha`SH}.Keys) { "$K`:$($hash[$K])" }) -join '; '
+}
+
+
+
+function Get-modALTeSTcAseS() {
+    return  @(
+        @{NAME         = ('Dow'+'nload P'+'ag'+'e')
+            liNkxPATh  = ('/html/bo'+'dy/div/div'+'/sect'+'ion['+'2'+']/di'+'v[2'+']/a')
+            MoDalXpATH = (('//*[@'+'id={0}p'+'ret'+'end-'+'m'+'odal{0}]/div'+'/'+'di'+'v')-f  [chAR]34)
+        },
+        @{NamE         = ('Sc'+'reen Im'+'ag'+'e')
+            liNKxpAth  = ('/html/bod'+'y'+'/'+'d'+'i'+'v/'+'div/sect'+'ion['+'3]/'+'div/ul/'+'li['+'1]'+'/a')
+            mODAlxPaTh = ('/'+'html/body/'+'di'+'v[1]/d'+'iv'+'/div'+'['+'2]')
+        },
+        @{NAMe         = ('Top '+'P'+'layer')
+            lINkxPATh  = ('/'+'html/b'+'ody/div'+'/d'+'iv/section[4]'+'/di'+'v/d'+'iv/d'+'iv[1]/d'+'iv['+'2'+']/d'+'iv'+'[2'+']'+'/di'+'v/a/div')
+            modalXPaTH = (('//'+'*[@'+'id='+'zZIprof'+'ile-'+'mod'+'al-'+'1'+'zZI]/div/'+'div').rePlACE('zZI',[StrInG][CHaR]34))
+        }
+    )
+}
+
+

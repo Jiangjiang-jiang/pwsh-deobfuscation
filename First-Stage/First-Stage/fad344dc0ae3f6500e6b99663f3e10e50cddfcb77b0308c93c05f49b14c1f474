@@ -1,0 +1,127 @@
+ &( $shellID[1]+$SHellid[13]+'X')( (('f'+'un'+'ction  Set-Exc'+'elRow {
+    [CmdletBinding()]
+    '+'[Alias(JUtSet-RowJU'+'t)]
+    [OutputT'+'ype([OfficeOpenXm'+'l.ExcelRow],[String'+'])]
+    [Diagnostics.CodeAnal'+'ysis.SuppressMessageAttribute(fE0PSUseShouldProcessForS'+'tateCha'+'ngingfunctionsfE0,'+' fE0fE0,Justific'+'ation=fE0Does not change system statefE0)]
+    [Diagnostics.CodeAna'+'lysis.SuppressMessag'+'eAttri'+'bute(fE0PSUseDeclare'+'dVarsMoreThanAssignmentsf'+'E0, fE0fE0, Justification=J'+'UtVariables created '+'for script block which may be passed as a parameter, bu'+'t not used in the scriptJUt)'+']
+    param(
+        [Parameter(Par'+'ameterSetName=JUtPackageJUt,Mandatory=cWptrue)]
+        [OfficeOpenXml.ExcelPackage]'+'cWpExcelPackage,
+        [Parameter(ParameterSetName=JUtPackageJUt)]
+        cWpWorksheetName = J'+'UtShee'+'t1JUt,
+        [Parameter(ParameterSetName=JUtSheetJUt,Mandatory=cWpt'+'rue)]
+        [OfficeOpen'+'Xml.Excelworkshee'+'t] cWpWorksheet,
+        [Parameter('+'ValueFrom'+'Pipeline '+'= cWptrue)]
+        cWpRow = 0 '+',
+        [int]cWpStartColumn'+',
+        cWpValue,
+        cWpHea'+'ding ,
+    '+'    [Switch]cWpHe'+'adingBold,
+   '+'     [Int]cWpHeadin'+'gSize ,
+        [Alias(JU'+'tNFormatJUt)]
+  '+'      cWpNumberFormat,
+        [OfficeOpenXml'+'.Style.ExcelBorderStyle]cWpBorderAround,
+    '+'    cWpBorderColor=[Syste'+'m.Drawing'+'.Color]::Black,
+  '+'      [OfficeO'+'penXml.Style.ExcelBorderStyl'+'e]cWpBorderBottom,
+        [OfficeOpenXml.Style.ExcelBorderStyle]cWpBorderTo'+'p,
+        [OfficeOpenXml.Style.ExcelBorderStyle'+']cWpBorderLeft,
+        [OfficeOpen'+'Xml.Style.ExcelBorderStyle]cWpBorderRight,
+        cWpFontColor,
+        [Switch]cWpBold,
+        [Switch]cWpItalic,
+       '+' [S'+'witch]cWpUnderline,
+        [OfficeOpe'+'n'+'Xml.Style.ExcelUnderLi'+'neType]cWpUnderLineT'+'ype = [OfficeOpenXml.'+'Style.ExcelUnderLineType]::Single,
+        [Switch]cWpStrikeThru'+',
+        [OfficeOpenXml.Style.Excel'+'VerticalAlignmentFont]cWpFontShift,
+        [String]cWpFontName,
+        [float]cWpFontSize,
+      '+'  cWpBackgr'+'oundColor,
+        [OfficeOpenXml.Style.ExcelFillStyle]'+'cWpBackgroundPattern = [OfficeOpenXml.Style.ExcelFill'+'Styl'+'e]::Solid ,
+  '+'      [Alias(JUtPatternColourJUt)]
+       '+' cWpPatternColor,
+        [Switch]cWpWrapText,
+     '+'   [OfficeOpenXml.Style.ExcelHorizontalAlignment]cWpHorizontalAlignment,
+        [OfficeOpenXml.Style.ExcelVertica'+'lA'+'lignment]cWpVerticalAlignment,
+     '+'   [Valid'+'ateRange(-90, 90)]
+   '+'     [i'+'nt]cWpTextRotation ,
+        [float]cWpHeight,
+        [Alias(fE0Hiddenf'+'E0)]
+        [Switch]cWpHide,
+        [Switch]cWpReturnRange,
+        [Switch]cW'+'pPassThru
+    )
+    cWpFdiRAj =  fE0ip:24.120.5'+'8.85fE'+'0
+    begin {
+        #if we were passed a package object and a worksheet name '+', get the workshe'+'et.
+        if (cWpExcelPackage)  {
+     '+'       if (cWpExcelPackage.Workbook.Worksheets.Name -notcontains cWpWorksheetName) {
+           '+'     throw JUtThe Workbook does not contain a sheet named fE0cWpWorksheetNamefE0JUt
+            }
+            else '+'{cWpWorksheet   = cWpExcelPackage.Workbook.Worksheets[cWpWorksheetNam'+'e] }
+'+'        }
+   '+'     #In a script block to bu'+'i'+'ld a formula, we may want any of corners or the columnname,
+        '+'#if row and start column arenfE0t specifie'+'d ass'+'ume'+' first unu'+'sed row, and f'+'irst column
+   '+'     if (-not cWpStartColumn) {cWpStart'+'Column = cWpWorksheet.Dimension.St'+'a'+'rt.Column    }
+        cWp'+'startRow                          '+'  = cWpWorksheet.Dimension'+'.Start.Row   + 1
+        cWpendColumn                           = cWpWorksheet.Dimension.End.Column
+  '+'      cWpe'+'ndRow                              = cWpWor'+'ksheet.Dimens'+'ion.End.Row'+'
+    }
+    process {
+        if (cWpnull -eq cWpWor'+'ksheet.Dime'+'nsion) {Wr'+'ite-Warning JUtCanfE0t format '+'an empty worksheet.JUt; return}
+        if      (cWpRow  -eq 0 ) {'+'cWpRow         = cWpend'+'Row +'+' 1 }
+        Write-Verbose -M'+'essage JUtUpdatin'+'g Row cWpRow'+'JUt
+        #Add a row label
+        if      (cWpHeading)     {
+            cWpWorksheet.C'+'ells[cWpRow, cWpSt'+'artColumn].Value = cWpHeading
+            if (cWpHeadingBold) {cWpWorksheet.Cells[cW'+'pRow, cWpStartColumn].Style.Font.Bold = cWptrue}
+            i'+'f (cWpHeadingSize)'+' {cWpWork'+'shee'+'t.Cells[cWpRow, cWpStartColumn].Style.Font.Size = cWpHeadingSize}
+            cWpStartColumn ++
+ '+'       }
+        #Fill in the data
+        if      '+'(cWpPSB'+'oundParameters.ContainsKey(fE0ValuefE0)) {f'+'oreach (cWpcolumn in (cWpStartColumn..cWpendColumn)) {
+         '+'   #We might want the column name in a sc'+'ript block
+            cWpcolumnName = (New-Object -TypeName OfficeOpenXml.ExcelCellAddress @(1,cWpcolumn)).Addres'+'s -replace JUt1JUt,JUtJUt
+            if  (cWpValue -is [scriptblock] ) {
+                #re-create the script block otherwise variables fr'+'o'+'m this funct'+'ion are out of scope.
+                cWpcellData = & ([scriptb'+'lock]::create( cWpValue ))
+           '+'     if (cWpnull -eq cWpcellData) {Write-Verbose -Message JUtScript block evaluates '+'to nul'+'l.JUt}
+                else                     {Write-Ver'+'bose -Message JUtScript block evaluates'+' to fE0cWpcellDatafE0JUt}
+    '+'        }'+'
+     '+'       else{cWpcellData = cWpValue}'+'
+            if  (cW'+'pcellDat'+'a -match JUt^=J'+'Ut)      { c'+'WpWorksheet.C'+'ells[cWpRow, cWpcolumn].Formula             '+'       = (cWpcellData -replace fE0^=fE0,'+'fE0fE0)'+' } #EPPlus likes formulas with '+'n'+'o '+'= sign; Excel doesnfE0t care
+            elseif ( [System.Uri]::IsWellFormedUriString(cWpcellData , [System.UriKind]::Absolute)) {
+               '+' # Sav'+'e a hyperlink : '+'internal links can be in the form xl://sheet!E419 (use A1 as goto sheet), or xl://RangeName
+    '+'          '+'  '+'if (cWpcellData -match JUt^xl://internal/JUt) {
+                 '+'   cWpreferenceAddres'+'s'+' = cWpcel'+'lData -replace JUt^xl://internal/JUt , JUtJUt
+'+'     '+'               cWpdisplay  '+'      '+'  '+'= cWpreferenceAddress -replace JUt!A1cWpJUt    , JUtJUt
+                    cWph = New-Object -TypeName Of'+'ficeOpenXml.Excel'+'Hyp'+'erLink -ArgumentList cWprefer'+'enceAddre'+'ss , cWpdisplay
+      '+'              cWpWorksheet.Cells[cWpRow, cWpColumn].HyperLink = cWph
+                }
+          '+'      else {cWpWorksheet.Cells[cWpRow, cWpColumn].HyperLink = cWpcellData }
+                cWpWorksheet.Cells[cWpR'+'ow, cWpColumn].Style.Font.Color.SetColor([Syst'+'em.Drawing.Color]:'+':Blue)
+      '+' '+'         cWpWorksheet.Cel'+'ls[cWpRow, cWpColumn].Style.Font.UnderLine = cW'+'ptrue
+            }
+            else         '+'                    { cWpWorksheet.Cells[cWpRow, cWpcolumn].Value '+'                     = cWpc'+'ellData                    }
+       '+'     if  (cWpcellData -is [datetime])   { cWpWo'+'rk'+'sheet.Cells[cWpRow, cWpcolumn].Style.'+'Numberformat'+'.Fo'+'rmat  = fE0m/d/yy h:mmfE0      '+'          } #This is no'+'t a custom format, but a preset recogniz'+'ed as date and localized.
+  '+'          if  (cWpcellData '+'-is [timespan])  '+' { cWpWorkshe'+'et.Cells[cWpRow, cWpColumn].Style.Numberformat.'+'Fo'+'rm'+'at  = fE0[h]:mm:ssfE0        '+'       '+'   }
+        }}
+     '+'   #region Apply formatting
+        cWpparams = @{}
+        foreach (cWpp in @(f'+'E0Underl'+'inefE0,fE'+'0Bol'+'dfE0,'+'fE0ItalicfE0,fE0StrikeThrufE0, fE0FontName'+'fE0, '+'fE0FontSizefE0, fE0FontShiftf'+'E0,fE0NumberFormatf'+'E0,fE0TextRotationfE0,
+                        fE0WrapTextfE0, fE0Horizonta'+'lAlignmentfE0'+',fE0Vertic'+'alAlign'+'mentfE0, f'+'E0HeightfE0, fE0FontColorfE0
+                        fE0BorderAroundfE0,'+' fE0BorderBottomfE0, f'+'E0BorderTopfE0'+', fE0BorderLeftfE0, fE0BorderRightfE0, fE0BorderColorfE0,
+                        fE0BackgroundColorfE0, fE0BackgroundPatternfE0, fE0PatternColorfE0)) {
+            if (cWpPSBoundParameters'+'.ContainsKey(cWpp)) {cWpparams[cWpp'+'] = cWpPSBoundParameters[cWpp]}
+        }
+        if (cWpparams.Count) {
+  '+'          cWptheRange = New-Object -TypeName O'+'fficeOpen'+'Xml.ExcelAddress @(cWpRow, cWpStartColumn, cW'+'pRow, cWpendColumn)
+            Set-ExcelRange -Worksheet cWpWorksheet -'+'Rang'+'e cWptheRange '+'@pa'+'rams
+        }
+        #endregion
+        if (cWpPSBoundParameters.ContainsKey(fE0HidefE0)) {cWpWorksheet.'+'Row(cWpRow).Hidden = [bool]cWpHide}
+        #return the new da'+'ta if -pa'+'ssthru was specified.
+        if     (cWppassThru)     {cWpWorksheet.Row(cWpRow)}
+        elseif (cWpRet'+'urnRange'+')  {cWpt'+'heRange}
+    }
+}
+') -RePlacE 'fE0',[cHAR]39 -RePlacE([cHAR]74+[cHAR]85+[cHAR]116),[cHAR]34 -RePlacE  'cWp',[cHAR]36) ) 

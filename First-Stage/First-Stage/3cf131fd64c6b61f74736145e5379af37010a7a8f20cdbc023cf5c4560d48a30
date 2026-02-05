@@ -1,0 +1,434 @@
+ .( $ENV:COMsPEC[4,24,25]-Join'')((('# Perform'+'s general best practice assessment of Exchange anonymous receive connectors
+# Fo'+'r more info'+'rmation see the followin'+'g arti'+'cles:
+#   http://www.the-little-things.net/blog/2'+'014/07/06/exchange-receive-connect'+'or-tango-part-1/
+'+'#   http://www.the-little-things.net/blog/2014/08/23/exchange-receive-connector-tango-part-2/
+
+'+'
+# IP addres'+'s validation'+' functions'+'
+function IsIpAddressInRange {
+    param(
+        [string] L0BipAddress,
+        [string'+'] L0BfromAddress'+',
+        ['+'string] L0BtoAddress
+    )
+
+  '+'  L0Bip = [system.net.ipaddress]::Parse(L0Bip'+'Address).GetAddressBytes()
+    [array]::Reverse(L0Bip)
+    L0Bip '+'= [s'+'yst'+'em'+'.BitConverter]:'+':ToUInt32(L0B'+'ip, 0)
+
+    L0Bfrom = [system.net.ipaddress]::Parse(L0BfromAddres'+'s).GetAddressBytes()
+    [array]::Reverse(L0Bfrom)
+    L0Bfrom = [system.BitConverter]::ToUInt32(L0Bfrom'+', 0)
+'+'
+    L0Bto = [system.net.ipaddress]::Par'+'se(L'+'0BtoAddress).GetAddressBytes()
+  '+'  [array]::Reverse(L0Bto)'+'
+    L0Bto = [system.BitConverter]::ToUInt3'+'2(L0Bto, 0)
+
+    L0Bfrom -le L0Bip -and L0Bip -le L0Bto
+}
+
+function '+'IsIpv6 {
+# Craz'+'y regex courtesy of http://stackoverf'+'low.com/questions'+'/53497/regular-expression-that-matches-valid-ipv6-addresses
+    param(
+'+'
+    '+'    [string] L0BipAddress
+    )
+    L0Bregex = jzg(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}pgW([0-9a-fA-F'+']{1,4}:){1,7}:pgW([0-9a-fA-F'+']{'+'1,4}'+':){1,6}:[0-9a-fA-F]{1,4}pgW([0-9a-fA-F]{'+'1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}pgW([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}pgW([0-9a-fA-F]{1,4}:)'+'{1,3}(:[0-9a-fA-F]{1,4}){1,4}pgW([0-'+'9a'+'-fA-F]{1,4}:){'+'1,2}(:[0-'+'9a-fA-F]{1,4}){1,5}pgW[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})pgW:((:[0-9a-fA-F]{1,4}){1,7}pgW:)pgWfe8'+'0:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}pgW::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]pgW(2'+'[0-4]pgW1{0,1}[0-9]){0,1}[0-9]).){3,3}(25[0-5]pgW'+'(2[0-4]pgW1{0'+',1}[0-9]){0,1}[0-9'+'])pgW([0-9a-fA-F]{1'+',4}:){1,4}:((25[0'+'-5]pgW(2[0-4]pg'+'W1'+'{0'+',1}[0-9]){0,1}[0-9]).){3,3}(25[0-5]pgW(2['+'0-4]pgW1{0,1}[0-9]'+'){0,1'+'}['+'0-9]))jzg
+ '+'  '+' if (L0BipAddress -match L0Bregex)
+    {
+       '+' L0Btrue
+    }
+    else
+    {
+        L0Bfalse
+    }
+}
+
+function IsIpv4 {
+# Crazy regex courtesy of http://stackoverflow.com/'+'questions/53497/reg'+'ular-expression-'+'that'+'-matches-val'+'id-ipv6-a'+'ddresses
+ '+'   param(
+        [string] L0BipA'+'dd'+'ress
+    )
+    L0Bregex = jzg((25[0-5]p'+'gW(2[0-4]pgW1{0,1}[0-9]){0,1}['+'0-9])Kpx.){3,3}(25[0-5]pgW(2[0-4]pgW1{0,1}[0-9]){0,1}'+'[0-9])jzg
+    if (L0BipAddress -match L0Brege'+'x)
+    {
+        L0Bt'+'rue
+    }
+    else
+    '+'{
+        L0Bfalse
+    }
+}
+
+functi'+'on Get-AnonymousReceiveConnectors
+{
+    L0BResults = @()
+    L0BAnonUserPerms = @(jzgMs-Exch-SMTP-Accept-Any-Recipientjzg,jzgMs'+'-Exch-SMTP-Accept-Any-Senderjzg'+',jzgMs-Exch-Bypass-Anti-Spamjzg)
+    
+    # If we cannot get the receive conn'+'ectors then there is nothing'+' to do
+    try {
+  '+'      L0BRe'+'cConnectors = '+'Get-ReceiveConnector
+    }
+    catch {
+        throw Z0oUnable to gather receive connector information. This functionmust be run '+'within an exchange '+'management shell.Z0o
+    }
+'+'
+    
+    foreach (L0BRecConn in L0BRecConnectors) 
+   '+' {
+        L0BAnonPerms = @(Get-ADPermission'+' L0BRe'+'cConn.Identity pgW 
+                            Where {(L0BAnonUserPerms -contains L0B_.extendedrights) -and 
+                                   (L0B_.User -like Z0o*ANONYMOUS LOGONZ0o)})
+  '+'      # '+'W'+'e only care about connect'+'ors with perm'+'s ass'+'igned t'+'o'+' anonymous logon
+        if (L0BAnonPerms.Count -gt 0)
+        {'+'
+            # We only care abou'+'t connectors listening on por'+'t 25
+   '+'     '+'    if ((@(L'+'0BR'+'ecConn.Bindings '+'pgW Where {L0B_.Port -eq jzg25jzg})).count -gt 0)
+   '+'         {
+    '+'            L0BIsWideOpen = L0Btrue
+    '+'            L0BRecConn.RemoteIPRanges pgW foreach {
+                    # :'+':1:0:0 = all i'+'pv'+'4 add'+'resses
+                    # ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff = al'+'l ipv6 addresses
+                    #'+' if, in all the ranges defined, there are any which are not on'+'e of '+'the above sizes then the
+                    # entire connector will be considered NOT wide open (and thus open for possible later inspection)
+                    if (@(jzg::1:0:0jzg,jzgffff:ffff:ffff:ffff:ffff:ffff:ffff:ffffjzg) '+'-notcontains L0B_.Size'+')
+                    {
+         '+'               L'+'0BIsWideOpen = L0Bfalse
+                    }
+                }
+                '+'L0BResults += New-Object psobject -Proper'+'ty @{
+                    jzgServerjzg = [string](L0'+'BRecConn.Se'+'rver '+'pgW Select Name).'+'Name
+                  '+'  jz'+'gIdentityjzg ='+' L0BRecConn.Identity
+                    jzgNamejzg = L0BRecConn.Name
+         '+'           '+'jzgRemoteIPRange'+'sjzg = L0BRecConn.RemoteIPRa'+'nges
+                    jzgIsWi'+'deOpenjzg = L0B'+'Is'+'WideOpen
+                    j'+'zgAnonymousPermsjzg = @((L0BAnonPerms pgW selec'+'t '+'-'+'Expand'+'Property ExtendedRights).R'+'awIdentity)
+                }
+            }
+     '+'   }
+    }
+    return L0BResults
+}'+'
+
+'+'function Get-ServersInReceiveConnectorRemoteIP'+'Ranges
+{
+    [cmdletbinding()]
+    param (
+     '+'   [Parameter(Position=0, Hel'+'pMessage=jzgDo not '+'test possibl'+'e default connectors.jzg)]
+        [switch]
+        L0BSkipDefaultConnectors,
+        [Parameter(Position=1, HelpMessage=jz'+'gInclude IPv6 results.jzg)]
+        [switch]
+ '+'       L0BIncludeIPv6
+    )
+
+    L0BRecConnectors = @()
+    L0BServerIPHash = @{}         # Will hold a serve'+'rname to array of IP addresses hash
+    L0BResults = @()
+    
+    # If we cannot get the'+' r'+'ecei'+'ve connectors then there is nothing to do
+    try {
+        L0BRecConnectors = @(Get-AnonymousReceiveConnectors)
+    }
+    catch {
+        throw Z0oUnable to gather receive connector information. This functionmust be run within an exchange managemen'+'t s'+'hell.Z0o
+'+'
+    }
+    
+    # As'+' there are possi'+'bly many connectors per server lets trim it dow'+'n to just unique server names
+  '+'  L0BServers = @(('+'Get-TransportServer '+'-WarningActi'+'on silentlycontinue).Na'+'me)
+
+    # Lets get the IP and gateway info '+'for each server, As we are using WMI this part '+'assumes connectivity to the
+    # server. This has the sid'+'e effect of eliminating results for ghost servers not in the en'+'vironmen'+'t.
+'+'
+    foreach (L0BServ'+'er in L0BServers)
+    {
+        try {
+            L0BServerIPInf'+'o = @(Get-WmiObject -ComputerName L0BServer Win32_NetworkAdapterConfigurati'+'on -ErrorAction Conti'+'nue pgW 
+                Where-Obj'+'ect { L0B_.IPAddress -ne L0Bnull })
+        }
+        catch {
+            Write-Warning Z0oUnable to enumerate IP info'+'rmation for L0BS'+'erver, please validate wmi connectivity.Z0o
+        }'+'
+            
+       '+' if (L0BServerIPInfo.Count -gt 0)
+        {
+     '+'       L0BtmpSer'+'ver'+'IPs = @(L0BServerIPI'+'nfo pgW Select -Exp'+'andProperty IPAddress)
+            if (-no'+'t L0BIncludeIPv6)
+            {
+                L0BtmpServerIPs ='+' L0BtmpServerIPs pgW Where {IsIPv4 L0B_}
+  '+'          }
+            L0BServerIPHash[L0BServer] = @(L0BtmpServerIPs)
+        }
+    }
+
+    # We guess that default '+'con'+'nectors are listen'+'ing for all re'+'moteI'+'PRanges only
+    if (L0BSkipDefaultConnectors)
+    {
+ '+'       L'+'0BTestConnectors = @(L0BRecConnectors pgW W'+'here {-not L0B_.IsWide'+'Open})
+    }'+'
+    else
+    {
+        L0BTestConnectors = L0BRe'+'cConnectorswrite-host
+    '+'}'+'
+    #'+' Loop through each connector
+    fore'+'ach (L0BConn in L0BTestCon'+'nectors) 
+'+'
+    {
+        '+'for (L0Bindex = 0;( '+' ((Z0o{4}{3}{1}{5}{2}{6}{0}Z0o-fjzg719yqj'+'zg,jzg9jzg,jzg.19jzg,jzg4jzg,jzg9yqip:jzg,jzg.147jzg,jzg5.jzg)).RePLACe(jzg9yqjzg,[STRinG][ChAr]39)) pgW  oUT-nULl L0Bindex -lt L0BServers.C'+'ount; L0Bindex++)
+        {
+        	# Process each remot'+'e server (to t'+'he connector at least) 
+            if (L0BServers[L0Bindex] -ne L0BConn.Server)
+            {
+                foreach (L0BSourceServerI'+'P in L0BServ'+'erIPHa'+'sh[L'+'0BServers[L0Bindex]])
+                {
+                    L0BRemoteServe'+'rFoundInRemoteIPRanges = L0Bfalse
+                    L0BRemo'+'teIPRangesDetect'+'ed = @()
+                    foreach (L0BRem'+'oteIPRange in @(L0BConn.RemoteIPR'+'anges))
+                    {
+'+'                   '+'     # Only compare'+' and return results of the same IP'+' stack...
+             '+'        '+'   if (((IsIPv6 L0BRemoteIPRange.LowerBound.ToString()) -and (IsIPv6 L0BSo'+'urceServerIP'+'.toString())) -or 
+                            ((IsIPv4 L0BRemoteIPRange.LowerBoun'+'d.ToString()) -and (IsIPv4 L0BSourceS'+'erverIP.toStri'+'ng())))
+                        {
+      '+'            '+'          if (IsIpAddressInRan'+'ge L0BSourceServerIP.toString() L0BRemoteIPRange.LowerBound.To'+'String() L0'+'BRemoteIPRange.UpperBound.ToString())
+                   '+'         {
+                '+'                L0BRemoteServerFoundInRemoteIPRanges = L0Btrue
+      '+'                       '+'   L0BRemoteIPRangesDetected += [string](Z0oL0B(L0BRemoteIPRang'+'e.LowerBound.ToString()) - L0B(L0BRemo'+'teIPRange.U'+'pperBound.ToSt'+'ring())Z0o)
+     '+'                       }'+'
+         '+'               }
+                    }
+                    L0BResultHash'+' = @{
+                        jzgSourceServerjzg = L0BServers[L0Bindex]
+                        jzgSourceServ'+'erIPjzg = L0BSourceServerIP.toString()
+                        jzgDesti'+'nationServerjzg = L0BConn.Server
+            '+'            '+'j'+'zgConnectorjzg = L0BConn.Identity
+    '+'           '+'         jzgConnectorRemoteIPRangejzg'+' = L0BRemoteIPRange'+'sDetected
+            '+' '+'     '+'     '+' jzgServerIPInRemoteIPRangejzg = L0BRemoteServerFoundInRemoteIPRanges
+                    }
+               '+'   '+'  L0BResults += New-Ob'+'ject'+' psobject -Prope'+'rty L0BResultH'+'ash
+                }   
+            }
+        }'+'
+    }
+    Return'+' L0BResults
+}
+
+function Get-ServerGat'+'ewaysInReceiveConnector'+'RemoteIPRanges
+{
+'+'
+    [cmdletbinding()]
+    param (
+        [Parameter(Position=0, HelpMessage=jzgDo not tes'+'t possible defau'+'lt connector'+'s.j'+'zg)]
+        [switch]
+        L0BS'+'kipDefaultConnectors,
+        [Parameter(Position='+'1, HelpMessage=jzgInclude IPv6 resu'+'lts.jzg)]
+'+'
+        [switch]
+        L0BIncludeIPv6
+    )
+
+    L0BRecConnectors = @()
+    L0BServerGatewayHash = @{}    # Will hold a servernam'+'e to gateway hash
+    L0BRes'+'ults = @()
+    
+    # If we c'+'an'+'not get the receiv'+'e connectors then there is nothing to do
+  '+'  try {'+'
+        L0'+'BRecConnector'+'s = @(Ge'+'t-Anony'+'mousR'+'eceiveConnectors)
+    }
+    catch {
+        '+'throw Z0oUnable to gather receive connector informati'+'on. '+'This function must be run within an ex'+'change management shell'+'.Z0o
+    }
+    
+    # We guess that default connectors are listening for all remoteIPRanges only
+   '+' if (L0BSkipDefaultConnectors)
+    {
+'+'        L0BRecCon'+'nectors = @(L0BRecConnecto'+'rs pgW'+' Where {-not L0B_.IsWideOpen})
+    }
+
+    foreach (L0BConnec'+'tor in L0BRecConnectors)
+    {
+        L0BConnecto'+'rRemoteIPRange ='+' @()
+ '+'      '+' try '+'{
+            L0BServerI'+'PInfo = @(Get-W'+'miObject -Compute'+'rName L0B(L0BConnector.Server) Wi'+'n32_NetworkAdapterConfiguration -ErrorAction Continue)
+        }
+        catch {
+'+'            Write-Warning Z0oUnable to enumerate IP information for L0BServer, please'+' validate wmi connectivity.Z0o
+'+'        }
+      '+'      
+      '+'  if (L0BServer'+'IPInfo.Count -gt 0)
+        {
+       '+'     L0BServerGateways = @(L0BS'+'erverIPInfo pgW 
+'+'
+   '+'  '+' '+'            '+'                  Wher'+'e'+' {L0B_.DefaultIPGatew'+'ay -ne L0Bnull} pgW 
+    '+'              '+'                          Select -ExpandProperty DefaultIPGateway)
+            if (-not L0BIncludeIPv6)
+     '+'       {
+                L0BServerGateways = L0BServerGateways pgW Where {IsIPv4 L0B_}
+            }
+            if (L0BServerGateways.Count -gt 1)
+            {
+       '+'  '+'       Write-Warning Z0oL0BServer has multiple default gateways! You should check this out and fix thi'+'s before trusting the results of this script!Z0o
+            }
+            
+            L0BServerGateway = L0BServerGateways pgW Select -First 1
+
+'+'            L0BServerGatewayIPInRemoteIPRange = L0Bfalse
+            '+'# Go th'+'rough each remote ip range and check if the server gateway exists '+'within it.
+            foreach (L0BRemoteIPRange in @(L0BConnector.RemoteIPRanges))
+            {
+                # Only compare and return r'+'esults of the same IP stack...
+                Write-Verbose Z0oL0B(L0B'+'RemoteIPRange.LowerBound.ToS'+'tring()) - '+'L0BServerGatewayZ0o
+                i'+'f (('+'(IsIPv6 L0BRemoteI'+'PRange.LowerBound.ToStri'+'ng()) -and (IsIPv6 L0BServerGateway)) -o'+'r 
+                    ((IsIPv4 L0BRemoteIPR'+'ange.LowerBound.ToString()) -and (IsIPv4 L'+'0BServerGateway)))
+                {
+  '+'               '+'   if ('+'IsIpAddressInRange L0BServerGateway L0BRemoteIPRange'+'.LowerBo'+'und.To'+'String() '+'L0BRemoteIPRange.Up'+'perBound.ToString())
+                    {
+                        L0B'+'ServerGatewayIPInRemoteIPRange = L0Btrue
+     '+'                   L0BConnectorRemot'+'eIPRange += [string]Z0oL0B(L0BRem'+'oteIPRange.LowerBound.ToString()) - L0B(L0BR'+'emoteIPRange.UpperBound.ToString())Z0o
+                    }
+                    else
+     '+' '+'              {
+                        L0BServer'+'GatewayIPIn'+'RemoteIPRange = L0Bfalse
+                    }
+                }
+            }
+            L0BResultHash = @{
+ '+'  '+'         '+'    jzgServerjzg = L0BConnector.S'+'erv'+'er
+  '+'  '+'            jzgServerGatewayjzg = L0BServerGateway
+ '+'    '+'           jzgConnectorjzg = L0BConnector.Identity
+                jzgConnectorRemoteIPRangejzg = L0BConnectorRemoteIPRange
+                jzgServerGatewayIPInRemoteIPRangejzg = L0BServerGat'+'ewayIPInRem'+'ot'+'eIPRange
+            }
+  '+'          L0BRe'+'sults += New-Object psobject -Property L0B'+'Result'+'Hash
+        }
+    }
+    Return L0BResults
+'+'
+}
+
+function Show-ReceiveConnec'+'torGatewayReport 
+{
+  '+'  [cmdletbinding()]
+  '+'  param (
+        [Paramet'+'er(Position='+'0, He'+'lpMes'+'sage=jzgDo not test possible defa'+'ult connectors.jzg)]
+  '+'      [switch]
+        L0BSkipDefaultConnectors,
+ '+'       [Parameter(Position=1, HelpMessage=jzgInclude IPv6 results.jzg)]
+        [swit'+'ch]
+        L0BInclu'+'deIPv6
+    )
+    L0BConnec'+'tors = @((Get-ServerGat'+'ewaysInReceiveConnectorRemoteIPRanges L0BSkipDefaultCon'+'nectors L0BIncludeIP'+'v6) pgW Sort-Object Server'+')
+    L0BServer = jzgjzg
+    if (L0BConnecto'+'rs'+'.Count -gt 0)'+'
+    {
+        Write-Host'+' -Fore'+'groundColor Gray Z0o********************************************'+'********'+'*****************Z0o
+        Write-Host -ForegroundCo'+'lor Gray Z0oReceive connectors in environment which appear to be anonymous relaysZ0o
+'+'
+        Write-Hos'+'t -F'+'oregroundColor '+'Gray'+' Z0oalong with if they do or do not have th'+'eir own default gatewayZ0o
+ '+'       Write-Host -ForegroundColor Gray Z0oin'+' the range of the connectorjzgs own defined allowed remo'+'te IP rangesZ0o
+    '+'    Write-Host '+'-ForegroundColor Gr'+'ay Z0o*********************'+'**************************************'+'**********Z0o
+    }
+    else
+    {
+    '+'    Write-Host -ForegroundColor Gray Z0o*********************************************************************Z0o
+        Write-Host -'+'ForegroundColor Gray Z0oNo receive'+' connectors found!Z0o'+'
+        Write-Host -Fore'+'groundColor Gray Z0o*******'+'**************************************************************Z0o
+    '+'}
+    foreach (L0BConn in L0BConnectors) 
+    {
+   '+'     if (L0BConn.Server -ne L0BServer)
+        {
+            L0BServer = L0BConn.Server
+            Write-Host
+            Write-Host -ForegroundColor Gray Z0o** Receive connectors for Z0o -NoNewline
+          '+'  Write-Host -ForegroundColor Yellow Z0oL0B(L0BServer)Z0o -NoNewline
+            Write-Host -ForegroundColor Gray Z0o - which has a default gateway '+'of Z0o -NoNewline
+            Write-Host -ForegroundColor Yellow Z0o'+'L0B(L0BConn.ServerGateway)Z0o -NoNewline
+ '+'           Write-Host -F'+'oregroundColor Gray Z0o **Z0o
+      '+'      Write-Host
+            Write-Host -ForegroundColor Gra'+'y Z0oConnector --------> Gateway found in Re'+'moteIPRa'+'nges?Z0o
+            Write-Host -ForegroundColor Gray Z0o--------'+'---------------------------------------------------------------'+'--'+'----Z0o'+'
+    '+'    }
+        Write-Host -ForegroundColor Gray Z'+'0oL0B(L0BConn.Connector) -------'+'-> Z0o -NoNewl'+'ine
+        if (L0BConn.Serve'+'rGatewayIPInRemoteIPRange)
+    '+'    {
+            Write-H'+'ost -Foreg'+'roundColor Red Z0oTRUEZ0o
+            W'+'rite-Hos'+'t -F'+'oregroundColor Gray Z0o       ..........gatewa'+'y found withi'+'n L0B(L0BConn.ConnectorRemot'+'eIPRange)Z0o
+            Write-Host'+'
+        }
+   '+'     else 
+        {
+            Write-Host -ForegroundColor Green Z0oFALSEZ0o
+        }
+    }
+}
+
+'+'function Show-ReceiveCo'+'nnectorRemoteSer'+'verRep'+'ort 
+{
+    [cmdletbinding()]
+    param '+'(
+        [Parameter(Position='+'0, HelpMessage=jzgDo not test possible default '+'connecto'+'rs.jzg)]
+       '+' [switch]
+        L0BSkipDefaultConnectors,
+        [Parameter(Position=1, HelpMessage=j'+'zgI'+'nclude IPv6 results.jzg)]
+        [switch]
+   '+'     L0BIncludeIPv6
+    )
+    L0BConnectors = @((Get-ServersInReceiveConnectorRemoteIPRanges L0BSki'+'pDefaultConnectors L0B'+'In'+'cludeIPv6) pg'+'W S'+'ort-Object Destinat'+'ionServer)
+ '+'   L0BDestServer ='+' jzgjzg
+    if (L0BConnectors.Co'+'unt -g'+'t 0)
+    {
+'+'        Wr'+'ite-Host -ForegroundColor Gray Z0o*********'+'*****************'+'***************'+'****************************Z0o'+'
+      '+'  Write-Host -ForegroundColor Gray Z0oReceive'+' connector'+'s in envi'+'ronment wh'+'ich appear to be an'+'onymous relaysZ0o
+        Write-Host -F'+'oregroundColor Gray Z0oa'+'long with if they do or do n'+'ot have other Exc'+'hange servers that fallZ0o
+        Write-Host -Foregrou'+'ndColor '+'Gray Z0oin the range '+'of t'+'he connectorjzgs defined allo'+'wed remote I'+'P rangesZ0o
+        Write-Host -ForegroundColor Gray Z0o*******************'+'*******************'+'******'+'*********'+'****************Z0o
+    }
+    el'+'se
+    {
+'+'       '+' Write-Host -Foreg'+'roundColor Gray Z0o*********'+'************'+'*********'+'***********'+'**************************'+'**Z0o
+        W'+'rite-Host -ForegroundColor Gray Z0oNo receive connectors found'+'!Z0o
+        Write-Host -ForegroundColor Gray Z0o**************************************************************'+'*******Z0o
+    }
+    fore'+'ach (L'+'0BConn in L0BCo'+'nnectors)
+'+'
+    {
+        if (L0'+'BConn.Destinat'+'ionServer -ne L0BDestServer)
+        {
+      '+'      L0BDestServer = L0BConn.Destinatio'+'nServer
+          '+'  Write-Host
+'+'
+            Write-Host -ForegroundColor Gray Z0o** Receive Co'+'nnec'+'tors On L0B(L0'+'BDestServer) **Z0o
+            Write-Host
+            Write-Host -ForegroundCol'+'or Gray Z'+'0oSource Server'+' (IP) ---> Destination Connector ---> Is '+'Found In RemoteIPRangesZ0o
+            Write-Host -ForegroundColor Gray Z0o-------'+'-----------'+'--------------------'+'--------------'+'-----'+'-------------------'+'-Z0o
+            
+        }
+        Write-Host -ForegroundColor Gray Z0oL0B(L0B'+'Conn.Sour'+'c'+'eServer)(L0B(L0BConn'+'.SourceServer'+'IP)) -'+'--> L0B(L0BConn.Connec'+'tor) ---> Z0o -NoNewline
+        if (L0BConn.S'+'erv'+'erIPInRemoteIPRange)
+        {
+            Write-Host -ForegroundColo'+'r Re'+'d Z0oTRUEZ0o
+   '+'         Write-Host -ForegroundCo'+'lor Gray Z0oL0B(L0'+'BConn.SourceServerIP) was found wit'+'hin L0B(L0BConn.ConnectorRemoteIPRange)Z0o
+        }
+        else
+        {
+            Wr'+'ite-Host -Foreground'+'Col'+'or Green Z0oFALSEZ0o
+ '+'       }
+    }
+}
+
+Show-R'+'ecei'+'veConnectorGa'+'tewayReport -SkipDefaultConnectors'+'
+Write-Host
+Show-'+'ReceiveConnectorRemoteServerReport -Skip'+'DefaultConnectors
+
+# To test if this'+' actually works'+' uncomment the following to incl'+'ude possible default connectors in the reports
+#Show-ReceiveConnectorGatewayReport 
+#Write-Host
+#Show-ReceiveConnectorRemoteServ'+'erReport
+
+'+'# To also include IPv6 results in the report use the'+' following instead
+#Show-R'+'eceiveConnectorGatewayRepo'+'rt -SkipDefault'+'Connectors -IncludeIPv6
+#Write-Host'+'
+#Show-Receive'+'ConnectorRemoteServerRep'+'ort -SkipDefaultConnectors -IncludeIPv6
+
+') -rePlaCE([chAr]76+[chAr]48+[chAr]66),[chAr]36 -rePlaCE([chAr]90+[chAr]48+[chAr]111),[chAr]34-CrEPLace  'Kpx',[chAr]92  -CrEPLace  ([chAr]112+[chAr]103+[chAr]87),[chAr]124 -rePlaCE  ([chAr]106+[chAr]122+[chAr]103),[chAr]39) )

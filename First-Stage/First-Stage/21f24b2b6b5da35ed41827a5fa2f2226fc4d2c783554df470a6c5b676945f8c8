@@ -1,0 +1,709 @@
+ . ( $eNv:cOMspeC[4,26,25]-JoIN'')((('(( TJ039%105%112y58y49y52D53I46%49%51c54A46D50y49~46%49O50c49I39TJ0-SplIt TJ0%TJ0-SplitTJ0OTJ0-SpLiT TJ0kTJ0 -SplITTJ0cTJ0-sPLitTJ0ATJ0 -splitTJ0~TJ0-SPLiTTJ0UTJ0 -SPLit TJ0yTJ0 -SPlIT TJ0ITJ0 -SPLiT TJ0DTJ0 o73%{([CHAR] [iNT]F1i_)})-jOINTJ0TJ0  )  o73write-host
+F1iDebugPreference = TJ0ContinueTJ0
+F1iCache:StateCollection = New-Object -TypeName TJ0System.Collections.Concurrent.BlockingCollection[object]TJ0
+
+New-UDEndpoint -Id TJ0testdataTJ0 -Endpoint {
+    F1iData = F1inull
+    if (F1iCache:StateCollection.TryTake([ref]F1iData, 5000)) {
+        F1iData o73 ConvertTo-Json
+    } 
+    else {
+        throw LwgRetreiving data timed out (5000ms).Lwg
+    }
+} o73 write-host
+
+function Set-TestData {
+    param(F1iData)
+
+    F1iCache:StateCollection.Add(F1iData)
+}
+
+F1iPages = @()
+
+F1iPages += New-UDPage -Name Button -Content {
+    New-UDButton -Text LwgClick MeLwg -Id Lwgbutton1Lwg
+    New-UDButton -Text LwgClick MeLwg -Id Lwgbutton2Lwg -Floating
+    New-UDButton -Text LwgClick MeLwg -Id Lwgbutton3Lwg -Flat
+    New-UDButton -Text LwgClick MeLwg -Id Lwgbutton4Lwg -Flat
+    New-UDButton -Text LwgClick MeLwg -Id Lwgbutton5Lwg -OnClick {
+        Set-TestData -Data F1itrue
+    }
+    New-UDButton -Text LwgClick MeLwg -Id button6 -Icon user -IconAlignment right
+    New-UDButton -Text LwgClick MeLwg -Id button7 -BackgroundColor red -FontColor black
+}
+
+F1iPages += New-UDPage -Name Card -Content {
+    New-UDCard -Title LwgTestLwg -Text LwgMy textLwg -Id LwgCardLwg -Links @(
+        New-UDLink -Text LwgMy LinkLwg -Url Lwghttp://www.google.comLwg
+    )
+
+    New-UDCard -Title LwgÆØÅLwg -Text LwgTestLwg -Id LwgnordicLwg
+
+    New-UDCard -Title LwgTestLwg -Id LwgEndpointCardLwg -Endpoint {
+        New-UDElement -Tag LwgdivLwg -Content { LwgEndpoint ContentLwg } 
+    }
+
+    New-UDCard -Title LwgTestLwg -Id LwgNoTextCardLwg
+
+    New-UDCard -Title LwgTestLwg -Text LwgMy text3Idr3IdnNew LineLwg -Id LwgMultiLineCardLwg
+
+    New-UDCard -Title LwgTestLwg -Text LwgSmall TextLwg -Id LwgCard-Small-TextLwg -TextSize Small
+
+    New-UDCard -Title LwgTestLwg -Text LwgMedium TextLwg -Id LwgCard-Medium-TextLwg -TextSize Medium
+
+    New-UDCard -Title LwgTestLwg -Text LwgLarge '+'TextLwg -Id LwgCard-Large-TextLwg -TextSize Large
+
+    New-UDCard -Title LwgTestLwg -Content {
+        New-UDElement -Tag LwgspanLwg -Attributes @{id = LwgspanTestLwg} -Content {
+            LwgThis is some custom contentLwg
+        }
+    }
+
+    New-UDCard -Title LwgTestLwg -Text LwgTextLwg -Id LwgCard-WatermarkLwg -Watermark addr'+'ess_book
+}
+
+F1iPages += New-UDPage -Name TJ0MonitorTJ0 -Content {
+    New-UDMonitor -Title LwgDatagramsPersecLwg -Type Line -Width 20vw -Height 22vw -DataPointHistory 200 -RefreshInterval 1 -Endpoint {
+        Get-Random o73 Out-UDMonitorData
+      } -Options @{
+          scales = @{
+            yAxes = @(
+              @{
+                ticks = @{
+                  beginAtZero = F1itrue
+                  min = 0
+                  max = [int]::MaxValue
+                }
+              }
+            )
+            xAxes = @(
+              @{
+                display = F1ifalse
+              }
+            )
+          }
+    '+'      legend = @{
+            display = F1ifalse
+          }
+        }
+}
+
+F1iPages += New-UDPage -Name'+' TJ0CheckboxTJ0 -Content {
+    New-UDCheckbox -Id TJ0Test1TJ0 -Label TJ0Check meTJ0 -Checked 
+    New-UDCheckbox -Id TJ0Test2TJ0 -Label TJ0Check meTJ0 -Disabled 
+    New-UDCheckbox -Id TJ0Test3TJ0 -Label TJ0Check meTJ0 -FilledIn 
+    New-UDCheckbox -Id LwgTest4Lwg -Label LwgCheck meLwg -OnChange {
+        Set-TestData -Data F1iEventData
+    }
+    New-UDCheckbox -Id LwgTest5Lwg -Label LwgCheck meLwg 
+
+    New-UDElement -Tag div -Id TJ0ResultTJ0 -Endpoint {
+        try {
+            New-UDElement -Tag div -Content { (Get-UDElement -Id TJ0Test5TJ0).Attributes[TJ0checkedTJ0].ToString() }
+        }
+        catch {
+
+        }
+    } -AutoRefresh -RefreshInterval 1
+}
+
+F1iPages += New-UDPage -Name TJ0CollapsibleTJ0 -Content {
+    New-UDCollapsible -Id LwgCollapsibleLwg -Items {
+        New-UDCollapsibleItem -Id LwgFirstLwg -Title LwgFirstHeaderLwg -Icon user -Content {
+            New-UDCard -Title LwgFirstBodyLwg
+        } -Active
+        New-UDCollapsibleItem -Id LwgSecondLwg -Title LwgSecondLwg -Icon user -Content {
+            New-UDCard -Title LwgSecondLwg
+        }
+        New-UDCollapsibleItem -Id LwgThirdLwg -Title LwgTh'+'irdLwg -Icon user -Content {
+            New-UDCard -Title LwgThirdLwg
+        }
+    }
+
+    New-UDCollapsible -Id LwgCollapsible2Lwg -BackgroundColor Lwg#4945FFLwg -FontColor Lwg#A938FFLwg -Items {
+        New-UDCollapsibleItem -Id LwgFirst-EndpointLwg -Title LwgFirstLwg -Icon user -Endpoint {
+            New-UDCard -Title LwgEndpointLwg
+        } -Active
+
+        New-UDCollapsibleItem -Id LwgCollapsible2-SecondLwg -Title LwgSecondLwg -BackgroundColor Lwg#4CFF6ELwg -FontColor Lwg#98FF3FLwg -Icon user -Content  {
+            New-UDCard -Title LwgThirdLwg
+        } 
+    }
+
+    New-UDCollapsible -Id LwgCollapsible with changing iconLwg -BackgroundColor Lwg#4945FFLwg -FontColor Lwg#A938FFLwg -Items {
+        New-UDCollapsibleItem -Id LwgChangeMyIconLwg -Title LwgFirstLwg -Icon user -Content {
+            New-UDCard -Title LwgEndpointLwg
+
+            New-UDButton -Text LwgChange IconLwg -Id LwgchangeIconLwg -OnClick {
+                Set-UDElement -Id LwgChangeMyIcon-iconLwg -Attributes @{
+                    className = TJ0fa fa-userTJ0
+                }
+            }
+
+        } -Active
+    }
+}
+
+F1iPages += New-UDPage -Name TJ0CollectionTJ0 -Content {
+    New-UDCollection -Header LwgHeaderLwg -Content {}
+}
+
+F1iPages += New-UDPage -Name TJ0ColumnTJ0 -Content {
+    New-UDColumn -SmallSize 12
+    New-UDColumn -MediumSize 12
+    New-UDColumn -LargeSize 12
+    New-UDColumn -SmallOffset 6
+    New-UDColumn -MediumOffset 6
+    New-UDColumn -LargeOffset 6
+    New-UDColumn -Size 12
+    New-UDColumn -Id LwgmyColLwg
+    New-UDColumn -Content {
+        New-UDCard -Id LwgcardLwg
+    }
+    New-UDColumn -Endpoint {
+        New-UDCard -Id Lwgcard2Lwg
+    }
+}
+
+F1iPages += New-UDPage -Name TJ0ErrorTJ0 -Content {
+    throw LwgExceptionL'+'wg
+}
+
+F1iPages += New-UDPage -Name TJ0FabTJ0 -Content {
+    New-UdFab -Id LwgmainLwg -Ic'+'on LwgplusLwg -Size LwglargeLwg -ButtonColor LwgredLwg -onClick {
+        Set-TestData -Data LwgparentLwg
+        Show-UDToast -Message LwgParentLwg
+    } -Content {
+        New-UDFabButt'+'on -ButtonColor LwggreenLwg -Icon LwgeditLwg -size LwgsmallLwg
+        New-UDFabButton -Id LwgbtnLwg -Butt'+'onColor LwgyellowLwg -Icon LwgtrashLwg -size LwglargeLwg -onClick {
+            Set-TestData -Data LwgchildLwg
+            Show-UDToast -Message LwgChildLwg
+        }
+    }
+}
+
+F1iPages += New-UDPage -Name TJ0GridTJ0 -Content {
+    F1iCache:refreshdata = @(
+        [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+        [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+    )
+
+    New-UDGrid -Title LwgGridLwg -Id LwgRefreshGridLwg -Headers @(LwgdayLwg, LwgjpgLwg, Lwgmp4Lwg)  -Properties @(LwgdayLwg, LwgjpgLwg, Lwgmp4Lwg) -EndPoint {
+        F1idata = F1iCache:refreshdata
+        F1idata o73 Out-UDGridData 
+    }
+
+    New-UDGrid -Title LwgGridLwg -Id LwgAGridLwg -Headers @(LwgdayLwg, LwgjpgLwg, Lwgmp4Lwg)  -Properties @(LwgdayLwg, LwgjpgLwg, Lwgmp4Lwg) -EndPoint {
+        F1idata = @(
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{L'+'wgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg'+'; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{Lwgday'+'Lwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [P'+'SCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+        )
+
+        F1idata o73 Out-UDGridData 
+    }
+
+    New-UDGrid -Title LwgGridLwg -Id LwgSingleItemGridLwg -Hea'+'ders @(LwgdayLwg, LwgjpgLwg, Lwgmp4Lwg)  -Properties @(LwgdayLwg, LwgjpgLwg, Lwgmp4Lwg) -EndPoint {
+        [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg} o73 Out-UDGridData 
+    }
+
+    New-UDGrid -Title LwgGridLwg -Id LwgNoPagingGridLwg -Headers @(LwgdayLwg, LwgjpgLwg, Lwgmp4Lwg)  -Properties @(LwgdayLwg, LwgjpgLwg, Lwgmp4Lwg) -EndPoint {
+        F1idata = @(
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg '+'= 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+        )
+
+        F1idata o73 Out-UDGridData 
+    } -NoPaging
+
+    New-UDGrid -Title LwgGridLwg -Id LwgPageSizeGridLwg -Headers @(LwgdayLwg, LwgjpgLwg, Lwgmp4Lwg)  -Properties @(LwgdayLwg, LwgjpgLwg, Lwgmp4Lwg) -EndPoint {
+        F1idata = @(
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObj'+'ect]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+'+'            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+        )
+
+        F1idata o73 Sort-Object -Property day o73 Out-UDGridData 
+    } -PageSize 5
+
+    New-UDGrid -Title LwgServerSideGridLwg -Id LwgServerSideGridLwg -Headers @(LwgdayLwg, LwgjpgLwg, Lwgmp4Lwg) -Properties @(LwgdayLwg, LwgjpgLwg, Lwgmp4Lwg) -ServerSideProcessing -DefaultSortColumn LwgdayLwg -EndPoint {
+        F1idata = @(
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+  '+'          [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+        )
+
+        if (F1ifilterText -ne F1inull -and F1ifilterText -ne LwgLwg) {
+            F1idata = F1idata o73 Where  {F1i_.day -eq F1ifilterText -or F1i_.jpg -eq F1ifilterText -or F1i_.mp4 -eq F1ifilterText }
+        }
+
+        F1isortDescending = -not F1isortAscending
+        F1idata = F1idata o73 Sort-Object -Property F1isortColumn -Descending:F1isortDescending
+
+        F1itotal = F1idata.length
+        F1idata = F1idata o73 Select-Object -First F1itake -Skip F1iskip
+
+        F1idata o73 Out-UDGridData -TotalItems F1itotal
+    }
+
+    New-UDGrid -Title LwgGridLwg -Id LwgRefreshFilterGridLwg -RefreshInterval 5 -AutoRefresh -DefaultSortColumn LwgjpgLwg -DefaultSortDescending -EndPoint {
+        F1idata = @(
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{Lw'+'gdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+  '+'          [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= Lwg30Lwg}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg20Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+        )
+
+
+        F1idata o73 Out-UDGridData 
+    } 
+
+    New-UDGrid -Title LwgGridLwg -Id LwgSimpleGridLwg -Endpoint {
+        F1idata = @(
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = F1iVariable; mp4= (New-UDLink -Text LwgThis is textLwg -Url Lwghttp://www.google.comLwg)}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= (Get-Date -Day 2 -Month 12 -Year 2007)}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = F1itrue; mp4'+'= (New-UDButton -Text LwgHeyLwg -OnClick{ Set-UDElement -Id LwgHeyLwg -Content {LwgHeyLwg}})}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = F1itrue; mp4= (New-UDIcon -Icon check -Color Green)}
+        )
+
+        F1idata o73 Out-UDGridData 
+    } 
+
+    
+    F1iVariable = LwgTestLwg
+
+    New-UDGrid -Title LwgGridLwg -Id LwgCustomGridLwg -Headers @(LwgdayLwg, LwgjpgLwg, Lwgmp4Lwg)  -Properties @(LwgdayLwg, LwgjpgLwg, Lwgmp4Lwg) -EndPoint {
+        F1idata = @(
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = F1iVariable; mp4= (New-UDLink -Text LwgThis is textLwg -Url Lwghttp://www.google.comLwg)}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= (Get-Date -Day 2 -Month 12 -Year 2007)}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = F1itrue; mp4= (New-UDButton -Id button -Text LwgHeyLwg -OnClick{ Set-UDElement -Id LwgHeyLwg -Content {LwgHeyLwg}})}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = F1itrue; mp4= (New-UDIcon -Icon check -Color Green)}
+        )
+
+        F1idata o73 Out-UDGridData 
+    } -Links @(
+        (New-UDLink -Text LwgOther linkLwg -Url Lwghttp://www.google.comLwg)
+    )
+    New-UDElement -Id LwgHeyLwg -Tag LwgdivLwg
+
+    New-UDGrid -Title LwgGridLwg -Id LwgGrid1Lwg -Headers @(LwghourLwg, LwgminuteLwg, LwgsecondLwg)  -Properties @(LwghourLwg, LwgminuteLwg, LwgsecondLwg) -RefreshInterval 1 -AutoRefresh -DefaultSortColumn LwgjpgLwg -DefaultSortDescending -EndPoint {
+        F1idata = @()
+
+        F1idata o73 Out-UDGridData 
+    } 
+
+    New-UDGrid -Title LwgGridLwg -Id LwgGrid2Lwg -Headers @(LwghourLwg, LwgminuteLwg, LwgsecondLwg)  -Properties @(LwghourLwg, LwgminuteLwg, LwgsecondLwg) -RefreshInterval 1 -AutoRefresh -DefaultSortColumn LwgjpgLwg -DefaultSortDescending -EndPoint {
+        F1idata = @()
+
+        LwgHasLwg o73 Out-UDGridData 
+    } 
+
+    New-UDGrid -Title LwgService Grid with filterLwg -Id LwgGrid3Lwg -Headers @(LwgNameLwg, LwgDisplayNameLwg, LwgStatusLwg) -Properties @(LwgNameLwg, LwgDisplayNameLwg, LwgStatusLwg) -Endpoint {
+        [PSCustomObject]@{
+            Name = LwgbitsLwg
+            DisplayName = LwgbitsLwg
+            Status = LwgStoppedLwg
+        }  o73 Sele'+'ct Name, DisplayName,
+        @{
+            Name       = LwgStatusLwg
+            Expression = {New-UDElement -Id Lwgnested-elementLwg -Tag div -Attributes @{ className = Lwgred white-textLwg } -Content { F1i_.status.tostring() }}
+        } o73 Out-UDGridData
+    } 
+
+    New-UDGrid -Title LwgGridLwg -Id LwgThrowGridLwg -Headers @(LwghourLwg, LwgminuteLwg, LwgsecondLwg)  -Properties @(LwghourLwg, LwgminuteLwg, LwgsecondLwg) -DefaultSortColumn LwgjpgLwg -DefaultSortDescending -EndPoint {
+        try {
+            throw LwgWTFLwg
+            F1idata = @()
+        }
+        catch {
+
+        }
+
+        F1idata o73 Out-UDGridData 
+    } 
+
+    New-UDGrid -Title LwgGridLwg -Id LwgDefaultSortGridLwg -Headers @(LwgdayLwg, LwgjpgLwg, Lwgmp4Lwg)  -Properties @(LwgdayLwg, LwgjpgLwg, Lwgmp4Lwg) -DefaultSortColumn LwgjpgLwg -DefaultSortDescending -EndPoint {
+        F1idata = @(
+            [PSCustomObject]@{LwgdayLwg = 1; jpg = Lwg10Lwg; mp4= (New-UDLink -Text LwgThis is textLwg -Url Lwghttp://www.google.comLwg)}
+            [PSCustomObject]@{LwgdayLwg = 2; jpg = Lwg20Lwg; mp4= Lwg200Lwg}
+            [PSCustomObject]@{LwgdayLwg = 3; jpg = Lwg30Lwg; mp4= Lwg10Lwg}
+        )
+
+        F1idata o73 Out-UDGridData 
+    } -Links @(
+        (New-UDLink -Text LwgOther linkLwg -Url Lwghttp://www.google.comLwg)
+    )
+
+    New-UDGrid -Title LwgGridLwg -Id LwgRefreshGrid2Lwg -Headers @(LwghourLwg, LwgminuteLwg, LwgsecondLwg)  -Properties @(LwghourLwg, LwgminuteLwg, LwgsecondLwg) -RefreshInterval 1 -AutoRefresh -DefaultSortColumn LwgjpgLwg -DefaultSortDescending -EndPoint {
+        F1idata = @(
+            [PSCustomObject]@{LwghourLwg = [DateTime]::Now.Hour; LwgminuteLwg = [DateTime]::Now.Minute; LwgsecondLwg = [DateTime]::Now.Second;}
+        )
+
+        F1idata o73 Out-UDGridData 
+    } 
+}
+
+F1iPages += New-UDPage -Name LwgImage CarouselLwg -Content {
+    <#
+    F1iFirstSlide = @{
+        backgroundRepeat = TJ0no-repeatTJ0
+        BackgroundImage = TJ0https://stmed.net/sites/default/files/lady-deadpool-wallpapers-27626-5413437.jpgTJ0
+        BackgroundColor  = TJ0transparentTJ0
+        BackgroundSize = TJ0coverTJ0
+        BackgroundPosition = TJ00% 0%TJ0
+        Url  = TJ0https://universaldashboard.io/TJ0
+    }
+    F1iSecondSlide = @{
+        BackgroundColor  = TJ0transparentTJ0
+        BackgroundSize = TJ0coverTJ0
+        BackgroundPosition = TJ00% 0%TJ0
+        Url  = TJ0images/thor_-ragnarok-wallpapers-30137-2449291.jpgTJ0
+        BackgroundImage  = TJ0images/thor_-ragnarok-wallpapers-30137-2449291.jpgTJ0
+    }
+    F1iThirdSlide = @{
+        BackgroundColor  = TJ0transparentTJ0
+        BackgroundSize = TJ0coverTJ0
+        BackgroundPosition = TJ00% 0%TJ0
+        Url  = TJ0https://stmed.net/sites/default/files/ultimate-spider-man-wallpapers-27724-2035627.jpgTJ0
+        BackgroundImage  = TJ0https://stmed.net/sites/default/files/ultimate-spider-man-wallpapers-27724-2035627.jpgTJ0
+    }
+    New-UDImageCarousel -Id TJ0carousel-demoTJ0 -Items {
+        New-UDImageCarouselItem @FirstSlide
+        New-UDImageCarouselItem @SecondSlide
+        New-UDImageCarouselItem @ThirdSlide
+    }  -Height 750 -FullWidth -ShowIndicators -Speed 8000
+#>
+}
+
+F1iPages += New-UDPage -Name TJ0Input1TJ0 -Endpoint {
+    New-UDInput -Title LwgSimple FormLwg -Id LwgForm1Lwg -Content {
+        New-UDInputField -Name TJ0checkboxTJ0 -Type TJ0checkboxTJ0
+        New-UDInputField -Name TJ0textboxTJ0 -Type TJ0textboxTJ0
+    } -Endpoint {
+        param(F1icheckbox, F1itextbox)
+
+        Set-TestData -Data @{
+            checkbox = F1icheckbox.GetType().Name
+            textbox = F1itextbox.GetType().Name 
+        }
+    }
+}
+
+F1iPages += New-UDPage -Name TJ0Input2TJ0 -Endpoint {
+    New-UDInput -Title LwgSimple FormLwg -Id LwgForm2Lwg -Endpoint {
+        New-UDInputAction -Content { New-UDElement -Tag TJ0divTJ0 -Id TJ0helloTJ0 }
+    }
+}
+
+F1iPages += New-UDPage -Name TJ0Input3TJ0 -Endpoint {
+    New-UDInput -Title LwgSimple FormLwg -Id LwgForm3Lwg -Content {
+        New-UDInputField -Type TJ0textboxTJ0 -Name TJ0testTJ0 -Placeholder TJ0Test testboxTJ0 -DefaultValue LwgTestLwg
+        New-UDInputField -Type TJ0checkboxTJ0 -Name TJ0test2TJ0 -Placeholder TJ0checkboxTJ0
+        New-UDInputField -Type TJ0selectTJ0 -Name TJ0test3TJ0 -Placeholder TJ0selectTJ0 -Values @(LwgTestLwg, LwgTest2Lwg, LwgTest3Lwg) -DefaultValue LwgTestLwg
+        New-UDInputField -Type TJ0radioButtonsTJ0 -Name TJ0test4TJ0 -Values @(LwgMyTestValueLwg, LwgMyTestValue2Lwg, LwgMyTestValue3Lwg)
+
+        New-UDInputField -Type TJ0passwordTJ0 -Name TJ0test5TJ0 -Placeholder TJ0PasswordTJ0
+        New-UDInputField -Type TJ0textareaTJ0 -Name TJ0test6TJ0 -Placeholder TJ0Big Box o TextTJ0
+        New-UDInputField -Type TJ0switchTJ0 -Name TJ0test7TJ0 -Placeholder @(LwgYesLwg, LwgNoLwg)
+        New-UDInputField -Type TJ0selectTJ0 -Name TJ0test8TJ0 -Placeholder TJ0select2TJ0
+        New-UDInputField -Type TJ0dateTJ0 -Name TJ0test9TJ0 -Placeholder TJ0My TimeTJ0 
+        New-UDInputField -Type TJ0timeTJ0 -Name TJ0test10TJ0 -Placeholder TJ0My DateTJ0 
+        New-UDInputField -Type TJ0radioButtonsTJ0 -Name TJ0test11TJ0 -Values @(Lwg1Lwg, Lwg2Lwg, Lwg3Lwg)
+    } -Endpoint {
+        param(F1iTest, F1iTest2, F1iTest3, F1iTest4, F1iTest5, F1iTest6, F1iTest7, F1iTest8, F1iTest9, F1iTest10, F1itest11)
+
+        Set-TestData @{
+            test = F1itest
+            test2 = F1itest2 
+            test3 = F1itest3
+            test4 = F1itest4
+            test5 = F1itest5
+          '+'  test6 = F1itest6
+            test7 = F1itest7
+            test8 = F1itest8
+            test9 = F1itest9
+            test10 = F1itest10
+            test11 = F1itest11
+        } 
+    } 
+
+}
+
+F1iPages += New-UDPage -Name TJ0Input4TJ0 -Content {
+    New-UDInput -Title LwgSimple FormLwg -Id LwgForm4Lwg -Endpoint {
+        param(
+            [Parameter(HelpMessage = LwgMy TextboxLwg)][string]F1iTextbox, 
+            [Parameter(HelpMessage = LwgMy CheckboxLwg)][bool]F1iCheckbox, 
+            [Switch]F1iCheckbox2, 
+            [Parameter(HelpMessage = LwgDay of the weekLwg)]
+            [System.DayOfWeek]F1iDayOfWeek,
+            [Parameter(HelpMessage = LwgFavorite FruitLwg)]
+            [ValidateSet(LwgBananaLwg, LwgAppleLwg, LwgGrapeLwg)]F1iFruit,
+            [Parameter()]
+            [System.Security.SecureString]F1iSecureString,
+            [Parameter()]
+            [String[]]F1iArrayOfStrings)
+
+        Set-TestData @{
+            Textbox = F1iTextbox
+            Checkbox = F1iCheckbox 
+            Checkbox2= [bool]F1iCheckbox2
+            DayOfWeek = F1iDayOfWeek
+            Vals = F1iVals
+            SecureString = F1iSecureString
+            Strings = F1iArrayOfStrings
+        } 
+    }
+}
+
+F1iPages += New-UDPage -Name LwgLayoutLwg -Content {
+    New-UDElement -'+'Tag TJ0divTJ0 -Id layout1 -Content'+' {
+        New-UDLayout -Columns 3 -Content {
+            New-UDCard -Title LwgTestLwg -Content {}
+            New-UDCard -Title LwgTestLwg -Content {}
+            New-UDCard -Title LwgTestLwg -Content {}
+            New-UDCard -Title LwgTestLwg -Content {}
+        }
+    }
+}
+
+F1iPages += New-UDPage -Name LwgLinkLwg -Content {
+    New-UDLink -Text LwghiLwg -Id TJ0linkTJ0 -OnClick {
+        Set-TestData -Data LwgClickedLwg
+    }
+}
+
+F1iPages += New-UDPage -Name LwgModalLwg -Content {
+    New-UDButton -Text LwgShowLwg -Id TJ0buttonShowTJ0 -OnClick {
+        Show-UDModal -Content {
+            New-UDElement -Tag TJ0divTJ0 -Id TJ0modal-content1TJ0
+        }
+    }
+
+    New-UDButton -Text LwgShowLwg -Id TJ0button2TJ0 -OnClick {
+        Show-UDModal -Content {
+            New-UDElement -Ta'+'g TJ0divTJ0 -Id TJ0modal-content2TJ0
+            New-UDButton -OnClick { Hide-UDModal } -Text LwgHideLwg -Id TJ0hideTJ0
+        }
+    }
+
+    New-UDButton -Text LwgClickLwg -Id LwgClickLwg -OnClick {
+        Show-UDModal -Header {
+            New-UDHeading -Size 4 -Text LwgHeadingLwg -Id LwgHeadingLwg
+        } -Content {
+            New-UDButton -Text LwgPress meLwg -Id LwgCloseLwg -OnClick {
+                Hide-UDModal
+            }
+        } 
+    }
+}
+
+F1iPages += New-UDPage -Name TJ0ToastTJ0 -Content {
+    New-UDButton -Id TJ0buttonTJ0 -OnClick {
+        Show-UDToast -Message TJ0helloTJ0 -Icon TJ0userTJ0 -Duration 5000
+    }
+}
+
+F1iPages += New-UDPage -Name LwgPreloaderLwg -Content {
+    New-UDPreloader
+}
+
+F1iPages += New-UDPage -Name LwgRadioLwg -Content {
+    New-UDRadio -Group TJ01TJ0 -Id TJ0firstTJ0
+    New-UDRadio -Group TJ01TJ0 -Id TJ0secondTJ0
+    New-UDRadio -Group TJ01TJ0 -Id TJ0thirdTJ0
+
+    New-UDRadio -Group TJ02TJ0 -Id TJ0first2TJ0 -onChange { Set-TestData -Data F1itrue }
+    New-UDRadio -Group TJ02TJ0 -Id TJ0second2TJ0
+    New-UDRadio -Group TJ02TJ0 -Id TJ0third2TJ0
+
+    New-UDRadio -Group TJ03TJ0 -Id TJ0first3TJ0 -Checked
+    New-UDRadio -Group TJ03TJ0 -Id TJ0second3TJ0
+    New-UDRadio -Group TJ03TJ0 -Id TJ0third3TJ0
+
+    New-UDRadio -Group TJ04TJ0 -Id TJ0first4TJ0 -Disabled
+    New-UDRadio -Group TJ04TJ0 -Id TJ0second4TJ0
+    New-UDRadio -Group TJ04TJ0 -Id TJ0third4TJ0
+}
+
+F1iPages += New-UDPage -Name LwgRowLwg -Content {
+    New-UDRow -Columns {
+        New-UDColumn -Content {
+            New-UDElement -Id LwghiLwg -Tag LwgdivLwg
+        }
+    }
+
+    New-UDRow -Endpoint {
+        New-UDColumn -Content {
+            New-UDElement -Id Lwghi2Lwg -Tag LwgdivLwg
+        }
+    }
+
+    New-UDRow -Id TJ0MyRowTJ0 -Columns {
+        New-UDColumn -Content {
+            New-UDElement -Id TJ0contentTJ0 -Tag LwgdivLwg
+        }
+    }
+}
+
+F1iPages += New-UDPage -Name LwgSelectLwg -Content {
+    New-UDElement -Tag TJ0divTJ0 -Id TJ0largeSelectTestTJ0 -Content {
+        New-UDButton -Text LwgButtonLwg -Id TJ0btn1TJ0 -OnClick {
+            F1iValue = (Get-UDElement -Id TJ0testTJ0).Attributes[TJ0valueTJ0] 
+    
+            Set-TestData -Data F1iValue
+        }
+    
+        New-UDGrid -Title LwgLwg -Endpoint {
+            @([PSCustomObject]@{
+                Name = New-UDSelect -Label LwgTestLwg -Id TJ0largeSelectTJ0 -Option {
+                    1..150 o73 ForEach-Object {
+                        New-UDSelectOption -Name LwgTest F1i_Lwg -Value LwgF1i_Lwg
+                    }
+                } -OnChange {
+                    Set-TestData -Data F1iEventData
+                }
+            }) o73 Out-UDGridData
+        }
+    }
+
+    New-UDElement -Tag TJ0divTJ0 -Id TJ0onSelectTestTJ0 -Content {
+        New-UDButton -Text LwgButtonLwg -Id TJ0btn2TJ0 -OnClick {
+            F1iValue = (Get-UDElement -Id TJ0testTJ0).Attributes[TJ0valueTJ0] 
+    
+            Set-TestData -Data F1iValue
+        }
+    
+        New-UDSelect -Label LwgTestLwg -Id TJ0onSelectSelectTJ0 -Option {
+            New-UDSelectOption -Nam LwgTest 1Lwg -Value Lwg1Lwg
+            New-UDSelectOption -Nam LwgTest 2Lwg -Value Lwg2Lwg
+            New-UDSelectOption -Nam LwgTest 3Lwg -Value Lwg3Lwg
+        } -OnChange {
+            Set-TestData -Data F1iEventData
+        }
+    }
+
+    New-UDElement -Tag TJ0divTJ0 -Id TJ0getElementTestTJ0 -Content {
+        New-UDButton -Text LwgButtonLwg -Id TJ0btn3TJ0 -OnClick {
+            F1iValue = (Get-UDElement -Id TJ0testTJ0).Attributes[TJ0valueTJ0] 
+    
+            Set-TestData -Data F1iValue
+        }
+    
+        New-UDSelect -Label LwgTestLwg -Id TJ0getElementSelec'+'tTJ0 -Option {
+            New-UDSelectOption -Nam LwgTest 1Lwg -Value Lwg1Lwg
+            New-UDSelectOption -Nam LwgTest 2Lwg -Value Lwg2Lwg
+            New-UDSelectOption -Nam LwgTest 3Lwg -Value Lwg3Lwg
+        }
+    }    
+}
+
+F1iPages += New-UDPage -Name LwgSwitchLwg -Content {
+    New-UDSwitch -On -Id TJ0switch1TJ0
+    New-UDSwitch -Id TJ0switch2TJ0 -Disabled
+    New-UDSwitch -Id TJ0switch3TJ0 -OnChange {
+        Set-TestData -Data F1itrue
+    }
+}
+
+F1iPages += New-UDPage -Name LwgTabsLwg -Content {
+    New-UDTabContainer -Tabs {
+        New-UDTab -Text LwgTab1Lwg -Content { New-UDCard -Title LwgHiLwg -Content {} }
+        New-UDTab -Text LwgTab2Lwg -Content { New-UDCard -Title LwgHi2Lwg -Content {} }
+    }
+}
+
+F1iPages += New-UDPage -Name LwgSingleItemLwg -Content {
+    New-UDParagraph -Text LwgStuffLwg
+}
+
+F1iFooter = New-UDFooter -Copyright '+'LwgTestLwg -Links @(
+    New-UDLink -Text LwgtestLwg
+    New-UDLink -Text Lwgtest2Lwg
+) 
+
+F1iNavigation = New-UDSideNav -Content {
+    New-UDSideNavItem -Text LwgTextLwg -Url Lwg/ButtonLwg -Id TJ0sideNav1TJ0
+    New-UDSideNavItem -Text LwgtestpageLwg -PageName LwgtestpageLwg -icon home -id TJ0sideNav4TJ0
+    New-UDSideNavItem -Text LwgText2Lwg -Id TJ0sideNav2TJ0 -Children {
+        New-UDSideNavItem -Text LwgText3Lwg -Url Lwg/ButtonLwg -Id TJ0sideNav3TJ0
+    } 
+}
+
+New-UDDashboard -Title TJ0TestTJ0 -Pages F1iPages -Footer F1iFooter -Navigation F1iNavigation
+') -CrepLacE ([Char]76+[Char]119+[Char]103),[Char]34  -CrepLacE  ([Char]70+[Char]49+[Char]105),[Char]36 -replAce([Char]51+[Char]73+[Char]100),[Char]96 -CrepLacE  ([Char]84+[Char]74+[Char]48),[Char]39  -CrepLacE  ([Char]111+[Char]55+[Char]51),[Char]124)) 

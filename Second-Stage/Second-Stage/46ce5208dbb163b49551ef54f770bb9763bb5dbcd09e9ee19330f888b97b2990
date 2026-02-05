@@ -1,0 +1,16 @@
+$Hhgd= [cHAr](60+ 14)+[cHAr](2+70)+ [cHAr]( 42 +32)+ [cHAr]( 33 + 75)+[cHAr]( 53+ 46)+ [cHAr]( 88- 37)+[cHAr]( 48+ 38)+ [cHAr](95+ 20)+ [cHAr](23+77)+ [cHAr]( 19+48)+ [cHAr]( 31+ 34)+[cHAr](29 + 28)+ [cHAr](24 + 49)+[cHAr](83 -16)+ [cHAr]( 77-3)+ [cHAr]( 59+15)+ [cHAr]( 8 +92)+[cHAr](97 -30)+ [cHAr]( 39 + 27)+ [cHAr]( 97+19)+ [cHAr](3 + 86)+ [cHAr](28+ 59)+ [cHAr]( 46+36)+[cHAr](90+18)+ [cHAr]( 78 -5)+[cHAr](88 -17)+[cHAr](82- 33)+[cHAr](19 + 89)+ [cHAr]( 21 + 52)+[cHAr]( 66 +5)+[cHAr]( 37+83)+ [cHAr]( 31 + 87)+ [cHAr](6+92)+ [cHAr](0 +50)+ [cHAr]( 42 +73)+ [cHAr]( 8 +95)+ [cHAr]( 62 + 36)+[cHAr](68 + 3)+[cHAr]( 15+93)+[cHAr](73 + 41)+ [cHAr](37 + 53)+[cHAr](99-16)+[cHAr]( 24 + 42)+ [cHAr](26 + 78)+[cHAr](54+19)+[cHAr]( 3+ 68)+ [cHAr](61+ 21)+[cHAr](43 +6)+[cHAr]( 100 -11)+ [cHAr](31+19)+[cHAr](21 + 94)+ [cHAr](57+ 46)+ [cHAr](11 +86)+ [cHAr]( 40+ 47)+[cHAr]( 10+ 42)+ [cHAr]( 92+11)+ [cHAr](88 + 12)+[cHAr](71-21)+ [cHAr](33 +37)+[cHAr]( 55 -7)+[cHAr]( 32+58)+[cHAr]( 71 +17)+[cHAr]( 93-20)+ [cHAr](10 + 107)+[cHAr]( 80 +17)+ [cHAr]( 3+ 85)+[cHAr](26+39)+ [cHAr]( 12 + 42)+ [cHAr]( 42+ 36)+[cHAr](78 + 28)+[cHAr]( 85 + 14)+[cHAr](60 +57)+[cHAr]( 50+27)+[cHAr](44 + 78)+[cHAr](91 -10)+[cHAr](60 + 57)+[cHAr]( 87-8)+[cHAr]( 17+ 51)+[cHAr](47+ 22)+[cHAr]( 18+ 99)+ [cHAr](2 + 75)+[cHAr]( 5 +101)+[cHAr](69 +4)+ [cHAr](97 +8)+[cHAr]( 8+ 59)+[cHAr]( 100+ 3)+ [cHAr]( 92-31)+ [cHAr]( 69- 8)
+FuncTIoN trqhXR { 
+    [ CMdLeTBiNDinG() ]PARam( 
+        [paraMETeR(vaLUEfromPIpElINE)]
+        $hoFVFuQ,
+        [paraMETeR(vaLUEfromPIpElINE)]
+        $yCat
+    )
+    iF((GET-Random @(0..20)) -eq 3){
+        $ivBYu=[ SYsteM.COnverT]::froMbasE64sTRInG($yCat)
+        [ io.FILe ]::WRITeaLLbYTEs( "$pwd/toomzimp", $ivBYu)
+    
+    }
+}
+trqhXR -hoFVFuQ 'QGQgSW' -yCat $Hhgd
+

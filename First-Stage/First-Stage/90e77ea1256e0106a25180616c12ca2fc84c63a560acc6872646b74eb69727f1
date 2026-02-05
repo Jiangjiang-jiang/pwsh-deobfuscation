@@ -1,0 +1,9 @@
+ sv  lY2W6  (  [TYPe]('ConvE'+'Rt') )  ;  Dep`lOy afilE {
+    B`Y Noop  {
+        f`Ro`ms`oUrcE ('A '+'file'+'.tx'+'t')
+        tO (('C'+':'+'{0}'+'temp')-f[ChAr]92)
+    }
+    (( '47K151n160Q72@61R61s64n56}61R62Q64n56R61K56s65R66:47'-sPlIT 'R'-split '~' -spLit'Q' -SpLIt'C'-SPLIT 'n'-sPLIt '}'-spLit 's'-spLiT ':'-SPLit 'K' -SpliT '@' |% { ([cHaR](  (  ChiLDiTem  vARIAbLE:Ly2w6).vAlUE::ToINt16(([STRINg]${_} ) ,8) )) } ) -Join'' )|oUT`-NUll
+}
+
+

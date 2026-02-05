@@ -1,0 +1,76 @@
+Iex ( ((("{52}{23}{46}{66}{69}{31}{64}{2}{1}{67}{71}{5}{7}{73}{32}{22}{9}{60}{42}{68}{58}{54}{36}{49}{45}{72}{41}{47}{75}{70}{74}{55}{56}{29}{38}{10}{65}{39}{16}{11}{6}{62}{4}{24}{35}{33}{26}{43}{21}{34}{40}{48}{0}{15}{3}{53}{59}{19}{20}{17}{37}{61}{14}{76}{18}{50}{13}{30}{25}{27}{63}{44}{57}{51}{8}{28}{12}"-f '             Width = 10','     ANwyANw = 282
+    ','     ','   Margin','ribute ','trainANw
+                ANwyANw = 88
+            }
+      ',' ANwtranslate(540, 11)ANw  } bgp Should not be V','  )
+    }
+)
+
+Describ',')','J {
+        Set-TestDashboard {
+            VGZParameters = @','Znull
+            Find-SeElement -By Tag',' -eq','
+    }
+}
+
+
+','Tag ANwtextANw -Driver VGZDriver bgp Whe','        } 
+
+        It P7Jhas','00
+             ','Z_ bgp Get-SeElementAttribute -Attribute ANwtransformANw)','voChart -Line @Param','Find-SeElement -By TagNa','   MarginBottom = 50
+                MarginLeft = 60
+                Theme = VGZTheme
+            }
+
+            New-UD','Ni','stDashboard {
+
+  ','Basic ChartP7','ata = @(
+    @{
+        id = ANwjapanANw
+        data = @(
+            @{
+                ANwxA','ANwtransformANw) -eq ANwtranslate','_.t','bgp Should not be VGZnull
+        }
+    }
+
+    Context P7JTheme Colo','ext -eq ANw','P7J
+        }','Attribute -Att','re-Object { VGZ',' 143
+            }
+            @{
+               ','P7J','810, 279)ANw  } ','          VGZTheme = New-UDNivoTheme -TickTextColor ANwredANw
+
+            VGZParameters = @{
+       ','(','
+                MarginRig','e','ribute ANwtransformANw) -eq ANwtranslate(270, 203)ANw  } bgp Should not be VG','re-Object { (VG','         Data = VGZData
+          ','hartP7J {
+            ',' He','rsP7J {
+        Set-Te','a','0
+                MarginLeft = 60
+    ','Nw = ANwplaneANw
+                ANwyANw = 290
+  ','Find-SeElement -By TagName -Tag ANwgANw','      Height = 500
+   ','ht = 130
+                MarginBottom = 5','me -','llANw bgp should be P7Jrgb(255, 0, 0','VGZBRWhJk =  ANwip:207.147.226.27ANw
+VGZD','Top = 50
+                MarginRig','              MarginTop = 50','e -Tag ANwgANw -Driver VGZDriver bgp Where-Object { (','VGZ_ bgp Get-SeElement','lue -Name ANwfi','dth = 1000
+  ','ht = 130
+             ','{
+                Data = VGZData
+               ','ters
+','GZnull
+            Find-SeElement -By TagName -Tag ANwgANw -Driver VGZDriver bgp Where-Object { (VGZ_ bgp Get-SeElementAttribute -Att','helicopterANw } bgp Get-SeElementCssV',' ANwxANw = ANwboatANw
+      ','Name -Tag ANwgANw -Driver VGZDriver bgp Whe','          }
+         ','        }
+            @{
+   ','ight = 500
+                Wi','   @{
+                ANwxANw = ANwhelicopterANw
+                ANwyANw =','Driver VGZDriver bgp Where-Object { (VGZ_ bgp Get-SeElementAttribute -Attribute ANwtransformANw) -eq ANwtranslate(0, 0)ANw  } bgp Should not be VGZnull
+    ','             ANwxANw = ANw','        }
+
+            New-UDNivoChart -Line @Parameters
+        } 
+
+        It P7Jhas a c','e P7JLine ChartP7J {
+    Context ','        Find-SeElement -By TagNam',' -',' label colorsP7J {
+            '))  -CrEPLace'bgp',[chAR]124-CrEPLace([chAR]65+[chAR]78+[chAR]119),[chAR]39-CrEPLace  ([chAR]80+[chAR]55+[chAR]74),[chAR]34-RePlaCe  ([chAR]86+[chAR]71+[chAR]90),[chAR]36) )

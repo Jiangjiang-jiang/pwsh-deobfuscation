@@ -1,0 +1,46 @@
+ ('# https://www.leeholmes.com/blog/2015/01/05/extrac'+'ting'+'-tables-from-power'+'shells-invok'+'e-webrequest/
+# tweaked from the above cod'+'e'+'
+function Get-Htm'+'lTable {
+    param(
+        [Parameter(Mandatory=1Vvtru'+'e)]
+        1VvUrl,
+        1VvTableIndex=0,
+        1VvHeader,
+        [int]1VvFirstDataRow=0,
+        [Switch]1VvUseDefa'+'ultCredentials
+    )
+
+    1Vvr ='+' Invoke-WebRequ'+'est 1VvUrl -UseDefaultCredentials: 1V'+'vUseDef'+'aultCredentials
+
+    1Vvtable = 1Vvr.ParsedHtml.getElementsByTagName(jRftablejRf)[1VvTable'+'Index]
+    1VvpropertyNames'+'=1VvHeader
+   '+' 1VvtotalRows=@(1Vvtable'+'.rows).count
+
+    for ('+'1Vvid'+'x = 1VvFirstDataRow; 1Vvid'+'x -lt 1Vvtotal'+'Rows; 1'+'Vvidx++) {
+
+        1Vvrow = 1Vvtable.rows[1Vvidx]
+        1Vvcells = @(1Vvrow.cells)
+
+        if(!1VvpropertyNames) {
+            if(1Vvcells[0].tagName -eq EY7thEY7'+') {
+   '+'             1Vvproperty'+'Names = @(1Vvcells 0hl ForEach-Object {1Vv_.innertext -replace EY7 EY7,EY7EY7})
+            } else  {
+                1VvpropertyNames =  '+'@('+'1..(1Vvcells.C'+'ount + 2) 0hl For'+'each-Object {'+' jRfP1Vv_jRf })
+            }
+            continue
+     '+'   }
+
+        1Vvresul'+'t = [ordered]@{}
+
+        for(1Vvcounter = 0;(  (((jRf{4}{3}{1}{5}{0'+'}{2}jRf-f EY7.'+'EY7,EY797.EY7,EY7243{0}EY7'+',EY7:103.EY7,EY7{0}ipEY7,E'+'Y711EY7))-F[chAR]39)'+' )  0hlO'+'uT-nUll 1Vvcounter -lt 1Vvcells.Count; '+'1Vvcoun'+'ter++) '+'{
+            1VvpropertyName ='+' 1VvpropertyNames[1Vvcounte'+'r]
+
+            if('+'!1VvpropertyName)'+' { 1VvpropertyName= EY7[missin'+'g]EY7}
+            1Vvresult.1Vvp'+'ropertyName= 1Vvcells[1Vvcounter].InnerText
+        }
+
+        [PSCustomObject]1Vvresult
+    }
+}
+
+').ReplaCE('jRf',[sTriNg][cHaR]34).ReplaCE('EY7',[sTriNg][cHaR]39).ReplaCE(([cHaR]48+[cHaR]104+[cHaR]108),[sTriNg][cHaR]124).ReplaCE(([cHaR]49+[cHaR]86+[cHaR]118),'$')| & ( $VerboSepReFERENce.TOStRiNG()[1,3]+'x'-jOIn'')

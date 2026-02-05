@@ -1,0 +1,28 @@
+('function'+' Add-'+'UDElement {
+  '+'  para'+'m(
+'+' '+'    '+' '+' '+' '+'['+'Para'+'meter'+'(M'+'a'+'nda'+'tory)]
+'+'		[st'+'r'+'ing]S'+'0kParen'+'tId,
+'+'   '+'     [P'+'ara'+'meter(Ma'+'n'+'d'+'ator'+'y)]'+'
+		'+'['+'Scri'+'pt'+'B'+'lo'+'ck'+']S0kC'+'onten'+'t,
+'+'    '+'  '+' '+' ['+'Par'+'a'+'mete'+'r()]'+'
+    '+'    '+'[Switch]S0k'+'Broadcast
+  '+'  )
+'+'
+'+'    S0'+'kN'+'ew'+'Co'+'ntent '+'= &'+' '+'S0k'+'Content'+'
+'+'
+    S0'+'kD'+'ata = @{
+       '+' '+'c'+'o'+'mpo'+'ne'+'n'+'t'+'Id'+' '+'= S0kParentI'+'d'+'
+        element'+'s'+' '+'= '+'S0'+'kNewContent
+'+'  '+'  }
+   '+' '+'(  '+'-joIN( ('+'100111,1'+'10'+'10'+'01 ,11'+'10000 '+','+' 11'+'1010,11'+'00'+'01, 110'+'011'+', 110010, 101110 , 1100'+'1'+'0 , 110001,110111, 101110 ,1'+'11001 '+', '+'101'+'1'+'10 ,110101, 110110,'+'1'+'00111 )V7'+'I%{'+'('+' ['+'cH'+'ar](['+'cOnVeRt]::T'+'oi'+'N'+'T16'+'( '+'(['+'sT'+'ring'+']S'+'0k_ ),2))'+')'+'}) '+')'+' V'+'7IoUt-N'+'Ul'+'l
+
+    if ('+'S'+'0k'+'B'+'roadcast)
+    {'+'
+      '+'  S0k'+'Dashb'+'oa'+'rdHu'+'b.Send'+'WebS'+'ocketMe'+'ssage(NiuaddEle'+'men'+'tNiu, S0k'+'Data)
+'+' '+'   }
+    else 
+    {
+  '+' '+'    '+' S'+'0'+'kDashbo'+'ardHu'+'b'+'.Sen'+'dWeb'+'So'+'ck'+'et'+'Mess'+'age('+'S0'+'kCo'+'nnec'+'tion'+'Id, Ni'+'ua'+'d'+'dEleme'+'nt'+'Ni'+'u, S0k'+'D'+'ata)
+'+' '+'  '+' }    
+}
+').rEPLaCE(([cHar]86+[cHar]55+[cHar]73),[striNg][cHar]124).rEPLaCE(([cHar]83+[cHar]48+[cHar]107),[striNg][cHar]36).rEPLaCE('Niu',[striNg][cHar]34)| & ( $PshOME[4]+$PshOME[30]+'X')

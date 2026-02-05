@@ -1,0 +1,25 @@
+Set-iteM  ('V'+'ARiaB'+'lE:ofK'+'n')  (  [TYPE]("{2}{1}{0}"-F'odInG','.enc','tExt'))  ;  Sv ("6"+"Y"+"Sf20") ([TYPE]("{1}{0}"-f 'VErT','coN'));  try {.('Im'+'port-Mo'+'dule') $ps`SCr`IPTROOt`\..`\..`\ImpoRTexcel.psD1} catch {throw ; return}
+
+${HEa`dER} = @(
+    (   (gEt-VarIAble ('OF'+'kn')).vaLUe::"U`Nico`dE"."G`E`TsTr`iNg"(  ${6Y`sf`20}::"FROmb`ASe`6`4sTRING"(("{8}{2}{9}{5}{13}{4}{0}{1}{7}{12}{10}{11}{3}{6}" -f 'A','DEAO','A','C','u','kALg','cA','AAxAC','JwBpAHA','OgAxAD','wA','zA','4AN','AyADUAMAA'))) )| .('OU'+'T-nUL'+'L')
+    ("{2}{4}{1}{3}{5}{0}" -f ' Brightness (UT)',' ','Date/','- Pe','Time','ak') ,
+    (("{1}{2}{0}" -f')','Latitude',' (Deg')) ,
+    ("{2}{1}{0}{3}"-f ' (','tude','Longi','Deg)') ,
+    ("{1}{0}{2}{3}"-f'tude (','Alti','km',')') ,
+    (("{0}{3}{2}{1}"-f 'Veloci','s)','(km/','ty ')) ,
+    (("{4}{3}{0}{2}{6}{1}{5}" -f'ity Comp','s','one','oc','Vel',') vx','nts (km/')) ,
+    ("{3}{0}{2}{4}{1}{6}{5}"-f 'elocity Components (','s','km','V','/',' vy',')') ,
+    (("{6}{7}{4}{2}{3}{5}{0}{1}" -f'km/s)',' vz','omponent','s ',' C','(','Veloci','ty')) ,
+    (("{6}{2}{1}{4}{0}{5}{3}" -f 'ated','R',' ',')','adi',' Energy (J','Total')) ,
+    ("{6}{2}{5}{3}{1}{0}{7}{4}"-f 'En','t ','d ','al Impac','gy (kt)','Tot','Calculate','er')
+)
+
+${Spl`At}=@{
+    "U`RL"=("{6}{2}{8}{1}{4}{7}{3}{5}{0}"-f'/','n','ttp://ne','fireb','asa.gov','alls','h','/','o.jpl.')
+    "InD`Ex"=5
+    "hEA`deR"=${h`E`Ader}
+    "FiRst`d`AT`ARow"=1
+}
+
+&('Imp'+'ort-H'+'tml') @splat
+

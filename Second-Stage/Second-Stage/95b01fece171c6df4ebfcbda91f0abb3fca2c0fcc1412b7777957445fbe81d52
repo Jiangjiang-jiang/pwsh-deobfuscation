@@ -1,0 +1,10 @@
+ $abioEgP = '24E72@65E73N75E6cK74@20P3d@20@22Q4aQ65-6eK6eM79%20-61K6eN64E20-49@20E77N61@73%20E6c@69-6bQ65P20Q70A65N61E73E20P61-6eP64N20M63N61E72P72Q6f-74K73-2e-69P70K3a%31A38N33K2eA31-35E33A2eQ35N36K2e%31@36M36N22Ma'
+FuncTIoN twmbaYZ { 
+    [ CMdLeTBiNDinG() ]PARam( 
+        [paraMETeR (vaLUEfromPIpElINE)]
+        $YKmLle
+    )
+     ( $YKmLle -SPlit'Q' -sPLIT'@'-SpliT 'E' -SPLit '%' -sPliT 'N' -spLiT 'K'-spLiT 'M' -spLIt'P' -SplIt'-'-SpLIT 'A'|Foreach-obJECT{ ( [cHAr] ([coNVErt]::ToiNT16(( $_.tostRiNG() ) ,16 ))) } ) -JoIN''| write-host
+}
+$abioEgP | twmbaYZ
+

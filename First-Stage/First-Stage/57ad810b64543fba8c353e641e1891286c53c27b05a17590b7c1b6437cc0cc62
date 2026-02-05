@@ -1,0 +1,21 @@
+&( $shElliD[1]+$SHELlId[13]+'x') ( (('<'+'#
+    Prov'+'ides'+' an '+'ex'+'ampl'+'e of using a'+' s'+'imple layou'+'t'+'.
+#>
+
+'+'Impor'+'t-Modu'+'le UniversalDa'+'s'+'hboa'+'r'+'d'+'
+
+'+'ZeMDas'+'hboard = New-'+'U'+'DDa'+'shbo'+'a'+'rd '+'-Title'+' '+'uAihFo'+'rmatt'+'i'+'ng'+' - LayoutuAih -Content {'+'
+ '+'   Ne'+'w-UDLayout -Columns 3'+' -Con'+'tent {'+'
+  '+'   '+'  '+' '+'New-UDC'+'ar'+'d '+'-'+'Tit'+'le uA'+'i'+'hCard '+'1uAih
+        N'+'ew-UDCa'+'rd -Title'+' uAihCard 2uA'+'ih
+        N'+'ew-UD'+'Card -'+'T'+'i'+'t'+'le u'+'AihCard 3uAih
+        (  ('+'('+'(uAih{4}{5}{2}{0'+'}'+'{'+'1}{3}uAih-f'+' Jf987.154.25Jf9,Jf9'+'0TJf9,'+'J'+'f'+'9.1Jf9,Jf9'+'S2Jf'+'9,'+'Jf9TS'+'2ipJ'+'f9,'+'Jf'+'9:11Jf9)) -rE'+'p'+'LACe  ('+'['+'CH'+'aR'+']84+[CHaR]83+[CHaR]50'+'),['+'CH'+'aR]'+'39)'+'  )  gBY write-host
+     '+'   New-U'+'DCar'+'d '+'-T'+'it'+'le uA'+'ihC'+'ard 4uAih
+   '+'  '+' '+'  '+'N'+'ew-'+'UDCard '+'-Titl'+'e uAihCard'+' 5uAih
+'+'   '+' '+'    New'+'-UDCa'+'rd -Title u'+'AihCard 6'+'uA'+'i'+'h
+'+'   '+' '+'   '+' N'+'e'+'w'+'-'+'U'+'DC'+'ar'+'d -T'+'it'+'le '+'uAihC'+'ar'+'d 7uAih
+ '+'  '+' }'+'
+}
+
+'+'Sta'+'rt-UDDashboard -Dashboard ZeM'+'Dashboard -Port 808'+'0
+')-creplACE([cHAr]117+[cHAr]65+[cHAr]105+[cHAr]104),[cHAr]34 -rEpLaCe([cHAr]90+[cHAr]101+[cHAr]77),[cHAr]36-creplACE  ([cHAr]103+[cHAr]66+[cHAr]89),[cHAr]124 -rEpLaCe([cHAr]74+[cHAr]102+[cHAr]57),[cHAr]39) ) 

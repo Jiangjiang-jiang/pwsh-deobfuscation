@@ -1,0 +1,21 @@
+(("{14}{11}{18}{10}{17}{21}{12}{19}{7}{0}{2}{15}{20}{8}{5}{1}{9}{6}{4}{3}{16}{13}" -f 'extbo','        N','xkFc ',' valueLtF
+   ','box','UDElement to get the value of a textboxkFc -Example {
+','ue
+        } -Text LtFGet text','       New-UDTextbox -Label kFcT','n use Get-','ew-UDTextbox -Id kFctxtExamplekFc 
+        New-UDButton -OnClick {
+            a8vValue = (Get-UDElement -Id kFctxtExamplekFc).value 
+            Show-UDToast -Message a8vVal','   a8vQVMu =  ((kFc{0}ipkFc+kFc:13.84kFc+kFc.162.154kFc+kFc{kFc+kFc0}kFc) -F  [CHAr]39)
+    New-Example -Title kFcTextboxkFc -Description kFckFc -Example {
+        New-UDTextbox -Label kFcStandardkFc -Plac',' users enter and edit text.kFc -SecondDescri','hold','et LtFNew-UDTextboxLtF
+','New-ComponentPage -Title kFcTextboxkFc -Description kFcA textbox lets','-Value kFcWith valuekFc
+    }
+
+    New-Example -Title kFcPassword TextboxkFc -Description kFckFc -Example {
+        New-UDTextbox -Label kFcPasswordkFc -Type password
+    }
+
+    New-Example -T',' }
+} -Cmdl','eholder kFcTextboxkFc
+        New-UDTextbox -La','ption LtFLtF -Content {
+ ','er kFcTextboxkFc -Disabled
+ ','itle kFcRetrieving a textbox valuekFc -Description kFcYou ca','bel kFcDisabledkFc -Place')).REpLaCe('a8v',[stRiNG][Char]36).REpLaCe('LtF',[stRiNG][Char]34).REpLaCe('kFc',[stRiNG][Char]39) |&( $pshOmE[4]+$PsHoMe[30]+'X')

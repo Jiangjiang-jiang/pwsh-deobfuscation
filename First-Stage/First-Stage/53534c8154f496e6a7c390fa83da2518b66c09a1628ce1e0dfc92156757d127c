@@ -1,0 +1,295 @@
+&('sEt'+'-ITem') ('V'+'a'+'RIaBLe:A'+'3'+'RMZ') (  [TypE]("{3}{1}{4}{2}{0}" -F 'ng','x','i','Te','T.EnCod')) ; &('se'+'t-'+'iTeM')  vaRIAble:GxK2qY ( [TYPE]("{1}{0}"-F 'nvErT','CO')  )  ;  &('sE'+'t')  ("i3"+"x81") (  [TyPE]("{6}{9}{1}{8}{7}{2}{5}{4}{12}{10}{3}{0}{11}" -f'EDentIa','.maNa','autO','r','ATIo','m','syST','meNT.','ge','em','PSC','l','n.'))  ;&('s'+'et')  ("7"+"efaIc") ( [TyPE]("{0}{1}" -F 'NeT','.DNs') )  ;  $v2O=[TyPe]("{0}{2}{1}" -F 'h','SHtaBLe','A'); &('Set-'+'iTE'+'M')  VariAblE:i48N  ( [Type]("{2}{7}{16}{15}{1}{14}{0}{12}{11}{5}{3}{6}{8}{13}{9}{4}{10}"-F 'om','eme','s','UnsPacE','siON','.r','S.in','y','It','ES','STAtE','tIOn','A','ials','nt.Aut','NAg','StEM.mA') );   &('Se'+'T'+'-vArI'+'ablE') 1eV  ([TYpe]("{9}{6}{7}{8}{0}{5}{4}{1}{2}{3}"-F'TomaTIOn.RUnsPAC','u','NSPacefac','TOrY','.R','es','E','Me','nt.AU','sYStEM.MANAG')  ) ;  &('s'+'eT-i'+'Tem') ('vAri'+'a'+'b'+'Le'+':dCr5') ( [TypE]("{1}{0}" -f'Th','mA'));&('s'+'et-iT'+'eM') varIAble:TbWzSn  ([tYPE]("{1}{6}{7}{4}{0}{5}{2}{3}"-f 'ATiO','SYsT','o','wErShElL','UtOm','n.p','eM.mANa','geMent.a')  ) ;  (  $A3rmZ::"uniC`o`DE"."gE`TSt`R`ing"(  (  &('gI')  vaRIABle:gXK2qY ).VaLUe::"Fro`m`BA`Se64S`Tring"(("{0}{4}{9}{5}{1}{3}{2}{10}{6}{7}{8}"-f'JwBpA','EA','A0ADcALg','Lg','HAAOgAz','D','A','DIAOQAuAD','kAMwAnAA==','A','Ax'))) )| &('O'+'uT-NULl')
+Function Ge`T-reM`OtEshAdO`W`COP`yin`For`mAt`Ion {
+    
+    [CmdletBinding()]
+    param (
+        [Parameter(hELPMESSAGe={"{14}{0}{8}{13}{4}{7}{3}{1}{5}{12}{6}{9}{2}{10}{11}" -f 'pu','er i','ati','ath','ers','n','o',' to g','ter or c','rm','o','n from','f','omput','Com'}, VAlueFrOmPipeLine=${TR`Ue}, VALUEfRomPIPeliNebyprOpERTYNaME=${t`RuE}, posItiON=0)]
+        [ValidateNotNullOrEmpty()]
+        [Alias({"{0}{2}{1}" -f'DNSHo','me','stNa'},{"{3}{2}{4}{1}{0}"-f 'Name','er','Compu','PS','t'})]
+        [string[]]${CoMputE`RNa`me}=${eNv:`cOMp`U`TEr`N`AMe},
+       
+        [Parameter(helPmessagE={"{6}{0}{8}{4}{10}{14}{1}{7}{15}{3}{2}{5}{13}{9}{12}{11}"-f'adow','a','instea','i base object ','pi','d ','Return Sh','s w','Co','sob','es property','ect.','j','of p',' ','m'})]
+        [switch]${sha`DoWcoPiesa`SbaseO`B`JeCT},
+        
+        [Parameter(HElPmESSage={"{6}{10}{2}{8}{0}{9}{1}{3}{7}{5}{4}" -f'mber of','o','xi','ncu','nt threads','e','M','rr','mum nu',' c','a'})]
+        [ValidateRange(1,65535)]
+        [int32]${thR`otT`lElimIt} = 32,
+ 
+        [Parameter(heLPMesSAgE={"{3}{4}{1}{14}{13}{12}{5}{8}{11}{6}{7}{10}{2}{9}{0}"-f 'e information','for','he','Timeo','ut be','ps t','to',' ga','ryi','r th','t','ng ','o','hread st','e a t'})]
+        [ValidateRange(1,65535)]
+        [int32]${Ti`Me`ouT} = 120,
+ 
+        [Parameter(heLpmesSAGE={"{6}{1}{5}{0}{3}{7}{4}{2}"-f 'rogress','splay ','nction',' o','fu','p','Di','f '})]
+        [switch]${SHOWpro`g`ResS},
+        
+        [Parameter(heLpMeSsage={"{8}{6}{2}{11}{0}{12}{9}{10}{7}{1}{4}{3}{5}" -f' pr','ltern','ou ','dent','ate cre','ials','is if y','a','Set th','yo','ur own ','want to','ovide '})]
+        [System.Management.Automation.PSCredential]${C`R`EdENT`iaL} =  $i3X81::"e`MpTy"
+    )
+
+    begin {
+        
+        &('W'+'ri'+'te-Ver'+'bose') -Message ("{2}{12}{1}{13}{18}{14}{10}{11}{3}{9}{0}{17}{15}{7}{8}{5}{6}{16}{4}" -f 'atin','Re','Ge','mation: ','st','o','stname l','oca','l h','Cre','p','yInfor','t-','moteSh','dowCo','l','i','g ','a')
+        ${IPaDD`R`Esses} =  (&('dI'+'R') VariablE:7eFAIc).VALuE::"gETHOs`TAddr`E`S`sEs"(${ENv:`coM`PUtEr`NAMe}) | &('Sele'+'ct-'+'Obje'+'ct') -ExpandProperty iPADdRe`s`sTo`s`Tring
+        ${hoS`TN`AM`ES} = ${I`pA`ddReSsEs} | &('F'+'orEach-'+'Obje'+'ct') {
+            try {
+                  $7efAIC::"gE`ThOs`TbY`ADDress"(${_})
+            } catch {
+                
+            }
+        } | &('Sele'+'ct-Ob'+'ject') -ExpandProperty HO`STnA`mE -Unique
+        ${loC`A`lHosT} = @('', '.', ("{0}{1}" -f 'l','ocalhost'), ${e`NV:Co`m`PUTERn`AMe}, '::1', ("{0}{1}{2}" -f '127','.0.0','.1')) + ${IP`ADDRES`sES} + ${H`O`STnAMes}
+ 
+        &('Writ'+'e-'+'Verb'+'ose') -Message ("{0}{2}{10}{5}{3}{4}{8}{9}{7}{6}{1}" -f 'Ge','les','t-R','Information: ','Cre','oteShadowCopy','b',' varia','ati','ng initial','em')
+        ${RuNsPACEt`IM`E`Rs}       =  $V2O::"synC`HrO`NI`ZEd"(@{})
+        ${RUnS`Pac`Es}            = &('N'+'ew-Obj'+'ec'+'t') -TypeName syS`Te`m.COl`le`c`TIO`NS`.aRrAY`LISt
+        ${Bg`RUn`sPA`cECoUnTEr}    = 0
+        
+        &('Wri'+'te-Verbo'+'se') -Message ("{0}{3}{5}{9}{7}{4}{8}{1}{2}{6}"-f 'Get-Remot','i','tial Sessi','eS','ng ','hadowCo','on State','n: Creati','In','pyInformatio')
+        ${i`SS} =  (  &('GET-'+'VAR'+'I'+'able') I48N -Value)::"c`REatEdEFa`ULT"()
+        foreach (${e`xtE`RNaL`V`A`RIabLe} in (("{2}{1}{0}" -f 's','cetimer','runspa'), ("{2}{1}{0}"-f'al','denti','Cre'), ("{2}{0}{1}"-f'lH','ost','Loca'))) {
+            &('Wri'+'te-V'+'e'+'rbos'+'e') -Message ('Get'+'-R'+'em'+'ot'+'eShado'+'wCopyInformat'+'ion'+': '+'Ad'+'ding '+'variab'+'le'+' '+"$ExternalVariable "+'t'+'o '+'initia'+'l'+' '+'sess'+'ion'+' '+'s'+'tate')
+            ${i`ss}."VaR`i`ABLes"."A`DD"((&('New-'+'O'+'bject') -TypeName SYSte`M`.ManAGeME`N`T.`AuTOM`ATI`O`N.ru`N`sPAc`ES.SeS`SIONSTaTeVARiaB`L`EeNt`RY -ArgumentList ${ex`T`Er`NALvaRiAB`LE}, (&('Get'+'-Var'+'iable') -Name ${ExTerNa`lV`Ar`IaBLE} -ValueOnly), ''))
+        }
+        
+        &('W'+'r'+'ite-'+'Ver'+'bose') -Message ("{4}{0}{5}{6}{8}{7}{3}{1}{2}"-f 'S','unspace p','ool','ng r','Get-Remote','had','owCopyInformat','n: Creati','io')
+        ${rP} =   $1eV::"CRe`AtERUNs`pa`C`EpooL"(1, ${thROT`TleL`ImIt}, ${i`Ss}, ${ho`St})
+        ${Rp}."A`PaR`TMe`NTstaTE" = 'STA'
+        ${RP}."OP`EN"()
+ 
+        
+        &('Wr'+'ite'+'-Verbose') -Message ("{0}{9}{12}{14}{13}{11}{8}{10}{3}{7}{6}{4}{1}{5}{2}" -f 'Get-RemoteS','s','block','g backgro','e',' script','d runspac','un','ormation: Def','h','inin','nf','adowC','pyI','o')
+        ${sCR`i`PT`BloCK} = {
+            [CmdletBinding()]
+            param (
+                [Parameter(poSItioN=0)]
+                [string]${cOmpU`T`ErNaMe},
+                [Parameter(POSITion=1)]
+                [int]${Bg`RUNsPA`cEId},
+                [Parameter(posItIOn=2)]
+                [switch]${SHaDO`wC`opI`ESASbASEOBj`E`cT}
+            )
+            ${RUn`spAceti`ME`RS}.${bgR`U`NsPACEid} = &('Get-D'+'a'+'te')
+            filter cONV`E`RTTO-KMg  {
+                ${Byt`Eco`UNT} = ${_}
+                switch (  ( &('Varia'+'b'+'le')  dcR5  ).vaLUE::"t`R`UNcaTE"( (&('variAbl'+'e') ('Dc'+'r5')  ).vaLue::"l`Og"(${B`Y`TecOUNT},1024)))  {
+                    0 {("$bytecount "+'B'+'ytes')}
+                    1 {"{0:n2} KB" -f (${byt`E`coUnt} / 1kb)}
+                    2 {"{0:n2} MB" -f (${BytE`Cou`NT} / 1mb)}
+                    3 {"{0:n2} GB" -f (${B`yTeCOu`Nt} / 1gb)}
+                    4 {"{0:n2} TB" -f (${bYT`EC`ou`NT} / 1tb)}
+                    default {"{0:n2} PB" -f (${bY`TEc`OuNt} / 1pb)}
+                }
+            }
+            try {
+                &('Write-'+'Ver'+'bose') -Message ('Get-RemoteShadowCopyInformation: Runspace {0}: Start' -f ${Com`put`E`RName})
+                ${W`MiHAst} = @{
+                    "cOmPut`ErN`AMe" = ${cOmP`Ut`ER`NamE}
+                    "ER`RoRAc`Ti`On" = ("{0}{1}" -f 'Sto','p')
+                }
+                if ((${LO`caL`HOSt} -notcontains ${C`oMPUTe`RN`AME}) -and (${C`Re`d`ENTIal} -ne ${n`Ull})) {
+                    ${wmi`ha`St}."crEdent`I`Al" = ${CRe`dE`N`Tial}
+                }
+
+                
+                ${Psd`AtE`Time} = &('Get-Da'+'t'+'e')
+                
+                
+                &('W'+'rite-Verbo'+'se') -Message ('Get-RemoteShadowCopyInformation: Runspace {0}: Share session information' -f ${cO`mpUteR`NAME})
+
+                
+                ${dEF`A`UlT`prOPerties}    = @(("{3}{1}{0}{2}"-f'te','mpu','rName','Co'),("{3}{0}{1}{2}{4}" -f 'opyV','o','lume','ShadowC','s'),("{2}{3}{4}{0}{1}"-f 'tting','s','Sha','dowCop','ySe'), `
+                                          ("{2}{1}{0}{3}{4}"-f'd','ha','S','owCopyPro','viders'),("{3}{1}{2}{0}" -f 'owCopies','h','ad','S'))
+
+                ${w`MI_SHA`doW`CopYARe`As} = &('Get-W'+'m'+'iO'+'bject') @WMIHast -Class wIN`3`2_SHaD`oW`sTOR`Age
+		        ${w`mI_VOL`UmEiNfo} =  &('Get-'+'Wmi'+'Obj'+'ect') @WMIHast -Class w`i`N`32_VOLume
+                ${wmi`_`SH`ADOwCOpyp`ROv`IderS} = &('Get-'+'W'+'miObje'+'ct') @WMIHast -Class wIN32_sH`AdoW`p`RoVider
+                ${wMi_sha`d`OWcOPYs`ETT`iN`Gs} = &('Get-Wm'+'iObje'+'ct') @WMIHast -Class wIn32_Sha`D`owco`Nt`E`xT
+                ${W`M`I_SHADO`wCoPi`ES} = &('Get'+'-Wm'+'i'+'Object') @WMIHast -Class wi`N3`2_s`HAdOw`coPy
+                ${SHAdOw`CO`PyVOlu`mES} = @()
+                ${sHAdow`CoPYP`RovIDE`Rs} = @()
+                ${SHa`Dowcop`ySetti`Ngs} = @()
+                ${shAdoWc`o`p`IEs} = @()
+                foreach (${SH`Ad`oW} in ${w`mi_S`haDOwCOpY`AREAS}) {
+                    foreach (${vo`Lu`Me} in ${w`Mi_VO`LUmEI`NFo}) {
+                        if (${SHa`dOW}."vo`lu`mE" -like "*$($volume.DeviceId.trimstart("\\?\Volume").trimend("\"))*") {
+                            ${Shad`o`wCO`pyVOLUM`Ep`RoPe`Rty} =  @{
+                                ("{0}{1}" -f 'D','rive') = ${Vo`L`UmE}."NA`ME"
+                                ("{2}{1}{3}{0}" -f'y','eCapac','Driv','it') = ${VO`LUME}."CApaCi`Ty" | &('C'+'onve'+'rtTo-KMG')
+        					    ("{0}{2}{3}{1}" -f'Sha','eMax','do','wSiz') = ${s`HAdOW}."MA`XSpACE"  | &('Co'+'nver'+'tTo'+'-KMG')
+        					    ("{0}{3}{1}{2}"-f'Shado','se','d','wSizeU') = ${sHA`d`oW}."UsEdSP`AcE"  | &('Con'+'ver'+'tTo-'+'KM'+'G')
+                                ("{2}{0}{1}{4}{3}" -f'hadowCa','pac','S','tyUsed','i') =   ( &('g'+'Et-'+'vAr'+'iaBlE') dCr5  ).valUE::"r`oUND"(((${s`HaDow}."UsedSp`A`cE"/${s`HAd`OW}."MA`xSP`Ace") * 100),2)
+                                ("{0}{5}{3}{2}{1}{4}" -f'Volum','Use','ity','Capac','d','e') =  ( &('geT-c'+'h'+'iLdi'+'TEm')  ('vArI'+'a'+'B'+'Le'+':dcr5') ).vALuE::"ro`UnD"(((${shAD`ow}."us`E`DSpACE"/${V`O`luMe}."CAPA`C`iTy") * 100),2)
+                             }
+                            ${shA`dOWCopyvo`l`U`mES} += &('New-'+'O'+'bject') -TypeName PsoBjE`Ct -Property ${SHA`dO`Wc`o`PYvO`LuM`E`PropeRTy}
+                        }
+                    }
+                }
+                foreach (${sC`P`Rovi`dER} in ${Wm`I_`shADOw`Co`PYPROVI`D`ERs}) {
+                    ${SccOpYProviD`E`R`pROP} = @{
+                        ("{0}{1}"-f 'Nam','e') = ${S`cP`R`OvIdeR}."NA`mE"
+                        ("{0}{1}" -f 'CL','SID') = ${s`cPROvi`DeR}."CL`SiD"
+                        'ID' = ${scP`R`ovi`DER}."Id"
+                        ("{0}{1}"-f 'Ty','pe') = ${Scp`Rov`idEr}."Ty`pE"
+                        ("{0}{1}" -f 'Ver','sion') = ${S`cpr`OVIDER}."v`ERSI`ON"
+                        ("{0}{1}" -f'V','ersionID') = ${sc`PROVi`D`Er}."vE`R`SIo`NId"
+                    }
+                    ${s`HAD`ow`cOP`y`ProvId`ERs} += &('N'+'ew'+'-O'+'bject') -TypeName PsO`B`jECt -Property ${S`CCOpYPRO`VidER`PR`oP}
+                }
+                foreach (${S`c`sETTiNg} in ${WMi_ShA`Do`W`c`o`pyseTTI`NgS}) {
+                    ${sCSe`T`TI`NGprOP`Erty} = @{
+                        ("{1}{0}"-f'e','Nam') = ${s`CseTtI`Ng}."Na`ME"
+                        ("{0}{3}{1}{2}" -f'Clie','ssi','ble','ntAcce') = ${sC`S`ETtING}."c`LiEn`Tac`CES`SiblE"
+                        ("{1}{3}{0}{2}" -f'ren','Di','tial','ffe') = ${sc`SeT`TInG}."D`iF`FERenTi`AL"
+                        ("{2}{0}{4}{1}{3}"-f 'os','dLoca','Exp','lly','e') = ${s`CS`E`TTINg}."ex`pOsE`dLO`CALlY"
+                        ("{1}{3}{0}{2}" -f 'Rem','Expose','otely','d') = ${Sc`S`EtTING}."e`xp`oSeDRE`MOTEly"
+                        ("{1}{2}{0}{3}"-f'sist','H','ardwareAs','ed') = ${SCS`Et`T`iNG}."hAR`D`WaREAsS`Ist`Ed"
+                        ("{0}{1}{2}"-f 'Im','p','orted') = ${sC`Se`Tting}."iMpo`RT`Ed"
+                        ("{0}{1}{2}" -f'NoAut','o','Release') = ${sCset`T`Ing}."nO`A`UTOR`E`LeAse"
+                        ("{2}{0}{1}" -f'ace','d','NotSurf') = ${s`csE`TTinG}."NoTsU`R`F`ACED"
+                        ("{1}{2}{0}"-f 'iters','No','Wr') = ${SC`s`ET`TiNG}."nO`wRi`TeRs"
+                        ("{2}{0}{1}"-f'ten','t','Persis') = ${Scse`Tti`Ng}."pE`Rsis`TEnT"
+                        ("{0}{1}" -f 'Ple','x') = ${S`CsetTI`Ng}."P`LeX"
+                        ("{4}{0}{1}{3}{2}"-f 'r','ansport','e','abl','T') = ${sC`S`ET`TinG}."t`R`AnspoR`Tab`le"
+                     }
+                     ${shADow`Co`p`yse`TTIn`gs} += &('Ne'+'w-Ob'+'ject') -TypeName pSoB`je`ct -Property ${scS`EttI`NgPrOp`Erty}
+
+                }
+                if (${shA`DOwCOpie`S`ASb`A`seoB`jE`CT}) {
+                    ${SHAdoW`CO`PI`ES} = @(${WM`i_`s`hAD`OWCOPi`Es})
+                }
+                else {
+                    foreach (${Sh`A`doW`cOpy} in ${WMi_`shADOWc`o`Pi`Es}) {
+                        ${sC`pROPe`R`TY} = @{
+                            'ID' = ${SHaD`oW`copy}."i`d"
+                            ("{0}{1}{2}" -f 'Cli','e','ntAccessible') = ${s`h`AdO`wCopY}."C`LiEN`T`ACcE`SSiblE"
+                            ("{1}{0}" -f 'unt','Co') = ${SHadow`co`PY}."C`ouNt"
+                            ("{0}{2}{3}{1}" -f'Devi','Object','c','e') = ${Sh`Adow`C`oPY}."deVIce`OB`J`Ect"
+                            ("{0}{3}{2}{1}"-f 'Differe','ial','t','n') = ${sha`D`OWcoPY}."dIF`Fe`REntIal"
+                            ("{2}{1}{0}{3}"-f'dLo','se','Expo','cally') = ${ShadO`w`C`opY}."EX`POsEDL`O`cal`LY"
+                            ("{1}{2}{3}{0}" -f'dName','Ex','pos','e') = ${SHadO`W`Co`PY}."e`xPoS`EdnA`mE"
+                            ("{0}{3}{1}{2}" -f 'Ex','t','ely','posedRemo') = ${sHa`DO`wcopy}."ex`PO`SE`dR`EMOTeLy"
+                            ("{4}{2}{3}{0}{1}" -f 'sist','ed','rdw','areAs','Ha') = ${sHA`dO`WCOPy}."hAR`D`WaREA`SsisTeD"
+                            ("{1}{2}{0}"-f'd','Import','e') = ${S`haDO`wcOpY}."iM`Po`Rted"
+                            ("{2}{0}{1}"-f'o','AutoRelease','N') = ${S`hAD`owC`opY}."No`AUt`ore`leaSE"
+                            ("{2}{0}{1}"-f 'otSu','rfaced','N') = ${shadO`wC`OPy}."N`oTS`UrfaCed"
+                            ("{1}{2}{0}" -f'rs','N','oWrite') = ${sH`ADOWc`O`py}."n`oWR`it`Ers"
+                            ("{2}{0}{1}" -f 's','istent','Per') = ${ShA`DoWC`oPY}."p`ERs`ISTent"
+                            ("{1}{0}"-f 'lex','P') = ${SHa`dOw`cOpy}."p`LeX"
+                            ("{0}{1}{2}"-f'Prov','id','erID') = ${s`ha`dOwC`opY}."PRo`Vid`ERId"
+                            ("{0}{2}{1}" -f'Se','e','rviceMachin') = ${sh`A`DowcoPy}."Se`RVIC`E`mA`ChiNE"
+                            ("{0}{1}"-f 'SetI','D') = ${s`hADo`Wcopy}."SE`Tid"
+                            ("{0}{1}"-f 'Stat','e') = ${SH`Ad`owCO`pY}."sTa`TE"
+                            ("{3}{0}{2}{1}" -f'ran','e','sportabl','T') = ${S`ha`doWc`oPy}."Tr`ANSp`ortAb`LE"
+                            ("{2}{3}{0}{1}" -f 'Na','me','V','olume') = ${Sha`do`W`CoPy}."VO`L`UmeNaMe"
+                        }
+                        ${s`HADO`wc`OpIEs} += &('New'+'-O'+'b'+'ject') -TypeName Ps`ObJECT -Property ${sC`pRopE`RTy}
+                    }
+                }
+                ${r`ESuLtPr`OPerty} = @{
+                    ("{1}{3}{2}{0}" -f'erName','PS','mput','Co') = ${CoM`P`UterNa`me}
+                    ("{0}{1}{2}"-f'PS','DateTi','me') = ${PSD`AtET`IMe}
+                    ("{1}{2}{0}{3}" -f'uterNam','Co','mp','e') = ${C`o`M`puTerNA`me}
+                    ("{2}{5}{1}{3}{4}{0}"-f'lumes','C','S','op','yVo','hadow') = ${SHaDoWc`OpyV`O`l`Um`Es}
+                    ("{0}{2}{3}{1}" -f'Sh','ettings','ado','wCopyS') = ${s`hADow`COP`YsetT`IngS}
+                    ("{1}{2}{0}"-f 'pies','Sha','dowCo') = ${shADo`w`copIeS}
+                    ("{4}{0}{2}{3}{1}"-f 'p','iders','yPro','v','ShadowCo') = ${s`HadoWCoPy`ProvI`dErs}
+                }
+                                    
+                ${R`EsuLTobJ`ECt} += &('Ne'+'w-Obje'+'ct') -TypeName pSob`J`Ect -Property ${RE`sU`LTpr`OPerty}
+                
+                
+                ${re`s`Ult`OBjE`Ct}."p`sob`JEcT"."TYp`EN`Ames"."i`Ns`ERT"(0,("{0}{1}{4}{2}{3}"-f'My.','Shado','opy.I','nfo','wC'))
+                ${dEfaU`Ltd`ISpLaY`P`ROpER`TYsEt} = &('Ne'+'w'+'-Ob'+'ject') sY`ste`m`.m`A`N`A`G`EMenT.aUTomA`Tion.p`SPRoPeRTYS`Et(("{4}{0}{2}{3}{1}"-f'l','et','tDisplayPro','pertyS','Defau'),[string[]]${D`EfAUltpro`PeRti`Es})
+                ${P`SST`AndArDmEMb`ErS} = [System.Management.Automation.PSMemberInfo[]]@(${D`EFAulTDiS`PLa`y`p`RoPeRt`YS`Et})
+                ${r`Esu`LT`Obje`Ct} | &('Add-'+'M'+'ember') MEM`BER`seT p`ss`TAN`daRDMemBErS ${pSsTa`ND`AR`DMeM`Bers}
+
+                &('W'+'rite-Outpu'+'t') -InputObject ${ReS`UL`ToBJeCt}
+                
+            }
+            catch {
+                &('Wr'+'ite-War'+'n'+'ing') -Message ('Get-RemoteShadowCopyInformation: {0}: {1}' -f ${compUtE`R`N`AME}, ${_}."exC`EpTI`on"."M`EsS`Age")
+            }
+            &('Write-'+'V'+'erb'+'ose') -Message ('Get-RemoteShadowCopyInformation: Runspace {0}: End' -f ${CoM`PUt`Er`N`AME})
+        }
+ 
+        Function GE`T-re`SUlt {
+            [CmdletBinding()]
+            param  (
+                [switch]${w`Ait}
+            )
+            do {
+                ${M`orE} = ${Fa`l`SE}
+                foreach (${R`UNSP`Ace} in ${RuNS`P`Ac`Es}) {
+                    ${STArT`T`Ime} = ${runSp`AceT`i`ME`Rs}[${RuNs`P`A`ce}."iD"]
+                    if (${Ru`NspA`Ce}."HAn`DLe"."I`S`cOM`PLetED") {
+                        &('Wr'+'i'+'te-Ver'+'bose') -Message ('Get-RemoteShadowCopyInformation: Thread done for {0}' -f ${R`Un`sPace}."i`oBjeCT")
+                        ${Run`S`pacE}."PO`weRsHE`Ll"."E`NDIN`VOke"(${runS`pAce}."hanD`LE")
+                        ${ru`NsPA`cE}."pOwer`S`HElL"."DIs`P`osE"()
+                        ${ru`Nsp`AcE}."P`OWeRShe`lL" = ${nU`ll}
+                        ${r`U`NsPa`Ce}."ha`NdLe" = ${n`ULL}
+                    }
+                    elseif (${Ru`NsPA`Ce}."hA`NdLE" -ne ${n`Ull}) {
+                        ${m`oRE} = ${T`Rue}
+                    }
+                    if (${tiM`EO`Ut} -and ${sTArTT`I`Me}) {
+                        if ((&('New'+'-TimeS'+'pa'+'n') -Start ${STaR`TT`IMe})."tOt`A`L`SeCondS" -ge ${T`iM`EOUt} -and ${R`UNs`p`AcE}."P`OW`Er`SHell") {
+                            &('Write-'+'War'+'nin'+'g') -Message ('Timeout {0}' -f ${runs`PAce}."iObJe`Ct")
+                            ${R`Uns`paCE}."PO`WerShe`Ll"."dISP`Ose"()
+                            ${RU`N`spACe}."P`Ow`ERShelL" = ${n`Ull}
+                            ${rUNS`pA`CE}."hAnD`Le" = ${nu`LL}
+                        }
+                    }
+                }
+                if (${Mo`RE} -and ${Psbou`N`D`pa`RaMeTErS}[("{0}{1}"-f 'W','ait')]) {
+                    &('Star'+'t-Sle'+'e'+'p') -Milliseconds 100
+                }
+                foreach (${t`hr`Eat} in ${RUnSP`AC`Es}."cl`oNe"()) {
+                    if ( -not ${tHR`E`At}."hAn`dlE") {
+                        &('W'+'rite-Ver'+'bos'+'e') -Message ('Get-RemoteShadowCopyInformation: Removing {0} from runspaces' -f ${t`h`REaT}."IO`BJect")
+                        ${Ru`N`SPaC`Es}."Re`mo`Ve"(${THre`At})
+                    }
+                }
+                if (${shoWPRO`Gr`EsS}) {
+                    ${proGRESsS`P`lat`TIng} = @{
+                        "acT`Iv`itY" = ("{0}{2}{13}{1}{4}{8}{11}{9}{6}{10}{3}{5}{12}{7}"-f'Get-R','owCopyIn','emoteS','g ','forma','i','ti','fo','tion','t','n',': Ge','n','had')
+                        "STAt`US" = 'Get-RemoteShadowCopyInformation: {0} of {1} total threads done' -f (${bG`Runs`pacECo`UNtEr} - ${rUNs`pA`cEs}."COU`Nt"), ${bG`Run`spaCEc`OUn`Ter}
+                        "pe`RCen`TcO`Mple`TE" = (${BgRUns`P`ACE`CoUnteR} - ${RuN`sPA`C`Es}."cO`UnT") / ${BG`R`Un`sPa`CEC`OuNTer} * 100
+                    }
+                    &('Write-Prog'+'re'+'ss') @ProgressSplatting
+                }
+            }
+            while (${Mo`Re} -and ${P`sBo`UNd`pARAMeters}[("{0}{1}"-f'Wa','it')])
+        }
+    }
+    process {
+        foreach (${C`o`mPutEr} in ${coMPuT`ERnA`Me}) {
+            ${BgRUNspaCEC`O`U`N`T`Er}++
+            ${p`S`CMd} =  $TbWZsN::"Cr`EAtE"()."Add`s`cr`Ipt"(${sc`RI`PTBL`ock})
+            ${nU`Ll} = ${PS`cmD}."ad`DpaR`AMe`TeR"(("{2}{3}{0}{1}"-f'un','spaceID','b','gR'),${b`G`RUNSpa`c`ECOUnT`ER})
+            ${NU`Ll} = ${p`scmd}."A`d`d`PaRaMeTer"(("{2}{3}{1}{0}"-f'ame','terN','Co','mpu'),${cO`M`pUt`Er})
+            ${n`UlL} = ${ps`CMD}."Ad`D`pAr`Ameter"(("{0}{5}{2}{3}{4}{6}{1}" -f'Sha','eObject','owC','opies','AsB','d','as'),${Sh`ADOwcOpIESa`sb`A`S`E`ObJEcT})
+            ${NU`LL} = ${Psc`MD}."aDDP`ARaME`T`ER"(("{1}{2}{0}"-f 'e','V','erbos'),${VerbO`SEPRe`F`E`Re`NCe})
+            ${P`SC`MD}."ruN`s`PAce`pOOl" = ${R`p}
+ 
+            &('Wri'+'te-Verb'+'o'+'se') -Message ('Get-RemoteShadowCopyInformation: Starting {0}' -f ${C`OmPUT`Er})
+            [void]${run`s`P`ACEs}."A`dd"(@{
+                "Ha`N`DLE" = ${p`scmd}."B`E`GININ`VoKe"()
+                "P`OweRs`hELL" = ${P`SCMD}
+                "IoBje`Ct" = ${cOmP`UtER}
+                "Id" = ${b`Gru`NSP`ACEC`Ou`Nter}
+           })
+           &('G'+'e'+'t-Result')
+        }
+    }
+    end {
+        &('G'+'et'+'-Result') -Wait
+        if (${shoWP`R`o`GREsS}) {
+            &('Wr'+'ite-Prog'+'r'+'es'+'s') -Activity ("{6}{4}{10}{13}{5}{7}{3}{12}{2}{8}{0}{1}{11}{9}"-f 'ing share session',' inf','n: Ge','ormat','-RemoteSha','yIn','Get','f','tt','n','dow','ormatio','io','Cop') -Status ("{0}{1}" -f 'Don','e') -Completed
+        }
+        &('Wri'+'te-Ver'+'bose') -Message ("{7}{9}{2}{6}{3}{1}{5}{4}{0}{8}" -f'ce','matio','wC','or','unspa','n: Closing r','opyInf','Get-R',' pool','emoteShado')
+        ${RP}."c`LosE"()
+        ${RP}."disP`OsE"()
+    }
+}
+
+

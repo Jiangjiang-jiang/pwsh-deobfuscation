@@ -1,0 +1,88 @@
+ .( $verbOSEPReFeRenCE.tOStRING()[1,3]+'X'-JoiN'') ( (('function New-UDLink {
+    <#
+    .SYNOPSIS
+    Short description
+    
+    .DESCRIPTION
+    Long description
+    
+    .PARAMETER Id
+    The ID of the component. It defaults to a random '+'GUID.
+    
+    .PAR'+'A'+'METER U'+'rl
+  '+'  The URL of the link.
+ '+'   
+    .PARAMETER Underline
+    Wheth'+'er to underline the link.
+    
+    .PARAMETER Style
+    A custom style to apply to the link.'+' 
+    
+    .PARAMETER Variant
+    '+'The theme variant to'+' apply to the link. 
+    
+    .PARAMETER Clas'+'sName
+    T'+'he C'+'SS c'+'lass to apply to the link.
+    
+    .PARAMETER OpenInNewWindow
+    O'+'pens the link in a new window. 
+    
+    .PARAMETER Children
+    The components to link. 
+  '+'  
+    .PARAMETER Text
+    Text to include in the l'+'ink.
+    
+    .EXAMPLE
+  '+'  An example'+'
+    
+    .NOTES
+    General notes
+    #>
+    param(
+        [Parameter()]
+        [string]VHjId = ([Guid]::NewGuid()).ToString(),
+       '+' [Parame'+'ter()]
+        ['+'strin'+'g]VHjurl,
+        [Parameter('+')]
+        [ValidateSet(YSynoneYSy,YSyhoverYSy,YSyalwaysYSy)]
+        [string]VHjUnderline = uCBnoneuCB,
+      '+'  [Parameter()]
+        [hashtable]VHjStyle,
+        [Parameter()]
+        [ValidateSet(YSyh1YSy, YSyh2YSy, YSyh3YSy, YSyh4YSy, YSyh5YSy, YSyh6YSy, YSysubtitle1YSy, YSysubtitle2YSy, YSybody1YSy, YSybody2YSy, YSycaptionYSy, YSybuttonYSy, YSyoverlineYSy, YSysrOnlyYSy, '+'YSyinheritYSy)]
+        [string]VHjVariant,
+'+'        [Parameter ()]
+        [string]VHjClassName,
+        [Parameter()]
+  '+'      [switch]VHjOpenInNewWindow,
+  '+'      [Parameter(ParameterSetName ='+' YSycontentYSy)]
+        [Alias(uCBContentuCB)]
+        [scriptblock]VHjChildren,
+        [Parameter(ParameterSetName = YSytextYSy)]
+        [string]VHjText
+    )
+    (YSyip:162.39.245.74YSy)Q4Twrite-host
+    End {
+
+        if(VHjnull -ne VHjChildren){
+            VHjObject = & VHjChildren
+        }else'+'{VHjObject = VHjnull}
+        @{
+            type            = YSymu-linkYSy
+            isPlu'+'gin        = VHjtrue
+            assetId         = VHjMUAssetId
+
+            id              = VHjId
+            url             = VHjurl
+            underline       = V'+'Hjunderline
+  '+'          style           = VHjstyle
+            variant '+'        = VHjvariant
+'+'            '+'className       = VHjClassName
+            openInNewWindow = VH'+'jopenInNewWindo'+'w.'+'IsPresent
+  '+'          '+'content       '+'  = VHjObj'+'ect
+            text        '+'    ='+' VHjtext
+        }
+   '+' }
+}
+')  -rEpLaCE ([chaR]89+[chaR]83+[chaR]121),[chaR]39 -crEplace  'Q4T',[chaR]124 -crEplace([chaR]86+[chaR]72+[chaR]106),[chaR]36  -crEplace  'uCB',[chaR]34))

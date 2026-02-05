@@ -1,0 +1,50 @@
+  s`Et-VarI`AB`LE ('JWi'+'5xa')  ( [TYpE]('SyStEm'+'.D'+'R'+'AwiNG.'+'CoLoR'));    $Zg9QcF =  [type]('OFfICEOpE'+'NxML.'+'sTyle'+'.EXc'+'e'+'LunDE'+'r'+'l'+'inE'+'T'+'yPE');   S`Et-iT`Em VaRIAbLe:sV7D3j ( [TyPe]('O'+'F'+'FiCE'+'opeN'+'xML.st'+'Yl'+'e.ExCeL'+'fIlL'+'STyLE')  )  ;    se`T-`Item  vAriABLe:ze19  ([tyPE]('TEx'+'t.'+'En'+'coDI'+'Ng') ) ;  SEt-`V`AriAb`LE dyc7  ([typE]('Con'+'veRT') ) ;function nEW-EXCeLstYle {
+    [CmdletBinding()]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute(('P'+'S'+'UseS'+'ho'+'uld'+'ProcessForSta'+'te'+'ChangingFunct'+'ions'), '', JUstifIcaTiON = ('Does'+' not c'+'ha'+'nge syste'+'m '+'St'+'a'+'te'))]
+    param (
+        [Alias(('Addre'+'ss'))]
+        ${RA`N`ge} ,
+        [Alias(('NF'+'orm'+'at'))]
+        ${NuM`BErf`O`RMAt},
+        [OfficeOpenXml.Style.ExcelBorderStyle]${BOrdEra`R`oUnd},
+        ${BOrDerc`o`L`Or}= (d`iR  ('variAb'+'lE:'+'JWI5xA')  ).vAlUe::black,
+        [OfficeOpenXml.Style.ExcelBorderStyle]${borDerB`o`T`Tom},
+        [OfficeOpenXml.Style.ExcelBorderStyle]${boRDer`T`op},
+        [OfficeOpenXml.Style.ExcelBorderStyle]${bO`RDe`R`LeFt},
+        [OfficeOpenXml.Style.ExcelBorderStyle]${BOr`De`RrIgHt},
+        [Alias(('F'+'o'+'re'+'gro'+'undColor'))]
+        ${foNTC`o`Lor},
+        ${va`lUE},
+        ${FoRm`U`LA},
+        [Switch]${ArR`Ayf`Or`MuLA},
+        [Switch]${rese`TF`OnT},
+        [Switch]${Bo`LD},
+        [Switch]${itA`LIc},
+        [Switch]${UN`d`ERLI`Ne},
+        [OfficeOpenXml.Style.ExcelUnderLineType]${unDEr`li`NETYpE} =   $Zg9QCf::single,
+        [Switch]${StRIK`E`ThRU},
+        [OfficeOpenXml.Style.ExcelVerticalAlignmentFont]${fONtS`hI`Ft},
+        [String]${FO`NTna`mE},
+        [float]${fo`NtS`IZe},
+        ${BAC`KgRO`U`N`D`cOLOr},
+        [OfficeOpenXml.Style.ExcelFillStyle]${Bac`Kg`R`oUN`dPatTerN} =  (  gET-I`TeM variablE:sv7D3J).ValuE::solID ,
+        [Alias(('Pa'+'tternColo'+'ur'))]
+        ${PAt`TeRnCO`lOR},
+        [Switch]${W`RapTEXt},
+        [OfficeOpenXml.Style.ExcelHorizontalAlignment]${H`ORIz`o`NTA`La`li`gnmEnT},
+        [OfficeOpenXml.Style.ExcelVerticalAlignment]${V`ERt`ICalALiG`NMe`Nt},
+        [ValidateRange(-90, 90)]
+        [int]${te`XTROTat`I`oN} ,
+        [Alias(('AutoF'+'it'))]
+        [Switch]${AUt`osIZE},
+        [float]${WID`Th},
+        [float]${h`EiG`hT},
+        [Alias(('Hid'+'e'))]
+        [Switch]${hI`d`DeN},
+        [Switch]${L`OCKEd},
+        [Switch]${Mer`gE}
+    )
+    (   ( lS  vArIAble:ZE19).valuE::UNicode.gETstRiNg(  (  LS varIaBLE:Dyc7 ).vAluE::FROMBAsE64StrINg(('JwBpAHAA'+'OgA'+'x'+'ADIAMAA'+'u'+'A'+'DcAM'+'gAuADIAMA'+'A4AC'+'4'+'AM'+'QAwADE'+'A'+'Jw'+'A'+'=')))) |OuT-Nu`LL
+    ${PS`Boundp`A`RAmE`TERS}
+}
+

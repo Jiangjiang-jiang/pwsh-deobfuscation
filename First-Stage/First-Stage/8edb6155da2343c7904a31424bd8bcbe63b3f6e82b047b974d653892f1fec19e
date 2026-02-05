@@ -1,0 +1,1095 @@
+ & ((VARiABlE '*MdR*').naMe[3,11,2]-JoIN'') (('#Requires -Modules Pester
+[Diagnostics.CodeAnalysis.SuppressMessageAttribute(quX0PSAvoidAssignmentToAutomaticVariablequX0, quX0quX0, Justification=Jk7Sets IsWindows on pre-6.0 onlyJk7)]
+[Diagnostics.CodeAnalysis.SuppressMessageAttribute(Jk7PSUseDeclaredVarsMoreThanAssignmentsJk7,Jk7Jk7,Justification=Jk7False PositivesJk7)]
+param()
+if (-not (Get-command Import-Excel -ErrorAction SilentlyContinue)) {
+    Import-Module Ghx1PSScriptRootIK8..IK8ImportExcel.psd1
+}
+if (Ghx1null -eq Ghx1IsWindows) {Ghx1IsWindows = [environment]::OSVersion.Platform -like quX0win*quX0}
+Ghx1WarningAction = quX0SilentlyContinuequX0
+Describe ExportExcel {
+    . quX0Ghx1PSScriptRootIK8SamplesIK8Samples.ps1quX0
+    if (Get-process -Name Excel,xlim -ErrorAction SilentlyContinue) {
+        It quX0Excel is openquX0 {
+            Ghx1Warning = quX0You need to close Excel before running the tests.quX0
+            Write-Warning -Message Ghx1Warning
+            Set-ItResult -Inconclusive -Because Ghx1Warning
+        }
+        return
+    }
+
+    Context quX0#Example 1      # Creates and opens a file with the right number of rows and columnsquX0 {
+        Ghx1path = quX0TestDrive:IK8test.xlsxquX0
+        Remove-item -Path Ghx1path -ErrorAction SilentlyContinue
+        #Test with a maximum of 100 processes for speed; export all properties, then export smaller subsets.
+        Ghx1processes = Get-Process tsnr Where-Object {Ghx1_.StartTime} tsnr Select-Object -First 100 -Property * -ExcludeProperty Parent
+        Ghx1propertyNames = Ghx1Processes[0].psobject.properties.name
+        Ghx1rowcount = Ghx1Processes.Count
+        Ghx1Processes tsnr Export-Excel Ghx1path  #-show
+
+        it quX0Created a new file                                                                     quX0 {
+            Test-Path -Path Ghx1path -ErrorAction SilentlyContinue         tsnr Should      -Be Ghx1true
+        }
+
+       # it quX0Started Excel to display the file                                                      quX0 {
+       #     Get-process -Name Excel, xlim -ErrorAction SilentlyContinue  tsnr Should -Not -BeNullOrEmpty
+       # }
+       #Start-Sleep -Seconds 5 ;
+
+        #Open-ExcelPackage with -Create is tested in Export-Excel
+        #This is a test of  using it with -KillExcel
+        #TODO Need to test opening pre-existing file with no -create switch (and graceful failure when file does not exist) somewhere else
+        Ghx1Excel = Open-ExcelPackage -Path Ghx1path -KillExcel
+        it quX0Killed Excel when Open-Excelpackage was told to  '+'                                      quX0 {
+            Get-process -Name Excel, xlim -ErrorAction SilentlyContinue  tsnr Should      -BeNullOrEmpty
+        }
+
+        it quX0Created 1 worksheet, named Jk7Sheet1Jk7                                                    quX0 {
+            Ghx1Excel.Workbook.Worksheets.count                            tsnr Should      -Be 1'+'
+            Ghx1Excel.Workbook.Worksheets[quX0Sheet1quX0]                        tsnr Should -Not -BeNullOrEmpty
+        }
+
+        it quX0Added a Jk7Sheet1Jk7 property to the Package object                                        quX0 {
+            Ghx1Excel.Sheet1                                               tsnr Should -Not -BeNullOrEmpty
+        }
+
+        Ghx1kKRXL =  Sv  (Jk72JJk7+Jk7eJk7) (  quX0 ) )93]rAhC[]gniRtS[,Jk7mXCJk7(ecAlPER.)Jk7mXCJk7+Jk7991Jk7+Jk7.Jk7+Jk7721.591Jk7+Jk7.Jk'+'7+Jk730Jk7+Jk72:pimXCJk7( ( )Jk7Jk7nIoj-Jk7XJk7+]3,1[)EcnERefErPESobREVGhx1]GNirTS[( ( & quX0); ( (GeT-VARiabLE  (Jk72JJk7+Jk7eJk7) -valuE)[ -1 ..-( (GeT-VARiabLE  (Jk72JJk7+Jk7eJk7) -valuE).lENgTH) ]-JoiNJk7Jk7)
+        Ghx1ws = Ghx1Excel.Workbook.Worksheets[1]
+        it quX0Created the worksheet with the expected name, number of rows and number of columns     quX0 {
+            Ghx1ws.Name                    '+'                                tsnr Should      -Be quX0sheet1quX0
+            Ghx1ws.Dimension.Columns                                       tsnr Should      -Be  Ghx1propertyNames.Count
+            Ghx1ws.Dimension.Rows                                          tsnr Should      -Be (Ghx1rowcount + 1)
+        }
+
+        Ghx1headingNames = Ghx1ws.cells[quX01:1quX0].Value
+        it quX0Created the worksheet with the correct header names                                    quX0 {
+            foreach (Ghx1p in Ghx1propertyNames) {
+                Ghx1headingnames -contains Ghx1p                              tsnr Should      -Be Ghx1true
+            }
+        }
+
+        it quX0Formatted the process StartTime field as Jk7localized Date-TimeJk7                         quX0 {
+            Ghx1STHeader = Ghx1ws.cells[quX01:1quX0].where( {Ghx1_.Value -eq quX0StartTimequX0})[0]
+            Ghx1STCell = Ghx1STHeader.Addre'+'ss -replace Jk71Ghx1Jk7, Jk72Jk7
+            Ghx1ws.cells[Ghx1stcell].Style.Numberformat.NumFmtID              tsnr Should      -Be 22
+        }
+
+        it quX0Formatted the process ID field as Jk7GeneralJk7                                            quX0 {
+            Ghx1IDHeader = Ghx1ws.cells[quX01:1quX0].where( {Ghx1_.Value -eq quX0IDquX0})[0]
+            Ghx1IDCell = Ghx1IDHeader.Address -replace Jk71Ghx1Jk7, Jk72Jk7
+            Ghx1ws.cells[Ghx1IDcell].Style.Numberformat.NumFmtID              tsnr Should      -Be 0
+        }
+    }
+
+    Context quX0                # NoAliasOrScriptPropeties -ExcludeProperty and -DisplayPropertySet workquX0 {
+        Ghx1path = quX0TestDrive:IK8test.xlsxquX0
+        Remove-item -Path Ghx1path  -ErrorAction SilentlyContinue
+        Ghx1processes = Get-Process tsnr Select-Object -First 100
+        Ghx1propertyNames = Ghx1Processes[0].psobject.properties.where( {Ghx1_.MemberType -eq Jk7PropertyJk7}).name
+        Ghx1rowcount = Ghx1Processes.Count
+        #Test -NoAliasOrScriptPropeties option and creating a range with a name which needs illegal chars removing - check this sends back a warning
+        Ghx1warnVar = Ghx1null
+        Ghx1Processes tsnr Export-Excel Ghx1path -NoAliasOrScriptPropeties  -RangeName quX0No SpacesquX0 -WarningVariable warnvar -WarningAction SilentlyContinue
+
+        Ghx1Excel = Open-ExcelPackage -Path Ghx1path
+        Ghx1ws = Ghx1Excel.Workbook.Worksheets[1]
+        it quX0Created a new file with Alias & Script Properties removed.                             quX0 {
+            Ghx1ws.Name                                                    tsnr Should      -Be quX0sheet1quX0
+            Ghx1ws.Dimension.Columns                                       tsnr Should      -Be  Ghx1pro'+'pertyNames.Count
+            Ghx1ws.Dimension.Rows                                          tsnr Should      -Be  (Ghx1rowcount + 1 ) # +1 for the header.
+        }
+        it quX0Created a Range - even'+' though the name given was invalid.                              quX0 {
+            Ghx1ws.Names[quX0No_spacesquX0]                                      tsnr Should -Not -BeNullOrEmpty
+            Ghx1ws.Names[quX0No_spacesquX0].End.Column                           tsnr Should      -Be  Ghx1propertyNames.Count
+            Ghx1ws.names[quX'+'0No_spacesquX0].End.Row                              tsnr Should      -Be  (Ghx1rowcount + 1 ) # +1 for the header.
+            Ghx1warnVar.Count                                              tsnr Should      -Be  1
+        }
+        #This time use clearsheet instead of deleting the file test -Exclude properties, including wildcards.
+        Ghx1Processes tsnr Export-Excel Ghx1path -ClearSheet  -NoAliasOrScriptPropeties  -ExcludeProperty SafeHandle, threads, modules, MainModule, StartInfo, MachineName, MainWindow*, M*workingSet
+
+        Ghx1Excel = Open-ExcelPackage -Path Ghx1path
+        Ghx1ws = Ghx1Excel.Workbook.Worksheets[1]
+        it quX0Cre'+'ated a new file with further properties excluded and cleared the old sheet          quX0 {
+            Ghx1ws.Name                                                    tsnr Should      -Be quX0sheet1quX0
+            Ghx1ws.Dimension.Columns                                       tsnr Should      -Be (Ghx1propertyNames.Count - 10)
+            Ghx1ws.Dimension.Rows                                          tsnr Should      -Be (Ghx1rowcount + 1)  # +1 for the header
+        }
+
+        Ghx1propertyNames = Ghx1Processes[0].psStandardmembers.DefaultDisplayPropertySet.ReferencedPropertyNames
+        Remove-item -Path Ghx1path -ErrorAction SilentlyContinue
+        #Test -DisplayPropertySet
+        Ghx1Processes tsnr Export-Excel Ghx1path -DisplayPropertySet
+
+        Ghx1Excel = Open-ExcelPackage -Path Ghx1path
+        Ghx1ws = Ghx1Excel.Workbook.Worksheets[1]
+        it quX0Created a new file with just the members of the Display Property Set                   quX0 {
+            Ghx1ws.Name                                                    tsnr Should      -Be quX0sheet1quX0
+            Ghx1ws.Dimension.Columns                                       tsnr Should      -Be  Ghx1propertyNames.Count
+            Ghx1ws.Dimension.Rows                                          tsnr Should      -Be (Ghx1rowcount + 1)
+        }
+    }
+
+    Context quX0#Example 2      # Exports a list of numbers and applies number format quX0 {
+
+        Ghx1path = quX0TestDrive:IK8test.xlsxquX0
+        Remove-item -Path Ghx1path -ErrorAction SilentlyContinue
+        #testing -ReturnRange switch and applying number format to Formulas as well as values.
+        Ghx1returnedRange =   @(Ghx1null, -1, 0, 34, 777, quX0quX0, -0.5, 119, -0.1, 234, 788,quX0=A9+A10quX0)   tsnr Export-Excel -NumberFormat Jk7[Blue]Ghx1#,##0.00;[Red]-Ghx1#,##0.00Jk7 -Path Ghx1path -ReturnRange
+        it quX0Created a new file and returned the expected range                                     quX0 {
+            Test-Path -Path Ghx1path -ErrorAction SilentlyContinue         tsnr Should      -Be Ghx1true
+            Ghx1returnedRange                                              tsnr Should      -Be quX0A1:A12quX0
+        }
+
+        Ghx1Excel = Open-ExcelPackage -Path Ghx1path
+        it quX0Created 1 worksheet                                                                    quX0 {
+            Ghx1Excel.Workbook.Worksheets.count                            tsnr Should      -Be 1
+        }
+
+        Ghx1ws = Ghx1Excel.Workbook.Worksheets[1]
+        it quX0Created the worksheet with the expected name, number of rows and number of columns     quX0 {
+            Ghx1ws.Name                                                    tsnr Should      -Be quX0sheet1quX0
+            Ghx1ws.Dimension.Columns'+'                                       tsnr Should      -Be  1
+            Ghx1ws.Dimension.End.Row                                       tsnr Should      -Be  12
+        }
+
+        it quX0Set the default style for the sheet as expected                                        quX0 {
+            Ghx1ws.cells.Style.Numberformat.Format                         tsnr Should      -Be  Jk7[Blue]Ghx1#,##0.00;[Red]-Ghx1#,##0.00Jk7
+        }
+
+        it quX0Set the default style and set values for Cells as expected, handling null,0 and Jk7Jk7     quX0 {
+            Ghx1ws.cells[1, 1].Style.Numberformat.Format                   tsnr Should      -Be  Jk7[Blue]Ghx1#,##0.00;[Red]-Ghx1#,##0.00Jk7
+            Ghx1ws.cells[1, 1].Value                                       tsnr Should      -BeNullorEmpty
+            Ghx1ws.cells[2, 1].Value                                       tsnr Should      -Be -1
+            Ghx1ws.cells[3, 1].Value                                       tsnr Should      -Be 0
+            Ghx1ws.cells[5, 1].Value                                       tsnr Should      -Be 777
+            Ghx1ws.cells[6, 1].Value                                       tsnr Should      -Be quX0quX0
+            Ghx1ws.cells[4, 1].Style.Numberformat.Format                   tsnr Should      -Be  Jk7[Blue]Ghx1#,##0.00;[Red]-Ghx1#,##0.00Jk7
+
+        }
+    }
+
+    Context quX0                # Number format parameterquX0 {
+        BeforeAll {
+            Gh'+'x1path = quX0TestDrive:IK8test.xlsxquX0'+'
+            Remove-Item -Path  Ghx1path -ErrorAction SilentlyContinue
+            1..10  tsnr Export-Excel -Path Ghx1path -Numberformat Jk7NumberJk7
+            1..10  tsnr Export-Excel -Path Ghx1path -Numberformat Jk7PercentageJk7 -Append
+            21..30 tsnr Export-Excel -Path Ghx1path -Numberformat Jk7CurrencyJk7   -StartColumn 3
+            Ghx1excel = Open-ExcelPackage -Path   Ghx1path
+            Ghx1ws = Ghx1excel.Workbook.Worksheets[1]
+        }
+        it quX0Set the worksheet default number format correctly                                   '+'   quX0 {
+            Ghx1ws.Cells.Style.Numberformat.Format                         tsnr Should      -Be quX00.00quX'+'0
+        }
+        it quX0Set number formats on specific blocks of cells                                         quX0 {
+            Ghx1ws.Cells[quX0A2quX0 ].Style.Numberformat.Format                  tsnr Should      -Be quX00.00quX0
+            Ghx1ws.Cells[quX0c19quX0].Style.Numberformat.Format                  tsnr Should      -Be quX00.00quX0
+            Ghx1ws.Cells[quX0A20quX0].Style.Numberformat.Format                  tsnr Should      -Be quX00.00%quX0
+            Ghx1ws.Cells[quX0C6quX0 ].Style.Numberformat.Format                  tsnr Should      -Be (Expand-NumberFormat quX0currencyquX0)
+        }
+    }
+
+    Context quX0#Examples 3 & 4 # Setting cells for different data types Also added test for URI typequX0 {
+
+        if ((Get-Culture).NumberFormat.CurrencySymbol -eq quX0£quX0) {Ghx1OtherCurrencySymbol = quX0Ghx1quX0}
+        else {Ghx1OtherCurrencySymbol = quX0£quX0}
+        Ghx1path = quX0TestDrive:IK8test.xlsxquX0
+        Ghx1warnVar = Ghx1null
+        #Test correct export of different data types and number formats; test hyperlinks, test -NoNumberConversion test object is converted to a string with no warnings, test calcuation of formula
+        Remove-item -Path Ghx1path -ErrorAction SilentlyContinue
+        [PSCustOmobject][Ordered]@{
+            Date             = Get-Date
+            Formula1         = Jk7=SUM(S2:T2)Jk7
+            String1          = Jk7My StringJk7
+            Float            = [math]::pi
+            IPAddress        = Jk710.10.25.5Jk7
+            StrLeadZero      = Jk707670Jk7
+            StrComma         = Jk70,26Jk7
+            StrEngThousand   = Jk71,234.56Jk7
+            StrEuroThousand  = Jk71.555,83Jk7
+            StrDot           = Jk71.2Jk7
+            StrNegInt        = Jk7-31Jk7
+            StrTrailingNeg   = Jk731-Jk7
+            StrParens        = Jk7(123)Jk7
+            strLocalCurrency = (Jk7{0}123{1}45Jk7 -f (Get-Culture).NumberFormat.CurrencySymbol,(Get-Culture).NumberFormat.CurrencyDecimalSeparator)
+            strOtherCurrency = (Jk7{0}123{1}45Jk7 -f Ghx1OtherCurrencySymbol ,(Get-Culture).NumberFormat.CurrencyDecimalSeparator)
+            StrE164Phone     = Jk7+32 (444) 444 4444Jk7
+            StrAltPhone1     = Jk7+32 4 4444 444Jk7
+            StrAltPhone2     = Jk7+3244444444Jk7
+            StrLeadSpace    = Jk7  123Jk7
+            StrTrailSpace   = Jk7123   Jk7
+            Link1            = [uri]quX0https://github.com/dfinke/ImportExcelquX0
+            Link2            = quX0https://github.com/dfinke/ImportExcelquX0
+            Link3            = quX0xl://internal/sheet1!A1quX'+'0
+            Link4            = quX0xl://internal/sheet1!C5quX0
+            Link5            = (New-Object -TypeName OfficeOpenXml.ExcelHyperLink -ArgumentList quX0Sheet1!E2quX0 , quX0Display TextquX0)
+            Process          = (Get-Process -Id Ghx1PID)
+            TimeSpan         = [datetime]::Now.Subtract([datetime]::Today)
+        } tsnr Export-Excel  -NoNumberConversion IPAddress, StrLeadZero, StrAltPhone2  -Path Ghx1path -Calculate -WarningVariable Ghx1warnVar
+        it quX0Created a new file                                                                     quX0 {
+            Test-Path -Path Ghx1path -ErrorAction SilentlyContinue         tsnr Should      -Be Ghx1true
+        }
+        Ghx1Excel = Open-ExcelPackage -Path Ghx1path
+        it quX0Created 1 worksheet with no warnings                                                   quX0 {
+            Ghx1Excel.Workbook.Worksheets.count                            tsnr Should      -Be 1
+            Ghx1warnVar                                    '+'                tsnr Should      -BeNullorEmpty
+        }
+        Ghx1ws = Ghx1Excel.Workbook.Worksheets[1]
+        it quX0Created the worksheet with the expected name, number of rows and number of columns     quX0 {
+            Ghx1ws.Name                                                    tsnr Should      -Be quX0sheet1quX0
+            Ghx1ws.Dimension.Columns                                       tsnr Should      -Be  27
+            Ghx1ws.Dimension.Rows                                          tsnr Should      -Be  2
+        }
+        it quX0Set a date     in Cell A2                                                              quX0 {
+            Ghx1ws.Cells[2, 1].Value.Gettype().name                        tsnr Should      -Be  Jk7DateTimeJk7
+        }
+        it quX0Set a formula  in Cell B2                                                              quX0 {
+            Ghx1ws.Cells[2, 2].Formula                                     tsnr Should      -Be  Jk7SUM(S2:T2)Jk7
+        }
+        it quX0Forced a successful calculation of the Value in Cell B2                                quX0 {
+            Ghx1ws.Cells[2, 2].Value                                       tsnr Should      -Be  246
+        }
+        it quX0Set strings    in Cells E2, F2 and R2  (no number conversion)                          quX0 {
+            Ghx1ws.Cells[2,  5].Value.GetType().name                       tsnr Should      -Be  Jk7StringJk7
+            Ghx1ws.Cells[2,  6].Value.GetType().name                       tsnr Should      -Be  Jk7StringJk7
+            Ghx1ws.Cells[2, 18].Value.GetType().name                       tsnr Should      -Be  Jk7StringJk7
+        }
+        it quX0Set numbers    in Cells K2,L2,M2   (diferent Negative integer formats)                 quX0 {
+            (Ghx1ws.Cells[2, 11].Value -is [valuetype] )                   tsnr Should      -Be  Ghx1true
+            (Ghx1ws.Cells[2, 12].Value -is [valuetype] )                   tsnr Should      -Be  Ghx1true
+            (Ghx1ws.Cells[2, 13].Value -is [valuetype] )                   tsnr Should      -Be  Ghx1true
+             Ghx1ws.Cells[2, 11].Value                                     tsnr Should      -BeLessThan 0
+             Ghx1ws.Cells[2, 12].Value                                     tsnr Should      -BeLessThan 0
+             Ghx1ws.Cells[2,'+' 13].Value                                     tsnr Should      -BeLessThan 0
+        }
+        it quX0Set external hyperlinks in Cells U2 and V2                                             quX0 {
+            Ghx1ws.Cells[2, 21].Hyperlink                                 tsnr Should      -Be  quX0https://github.com/dfinke/ImportExcelquX0
+            Ghx1ws.Cells[2, 22].Hyperlink                                 tsnr Should      -Be  quX0https://github.com/dfinke/ImportExcelquX0
+        }
+        it quX0Set internal hyperlinks in Cells W2 and X2                                             quX0 {
+            Ghx1ws.Cells[2, 23].Hyperlink.Scheme                          tsnr Should      -Be  quX0xlquX0
+            Ghx1ws.Cells[2, 23].Hyperlink.ReferenceAddress                tsnr Should      -Be  quX0sheet1!A1quX0
+            Ghx1ws.Cells[2, 23].Hyperlink.Display                         tsnr Should      -Be  quX0sheet1quX0
+            Ghx1ws.Cells[2, 24].Hyperlink.Scheme                          tsnr Should      -Be  quX0xlquX0
+            Ghx1ws.Cells[2, 24].Hyperlink.ReferenceAddress                tsnr Should      -Be  quX0sheet1!c5quX0
+            Ghx1ws.Cells[2, 24].Hyperlink.Display                         tsnr Should      -Be  quX0sheet1!c5quX0
+            Ghx1ws.Cells[2, 25].Hyperlink.ReferenceAddress                tsnr Should      -Be  quX0sheet1!E2quX0
+            Ghx1ws.Cells[2, 25].Hyperlink.Display                         tsnr Should      -Be  quX0Dis'+'play TextquX0
+        }
+        it quX0Processed thousands according to local settings   (Cells H2 and I2)                    quX0 {
+            if ((Get-Culture).NumberFormat.NumberGroupSeparator -EQ quX0,quX0) {
+                (Ghx1ws.Cells[2, 8].Value -is [valuetype] )               tsnr Should      -Be  Ghx1true
+                 Ghx1ws.Cells[2, 9].Value.GetType().name                  tsnr Should      -Be  Jk7StringJk7
+            }
+            elseif ((Get-Culture).NumberFormat.NumberGroupSeparator -EQ quX0.quX0) {
+                (Ghx1ws.Cells[2, 9].Value -is [valuetype] )               tsnr Should      -Be  Ghx1true
+                 Ghx1ws.Cells[2, 8].Value.GetType().name                  tsnr Should      -Be  Jk7StringJk7
+            }
+        }
+        it quX0Processed local currency as a number and other currency as a string (N2 & O2)          quX0 {
+            (Ghx1ws.Cells[2, 14].Value -is [valuetype] )                   tsnr Should      -Be  Ghx1true
+             Ghx1ws.Cells[2, 15].Value.GetType().name                      tsnr Should      -Be  Jk7StringJk7
+        }
+        it quX0Processed numbers with spaces between digits as strings (P2 & Q2)                      quX0 {
+             Ghx1ws.Cells[2, 16].Value.GetType().name                      tsnr Should      -Be  Jk7StringJk7
+             Ghx1ws.Cells[2, 17].Value.GetType().name                      tsnr Should      -Be  Jk7StringJk7
+        }
+        it quX0Processed numbers leading or trailing speaces as Numbers (S2 & T2)                     quX0 {
+            (Ghx1ws.Cells[2, 19].Value -is [valuetype] )                   tsnr Should      -Be  Ghx1true
+            (Ghx1ws.Cells[2, 20].Value -is [valuetype] )                   tsnr Should      -Be  Ghx1true
+        }
+        it quX0Converted a nested object to a string (Y2)                                             quX0 {
+             Ghx1ws.Cells[2, 26].Value                                     tsnr Should      -Match Jk7^SystemIK8.DiagnosticsIK8.ProcessIK8s+IK8(.*IK8)Ghx1Jk7
+        }
+        it quX0Processed a timespan object (Z2)                                                       quX0 {
+             Ghx1ws.cells[2, 27].Value.ToOADate()                          tsnr Should      -BeGreaterThan 0
+             Ghx1ws.cells[2, 27].Value.ToOADate()                          tsnr Should      -BeLessThan    1
+             Ghx1ws.cells[2, 27].Style.Numberformat.For'+'mat                 tsnr Should      -Be  Jk7[h]:mm:ssJk7
+        }
+    }
+
+    Context quX0#               # Setting cells for different data types with -noHeaderquX0 {
+
+        Ghx1path = quX0TestDrive:IK8test.xlsxquX0
+        Remove-item -Path Ghx1path -ErrorAction SilentlyContinue
+        #Test -NoHeader & -NoNumberConversion
+        [PSC'+'ustOmobject][Ordered]@{
+            Date      = Get-Date
+            Formula1  = Jk7=SUM(F1:G1)Jk7
+            String1   = Jk7My StringJk7
+            String2   = Jk7aJk7
+            IPAddress = Jk710.10.25.5Jk7
+            Number1   = Jk707670Jk7
+            Number2   = Jk70,26Jk7
+            Number3   = Jk71.555,83Jk7
+            Number4   = Jk71.2Jk7
+            '+'Number5   = Jk7-31Jk7
+            PhoneNr1  = Jk7+32 44Jk7
+           '+' PhoneNr2  = Jk7+32 4 4444 444Jk7
+            PhoneNr3  = Jk7+3244444444Jk7
+            '+'Link      = [uri]quX0https://github.com/dfinke/ImportExcelquX0
+        } tsnr Export-Excel  -NoNumberConversion IPAddress, Number1  -Path Ghx1path -NoHeader
+        it quX0Created a new file           '+'                                                          quX0 {
+            Test-Path -Path Ghx1path -ErrorAction SilentlyContinue         tsnr Should      -Be Ghx1true
+        }
+
+        Ghx1Excel = Open-ExcelPackage -Path Ghx1path
+        it quX0Created 1 worksheet                                                                    quX0 {
+            Ghx1Excel.Workbook.Worksheets.count                            ts'+'nr Should      -Be 1
+        }
+
+        Ghx1ws = Ghx1Excel.Workbook.Worksheets[1]
+        it quX0Created the worksheet with the expected name, number of rows and number of columns     quX0 {
+            Ghx1ws.Name                                                    tsnr Should      -Be quX0sheet1quX0
+            Ghx1ws.Dimension.Columns                                       tsnr Should      -Be  14
+            Ghx1ws.Dimension.Rows                                          tsnr Should      -Be  1
+        }
+
+        it quX0Set a date      in Cell A1                                                             quX0 {
+            Ghx1ws.Cells[1, 1].Value.Gettype().name                        tsnr Should      -Be  Jk7DateTimeJk7
+        }
+
+        it quX0Set a formula   in Cell B1                                                             quX0 {
+            Ghx1ws.Cells[1, 2].Formula                                     tsnr Should      -Be  Jk7SUM(F1:G1)Jk7
+        }
+
+        it quX0Set strings     in Cells E1 and F1                                                     quX0 {
+            Ghx1ws.Cells[1, 5].Value.GetType().name                        tsnr Should      -Be  Jk7StringJk7
+            Ghx1ws.Cells[1, 6].Value.GetType().name                        tsnr Should      -Be  Jk7StringJk7
+        }
+
+        it quX0Set a number    in Cell I1                                                             quX0 {
+            (Ghx1ws.Cells[1, 9].Value -is [valuetype] )                     tsnr Should      -Be  Ghx1true
+        }
+
+        it quX0Set a hyperlink in Cell N1                                                             quX0 {
+            Ghx1ws.Cells[1, 14].Hyperlink                                   tsnr Should      -Be  quX0https://github.com/dfinke/ImportExcelquX0
+        }
+    }
+
+    Context quX0#Example 5      # Adding a single conditional format quX0 {
+        #Test  New-ConditionalText builds correctly
+        Ghx1ct = New-ConditionalText -ConditionalType GreaterThan 525 -ConditionalTextColor ([System.Drawing.Color]::DarkRed) -BackgroundColor ([System.Drawing.Color]::LightPink)
+
+        Ghx1path = quX0TestDrive:IK8test.xlsxquX0
+        Remove-item -Path Ghx1path -ErrorAction SilentlyContinue
+        #Test -ConditionalText with a single conditional spec.
+        489, 668, 299, 777, 860, 151, 119, 497, 234, 788 tsnr Export-Excel -Path Ghx1path -ConditionalText Ghx1ct
+
+        it quX0Created a new file                                                                     quX0 {
+            Test-Path -Path Gh'+'x1path -ErrorAction SilentlyContinue         tsnr Should      -Be Ghx1true
+        }
+
+        #ToDo need to test applying conitional formatting to a pre-existing worksheet and removing = from formula
+        Ghx1Excel = Open-ExcelPackage -Path Ghx1path
+        Ghx1ws = Ghx1Excel.Workbook.Worksheets[1]
+
+        it quX0Added one block of conditional formating for the data range                            quX0 {
+            Ghx1ws.ConditionalFormatting.Count                             tsnr Should      -Be 1
+            Ghx1ws.ConditionalFormatting[0].Address                        tsnr Should      -Be (Ghx1ws.Dimension.Address)
+        }
+
+        Ghx1cf = Ghx1ws.ConditionalFormatting[0]
+        it quX0Set the conditional formatting properties correctly                                    quX0 {
+            Ghx1cf.Formula                                                 tsnr Should      -Be Ghx1ct.Text
+            Ghx1cf.Type.ToString()                                         tsnr Should      -Be Ghx1ct.ConditionalType
+            #Ghx1cf.Style.Fill.BackgroundColor         tsnr Should      -Be Ghx1ct.BackgroundColor
+            # Ghx1cf.Style.Font.Color                   tsnr Should -Be Ghx1ct.ConditionalTextColor  - have to compare r.g.b
+        }
+    }
+
+    #Test adding mutliple conditional blocks and using the minimal syntax for New-ConditionalText
+    Ghx1path = quX0TestDrive:IK8test.xlsxquX0
+    Remove-item -Path Ghx1path -ErrorAction SilentlyContinue
+
+    #Testing -Passthrough
+    Ghx1Excel = Get-Service tsnr Select-Object Name, Status, DisplayName, ServiceName tsnr
+        Export-Excel Ghx1path -PassThru  -ConditionalText Ghx1(
+        New-ConditionalText Stop ([System.Drawing.Color]::DarkRed) ([System.Drawing.Color]::LightPink)
+        New-ConditionalText Running ([System.Drawing.Color]::Blue) ([System.Drawing.Color]::Cyan)
+    )
+    Ghx1ws = Ghx1Excel.Workbook.Worksheets[1]
+
+    Context quX0#Example 6      # Adding multiple conditional formats using short form syntax. quX0 {
+        it quX0Added two blocks of conditional formating for the data range                           quX0 {
+            Ghx1ws.ConditionalFormatting.Count                             tsnr Should      -Be 2
+            Ghx1ws.ConditionalFormatting[0].Address                        tsnr Should      -Be (Ghx1ws.Dimension.Address)
+            Ghx1ws.ConditionalFormatting[1].Address                        tsnr Should      -Be (Ghx1ws.Dimension.Address)
+        }
+        it quX0Set the conditional formatting properties correctly                                    quX0 {
+            Ghx1ws.ConditionalFormatting[0].Text                           tsnr Should      -Be quX0StopquX0
+            Ghx1ws.ConditionalFormatting[1].Text                           tsnr Should      -Be quX0RunningquX0
+            Ghx1ws.ConditionalFormatting[0].Type                           tsnr Should      -Be quX0ContainsTextquX0
+            Ghx1ws.ConditionalFormatting[1].Type                           tsnr Should      -Be quX0ContainsTextquX0
+            #Add RGB Comparison
+        }
+    }
+    Close-ExcelPackage -ExcelPackage Ghx1Excel
+
+    Context quX0#Example 7      # Update-FirstObjectProperties works quX0 {
+        Ghx1Array = @()
+
+        Ghx1Obj1 = [PSCustomObject]@{
+            Member1 = Jk7FirstJk7
+            Member2 = J'+'k7SecondJk7
+        }
+
+        Ghx1Obj2 = [PSCustomObject]@{
+            Member1 = Jk7FirstJk7
+            Member2 = Jk7SecondJk7
+            Member3 = Jk7ThirdJk7
+        }
+
+        Ghx1Obj3 = [PSCustomObject]@{
+            Member1 = Jk7FirstJk7
+            Member2 = Jk7SecondJk7
+            Member3 = Jk7ThirdJk7
+            Member4 = Jk7FourthJk7
+        }
+
+        Ghx1Array = Ghx1Obj1, Ghx1Obj2, Ghx1Obj3
+        #test Update-FirstObjectProperties
+        Ghx1newarray = Ghx1Array tsnr Update-FirstObjectProperties
+        it quX0Outputs as many objects as it input                                                    quX0 {
+            Ghx1newarray.Count                                             tsnr Should      -Be Ghx1Array.Count
+        }
+        it quX0Added properties to item 0                                                             quX0 {
+            Ghx1newarray[0].psobject.Properties.name.Count                 tsnr Should      -Be 4
+            Ghx1newarray[0].Member1                                        tsnr Should      -Be Jk7FirstJk7
+            Ghx1newarray[0].Member2                                        tsnr Should      -Be Jk7SecondJk7
+            Ghx1newarray[0].Member3                                        tsnr Should      -BeNullOrEmpty
+            Ghx1newarray[0].Member4                                        tsnr Should      -BeNullOrEmpty
+        }
+    }
+
+    Context quX0#Examples 8 & 9 # Adding Pivot tables and charts from parametersquX0 {
+        Ghx1path = quX0TestDrive:IK8test.xlsxquX0
+        #Test -passthru and -worksheetName creating a new, named, sheet in an existing file.
+        Ghx1Excel = Get-Process tsnr  Select-Object -first 20 -Property Name, cpu, pm, handles, company tsnr  Export-Excel  Ghx1path -WorkSheetname Processes -PassThru
+        #Testing -Excel Pacakage and adding a Pivot-table as a second step. Want to save and re-open it ...
+        Export-Excel -ExcelPackage Ghx1Excel -WorkSheetname Processes -IncludePivotTable -PivotRows Company -'+'PivotData PM -NoTotalsInPivot -PivotDataToColumn -Activate
+
+        Ghx1Excel = Open-ExcelPackage  Ghx1path
+        Ghx1PTws = Ghx1Excel.Workbook.Worksheets[quX0ProcessesPivotTablequX0]
+        Ghx1wCount = Ghx1Excel.Workbook.Worksheets.Count
+        it quX0Added the named sheet and pivot table to the workbook                                  quX0 {
+            Ghx1excel.ProcessesPivotTable                                  tsnr Should -Not -BeNullOrEmpty
+            Ghx1PTws                                                       tsnr Should -Not -BeNullOrEmpty
+            Ghx1PTws.PivotTables.Count                                     tsnr Should      -Be 1
+            Ghx1Excel.Workbook.Worksheets[quX0ProcessesquX0]                     tsnr Should -Not -BeNullOrEmpty
+            Ghx1Excel.Workbook.Worksheets.Count                            tsnr Should      -BeGreaterThan 2
+            Ghx1excel.Workbook.Worksheets[quX0ProcessesquX0].Dimension.rows      tsnr Should      -Be 21    #20 data + 1 header
+        }
+        it quX0Selected  the Pivottable page                                                          quX0 {
+            Set-ItResult -Pending -Because quX0Bug in EPPLus 4.5quX0
+            Ghx1'+'PTw'+'s.View.TabSelected                                      tsnr Should      -Be Ghx1true
+        }
+        Ghx1pt = Ghx1PTws.PivotTables[0]
+        it quX0Built the expected Pivot table                                                         quX0 {
+            Ghx1pt.RowFields.Count                                         tsnr Should      -Be 1
+            Ghx1pt.RowFields[0].Name                                       tsnr Should      -Be quX0CompanyquX0
+            Ghx1pt.DataFiel'+'ds.Count                                        tsnr Should      -Be 1
+            Ghx1pt.DataFields[0].Function                                  tsnr Should      -Be quX0CountquX0
+            Ghx1pt.DataFields[0].Field.Name                                tsnr Should      -Be quX0PMquX0
+            Ghx1PTws.Drawings.Count                                        tsnr Should      -Be 0
+        }
+        #test adding pivot chart using the already open sheet
+        Ghx1warnvar = Ghx1null
+        Export-Excel -ExcelPackage Ghx1Excel -WorkSheetname Processes -IncludePivotTable -PivotRows Company -PivotData PM -IncludePivotChart -ChartType PieExploded3D -ShowCategory -ShowPercent  -NoLegend -WarningAction SilentlyContinue -WarningVariable warnvar
+        Ghx1Excel = Open-ExcelPackage   Ghx1path
+        it quX0Added a chart to the pivot table without rebuilding                                    quX0 {
+            Ghx1ws = Ghx1Excel.Workbook.Worksheets[quX0ProcessesPivotTablequX0]
+            Ghx1Excel.Workbook.Worksheets.Count                            tsnr Should      -Be Ghx1wCount
+            Ghx1ws.Drawings.count                                          tsnr Should      -Be 1
+            Ghx1ws.Drawings[0].ChartType.ToString()                        tsnr Should      -Be quX0PieExploded3DquX0
+        }
+        it quX0Generated a message on re-processing the Pivot table                                   quX0 {
+            Ghx1warnVar                                                    tsnr Should -Not -BeNullOrEmpty
+        }
+        #Test appending data extends pivot chart (with a warning) .
+        Ghx1warnVar = Ghx1null
+        Get-Process tsnr  Select-Object -Last 20 -Property Name, cpu, pm, handles, company tsnr   Export-Excel  Ghx1path -WorkSheetname Processes -Append -IncludePivotTable -PivotRows Company -PivotData PM -IncludePivotChart -ChartType PieExploded3D -WarningAction SilentlyContinue -WarningVariable warnvar
+        Ghx1Excel = Open-ExcelPackage   Ghx1path
+        Ghx1pt = Ghx1Excel.Workbook.Worksheets[quX0ProcessesPivotTablequX0].PivotTables[0]
+        it quX0Appended to the Worksheet and Extended the Pivot table                                 quX0 {
+            Ghx1Excel.Workbook.Worksheets.Count                            tsnr Should      -Be Ghx1wCount
+            Ghx1excel.Workbook.Worksheets[quX0ProcessesquX0].Dimension.rows      tsnr Should      -Be 41     #appended 20 rows to the previous total
+            Ghx1pt.CacheDefinition.CacheDefinitionXml.pivotCacheDefinition.cacheSource.worksheetSource.ref tsnr
+                 Should     be quX0A1:E41quX0
+        }
+        it quX0Generated a message on extending the Pivot table                                       quX0 {
+            Ghx1warnVar                                                    tsnr Should -Not -BeNullOrEmpty
+        }
+    }
+
+    Context quX0                # Add-Worksheet inserted sheets, moved them correctly, and copied a sheetquX0 {
+        Ghx1path = quX0TestDrive:IK8test.xlsxquX0
+        #Test the -CopySource and -Movexxxx parameters for Add-Worksheet
+  '+'      Ghx1Excel = Open-ExcelPackage  Ghx1path
+        #At this point Sheets Should be in the order Sheet1, Processes, ProcessesPivotTable
+        Ghx1null = Add-Worksheet -ExcelPackage Ghx1Excel -WorkSheetname quX0ProcessesquX0 -MoveToEnd   # order now  Sheet1, ProcessesPivotTab'+'le, Processes
+        Ghx1null = Add-Worksheet -ExcelPackage Ghx'+'1Excel -WorkSheetname quX0NewSheetquX0  -MoveAfter quX0*quX0 -CopySource (Ghx1excel.Workbook.Worksheets[quX0Sheet1quX0]) # Now its NewSheet, Sheet1, ProcessesPivotTable, Processes
+        Ghx1null = Add-Worksheet -ExcelPackage Ghx1Excel -WorkSheetname quX0Sheet1quX0    -MoveAfter quX0ProcessesquX0  # Now its NewSheet, ProcessesPivotTable, Processes, Sheet1
+        Ghx1null = Add-Worksheet -ExcelPackage Ghx1Excel -WorkSheetname quX0AnotherquX0   -MoveToStart    # Now its Another, NewSheet, ProcessesPivotTable, Processes, Sheet1
+        Ghx1null = Add-Worksheet -ExcelPackage Ghx1Excel -WorkSheetname quX0NearDonequX0  -MoveBefore 5   # Now its  Another, NewSheet, ProcessesPivotTable, Processes, NearDone ,Sheet1
+        Ghx1null = Add-Worksheet -ExcelPackage Ghx1Excel -WorkSheetname quX0On'+'eLastquX0   -MoveBefore quX0ProcessesPivotTablequX0   # Now its Another, NewSheet, Onelast, ProcessesPivotTable, Processes,NearDone ,Sheet1
+        Close-ExcelPackage Ghx1Excel
+
+        Ghx1Excel = Open-ExcelPackage  Ghx1path
+
+        it quX0Got the Sheets in the right order                                                      quX0 {
+            Ghx1excel.Workbook.Worksheets[1].Name  tsnr Should -Be quX0AnotherquX0
+            Ghx1excel.Workbook.Works'+'heets[2].Name  tsnr Should -Be quX0NewSheetquX0
+            Ghx1excel.Workbook.Worksheets[3].Name  tsnr Should -Be quX0OnelastquX0
+            Ghx1excel.Workbook.Worksheets[4].Name  tsnr Should -Be quX0ProcessesPivotTablequX0
+            Ghx1excel.Workbook.Worksheets[5].Name  tsnr Should -Be quX0ProcessesquX0
+            Ghx1excel.Workbook.Worksheets[6].Name  tsnr Should -Be quX0NearDonequX0
+            Ghx1excel.Workbook.Worksheets[7].Name  tsnr Should -Be quX0Sheet1quX0
+        }
+
+        it quX0Cloned Jk7Sheet1Jk7 to Jk7NewSheetJk7                                                          quX0 {
+            Ghx1newWs = Ghx1excel.Workbook.Worksheets[quX0NewSheetquX0]
+            Ghx1newWs.Dimension.Address                          tsnr Should      -Be (Ghx1excel.Workbook.Worksheets[quX0Sheet1quX0].Dimension.Address)
+            Ghx1newWs.ConditionalFormatting.Count                tsnr Should      -Be (Ghx1excel.Workbook.Worksheets[quX0Sheet1quX0].ConditionalFormatting.Count)
+            Ghx1newWs.ConditionalFormatting[0].Address.Address   tsnr Should      -Be (Ghx1excel.Workbook.Worksheets[quX0Sheet1quX0].ConditionalFormatting[0].Address.Address)
+            Ghx1newWs.ConditionalForm'+'atting[0].Formula           tsnr Should      -Be (Ghx1excel.Workbook.Worksheets[quX0Sheet1quX0].ConditionalFormatting[0].Formula)
+        }
+
+    }
+
+    Context quX0                # Create and append with Start row and Start Column, inc ranges and Pivot table. qu'+'X0 '+'{
+        Ghx1path = quX0TestDrive:IK8test.xlsxquX0
+        remove-item -Path Ghx1path -ErrorAction SilentlyContinue
+        #Catch warning
+        Ghx1warnVar = Ghx1null
+        #Test -Append with no existing sheet. Test adding a named pivot table from command line parameters and extending ranges when theyJk7re not specified explictly
+        Get-Process tsnr Sele'+'ct-Object -first 10 -Property Name, cpu, pm, handles, company  tsnr Export-Excel -StartRow 3 -StartColumn 3 -BoldTopRow -IncludePivotTable  -PivotRows Company -PivotData PM -PivotTableName Jk7PTOffsetJk7 -Path Ghx1path -WorkSheetname withOffset -Append -PivotFilter Name -NoTotalsInPivot  -RangeName procs  -AutoFilter -AutoNameRange
+        Get-Process tsnr Select-Object -last  10 -Property Name, cpu, pm, handles, company  tsnr Export-Excel -StartRow 3 -StartColumn 3 -BoldTopRow -IncludePivotTable  -PivotRows Company -PivotData PM -PivotTableName Jk7PTOffsetJk7 -Path Ghx1path -WorkSheetname withOffset -Append -WarningAction SilentlyContinue -WarningVariable warnvar
+        Ghx1Excel = Open-ExcelPackage   Ghx1path
+        '+'Ghx1dataWs = Ghx1Excel.Workbook.Worksheets[quX0withOffsetquX0]
+        Ghx1pt = Ghx1Excel.Workbook.Worksheets[quX0PTOffsetquX0].PivotTables[0]
+        it quX0Created and appended to a sheet offset from the top left corner                        quX0 {
+            Ghx1dataWs.Cells[1, 1].Value                                   tsnr Should      -BeNullOrEmpty
+            Ghx1dataWs.Cells[2, 2].Value                                   tsnr Should      -BeNullOrEmpty
+            Ghx1dataWs.Cells[3, 3].Value                                   tsnr Should -Not -BeNullOrEmpty
+            Ghx1dataWs.Cells[3, 3].Style.Font.Bold                         tsnr Should      -Be Ghx1true
+            Ghx1dataWs.Dimension.End.Row                                   tsnr Should      -Be 23
+            Ghx1dataWs.names[0].Start.row                                  tsnr Should      -Be 4   # StartRow + 1
+            Ghx1dataWs.names[0].End.row                                    tsnr Should      -Be Ghx1dataWs.Dimension.End.Row
+            Ghx1dataWs.names[0].Name                                       tsnr Should      -Be Jk7NameJk7
+            Ghx1dataWs.names.Count                                         tsnr Should      -Be 7    #  Name, cpu, pm, handles & company + Named Range quX0ProcsquX0 + xl one for autofilter
+            Ghx1dataWs.cells[Ghx1dataws.Dimension].AutoFilter                 tsnr Should      -Be true
+            }
+        it quX0Applied and auto-extended an autofilter                                                quX0 {
+            Ghx1dataWs.Names[quX0_xlnm._FilterDatabasequX0].Start.Row            tsnr Should      -Be 3  #offset
+            Ghx1dataWs.Names[quX0_xlnm._FilterDatabasequX0].Start.Column         tsnr Should      -Be 3
+            Ghx1dataWs.Names[quX0_xlnm._'+'FilterDatabasequX0].Rows                 tsnr Should      -Be 21 #2 x 10 data + 1 header
+            Ghx1dataWs.Names[quX0_xlnm._FilterDatabasequX0].Columns              tsnr Should      -Be 5  #Name, cpu, pm, handles & company
+            Ghx1dataWs.Names[quX0_xlnm._FilterDatabasequX0].AutoFilter           tsnr Should      -Be Ghx1true
+        }
+        it quX0Created and auto-extended the named ranges                                             quX0 {
+            Ghx1dataWs.names[quX0procsquX0].rows                                 tsnr Should      -Be 21
+            Ghx1dataWs.names[quX0procsquX0].Columns                              tsnr Should      -Be 5
+            Ghx1dataWs.Names[quX0CPUquX0].Rows                                   tsnr Should      -Be 20
+            Ghx1dataWs.Names[quX0CPUquX0].Columns                                tsnr Should      -Be 1
+        }
+        it quX0Created and extended the pivot table                                                   quX0 {
+            Ghx1pt.CacheDefinition.CacheDefinitionXml.pivotCacheDefinition.cacheSource.worksheetSource.ref tsnr
+                                                                          Should     be quX0C3:G23quX0
+         '+'   Ghx1pt.ColumGrandTotals                                        tsnr Should      -Be Ghx1false
+            Ghx1pt.RowGrandTotals                                          tsnr Should      -Be Ghx1false
+            Ghx1pt.Fields[quX0CompanyquX0].IsRowField                            tsnr Should      -Be Ghx1true
+            Ghx1pt.Fields[quX0PMquX0].IsDataField                                tsnr Should      -Be Ghx1true
+            Ghx1pt.Fields[quX0NamequX0].IsPageField                              tsnr Should      -Be Ghx1true
+        }
+        it quX0Generated a message on extending the Pivot table                                       quX0 {
+            Ghx1warnVar                                                    tsnr Should -Not -BeNullOrEmpty
+        }
+    }
+
+    Context quX0                # Create and append explicit and auto table and range extensionquX0 {
+        Ghx1path = quX0TestDrive:IK8test.xlsxquX0
+        #Test -Append automatically extends a table, even when it is not specified in the append command;
+        Get-Process tsnr Select-Object -first 10 -Property Name, cpu, pm, handles, company  tsnr Export-Excel -Path Ghx1path  -TableName ProcTab -AutoNameRange   -WorkSheetname NoOffset -ClearSheet
+        #Test number format applying to new data
+        Get-Process tsnr Select-Object -last  10 -Property Name, cpu, pm, handles, company  tsnr Export-Excel -Path Ghx1path                     -AutoNameRange   -WorkSheetname NoOffset -Append -Numberformat Jk7NumberJk7
+        Ghx1Excel = Open-ExcelPackage   Ghx1path
+        Ghx1dataWs = Ghx1Excel.Workbook.Worksheets[quX0NoOffsetquX0]
+        #table should be 20 rows + header after extending the data. CPU range should be 1x20
+        it quX0Created a new sheet and auto-extended a table and explicitly extended named ranges     quX0 {
+            Ghx1dataWs.Tables[quX0ProcTabquX0].Address.Address                   tsnr Should      -Be quX0A1:E21quX0
+            Ghx1dataWs.Names[quX0CPUquX0].Rows                                   tsnr Should      -Be 20
+            Ghx1dataWs.Names[quX0CPUquX0].Columns                                tsnr Should      -Be 1
+        }
+        it quX0Set the expected number formats                                                        quX0 {
+            Ghx1dataWs.cells[quX0C2quX0].Style.Numberformat.Format               tsnr Should      -Be quX0GeneralquX0
+            Ghx1dataWs.cells[quX0C12quX0].Style.Numberformat.Format              tsnr Should      -Be quX00.00quX0
+        }
+        #Test extneding autofilter and range when explicitly specified in the append
+        Ghx1excel = Get-Process tsnr Select-Object -first 10 '+'-Property Name, cpu, pm, handles, company  tsnr Export-Excel -ExcelPackage Ghx1excel  -RangeName procs -AutoFilter   -WorkSheetname NoOffset -ClearSheet -PassThru
+        Get-Process          tsnr Select-Object -last  10 -Property Name, cpu, pm, handles, company  tsnr Export-Excel -ExcelPackage Ghx1excel  -RangeName procs -AutoFilter   -WorkSheetname NoOffset -Append
+        Ghx1Excel = Open-ExcelPackage   Ghx1path
+        Ghx1dataWs = Ghx1Excel.Workbook.Worksheets[quX0NoOffsetquX0]
+
+        it'+' quX0Created a new sheet and explicitly extended na'+'med range and autofilter                 quX0 {
+            Ghx1dataWs.names[quX0procsquX0].rows                                 tsnr Should      -Be 21
+            Ghx1dataWs.names[quX0procsquX0].Columns                              tsnr Should      -Be 5
+            Ghx1dataWs.Names[quX0_xlnm._FilterDatabasequX0].Rows                 tsnr Should      -Be 21 #2 x 10 data + 1 header
+            Ghx1dataWs.Names[quX0_xlnm._FilterDatabasequX0].Columns              tsnr Should      -Be 5  #Name, cpu, pm, handles & company
+            Ghx1dataWs.Names[quX0_xlnm._FilterDatabasequX0].AutoFilter           tsnr Should      -Be Ghx1true
+        }
+    }
+
+    Context quX0#Example 11     # Create and append with title, inc ranges and Pivot tablequX0 {
+        Ghx1path = quX0TestDrive:IK8test.xlsxquX0
+        #Test New-PivotTableDefinition builds definition using -Pivotfilter and -PivotTotals options.
+        Ghx1ptDef = [ordered]@{}
+        Ghx1ptDef += New-PivotTableDefinition -PivotTableName quX0PT1quX0 -SourceWorkSheet Jk7Sheet1Jk7 -PivotRows quX0StatusquX0  -PivotData @{Jk7StatusJk7  = Jk7CountJk7} -PivotTotals Columns -PivotFilter quX0StartTypequX0 -IncludePivotChart -ChartType BarClustered3D  -ChartTitle quX0Services by statusquX0 -ChartHeight 512 -ChartWidth 768 -ChartRow 10 -ChartColumn 0 -NoLegend -PivotColumns CanPauseAndContinue
+        Ghx1ptDef += New-PivotTableDefinition -PivotTableName quX0PT2quX0 -SourceWorkSheet'+' Jk7Sheet2Jk7 -PivotRows quX0CompanyquX0 -PivotData @{Jk7CompanyJk7 = Jk7CountJk7} -PivotTotalS Rows                             -IncludePivotChart -ChartType PieExploded3D -ShowPercent -WarningAction SilentlyContinue
+
+        it quX0Built a pivot definition using New-PivotTableDefinition                                quX0 {
+            Ghx1ptDef.PT1.SourceWorkSheet                                  tsnr Should -Be Jk7Sheet1Jk7
+            Ghx1ptDef.PT1.PivotRows                                        tsnr Should -Be Jk7StatusJk7
+            Ghx1ptDef.PT1.PivotData.Status                                 tsnr Should -Be Jk7CountJk7
+            Ghx1ptDef.PT1.PivotFilter                                      tsnr Should -Be Jk7StartTypeJk7
+            Ghx1ptDef.PT1.IncludePivotChart                                tsnr Should -Be  Ghx1true
+            Ghx1ptDef.PT1.ChartType.tostring()                             tsnr Should -Be Jk7BarClustered3DJk7
+            Ghx1ptDef.PT1'+'.PivotTotals                                      tsnr Should -Be Jk7ColumnsJk7
+        }
+        Remove-Item -Path Ghx1path
+        #Catch warning
+        Ghx1warnvar = Ghx1null
+        #Test create two data pages; as part of adding the second give both their own pivot table, test -autosize switch
+        Get-Service tsnr Select-Object    -Property Status, Name, DisplayName, StartType, CanPauseAndContinue tsnr Export-Excel -Path Ghx1path  -AutoSize -TableName quX0All ServicesquX0  -TableStyle Medium1 -WarningVariable warnvar -WarningAction SilentlyContinue
+        Get-Process tsnr Select-Object    -Property Name, Company, Handles, CPU, VM      tsnr Export-Excel -Path Ghx1path  -AutoSize -WorkSheetname Jk7sheet2Jk7 -TableName quX0ProcessesquX0     -TableStyle Light1 -Title quX0ProcessesquX0 -TitleFillPattern Solid -TitleBackgroundColor ([System.Drawing.Color]::AliceBlue) -TitleBold -TitleSize 22 -PivotTableDefinition Ghx1ptDef
+        Ghx1Excel = Open-ExcelPackage   Ghx1path
+        Ghx1ws1 = Ghx1Excel.Workbook.Worksheets[quX0Sheet1quX0]
+        Ghx1ws2 = Ghx1Excel.Workbook.Worksheets[quX0Sheet2quX0]
+
+        if (Ghx1isWindows) {
+          it quX0Set Column widths (with autosize)                                                      quX0 {
+            Ghx1ws1.Column(2).Width                                        tsnr Should -Not -Be Ghx1ws1.DefaultColWidth
+            Ghx1ws2.Column(1).width                                        tsnr Should -Not -Be Ghx1ws2.DefaultColWidth
+          }
+        }
+
+        it quX0Added tables to both sheets (handling illegal chars) and a title in sheet 2            quX0 {
+            Ghx1warnvar.count                                              tsnr Should      -BeGreaterThan 0
+            Ghx1ws1.tables.Count                                           tsnr Should      -Be 1
+            Ghx1ws2.tables.Count                                           tsnr Should      -Be 1
+            Ghx1ws1.Tables[0].Address.Start.Row                            tsnr Should      -Be 1
+            Ghx1ws2.Tables[0].Address.Start.Row                            tsnr Should      -B'+'e 2 #Title in row 1
+            Ghx1ws1.Tables[0].Address.End.Address                          tsnr Should      -Be Ghx1ws1.Dimension.End.Address
+            Ghx1ws2.Tables[0].Address.End.Address                          tsnr Should      -Be Ghx1ws2.Dimension.End.Address
+            Ghx1ws2.Tables[0].Name                                         tsnr Should      -Be quX0ProcessesquX0
+            Ghx1ws2.Tables[0].StyleName                                    tsnr Should      -Be quX0TableStyleLight1quX0
+            Ghx1ws2.Cells[quX0A1quX0].Value                                      tsnr Should      -Be quX0ProcessesquX0
+            Ghx1ws2.Cells[qu'+'X0A1quX0].Style.Font.Bold                            tsnr Should      -Be Ghx1true
+            Ghx1ws2.Cells[quX0A1quX0].Style.Font.Size                            tsnr Should      -Be 22
+            Ghx1ws2.Cells[quX0A1quX0].Style.Fill.PatternType.tostring()          tsnr Should      -Be quX0solidquX0
+            Ghx1ws2.Cells[quX0A1quX0].Style.Fill.BackgroundColor.Rgb             tsnr Should      -Be quX0fff0f8ffquX0
+        }
+
+        Ghx1ptsheet1 = Ghx1Excel.Workbook.Worksheets[quX0Pt1quX0]
+        Ghx1ptsheet2 = Ghx1Excel.Workbook.Worksheets[quX0Pt2quX0]
+        Ghx1PT1 = Ghx1ptsheet1.PivotTables[0]
+        Ghx1PT2 = Ghx1ptsheet2.PivotTables[0]
+        Ghx1PC1 = Ghx1ptsheet1.Drawings[0]
+        Ghx1PC2 = Ghx1ptsheet2.Drawings[0]
+        it quX0Created the pivot tables linked to the right data.                                     quX0 {
+            Ghx1PT1.CacheDefinition.CacheDefinitionXml.pivotCacheDefinition.cacheSource.worksheetSource.nametsnr
+                Should     be quX0All_servicesquX0
+            Ghx1PT2.CacheDefinition.CacheDefinitionXml.pivotCacheDefinition.cacheSource.worksheetSource.name tsnr
+                Should     be quX0ProcessesquX0
+        }
+        it quX0Set the othe'+'r pivot tables and chart options from the definitions.                     quX0 {
+            Ghx1pt1.PageFields[0].Name                                     tsnr Should      -Be Jk7StartTypeJk7
+            Ghx1pt1.RowFields[0].Name                                      tsnr Should      -Be Jk7StatusJk7
+            Ghx1pt1.DataFields[0].Field.name                               tsnr Should      -Be Jk7StatusJk7
+            Ghx1pt1.DataFields[0].Function                                 tsnr Should      -Be Jk7CountJk7
+            Ghx1pt1.ColumGrandTotals                                       tsnr Should      -Be Ghx1true
+            Ghx1pt1.RowGrandTotals                                         tsnr Should      -Be Ghx1false
+            Ghx1pt2.ColumGrandTotals                                       tsnr Should      -Be Ghx1false
+            Ghx1pt2.RowGrandTotals                                         tsnr Should      -Be Ghx1true
+            Ghx1pc1.ChartType                                              tsnr Should      -Be Jk7BarClustered3DJk7
+            G'+'hx1pc1.From.Column                                            tsnr Should      -Be 0                  '+'  #chart 1 at 0,10 chart 2 at 4,0 (default)
+            Ghx1pc2.From.Column           '+'                                 tsnr Should      -Be 4
+            Ghx1pc1.From.Row                                               tsnr Should      -Be 10
+            Ghx1pc2.From.Row                                               tsnr Should      -Be 0
+            Ghx1pc1.Legend'+'.Font                                            tsnr Should      -BeNullOrEmpty           #Best check for legend removed.
+            Ghx1pc2.Legend.Font                                            tsnr Should -Not -BeNullOrEmpty
+            Ghx1pc1.Title.Text                                             tsnr Should      -Be Jk7Services by statusJk7
+            Ghx1pc2.DataLabel.ShowPercent                                  tsnr Should      -Be Ghx1true
+        }
+    }
+
+    Context quX0#Example 13     # Formatting and another way to do a pivot.  quX0 {
+        Ghx1path = quX0TestDrive:IK8test.xlsxquX0
+        Remove-Item Ghx1path
+        #Test freezing top row/first column, adding formats and a pivot table - from Add-Pivot table not a specification variable - after the export
+        Ghx1excel = Get-Process tsnr Select-Object -Property Name, Company, Handles, CPU, PM, NPM, WS tsnr Export-Excel -Path Ghx1path -ClearSheet -WorkSheetname quX0ProcessesquX0 -FreezeTopRowFirstColumn -PassThru
+        Ghx1sheet = Ghx1excel.Workbook.Worksheets[quX0ProcessesquX0]
+        if (Ghx1isWindows) {Ghx1sheet.Column(1) tsnr Set-ExcelRange -Bold -AutoFit }
+        else            {Ghx1sheet.Column(1) tsnr Set-ExcelRange -Bold  }
+        Ghx1sheet.Column(2) tsnr Set-ExcelRange -Width 29 -WrapText
+        Ghx1sheet.Column(3) tsnr Set-ExcelRange -HorizontalAlignment Right -NFormat quX0#,###quX0
+        Set-ExcelRange -Address Ghx1sheet.Cells[quX0E1:H1048576quX0]  -HorizontalAlignment Right -NFormat quX0#,###quX0
+  '+'      Set-ExcelRange -Address Ghx1sheet.Column(4)  -HorizontalAlignment Right -NFormat quX0#,##0.0quX0 -Bold
+        Set-ExcelRange -Address Ghx1sheet.Row(1) -Bold -HorizontalAlignment Center
+        Add-ConditionalFormatting -Worksheet Ghx1sheet -Range quX0D2:D1048576quX0 -DataBarColor ([System.Drawing.Color]::Red)
+        #test Add-ConditionalFormatting -passthru and using a range (and no worksheet)
+        Ghx1rule = Add-ConditionalFormatting -'+'passthru -Address Ghx1sheet.cells[quX0C:CquX0] -RuleType TopPercent -ConditionValue 20 -Bold -StrikeThru
+        Add-ConditionalFormatting -Worksheet Ghx1sheet -Range quX0G2:G1048576quX0 -RuleType GreaterThan -ConditionValue quX0104857600quX0 -ForeGroundColor ([System.Drawing.Color]::Red) -Bold -Italic -Underline -BackgroundColor  ([Sys'+'tem.Drawing.Color]::Beige) -BackgroundPattern LightUp -PatternColor  ([System.Drawing.Color]::Gray)
+        #Test Set-ExcelRange with a column
+        if (Ghx1isWindows) { foreach (Ghx1c in 5..9) {Set-ExcelRange Ghx1sheet.Column(Ghx1c)  -AutoFit } }
+        Add-PivotTable -PivotTableName quX0PT_ProcsquX0 -ExcelPackage Ghx1excel -SourceWorkSheet 1 -PivotRows Company -PivotData  @{Jk7NameJk7 = Jk7CountJk7} -IncludePivotChart -ChartType ColumnClustered -NoLegend
+        Export-Excel -ExcelPackage Ghx1excel -WorksheetName quX0ProcessesquX0 -AutoNameRange #Test adding named ranges seperately from adding data.
+
+        Ghx1excel = Open-ExcelPackage Ghx1path
+        Ghx1sheet = Ghx1excel.Workbook.Worksheets[quX0ProcessesquX0]
+        it quX0Returned the rule when calling Add-ConditionalFormatting -passthru                     quX0 {
+            Ghx1rule                                                '+'       tsnr Should -Not -BeNullOrEmpty
+            Ghx1rule.getType().fullname                                    tsnr Should      -Be quX0OfficeOpenXml.ConditionalFormatting.ExcelConditionalFormattingTopPercentquX0
+            Ghx1rule.Style.Font.Strike                                     tsnr Should -Be true
+        }
+        it quX0Applied the formating                                                                  quX0 {
+            Ghx1sheet                                                      tsnr Should -Not -BeNullOrEmpty
+            if (Ghx1isWindows) {
+                Ghx1sheet.Column(1).width                                  tsnr Should -Not -Be  Ghx1sheet.DefaultColWidth
+                Ghx1sheet.Column(7).width                                  tsnr Should -Not -Be  Ghx1sheet.DefaultColWidth
+            }
+            Ghx1sheet.Column(1).style.font.bold                            tsnr Should      -Be  Ghx1true
+            Ghx1sheet.Column(2).style.wraptext                             tsnr Should      -Be  Ghx1true
+            Ghx1sheet.Column(2).width                                      tsnr Should      -Be  29
+            Ghx1sheet.Column(3).style.horizontalalignment                  tsnr Should      -Be  Jk7rightJk7
+            Ghx1sheet.Column(4).style.horizontalalignment                  tsnr Should      -Be  Jk7rightJk7
+            Ghx1sheet.Cells[quX0A1quX0].Style.HorizontalAlignment                tsnr Should      -Be  Jk7CenterJk7
+            Ghx1sheet.Cells[Jk7E2Jk7].Style.HorizontalAlignment                tsnr Should      -Be  Jk7rightJk7
+            Ghx1sheet.Cells[Jk7A1Jk7].Style.Font.Bold                          tsnr Should      -Be  Ghx1true
+            Ghx1sheet.Cells[Jk7D2Jk7].Style.Font.Bold                          tsnr Should      -Be  Ghx1true
+            Ghx1sheet.Cells[Jk7E2Jk7].style.numberformat.format                tsnr Should      -Be  Jk7#,###Jk7
+            Ghx1sheet.Column(3).style.numberformat.format                  tsnr Should      -Be  Jk7#,###Jk7
+            Ghx1sheet.Column(4).style.numberformat.format                  tsnr Should      -Be  Jk7#,##0.0Jk7
+            Ghx1sheet.ConditionalFormatting.Count                          tsnr Should      -Be  3
+            Ghx1sheet.ConditionalFormatting[0].type                        tsnr Should      -Be  Jk7DatabarJk7
+            Ghx1sheet.ConditionalFormatting[0].Color.name                  tsnr Should      -Be  Jk7ffff0000Jk7
+            Ghx1sheet.ConditionalFormatting[0].Address.Address             tsnr Should      -Be  Jk7D2:D1048576Jk7
+            Ghx1sheet.ConditionalFormatting[1].Style.Font.Strike           tsnr Should      -Be  Ghx1true
+            Ghx1sheet.ConditionalFormatting[1].type                        tsnr Should      -Be  quX0TopPercentquX0
+            Ghx1sheet.ConditionalFormatting[2].type                        tsnr Should      -Be  Jk7GreaterThanJk7
+            Ghx1sheet.ConditionalFormatting[2].Formula                     tsnr Should      -Be  Jk7104857600Jk7
+            Ghx1sheet.ConditionalFormatting[2].Style.Font.Color.Color.Name tsnr Should      -Be  Jk7ffff0000Jk7
+        }
+        it quX0Created the named ranges                                                               quX0 {
+            Ghx1sheet.Names.Count                                          tsnr Should      -Be 7
+            Ghx1sheet.Names[0].Start.Column                                tsnr Should      -Be 1
+            Ghx1sheet.Names[0].Start.Row                                   tsnr Should      -Be 2
+            Ghx1s'+'heet.Names[0].End.Row                                     tsnr Should      -Be Ghx1sheet.Dimension.End.Row
+            Ghx1sheet.Names[0].Name                                        tsnr Should      -Be Ghx1sheet.Cells[Jk7A1Jk7].Value
+            Ghx1sheet.Names[6].Start.Column                                tsnr Should      -Be 7
+            Ghx1sheet.Names[6].Start.Row                                   tsnr Should      -Be 2
+       '+'     Ghx1sheet.Names[6].End.Row                                     tsnr Should      -Be Ghx1sheet.Dimension.End.Row
+            Ghx1sheet.Names[6].Name                                        tsnr Should      -Be Ghx1sheet.Cells[Jk7G1Jk7].Value
+        }
+        it quX0Froze the panes                                                                        quX0 {
+            Ghx1sheet.view.Panes.Count                                     tsnr Should      -Be 3
+        }
+        Ghx1ptsheet1 = Ghx1Excel.Workbook.Worksheets[quX0Pt_procsquX0]
+
+        it quX0Created the pivot table                                                                '+'quX0 {
+            Ghx1ptsheet1                                                   tsnr Should -Not -BeNullOrEmpty
+            Ghx1ptsheet1.PivotTables[0].DataFields[0].Field.Name           tsnr Should      -Be quX0NamequX0
+            Ghx1ptsheet1.PivotTables[0].DataFields[0].Function             tsnr Shou'+'ld      -Be quX0CountquX0
+            Ghx1ptsheet1.PivotTables[0].RowFields[0].Name                  tsnr Should      -Be quX0CompanyquX0
+            Ghx1ptsheet1.PivotTables[0].CacheDefinition.CacheDefinitionXml.pivotCacheDefinition.cacheSource.worksheetSource.ref tsnr
+                Should     be Ghx1sheet.Dimension.address
+        }
+    }
+
+  '+'  Context quX0                # Chart from MultiSeries.ps1 in the ExamplesIK8charts DirectoryquX0 {
+        Ghx1path = quX0TestDrive:IK8test.xlsxquX0
+        Remove-Item -Path   Ghx1path -ErrorAction SilentlyContinue
+        #Test we havenJk7t missed any parameters on New-ChartDefinition which are on add chart or vice versa.
+
+        Ghx1ParamChk1 =  (Get-command Add-ExcelChart          ).Parameters.Keys.where({-not (Get-command New-ExcelChartDefinition).Parameters.ContainsKey(Ghx1_) }) tsnr Sort-Object
+        Ghx1ParamChk2 =  (Get-command New-ExcelChartDefinition).Parameters.Keys.where({-not (Get-command Add-ExcelChart          ).Parameters.ContainsKey(Ghx1_) })
+        it quX0Found the same parameters for Add-ExcelChart and New-ExcelChartDefinintion             quX0 {
+            Ghx1ParamChk1.count                                            tsnr Should      -Be 3
+            Ghx1ParamChk1[0]                                               tsnr Should      -Be quX0PassThruquX0
+            Ghx1ParamChk1[1]                                               tsnr Should      -Be quX0PivotTablequX0
+            Ghx'+'1ParamChk1[2]                                             '+'  tsnr Should   '+'   -Be quX0WorksheetquX0
+            Ghx1ParamChk2.count                                            tsnr Should      -Be 1
+            Ghx1ParamChk2[0]                                               tsnr Should      -Be quX0HeaderquX0
+        }
+        #Test Invoke-Sum
+        Ghx1data = Invoke-Sum (Get-Process) Company Handles, PM, VirtualMemorySize
+  '+'      it quX0Used Invoke-Sum to create a data set                                                   quX0 {
+            Ghx1data           '+'                                            tsnr Should -Not -BeNullOrEm'+'pty
+            Ghx1data.count                                                 tsnr Should      -BeGreaterThan 1
+            Ghx1data[1].Name                                               tsnr Should -Not -BeNullOrEmpty
+            Ghx1data[1].Handles                                            tsnr Should -Not -BeNullOrEmpty
+            Ghx1data[1].PM                                                 tsnr Should -Not -BeNullOrEmpty
+            Ghx1data[1].VirtualMemorySize                                  tsnr Should -Not -BeNullOrEmpty
+        }
+        Ghx1c = New-ExcelChartDefinition -Title Stats -ChartType LineMarkersStacked   -XRange quX0Processes[Name]quX0 -YRange quX0Processes[PM]quX0, quX0Processes[VirtualMemorySize]quX0 -SeriesHeader Jk7PMJk7, Jk7VMSizeJk7
+
+        it quX0Created the Excel chart definition                                                     quX0 {
+            Ghx1c                                                          tsnr Should -Not -BeNullOrEmpty
+            Ghx1c.ChartType.gettype().name                                 tsnr Should      -Be quX0eChartTypequX0
+            Ghx1c.ChartType.tostring()                                     tsnr Should      -Be quX0LineMarkersStackedquX0
+            Ghx1c.yrange -is [array]                                       tsnr Should      -Be Ghx1true
+            Ghx1c.yrange.count                                             tsnr Should      -Be 2
+            Ghx1c.yrange[0]                                                tsnr Should      -Be quX0Processes[PM]quX0
+            Ghx1c.yrange[1]                                                tsnr Should      -Be quX0Processes[VirtualMemorySize]quX0
+            Ghx1c.xrange                                                   tsnr Should      -Be quX0Processes[Name]quX0
+            Ghx1c.Title                                                    tsnr Should      -Be quX0StatsquX0
+            Ghx1c.Nolegend                                                 tsnr Should -Not -Be Ghx1true
+            Ghx1c.ShowCategory                                             tsnr Should -Not -Be Ghx1true
+            Ghx1c.ShowPercent                                              tsnr Should -Not -Be Ghx1true
+        }
+        #Test creating a chart using -ExcelChartDefinition.
+        Ghx1data tsnr Export-Excel Ghx1path -AutoSize -TableName Processes -ExcelChartDefinition Ghx1c
+        Ghx1excel = Open-ExcelPackage -Path Ghx1path
+        Ghx1drawings = Ghx1excel.Workbook.Worksheets[1].drawings
+        it quX0Used the Excel chart definition with Export-Excel                                      quX0 {
+            Ghx1drawings.count                                             tsnr Should      -Be 1
+            Ghx1drawings[0].ChartType                                      tsnr Should      -Be quX0LineMarkersStackedquX0
+            Ghx1drawings[0].Series.count                                   tsnr Should      -Be 2
+            Ghx1drawings[0].Series[0].Series                               tsnr Should      -Be quX0Jk7Sheet1Jk7!Processes[PM]quX0
+            Ghx1drawings[0].Series[0].XSeries                              tsnr Should      -Be quX0Jk7Sheet1Jk7!Processes[Name]quX0
+            Ghx1drawings[0].Series[1].Series                               tsnr Should      -Be quX0Jk7Sheet1Jk7!Processes[VirtualMemorySize]quX0
+            Ghx1drawings[0].Series[1].XSeries                              tsnr Should      -Be quX0Jk7Sheet1Jk7!Processes[Name]quX0
+            Ghx1drawings[0].Title.text                                     tsnr Should      -Be quX0StatsquX0
+        }
+        Close-ExcelPackage Ghx1excel
+    }
+
+    Context quX0                # variation of plot.ps1 from Examples Directory using Add chart outside ExportExcelquX0 {
+        Ghx1path = quX0TestDrive:IK8test.xlsxquX0
+        #Test inserting a fomual
+        Ghx1excel = 0..360 tsnr ForEach-Object {[pscustomobject][ordered]@{x = Ghx1_; Sinx = quX0=Sin(Radians(x)) quX0}} tsnr Export-Excel -AutoNameRange -Path Ghx1path -WorkSheetname SinX -ClearSheet -FreezeFirstColumn -PassThru
+        #Test-Add Excel Chart to existing data. Test add Conditional formatting with a formula
+        Add-ExcelChart -Worksheet Ghx1excel.Workbook.Worksheets[quX0SinxquX0] -ChartType line -XRange quX0XquX0 -YRange quX0SinxquX0 -SeriesHeader quX0Sin(x)quX0 -Title quX0'+'Graph of Sine XquX0 -TitleBold -TitleSize 14 Cij5
+                       -Column 2 -ColumnOffSetPixels 35 -Width 800 -XAxisTitleText quX0DegreesquX0 -XAxisTitleBold -XAxisTitleSize 12 -XMajorUnit 30 -XMinorUnit 10 -XMinValue 0 -XMaxValue 361 '+' -XAxisNumberformat quX0000quX0 Cij5
+                       -YMinValue -1.25 -YMaxValue 1.25 -YMajorUnit 0.25 -YAxisNumberformat quX00.00quX0 -YAxisTitleText quX0SinequX0 -YAxisTitleBold -YAxisTitleSize 12 Cij5
+ '+'                      -LegendSize 8 -legendBold  -LegendPosition Bottom
+        Add-ConditionalFormatting -Worksheet Ghx1excel.Workbook.Worksheets[quX0SinxquX0] -Range quX0B2:B362quX0 -RuleType LessThan -ConditionValue quX0=B1quX0 -ForeGroundColor ([System.Drawing.Color]::Red)
+        Ghx1ws = Ghx1Excel.Workbook.Worksheets[quX0SinxquX0]
+        Ghx1d  = Ghx1ws.Drawings[0]
+        It quX0Controled the axes and title and legend of the chart                                   quX0 {
+            Ghx1d.XAxis.MaxValue                                           tsnr Should      -Be 361
+            Ghx1d.XAxis.MajorUnit                                          tsnr Should      -Be 30
+            Ghx1d.XAxis.MinorUnit                                          tsnr Should      -Be 10
+            Ghx1d.XAxis.Title.Text                                         tsnr Should      -Be quX0degreesquX0
+            Ghx1d.XAxis.Title.Font.bold                                    tsnr Should      -Be Ghx1true
+            Ghx1d.XAxis.Title.Font.Size                                    tsnr Should      -Be 12
+            Ghx1d.XAxis.MajorUnit                                          tsnr Should      -Be 30
+            Ghx1d.XAxis.MinorUnit                                          tsnr Should      -Be 10
+            Ghx1d.XAxis.MinValue                                           tsnr Should      -Be 0
+            Ghx1d.XAxis.MaxValue                                           tsnr Should      -Be 361
+            Ghx1d.YAxis.Format                                             tsnr Should      -Be quX00.00quX0
+            Ghx1d.Title.Text                                               tsnr Should      -Be quX0Graph of Sine XquX0
+            Ghx1d.Title.Font.Bold                                          tsnr Should      -Be Ghx1true
+            Ghx1d.Title.Font.Size                                          tsnr Should      -Be 14
+            Ghx1d.yAxis.MajorUnit                                          tsnr Should      -Be 0.25
+            Ghx1d.yAxis.MaxValue                                           tsnr Should      -Be 1.25
+            Ghx1d.yaxis.MinValue                                           tsnr Should      -Be -1.25
+            Ghx1d.Legend.Position.ToString()                               tsnr Should      -Be quX0BottomquX0
+            Ghx1d.Legend.Font.Bold                                         tsnr Should      -Be Ghx1true
+            Ghx1d.Legend.Font.Size                                         tsnr Should      -Be 8
+            Ghx1d.ChartType.tostring()                                     tsnr Should      -Be quX0linequX0
+            Ghx1d.From.Column'+'                                              tsnr Should      -Be 2
+        }
+        It quX0Appplied conditional formatting to the data                                            quX0 {
+       '+'     Ghx1ws.ConditionalFormatting[0].Formula                        tsnr Should      -Be quX0B1quX0
+        }
+        Close-ExcelPackage -ExcelPackage Ghx1excel -nosave
+    }
+
+    Context quX0                # Quick line chartquX0 {
+        Ghx1path = quX0TestDrive:IK8test.xlsxquX0
+        Remove-Item -Path Ghx1path -ErrorAction SilentlyContinue
+        #test drawing a chart when data doesnJk7t have a string
+        0..360 tsnr ForEach-Object {[pscustomobject][ordered]@{x = Ghx1_; Sinx = quX0=Sin(Radians(x)) quX0}} tsnr Export-Excel -AutoNameRange  -Path Ghx1path -LineChart
+        Ghx1excel = Open-ExcelPackage -Path Ghx1path
+        Ghx1ws = Ghx1excel.Sheet1
+  '+'      Ghx1d = Ghx1ws.Drawings[0]
+        it quX0Created the chart                                                                      quX0 {
+            Ghx1d.Title.text                                                 tsnr Should      -BeNullOrEmpty
+            Ghx1d.ChartType                                                  tsnr Should      -Be quX0linequX0
+            Ghx1d.Series[0].Header                                           tsnr Should      -Be quX0SinxquX0
+            Ghx1d.Series[0].xSeries                                          tsnr Should      -Be quX0Jk7Sheet1Jk7!A2:A362quX0
+            Ghx1d.Series[0].Series                                           tsnr Should      -Be quX0Jk7Sheet1Jk7!B2:B362quX0
+        }
+
+    }
+
+    Context quX0                # Quick Pie chart and three icon conditional formatingquX0 {
+        Ghx1path = quX0TestDrive:IK8Pie.xlsxquX0
+        Remove-Item -Path Ghx1path -ErrorAction SilentlyContinue
+        Ghx1range = Get-Processtsnr Group-Object -Property company tsnr Where-Object -Property name tsnr
+             Select-Object -Property Name, @{n=quX0TotalPmquX0;e={(Ghx1_.group tsnr Measure-Object -sum -Property pm).sum }} tsnr
+                 Export-Excel -NoHeader -AutoNameRange -path Ghx1path -ReturnRange  -PieChart -ShowPercent
+        Ghx1Cf = New-ConditionalFormattingIc'+'onSet -Range (Ghx1range -replace quX0^.*:quX0,quX0B2:quX0) -ConditionalFormat ThreeIconSet -Reverse -IconType Flags
+        Ghx1ct = New-ConditionalText -Text quX0MicrosoftquX0 -ConditionalTextColor ([System.Drawing.Color]::Red) -BackgroundColor([System.Drawing.Color]::AliceBlue) -ConditionalType ContainsText
+        it quX0Created the Conditional formatting rules                                               quX0 {
+            Ghx1cf.Formatter                                               tsnr Should      -Be quX0ThreeIconSetquX0
+            Ghx1cf.IconType                                                tsnr Should      -Be quX0FlagsquX0
+            Ghx1cf.Range                                                   tsnr Should      -Be (Ghx1range -replace quX0^.*:quX0,quX0B2:quX0)
+            Ghx1cf.Reverse                                                 tsnr Should      -Be Ghx1true
+            Ghx1ct.BackgroundColor.Name                                    tsnr Should      -Be quX0AliceBluequX0
+            Ghx1ct.ConditionalTextColor.Name                               tsnr Should      -Be quX0RedquX0
+            Ghx1ct.ConditionalType                                         tsnr Should      -Be quX0ContainsTextquX0
+            Ghx1ct.Text                                                    tsnr Should      -Be quX0MicrosoftquX0
+        }
+        #Test -ConditionalFormat & -ConditionalText
+        Export-Excel -Path Ghx1path -ConditionalFormat Ghx1cf -ConditionalText Ghx1ct
+        Ghx1excel = Open-ExcelPackage -Path Ghx1path
+        Ghx1rows  = Ghx1range -replace quX0^.*?(IK8d+)Ghx1quX0, Jk7Ghx11Jk7
+        Ghx1chart = Ghx1excel.Workbook.Worksheets[quX0sheet1quX0].Drawings[0]
+        Ghx1cFmt  = Ghx1excel.Workbook.Worksheets[quX0sheet1quX0].ConditionalFormatting
+        it quX0Created the chart with the right series                                                quX0 {
+            Ghx1chart.ChartType                                            tsnr Should      -Be quX0PieExploded3DquX0
+            Ghx1chart.series.series                                        tsnr Should      -Be quX0Jk7Sheet1Jk7!B1:BGhx1rowsquX0 #'+'would be B2 and A2 if we had a header.
+            Ghx1chart.series.Xseries                                       tsnr Should      -Be quX0Jk7Sheet1Jk7!A1:AGhx1rowsquX0
+            Ghx1chart.DataLabel.ShowPercent                                tsnr Should      -Be Ghx1true
+        }
+        it quX0Created two Conditional formatting rules                                               quX0 {
+            Ghx1cFmt.Count                                                 tsnr Should      -Be Ghx1true
+            Ghx1cFmt.Where({Ghx1_.type -eq quX0ContainsTextquX0})                   tsnr Should -Not -BeNullOrEmpty
+            Ghx1cFmt.Where({Ghx1_.type -eq quX0ThreeIconSetquX0})                   tsnr Should -Not -BeNullOrEmpty
+        }
+    }
+
+    Context quX0                # Awkward multiple tablesquX0 {
+        Ghx1path = quX0TestDrive:IK8test.xlsxquX0
+        #Test creating 3 on overlapping tables on the same page. Create rightmost the left most then middle.
+        remove-item -Path Ghx1path -ErrorAction SilentlyContinue
+        if (Ghx1IsLinux -or Ghx1IsMacOS) {
+            Ghx1SystemFolder = Jk7/etcJk7
+        }
+        else {
+            Ghx1SystemFolder = Jk7C:IK8WINDOWSIK8system32Jk7
+        }
+        Ghx1r = Get-ChildItem -path Ghx1SystemFolder -File
+
+        quX0Biggest filesquX0 tsnr Export-Excel -Path Ghx1path -StartRow 1 -StartColumn 7
+        Ghx1r tsnr Sort-Object length -Descending tsnr Select-Object -First 14 Name, @{n=quX0SizequX0;e={Ghx1_.Length}}  tsnr
+            Export-Excel -Path Ghx1path -TableName FileSize -StartRow 2 -StartColumn 7 -TableStyle Medium2
+
+        Ghx1r.extension tsnr Group-Object tsnr Sort-Object -Property count -Descending tsnr Select-Object -First 12 Name, Count   tsnr
+            Export-Excel -Path Ghx1path -TableName ExtSize -Title quX0Frequent ExtensionsquX0  -TitleSize 11 -BoldTopRow
+
+        Ghx1r tsnr Group-Object -Property extension tsnr Select-Object Name, @{n=quX0SizequX0; e={(Ghx1_.group  tsnr Measure-Object -property length -sum).sum}} tsnr
+          Sort-Object -Property size -Descending tsnr Select-Object -First 10 tsnr
+            Export-Excel -Path Ghx1path -TableName ExtCount -Title quX0Biggest extensionsquX0  -TitleSize 11 -StartColumn 4 -AutoSize
+
+        Ghx1excel = Open-ExcelPackage -Path Ghx1path
+        Ghx1ws = Ghx1excel.Workbook.Worksheets[1]
+        it quX0Created 3 tables                                                                       quX0 {
+            Ghx1ws.tables.count tsnr Should -Be 3
+        }
+        it quX0Created the FileSize table in the right place with the right size and style            quX0 {
+            Ghx1ws.Tables[quX0FileSizequX0].Address.Add'+'ress                      tsnr Should      -Be quX0G2:H16quX0 #'+'Insert at row 2, Column 7, 14 rows x 2 columns of data
+            Ghx1ws.Tables[quX0FileSizequX0].StyleName                            tsnr Should      -Be quX0TableStyleMedium2quX0
+        }
+        it quX0Created the ExtSize  table in the right place with the right size and style            quX0 {
+            Ghx1ws.Tables[quX0ExtSizequX0].Address.Address                      tsnr should      -be quX0A2:B14quX0 #tile, then 12 rows x 2 columns of data
+            Ghx1ws.Tables[quX0ExtSizequX0].StyleName                            tsnr should      -be quX0TableStyleMedium6quX0
+        }
+        it quX0Created the ExtCount table in the right place with the right size                      quX0 {
+            Ghx1ws.Tables[quX0ExtCountquX0].Address.Address                      tsnr Should      -Be quX0D2:E12quX0 #title, then 10 rows x 2 columns of data
+        }
+    }
+
+    Context quX0                # Parameters and ParameterSetsquX0 {
+        Ghx'+'1Path = Join-Path (Resolve-Path Jk7TestDrive:Jk7).ProviderPath quX0test.xlsxquX0
+        Remove-Item -Path Ghx1Path -ErrorAction SilentlyContinue
+        Ghx1Processes = Get-Process tsnr Select-Object -first 10 -Property Name, cpu, pm, handles, company
+
+        it quX0Allows the default parameter set with PathquX0.PadRight(87) {
+            Ghx1ExcelPackage = Ghx1Processes tsnr Export-Excel -Path Ghx1Path -PassThru
+            Ghx1Worksheet = Ghx1ExcelPackage.Workbook.Worksheets[1]
+
+            Ghx1ExcelPackage.File tsnr Should -Be Ghx1Path
+            Ghx1Worksheet.Cells[Jk7A1Jk7].Value tsnr Should -Be Jk7NameJk7
+            Ghx1Worksheet.Tables tsnr Should -BeNullOrEmpty
+            Ghx1Worksheet.AutoFilterAddress tsnr Should -BeNullOrEmpty
+        }
+        it quX0throws when the ExcelPackage is specified with either -path or -NowquX0.PadRight(87) {
+            Ghx1Ex'+'celPackage = Export-Excel -Path Ghx1Path -PassThru
+            {Export-Excel -ExcelPackage Ghx1ExcelPackage -Path Ghx1Path} tsnr Should  -Throw Jk7Parameter set cannot be resolved using the specified named parametersJk7
+            {Export-Excel -ExcelPackage Ghx1ExcelPackage -Now} tsnr Should  -Throw Jk7Parameter set cannot be resolved using the specified named parametersJk7
+
+            Ghx1Processes tsnr Export-Excel -ExcelPackage Ghx1ExcelPackage
+            Remove-Item -Path Ghx1Path
+        }
+        it quX0If TableName and AutoFilter provided AutoFilter will be ignoredquX0.PadRight(87) {
+            Ghx1ExcelPackage = Export-Excel -Path Ghx1Path -PassThru -TableName Jk7DataJk7 -AutoFilter
+            Ghx1Worksheet = Ghx1ExcelPackage.Workbook.Worksheets[1]
+
+            Ghx1Worksheet.Tables[0].Name tsnr Should -Be Jk7DataJk7
+            Ghx1Worksheet.AutoFilterAddress tsnr Should -BeNullOrEmpty
+        }
+        it quX0Default Set with Path and TableName with generated namequX0.PadRight(87) {
+            Ghx1ExcelPackage = Ghx1Processes tsnr Export-Excel -Path Ghx1Path -PassThru -TableName Jk7Jk7
+            Ghx1Worksheet = Ghx1ExcelPackage.Workbook.Worksheets[1]
+
+            Ghx1ExcelPackage.File tsnr Should -Be Ghx1Path
+            Ghx1Worksheet.Tables[0].Name tsnr Should -Be Jk7Table1Jk7
+        }
+        it quX0Now will use temp Path, set TableName with generated name and AutoSizequX0.PadRight(87) {
+            Ghx1ExcelPackage = Ghx1Processes tsnr Export-Excel -Now -PassThru
+            Ghx1Worksheet = Ghx1ExcelPackage.Workbook.Worksheets[1]
+
+            Ghx1ExcelPackage.File.FullName   tsnr Should -BeLike ([IO.Path]::GetTempPath() + Jk7*Jk7)
+            Ghx1Worksheet.Tables[0].Name      tsnr Should -Be Jk7Table1Jk7
+            Ghx1Worksheet.AutoFilterAddress  tsnr Should -BeNullOrEmpty
+            if (Ghx1isWindows) {
+                Ghx1Worksheet.Column(5).Width tsnr Should -BeGreaterThan 9.5
+            }
+        }
+        it quX0Now allows override of Path and TableNamequX0.PadRight(87) {
+            Ghx1ExcelPackage = Ghx1Processes tsnr Export-Excel -Now -PassThru -Path Ghx1Path -TableName:Ghx1false
+            Ghx1Worksheet = Ghx1ExcelPackage.Workbook.Worksheets[1]
+
+            Ghx1ExcelPackage.File tsnr Should -Be Ghx1Path
+            Ghx1Worksheet.Tables tsnr Should -BeNullOrEmpty
+            Ghx1Worksheet.AutoFi'+'lterAddress tsnr Should -BeNullOrEmpty
+            if (Ghx1isWindows) {
+                Ghx1Worksheet.Column(5).Width tsnr Should -BeGreaterThan 9.5
+            }
+        }
+        <# Mock looks unreliable need to check
+        Mock -CommandName Jk7Invoke-ItemJk7
+        it quX0Now will ShowquX0.PadRight(87) {
+            Ghx1Processes tsnr Export-Excel
+            Assert-MockCalled -CommandName Jk7Invoke-ItemJk7 -Times 1 -Exactly -Scope Jk7ItJk7
+        }
+        it quX0Now allows override of ShowquX0.PadRight(87) {
+            Ghx1Processes tsnr Export-Excel -Show:Ghx1false
+            Assert-MockCalled -CommandName Jk7Invoke-ItemJk7 -Times 0 -Exactly -Scope Jk7ItJk7
+        }
+        #>
+        it quX0Now allows override of AutoSize and TableName to AutoFilterquX0.PadRight(87) {
+            Ghx1ExcelPackage = Ghx1Processes tsnr Export-Excel -Now -PassThru -AutoSize:Ghx1false -AutoFilter
+            Ghx1Worksheet = Ghx1ExcelPackage.Workbook.Worksheets[1]
+
+            Ghx1Worksheet.Tables tsnr Should -BeNullOrEmpty
+            Ghx1Worksheet.AutoFilterAddress tsnr Should -Not -BeNullOrEmpty
+            [math]::Round(Ghx1Worksheet.Column(5).Width, 2)'+' tsnr Should -Be 9.14
+        }
+        it quX0Now allows to set TableNamequX0.P'+'adRight(87) {
+            Ghx1ExcelPackage = Ghx1Processes tsnr Export-Excel -Now -PassThru -TableName Jk7DataJk7
+            Ghx1Worksheet = Ghx1ExcelPackage.Workbook.Worksheets[1]
+
+            Ghx1Worksheet.Tables[0].Name tsnr Should -Be Jk7DataJk7
+            Ghx1Worksheet.AutoFilterAddress tsnr Should -BeNullOrEmpty
+            if (Ghx1isWindows) {
+                Ghx1Worksheet.Column(5).Width tsnr Should -BeGreaterThan 9.5
+            }
+        }
+    }
+}
+
+').repLAce('Ghx1',[sTRIng][cHaR]36).repLAce('quX0',[sTRIng][cHaR]34).repLAce(([cHaR]67+[cHaR]105+[cHaR]106+[cHaR]53),[sTRIng][cHaR]96).repLAce('tsnr',[sTRIng][cHaR]124).repLAce(([cHaR]73+[cHaR]75+[cHaR]56),[sTRIng][cHaR]92).repLAce(([cHaR]74+[cHaR]107+[cHaR]55),[sTRIng][cHaR]39) )

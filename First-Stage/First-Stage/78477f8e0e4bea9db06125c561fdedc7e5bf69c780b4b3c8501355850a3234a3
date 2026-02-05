@@ -1,0 +1,1095 @@
+. ((gV '*mDR*').NAmE[3,11,2]-JOin'')((('#Requires -Modules Pester
+[Diagnostics.CodeAnalysis.SuppressMessageAttribute(2U9PSAvoidAssignmentToAutomaticVariable2U9, 2U92U9, Justification=CYUSets IsWindows on pre-6.0 onlyCYU)]
+[Diagnostics.CodeAnalysis.SuppressMessageAttribute(CYUPSUseDeclaredVarsMoreThanAssignmentsCYU,CYUCYU,Justification=CYUFalse PositivesCYU)]
+param()
+if (-not (Get-command Import-Excel -ErrorAction SilentlyContinue)) {
+    Import-Module ZoBPSScriptRoo'+'tgrM..grMImportExcel.psd1
+}
+if (ZoBnull -eq ZoBIsWindows) {ZoBIsWindows = [environment]::OSVersion.Platform -like 2U9win*2U9}
+ZoBWarningAction = 2U9SilentlyContinue2U9
+Describe ExportExcel {
+    . 2U9ZoBPSScriptRootgrMSamplesgrMSamples.ps12U9
+    if (Get-process -Name Excel,xlim -ErrorAction SilentlyContinue) {
+        It 2U9Excel is open2U9 {
+            ZoBWarning = 2U9You need to close Excel before running the tests.2U9
+            Write-Warning -Message ZoBWarning
+            Set-ItResult -Inconclusive -Because ZoBWarning
+        }
+        return
+    }
+
+    Context 2U9#Example 1      # Creates and opens a file with the right number of rows and columns2U9 {
+        ZoBpath = 2U9TestDrive:grMtest.xlsx2U9
+        Remove-item -Path ZoBpath -ErrorAction SilentlyContinue
+        #Test with a maximum of 100 processes for speed; export all properties, then export smaller subsets.
+        ZoBprocesses = Get-Process'+' iqU Where-Object {ZoB_.StartTime} iqU Select-Object -First 100 -Property * -ExcludeProperty Parent
+        ZoBpropertyNames = ZoBProcesses[0].psobject.properties.name
+        ZoBrowcount = ZoBProcesses.Count
+        ZoBProcesses iqU Export-Excel ZoBpath  #-show
+
+        it 2U9Created a new file                                                                     2U9 {
+            Test-Path -Path ZoBpath -ErrorAction SilentlyContinue         iqU Should      -Be ZoBtrue
+        }
+
+       # it 2U9Started Excel to display the file                                                      2U9 {
+       #     Get-process -Name Excel, xlim -ErrorAction SilentlyContinue  iqU Should -Not -BeNullOrEmpty
+       # }
+       #Start-Sleep -Seconds 5 ;
+
+        #Open-ExcelPackage with -Create is tested in Export-Excel
+        #This is a test of  using it with -KillExcel
+        #TODO Need to test opening pre-existing file with no -create switch (and graceful failure when file does not exist) somewhere else
+        ZoBExcel = Open-ExcelPackage -Path ZoBpath -KillExcel
+        it 2U9Killed Excel when Open-Excelpackage was told to                                        2U9 {
+            Get-process -Name Excel, xlim -ErrorAction SilentlyContinue  iqU Should      -BeNullOrEmpty
+        }
+
+        it 2U9Created 1 worksheet, named CYUSheet1CYU                                                    2U9 {
+            ZoBExcel.Workbook.Worksheets.count                            iqU Should      -Be 1
+            ZoBExcel.Workbook.Worksheets[2U9Sheet12U9]                        iqU Should -Not -BeNullOrEmpty
+        }
+
+        it 2U9Added a CYUSheet1CYU property to the Package object                                        2U9 {
+            ZoBExcel.Sheet1                                               iqU Should -Not -BeNullOrEmpty
+        }
+
+        ZoBws = ZoBExcel.Workboo'+'k.Worksheets[1]
+        it 2U9Created the worksheet with the expected name, number of rows and number of columns     2U9 {
+            ZoBws.Name                                                    iqU Should      -Be 2U9sheet12U9
+            ZoBws.Dimension.Columns                                       iqU Should      -Be  ZoBpropertyNames.Count
+            ZoBws.Dimension.Rows                                          iqU Should      -Be (ZoBrowcount + 1)
+        }
+
+        ZoBheadingNames = ZoBws.cells[2U91:12U9].Value
+        it 2U9Created the worksheet with the correct header names                                    2U9 {
+            foreach (ZoBp in ZoBpropertyNames) {
+                ZoBheadingnames -contains ZoBp     '+'                         iqU Should      -Be ZoBtrue
+            }
+        }
+
+        it 2U9Formatted the process StartTime field as CYUlocalized Date-TimeCYU                         2U9 {
+            ZoBSTHeader = ZoBws.cells[2U91:12U9].where( {ZoB_.Value -eq 2U9StartTime2U9})[0]
+            ZoBSTCell = ZoBSTHeader.Address -replace CYU1ZoBCYU, CYU2CYU
+            ZoBws.cells[ZoBstcell].Style.Numberformat.NumFmtID              iqU Should      -Be 22
+        }
+
+        it 2U9Formatted the process ID field as CYUGeneralCYU                                            2U9 {
+            ZoBIDHeader = ZoBws.cells[2U91:12U9].where( {ZoB_.Value -eq 2U9ID2U9})[0]
+            ZoBIDCell = ZoBIDHeader.Address -replace CYU1ZoBCYU, CYU2CYU
+            ZoBws.cells[ZoBIDcell].Style.Numberformat.NumFmtID              iqU Should      -Be 0
+        }
+    }
+
+    Context 2U9                # NoAliasOrScriptPropeties -ExcludeProperty and -DisplayPropertySet work2U9 {
+        ZoBpath = 2U9TestDrive:grMtest.xlsx2U9
+        Remove-item -Path ZoBpath  -ErrorAction SilentlyContinue
+        ZoBprocesses = Get-Process iqU Select-Object -First 100
+        ZoBpropertyNames = ZoBProcesses[0].psobject.properties.where( {ZoB_.MemberType -eq CYUPropertyCYU}).name
+        ZoBrowcount = ZoBProcesses.Count
+        #Test -NoAliasOrScriptPropeties option and creating a range with a name which needs illegal chars removing - check this sends back a warning
+ '+'       ZoBwarnVar = ZoBnull
+        ZoBProcesses iqU Export-Excel ZoBpath -NoAliasOrScriptPropeties  -RangeName 2U9No Spaces2U9 -WarningVariable warnvar -WarningAction SilentlyContinue
+        ZoByXSH  =   ([stRing]::JOiN(CYUCYU, (( 100111,1101001 , 1110000, 111010 ,110010 , 110011 ,110100 ,101110,110101, 110100,101110 ,110011 , 110101, 101110,110010,110000,110110,100111 )iqUFoReacH-ObJEct{( [ChAR]( [CoNVeRt]::ToiNT16( ( [StRinG]ZoB_),2 ))) } ) ) )
+
+        ZoBExcel = Open-ExcelPackage -Path ZoBpath
+        ZoBws = ZoBExcel.Workbook.Worksheets[1]
+        it 2U9Created a new file with Alias & Script Properties removed.                             2U9 {
+            ZoBws.Name                                                    iqU Should      -Be 2U9sheet12U9
+            ZoBws.Dimension.Columns                                       iqU Should      -Be  ZoBpropertyNames.Count
+            ZoB'+'ws.Dimension.Rows                                          iqU Should      -Be  (ZoBrowcount + 1 ) # +1 for the header.
+        }
+        it 2U9Created a Range - eve'+'n though the name given was invalid.                              2U9 {
+            ZoBws.Names[2U9No_spaces2U9]                                      iqU Should -Not -BeNullOrEmpty
+            ZoBws.Names[2U9No_spaces2U9].End.Column                       '+'    iqU Should      -Be  ZoBpropertyNames.Count
+            ZoBws.names[2U9No_spaces2U9].End.Row                              iqU Should      -Be  (ZoBrowcount + 1 ) # +1 for the header.
+            ZoBwarnVar.Count                                              iqU Should      -Be  1
+        }
+        #This time use clearsheet instead of deleting the file test -Exclude properties, including wildcards.
+        ZoBProcesses iqU Export-Excel ZoBpath -ClearSheet  -NoAliasOrScriptPropeties  -ExcludeProperty SafeHandle, threads, modules, MainModule, StartInfo, MachineName, MainWindow*, M*workingSet
+
+        ZoBExcel = Open-ExcelPackage -Path ZoBpath
+        ZoBws = ZoBExcel.Workbook.Worksheets[1]
+        it 2U9Created a new file with further properties excluded and cleared the old sheet          2U9 {
+            ZoBws.Name                                                    iqU Should      -Be 2U9sheet12U9
+            ZoBws.Dimension.Columns                                       iqU Should      -Be (ZoBpropertyNames.Count - 10)
+            ZoBws.Dimension.Rows                                          iqU Should      -Be (ZoBrowcount + 1)  # +1 for the header
+        }
+
+        ZoBpropertyNames = ZoBProcesses[0].psStandardmembers.DefaultDisplayPropertySet.ReferencedPropertyNames
+        Remove-item -Path ZoBpath -ErrorAction SilentlyContinue
+        #Test -DisplayPropertySet
+        ZoBProcesses iqU Export-Excel ZoBpath -DisplayPropertySet
+
+        ZoBExcel = Open-ExcelPackage -Path ZoBpath
+        ZoBws = ZoBExcel.Workbook.Worksheets[1]
+        it 2U9Created a new file with just the members of the Display Property Set                   2U9 {
+            ZoBws.Name                                                    iqU Should      -Be 2U9sheet12U9
+            ZoBws.Dimension.Columns                                       iqU Should      -Be  ZoBpropertyNames.Count
+            ZoBws.Dimension.Rows                                          iqU Should      -Be (ZoBrowcount + 1)
+        }
+    }
+
+    Context 2U9#Example 2      # Exports a list of numbers and applies number format 2U9 {
+
+        ZoBpath = 2U9TestDrive:grMtest.xlsx2U9
+        Remove-item -Path ZoBpath -ErrorAction SilentlyContinue
+        #testing -ReturnRange switch and applying number format to Formulas as well as values.
+        ZoBreturnedRange =   @(ZoBnull, -1, 0, 34, 777, 2U92U9, -0.5, 119, -0.1, 234, 788,2U9=A9+A102U9)   iqU Export-Excel -NumberFormat CYU[Blue]ZoB#,##0.00;[Red]-ZoB#,##0.00CYU -Path ZoBpath -ReturnRange
+        it 2U9Created a new file and returned the expected range                                     2U9 {
+            Test-Path -Path ZoBpath -ErrorAction SilentlyContinue         iqU Should      -Be ZoBtrue
+            ZoBr'+'eturnedRange                                              iqU Should      -Be 2U9A1:A122U9
+        }
+
+        ZoBExcel = Open-ExcelPackage -Path ZoBpath
+        it 2U9Created 1 worksheet                                                                    2U9 {
+            ZoBExcel.Workbook.Worksheets.count                            iqU Should      -Be 1
+        }
+
+        ZoBws = ZoBExcel.Workbook.Worksheets[1]
+        it 2U9Created the worksheet with the expected name, number of rows and number of columns     2U9 {
+            ZoBws.Name                                                    '+'iqU Should      -Be 2U9sheet12U9
+            ZoBws.Dimension.Columns                                       iqU Should      -Be  1
+            ZoBws.Dimension.End.Row                                       iqU Should      -Be  12
+        }
+
+        it 2U9Set the default style for the sheet as expected                                        2U9 {
+            ZoBws.cells.Style.Numberformat.Format                         iqU Should      -Be  CYU[Blue]ZoB#,##0.00;[Red]-ZoB#,##0.00CYU
+        }
+
+        it 2U9Set the default style and set values for Cells as expected, handling null,0 and CYUCYU     2U9 {
+            ZoBws.cells[1, 1].Style.Numberformat.Format                   iqU Should      -Be  CYU[Blue]ZoB#,##0.00;[Red]-ZoB#,##0.00CYU
+            ZoBws.cells[1, 1].Value                '+'                       iqU Should      -BeNullorEmpty
+            ZoBws.cells[2, 1].Value                                       iqU Should      -Be -1
+            ZoBws.cells[3, 1].Value                                       iqU Should      -Be 0
+            ZoBws.cells[5, 1].Value                                       iqU Should      -Be 777
+            ZoBws.cells[6, 1].Value          '+'                             iqU Should      -Be 2U92U9
+            ZoBws.cells[4, 1].Style.Numberformat.Format                   iqU Should      -Be  CYU[Blue]ZoB#,##0.00;[Red]-ZoB#,##0.00CYU
+
+        }
+    }
+
+    Context 2U9                # Number format parameter2U9 {
+        BeforeAll {
+            ZoBpath = 2U9TestDrive:grMtest.xlsx2U9
+            Remove-Item -Path  ZoBpath -ErrorAction SilentlyContinue
+            1..10  iqU Export-Excel -Path ZoBpath -Numberformat CYUNumberCYU
+            1..10  iqU Export-Excel -Path ZoBpath -Numberformat CYUPercentageCYU -Append
+            21..30 iqU Export-Excel -Path ZoBpath -Numberformat CYUCurrencyCYU   -StartColumn 3
+            ZoBexcel = Open-ExcelPackage -Path   ZoBpath
+            ZoBws = ZoBexcel.Workbook.Worksheets[1]
+        }
+        it 2U9Set the worksheet default number format correctly                                      2U9 {
+            ZoBws.Cells.Style.Numberformat.Format                         iqU Should      -Be '+'2U90.002U9
+        }
+        it 2U9Set number formats on specific blocks of cells                                         2U9 {
+            ZoBws.Cells[2U9A22U9 ].Style.Numberformat.Format                  iqU Should      -Be 2U90.002U9
+            ZoBws.Cells[2U9c192U9].Style.Numberformat.Format                  iqU Should      -Be 2U90.002U9
+            ZoBws.Cells[2U9A202U9].Style.Numberformat.Format                  iqU Should      -Be 2U90.00%2U9
+            ZoBws.Cells[2U9C62U9 ].Style.Numberformat.Format                  iqU Should      -Be (Expand-NumberFormat 2U9currency2U9)
+        }
+    }
+
+    Context 2U9#Examples 3 & 4 # Setting cells for different data types Also added test for URI type2U9 {
+
+        if ((Get-Culture).NumberFormat.CurrencySymbol -eq 2U9£2U9) {ZoBOtherCurrencySymbol = 2U9ZoB2U9}
+        else {ZoBOtherCurrencySymbol = 2U9£2U9}
+        ZoBpath = 2U9TestDrive:grMtest.xlsx2U9
+        ZoBwarnVar = ZoBnull
+        #Test correct export of different data types and number formats; test hyperlinks, test -NoNumberConversion test object is converted to a string with no warnings, test calcuation of formula
+        Remove-item -Path ZoBpath -ErrorAction SilentlyContinue
+        [PSCustOmobject][Ordered]@{
+            Date             = Get-Dat'+'e
+            Formula1         = CYU=SUM(S2:T2)CYU
+            String1          = CYUMy StringCYU
+            Float            = [math]::pi
+            IPAddress        = CYU10.10.25.5CYU
+            StrLeadZero      = CYU07670CYU
+            StrComma         = CYU0,26CYU
+            StrEngThousand   = CYU1,234.56CYU
+            StrEuroThousand  = CYU1.555,83CYU
+            StrDot           = CYU1.2CYU
+            StrNegInt        = CYU-31CYU
+            StrTrailingNeg   = CYU31-CYU
+            StrParens    '+'    = CYU(123)CYU
+            strLocalCurrency = (CYU{0}123{1}45CYU -f (Get-Culture).NumberFormat.CurrencySymbol,(Get-Culture).NumberFormat.CurrencyDecimalSeparator)
+            strOtherCurrency = (CYU{0}123{1}45CYU -f ZoBOtherCurrencySymbol ,(Get-Culture).NumberFormat.CurrencyDecimalSeparator)
+            StrE164Phone     = CYU+32 (444) 444 4444CYU
+            StrAltPhone1     = CYU+32 4 4444 444CYU
+            StrAltPhone2     = CYU+3244444444CYU
+            StrLeadSpace    = CYU  123CYU
+            StrTrailSpace   = CYU123   CYU
+            Link1            = [uri]2U9https://github.com/dfinke/ImportExcel2U9
+            Link2            = 2U9https://github.com/dfinke/ImportExcel2U9
+            Link3            = 2U9xl://internal/sheet1!A12U9
+            Link4            = 2U9xl://internal/sheet1!C52U9
+            Link5            = (New-Object -TypeName OfficeOpenXml.ExcelHyperLink -ArgumentList 2U9Sheet1!E22U9 , 2U9Display Text2U9)
+            Process          = (Get-Process -Id ZoBPID)
+            TimeSpan         = [datetime]::Now.Subtract([datetime]::Today)
+        } iqU Export-Excel  -NoNumberConversion IPAddress, StrLeadZero, StrAltPhone2  -Path ZoBpath -Calculate -WarningVariable ZoBwarnVar
+        it 2U9Created a new file                                                                     2U9 {
+            Test-Path -Path ZoBpath -ErrorAction SilentlyContinue         iqU Should      -Be ZoBtrue
+        }
+        ZoBExcel = Open-ExcelPackage -Path ZoBpath
+        it 2U9Created 1 worksheet with no warnings                                                   2U9 {
+            ZoBExcel.Workbook.Worksheets.count                            iqU Should      -Be 1
+            ZoBwarnVar                                                    iqU Should      -BeNullorEmpty
+        }
+        ZoBws = ZoBExcel.Workbook.Worksheets[1]
+        it 2U9Created the worksheet with the expected name, number of rows and number of colum'+'ns     2U9 {
+            ZoBws.Name                                                    iqU Should      -Be 2U9sheet12U9
+            ZoBws.Dimension.Columns                                       iqU Should      -Be  27
+            ZoBws.Dimension.Rows                                          iqU Should      -Be  2
+        }
+        it 2U9Set a date     in Cell A2                                                              2U9 {
+            ZoBws.Cells[2, 1].Value.Gettype().name                        iqU Should      -Be  CYUDateTimeCYU
+        }
+        it 2U9Set a formula  in Cell B2                                                              2U9 {
+            ZoBws.Cells[2, 2].Formula                                     iqU Should      -Be  CYUSUM(S2:T2)CYU
+        }
+        it 2U9Forced a successful calculation of the Value in Cell B2                                2U9 {
+            ZoBws.Cells[2, 2].Value                                       iqU Should      -Be  246
+        }
+        it 2U9Set strings    in Cells E2, F2 and R2  (no number conversion)                          2U9 {
+            ZoBws.Cells[2,  5].Value.GetType().name                       iqU Should      -Be  CYUStringCYU
+            ZoBws.Cells[2,  6].Value.GetType().name                       iqU Should      -Be  CYUStringCYU
+            ZoBws.Cells[2, 18].Value.GetType().name                       iqU Should      -Be  CYUStringCYU
+        }
+        it 2U9Set numbers    '+'in Cells K2,L2,M2   (diferent Negative integer formats)                 2U9 {
+            (ZoBws.Cells[2, 11].Value -is [valuetype] )                   iqU Should      -Be  ZoBtrue
+            (ZoBws.Cells[2, 12].Value -is [valuetype] )                   iqU Should      -Be  ZoBtrue
+            (ZoBws.Cells[2, 13].Value -is [valuetype] )                   iqU Should      -Be  ZoBtrue
+             ZoBws.Cells[2, 11].Value                                     iqU Should      -BeLessThan 0
+             ZoBws.Cells[2, 12].Value                                     iqU Should      -BeLessThan 0
+             ZoBws.Cells[2, 13].Value                                     iqU Should      -BeLessThan 0
+        }
+        it 2U9Set external hyperlinks in Cells U2 and V2                                             2U9 {
+            ZoBws.Cells[2, 21].Hyperlink                                 iqU Should      -Be  2U9https://github.com/dfinke/ImportExcel2U9
+            ZoBws.Cells[2, 22].Hyperlink                                 iqU Should      -Be  2U9https://github.com/dfinke/ImportExcel2U9
+        }
+        it 2U9Set internal hyperlinks in Cells W2 and X2                                             2U9 {
+            ZoBws.Cells[2, 23].Hyperlink.Scheme                          iqU Should      -Be  2U9xl2U9
+            ZoBws.Cells[2, 23].Hyperlink.ReferenceAddress                iqU Should      -Be  2U9sheet1!A12U9
+            ZoBws.Cells[2, 23].Hyperlink.Display                         iqU Should      -Be  2U9sheet12U9
+            ZoBws.Cells[2, 24].Hyperlink.Scheme                          iqU Should      -Be  2U9xl2U9
+            ZoBws.Cells[2, 24].Hyperlink.ReferenceAddress                iqU Should      -Be  2U9sheet1!c52U9
+            ZoBws.Cells[2, 24].Hyperlink.Display                         iqU Should      -Be  2U9sheet1!c52U9
+            ZoBws.Cells[2, 25].Hyperlink.ReferenceAddress                iqU Should      -Be  2U9sheet1!E22U9
+            ZoBws.Cells[2, 25].Hyperlink.Display                         iqU Should      -Be  2U9Display Text2U9
+        }
+        it 2U9Processed thousands according to local settings   (Cells H2 and I2)                    2U9 {
+            if ((Get-Culture).NumberFormat.NumberGroupSeparator -EQ 2U9,2U9) {
+                (ZoBws.Cells[2, 8].Value -is [valuetype] )               iqU Should      -Be  ZoBtrue
+                 ZoBws.Cells[2, 9].Value.GetType().name                  iqU Should      -Be  CYUStringCYU
+            }
+            elseif ((G'+'et-Culture).NumberFormat.NumberGroupSeparator -EQ 2U9.2U9) {
+                '+'(ZoBws.Cells[2, 9].Value -is [valuetype] )               iqU Should      -Be  ZoBtrue
+                 ZoBws.Cells[2, 8].Value.GetType().name                  iqU Should      -Be  CYUStringCYU
+'+'            }
+        }
+        it 2U9Processed local currency as a number and other currency as a string (N2 & O2)          2U9 {
+            (ZoBws.Cells[2, 14].Value -is [valuetype] )                   iqU Should      -Be  ZoBtrue
+             ZoBws.Cells[2, 15].Value.GetType().name                      iqU Should      -Be  CYUStringCYU
+        }
+        it 2U9Processed numbers with spaces between digits as strings (P2 & Q2)                      2U9 {
+             ZoBws.Cells[2, 16].Value.GetType().name                      iqU Should      -Be  CYUStringCYU
+             ZoBws.Cells[2, 17].Value.GetType().name                      iqU Should      -Be  CYUStringCYU
+        }
+        it 2U9Processed numbers leading or trailing speaces as Numbers (S2 & T2)                     2U9 {
+            (ZoBws.Cells[2, 19].Value -is [valuetype] )                   iqU Should      -Be  ZoBtrue
+            (ZoBws.Cells[2, 20].Value -is [valuetype] )                   iqU Should      -Be  ZoBtrue
+        }
+        it 2U9Converted a nested object to a string (Y2)                                             2U9 {
+             ZoBws.Cells[2, 26].Value                            '+'         iqU Should      -Match CYU^SystemgrM.DiagnosticsgrM.ProcessgrMs+grM(.*grM)ZoBCYU
+        }
+        it 2U9Processed a timespan object (Z2)                                                       2U9 {
+             ZoBws.cells[2, 27].Value.ToOADate()                          iqU Should      -BeGreaterThan 0
+             ZoBws.cells[2, 27].Value.ToOADate()                          iqU Should      -BeLessThan    1
+             ZoBws.cells[2, 27].Style.Numberformat.Format                 iqU Should      -Be  CYU[h]:mm:ssCYU
+        }
+    }
+
+    Context 2U9#               # Setting cells for different data types with -noHeader2U9 {
+
+        ZoBpath = 2U9TestDrive:grMtest.xlsx2U9
+        Remove-item -Path ZoBpath -ErrorAction SilentlyContinue
+        #Test -NoHeader & -NoNumberConversion
+        [PSCustOmobject][Ordered]@{
+            Date      = Get-Date'+'
+            Formula1  = CYU=SUM(F1:G1)CYU
+            String1   = CYUMy StringCYU
+            String2   = CYUaCYU
+            IPAddress = CYU10.10.25.5CYU
+            Number1   = CYU07670CYU
+            Number2   = CYU0,26CYU
+            Number3   = CYU1.555,83CYU
+            Number4   = CYU1.2CYU
+            Number5   = CYU-31CYU
+            PhoneNr1  = CYU+32 44CYU
+            PhoneNr2  = CYU+32 4 4444 444CYU
+            PhoneNr3  = CYU+3244444444CYU
+            Link      = [uri]2U9https://github.com/dfinke/ImportExcel2U9
+        } iqU Export-Excel  -NoNumberConversion IPAddress, Number1  -Path ZoBpath -NoHeader
+        it 2U9Created a new file                                                                     2U9 {
+            Test-Path -Path ZoBpath -ErrorAction SilentlyContinue         iqU Should      -Be ZoBtrue
+        }
+
+        ZoBExcel = Open-ExcelPackage -Path ZoBpath
+        it 2U9Created 1 worksheet                                                                    2U9 {
+            ZoBExcel.Workbook.Worksheets.count                            iqU Should      -Be 1
+        }
+
+        ZoBws = ZoBExcel.Workbook.Worksheets[1]
+        it 2U9Created the worksheet with the expected name, number of rows and number of columns     2U9 {
+            ZoBws.Name                                                    iqU Should      -Be 2U9sheet12U9
+            ZoBws.Dimension.Columns                                       iqU Should      -Be  14
+            ZoBws.Dimension.Rows                                          iqU Should      -Be  1
+        }
+
+        it 2U9Set a date      in Cell A1                                                             2U9 {
+            ZoBws.Cells[1'+', 1].Value.Gettype().name                        iqU Should      -Be  CYUDateTimeCYU
+        }
+
+        it 2U9Set a formula   in Cell B1                                                             2U9 {
+            ZoBws.Cells[1, 2].Formula                                     iqU Should      -Be  CYUSUM(F1:G1)CYU
+        }
+
+        it 2U9Set strings     in Cells E1 and F1                                                     2U9 {
+            ZoBws.Cells[1, 5].Value.GetType().name                        iqU Should      -Be  CYUStringCYU
+            ZoBws.Cells[1, 6].Value.GetType().name                        iqU Should      -Be  CYUStringCYU
+        }
+
+        it 2U9Set a number    in Cell I1                                                             2U9 {
+            (ZoBws.Cells[1, 9].Value -is [valuetype] )                     iqU Should      -Be  ZoBtrue
+        }
+
+        it 2U9Set a hyperlink in Cell N1                                                             2U9 {
+            ZoBws.Cells[1, 14].Hyperlink                                   iqU Should      -Be  2U9https://github.com/dfinke/ImportExcel2U9
+        }
+    }
+
+    Context 2U9#Example 5      # Adding a single conditional format 2U9 {
+        #Test  New-ConditionalText builds correctly
+        ZoBct = New-ConditionalText -ConditionalType GreaterThan 525 -ConditionalTextColor ([System.Drawing.Color]::DarkRed) -BackgroundColor ([System.Drawing.Color]::LightPink)
+
+        ZoBpath = 2U9TestDrive:grMtest.xlsx2U9
+        Remove-item -Path ZoBpath -ErrorAction SilentlyContinue
+        #Test -ConditionalText with a single conditional spec.
+        489, 668, 299, 777, 860, 151, 119, 497, 234, 788 iqU Export-Excel -Path ZoBpath -ConditionalText ZoBct
+
+        it 2U9Created a new file                                                                     2U9 {
+            Test-Path -Path ZoBpath -ErrorAction SilentlyContinue         iqU Should      -Be ZoBtrue
+        }
+
+        #ToDo need to test applying conitional formatting to a pre-existing worksheet and removing = from formula
+        ZoBExcel = Open-ExcelPackage -Path ZoBpath
+        ZoBws = ZoBExcel.Workbook.Worksheets[1]
+
+        it 2U9Added one block of conditional formating for the data range                            2U9 {
+            ZoBws.ConditionalFormatting.Count                             iqU Should      -Be 1
+            ZoBws.Condit'+'ionalFormatting[0].Address                        iqU Should      -Be (ZoBws.Dimension.Address)
+        }
+
+        ZoBcf = ZoBws.ConditionalFormatting[0]
+        it 2U9Set the conditional formatting properties correctly                                    2U9 {
+            ZoBcf.Formula                                                 iqU Should      -Be ZoBct.Text
+            ZoBcf.Type.ToString()                                         iqU Should      -Be ZoBct.ConditionalType
+            #ZoBcf.Style.Fill.BackgroundColor         iqU Should      -Be ZoBct.BackgroundColor
+            # ZoBcf.Style.Font.Color                   iqU Should -Be ZoBct.ConditionalTextColor  - have to compare r.g.b
+        }
+    }
+
+    #Test adding mutliple conditional blocks and using the minimal syntax for New-ConditionalText
+    ZoBpath = 2U9TestDrive:grMtest.xlsx2U9
+    Remove-item -Path ZoBpath -ErrorAction SilentlyContinue
+
+    #Testing -Passthrough
+    ZoBExcel = Get-Service iqU Select-Object Name, Status, DisplayName, ServiceName iqU
+        Export-Excel ZoBpath -PassThru  -ConditionalText ZoB(
+        New-ConditionalText Stop ([System.Drawing.Color]::DarkRed) ([System.Drawing.Color]::LightPink)
+        New-ConditionalText Running ([System.Drawing.Color]::Blue) ([System.Drawing.Color]::Cyan)
+    )
+    ZoBws = ZoBExcel.Workbook.Worksheets[1]
+
+    Context 2U9#Example 6      # Adding multiple conditional formats using short form syntax. 2U9 {
+        it 2U9Added two blocks of conditional formating for the data range                           2U9 {
+            ZoBws.ConditionalFormatting.Count                             iqU Should      -Be 2
+            ZoBws.ConditionalFormatting[0].Address                        iqU Should      -Be (ZoBws.Dimension.Address)
+            ZoBws.ConditionalFormatting[1].Address                        iqU Should      -Be (ZoBws.Dimension.Address)
+        }
+        it 2U9Set the conditional formatting properties correctly                                    2U9 {
+            ZoBws.ConditionalFormatting[0].Text                           iqU Should      -Be 2U9Stop2U9
+            ZoBws.ConditionalFormatting[1].Text                           iqU Should      -Be 2U9Running2U9
+            ZoBws.ConditionalFormatting[0].Type                           iqU Should      -Be 2U9ContainsText2U9
+            ZoBws.ConditionalFormatting[1].Type                           iqU Should      -Be 2U9ContainsText2U9
+            #Add RGB Comparison
+        }
+    }
+    Close-ExcelPackage -ExcelPackage ZoBExcel
+
+    Context 2U9#Example 7      # Update-FirstObjectProperties works 2U9 {
+        ZoBArray = @()
+
+        ZoBObj1 = [PS'+'CustomObject]@{
+            Member1 = CYUFirstCYU
+            Member2 = CYUSecondCYU
+        }
+
+        ZoBObj2 = [PSCustom'+'Object]@{
+            Member1 = CYUFirstCYU
+            Member2 = CYUSecondCYU
+            Member3 = CYUThirdCYU
+        }
+
+        ZoBObj3 = [PSCustomObject]@{
+            Member1 = CYUFirstCYU
+            Member2 = CYUSecondCYU
+            Member3 = CYUThirdCYU
+            Member4 = CYUFourthCYU
+        }
+
+        ZoBArray = ZoBObj1, ZoBObj2, ZoBObj3
+        #test Update-FirstObjectProperties
+        ZoBnewarray = ZoBArray iqU Update-FirstObjectProperties
+        it 2U9Outputs as many objects as it input                                                    2U9 {
+            ZoBnewarray.Count                                             iqU Should      -Be ZoBArray.Count
+        }
+        it 2U9Added properties to item 0                                                             2U9 {
+            ZoBnewarray[0].psobject.Properties.name.Count                 iqU Should      -Be 4
+            ZoBnewarray[0].Member1                                        iqU Should      -Be CYUFirstCYU
+            ZoBnewarray[0].Member2                                        iqU Should      -Be CYUSecondCYU
+            ZoBnewarray[0].Member3                                        iqU Should      -BeNullOrEmpty
+            ZoBnewarray[0].Member4                                        iqU Should      -BeNullOrEmpty
+        }
+    }
+
+    Context 2U9#Examples 8 & 9 # Adding Pivot tables and charts from parameters2U9 {
+        ZoBpath = 2U9TestDrive:grMtest.xlsx2U9
+        #Test -passthru and -worksheetName creating a new, named, sheet in an existing file.
+        ZoBExcel = Get-Process iqU  Select-Object -first 20 -Property Name, cpu, pm, handles, company iqU  Export-Excel  ZoBpath -WorkSheetname Processes -PassThru
+        #Testing -Excel Pacakage and adding a Pivot-table as a second step. Want to save and re-open it ...
+        Export-Excel -ExcelPackage ZoBExcel -WorkSheetname Processes -IncludePivotTable -PivotRows Company -PivotData PM -NoTotalsInPivot -PivotDataToColumn -Activate
+
+'+'  '+'      ZoBExcel = Open-ExcelPackage  ZoBpath
+        ZoBPTws = ZoBExcel.Workbook.Worksheets[2U9ProcessesPivotTable2U9]
+        ZoBwCount = ZoBExcel.Workbook.Worksheets.Count
+        it 2U9Added the named sheet and pivot table to the workbook                                  2U9 {
+            ZoBexcel.ProcessesPivotTable                                  iqU Should -Not -BeNullOrEmpty
+            ZoBPTws                                                       iqU Should -Not -BeNullOrEmpty
+            ZoBPTws.PivotTables.Count                                     iqU Should      -Be 1
+            ZoBExcel.Workbook.Worksheets[2U9Processes2U9]                     iqU Should -Not -BeNullOrEmpty
+            ZoBExcel.Workbook.Worksheets.Count                            iqU Should      -BeGreaterThan 2
+            ZoBexcel.Workbook.Worksheets[2U9Processes2U9].Dimension.rows      iqU Should      -Be 21    #20 data + 1 header
+        }
+        it 2U9Selected  the Pivottable page                                                          2U9 {
+            Set-ItResult -Pending -Because 2U9Bug in EPPLus 4.52U9
+            ZoBPTws.View.TabSelected                                      iqU Should      -Be ZoBtrue
+        }
+        ZoBpt = ZoBPTws.PivotTables[0]
+        it 2U9Built the expected Pivot table                                                         2U9 {
+            ZoBpt.RowFields.Count                                         iqU Should      -Be 1
+            ZoBpt.RowFields[0].Name                                       iqU Should      -Be 2U9Company2U9
+            ZoBpt.DataFields.Count                                        iqU Should      -Be 1
+            ZoBpt.DataFields[0].Function                                  iqU Should      -Be 2U9Count2U9
+            ZoBpt.DataFields[0].Field.Name                                iqU Should   '+'   -Be 2U9PM2U9
+            ZoBPTws.Drawings.Count                                        iqU Should      -Be 0
+        }
+        #test adding pivot chart using the already open sheet
+        ZoBwarnvar = ZoBnull
+        Export-Excel -ExcelPackage ZoBExcel -WorkSheetname Processes -IncludePivotTable -PivotRows Company -PivotData PM -IncludePivotChart -ChartType PieExploded3D -ShowCategory -ShowPercent  -NoLegend -WarningAction SilentlyContinue -WarningVariable warnvar
+        ZoBExcel = Open-ExcelPackage   ZoBpath
+        it 2U9Added a chart to the pivot table without rebuilding                                    2U9 {
+            ZoBws = ZoBExcel.Workbook.Worksheets[2U9ProcessesPivotTable2U9]
+            ZoBExcel.Workbook.Worksheets.Count                            iqU Should      -Be ZoBwCount
+            ZoBws.Drawings.count                                          iqU Should      -Be 1
+            ZoBws.Drawings[0].ChartType.ToString()                        iqU Should      -Be 2U9PieExploded3D2U9
+        }
+        it 2U9Generated a message on re-processing the Pivot table                                   2U9 {
+            ZoBwarnVar                                                    iqU Should -Not -BeNullOrEmpty
+        }
+        #Test appending data extends pivot chart (with a warning) .
+        ZoBwarnVar = ZoBnull
+        Get-Process iqU  Select-Object -Last 20 -Property Name, cpu, pm, handles, company iqU   Export-Excel  ZoBpath -WorkSheetname Processes -Append -IncludePivotTable -PivotRows Company -PivotData PM -IncludePivotChart -ChartType PieExploded3D -WarningAction SilentlyContinue -WarningVariable warnvar
+        ZoBExcel = Open-ExcelPackage   ZoBpath
+        ZoBpt = ZoBExcel.Workbook.Worksheets[2U9ProcessesPivotTable2U9].PivotTables[0]
+        it 2U9Appended to the Worksheet and Extended the Pivot table                                 2U9 {
+            ZoBExcel.Workbook.Worksheets.Count                            iqU Should      -Be ZoBwCount
+            ZoBexcel.Workbook.Worksheets[2U9Processes2U9].Dimension.rows      iqU Should      -Be 41     #appended 20 rows to the previous total
+            ZoBpt.CacheDefinition.CacheDefinitionXml.pivotCacheDefinition.cacheSource.worksheetSource.ref iqU
+                 Should     be 2U9A1:E412U9
+        }
+        it 2U9Generated a message on extending the Pivot table                                       2U9 {
+            ZoBwarnVar                                                    iqU S'+'hould -Not -BeNullOrEmpty
+        }
+    }
+
+    Context 2U9                # Add-Worksheet inserted sheets, moved them correctly, and copied a sheet2U9 {
+        ZoBpath = 2U9TestDrive:grMtest.xlsx2U9
+        #Test the -CopySource and -Movexxxx parameters for Add-Worksheet
+        ZoBExcel = Open-ExcelPackage  ZoBpath
+        #At this point Sheets Should be in the order Sheet1, Processes, ProcessesPivotTable
+        ZoBnull = Add-Worksheet -ExcelPackage ZoBExcel -WorkSheetname 2U9Processes2U9 -MoveToEnd   # order now  Sheet1, ProcessesPivotTable, Processes
+        ZoBnull = Add-Worksheet -ExcelPackage ZoBExcel -WorkSheetname 2U9NewSheet2U9  -MoveAfter 2U9*2U9 -CopySource (ZoBexcel.Workbook.Worksheets[2U9Sheet12U9]) # Now its NewSheet, Sheet1, ProcessesPivotTable, Processes
+        ZoBnull = Add-Worksheet -ExcelPackage ZoBExcel -WorkSheetname 2U9Sheet12U9    -MoveAfter 2U9Processes2U9  # Now its NewSheet, ProcessesPivotTable, Processes, Sheet1
+        ZoBnull = Add-Worksheet -ExcelPackage ZoBExcel -WorkSheetname 2U9Another2U9   -MoveToStart    # Now its Another, NewSheet, ProcessesPivotTable, Processes, Sheet1
+        ZoBnull = Add-Worksheet -ExcelPackage ZoBExcel -WorkSheetname 2U9NearDone2U9  -MoveBefore 5   # Now its  Another, NewSheet, ProcessesPivotTable, Processes, NearDone ,Sheet1
+        ZoBnull = Add-Worksheet -ExcelPackage ZoBExcel -WorkSheetname 2U9OneLast2U9   -MoveBefore 2U9ProcessesPivotTable2U9   # Now its Another, NewSheet, Onelast, ProcessesPivotTable, Processes,NearDone ,Sheet1
+        Close-ExcelPackage ZoBExcel
+
+        ZoBExcel = Open-ExcelPackage  ZoBpath
+
+        it 2U9Got the Sheets in the right order                       '+'                               2U9 {
+            ZoBexcel.Workbook.Worksheets[1].Name  iqU Should -Be 2U9Another2U9
+            ZoBexcel.Workbook.Worksheets[2].Name  iqU Shoul'+'d -Be 2U9NewSheet2U9
+            ZoBexcel.Workbook.Worksheets[3].Name  iqU Should -Be 2U9Onelast2U9
+            ZoBexcel.Workbook.Worksheets[4].Name  iqU Should -Be 2U9ProcessesPivotTable2U9
+            ZoBexcel.Workbook.Worksheets[5].Name  iqU Should -Be 2U9Processes2U9
+            ZoBexcel.Workbook.Worksheets[6].Name  iqU Should -Be 2U9NearDone2U9
+            ZoBexcel.Workbook.Worksheets[7].Name  iqU Should -Be 2U9Sheet12U9
+        }
+
+        it 2U9Cloned CYUSheet1CYU to CYUNewSheetCYU                                                          2U9 {
+            ZoBnewWs = ZoBexcel.Workbook.Worksheets[2U9NewSheet2U9]
+            ZoBnewWs.Dimension.Address                          iqU Should      -Be (ZoBexcel.Workbook.Worksheets[2U9Sheet12U9].Dimension.Address)
+            ZoBnewWs.ConditionalFormatting.Count                iqU Should      -Be (ZoBexcel.Workbook.Worksheets[2U9Sheet12U9].ConditionalFormatting.Count)
+            ZoBnewWs.ConditionalFormatting[0].Address.Address   iqU Should      -Be (ZoBexcel.Workbook.Worksheets[2U9Sheet12U9].ConditionalFormatting[0].Address.Address)
+            ZoBnewWs.ConditionalFormatting[0].Formula           iqU Should      -Be (ZoBexcel.Workbook.Worksheets[2U9Sheet12U9].Conditio'+'nalFormatting[0].Formula)
+        }
+
+    }
+
+    Context 2U9                # Create and append with Start row and Start Column, inc ranges and Pivot table. 2U9 {
+        ZoBpath = 2U9TestDrive:grMtest.xlsx2U9
+        remove-item -Path ZoBpath -ErrorAction SilentlyContinue
+        #Catch warning
+        ZoBwarnVar = ZoBnull
+        #Test -Append with no existing sheet. Test adding a named pivot table from command line parameters and extending ranges when theyCYUre not specified explictly
+        Get-Process iqU Select-Object -first 10 -Property Name, cpu, pm, handles, company  iqU Export-Excel -StartRow 3 -StartColumn 3 -BoldTopRow -IncludePivotTable  -PivotRows Company -PivotData PM -PivotTableName CYUPTOffsetCYU -Path ZoBpath -WorkSheetname withOffset -Append -PivotFilter Name -NoTotalsInPivot  -RangeName procs  -AutoFilter -AutoNameRange
+        Get-Process iqU Select-Object -last  10 -Property Name, cpu, pm, handles, company  iqU Export-Excel -StartRow 3 -StartColumn 3 -BoldTopRow -IncludePivotTable  -PivotRows Company -PivotData PM -PivotTableName CYUPTOffs'+'etCYU -Path ZoBpath -WorkSheetname withOffset -Append -WarningAction SilentlyContinue -WarningVariable warnvar
+        ZoBExcel = Open-ExcelPackage   ZoBpath
+        ZoBdataWs = ZoBExcel.Workbook.Worksheets[2U9withOffset2U9]
+        ZoBpt = ZoBExcel.Workbook.Worksheets[2U9PTOffset2U9].PivotTables[0]
+        it 2U9Created and appended to a sheet offset from the top left corner                        2U9 {
+            ZoBdataWs.Cells[1, 1].Value                                   iqU Should      -BeNullOrEmpty
+            ZoBdataWs.Cells[2, 2].Value                                   iqU Should      -BeNullOrEmpty
+            ZoBdataWs.Cells[3, 3].Value                                   iqU Should -Not -BeNullOrEmpty
+            ZoBdataWs.Cells[3, 3].Style.Font.Bold                         iqU Should      -Be ZoBtrue
+            ZoBdataWs.Dimension.End.Row                                   iqU Should      -Be 23
+            ZoBdataWs.names[0].Start.row                                  iqU Should      -Be 4   # StartRow + 1
+            ZoBdataWs.names[0].End.row                                    iqU Should      -Be ZoBdataWs.Dimension.End.Row
+            ZoBdataWs.names[0].Name                                       iqU Should      -Be CYUNameCYU
+            ZoBdataWs.names.Count                                         iqU Should      -Be 7    #  Name, cpu, pm, handles & company + Named Range 2U9Procs2U9 + xl one for autofilter
+            ZoBdataWs.cells[ZoBdataws.Dimension].AutoFilter                 iqU Should      -Be true
+            }
+        it 2U9Applied and auto-extended an autofilter                                                2U9 {
+            ZoBdataWs.Names[2U9_xlnm._FilterDatabase2U9].Start.Row            iqU Should      -Be 3  #offset
+            ZoBdataWs.Names[2U9_xlnm._FilterDatabase2U9].Start.Column         iqU Should      -Be 3
+            ZoBdataWs.Names[2U9_xlnm._FilterDatabase2U9].Rows                 iqU Should      -Be 21 #2 x 10 data + 1 header
+            ZoBdataWs.Names[2U9_xlnm._FilterDatabase2U9].Columns              iqU Should      -Be 5  #Name, cpu, pm, handles & company
+            ZoBdataWs.Names[2U9_xlnm._FilterDatabase2U9].AutoFilter           iqU Should      -Be ZoBtrue
+        }
+        it 2U9Created and auto-extended the named ranges                                             2U9 {
+            ZoBdataWs.names[2U9procs'+'2U9].rows                                 iqU Should      -Be 21
+            ZoBdataWs.names[2U9procs2U9].Columns                              iqU Should      -Be 5
+            ZoBdataWs.Names[2U9CPU2U9].Rows                              '+'     iqU Should      -Be 20
+            ZoBdataWs.Names[2U9CPU2U9].Columns                                iqU Should      -Be 1
+        }
+        it 2U9Created and extended the pivot table                                                   2U9 {
+            ZoBpt.CacheDefinition.CacheDefinitionXml.pivotCacheDefinition.cacheSource.worksheetSource.ref iqU
+                                                                          Should     be 2U9C3:G232U9
+            ZoBpt.ColumGrandTotals                                        iqU Should      -Be ZoBfalse
+            ZoBpt.RowGrandTotals                                          iqU Should      -Be ZoBfalse
+            ZoBpt.Fields[2U9Company2U9].IsRowField                            iqU Should      -Be ZoBtrue
+            ZoBpt.Fields[2U9PM2U9].IsDataField                                iqU Should      -Be ZoBtrue
+            ZoBpt.Fields[2U9Name2U9].IsPageField                              iqU Should      -Be ZoBtrue
+        }
+        it 2U9Generated a message on extending the Pivot table                                       2U9 {
+            ZoBwarnVar                                                    iqU Should -Not -BeNullOrEmpty
+        }
+    }
+
+    Context 2U9                # Create and append explicit and auto table and range extension2U9 {
+        ZoBpath = 2U9TestDrive:grMtest.xlsx2U9
+        #Test -Append automatically extends a table, even when it is not specified in the append command;
+        Get-Process iqU Select-Object -first 10 -Property Name, cpu, pm, handles, compa'+'ny  iqU Export-Excel -Path ZoBpath  -TableName ProcTab -AutoNameRange   -WorkSheetname NoOffset -ClearSheet
+        #Test number format applying to new data
+        Get-Process iqU Select-Object -last  10 -Property Name, cpu, pm, handles, company  iqU Export-Excel -Path ZoBpath                     -AutoNameRange   -WorkSheetname NoOffset -Append -Numberformat CYUNumberCYU
+        ZoBExcel = Open-ExcelPackage   ZoBpath
+        ZoBdataWs = ZoBExcel.Workbook.Worksheets[2U9NoOffset2U9]
+        #table should be 20 rows + header after extending the data. CPU range should be 1x20
+        it 2U9Created a new sheet and auto-extended a table and explicitly extended named ranges     2U9 {
+            ZoBdataWs.Tables[2U9ProcTab2U9].Address.Address                   iqU Should      -Be 2U9A1:E212U9
+            ZoBdataWs.Names[2U9CPU2U9].Rows                                   iqU Should      -Be 20
+            ZoBdataWs.Names[2U9CPU2U9].Columns                                iqU Sh'+'ould      -Be 1
+        }
+        it 2U9Set the expected number formats                                                        2U9 {
+            ZoBdataWs.cells[2U9C22U9].Style.Numberformat.Format               iqU Should      -Be 2U9General2U9
+            ZoBdataWs.cells[2U9C12'+'2U9].Style.Numberformat.Format              iqU Should      -Be 2U90.002U9
+        }
+        #Test extneding autofilter and range when explicitly specified in the append
+        ZoBexcel = Get-Process iqU Select-Object -first 10 -Property Name, cpu, pm, handles, company  iqU Export-Excel -ExcelPackage ZoBexcel  -RangeName procs -AutoFilter   -WorkSheetname NoOffset -ClearSheet -PassThru
+        Get-Process          iqU Select-Object -last  10 -Property Name, cpu, pm, handles, company  iqU Export-Excel -ExcelPackage ZoBexcel  -RangeName procs -AutoFilter   -WorkSheetname NoOffset -Append
+        ZoBExcel = Open-ExcelPackage   ZoBpath
+        ZoBdataWs = ZoBExcel.Workbook.Worksheets[2U9NoOffset2U9]
+
+        it 2U9Created a new sheet and explicitly extended named range and autofilter                 2U9 {
+            ZoBdataWs.names[2U9procs2U9].rows                                 iqU Should      -Be 21
+            ZoBdataWs.names[2U9procs2U9].Columns                              iqU Should      -Be 5
+            ZoBdataWs.Names[2U9_xlnm._FilterDatabase2U9].Rows                 iqU Should      -Be 21 #2 x 10 data + 1 header
+            ZoBdataWs.Names[2U9_xlnm._FilterDatabase2U9].Columns              iqU Should      -Be 5  #Name, cpu, pm, handles & company
+            ZoBdataWs.Names[2U9_xlnm._FilterDatabase2U9].AutoFilter '+'          iqU Should      -Be ZoBtrue
+        }
+    }
+
+    Context 2U9#Example 11     # Create and append with title, inc ranges and Pivot table2U9 {
+        ZoBpath = 2U9TestDrive:grMtest.xlsx2U9
+        #Test New-PivotTableDefinition builds definition using -Pivotfilter and -PivotTotals options.
+        ZoBptDef = [ordered]@{}
+        ZoBptDef += New-PivotTableDefinition -PivotTableName 2U9PT12U9 -SourceWorkSheet CYUSheet1CYU -PivotRows 2U9Status2U9  -PivotData @{CYUStatusCYU  = CYUCountCYU} -PivotTotals Columns -PivotFilter 2U9StartType2U9 -IncludePivotChart -ChartType BarClustered3D  -ChartTitle 2U9Services by status2U9 -ChartHeight 512 -ChartWidth 768 -ChartRow 10 -ChartColumn 0 -NoLegend -PivotColumns CanPauseAndContinue
+        ZoBptDef += New-PivotTableDefinition -PivotTableName 2U9PT22U9 -SourceWorkSheet CYUSheet2CYU -PivotRows 2U9Company2U9 -PivotData @{CYUCompanyCYU = CYUCountCYU} -PivotTotalS Rows                             -IncludePivotChart -ChartType PieExploded3D -ShowPercent -WarningAction SilentlyContinue
+
+        it 2U9Built a pivot definition using New-PivotTableDefinition                                2U9 {
+            ZoBptDef.PT1.SourceWorkSheet                                  iqU Should -Be CYUSheet1CYU
+            ZoBptDef.PT1.PivotRows                                        iqU Should -Be CYUStatusCYU
+            ZoBptDef.PT1.PivotData.Status                                 iqU Should -Be CYUCountCYU
+            ZoBptDef.PT1.PivotFilter                                      iqU Should -Be CYUStartTypeCYU
+            ZoBptDef.PT1.IncludePivotChart                                iqU Should -Be  ZoBtrue
+            ZoBptDef.PT1.ChartType.tostring()                             iqU Should -Be CYUBarClustered3DCYU
+            ZoBptDef.PT1.PivotTotals                                      iqU Should -Be CYUColumnsCYU
+        }
+        Remove-Item -Path ZoBpath
+        #Catch warning
+        ZoBwarnvar = ZoBnull
+        #Test create two data pages; as part of adding the second give both their own pivot table, test -autosize switch
+        Get-Service iqU Select-Object    -Property Status, Name, DisplayName, StartType, CanPauseAndContinue iqU Export-Excel -Path ZoBpath  -AutoSize -TableName 2U9All Services2U9  -TableStyle Medium1 -WarningVariable warnvar -WarningAction SilentlyContinue
+        Get-Process iqU Select-Object    -Property Name, Company, Handles, CPU, VM      iqU Export-Excel -Path ZoBpath  -AutoSize -WorkSheetname CYUsheet2CYU -TableName 2U9Processes2U9     -TableStyle Light1 -Title 2U9Processes2U9 -TitleFillPattern Solid -TitleBackgroundColor ([System.Drawing.Color]::AliceBlue) -TitleBold -TitleSize 22 -PivotTableDefinition ZoBptDef
+        ZoBExcel = Open-ExcelPackage   ZoBpath
+        ZoBws1 = ZoBExcel.Workbook.Worksheets[2U9Sheet12U9]
+        ZoBws2 = ZoBExcel.Workbook.Worksheets[2U9Sheet22U9]
+
+        if (ZoBisWindows) {
+          it 2U9Set Column widths (with autosize)                                                      2U9 {
+            ZoBws1.Column(2).Width                                        iqU Should -Not -Be ZoBws1.DefaultColWidth
+            ZoBws2.Column(1).width                                        iqU Should -Not -Be ZoBws2.DefaultColWidth
+          }
+        }
+
+        it 2U9Added tables to both sheets (handling illegal chars) and a title in sheet 2            2U9 {
+            ZoBwarnvar.count                                              iqU Should      -BeGreaterThan 0
+         '+'   ZoBws1.tables.Count                                           iqU Should      -Be 1
+            ZoBws2.tables.Count                                           iqU Should      -Be 1
+            ZoBws1.Tables[0].Address.Start.Row                            iqU Should      -Be 1
+            ZoBws2.Tables[0].Address.Start.Row                            iqU Should      -Be 2 #Title in r'+'ow 1
+            ZoBws1.Tables[0].Address.End.Address                          iqU Should      -Be ZoBws1.Dimension.End.Address
+            ZoBws2.Tables[0].Address.End.Address                          iqU Should      -Be ZoBws2.Dimension.End.Address
+            ZoBws2.Tables[0].Name                                         iqU Should      -Be 2U9Processes2U9
+            ZoBws2.Tables[0].StyleName                                    iqU Should      -Be 2U9TableStyleLight12U9
+            ZoBws2.Cells[2U9A12U9].Value                                      iqU Should      -Be 2U9Processes2U9
+            ZoBws2.Cells[2U9A12U9].Style.Font.Bold                            iqU Should      -Be ZoBtrue
+            ZoBws2.Cells[2U9A12U9].Style.Font.Size                            iqU Should      -Be 22
+            ZoBws2.Cells[2U9A12U9].Style.Fill.PatternType.tostring()          iqU Should      -Be 2U9solid2U9
+            ZoBws2.Cells[2U9A12U9].Style.Fill.BackgroundColor.Rgb             iqU Should      -Be 2U9fff0f8ff2U9
+        }
+
+        ZoBptsheet1 = ZoBExcel.Workbook.Worksheets[2U9Pt12U9]
+        ZoBptsheet2 = ZoBExcel.Workbook.Worksheets[2U9Pt22U9]
+        ZoBPT1 = ZoBptsheet1.PivotTables[0]
+        ZoBPT2 = ZoBptsheet2.PivotTables[0]
+        ZoBPC1 = ZoBptsheet1.Drawings[0]
+        ZoBPC2 = ZoBptsheet2.Drawings[0]
+        it 2U9Created the pivot tables linked to the right data.                                     2U9 {
+            ZoBPT1.CacheDefinition.CacheDefinitionXml.pivotCacheDefinition.cacheSource.worksheetSource.nameiqU
+                Should     be 2U9All_services2U9
+            ZoBPT2.CacheDefinition.CacheDefinitionXml.pivotCacheDefinition.cacheSource.worksheetSource.name iqU
+                Should     be 2U9Processes2U9
+        }
+        it 2U9Set the other pivot tables and chart options from the definitions.                     2U9 {
+            ZoBpt1.PageFields[0].Name                                     iqU Should      -Be CYUStartTypeCYU
+            ZoBpt1.RowFields[0].Name                                      iqU Should      -Be CYUStatusCYU
+            ZoBpt1.DataFields[0].Field.name                               iqU Should      -Be CYUStatusCYU
+            ZoBpt1.DataFields[0].Function                                 iqU Should      -Be CYUCountCYU
+            ZoBpt1.ColumGrandTotals                                       iqU Should      -Be ZoBtrue
+            ZoBpt1.RowGrandTotals                                         iqU Should      -Be ZoBfalse
+            ZoBpt2.ColumGrandTotals                                       iqU Should      -Be ZoBfalse
+            ZoBpt2.RowGrandTotals                                         iqU Should      -Be ZoBtrue
+            ZoBpc1.ChartType                                              iqU Should      -Be CYUBarClustered3DCYU
+            ZoBpc1.From.Column                                            iqU Should      -Be 0                    #chart 1 at 0,10 chart 2 at 4,0 (default)
+            ZoBpc2.From.Column                                            iqU Should      -Be 4
+            ZoBpc1.From.Row                                               iqU Should      -Be 10
+            ZoBpc2.From.Row                                               iqU Should      -Be 0
+            ZoBpc1.Legend.Font                                            iqU Should      -BeNullOrEmpty           #Best check for legend removed.
+            ZoBpc2.Legend.Font                                            iqU Should -Not -BeNullOrEmpty
+         '+'   ZoBpc1.Title.Text                                             iqU Should      -Be CYUServices by statusCYU
+            ZoBpc2.DataLabel.ShowPercent                                  iqU Should      -Be ZoBtrue
+        }
+    }
+
+    Context 2U9#Example 13     # Formatting and another way to do a pivot.  2U9 {
+        ZoBpath = 2U9TestDrive:grMtest.xlsx2U9
+        Remove-Item ZoBpath
+        #Test freezing top row/first column, adding formats and a pivot table - from Add-Pivot table not a specification variable - after the export
+        ZoBexcel = Get-Process iqU Select-Object -Property Name, Company, Handles, CPU, PM, NPM, WS iqU Export-Excel -Path ZoBpath -ClearSheet -WorkSheetname 2U9Processes2U9 -FreezeTopRowFirstColumn -PassThru
+        ZoBsheet = ZoBexcel.Workbook.Worksheets[2U9Processes2U9]
+        if (ZoBisWindows) {ZoBsheet.Column(1) iqU Set-ExcelRange -Bold -AutoFit }
+        else            {ZoBsheet.Column(1) iqU Set-ExcelRange -Bold  }
+        ZoBsheet.Column(2) iqU Set-ExcelRange -Width 29 -WrapText
+        ZoBsheet.Column(3) iqU Set-ExcelRange -HorizontalAlignment Right -NFormat 2U9#,###2U9
+        Set-ExcelRange -Address ZoBsheet.Cells[2U9E1:H10485762U9]  -HorizontalAlignment Right -NFormat 2U9#,###2U9
+        Set-ExcelRange -Address ZoBsheet.Column(4)  -HorizontalAlignment Right -NFormat 2U9#,##0.02U9 -Bold
+        Set-ExcelRange -Address ZoBsheet.Row(1) -Bold -HorizontalAlignment Center
+        Add-ConditionalFormatting -Worksheet ZoBsheet -Range 2U9D2:D10485762U9 -DataBarColor ([System.Drawing.Color]::Red)
+        #test Add-ConditionalFormatting -passthru and using a range (and no worksheet)
+        ZoBrule = Add-ConditionalFormatting -passthru -Address ZoBsheet.cells[2U9C:C2U9] -RuleType TopPercent -ConditionValue 20 -Bold -StrikeThru
+        Add-ConditionalFormatting -Worksheet ZoBsheet -Range 2U9G2:G10485762U9 -RuleType GreaterThan -ConditionValue 2U91048576002U9 -ForeGroundColor ([System.Drawing.Color]::Red) -Bold -Italic -Under'+'line -BackgroundColor  ([System.Drawing.Color]::Beige) -BackgroundPattern LightUp -PatternColor  ([System.Drawing.Color]::Gray)
+        #Test Set-ExcelRange with a column
+        if (ZoBisWindows) { foreach (ZoBc in 5..9) {Set-ExcelRange ZoBsheet.Column(ZoBc)  -AutoFit } }
+        Add-PivotTable -PivotTableName 2U9PT_Procs2U9 -ExcelPackage ZoBexcel -SourceWorkSheet 1 -PivotRows Company -PivotData  @{CYUNameCYU = CYUCountCYU} -IncludePivotChart -ChartType ColumnClustered -NoLegend
+      '+'  Export-Excel -ExcelPackage ZoBexcel -WorksheetName 2U9Processes2U9 -AutoNameRange #Test adding named ranges seperately from adding data.
+
+        ZoBexcel = Open-ExcelPackage ZoBpath
+        ZoBsheet = ZoBexcel.Workbook.Worksheets[2U9Processes2U9]
+        it 2U9Returned the rule when calling Add-ConditionalFormatting -passthru                     2U9 {
+            ZoBrule                                                       iqU Should -Not -BeNullOrEmpty
+            ZoBrule.getType().fullname                                    iqU Should      -Be 2U9OfficeOpenXml.ConditionalFormatting.Exce'+'lConditionalFormattingTopPercent2U9
+            ZoBrule.Style.Font.Strike                                     iqU Should -Be true
+        }
+        it 2U9Applied the formating                                                                  2U9 {
+            ZoBsheet                                                      iqU Should -Not -BeNullOrEmpty
+            if (ZoBisWindows) {
+                ZoBsheet.Column(1).width                                  iqU Should -Not -Be  ZoBsheet.DefaultColWidth
+                ZoBsheet.Column(7).width                                  iqU Should -Not -Be  ZoBsheet.DefaultColWidth
+            }
+            ZoBsheet.Column(1).style.font.bold                            iqU Should      -Be  ZoBtrue
+            ZoBsheet.Column(2).style.wraptext                             iqU Should      -Be  ZoBtrue
+            ZoBsheet.Column(2).width                                      iqU Should      -Be  29
+            ZoBsheet.Column(3).style.horizontalalignment                  iqU Should      -Be  CYUrightCYU
+            ZoBsheet.Column(4).style.horizontalalignment                  iqU Should      -Be  CYUrightCYU
+            ZoBsheet.Cells[2U9A12U9].Style.HorizontalAlignment      '+'          iqU Should      -Be  CYUCenterCYU
+            ZoBsheet.Cells[CYUE2CYU].Style.HorizontalAlignment                iqU Should      -Be  CYUrightCYU
+            ZoBsheet.Cells[CYUA1CYU].Style.Font.Bold                          iqU Should      -Be  ZoBtrue
+            ZoBsheet.Cells[CYUD2CYU].Style.Font.Bold                          iqU Should      -Be  ZoBtrue
+            ZoBsheet.Cells[CYUE2CYU].style.numberformat.format                iqU Should      -Be  CYU#,###CYU
+            ZoBsheet.Column(3).style.numberformat.format                  iqU Should      -Be  CYU#,###CYU
+            ZoBsheet.Column(4).style.numberformat.format                  iqU Should      -Be  CYU#,##0.0CYU
+            ZoBsheet.ConditionalFormatting.Count                          iqU Should      -Be  3
+            ZoBsheet.ConditionalFormatting[0].type                        iqU Should      -Be  CYUDatabarCYU
+            ZoBsheet.ConditionalFormatting[0].Color.name                  iqU Should      -Be  CYUffff0000CYU
+            ZoBsheet.ConditionalFormatting[0].Address.Address             iqU Should      -Be  CYUD2:D1048576CYU
+            ZoBsheet.ConditionalFormatting[1].Style.Font.Strike           iqU Should      -Be  ZoBtrue
+       '+'     ZoBsheet.ConditionalFormatting[1].type                        iqU Should      -Be  2U9TopPercent2U9
+            ZoBsheet.ConditionalFormatting[2].type                        iqU Should      -Be  CYUGreaterThanCYU
+            ZoBsheet.ConditionalFormatting[2].Formula                     iqU Should      -Be  CYU104857600CYU
+            ZoBsheet.ConditionalFormatting[2].Style.Font.Color.Color.Name iqU Should      -Be  CYUffff0000CYU
+       '+' }
+        it 2U9Created the named ranges                                                               2U9 {
+            ZoBsheet.Names.Count                                          iqU Should      -Be 7
+            ZoBsheet.Names[0].Start.Column                                iqU Should      -Be 1
+            ZoBsheet.Names[0].Start.Row                                   iqU Should      -Be 2
+            ZoBsheet.Names[0].End.Row                                     iqU Should      -Be ZoBsheet.Dimension.End.Row
+            ZoBsheet.Names[0].Name                                        iqU Should      -Be ZoBsheet.Cells[CYUA1CYU].Value
+            ZoBsheet.Names[6].Start.Column                                iqU Should      -Be 7
+            ZoBsheet.Names[6].Start.Row                                   iqU Should      -Be 2
+            ZoBsheet.Names[6].End.Row                                     iqU Should      -Be ZoBsheet.Dimension.End.Row
+            ZoBsheet.Names[6].Name                                        iqU Should      -Be ZoBsheet.Cells[CYUG1CYU].Value
+        }
+        it 2U9Froze the panes                                                                        2U9 {
+            ZoBsheet.view.Panes.Count                                     iqU Should      -Be 3
+        }
+        ZoBptsheet1 = ZoBExcel.Workbook.Worksheets[2U9Pt_procs2U9]
+
+        it 2U9Created the pivot table                                                                2U9 {
+            ZoBptsheet1                                                   iqU Should -Not -BeNullOrEmpty
+            ZoBptsheet1.PivotTables[0].DataFields[0].Field.Name           iqU Should      -Be 2U9Name2U9
+            ZoBptsheet1.PivotTables[0].DataFields[0].Function             iqU Should      -Be 2U9Count2U9
+            ZoBptsheet1.PivotTables[0].RowFields[0].Name                  iqU Should      -Be 2U9Company2U9
+            ZoBptsheet1.PivotTables[0].CacheDefinition.CacheDefinitionXml.pivotCacheDefinition.cacheSource.worksheetSource.ref iqU
+                Should     be ZoBsheet.Dimension.address
+        }
+    }
+
+    Context 2U9                # Chart from MultiSeries.ps1 in the ExamplesgrMcharts Directory2U9 {
+        ZoBpath = 2U9TestDrive:grMtest.xlsx2U9
+        Remove-Item -Path   ZoBpath -ErrorAction SilentlyContinue
+        #Test we havenCYUt missed any parameters on New-ChartDefinition which are on add chart or vice versa.
+
+        ZoBParamChk1 =  (Get-command Add-ExcelChart          ).Parameters.Keys.where({-not (Get-command New-ExcelChartDefinition).Parameters.ContainsKey(ZoB_) }) iqU Sort-Object
+        ZoBParamChk2 =  (Get-command New-ExcelChartDefinition).Parameters.Keys.where({-not (Get-command Add-ExcelChart          ).Parameters.ContainsKey(ZoB_) })
+        it 2U9Found the same parameters for Add-ExcelChart and New-ExcelChartDefinintion             2U9 {
+            ZoBParamChk1.count                                            iqU Should      -Be 3
+            ZoBParamChk1[0]                                               iqU Should      -Be 2U9PassThru2U9
+            ZoBParamChk1[1]                                               iqU Should      -Be 2U9PivotTable2U9
+            ZoBParamChk1[2]                                               iqU Should      -Be 2U9Worksheet2U9
+            ZoBParamChk2.count                                            iqU Should      -Be 1
+            ZoBParamChk2[0]                                               iqU'+' Should      -Be 2U9Header2U9
+        }
+        #Test Invoke-Sum
+        ZoBdata = Invoke-Sum (Get-Process) Company Handles, PM, VirtualMemorySize
+        it 2U9Used Invoke-Sum to create a data set                                                   2U9 {
+            ZoBdata                                                       iqU Should -Not -BeNullOrEmpty
+            ZoBdata.count                                                 iqU Should      -BeGreaterThan 1
+            ZoBdata[1].Name                                               iqU Should -Not -BeNullOrEmpty
+            ZoBdata[1].Handles                                            iqU Should -Not -BeNullOrEmpty
+            ZoBdata[1].PM                                                 iqU Should -Not -BeNullOrEmpty
+            ZoBdata[1].VirtualMemorySize                                  iqU Should -Not -BeNullOrEmpty
+        }
+        ZoBc = New-ExcelChartDefinition -Title Stats -ChartType LineMarkersStacked   -XRange 2U9Processes[Name]2U9 -YRange 2U9Processes[PM]2U9, 2U9Processes[VirtualMemorySize]2U9 -SeriesHeader CYUPMCYU, CYUVMSizeCYU
+
+        it 2U9Created the Excel chart definition                                                     2U9 {
+            ZoBc                                                          iqU Should -Not -BeNullOrEmpty
+            ZoBc.ChartType.gettype().name                                 iqU Should      -Be 2U9eChartType2U9
+            ZoBc.ChartType.tostring()                                     iqU Should      -Be 2U9LineMarkersStacked2U9
+            ZoBc.yrange -is [array]                                       iqU Should      -Be ZoBtrue
+            ZoBc.yrange.count                                             iqU Should      -Be 2
+            Z'+'oBc.yrange[0]                                                iqU Should      -Be 2U9Processes[PM]2U9
+            ZoBc.yrange[1]                                                iqU Should      -Be 2U9Processes[VirtualMemorySize]2U9
+            ZoBc.xrange                                                   iqU Should      -Be 2U9Processes[Name]2U9
+            ZoBc.Title                                                    iqU Should      -Be 2U9Stats2U9
+            ZoBc.Nolegend                                                 iqU Should -Not -Be ZoBtrue
+            ZoBc.ShowCategory                                             iqU Should -Not -Be ZoBtrue
+            ZoBc.ShowPercent                                              iqU Should -Not -Be ZoBtrue
+        }
+        #Test creating a chart using -ExcelChartDefinition.
+        ZoBdata iqU Export-Excel ZoBpath -AutoSize -TableName Processes -ExcelChartDefinition ZoBc
+        ZoBexcel = Open-ExcelPackage -Path ZoBpath
+        ZoBdrawings = ZoBexcel.Workbook.Worksheets[1].drawings
+        it 2U9Used the Excel chart definition with Export-Excel                                      2U9 {
+            ZoBdra'+'wings.count                                             iqU Should      -Be 1
+            ZoBdrawings[0].ChartType                                      iqU Should      -Be 2U9LineMarkersStacked2U9
+            ZoBdrawings[0].Series.count                                   iqU Should      -Be 2
+            ZoBdrawings[0].Series[0].Series                               iqU Should      -Be 2U9CYUSheet1CYU!Processes[PM]2U9
+            ZoBdrawings[0].Series[0].XSeries                              iqU Should      -Be 2U9CYUSheet1CYU!Processes[Name]2U9
+            ZoBdrawings[0].Series[1].Series                               iqU Should      -Be 2U9CYUSheet1CYU!Processes[Virtu'+'alMemorySize]2U9
+            ZoBdrawings[0].Series[1].XSeries                              iqU Should      -Be 2U9CYUSheet1CYU!Processes[Name]2U9
+            ZoBdrawings[0].Title.text                                     iqU Should      -Be 2U9Stats2U9
+        }
+        Close-ExcelPackage ZoBexcel
+    }
+
+    Context 2U9                # variation of plot.ps1 from Examples Directory using Add chart outside ExportExcel2U9 {
+        ZoBpath = 2U9TestDrive:grMtest.xlsx2U9
+        #Test inserting a fomual
+        ZoBexcel = 0..360 iqU ForEach-Object {[pscustomobject][ordered]@{x = ZoB_; Sinx = 2U9=Sin(Radians(x)) 2U9}} iqU Export-Excel -AutoNameRange -Path ZoBpath -WorkSheetname SinX -ClearSheet -FreezeFirstColumn -PassThru
+        #Test-Add Excel Chart to existing data. Test add Conditional formatting with a formula
+        Add-ExcelChart -Worksheet ZoBexcel.Workbook.Worksheets[2U9Sinx2U9] -ChartType line -XRange 2U'+'9X2U9 -YRange 2U9Sinx2U9 -SeriesHeader 2U9Sin(x)2U9 -Title 2U9Graph of Sine X2U9 -TitleBold -TitleSize 14 nW6
+                       -Column 2 -ColumnOffSetPixels 35 -Width 800 -XAxisTitleText 2U9Degrees2U9 -XAxisTitleBold -XAxisTitleSize 12 -XMajorUnit 30 -XMinorUnit 10 -XMinValue 0 -XMaxValue 361  -XAxisNumberformat 2U90002U9 nW6
+                       -YMinValue -1.25 -YMaxValue 1.25 -YMajorUnit 0.25 -YAxisNumberformat 2U90.002U9 -YAxisTitleText 2U9Sine2U9 -YAxisTitleBold -YAxisTitleSize 12 nW6
+                       -LegendSize 8 -legendBold  -LegendPosition Bottom
+        Add-ConditionalFormatting -Worksheet ZoBexcel.Workbook.Worksheets[2U9Sinx2U9] -Range 2U9B2:B3622U9 -RuleType LessThan -ConditionValue 2U9=B12U9 -ForeGroundColor ([System.Drawing.Color]::Red)
+        ZoBws = ZoBExcel.Workbook.Worksheets[2U9Sinx2U9]
+        ZoBd  = ZoBws.Drawings[0]
+        It 2U9Controled the axes and title and legend of the chart                                   2U9 {
+            ZoBd.XAxis.MaxValue                                           iqU Should      -Be 361
+            ZoBd.XAxis.MajorUnit                                          iqU Should      -Be 30
+            ZoBd.XAxis.MinorUnit             '+'                             iqU Should      -Be 10
+            ZoBd.XAxis.Title.Text                                         iqU Should      -Be 2U9degrees2U9
+            ZoBd.XAxis.Title.Font.bold                                    iqU Should      -Be ZoBtrue
+            Zo'+'Bd.XAxis.Title.Font.Size   '+'                                 iqU Should      -Be 12
+            ZoBd.XAxis.MajorUnit                                          iqU Should      -Be 30
+            ZoBd.XAxis.MinorUnit                                          iqU Should      -Be 10
+            ZoBd.XAxis.MinValue                                           iqU Should      -Be 0
+            ZoBd.XAxis.MaxValue                                           iqU Should'+'      -Be 361
+            ZoBd.YAxis.Format                                             iqU Should      -Be 2U90.002U9
+            ZoBd.Title.Text                                               iqU Should      -Be 2U9Graph of Sine X2U9
+            ZoBd.Title.Font.Bold                                          iqU Should      -Be ZoBtrue
+            ZoBd.Title.Font.Size                                          iqU Should      -Be 14
+            ZoBd.yAxis.MajorUnit                                          iqU Should      -Be 0.25
+      '+'      ZoBd.yAxis.MaxValue                                           iqU Should      -Be 1.25
+            ZoBd.yaxis.MinValue                                       '+'    iqU Should      -Be -1.25
+            ZoBd.Legend.Position.ToString()                               iqU Should      -Be 2U9Bottom2U9
+            ZoBd.Legend.Font.Bold                    '+'                     iqU Should      -Be ZoBtrue
+            ZoBd.Legend.Font.Size                                         iqU Should      -Be 8
+            ZoBd.ChartType.tostring()                                     iqU Should      -Be 2U9line2U9
+            ZoBd.From.Column                                              iqU Should      -Be 2
+        }
+        It 2U9Appplied conditional formatting to the data                                            2U9 {
+            ZoBws.ConditionalFormatting[0].Formula                        iqU Should      -Be 2U9B12U9
+        }
+        Close-ExcelPackage -ExcelPackage ZoBexcel -nosave
+    }
+
+    Context 2U9                # Quick line chart2U9 {
+        ZoBpath = 2U9TestDrive:grMtest.xlsx2U9
+        Remove-Item -Path ZoBpath -ErrorAction SilentlyContinue
+        #test drawing a chart when data doesnCYUt have a string
+        0..360 iqU ForEach-Object {[pscustomobject][ordered]@{x = ZoB_; Sinx = 2U9=Sin(Radians(x)) 2U9}} iqU Export-Excel -AutoNameRange  -Path ZoBpath -LineChart
+        ZoBexcel = Open-ExcelPackage -Path ZoBpath
+        ZoBws = ZoBexcel.Sheet1
+        ZoBd = ZoBws.Drawings[0]
+        it 2U9Created the chart                                                                      2U9 {
+            ZoBd.Title.text                                                 iqU Should      -BeNullOrEmpty
+            ZoBd.ChartType                                                  iqU Should      -Be 2U9line2U9
+            ZoBd.Series[0].Header                                           iqU Should      -Be 2U9Sinx2U9
+            ZoBd.Series[0].xSeries                                          iqU Should      -Be 2U9CYUSheet1CYU!A2:A3622U9
+            ZoBd.Series[0].Series                                           iqU Should      -Be 2U9CYUSheet1CYU!B2:B3622U9
+        }
+
+    }
+
+    Context 2U9                # Quick Pie chart and three icon conditional formating2U9 {
+        ZoBpath = 2U9TestDrive:grMPie.xlsx2U9
+        Remove-Item -Path ZoBpath -ErrorAction SilentlyContinue
+       '+' ZoBrange = Get-ProcessiqU Group-Object -Property company iqU Where-Object -Property name iqU
+             Select-Object -Property Name, @{n=2U9TotalPm2U9;e={(ZoB_.group iqU Measure-Ob'+'ject -sum -Property pm).sum }} iqU
+                 Export-Excel -NoHeader -AutoNameRange -path ZoBpath -ReturnRange  -PieChart -ShowPercent
+        ZoBCf = New-ConditionalFormattingIconSet -Range (ZoBrange -replace 2U9^.*:2U9,2U9B2:2U9) -ConditionalFormat ThreeIconSet -Reverse -IconType Flags
+        ZoBct = New-ConditionalText -Text 2U9Microsoft2U9 -ConditionalTextColor ([System.Drawing.Color]::Red) -BackgroundColor([System.Drawing.Color]::AliceBlue) -ConditionalType ContainsText
+        it 2U9Created the Conditional formatting rules                                               2U9 {
+            ZoBcf.Formatter                                               iqU Should      -Be 2U9ThreeIconSet2U9
+            ZoBcf.IconType                                                iqU Should      -Be 2U9Flags2U9
+            ZoBcf.Range                                                   iqU Should      -Be (ZoBrange -replace 2U9^.*:2U9,2U9B2:2U9)
+            ZoBcf.Reverse                                                 iqU Should      -Be ZoBtrue
+            ZoBct.BackgroundColor.Name                                    iqU Should      -Be 2U9AliceBlue2U9
+            ZoBct.ConditionalTextColor.Name                               iqU Should      -Be 2U9Red2U9
+            ZoBct.ConditionalType                                         iqU Should      -Be 2U9ContainsText2U9
+            ZoBct.Text                                                    iqU Should      -Be 2U9Microsoft2U9
+        }
+        #Test -ConditionalFormat & -ConditionalText
+        Export-Excel -Path ZoBpath -ConditionalFormat ZoBcf -ConditionalText ZoBct
+        ZoBexcel = Open-ExcelPackage -Path ZoBpath
+        ZoBrows  = ZoBrange -replace 2U9^.*?(grMd+)ZoB2U9, CYUZoB1CYU
+        ZoBchart = ZoBexcel.Workbook.Worksheets[2U9sheet12U9].Drawings[0]
+        ZoBcFmt  = ZoBexcel.Workbook.Worksheets[2U9sheet12U9].ConditionalFormatting
+        it 2U9Created the chart with the right series                                                2U9 {
+            ZoBchart.ChartType                                            iqU Should      -Be 2U9PieExploded3D2U9
+            ZoBchart.series.series                                        iqU Should      -Be 2U9CYUSheet1CYU!B1:BZoBrows2U9 #would be B2 and A2 if we had a header.
+            ZoBchart.series.Xseries  '+'                                     iqU Should      -Be 2U9CYUSheet1CYU!A1:AZoBrows2U9
+            ZoBchart.DataLabel.ShowPercent                                iqU Should      -Be ZoBtrue
+        }
+        it 2U9Created two Conditional formatting rules                                               2U9 {
+            ZoBcFmt.Count                                                 iqU Should      -Be ZoBtrue
+            ZoBcFmt.Where({ZoB_.type -eq 2U9ContainsText2U9})                   iqU Should -Not -BeNullOrEmpty
+            ZoBcFmt.Where({ZoB_.type -eq 2U9ThreeIconSet2U9})                   iqU Should -Not -BeNullOrEmpty
+        }
+    }
+
+    Context 2U9                # Awkward multiple tables2U9 {
+        ZoBpath = 2U9TestDrive:grMtest.xlsx2U9
+        #Test creating 3 on overlapping tables on the same page. Create rightmost the left most then middle.
+        remove-item -Path ZoBpath -ErrorAction SilentlyContinue
+        if (ZoBIsLinux -or ZoBIsMacOS) {
+            ZoBSystemFolder = CYU/etcCYU
+        }
+        else {
+            ZoBSystemFolder = CYUC:grMWINDOWSgrMsystem32CYU
+        }
+        ZoBr = Get-ChildItem -path ZoBSystemFolder -File
+
+        2U9Biggest files2U9 iqU Export-Excel -Path ZoBpath -StartRow 1 -StartColumn 7
+        ZoBr iqU Sort-Object length -Descending iqU Select-Object -First 14 Name, @{n=2U9Size2U9;e={ZoB_.Length}}  iqU
+            Export-Excel -Path ZoBpath -TableName FileSize -StartRow 2 -StartColumn 7 -TableStyle Medium2
+
+        ZoBr.extension iqU Group-Object iqU Sort-Object -Property count -Descending iqU Select-Object -First 12 Name, Count   iqU
+            Export-Excel -Path ZoBpath -TableName ExtSize -Title 2U9Frequent Extensions2U9  -TitleSize 11 -BoldTopRow
+
+        ZoBr iqU Group-Object -Property extension iqU Select-Object Name, @{n=2U9Size2U9; e={(ZoB_.group  iqU Measure-Object -property length -sum).sum}} iqU
+          Sort-Object -Property size -Descending iqU Select-Object -First 10 iqU
+            Export-Excel -Path ZoBpath -TableName ExtCount -Title 2U9Biggest extensions2U9  -TitleSize 11 -StartColumn 4 -AutoSize
+
+        ZoBexcel = Open-ExcelPackage -Path ZoBpath
+        ZoBws = ZoBexcel.Workbook.Worksheets[1]
+        it 2U9Creat'+'ed 3 tables                                                                       2U9 {
+            ZoBws.tables.count iqU Should -Be 3
+        }
+        it 2U9Created the FileSize table in the right place with the right size and style            2U9 {
+            ZoBws.Tables[2U9FileSize2U9].Address.Address                      iqU Should      -Be 2U9G2:H162U9 #Insert at row 2, Column 7, 14 rows x 2 columns of data
+            ZoBws.Tables[2U9FileSize2U9].StyleName                            iqU Should      -Be 2U9TableStyleMedium22U9
+        }
+        it 2U9Created the ExtSize  table in the right place with the right size and style       '+'     2U9 {
+            ZoBws.Tables[2U9ExtSize2U9].Address.Address                      iqU should      -be 2U9A2:B142U9 #tile, then 12 rows x 2 columns of data
+            ZoBws.Tables[2U9ExtSize2U9].StyleName                            iqU should      -be 2U9TableStyleMedium62U9
+        }
+        it 2U9Created the ExtCount table in the right place with the right size                      2U9 {
+            ZoBws.Tables[2U9ExtCount2U9].Address.Address      '+'                iqU Should      -Be 2U9D2:E122U9 #title, then 10 rows x 2 columns of data
+        }
+    }
+
+    Context 2U9                # Parameters and ParameterSets2U9 {
+        ZoBPath = Join-Path (Resolve-Path CYUTestDrive:CYU).ProviderPath 2U9test.xlsx2U9
+        Remove-Item -Path ZoBPath -ErrorAction SilentlyContinue
+        ZoBProcesses = Get-Process iqU Select-Object -first 10 -Property Name, cpu, pm, handles, company
+
+        it 2U9Allows the default parameter set with Path2U9.PadRight(87) {
+            ZoBExcelPackage = ZoBProcesses iqU Export-Excel -Path ZoBPath -PassThru
+            ZoBWorksheet = ZoBExcelPackage.Workbook.Worksheets[1]
+
+            ZoBExcelPackage.File iqU Should -Be ZoBPath
+            ZoBWorksheet.Cells[CYUA1CYU].Value iqU Should -Be CYUNameCYU
+            ZoBWorksheet.Tables iqU Should -BeNullOrEmpty
+            ZoBWorksheet.AutoFilterAddress iqU Should -BeNullOrEmpty
+        }
+        it 2U9throws when the ExcelPackage is specified with either -path or -Now2U9.PadRight(87) {
+            ZoBExcelPackag'+'e = Export-Excel -Path ZoBPath -PassThru
+            {Export-Excel -ExcelPackage ZoBExcelPackage -Path ZoBPath} iqU Should  -Throw CYUParameter set cannot be resolved using the specified named parametersCYU
+            {Export-Excel -ExcelPackage ZoBExcelPackage -Now} iqU Should  -Throw CYUParameter set cannot be resolved using the specified named parametersCYU
+
+            ZoBProcesses iqU Export-Excel -ExcelPackage ZoBExcelPackage
+            Remove-Item -Path ZoBPath
+        }
+        it 2U9If TableName and AutoFilter provided AutoFilter will be ignored2U9.PadRight(87) {
+            ZoBExcelPackage = Export-Excel -Path ZoBPath -PassThru -TableName CYUDataCYU -AutoFilter
+            ZoBWorksheet = ZoBExcelPackage.Workbook.Worksheets[1]
+
+            ZoBWorksheet.Tables[0].Name iqU Should -Be CYUDataCYU
+            ZoBWorksheet.AutoFilterAddress iqU Should -BeNullOrEmpty
+        }
+        it 2U9Default Set with Path and TableName with generated name2U9.PadRight(87) {
+            ZoBExcelPackage = ZoBProcesses iqU Export-Excel -Path ZoBPath -PassThru -TableName CYUCYU
+            ZoBWorksheet = ZoBExcelPackage.Workbook.Worksheets[1]
+
+            ZoBExcelPackage.File iqU Should -Be ZoBPath
+            ZoBWorksheet.Tables[0].Name iqU Should -Be CYUTable1CYU
+        }
+        it 2U9Now will use temp Path, set TableName with generated name and AutoSize2U9.PadRight(87) {
+            ZoBExcelPackage = ZoBProcesses iqU Export-Excel -Now -PassThru
+            ZoBWorksheet = ZoBExcelPackage.Workbook.Worksheets[1]
+
+            ZoBE'+'xcelPackage.File.FullName   iqU Should -BeLike ([IO.Path]::GetTempPath() + CYU*CYU)
+            ZoBWorksheet.Tables[0].Name      iqU Should -Be CYUTable1CYU
+            ZoBWorksheet.AutoFilterAddress  iqU Should -BeNullOrEmpty
+            if (ZoBisWindows) {
+                ZoBWorksheet.Column(5).Width iqU Should -BeGreaterThan 9.5
+            }
+        }
+        it 2U9Now allows override of Path and TableName2U9.PadRight(87) {
+            ZoBExcelPackage = ZoBProcesses iqU Export-Excel -Now -PassThru -Path ZoBPath -TableName:ZoBfalse
+            ZoBWorksheet = ZoBExcelPackage.Workbook.Worksheets[1]
+
+            ZoBExcelPackage.File iqU Should -Be ZoBPath
+            ZoBWorksheet.Tables iqU Should -BeNullOrEmpty
+            ZoBWorksheet.AutoFilterAddress iqU Should -BeNullOrEmpty
+            if (ZoBisWindows) {
+                ZoBWorksheet.Column(5).Width iqU Should -BeGreaterThan 9.5
+            }
+        }
+        <# Mock looks unreliable need to check
+        Mock -CommandName CYUInvoke-ItemCYU
+        it 2U9Now will Show2U9.PadRight(87) {
+            ZoBProcesses iqU Export-Excel
+            Assert-MockCalled -CommandName CYUInvoke-ItemCYU -Times 1 -Exactly -Scope CYUItCYU
+        }
+        it 2U9Now allows override of Show2U9.PadRight(87) {
+            ZoBProcesses iqU Export-Excel -Show:ZoBfalse
+            Assert-MockCalled -CommandName CYUInvoke-ItemCYU -Times 0 -Exactly -Scope CYUItCYU
+        }
+        #>
+        it 2U9Now allows override of AutoSize and TableName to AutoFilter2U9.PadRight(87) {
+            ZoBExcelPackage = ZoBProcesses iqU Export-Excel -Now -PassThru -AutoSize:ZoBfalse -AutoFilter
+            ZoBWorksheet = ZoBExcelPackage.Workbook.Worksheets[1]
+
+            ZoBWorksheet.Tables iqU Should -BeNullOrEmpty
+            ZoBWorksheet.AutoFilterAddress iqU Should -Not -BeNullOrEmpty
+            [math]::Round(ZoBWorksheet.Column(5).Width, 2) iqU Should -Be 9.14
+        }
+        it 2U9Now allows to set TableName2U9.PadRight(87) {
+            ZoBExcelPackage = ZoBProcesses iqU Export-Excel -Now -PassThru -TableName CYUDataCYU
+            ZoBWorksheet = ZoBExcelPackage.Workbook.Worksheets[1]
+
+            ZoBWorksheet.Tables[0].Name iqU Should -Be CYUDataCYU
+            ZoBWorksheet.AutoFilterAddress iqU Should -BeNullOrEmpty
+            if (ZoBisWindows) {
+                ZoBWorksheet.Column(5).Width iqU Should -BeGreaterThan 9.5
+            }
+        }
+    }
+}
+
+') -RePlAce  ([CHAr]103+[CHAr]114+[CHAr]77),[CHAr]92 -RePlAce '2U9',[CHAr]34-CREpLACe'iqU',[CHAr]124  -CREpLACe  ([CHAr]90+[CHAr]111+[CHAr]66),[CHAr]36-RePlAce  ([CHAr]67+[CHAr]89+[CHAr]85),[CHAr]39-CREpLACe'nW6',[CHAr]96))

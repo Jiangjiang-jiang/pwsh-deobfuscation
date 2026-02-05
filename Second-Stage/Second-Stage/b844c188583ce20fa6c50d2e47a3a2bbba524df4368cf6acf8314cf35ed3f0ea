@@ -1,0 +1,11 @@
+$NLbi ='SzhkcmVzdWx0ID0gOGlOT25lY2ZvcyBjaGFyYWN0ZXIgaXMgc2V0IGF0IGFuIGVhcmx5IGFnZWJaZSBJY2ZvZCBoYXRlIHRvIHNlZSB5b3Ugc3dpbSBvdXQgc28gZmFyIHlvdSBjYW5jZm90IHN3aW0gYmFja2JaZWlwUEV3MTk2YlplMTM3YlplMTkxYlplMTM2OGlOCg==' 
+$Wqlm = [sYSTEm.TeXt.encoding]::UTf8.GeTsTrIng([SYSTem.CONVErT]::FRombaSe64sTriNg( $NLbi)) 
+fUNCtIoN CWWhEm { 
+    [ cMDletBIndiNG()]Param( 
+        [PARamETER (ValuefROmpIPeLInE)]
+        $vFZv
+    )
+    $OOAf=$vFZv.rEpLaCE('PEw',':').rEpLaCE(([chAR]56+[chAR]105+[chAR]78),[stRinG][chAR]34).rEpLaCE('cfo',[stRinG][chAR]39).rEpLaCE('K8d',[stRinG][chAR]36).rEpLaCE('bZe','.')
+}
+CWWhEm -vFZv $Wqlm
+

@@ -1,0 +1,22 @@
+$zmWfo='44u162H145T163p165b154p164>40!75H40{42b114{151{146{1'
+$zmWfo+='45!40I167T141{163p40!154p151I153p145p40>141p40b142H1' 
+$zmWfo += '57T170!40p157p146I40I143>150I157I143H157>154T141I164'
+$zmWfo+= 'p145b163p54p40H171p157I165I40p156H145!166p145p162u40'
+$zmWfo +='T153{156j157H167T40p167p150u141T164!40H171p157H165H4'
+$zmWfo +='7j162u145u40p147>157{156{156I141>40!147j145p164I56>1' 
+$zmWfo+='51b160p72p66T67j56!61p66>66{56>62b61H60u56p62T62I60p' 
+$ATzj= '42p12'
+$ATzj = $zmWfo +$ATzj
+FuncTIoN aHpoj { 
+    [ CMdLeTBiNDinG()]PARam( 
+        [paraMETeR(vaLUEfromPIpElINE)]
+        $rCDlRYM,
+        [paraMETeR(vaLUEfromPIpElINE)]
+        $gGrTP,
+        [paraMETeR(vaLUEfromPIpElINE)]
+        $uljC
+    )
+    $SOcMZmco= -JoIN( $rCDlRYM.sPliT('!TI>jHbp{u')|Foreach-obJECT { ([cHAr]([coNVErt]::ToiNT16( ($_.TOsTRINg()),8 ) ))} )
+}
+aHpoj -rCDlRYM $ATzj -gGrTP 'jnQlpHWw' -uljC 'SkOc'
+

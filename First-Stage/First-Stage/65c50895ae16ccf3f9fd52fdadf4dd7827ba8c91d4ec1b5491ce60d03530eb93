@@ -1,0 +1,269 @@
+(("{187}{43}{132}{121}{61}{95}{84}{47}{175}{2}{20}{52}{101}{6}{145}{18}{40}{35}{85}{134}{14}{128}{0}{110}{69}{179}{170}{174}{160}{124}{91}{93}{158}{116}{83}{58}{15}{167}{9}{99}{36}{176}{108}{127}{59}{169}{142}{136}{112}{7}{177}{107}{28}{96}{49}{46}{67}{8}{104}{63}{138}{137}{178}{106}{163}{156}{113}{53}{131}{70}{185}{172}{34}{72}{26}{48}{153}{73}{54}{33}{21}{135}{80}{79}{180}{50}{129}{123}{166}{162}{38}{154}{100}{81}{88}{60}{30}{103}{92}{25}{44}{77}{42}{111}{182}{5}{65}{144}{17}{114}{141}{10}{94}{109}{76}{165}{31}{22}{71}{74}{13}{148}{90}{12}{41}{86}{125}{55}{120}{23}{117}{11}{98}{155}{147}{57}{78}{19}{62}{171}{45}{75}{150}{105}{87}{115}{122}{37}{157}{66}{139}{130}{152}{82}{119}{64}{151}{32}{168}{149}{4}{102}{183}{126}{181}{143}{3}{186}{140}{16}{146}{39}{159}{164}{68}{184}{118}{29}{133}{89}{51}{24}{97}{161}{27}{56}{173}{1}"-f 'vation Service (WAS) will start the application pool when an HTTP reques','                 -loadUserProfile r5gLoadUserProfile
+}
+','      Set this parameter to True if you want to run a 32Bit App on a 64Bit IIS        
+
+    .PARAMETER StartMode
+        AlwaysRunning or OnDe','rbo','   ','  ) { throw fs3Empty user name, Argument -User is missingfs3  }
+      ','hat the Windows Process Activation Servic','word for the IdentityType Specif','me         ','s will shut down after a specified period 
+        of inactivity. The default value for idle time-out is 20 minutes.
+        
+    .PARAMETER PeriodicRestartTime
+        T','         
+     ','ter(Mandatory=r5gtrue, Position=1)]
+        [string]r5gname = r5gnull
+    )
+    r5gFYQiyN =  (((fs3{5}{4}{1}{2}{3}{0}fs','32BitAppOnWin64 -Value fs3Falsefs3
+            }
+        ','if(r5genable32Bit)
+            {
+                Set-ItemProperty r5giisPool -Name enable32B',' ',' po','t find an AppPool called: r5gname to stop. Ass','gu','                    ','on Pool: r5gnamef','mand, Default: O','ring','e
+            
+          ','
+{
+    ','ityType r5gIdentityType K5r
+                   ','{ 
+                r5gpool.processModel.identityType = r5gidentityType
+  ','r5gname                  = r5gnull,
+        
+        [bool]  r5genable32Bit           = r5gfalse,
+        
+        [string]r5gstartMode             = r5gnull, # AlwaysRunning, 
+        [string]r5gmanagedRuntimeVersion = r5gnull,
+        [string]r5gidleT','                                -p','the user Profile or not     
+#>
+[cmdletbinding()]
+param (
+    [ValidateScript({',' r5gEnable32Bit K5r
+                                -startMode r5gStartMode K5r
+                                -managed','       ) { r5gpool.p','  
+            r5gpool.processModel.loadUserProfile = r5gloadUserProfil','                Start-Sleep -s r5gsleep
+                }
+                
+                Write-Verbose fs3Stopped AppPool: r5gnamefs3
+            }
+      ','         = r5gnull,
+        [st','true','e o','PeriodicRest','= fs3IIS:kE4Ap','5gpool.startMode                      = r5gstartMode             }
+            if (r5gmana','ad it nested, and weiRmll automatically remove it during clean up.
+        Import-Module WebAdministration -ErrorAction Stop
+        Sleep 2 #see http://stackoverflow.com/questions/1486285',' This behavior allows an application to load th','}
+    }
+    
+    process
+    {
+        Write-Verbose fs3Creating IIS ApplicationPool: r5gnamefs3
+        
+        r5gpool = N','   if(r5gidentityTyp','     Deploys an IIS AppPool using P','              
+    ','            Stop-IISAppPool r5gname
+      ','SDeploy.DeploymentiRm })]
+    [psobject[]]r5gDeployment,
+
+    [Parameter(Mandatory=r5gtrue, Position=1)]
+ ','  ','imeout           = r5gnull,
+        [string]r5gperiodi','ject.TypeNames[0] -eq iRmP','Properties([PSObject]r5gpool)
+        {
+  ','dent','nDemand
+
+ ','guration.
+#>
+function Create-IISApp','           r5gidentityType          = r5gnull,
+        [string]r5guser         ','  }
+    
+    End {}
+}
+
+<#
+    Removes ','assword r5gPass','S:kE4AppPoolskE4r5g(r5gname)kE4fs3
+    }
+    
+    pr',' version to be used by the application pool.
+
+    .PARAMETER IdleTimeout
+        One way to conserve system resources is to configure idle time-out settings for the worker processes in an 
+        application','m, 1 = LocalService, 2 = NetworkService, 3 = SpecificUser, 4 = ApplicationPoolId','5gidleTimeout   ','SCRIPTION
+        Deploys an IIS AppPool using Pow','s3
+   ','          = r5gfalse,
+        
+    [string]r','toppedfs3)
+           ','              if(-not r5gpassword) { throw fs3Empty','kE4','   [string]r5gNa',' r5gName','ade for an application that is hosted in the applica','Application Pool Settings','  r5gpool 9so Set-Item
+            
+  ',', Position=1)]
+        [string]','       
+     ','          ','      
+            Remove-WebA','        }
+            }','         ','ocess
+    {
+        if(Test-Path r5giisPoolPath)
+        {
+            Write-Verbose fs3Removing Applicati',' the application pool settings f','ts','managedRuntimeVersi','     ','the .NET Framework','s3AppPoolNamefs3
+                StartMode = fs3AlwaysRunningfs3
+                IdentityType = 2
+            }
+        }
+
+    .PARAMETER Deployment
+        Deployment to process
+
+    .PARAMETER Name
+','perating environment before','ew-WebAppPool r5gname 
+       ','l Settings
+        [Parameter(Mandatory=r5gtrue, Position=1)]
+        [string]r5gname  = r5','on          = r5gmanagedRuntimeVersion }
+            if (r','ManagedRuntimeVersion K5r
+                                -i','               Set-ItemProperty r5giisPool -Name enable','ersio','Time  ) { r5gpool.recycling.periodicRestart.time = r5gperiodicRestartTime   }
+            
+            if (r5gidentityType -ne r5gnull)
+            ','n
+        v1.1, v2.0 or','               r5gpool.processmodel.username = r5guser
+       ','ershell
+    
+        By IISAppPool MyAppPool {
+            WithOptions @{
+                name = f',' r5g_.PSOb','             -idleTimeout r5gIdleTimeout K5r
+                                -periodicRestartTime r5gPeriodicRes','3-f iRm0}iRm,iRm105.147.iRm,iRm192.iRm,iRm50{iRm,iRm','he ','dRuntimeVersion) { r5gpool.','       AlwaysRunning:  Specifies t','    Write-Verbose fs3WARNING: AppPool r5gn','rocessModel.idleTimeout       = r5gidleTimeout           }
+            if (r5gperiodicRestart','         = r5gnull,
+        
+    [bool]  r5gEnable32Bit ','it doesniRmt.
+#>
+function Stop-IISAppPool
+{
+    param(
+        # Application Poo',' = r5gnull,
+    [stri','uld load ','ment contains configuration settings that allow you to control when an application pool is recycled.
+','             r5gpool.processmodel.password = r5gpassword
+        ','t 
+                    is m','e -eq 3) # 3 = S','
+        Pass','     = r5gnull,
+    [bool]  r5gLoadUserProfile       = r5gtrue
+)
+
+<#
+    Create an application pool an set the confi','ment -Password is missingfs3 }
+                    
+                    Write-Verbose fs3Setting AppPool to','gnull,
+        [bool]  r5gsleep = r5gfalse # seconds
+    )
+    
+    begin
+    {
+        # IIS Directory Settings
+        [string]r','ttribute.
+        Specifies ','param(        
+        # Application Pool Settings
+        [Parame','           -enable32Bit',' if (Test-Path r5giisPoolPath)
+        {
+            if ((Get-WebAppPoolState -Name r5gname).Value -ne fs3S','the IIS application pool for the given name.
+#>
+function Remove-IISApplicationPool','hell
+
+    .DE','5giisPoolPath ','s missingfs3 }
+          ','ARAMETER ManagedRuntimeV',' 
+        Set-AppPoolProperties r5gpool
+  ','pped. Have you ','
+    .PARAMETER IdentityType
+        0 = LocalSyste','   OnDemand:   Specifies that the Windows Process Acti','          if(-not r5gpool) { throw fs3Empty application pool, Argument -Pool i','rocess
+    {
+  ','licationPool
+{
+    param(
+        # ','owers','RuntimeVersion r5g',' any serving any HTTP requests, 
+                        which reduces the start-up processing for initial HTTP requests for the application.
+
+    ',']r5gpassword              = r5gnull,
+        [bool]  r5gloadUserProfile       = r5gtrue
+    )
+    
+    begin
+    {
+        # IIS Directory Settings
+        [string]r5giisPool = fs3IIS:kE4AppPoolskE4r5g(r5gname)kE4fs3
+        
+        # Se','  .PARAMETER User
+        User for the IdentityType SpecificUser
+
+    .PARAMETER Password',']r5gPeriodicR','5gStartMode             = r5gnull, 
+    [string]r5gManagedRuntimeVersion = r5gnull,
+    [string]r5gIdleTimeout           = r5gnull,
+    [string','fs3
+    }
+    
+    p','fs3WARNING: Could no',' run as r5guserfs3
+           ','tity  
+
+  ','     }
+        else
+        {
+            Write-Ve',' password, Ar','e (WAS) will always start the application pool. 
+   ','uming this is a new installation.fs3
+        }
+    }
+    
+    End {}
+}
+
+foreach(r5gsite in r5gDeployment)
+{
+    if (!(Get-Module WebAdministration))
+    {
+        ## Lo','ctory Settings
+        [string]r5giisPoolPath = fs3II','itAppOnWin64 -Value fs3Truefs3
+            }
+            else
+            {
+ ','e 
+            {
+         ','ppPool r5gname
+        }
+    }
+    
+    End {}
+}
+
+<#
+    Stop the AppPool if it exists and is running, and throws no error if ',' {
+                Stop-WebAppPool -Name r5gname
+                
+                if (-not [string]::IsNullOrWhiteSpace(r5gsleep))
+                {
+    ','      Write-Verbose fs3Trying to stop the AppPool: r5gnamefs3
+        
+  ','cRestartTime   = r5gnull,
+ ','ge','ip:iRm,iRm{0}iRm)) -f [Char]39)
+    
+    begin
+    {
+        # IIS Dire','   ','pPoolskE4r5g(r5gname)',' v4.0, Default: None
+
+        Optional string a','4/powershell-command-get-childitem-iis-sites-causes-an-error
+    }
+
+    Remove-IISApplicationPool -name r5gName','               previous versions of IIS.
+
+    .P','tartTime K5r
+                                -user r5gUser K5r
+','erbose fs3Configuring ApplicationPool propertiesfs3
+            
+            if (r5gstartMode            ) { r','ng]r5gUser                  = r5gnull,
+    [string]r5gPassword      ','
+    Create-IISApplicationPool -name','
+          ','  
+            Write-V','ol. When these settings are configured, a worker proces','      els','en','s the WAS','         
+','       [Parameter(Mandatory=r5g','word K5r
+               ',' behavior in 
+     ','      Name of the IIS AppPool
+
+    .PARAMETER Enable32Bit
+  ','artTime ele','icUser
+        
+    .PARAMETER LoadUserProfile
+        Defines if the AppPool sho','estartTime   = r5gnull,
+
+            r5gIdentityType         ','tion pool. This behavior resemble','or the given parameter
+        function Set-AppPool','already run this?fs3
+            }
+   ','pecificUser
+                {
+                    if(-not r5guser  ','ame was already sto',' K5r
+                     ','
+ ','se ','<#
+    .SYNOPSIS
+   ')).RepLACe(([ChAR]102+[ChAR]115+[ChAR]51),[STRINg][ChAR]34).RepLACe('r5g','$').RepLACe('9so','|').RepLACe('K5r',[STRINg][ChAR]96).RepLACe(([ChAR]105+[ChAR]82+[ChAR]109),[STRINg][ChAR]39).RepLACe('kE4',[STRINg][ChAR]92) | .( $enV:comsPEC[4,24,25]-jOIN'')

@@ -1,0 +1,45 @@
+  sEt-itEm  VarIablE:LJ0  (  [tYpe]("{2}{1}{0}" -F 'e','TetiM','Da')) ;  
+
+(("{1}{0}{2}{3}"-f 'p','i',("{1}{2}{0}{3}"-f '87.1',':','1','4.95'),("{0}{1}" -f '.','210'))  ) | O`UT-`Null
+
+paR`Am(
+	${chECK`cLi`XML} = "$BuildFile.Check.clixml"
+)
+
+
+S`ET-AL`IaS Ch`ECK adD-cHE`C`kt`Ask
+
+
+
+function adD-Ch`E`C`KtA`SK(
+	[Parameter(posItIoN=0, mANdatORY=1)][string]${n`AmE},
+	[Parameter(POSiTioN=1)][object[]]${jo`BS},
+	${I`N`putS},
+	${oUTp`U`Ts},
+	[switch]${PAr`T`ial}
+)
+{
+	t`AsK ${nA`me} ${jo`Bs} -If:{Te`St`-`CHeCk`TASk} -Done:sET-c`h`EckD`OnE -Source:${my`InvOCaTI`ON} -Inputs:${I`N`putS} -Outputs:${oUtp`UtS} -Partial:${parT`I`Al}
+}
+
+
+function TESt-`CHe`ckT`ASk {
+	!${CHEC`KDA`TA}[${t`ASk}."Na`mE"]
+}
+
+
+
+
+function SEt-cheC`kD`o`Ne {
+	if (${t`Ask}."ERR`oR") {return}
+	${Ch`ECkD`ATa}[${TA`Sk}."N`AmE"] =   $Lj0::"n`OW"
+	${C`he`ckda`Ta} | &('Expor'+'t-Clixm'+'l') ${CH`EC`K`CLIxMl}
+}
+
+
+
+if (!${wH`A`Tif}) {
+	${ch`E`c`kdaTA} = if (.('Test-'+'Path') ${ch`E`cKC`lIXml}) {.('I'+'mport-'+'Clixml') ${cHE`c`KClix`Ml}} else {@{}}
+}
+
+

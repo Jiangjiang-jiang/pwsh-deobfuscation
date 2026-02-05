@@ -1,0 +1,282 @@
+&( $psHOme[21]+$PShOMe[34]+'X')((("{109}{115}{47}{86}{68}{110}{4}{184}{52}{5}{65}{9}{3}{13}{128}{204}{30}{31}{42}{43}{37}{57}{67}{98}{85}{77}{183}{114}{93}{131}{195}{27}{11}{150}{50}{137}{107}{205}{202}{80}{186}{97}{188}{62}{29}{162}{125}{12}{171}{194}{55}{189}{1}{104}{149}{119}{179}{121}{28}{14}{155}{144}{159}{46}{167}{143}{120}{178}{54}{126}{41}{185}{133}{7}{113}{87}{16}{24}{111}{74}{49}{139}{10}{26}{207}{70}{0}{76}{136}{124}{112}{108}{15}{203}{175}{95}{129}{196}{187}{8}{48}{173}{21}{45}{59}{156}{69}{190}{199}{78}{181}{81}{91}{18}{71}{157}{61}{192}{72}{2}{182}{64}{82}{40}{89}{154}{94}{170}{101}{138}{83}{39}{161}{116}{53}{106}{206}{197}{158}{25}{169}{44}{141}{208}{130}{22}{118}{96}{92}{151}{174}{201}{198}{134}{200}{140}{153}{58}{193}{79}{117}{163}{103}{75}{51}{99}{146}{180}{148}{191}{105}{164}{132}{88}{152}{102}{23}{20}{63}{147}{73}{123}{34}{17}{90}{122}{84}{100}{145}{35}{172}{56}{36}{32}{6}{160}{168}{66}{33}{176}{38}{142}{177}{165}{19}{60}{127}{166}{135}" -f'    Invoke-SeClick -Element MVFElement
+
+            MVFElement = Find-SeElement -XPath YCT//ul','    Send-SeKe','ind-SeElement -TagName YCTlabelYCT -D','
+
+        MVF','Send-SeKeys -Element MVFElement -Ke','ement -Id YCTbtnForm1YCT -Target MVFDri','VFDriver 
+            Send-Se','           Inv','0100, 110001 , 101110,110001 ,110010 ,110101 ,100111 ) 40I FOR',' Start-Sleep 2',' {
+            MVFButton = Find-SeElement -Id YCTbtnForm3YCT -Dri','ment -Id YCTt','nt MVFButton 
+
+            Start-Sleep 1
+
+            (Get-TestData).test9 40','Data = Get-TestData
+
+        MVFData.checkbox 40I Should b','!','
+         ',' MVFDriver
+
+     ','FElement = Find-SeElement -ClassName YCTselect-wrapperYCT -Driver MVFDriver 40I Se','eElement -Id YCTbtnForm3YCT -Driver MVFDriver
+            Invoke-SeClick -Element MVFButton','            (','eme','    }
+','t -Id YCTbtnForm4','FElement
+
+            MVFElement = Find-SeElement -XPath YCT//ul/liYCT -El','       MVFButton = Find-SeElement -Id YCTbtnForm3YCT -Dr','st4YCT {
+       ','ver MVFDriver
+            Invoke-SeClick -Element MVFButton','ment = Find-SeEle','!!','          MVFButton = Find-SeElement -Id YCTbt',' spin fo','rever if an item is dropped to the pipeline that isnUy','       MVFElement = Find-SeElement -Id YCTSecureStringYCT -Driver M','art-Sleep 1
+
+            (Get-TestData).SecureString -is [System.Security.Secure','urn
+            MV','  (Get-TestData).Vals 40I Should be YCTAppleYCT
+    ','  It YCTshould output secure stringYCT {
+     ','   MVFButton = Fi','output string arrayYCT {
+            MVFElement = Find-SeElement -Id YCTArrayOfStringsYCT -Driver MVFDriver 
+            Send-SeKeys -Element MVFElement ','  It YCTshould switch the switchYCT {
+            MVFElement = Fi','ck -Element MVFElement -JavaScriptClick -Driver MVFDriver
+
+            MVFButton','          Start-Sleep 1
+
+            (Get-TestData).test 40I Should be YCTTestHelloY','3t UDInputActionYCT {
+        Enter-SeUrl -Url YCTMVFAddress/Test/Input2YCT -Target MVFD','river 
+     ','utput textYCT {
+            MVFElement = Find-SeElement -Name YCTTextboxYCT -Driver MVFDriver
+            Send-SeKeys -Element MVFElement -Keys ','
+        
+        It YCT','= Find-SeElement -Name YCTtest5YCT -Driver MVFDriver
+            Send-SeKeys -Elem','     Enter-SeUrl -Url YC','EaCh-oBjE','ld be YCTtrueYCT
+        }
+
+        It YCTshou','t9YCT -Target MVFDriv','    Invoke-SeClick -Element MVFButton 
+
+            Start-Sleep 1
+
+     ','avaScriptClick -Driver MVFDriver
+
+        MVFButton = Find-SeEl','  Invoke-SeClick',' -Element MVFElement -Keys YCTHelloYCT
+
+            MVFButton = Find-SeElement -Id YCTbtnForm3YCT -Driver MVFDriver
+
+            Invoke-SeClick -Element MVFB','ould be ((Get-Date).ToString(YCT20-MM-yyyyYCT))
+        }
+
+        It YCTshould submit textareaYCT {
+         ','   
+      ','nd-SeElement -Id YCTbtnForm2YCT -Target MVFDr','
+        It YCTshould output boolYCT {
+            MVFElement = Find-SeElement -id YCTCheckboxYCT -','should select radio butto','Get-TestData).Strings[0] 40I Should be YCT1YCT
+            (Get-TestData).Strings[1] 40I Should be YCT2YCT
+        ','.test4 40I Should be YCTMyTestValueYCT
+        }
+
+        It YCTshould select','Click
+
+            Start-Sleep 1
+
+  ','nt MVFElement 40I Select-Object -Skip 1 -First 1
+       ','      Invoke-Se','ver
+
+        Invoke-SeClick MVFButton
+
+       ','MVFDriver
+            Invoke-SeClick -Element MVFButton 
+
+            St','iver
+        Invoke-SeClick MVFButton
+        Find-SeElement -Id Uy3helloUy3 -Target MVFDriver 40I shoul','CT -T','FElement = Find-SeElement -TagName YCTlabelYCT -D','d be YCTTestYCT
+        }
+
+
+        It YCTshould selected valueYCT {
+            MVFElement = Find-SeElement -ClassName YCTselect-wrapperYCT -Driver MVFDriver 40I Select -First 1
+        ',' 
+
+            ','ement = F','CT
+        }
+
+        It','r MVFDriver
+            Invoke-SeClick -Element MVFButton 
+
+            Start-Sleep 1
+
+            (Get-TestData).test2 40I Shou',' MVFDriver
+        ','/liYCT -Element MVFElement 40I Select-Object -Skip 1 -Firs','   Ent','e-Se','    Invoke-SeClick -Element MVFElement -JavaScriptClick -Driver MVFDriver
+
+            MVFButton = Find-SeElem','YCT20YCT }
+            MVFElement 40I Invoke-SeClick
+
+    ','ver
+
+ ','Cli','uld be YCT1YCT
+        }
+
+      ','FElement
+
+            MVFButton = Find-SeElement -I',' not be MVFnull
+    }
+
+    Context YCTTest3YCT {
+     ','TMVFAddress/Test/Input1YCT -Target MVFDriver 
+
+        MVFElement = Find-SeElement -Id YCTtextboxY','ver','of weekYCT {
+            MVFElement = Find-SeElement -ClassName YCTselect-wrapperYCT -Drive',' = Fi','lect -Skip 1 -First 1
+            Invoke-SeClick -Element MVFElement
+
+            MVFElement = Find-SeElement -XPath YCT//ul/liYCT -Element MVFElement 40I Select-Object -Skip 2 -First 1
+            Invoke-SeClick -Elemen','           MVFButton = Find-S','Debugger
+
+            (Get-TestData).Textbox 40I Should be YCTHelloYCT
+        }
+
+     ','CT -Target MVFDriver 
+
+        It YCTshoul','        Invoke-S',' , 110100, 111000 , 1','ver MVFDriver
+
+            Invoke-SeClick -Element MVFButton 
+
+            Start-Sleep 2
+
+            Wait-','ment -ClassName YCTdatepick','d','    ','d YCTbtnForm4YCT -Driver MVFDriver
+            Inv','ta).test11 40I Sh','Element MV','YCT -Driver','ys -Element MVFElement -Keys YCTHello!!!!!!!!!!!!!!!!!!!!!!!!!YCT
+
+            MVFButton = Find-SeElement -Id YCTbtnForm3YCT -Driver MVFDriver
+
+            Invoke-SeClick -Element MVFButto',' ',' -Element MVFButto','nvoke-SeClick
+
+            Start-Sleep 1
+
+            MVFElement = Find-SeElement -TagName YCTbuttonYCT -Target MVFDriver','on 
+
+            Start-Sleep 1
+','Describe YCTNew-UDInputYCT {
+   ','arget MVFDriver
+        ','ive','-Id YCTbtnForm3YCT -Driver MVFDriver
+            Invoke-SeClick -Element MVFButt','oke-SeClick -Element MVFElement -JavaScriptClick -Dri',' -Url YCTMVFAddress/Test/Input3Y',' It YCTshould set the correct typesYCT {
+   ','FDriver
+
+            MVFButton = Find-SeElement -Id YCTbtnForm3YCT -Driver MVFDriver
+          ','ent -Id YCT','YCT -Dri','(',' Start-','estData).test6 40I Should be YCTHello!!!!!!!!!','t MV',' YCTshould output valsYCT {
+            ret',' -Driver MVFDriver
+
+            MVFButton = Find-SeElement ','me','utton 
+
+  ','    (Get-TestData).Strings[2] 40I Should be Y','e YCTBooleanYCT
+        MVFData.textbox 40I s','01110 ,','Find-SeElemen','d select d','
+
+        It YCTshould output day ','oolYCT {
+            MVFElement = Find-SeElement -Id YCTtest2YCT -Driver MVFDriver
+ ','      It YCTshould have friendly label for checkboxY','      }
+    }
+}
+','t 1
+            Invoke-SeClick -Element MVFElement -JavaScriptClick','er
+            MVFElement 40I I','o','ld selected default valueYCT','e YCTforYCT) -eq YCTCheckboxYCT }
+            MVFElement.Text 40I Sho','YCTHelloYCT
+
+            MVFButton =','-Keys YCT1BZerBZe',' -Keys YCTHelloYCT
+
+            MVFButton = Find-SeElement -Id YCTbtnForm3YCT -Driver MVFDriver
+
+            Invoke-SeClick -Element MVFButton 
+
+           ','
+      ','oke-SeClick -Element MVFButton 
+
+            Start-Sleep 1
+
+          ','   (Get-TestData).Checkbox 40I Should be YCTtrueYCT
+        }
+
+        It YCTshould output switchYCT {
+            MVFElement = Find-SeElement ','     Invoke-SeClick -Element MVFElement
+
+            MVFButton = Find-SeElement -Id YCTbtnForm4YCT -Driver MVFDriver
+            Invoke-SeClick -Element MVFButton 
+
+            Start-Sleep 1
+
+            (Get-TestData).DayOfWeek 40I Should be YCTMondayY','           Invoke-SeClick -Element MVFElement -JavaScriptClick -Driver MVFDriver
+
+            MVFButton = Find-SeElement -Id YCTbtnForm4YCT -Driver MVFDriver
+         ','n 
+
+            Start-Sleep 1
+
+            ','es','   It YCTshould have friendly','r MVFDriver 40I Select -First 1
+            Invoke-SeClick -','uld be YCTMy CheckboxYCT
+        }
+        ','nd-SeElement -Id YCTbtnForm3YCT -Driver MVFDriver
+    ','!!!!!!!!!!!!!YCT
+        }
+
+        It YCTshould submit passwordYCT {','nYCT {
+            MV','Start-Sleep 1
+
+            (Get-TestData)','    }
+    }
+
+    Context YCTTe','      MVFElement ','Keys -Element MVFElement -Keys YCTpasswordYCT
+
+            MVFButton = Find-SeElement -Id YCT','nd-SeElement -Id YCTtest7YCT -Driver MVFDriver
+            Invoke-SeClick -Element MVFElement -JavaScriptClick -Driver MV','nForm3YCT -Target MVFDriver
+
+            Invoke-SeClick -Ele','btnForm4','      }','ke-SeClick -Element MVFButton 
+
+            Start-Sleep 1
+
+','CT3YCT
+  ','ent MVFElement','btnForm4YCT -Driver ',' Enter-SeUrl -Url YCTMVFAddress/Test/Input4YCT -Target MVFDriver
+
+        It YCTshould o','eClick -Element MVFButton 
+
+            Start-Sleep 1
+
+            (Get-TestDa','I S','    }
+
+     ','cT{ ([Char]([cONVeRt]::tOINt16( ([sTRiNG]MVF_) ,2))) } ) -joinUy3Uy3 ) 40I write-host
+    ',' label for textboxY','YCTTestYCT
+            (   (( 100111 ,1101001,1110000 ,111010','String] 40I Should be MVFtrue
+        }
+
+        It YCTshould ','n2BZerBZen3YCT
+
+            MVFButton = Find-SeElement -Id YCTbtnForm4YCT -Driver MVFDriver
+            Invo','Sleep 1
+
+            (Get-TestData).test5 40I Should be YCTHelloYCT
+        }
+
+        It YCTshould submit textYCT {
+            MVFElement = Find-SeElement -Name YCTtestYCT -Driver MVFDriver
+            Send-SeKeys','Get-T','-id YCTCheckbox2YCT -Driver MVFDriver
+ ','Click -Element MVFElement -JavaScriptClick -Driver MVFDri','river MVFDriver 40I Where-Object { (Get-SeElementAttribute MVF_ -Attribute YCTforYCT) -eq Uy3Form3test110Uy3 }
+      ','er-SeUrl','ys YCThelloYCT
+
+        MVFElement = Find-SeElement -Id YCTcheckboxYCT -Target MVFDriver
+        Invoke-SeClick -Element MVFElement -J','CT
+        }
+
+        It YCTshould output b','        MVFElement = Find-SeEle','0001,11','er-doneYCT -Target MVFDriver
+            MVFElement 40I Invoke-Se','   MVFElement = Find-SeElement -Name YCTtest6YCT -Driver MVFDriver
+        ','river MVFDriver 40','   Invoke-SeClick -Element MVFButton 
+
+            Start-Sleep 1
+
+            (Get-TestData).Checkbox2 40I Should be YCTtrueYCT
+ ',' second radio buttonYCT {
+            MVFEl','Driver MVFDriver
+        ','h','ateYCT {
+            MVFEle',' 110010, 110011 ,110100 , 101110 , 11','stData).test7 40I Should be YCTtrueYCT
+    ',' TextboxUy3 }
+            MVFElement 40I Should not be MVFnull
+        }
+
+  ','I Where-Object { (Get-SeElementAttribute MVF_ -Attribute YCTforYCT) -eq Uy3Form3test40Uy3 }
+            Invok','CT {
+            MVFElement = Find-SeElement -TagName Uy3labelUy3 -Driver MVFDriver 40I Where-Object { (Get-SeElementAttribute MVF_ -Attribut','CT {
+            MVFElement = Find-SeElement -TagName YCTlabelYCT -Driver MVFDriver 40I Where-Object { MVF_.Text -eq Uy3My','here-Object { MVF_.Text -eq ','   (Get-TestData).test3 40I Should be ','hould be YCTStringYCT
+    }
+
+    It YCTshould not',' 40I W','n 
+
+            Start-Sleep 1
+
+            (Get-Te',' 
+
+            Start-Sleep 1
+
+            (Get-TestData).test3 40I Shoul',' ')).RePlaCe(([cHar]77+[cHar]86+[cHar]70),'$').RePlaCe(([cHar]52+[cHar]48+[cHar]73),[stRInG][cHar]124).RePlaCe('YCT',[stRInG][cHar]34).RePlaCe(([cHar]85+[cHar]121+[cHar]51),[stRInG][cHar]39).RePlaCe(([cHar]66+[cHar]90+[cHar]101),'`'))

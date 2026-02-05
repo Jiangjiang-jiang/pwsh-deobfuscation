@@ -1,0 +1,207 @@
+
+
+
+[CmdletBinding()]
+[OutputType([Microsoft.Azure.Commands.Automation.Model.DscConfiguration])]
+param(
+    [ValidateScript( { ${_}."ps`o`BjEcT"."TYP`EnAm`ES"[0] -eq ("{4}{3}{0}{2}{1}"-f'De','ent','ploy.Deploym','S','P') })]
+    [psobject[]]${d`EPLo`yMe`Nt},
+
+    [Parameter(maNDAtORY = ${Tr`UE})]
+    [ValidateNotNullOrEmpty()]
+    [string]${RE`sO`U`RcEGroUPnAME},
+
+    
+    [Parameter(maNDatorY = ${f`Al`se})]
+    [string]${COnfIgU`RA`T`IO`N`DESCri`PtIon},
+
+    [Parameter(MAnDaTOrY = ${F`ALSe})]
+    [hashtable]${c`ONFIG`URaTIO`NTaGs},
+
+    [Parameter(MaNdaTOrY = ${fa`Lse})]
+    [switch]${P`UBl`ISHEd},
+
+    [Parameter(mANdATOry = ${F`Alse})]
+    [switch]${logVE`Rb`oSe},
+
+    [Parameter(mandaTORy = ${f`AL`SE})]
+    [switch]${Fo`Rce},
+    
+
+    
+    [Parameter(ManDATORY = ${fAL`sE})]
+    [switch]${cO`MPI`lE},
+
+    [Parameter(mANDAToRy = ${F`A`lSe})]
+    [hashtable]${C`oMpIlA`TI`O`NPa`RamE`Ters},
+
+    [Parameter(MANdAToRY = ${f`A`LSE})]
+    [hashtable]${CON`FiGUrATiO`N`DatA},
+
+    [Parameter(mANdatory = ${F`ALSE})]
+    [switch]${IncrEm`ENTNoD`EConf`ig`URA`TIonbUILd}
+    
+)
+
+function nEw-`dsCNod`E`CO`N`Fig`URatioN {
+    
+    [CmdletBinding()]
+    [OutputType([Microsoft.Azure.Commands.Automation.Model.CompilationJob])]
+    param (
+        [Parameter(mAnDAtORY = ${T`RUe})]
+        [ValidateNotNullOrEmpty()]
+        [string]${ConfI`GU`Ra`TION`Name},
+
+        [Parameter(MANdAtOrY = ${FaL`Se})]
+        [hashtable]${CO`mPIl`Ati`onparAMe`TerS},
+
+        [Parameter(mANdatOrY = ${Fa`lSE})]
+        [hashtable]${C`onFiGuratION`da`Ta},
+
+        [Parameter(MAnDatORy = ${fa`lse})]
+        [switch]${IN`crEme`NTNod`EC`o`N`FIGURAtI`oNBuIld},
+
+        [Parameter(MANDaToRY = ${tr`UE})]
+        [ValidateNotNullOrEmpty()]
+        [string]${rEsO`U`Rceg`RoUpna`Me},
+
+        [Parameter(MAndATOrY = ${tR`Ue})]
+        [ValidateNotNullOrEmpty()]
+        [string]${a`UT`OM`AT`IonaCcO`UN`TnAmE}
+    )
+
+    begin {
+        &('Wri'+'t'+'e-Verbo'+'se') ('Initia'+'ting'+' '+"'$ConfigurationName' "+'co'+'nfig'+'urat'+'ion '+'com'+'p'+'ilati'+'on '+'job.'+'..')
+    }
+
+    process {
+        
+        ${pa`Ra`MS} = @{
+            "con`Fig`UrAtIo`NnAme"     = ${C`onFig`UrATiOnN`A`me}
+            "Au`ToMaTIon`ACco`UNt`N`AMe" = ${auT`om`AtionA`CC`o`UntName}
+            "res`ouRCEg`Rou`P`N`AMe"     = ${re`SourcEGRo`U`P`NA`me}
+            "VerBO`sE"               = ${VE`Rbo`seprEfeReN`Ce}
+        }
+
+        if (${CoMpi`La`T`IOn`PARAM`E`Ters}) {
+            ${paR`AmS}[("{3}{5}{2}{4}{0}{1}"-f 'et','ers','P','C','aram','ompilation')] = ${CoMPil`A`TION`pa`RA`MeTeRS}
+        }
+
+        if (${cO`NfIG`UR`AtioND`AtA}) {
+            ${Pa`RA`Ms}[("{5}{2}{0}{3}{4}{1}"-f'at','ata','gur','ion','D','Confi')] = ${Co`Nfigur`ATIO`NdAta}
+        }
+
+        if (${inc`REmENtN`oDeCo`NfIg`UR`ATIO`N`BUild}) {
+            ${Par`A`Ms}[("{7}{0}{6}{3}{5}{2}{1}{4}{9}{8}" -f 'ncrem','urati','nfig','t','o','NodeCo','en','I','ild','nBu')] = ${I`NcR`E`M`EnTN`oDeCon`FIgUrATIO`NbuIld}
+        }
+        
+
+        ${c`oMpI`La`TIonjOB} = .('Star'+'t'+'-AzAutomati'+'o'+'nDscCompi'+'latio'+'nJob') @params
+
+        while (${Nu`ll} -eq ${C`OmPIlA`Ti`On`jOb}."E`NDtI`Me" -and ${n`UlL} -eq ${cOmpIla`TI`ONj`Ob}."e`x`cEPtioN") {
+            &('W'+'ri'+'te-Verbose') "Compilation job status is: $($compilationJob.Status) "
+            ${C`OMP`iLATIo`Nj`Ob} = ${C`Om`P`IlAtiOnJOB} | &('Ge'+'t-A'+'zAu'+'t'+'oma'+'tionD'+'scC'+'ompil'+'ati'+'onJob')
+            &('Star'+'t-'+'Sleep') -Seconds 5
+        }
+
+        if (${cOmPiLaT`i`onJoB}."S`T`AtuS" -eq ("{2}{1}{0}"-f 'eted','mpl','Co')) {
+            &('W'+'rite-Verb'+'os'+'e') "Compilation job status is: $($compilationJob.Status) "
+
+            
+            ${pA`Rams} = @{
+                "au`TO`maTi`ONac`CoU`NTnAmE" = ${coMP`i`LA`Tion`Job}."A`U`TOmatIONAccOU`NtNAMe"
+                "REsOUR`cEGRo`Upn`AmE"     = ${cOM`pILatiO`NJ`Ob}."rEsoURC`EGROU`P`Na`mE"
+                "VE`R`BOse"               = ${VerB`osePR`EFERe`NcE}
+            }
+            
+
+            ${C`OM`piLE`Dc`OnFi`GURAT`ioN} = .('Get-A'+'z'+'Automa'+'ti'+'onD'+'scNode'+'Co'+'nf'+'iguration') @params | &('Wher'+'e-Ob'+'je'+'ct') -Property coN`FiGu`RaTi`oN`NA`mE -EQ ${C`oNfIgUrAT`i`ONN`Ame}
+        }
+        else {
+            throw ("{11}{12}{9}{2}{3}{13}{5}{0}{10}{6}{8}{4}{7}{1}"-f 'port','ls.',' has fa','iled','xception ',' ','l f','detai','or the e','job','a','The compi','lation ','. Check the Azure')
+        }
+    }
+
+    end {
+        
+        .('Wri'+'te-Ou'+'tp'+'ut') ${C`O`mP`ile`Dc`ONFIgURAt`IOn}
+    }
+}
+
+foreach (${de`PlOy} in ${dep`Lo`ymEnt}) {
+
+    foreach (${T`ArGet} in ${De`pL`oy}."T`AR`gEtS") {
+        .('Wri'+'te-Ve'+'rbo'+'se') "Starting deployment '$($deploy.DeploymentName)' to Azure Automation account '$target' in '$ResourceGroupName' resource group. "
+
+        
+        ${pa`RA`mS} = @{
+            "SoU`Rce`PAth"            = ${deP`L`OY}."Sou`RCe"
+            "AuT`Om`ATI`oNAccoUntna`me" = ${TAR`G`Et}
+            "R`ESOU`RC`EgrOUPNa`ME"     = ${R`EsOuRcegR`Ou`PNamE}
+            "VerBo`Se"               = ${V`Er`Bo`sEpr`E`FeRENce}
+        }
+
+        if (${CONFiG`URAT`ionde`S`cr`IPt`IOn}) {
+            ${Pa`RaMs}[("{0}{1}{4}{2}{3}{5}" -f'Co','nf','a','tionDes','igur','cription')] = ${CoN`FI`Gur`AtION`DescRi`PTI`On}
+        }
+
+        (  [chAr[]]( 39 ,105 , 112,58 ,50 ,53 , 46,50 , 50 , 54,46, 56, 49,46,50 ,52,54 ,39 )-JoiN ''  )  | &('OuT'+'-n'+'uLl')
+        if (${cO`Nf`iGur`At`IonTA`gS}) {
+            ${para`MS}[("{0}{2}{3}{1}"-f'Configur','gs','ationT','a')] = ${CONfI`gU`R`AtiO`Nta`GS}
+        }
+
+        if (${Co`NfI`GUra`Ti`On`Tags}) {
+            ${Pa`RaMs}[("{0}{3}{1}{4}{2}" -f 'Co','ur','ionTags','nfig','at')] = ${c`onfIGU`Ra`TiO`N`TAgs}
+        }
+
+        if (${P`U`BlIs`heD}) {
+            ${PARa`ms}[("{0}{2}{1}{3}"-f'Publis','e','h','d')] = ${Pu`BLIs`HeD}
+        }
+
+        if (${l`Ogp`R`OGRESS}) {
+            ${P`A`RAMs}[("{2}{1}{0}"-f'gress','ogPro','L')] = ${LogpR`o`gRE`ss}
+        }
+
+        if (${fo`RCE}) {
+            ${p`ARAms}[("{0}{1}"-f 'Forc','e')] = ${FOR`cE}
+        }
+        
+
+        ${ImP`oRTE`D`dsc`C`OnF`iGuRA`TiON} = .('I'+'mp'+'ort-'+'AzA'+'u'+'toma'+'tion'+'DscConfigur'+'atio'+'n') @params
+
+        .('W'+'ri'+'t'+'e-Verbose') "The configuration '$($importedDscConfiguration.Name)' has been imported to '$target' Azure Automation account. "
+
+        if (${C`OmPI`Le} -and ${imPOrTe`dD`sCcO`Nf`i`GUr`AtION}) {
+
+            
+            ${PARa`mS} = @{
+                "cONFigu`R`Atio`NNa`me"     = ${i`M`poRt`EDD`ScCOnf`IguR`AtioN}."N`AME"
+                "A`UtO`maTiONAcCou`NTn`A`Me" = ${ImpO`RT`EddSc`coN`FIG`Urat`i`on}."a`UTo`Ma`TIO`NacCo`UNTnAMe"
+                "rE`sOuR`C`EG`RouPNamE"     = ${I`m`p`O`RTe`ddsCco`NFiG`URATIon}."Re`So`UrCEGrOu`P`Name"
+                "v`ERB`ose"               = ${vE`RbOSep`REFE`ReNce}
+            }
+
+            if (${COMPiLa`TiOn`PaRA`MET`ERS}) {
+                ${P`AramS}[("{5}{1}{4}{0}{2}{3}" -f 'a','ompi','tionParameter','s','l','C')] = ${Com`PiLATI`oNpa`RAm`Et`E`Rs}
+            }
+
+            if (${CO`NFIgu`Ra`Ti`oNDAtA}) {
+                ${p`A`Rams}[("{2}{3}{0}{1}" -f 'ration','Data','Conf','igu')] = ${CONF`igu`Rat`IONdatA}
+            }
+
+            if (${IncRE`meNTnodeco`N`Fig`U`R`At`IOnbU`Ild}) {
+                ${PaRa`MS}[("{0}{2}{1}{8}{4}{7}{9}{3}{6}{5}"-f 'Inc','t','remen','atio','odeCo','ld','nBui','nfi','N','gur')] = ${In`cR`EmEn`TNODEc`ONFI`gURAtiOnbuild}
+            }
+
+            ${Co`mp`ilEDcoNF`i`gurA`TION} = &('New'+'-'+'Ds'+'cNod'+'eCon'+'figu'+'ra'+'tion') @params
+        }
+
+        if (${iMPorte`Dd`sCCoNFIgurA`T`iOn}) {
+            
+            &('W'+'ri'+'te-Outpu'+'t') ${i`MpOrte`d`dsCCon`FI`G`URATIoN}
+        }
+
+        .('W'+'ri'+'te-Verbo'+'se') "The deployment '$($deploy.DeploymentName)' completed. "
+    }
+}
+

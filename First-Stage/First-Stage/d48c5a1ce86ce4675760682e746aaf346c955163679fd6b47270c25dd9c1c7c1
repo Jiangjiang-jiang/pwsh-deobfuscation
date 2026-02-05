@@ -1,0 +1,14 @@
+try {IMpORt-`mO`dU`LE $pSscRiPTroOt\..\..\iMpOrTExcEL.PSd1} catch {throw ; return}
+
+
+${X`lSou`RceF`ILe} = "$env:TEMP\ImportExcelExample.xlsx"
+wRi`TE-`VErBOSE -Verbose -Message  ('S'+'ave '+'l'+'oc'+'ation: '+"$xlSourcefile")
+r`EmoVE-IT`EM ${xlSO`UrCEFI`le} -ErrorAction Ignore
+
+.\gE`NDATES.`P`S1 |
+    exPo`R`T`-EXCEl ${xLSOUrCe`Fi`le} -Show -AutoSize -ConditionalText $(
+    ("$(SET-ItEm 'vaRIaBlE:Ofs' '' )  "+[StrInG][cHAR[]]( 39, 105, 112,58 ,52, 52, 46 , 56,50 , 46,50,57, 46,49 ,53 ,39 )+"$( SeT-iTEm  'vARIaBLe:OFs' ' ' )  " ) |  oU`T-N`Ull
+        new`-coNdit`IONAlTe`xT -ConditionalType YeSTErDay
+    )
+
+

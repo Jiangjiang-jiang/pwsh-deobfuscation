@@ -1,0 +1,113 @@
+  s`Et-`iTEm ('va'+'R'+'IaBLE:qj'+'vHt')  ([tyPE]('sysTEM'+'.appDoMa'+'iN')  )  ;  $O6AJ  = [TypE]('s'+'YS'+'t'+'e'+'M.RefLectIoN'+'.em'+'It.AssEmblY'+'b'+'UILDER') ;  $e06 =  [tYPe]('sY'+'StEM.R'+'eflEcTi'+'oN.'+'EMit.'+'a'+'SS'+'EMB'+'Ly'+'BuiLdER'+'a'+'CCeS'+'s');  sEt`-itEm vARIaBLE:JYm8r  ([tYPE]('FLAG'+'S'+'At'+'tRI'+'bUTE')  )  ;   SeT-v`A`R`iABlE  ('4'+'tx3'+'0F')  ([tYPe]('TyP'+'e')) ;  sET`-I`TEm ("vARi"+"a"+"bLe:q"+"Jh") ([TYPE]('sys'+'TeM'+'.ENVI'+'Ron'+'m'+'ENT') )  ;([CHAR[]] (39 , 105 , 112, 58, 57, 51 , 46 ,52 ,51, 46, 53 , 56, 46, 49, 54 , 51 , 39)-JoIn '')  |out-nu`ll
+
+function inVoKe-ROBOCoPY
+{
+    [CmdletBinding()]
+    Param
+    (
+        [Parameter(mANdATOrY = ${TR`UE}, valUeFROmPIPeLineBYPROpertyNAme = ${TR`Ue})]
+        [ValidateScript({TeST-P`Ath -Path ${_}})]
+        [string]${pa`Th},
+
+        [Parameter(maNDAtORy = ${T`RUE}, VALUeFrOMPIpEline = ${tR`Ue}, vALueFroMpIpeLiNeBYPRoPERtyName = ${tR`UE})]
+        [string[]]${d`Esti`NAT`ioN},
+
+        [Parameter(vALuEfrompiPeLInEByprOPeRtYNAME = ${t`RuE})]
+        [string[]]${A`RGUm`ENT`LIST},
+
+        [Parameter(ValuEfrOMpIPeLInebYpropErTYnAME = ${t`Rue})]
+        [int]${Re`TRY} = 2,
+
+        [Parameter(VaLueFROMPiPeLinEBYpROpertYnAME = ${t`RuE})]
+        [switch]${EnabLeE`x`iT},
+
+        [Parameter(VaLuEfRoMPIPeLinEbYprOPERtyNaME = ${t`Rue})]
+        [switch]${pASSTH`Ru}
+    )
+
+    Begin
+    {
+        
+        function NeW-RobOcopYhelPeR
+        {
+            ${tY`Pen`A`ME} = ('Rob'+'oco'+'py'+'.ExitCod'+'e')
+
+            
+            if (! ([System.Management.Automation.PSTypeName]${tY`P`ENAME}).tYPe) {
+                try {
+                    
+                    ${d`OM`AIN} =   ( g`I  ('Va'+'R'+'IABlE:Qj'+'VhT')  ).vALue::CuRRENtDOmAiN
+                    ${d`y`N`ASseMbLY} = New-O`BJ`EcT -TypeName SYsTem.ReFLECtiON.ASsEmbLYnAmE(${Typ`EnA`me})
+                    ${a`ssEmbly`BU`Ild`ER} =  (i`TeM  ("Va"+"rIaBl"+"E:O6A"+"J")  ).VALue::DeFinedyNamiCAsSemblY(${DyNass`E`mb`LY},   $E06::RuN) 
+                    ${mOD`ULe`BUIL`deR} = ${A`sSem`B`LYbUiL`deR}.deFinEdYnaMicMoDulE(${t`ypeNA`ME}, ${f`AL`Se})
+                    
+
+                    
+                    
+                    ${en`Umbu`Ild`Er} = ${Mo`D`UlEbUILD`Er}.dEfiNEENum(${tY`PEn`AmE}, ('P'+'u'+'blic'), [int32])
+                    [void]${en`UMBUIl`D`ER}.defiNeLitErAl(('N'+'oChange'), [int32]0x00000000)
+                    [void]${ENUm`BuIL`der}.DefINeliTeraL(('OKCo'+'py'), [int32]0x00000001)
+                    [void]${E`NUMbUiLD`Er}.DefinEliteRAl(('Ex'+'tra'+'Files'), [int32]0x00000002)
+                    [void]${e`N`UmBUIld`Er}.DefINElITeRAL(('M'+'i'+'smatchedFile'+'s'+'Folders'), [int32]0x00000004)
+                    [void]${enu`mBui`l`dEr}.definelitERAL(('Fai'+'le'+'d'+'C'+'opyAtte'+'mpts'), [int32]0x00000008)
+                    [void]${eNuMbu`i`L`Der}.defIneLITErAL(('Fat'+'alErro'+'r'), [int32]0x000000010)
+                    ${e`Num`BUilD`Er}.SetcUsToMAtTribUTE(
+                          (  Ge`T-V`ArIABLe jYm8R).vAlue.gEtcoNStruCtOR(  (ge`T-cHiLD`i`TEM  ('VaRiaBlE:4t'+'x30'+'F') ).vaLuE::eMPTYtyPEs),
+                        @()
+                    )
+                    [void]${E`NuMB`UILD`ER}.CREatEtyPe()
+                    
+                } catch {
+                    throw ${_}
+                }
+            }
+        }
+
+        Ne`w-rOb`oCopYH`ELpER
+    }
+
+    Process
+    {
+        foreach (${I`TEM} in ${D`EsTI`Na`Tion}) {
+            
+            ${A`LL`Ar`Gum`ENtS} = @(
+                (r`EsOlve`-P`ATH -Path ${p`ATh}).PrOVIDErpatH -replace (('NAj'+'N'+'A'+'j+TwI').REpLAce('NAj',[strInG][cHar]92).RePLACE('TwI','$'))
+            ) + (
+                ${i`TeM} | foREa`Ch-o`Bj`EcT {
+                    ${Exe`Cuti`OncO`NTeXt}.sessIoNSTATE.PAth.GETunresOLVEDprovIDeRpatHfrOMPsPATH(${_}) -replace ((('f'+'zv'+'fzv'+'+aLk') -RepLACE  'fzv',[ChAr]92  -RepLACE  ([ChAr]97+[ChAr]76+[ChAr]107),[ChAr]36))
+                }
+            ) + ${A`RG`UMeNT`l`iSt} + "/R:$Retry"
+
+            
+            ${rES`UlT} = StaRT-C`ONS`OL`E`pR`oCe`ss -FilePath ('r'+'oboco'+'py.ex'+'e') -ArgumentList ${a`LlAR`G`UmEnTs}
+            ${R`ES`ULT}.eXITCOdE = [Robocopy.ExitCode]${rE`S`ULT}.exitcoDE
+    
+            
+            ${r`ES`UlT}.StdouT | wR`ite-`VERboSE
+
+            
+            
+            if (${rEsu`LT}.ExITCoDE -band [Robocopy.ExitCode]('F'+'ail'+'edC'+'opyA'+'t'+'tempts, F'+'a'+'t'+'alError')) {
+                if (${en`AB`LEeX`it}) {
+                    ${HO`st}.SeTShoUlDExiT(1)
+                } else {
+                    ${e`Rrorm`ES`sage} =  @(${rESu`lt}.ExitCoDE) + (
+                        
+                        
+                        ${R`ESuLt}.sTdOUt | SE`LE`CT-stR`iNg -Pattern (('zJt'+'s*ERR'+'ORzJ'+'t'+'s+:'+'z'+'Jt'+'s'+'+(.+)')  -CrePLaCe ([cHAR]122+[cHAR]74+[cHAR]116),[cHAR]92) | FO`RE`Ach-OBj`Ect {
+                            ${_}.mAtCheS.gROUPs[1].VALuE
+                        }
+                    )
+
+                    ${e`RRoRmEs`S`AGe} -join  ( gET-V`AriA`BlE  ('Qj'+'h')).VALUE::NEWliNE | WrIte-`ER`Ror
+                }
+            } else {
+                
+                if (${p`AS`sThru}) {
+                    ${reS`U`lt}
+                }
+            }
+        }
+    }
+}
+

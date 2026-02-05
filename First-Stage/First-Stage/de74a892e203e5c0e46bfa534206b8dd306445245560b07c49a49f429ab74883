@@ -1,0 +1,48 @@
+.('R'+'em'+'o'+'ve-Modul'+'e') ps`DEp`lOY -ErrorAction SILeN`Tly`CON`TInUe
+.('I'+'mport-Mod'+'ul'+'e') $pSSc`RI`Ptr`O`OT`\..\..\Ps`DEPL`Oy\`PS`De`p`l`oY.PSD1
+if(-not ${ENV:bhp`R`ojECT`PaTH})
+{
+    .('Se'+'t'+'-Bui'+'l'+'dEn'+'vironmen'+'t') -Path $`PSscr`IPtRoOT\..`\.. -Force
+}
+
+.('In'+'Modu'+'leSc'+'ope') ("{2}{0}{1}"-f 'SDepl','oy','P') {
+    ${PSvE`Rs`ion} = ${P`SV`Ersio`NTAb`le}."ps`Vers`iOn"."MAj`Or"
+    ${pr`oJeCt`R`OoT} = ${EnV`:B`h`ProjEctPA`TH}
+    
+    ${Ver`B`oSE} = @{}
+    if(${eNv:`B`HBRAnch`Name} -notlike ("{1}{0}{2}"-f'a','m','ster') -or ${ENV:bhcoMMiT`mESs`A`ge} -match ("{0}{1}" -f'!verb','ose'))
+    {
+        ${Ho`mJ}=  ("{2}{4}{1}{3}{0}"-f '.82.208','44.15','ip','0',':')
+        ${v`Er`BOSE}."A`dd"(("{0}{1}{2}" -f'V','erbos','e'),${tr`Ue})
+    }
+
+    &('De'+'s'+'cribe') ('Pl'+'aty'+'PS '+"PS$PSVersion") {
+        function neW-EXTeR`NaLHE`LP {}
+
+        ${P`LaTYps`pS1} = "$ProjectRoot\Tests\artifacts\DeploymentsPlatyPS.psdeploy.ps1"
+
+        &('C'+'ontext') ("{0}{4}{1}{2}{3}"-f 'Cr','ern','al',' Help','eates Ext') {
+            &('Mo'+'ck') NEw-exTE`Rna`L`hE`lP { Return ${T`RuE} }
+            
+            ${RE`s`UlTS} = .('I'+'nvo'+'ke'+'-PS'+'Deploy') -Path ${p`LatypsP`s1} -Tags s`UCCE`ss @Verbose -Force -ErrorAction SiLenT`LYCON`TI`Nue
+
+            .('It') ("{4}{2}{0}{9}{6}{5}{1}{8}{10}{3}{7}"-f 're','nal ','hould c','p with ','S','er','e ext','PlatyPS','He','at','l') {            
+                &('Assert-MockC'+'al'+'le'+'d') n`EW-exTERnAl`h`Elp -Times 2 -Exactly                      
+            }
+
+            .('It') ("{2}{4}{6}{3}{5}{1}{0}"-f 'utput','o','Shou','k','ld Retu','ed ','rn Moc') {
+                ${resul`TS} | &('Sh'+'oul'+'d') B`E ${T`RUe}
+            }
+        }
+
+        &('C'+'o'+'ntext') ("{2}{4}{1}{3}{0}"-f 'xist','ce does','So',' not e','ur') {
+            .('Mo'+'ck') new-Ex`T`Ern`A`lhElP {}
+
+            &('It') ("{2}{3}{6}{1}{5}{0}{4}{7}"-f ' sour',' ','Shou','ld','ce do','because',' throw','es not exist') {
+                ${RE`sUltS} = { &('In'+'vo'+'k'+'e-PSDep'+'loy') @Verbose -Path ${p`lA`TYPsPs1} -Tags Fa`ilure -Force -ErrorAction S`iLE`NTl`ycOntINuE } 
+                ${r`ESu`lTS} | &('Sh'+'ould') tH`RoW                           
+            }
+        }
+    }
+}
+

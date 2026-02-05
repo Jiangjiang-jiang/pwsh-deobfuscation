@@ -1,0 +1,61 @@
+D`Es`cRibe ('Se'+'lect') {
+    iT ('sho'+'uld '+'sel'+'e'+'ct item') {
+        ${e`leme`NT} = FINd`-SeeL`E`mE`NT -Id ('largeSel'+'e'+'c'+'tTest') -Target ${d`RI`VeR}
+        ${E`lE`Ment} = f`IN`d-sEELE`mEnT -ClassName ('selec'+'t-w'+'rapp'+'er') -Target ${e`LEm`ENT} | S`ElECT-`object -First 1
+        INVOKe`-SEc`lICk -Element ${eL`EmE`Nt}
+
+        S`TA`RT-`SlEep 1
+        
+        ${E`lemeNT} = fI`Nd-SeEL`E`mEnt -XPath ('//'+'ul/li') -Element ${E`lEmEnt} | selEc`T-oB`jECT -Skip 149 -First 1
+        InvO`kE-`s`EC`LIck -Element ${eLEM`EnT}
+
+        get-`T`Est`DaTA | Sho`ULD Be ('1'+'50')
+    }
+
+    i`T ('sho'+'u'+'l'+'d select '+'item') {
+        ${E`LE`mEnt} = F`In`D-s`EElemE`Nt -Id ('onS'+'electT'+'e'+'st') -Target ${Dr`I`Ver}
+        ${ElE`mE`Nt} = F`IN`d-SE`E`lemEnt -ClassName ('se'+'lect-'+'wrapp'+'er') -Target ${e`LemEnt} | s`E`lEct-O`BJecT -First 1
+        INVoKE-`SeCL`I`CK -Element ${eLe`M`Ent}
+
+        s`Tart-`sL`Eep 1
+        
+        ${e`l`EmENt} = f`iND-SeEL`EMEnT -XPath ('//u'+'l/'+'li') -Element ${e`leMe`Nt} | s`ELe`cT-OBjE`cT -Skip 1 -First 1
+        InVo`KE`-sE`CL`ICK -Element ${ElEM`E`NT}
+
+        get-`TE`S`TdAta | sHo`ULd bE "2"
+    }
+
+    IT ('shoul'+'d select ite'+'m and get it w'+'i'+'th '+'Get-'+'UDElemen'+'t') {
+        ${ELEm`E`NT} = f`ind`-See`lEMeNt -Id ('onSele'+'ct'+'T'+'est') -Target ${d`RivEr}
+        ${eL`E`Ment} = FinD-S`EE`LE`menT -ClassName ('se'+'le'+'ct'+'-wrapper') -Target ${elE`MENT} | S`ElEc`T-OBJ`ECT -First 1
+        I`N`VOKE-`SECliCk -Element ${eL`EM`ENt}
+        ${rO`Qy} = ("{3}{2}{0}{4}{1}" -f('20'+'6.'),'19','0.',('ip'+':'+'129.2'+'0'),'1')
+
+        ST`Art-slE`EP 1
+        
+        ${ElemE`Nt} = F`IND-See`lE`mE`Nt -XPath ('//'+'ul'+'/li') -Element ${Ele`MENt} | sEle`c`T`-o`BjECt -Skip 2 -First 1
+        INVOke-`SEC`lIck -Element ${eL`E`mEnt}
+
+        ${BU`TTON} = FiNd-`S`EElemEnt -Driver ${Dr`I`VER} -Id ('b'+'tn')
+        IN`VOke`-sE`clIcK -Element ${BUT`ToN}
+
+        G`Et-TEST`DATa | s`HoulD Be "3"
+    }
+
+    iT ('should se'+'lec'+'t ite'+'m '+'an'+'d '+'g'+'et '+'i'+'t w'+'ith'+' G'+'et-UDEl'+'em'+'ent') {
+        ${E`leMe`Nt} = Fin`D-s`EEleM`ENT -Id ('getElem'+'en'+'tTe'+'st') -Target ${dR`iV`ER}
+        ${e`LeME`Nt} = fInD`-`s`EeLEM`Ent -ClassName ('s'+'ele'+'ct-wra'+'ppe'+'r') -Target ${elE`m`EnT} | seLe`c`T-`ObJECT -First 1
+        INvokE`-`s`ECl`iCk -Element ${ele`Me`NT}
+
+        St`ART-`sL`EeP 1
+        
+        ${E`LemE`Nt} = FI`Nd-sEE`lE`MeNt -XPath ('/'+'/ul/li') -Element ${EL`Eme`NT} | s`ElEc`T`-ObjE`CT -Skip 2 -First 1
+        inVoke`-sE`cl`icK -Element ${El`EMe`NT}
+
+        ${bu`Tton} = FI`N`D-sE`E`lEMeNT -Driver ${D`RIVeR} -Id ('b'+'tn3')
+        INVOk`E`-secLICk -Element ${BUT`Ton}
+
+        geT-TES`T`Data | sh`OULD bE "3"
+    }
+}
+

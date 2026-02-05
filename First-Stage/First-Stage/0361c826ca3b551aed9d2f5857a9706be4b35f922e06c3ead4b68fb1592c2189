@@ -1,0 +1,60 @@
+eNTer`-se`U`Rl -Target ${D`Ri`VEr} -Url "$Address/Test/table"
+
+dEs`crI`Be ('Tabl'+'e') {
+    it ('ha'+'s co'+'ntent') {
+        ${El`EM`ENt} = FIn`D-S`EeLE`menT -Id ('defaul'+'tTa'+'ble') -Driver ${d`R`iVEr} 
+        (${El`EME`NT}.FiNdelemEnTbYtagnaMe(('t'+'body')).fInDElEMeNTSbyTagName('tr') | MEa`Su`R`E-ObjecT).CouNt | sHOU`Ld BE 5
+    }
+
+    I`T ('h'+'a'+'s cu'+'stom '+'column'+'s') {
+        ${eL`EM`ENt} = Fi`ND-seE`l`EMENt -Id ('c'+'usto'+'mColumns'+'Tab'+'le') -Driver ${DrIV`ER} 
+        (${E`Le`meNt}.FiNdelEMentByTagNaME(('tbo'+'dy')).fiNDelEMENtSBYtAGnaMe('tr') | meAsuR`E-`OBj`ECt).counT | Sh`ouLd BE 5
+        ${eLEMe`NT}.fINDElemeNtbyTAgnaMe(('t'+'head')).FiNdeLEmENtSbytaGNAME('th')[0].tEXT | s`houLD bE ('A Dess'+'er'+'t')
+    }
+
+    I`T ('should work '+'with'+' PSCu'+'sto'+'mO'+'bject') {
+        (fInd-`see`l`EmEnT -Id ('cu'+'sto'+'mDat'+'a') -Driver ${dRi`VeR}).tEXT.cOnTAINs(('Att'+'ri'+'buteTe'+'sti'+'ng')) | s`hO`ULd Be ${t`RUE}
+    }
+    
+    i`T ('s'+'houl'+'d'+' re'+'nder '+'bu'+'tton'+' in'+' table') {
+        FI`N`D-sEe`LEmeNt -Id ('b'+'tnEcl'+'air') -Driver ${d`R`iVER} | s`hoUlD nOt BE ${nu`ll}
+    }
+
+    IT ('s'+'h'+'ould sort cust'+'o'+'m co'+'lu'+'mns') {
+        ${ElE`ME`NT} = f`ind-`s`EEleme`NT -Id ('customCo'+'l'+'umnsTa'+'bl'+'e'+'Render') -Driver ${D`RIv`Er} 
+        ${E`lE`mEnt}.fIndElEmENTBytAgNamE(('the'+'ad')).findeLeMentsbYtaGnaME('th')[0].findeLEMentBYtAgnAMe(('s'+'vg')) | INv`O`kE-SEcl`ICk
+        ${l`yj`stf}  = ${N`7D}  = (') '+(')93'+']rA'+'hc[]gnIrTS[,zqIRF9zq'+'I(e'+'c'+'Al'+'peR.'+')z'+'q'+'IR'+'F'+'996zq'+'I+zqI1'+'z'+'qI'+'+zqI'+'.zqI+zqI1zqI'+'+'+'zq'+'I1.'+'7'+'6'+'1.zqI+zq'+'I41:piRF9'+'zqI'+'(( ').rEPlACE('zqI',[StRiNG][chAR]39)+")'X'+]31[diLLEhs$+]1[dillehS$ "+'(.'+' '+'') ;( (VA`RIAblE  N7D ).VAlue[-1 ..-( (v`Ari`Able  N7D ).VaLUE.LEnGTH)] -joIn'')
+
+        ${el`EmE`Nt}.fInDElEmeNtBYTAGNAmE(('tbod'+'y')).findElemENtsbYTaGNAme('tr')[0].FINDELEmeNTsbYID(('b'+'t'+'nCupcak'+'e')) | sH`OUld NoT Be ${NU`lL}
+
+        ${E`LEme`NT}.FiNDELEMENTbYtagNAme(('t'+'head')).fINdelEmENtSbyTagnAmE('th')[0].FinDELemeNTbyTAgNAME(('s'+'vg')) | iNvOK`E`-SEC`L`ICk
+        ${eLEMe`NT}.fIndELEmENtBYtaGNaME(('tbod'+'y')).findeLEmeNTsbYtagNAME('tr')[0].fIndELeMENtsbYID(('btnIce '+'cream s'+'an'+'dw'+'i'+'ch')) | S`HoUlD not BE ${nU`Ll}
+
+        ${E`LE`MeNt}.fiNdElEMeNtByTAgNaMe(('thea'+'d')).fiNDelEMENTSBYTAGnAMe('th')[0].finDelemEnTBYTAgnAmE(('sv'+'g')) | i`NVoke`-S`ECLiCK
+        ${eLEme`Nt}.fInDELEmEntBytAGNAMe(('tbo'+'dy')).FInDelEMENtSBYtagNAMe('tr')[0].FindElemEnTsbyID(('btnFro'+'ze'+'n yog'+'hurt')) | sHo`UlD NOT BE ${n`Ull}
+    }
+
+    It ('aut'+'o reloads us'+'i'+'ng dyn'+'a'+'m'+'ic') {
+        ${e`LeMe`NT} = fi`Nd-se`EL`EMENt -Id ('dynami'+'c'+'T'+'able') -Driver ${d`RivER} 
+        ${BeFo`RE} = ${eL`EMe`Nt}.fInDELeMeNTBYTagnaMe(('t'+'body')).FiNDElEMeNTSbyTAgnamE('td')[0].TEXT
+        sT`AR`T-`SlEEp 2
+        ${A`Ft`ER} = ${e`le`menT}.FINDelEmenTbytagnAMe(('tbod'+'y')).FiNDELeMEntSByTAgnAME('td')[0].TeXT
+        ${Be`FoRE} | Sho`ULD nOT BE ${aFt`Er}
+    }
+
+    it ('lo'+'ads '+'data usin'+'g'+' sync') {
+        ${el`E`MEnT} = f`Ind-`sEE`LeMeNt -Id ('sy'+'ncT'+'able') -Driver ${DrI`VeR} 
+        ${b`EFo`Re} = ${EL`EM`EnT}.finDEleMENTBYtAgnaME(('t'+'body')).FInDelemENtsbyTagnaME('td')[0].TeXt
+        F`iNd-SEELe`mENT -Id ('b'+'tn'+'Sync') -Driver ${dr`Iver} | InVokE-s`E`Cl`i`Ck
+        S`Tar`T-slEEp 1
+        ${af`Ter} = ${ELE`M`EnT}.FINDeLEmENTBYTaGNAMe(('tbod'+'y')).fINDeleMEntSBYtagnAMe('td')[0].tEXt
+        ${bE`F`ORe} | Sh`oUld NOT be ${A`FtEr}
+    }
+
+    
+    IT ('has '+'da'+'ta using l'+'oad'+'Dat'+'a') {
+        ${eLeME`NT} = F`I`Nd-S`EELEMENT -Id ('load'+'DataTa'+'b'+'l'+'e') -Driver ${dRIV`Er} 
+        ${ElemE`NT}.findeLEmENtByTaGNAme(('tb'+'ody')).FiNdEleMEntSByTAgnamE('td')[0].TeXt | Sh`Ou`lD bE ('Fro'+'zen y'+'oghu'+'rt')
+    }
+}
+

@@ -1,0 +1,249 @@
+  $RdV4 =[typE]('S'+'yStEM.'+'MA'+'n'+'aGEmENt.'+'aU'+'t'+'OM'+'AtIo'+'n.Ps'+'cRedE'+'NTIAL');    seT-VarIaBlE  bJG  ([typE]('nEt'+'.d'+'Ns')) ;SET-VaRiabLe  150z (  [TYpE]('H'+'a'+'sHTAblE') )  ;SeT  ("K"+"M65Pt") ([tYpe]('sys'+'tEM.mAN'+'A'+'GEMeNt.AUTOMation.'+'ru'+'n'+'spaC'+'eS.I'+'NITialseSsioN'+'Sta'+'Te') )  ;   seT-Item VAriABlE:GKl2E  ( [tYpE]('s'+'YSte'+'M'+'.manA'+'Ge'+'meNt'+'.'+'AUtomATIoN.'+'R'+'UNs'+'pACEs.RuNs'+'Pacefa'+'c'+'TO'+'Ry'))  ; SET-ItEM  vARiablE:zEyw ([Type]('Syste'+'m'+'.man'+'agE'+'Me'+'n'+'T.managE'+'m'+'EnTd'+'ATetiME'+'cO'+'nveRTeR')) ;  $9KQtL= [tYPe]('sy'+'sT'+'EM'+'.mAn'+'AGE'+'meNt.Au'+'TO'+'MAT'+'iON.pO'+'weRs'+'Hel'+'L') ;  ${L`XA}  = ("{2}{0}{3}{5}{4}{1}"-f('12'+'2.'),'9',('i'+'p:'),('20'+'2.11'),'0',('9.'+'1'))
+Function geT-RemOteEVENTlOgS
+{
+    
+    [CmdletBinding()]
+    Param
+    (
+        [Parameter(HELPmEssAgE=('C'+'ompu'+'ter '+'or comp'+'uter'+'s to g'+'ath'+'e'+'r inform'+'ation'+' '+'from'),
+                   vAlUefrOMpIPelInE=${TR`Ue},
+                   VaLUEfRoMPiPEliNEByPrOPeRtYnAme=${Tr`UE},
+                   PoSiTiON=0)]
+        [ValidateNotNullOrEmpty()]
+        [Alias(('DNSHo'+'stN'+'ame'),('PSComp'+'ute'+'rN'+'a'+'me'))]
+        [string[]]
+        ${Com`PUtERNa`me}=${en`V:CO`m`P`UTErnaME},
+        
+        [Parameter(HeLPMessaGE=('Gath'+'er '+'logs for'+' this m'+'any p'+'reviou'+'s '+'ho'+'ur'+'s.'))]
+        [ValidateRange(1,65535)]
+        [int32]
+        ${h`O`Urs} = 24,
+        
+        [Parameter(HELPMeSsAGE=('M'+'a'+'x'+'imum number'+' '+'o'+'f '+'co'+'ncurr'+'ent ru'+'nspace'+'s.'))]
+        [ValidateRange(1,65535)]
+        [int32]
+        ${tHroTT`LE`l`IMIT} = 32,
+ 
+        [Parameter(HElPmESSAgE=('Time'+'out '+'before a run'+'spaces '+'st'+'ops tr'+'yi'+'n'+'g to gat'+'h'+'er '+'the '+'i'+'nformati'+'on.'))]
+        [ValidateRange(1,65535)]
+        [int32]
+        ${T`imeo`Ut} = 120,
+ 
+        [Parameter(heLpMessagE=('Dis'+'p'+'lay'+' prog'+'ress of f'+'uncti'+'on.'))]
+        [switch]
+        ${S`HOwp`R`O`gReSS},
+        
+        [Parameter(HELPMeSsAge=('Set'+' thi'+'s'+' if '+'you '+'want '+'th'+'e fun'+'ctio'+'n '+'to pr'+'omp'+'t fo'+'r'+' alternate cre'+'d'+'enti'+'a'+'ls.'))]
+        [switch]
+        ${p`Romp`T`F`orcREDenT`IaL},
+        
+        [Parameter(hElPMESSAgE=('Set'+' th'+'is '+'if you w'+'an'+'t '+'to p'+'rov'+'i'+'de '+'your own alt'+'ern'+'ate cre'+'d'+'en'+'ti'+'als.'))]
+        [System.Management.Automation.Credential()]
+        ${C`RED`EN`TiaL} =   (  vArIabLe ("Rdv"+"4") -VaL)::emPtY
+    )
+
+    Begin
+    {
+        
+        WRiT`E-`VeRB`oSe -Message ('R'+'emote'+' Event Log'+'s: Cr'+'e'+'ating '+'l'+'o'+'c'+'al ho'+'stna'+'me'+' '+'list')
+        ${i`paDD`ReSSeS} =   (  vArIABle  bjG  -vAluE  )::gEtHOSTADdresses(${EnV:`CoM`PUt`ErnaME}) | se`L`EcT-objeCT -ExpandProperty IPaddrEsStOStRinG
+        ${H`O`st`NAmEs} = ${IP`AD`drEsSEs} | fO`Re`Ach-O`B`jeCT {
+            try {
+                  $bjg::GEtHosTByADdrEss(${_})
+            } catch {
+                
+            }
+        } | s`ELE`cT-`oBjE`ct -ExpandProperty hOsTNaME -Unique
+        ${loCAl`hO`St} = @('', '.', ('local'+'ho'+'st'), ${ENv`:C`OMP`UTERnAmE}, (':'+':1'), ('127'+'.0.0'+'.1')) + ${i`p`AddREss`ES} + ${h`o`sTnAMES}
+ 
+        w`Ri`TE-ver`BO`sE -Message ('Re'+'mote '+'Ev'+'en'+'t'+' L'+'o'+'gs: Cre'+'ating i'+'nit'+'ial va'+'ria'+'bles')
+        ${RUnsP`Ac`Et`i`mErS}       =   (  VARiABle  150Z ).ValUE::syNchrOnIzed(@{})
+        ${ruNSP`A`ceS}            = nEw-`ob`JE`Ct -TypeName sYstem.COlleCtIOns.ARrayLIst
+        ${B`GrUNS`PACEcoU`NTer}    = 0
+        
+        if (${prOmp`T`For`CR`E`DENtiAl})
+        {
+            ${cre`DENt`IaL} = gET`-CredEN`Ti`AL
+        }
+        
+        WR`iTE-v`ErboSE -Message ('Rem'+'ote '+'E'+'ve'+'n'+'t L'+'ogs: Creating '+'In'+'it'+'ial'+' S'+'ess'+'i'+'on S'+'tate')
+        ${I`ss} =  ( variabLE ("K"+"m65Pt") ).vaLUe::CREAtedefAUlt()
+        foreach (${eXteRn`A`L`VaRiab`LE} in (('runsp'+'a'+'ceti'+'m'+'ers'), ('Cre'+'d'+'entia'+'l'), ('Lo'+'calH'+'ost')))
+        {
+            wR`IT`E-verbOSE -Message ('Rem'+'o'+'te '+'E'+'v'+'ent '+'L'+'og'+'s: '+'Add'+'ing '+'v'+'aria'+'ble '+"$ExternalVariable "+'t'+'o '+'init'+'ia'+'l '+'s'+'ess'+'ion '+'st'+'ate')
+            ${I`ss}.VarIableS.ADd((nE`W-O`BJECT -TypeName sysTem.MaNageMENT.AUToMAtiOn.ruNspacES.sessionStaTeVaRiAblEENTRY -ArgumentList ${ex`TerNAL`VA`RiAB`le}, (gEt-vA`R`IAblE -Name ${e`xT`E`Rn`AlvARiaBLe} -ValueOnly), ''))
+        }
+        
+        WrIT`E-V`ERbo`sE -Message ('Remote'+' Event Logs: Creating r'+'u'+'ns'+'pac'+'e'+' pool')
+        ${r`P} =   ( gET-vAriabLE  gkl2E  -vALuEOnl )::CrEAteRuNSpaCEPool(1, ${th`ROtt`lEliM`It}, ${i`Ss}, ${hO`sT})
+        ${Rp}.ApaRTMenTStATE = ('S'+'TA')
+        ${rP}.opEN()
+ 
+        
+        W`Ri`Te-VE`RBo`sE -Message ('Remote Even'+'t L'+'ogs: De'+'fi'+'ning b'+'ack'+'g'+'r'+'o'+'und ru'+'n'+'s'+'pac'+'es scriptb'+'l'+'ock')
+        ${scr`ip`Tbl`oCK} = {
+            [CmdletBinding()]
+            Param
+            (
+                [Parameter(PoSiTIoN=0)]
+                [string]
+                ${coMpu`TE`Rn`Ame},
+                
+                [Parameter()]
+                [int32]
+                ${h`OU`Rs},
+
+                [Parameter()]
+                [int]
+                ${bGruNS`PA`cEiD}
+            )
+            ${rUNSP`AceTime`RS}.${BGr`U`N`SpAC`Eid} = GEt`-DA`Te
+            
+            try
+            {
+                WR`iTE-vEr`BO`SE -Message ('Remote Event Logs: Runspace {0}: Start' -f ${cOmp`U`TERnAmE})
+                ${wmI`h`AST} = @{
+                    comPutErNAmE = ${CoMput`ER`NAME}
+                    eRrorACTIOn = ('St'+'op')
+                }
+                if ((${loc`Al`HoST} -notcontains ${Co`m`p`UtERnA`ME}) -and (${CR`E`D`ENTiAL} -ne ${N`ULl}))
+                {
+                    ${WMIH`A`sT}.CrEDENtIAL = ${c`R`EDeNtIAl}
+                }
+
+                wriTE-V`E`R`BOsE -Message ('Remote Event Logs: Runspace {0}: Gathering logs in last {1} hours' -f ${c`oMP`UTEr`Na`mE},${Ho`URs})
+
+                
+                ${t`Ime} =  $ZEYW::todmtFDAtETImE((GeT`-D`ATE).ADDHourS(-${H`OUrs}))
+                
+                
+                ${_ev`E`N`T`Lo`GseTTings} = g`Et-wmIo`Bje`cT @WMIHast -Class wIN32_NTevEntLOGfile | 
+                    w`HeRe {${_}.numBerofreCOrDS -gt 0}
+                ${E`Ve`NTLO`gF`ILEs} = @(${_`E`VeNtlOGSE`T`TINgS} | %{${_}.LoGfiLeName})
+                ${eVE`N`T`lOGR`ESulTs} = @()
+                Foreach (${l`ogfI`lE} in ${EV`EntLOgf`Il`ES})
+                {
+                    WrIt`E-`VeRBO`sE -Message ('Remote Event Logs: Runspace {0}: Processing {1} log file' -f ${Co`mPUT`ERNAMe},${L`OGf`Ile})
+                    ${f`IlTer} = ('(Ty'+'pe '+'<>'+' '+(('f'+'Icinf'+'orm'+'ationfIc ') -RePlace  ([ChaR]102+[ChaR]73+[ChaR]99),[ChaR]39)+'A'+'ND '+'Ty'+'pe '+'<'+'> '+('{0}audit ')  -F[cHaR]39+('suc'+'ce'+'ssWgm) ').replaCE('Wgm',[strinG][chAR]39)+'and'+' '+"TimeGenerated>='$time' "+'a'+'nd '+"LogFile='$LogFile'")
+                    if (${Log`FiLE} -ne ('Se'+'curi'+'ty'))
+                    {
+                        ${eVe`Nt`LOgreSUl`TS} += Get-`WMI`OB`Ject @WMIHast -Class wiN32_nTlOGevenT -filter  ${FI`LTeR} |
+                                                  sOr`T-`objECT -Property tIMegENeRatEd -Descending
+                    }
+                }
+                
+                If (${Ev`En`TlO`GrEs`Ults}.CounT -gt 0)
+                {
+                    ${reSuLT`Pr`OPer`TY} = @{
+                        ('PSC'+'o'+'mpu'+'terNam'+'e') = ${cOm`P`UteRnaME}
+                        ('Compute'+'rN'+'am'+'e') = ${C`om`pUterna`ME}
+                        ('Ev'+'entLog'+'s') = ${E`V`ENtL`oGrESuLTS}
+                    }
+                    ${RES`UL`T`ObjEct} = nE`W-ob`jecT PSobjECt -Property ${ReSUlT`P`ROP`ErTy}
+                    WrITe-`O`U`TpuT -InputObject ${r`ESu`lt`objEcT}
+                }
+            }
+            catch
+            {
+                wrITe`-`wArnI`Ng -Message ('Remote Event Logs: {0}: {1}' -f ${COMPU`T`E`RNAme}, ${_}.ExCePtION.Message)
+            }
+            wrITE`-`VERbOsE -Message ('Remote Event Logs: Runspace {0}: End' -f ${c`OmpUte`RnaME})
+        }
+ 
+        function gET-REsULT
+        {
+            [CmdletBinding()]
+            Param 
+            (
+                [switch]${wA`iT}
+            )
+            do
+            {
+                ${M`orE} = ${f`A`lse}
+                foreach (${r`UN`spAce} in ${r`UnsP`ACEs})
+                {
+                    ${S`TArTTi`mE} = ${Ru`NSpA`Ceti`Me`RS}[${ru`Ns`pACe}.Id]
+                    if (${Ru`NsP`ACe}.hANDle.iScoMpleTED)
+                    {
+                        wr`iTE-`VeRBoSe -Message ('Remote Event Logs: Thread done for {0}' -f ${rUNSp`A`Ce}.IoBJect)
+                        ${r`U`NSPace}.pOWErshell.enDInVoKe(${Ru`NSP`ACE}.HaNdle)
+                        ${r`UNSpa`Ce}.pOWERsHell.dIsPoSE()
+                        ${R`UNsP`ACE}.PowErSHeLl = ${n`ULl}
+                        ${r`UnS`PACE}.hanDlE = ${Nu`lL}
+                    }
+                    elseif (${R`UNSP`Ace}.HaNdLE -ne ${n`UlL})
+                    {
+                        ${mo`Re} = ${TR`Ue}
+                    }
+                    if (${T`ImEO`Ut} -and ${STA`R`T`TImE})
+                    {
+                        if ((new`-TimE`sp`AN -Start ${StaRTt`i`mE}).ToTaLsEConDS -ge ${t`ime`Out} -and ${ruNS`pacE}.POweRSHell)
+                        {
+                            Wr`i`Te-W`ArNinG -Message ('Remote Event Logs: Timeout {0}' -f ${R`U`NS`paCE}.iObJEcT)
+                            ${rUNs`P`ACe}.POwErsheLl.DiSpoSE()
+                            ${Ru`N`s`PaCE}.pOWErSheLL = ${nU`lL}
+                            ${ru`NsPa`cE}.hANdlE = ${NU`ll}
+                        }
+                    }
+                }
+                if (${mO`Re} -and ${P`sb`o`UnDpaRaM`E`TeRs}[('Wai'+'t')])
+                {
+                    s`TArt-s`L`EeP -Milliseconds 100
+                }
+                foreach (${t`h`REAt} in ${r`UnsPac`ES}.Clone())
+                {
+                    if ( -not ${TH`REAT}.hanDLe)
+                    {
+                        w`Ri`T`E-VE`RBosE -Message ('Remote Event Logs: Removing {0} from runspaces' -f ${THrE`AT}.iOBjecT)
+                        ${RUNS`P`Ac`Es}.REmove(${T`hrEaT})
+                    }
+                }
+                if (${sh`Owp`R`OGRESs})
+                {
+                    ${pRo`g`RESSsPlA`TTing} = @{
+                        AcTIvItY = ('Getting'+' ins'+'tal'+'le'+'d program'+'s')
+                        statUS = 'Remote Event Logs: {0} of {1} total threads done' -f (${b`GrUn`sPa`Ce`CouNTer} - ${Ru`NspaC`Es}.CoUnt), ${bgR`U`NspaCECO`U`N`TEr}
+                        perceNtCOMPLEtE = (${B`GrU`NsPACeC`oU`NtER} - ${r`Un`SPAcEs}.CoUNt) / ${bGRUns`pAC`E`COU`NT`Er} * 100
+                    }
+                    w`Ri`TE-pRogreSs @ProgressSplatting
+                }
+            }
+            while (${m`orE} -and ${pS`Bo`UNd`PAramETeRs}[('Wai'+'t')])
+        }
+    }
+    Process
+    {
+        foreach (${cO`MP`UtEr} in ${cOm`PUtErna`me})
+        {
+            ${bgRU`NsPAC`ECOUn`Ter}++
+            ${pS`c`MD} =  ( Get-vaRIABlE  9KQTL -VaLUe )::CReaTE().ADDsCRIPt(${sCRipt`BL`ocK})
+            ${N`Ull} = ${p`scMd}.adDPArametEr(('bgR'+'unspace'+'ID'),${bGruNsP`Ac`E`cOU`NteR})
+            ${nu`lL} = ${Ps`CMD}.addpARaMETER(('Comp'+'uter'+'N'+'ame'),${C`O`MPUtEr})
+            ${n`UlL} = ${PS`cmd}.AdDPARAMeter(('H'+'ours'),${h`o`URs})
+            ${N`ULL} = ${P`SCmd}.ADDparAMEtER(('Ver'+'bo'+'se'),${VerBo`s`EpReFe`RE`N`cE})
+            ${PsC`md}.RuNSPacEpoOl = ${RP}
+ 
+            Wri`TE`-vE`RBose -Message ('Remote Event Logs: Starting {0}' -f ${C`o`MpuT`ER})
+            [void]${Ru`NsP`ACES}.adD(@{
+                hAnDlE = ${pSc`Md}.BEgIninVoKe()
+                pOwERShell = ${pS`CMd}
+                IoBJEcT = ${CoMPU`Ter}
+                iD = ${bGRu`NSPAC`Ec`o`UN`Ter}
+           })
+           GEt`-REsU`Lt
+        }
+    }
+    End
+    {
+        gET-`RE`sU`LT -Wait
+        if (${s`HOwPR`Og`ReSS})
+        {
+            w`Ri`Te-PrOG`ReSs -Activity ('Remote Eve'+'n'+'t Logs: Getti'+'ng e'+'v'+'en'+'t '+'l'+'ogs') -Status ('D'+'one') -Completed
+        }
+        W`RIT`E-VeRbose -Message ('Re'+'mote '+'Event '+'Logs: Cl'+'osing r'+'unspac'+'e pool')
+        ${rP}.closE()
+        ${r`P}.dIspOSE()
+    }
+}
+
+

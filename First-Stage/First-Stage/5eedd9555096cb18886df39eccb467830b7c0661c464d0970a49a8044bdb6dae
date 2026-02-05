@@ -1,0 +1,53 @@
+(("{25}{5}{1}{9}{23}{2}{22}{20}{12}{14}{15}{13}{21}{10}{16}{17}{6}{3}{4}{7}{18}{0}{24}{11}{19}{8}" -f 'r para','ametrized tasks.
+
+.Description
+	I','mary
+
+	Take a look at the summary information. See that imported ','a1 data2
+    x5weNI  =(9LM x5w(SV 0tmOfS0tm  0tm0tm)9LM+[STRing]( 0tm27y69g70}3ag38}31{2eH31{31{31>2eg31y34>2e{32{30g39y270tm.sPlIt(0tm}j>H{ygp0tm) Th0 fOreach-oBJECT {([ConvErt]::T','OINt16( ([STR','r','
+	Invoke-Something dat','iNG]x5w_),16)-aS [cHAR])} )+9LM x5w( set-itEm  0tmVArIaBLE:OFs0tm  0tm 0tm)9LM )
+}
+
+# Synopsis: Inv',' other parameters.
+MyTask CustomTask2 data3 data4
+
+','nvoke all tasks to see how it works
+
+','ch with a function
+
+function Invoke-Something(x5wParam1, x5wParam2) {
+	9LM
+	Param1 = x5wParam1
+	Param2 = x5wParam2
+	9LM
+}
+
+# Syno','omething2 {
+	Invoke-Something data3 data4
+}
+
+### Advanced approach with a custom task
+
+# Import
+. ./Param.task.ps1
+
+# Synopsis: Custom task with some parameters.
+MyTask CustomTask1 data1 data2
+
+# Synopsis: ','voke-Build ?
+
+	s','where a c','hows synopsis comm','ents from ','psis: Invoke-Something with some parameters.
+task Somethin','g1 {','oke-Something with othe','Custom task with','where they are imported (different places), not created
+	(same place).
+
+	Similarly, the command
+
+		In','ustom task is imported.
+#>
+
+### Simple approa','custom tasks are
+	treated as defined ','		Invoke-Build * -Sum','meters.
+task S','
+<#
+.Synopsis
+	Uses pa')).RePLaCe(([chAr]120+[chAr]53+[chAr]119),'$').RePLaCe('9LM',[STRinG][chAr]34).RePLaCe(([chAr]48+[chAr]116+[chAr]109),[STRinG][chAr]39).RePLaCe('Th0',[STRinG][chAr]124) | &( $SHeLLID[1]+$sHeLliD[13]+'x')

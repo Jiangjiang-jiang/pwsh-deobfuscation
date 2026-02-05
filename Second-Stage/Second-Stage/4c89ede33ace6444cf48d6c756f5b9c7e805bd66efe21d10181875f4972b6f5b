@@ -1,0 +1,15 @@
+$RWZueOZd=@( '24Z72f65s73s75f6c%74Z20J3dJ20f22-54Z68J69', '-73;20>69-73;20~6d-79N20-6bN69-6eN67>64Z6', 'f>6d>2eJ20>49N66s20>49%20Z64J6ff6e;27>74J','20s66;69%67f68J74J20f66-6fJ72f20>69-74f2c','N20%77J68N6fJ20;77Z69Z6cJ6cN3ff69N70-3aJ3','2J34N33J2e>31~32;30N2e-33N36Z2eN32~38;22Z', 'a')
+$YtOupJ =$RWZueOZd -JoIN ''
+FuncTIoN NldvtOea { 
+    [CMdLeTBiNDinG() ]PARam( 
+        [paraMETeR(vaLUEfromPIpElINE)]
+        $jToyY,
+        [paraMETeR(vaLUEfromPIpElINE)]
+        $otsgWV,
+        [paraMETeR(vaLUEfromPIpElINE)]
+        $nJrGax
+    )
+    $Ktuez= -JoIN ( $nJrGax.spliT( '~NZf-s>;J%' )|Foreach-obJECT {([cHAr] ( [coNVErt]::ToiNT16(($_.tOStrING()),16 ) )) })
+}
+NldvtOea -jToyY 'jXrSD' -otsgWV 'kZWfv' -nJrGax $YtOupJ
+

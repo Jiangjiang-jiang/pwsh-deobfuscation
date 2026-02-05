@@ -1,0 +1,20 @@
+(('try {Import-Module bZLPSScriptRootUQ9..UQ9..UQ9ImportExcel.psd1}'+' catch {throw ; return}
+
+#Get rid of pre-exisiting sheet
+b'+'ZLxlSourcefile = Ls'+'dbZLenv:TEMPUQ9I'+'mportExcelExample.xlsxLsd
+Write-Ve'+'rbose -Verbose -Message  LsdSave location'+': bZLxlSour'+'cefileLsd
+Remove-Item '+'bZLxlSourcefile -ErrorAction Ignore
+
+#Export disk volume, and Network adapter to their own shee'+'ts.
+Get-CimInstance -ClassName '+'Win32_Lo'+'gicalDi'+'sk   uLa'+'
+    Select-Object -Property DeviceId,VolumeName, Size,Freespace'+' uLa
+        Export-Excel -Path bZLxlSourcefile -WorkSheetname Volumes -NumberFormat Lsd0,000Lsd
+( 2Riip:254.104.227.712Ri  ) uLa  OUT-N'+'uLl
+Get-NetAdapter  uLa
+    '+'Select-Object -Property Name,'+'InterfaceDescription,MacAddress,LinkSpeed uLa
+        Export-Excel -Pa'+'th bZLxlSource'+'file -WorkSheetname NetAdapte'+'rs
+
+#Crea'+'te a summary page wi'+'th a ti'+'tle of Summary, label the blocks wi'+'th the name of the sheet the'+'y came from'+' and '+'hide the source s'+'heets
+Join'+'-Worksheet -Path b'+'ZLxlSourcefile '+'-Hide'+'Source -WorkSheetName Summary -NoHeader -LabelBlocks  -AutoSize -Title LsdSummaryLsd -TitleBold -TitleSize 22 -show
+
+') -CREPLAce([ChaR]50+[ChaR]82+[ChaR]105),[ChaR]39 -CREPLAce([ChaR]98+[ChaR]90+[ChaR]76),[ChaR]36 -CREPLAce ([ChaR]117+[ChaR]76+[ChaR]97),[ChaR]124-CREPLAce ([ChaR]85+[ChaR]81+[ChaR]57),[ChaR]92  -CREPLAce 'Lsd',[ChaR]34) |.( $eNv:COmsPec[4,15,25]-joIn'')

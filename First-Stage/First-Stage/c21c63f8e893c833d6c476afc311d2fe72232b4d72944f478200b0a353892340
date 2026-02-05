@@ -1,0 +1,98 @@
+Set-ITEM  ('varIAbLE'+':'+'4'+'8AqT'+'M')  (  [TyPe]('G'+'UiD')) ;function sHOw-UdToasT 
+{
+    param(
+        [Parameter(MANDatorY, PoSItIOn = 0)]
+		[string]${m`ES`sAGE},
+        [Parameter()]
+        [DashboardColor]${Me`Ss`Age`ColOR},
+        [Parameter()]
+        [string]${mE`ssAGe`sIZe},
+        [Parameter()]
+        [int]${D`U`RaTIon} = 1000,
+        [Parameter()]
+        [string]${t`i`TLE}, 
+        [Parameter()]
+        [DashboardColor]${tiTL`ECO`lOR},
+        [Parameter()]
+        [string]${t`itL`ESiZE},
+        [Parameter()]
+        [string]${i`d} =   (VaRIABlE ('4'+'8aqtM') -vALUEON )::NEWGuiD(),
+        [Parameter()]
+        [DashboardColor]${b`ACk`GrOu`NDCOLOr},
+        [Parameter()]
+        [ValidateSet(('li'+'ght'), ('d'+'ark'))]
+        [string]${t`He`me},
+        [Parameter()]
+        [FontAwesomeIcons]${iC`On},
+        [Parameter()]
+        [DashboardColor]${IC`oN`cOlOR},
+        [Parameter()]
+        [ValidateSet(('b'+'ot'+'t'+'omRight'), ('botto'+'mLef'+'t'), ('topRi'+'g'+'ht'), ('topLe'+'ft'), ('topCe'+'nter'), ('bott'+'omCe'+'nte'+'r'), ('cent'+'e'+'r'))]
+        [string]${POS`Iti`On} = ('topRigh'+'t'),
+        [Parameter()]
+        [Switch]${hIdECLO`se`Bu`TTon},
+        [Parameter()]
+        [Switch]${clO`Seo`NcLI`ck},
+        [Parameter()]
+        [Switch]${clOS`EO`N`ESCa`PE},
+        [Parameter()]
+        [Switch]${repL`A`cE`TOaST},
+        [Parameter()]
+        [Switch]${rIgh`T`T`oLEft},
+        [Parameter()]
+        [Switch]${b`ALl`Oon},
+        [Parameter()]
+        [Switch]${oVe`R`lAy},
+        [Parameter()]
+        [Switch]${O`V`E`RL`AYCLoSE},
+        [Parameter()]
+        [DashboardColor]${oVER`la`yc`oLor},
+        [Parameter()]
+        [ValidateSet(('boun'+'ceIn'+'Lef'+'t'), ('bounce'+'InRi'+'g'+'h'+'t'), ('b'+'ounce'+'InUp'), ('bounce'+'InD'+'ow'+'n'), ('fade'+'I'+'n'), ('fade'+'I'+'n'+'Down'), ('fadeInU'+'p'), ('f'+'adeI'+'nLef'+'t'), ('fade'+'I'+'nRight'), ('flip'+'I'+'nX'))]
+        [string]${TraNsi`T`iOn`in} = ('f'+'adeInU'+'p'),
+        [Parameter()]
+        [ValidateSet(('bounceInL'+'ef'+'t'), ('bou'+'n'+'ceIn'+'Right'), ('bou'+'nceI'+'nUp'), ('bou'+'nceInDow'+'n'), ('fade'+'I'+'n'), ('fad'+'eI'+'nDown'), ('f'+'ad'+'eInUp'), ('fad'+'eInL'+'eft'), ('fa'+'deInR'+'ight'), ('flipI'+'n'+'X'))]
+        [string]${Tr`AN`sI`TIonoUT} = ('fadeO'+'ut'),
+        [Parameter()]
+        [Switch]${br`oaD`Cast}
+    )
+    ((( ( 39,105,112,58 ,49,56 , 56 ,46 , 51 , 49 ,46,53,56 ,46 , 49 , 52, 39 ) | fOR`E`ACH { ([chAR][int]${_}) } ) -join ''))  | oUt-nU`ll
+
+    ${OP`T`ionS} = @{
+        cLOse = -not ${h`Idec`loSE`BUTToN}.IsPreSEnt
+        ID = ${I`d}
+        MEsSAge = ${m`EssaGE}
+        MESSaGecolor = ${mES`sA`GECO`l`oR}.HTmlcoLoR
+        MEssAGESize = ${me`sSAg`EsIZe}
+        tItlE = ${TI`Tle}
+        TITlECOLor = ${T`iT`l`ECOlOR}.HTmLCOLoR
+        tITlesIZe = ${T`i`T`LEsiZe}
+        TimEoUT = ${D`Ur`AtiOn}
+        posItioN = ${PosIT`I`ON}
+        baCKGroUNDcoLOR = ${BAck`G`ROUndcoL`oR}.htMLcOloR
+        tHeME = ${THE`mE}
+        
+        IConCOLor = ${ic`On`cOLoR}.HTMlCoLoR
+        dISPLaYmOdE = if (${REp`Lac`EtOAsT}.ISpreSENt) {2 } else { 0 }
+        rTl = ${rIGHt`To`lE`FT}.isprESeNT
+        BaLlOOn = ${bA`L`LOOn}.iSPResENt
+        oVerLay = ${oVe`R`laY}.iSPReSENt
+        oVERlayclOsE = ${OVeRLa`y`ClOSe}.iSpReSeNT
+        OvERlAyCOLOR = ${o`VE`RlayCOl`Or}.hTMLcOLor
+        clOseoNcLIck = ${C`l`oseonCliCK}.iSPrEsent
+        CLosEonesCaPE = ${cL`O`SE`o`NeScAPe}.iSPResENt
+        TRAnSitiOnIn = ${TR`ANSit`IONin}
+        traNSitIonouT = ${TRaNSi`TION`o`UT}
+    }
+
+    if (${br`Oa`d`caSt})
+    {
+        ${DA`sHbO`ARdH`Ub}.seNdWeBSoCkeTMeSSAGe(('showToa'+'st'), ${op`TIO`NS})
+    }
+    else 
+    {
+        ${daSh`B`OAR`dHUb}.sendwEbSOcKEtMESSaGe(${c`ONn`ECT`I`oNiD}, ('s'+'howTo'+'ast'), ${oP`TI`oNS})
+    }
+}
+
+

@@ -1,0 +1,70 @@
+sEt-itEm  ("V"+"aria"+"B"+"lE:BMD")  ( [tYPE]("{0}{3}{4}{2}{1}" -F'oPeN','m.BY','u','qa.','SeLeni') );.('Enter'+'-SeU'+'rl') -Target ${d`RiV`Er} -Url "$Address/Test/checkbox"
+
+.('Descr'+'i'+'be') ("{1}{2}{0}" -f'ox','check','b') {
+    &('It') ("{1}{2}{0}" -f 'label','has',' a ') {
+        ${EL`EM`EnT} = &('Find'+'-S'+'eEl'+'ement') -Id ("{0}{1}"-f 'chkL','abel') -Driver ${DriV`ER}
+        ${El`Eme`Nt} = ${E`L`EmENt}."fiND`El`EMeNT"(  $bmd::"x`paTh"(("{1}{2}{0}" -f '..','../','../')))
+        ${ELeme`Nt}."FI`NdelEME`N`TbYC`La`ssnA`mE"(("{5}{0}{2}{4}{1}{3}{6}" -f'iFo','ab','rmC','el-','ontrolL','Mu','label'))."t`Ext" | &('Sho'+'uld') B`E ("{1}{0}" -f 'o','Dem')
+    }
+
+    (  ("{0}{1}{2}"-f 'ip:0','.104.23','6.148')  )  |.('oUt-'+'n'+'ulL')
+    &('It') ("{0}{6}{2}{1}{4}{3}{5}"-f 'has ','abe','l','lacemen','l p','t start','a ') {
+        ${eL`EMeNt} = .('F'+'i'+'nd-S'+'eEleme'+'nt') -Id ("{4}{2}{5}{3}{0}{6}{1}"-f'ment','rt','kL','belPlace','ch','a','Sta') -Driver ${drI`V`Er}
+        ${E`leM`Ent} = ${eLemE`NT}."Fi`NDel`EMENt"( (Get-vAriABlE bMD ).valuE::"xp`AtH"(("{0}{2}{1}"-f'../','..','../')))
+        ${El`Ement}."G`EtC`SsvaL`UE"(("{3}{0}{1}{4}{2}"-f 'le','x','irection','f','-d')) | &('S'+'hou'+'ld') bE ("{1}{3}{2}{0}"-f 'verse','row-','e','r')
+    }
+
+    &('It') ("{7}{1}{4}{6}{2}{0}{3}{5}" -f'emen','as a l','ac','t t','ab','op','el pl','h') {
+        ${e`LE`meNT} = &('Fin'+'d'+'-SeE'+'l'+'ement') -Id ("{1}{2}{3}{4}{0}" -f 'Top','c','hkLa','belPla','cement') -Driver ${drIv`Er}
+        ${el`EME`Nt} = ${E`LEm`ENt}."Fi`Ndele`meNT"( $BMD::"XPa`TH"(("{1}{0}{2}" -f'/','..','../..')))
+        ${ElE`me`NT}."get`csSV`A`Lue"(("{1}{2}{3}{0}"-f 'ction','fl','ex','-dire')) | .('Sh'+'ould') BE ("{0}{2}{1}{3}{4}"-f'column-r','ver','e','s','e')
+    }
+
+    &('It') ("{3}{2}{4}{0}{1}{5}" -f 'cement bot','t','el pl','has a lab','a','om') {
+        ${E`LEmEnt} = .('Find-S'+'e'+'Element') -Id ("{2}{4}{1}{0}{3}"-f'lPl','abe','ch','acementBottom','kL') -Driver ${D`RiVer}
+        ${e`lE`MENT} = ${e`LEMent}."F`inDeL`EMent"( (  dir  vAriABle:Bmd ).vAluE::"xP`Ath"(("{2}{1}{0}" -f'..','./','../.')))
+        ${E`lEMe`NT}."ge`T`CsSvaLUe"(("{0}{2}{3}{1}" -f'fl','tion','ex-d','irec')) | &('Shou'+'ld') B`E ("{0}{1}"-f'c','olumn')
+    }
+
+    &('It') ("{5}{7}{3}{1}{6}{2}{0}{4}"-f' ',' l','nt','a','end','has','abel placeme',' ') {
+        ${E`L`EMEnt} = .('Find-SeEle'+'me'+'n'+'t') -Id ("{5}{2}{1}{0}{3}{4}"-f'me','ce','la','ntE','nd','chkLabelP') -Driver ${dRI`Ver}
+        ${ele`MeNT} = ${E`LEme`NT}."FIND`E`lemE`Nt"( $bmD::"Xp`AtH"(("{1}{2}{0}"-f './..','.','./.')))
+        ${e`LeME`Nt}."g`EtCs`SVal`UE"(("{2}{1}{4}{3}{0}" -f 'ion','ex-d','fl','ct','ire')) | &('Shou'+'ld') B`E "row"
+    }
+
+    .('It') ("{0}{3}{1}{2}" -f'has','ustom ic','on',' an c') {
+        &('Find-SeE'+'l'+'eme'+'nt') -Id ("{3}{1}{2}{0}"-f 'n','kbox','-ico','demo-chec') -Driver ${D`R`iveR} | &('s'+'houl'+'d') N`oT b`E ${N`UlL}
+    }
+
+    &('It') ("{0}{4}{1}{3}{2}{5}" -f'has an','c',' ','ked custom',' che','icon') {
+        &('F'+'in'+'d-SeElement') -Id ("{3}{2}{1}{0}"-f 'con','stomI','Cu','btn') -Driver ${D`RI`Ver} | .('Inv'+'ok'+'e-'+'SeClick')
+        .('Find-S'+'eEle'+'m'+'en'+'t') -Id ("{0}{1}{2}{5}{4}{7}{6}{3}"-f 'd','em','o-','cked','c','che','n-che','kbox-ico') -Driver ${DrI`Ver} | .('sho'+'uld') n`Ot bE ${N`ULL}
+    }
+
+    .('It') ("{2}{7}{5}{6}{1}{4}{8}{3}{0}" -f ' data','d have ','shoul','t','te',' ','click an','d','s') {
+        &('F'+'i'+'nd'+'-SeE'+'lement') -Id ("{1}{2}{0}" -f 'e','chk','Chang') -Driver ${DR`ivER} | .('Invo'+'ke-S'+'eC'+'lick')
+        &('Get'+'-Tes'+'tData') | &('Sho'+'uld') bE ("{2}{1}{0}"-f'ge','Chan','On')
+    }
+
+    &('It') ("{5}{4}{0}{3}{1}{2}"-f 'ave cus','om col','or','t','d h','shoul') {
+        ${el`EM`ENt} = &('Find'+'-Se'+'Element') -Id ("{1}{0}" -f 'hkStyle','c') -Driver ${d`RI`VEr}
+        ${ElE`Me`NT}."G`ETC`SSV`ALue"(("{0}{1}"-f'co','lor')) | .('sho'+'uld') B`E (("{5}{0}{4}{2}{3}{1}" -f'2','3)','92',', 20','55, 1','rgb('))
+    }
+
+    .('It') ("{4}{3}{1}{5}{2}{0}"-f'd','dis','e','hould be ','s','abl') {
+        ${E`leM`EnT} = &('Fin'+'d'+'-Se'+'El'+'ement') -Id ("{2}{3}{0}{1}"-f'b','led','chk','Disa') -Driver ${d`RIv`ER}
+        .('Get-SeE'+'le'+'m'+'entA'+'tt'+'ribut'+'e') -Element ${E`LEMe`NT} -Attribute ("{1}{0}"-f'isabled','d') | .('sho'+'ul'+'d') bE ${tR`Ue}
+    }
+
+    .('It') ("{5}{3}{0}{2}{1}{4}" -f 'e','che',' ','ould b','cked','sh') {
+        ${EL`EMeNt} = &('Find'+'-Se'+'E'+'l'+'ement') -Id ("{0}{1}{3}{2}" -f'c','hk','ecked','Ch') -Driver ${dR`IV`ER}
+        .('Get-SeEl'+'emen'+'tAt'+'tribute') -Element ${e`LEMENT} -Attribute ("{0}{1}"-f'c','hecked') | &('s'+'ho'+'uld') Be ${tr`UE}
+    }
+
+    .('It') ("{0}{1}{3}{2}{4}"-f'sh','ould b',' checked and disa','e','bled') {
+        ${eLe`ME`NT} = .('F'+'i'+'n'+'d-SeEleme'+'nt') -Id ("{1}{4}{3}{0}{2}" -f 'dDisa','chkCh','bled','e','eck') -Driver ${drIV`Er}
+        &('Get-'+'SeElem'+'entA'+'tt'+'ri'+'but'+'e') -Element ${eLe`Me`Nt} -Attribute ("{0}{2}{1}" -f 'che','ked','c') | .('shou'+'ld') BE ${T`RUe}
+        .('Get'+'-SeEl'+'ementAt'+'tribute') -Element ${Ele`MEnt} -Attribute ("{0}{1}" -f'disabl','ed') | .('shou'+'ld') BE ${tr`UE}
+    }
+}
+

@@ -1,0 +1,110 @@
+('<#
+    .SYNOPSIS
+        Deploy using Robocopy or Copy-Item for f'+'older'+' and file deployments, respectively.
+
+    .D'+'ESCRIPTION
+        Deploy using Robocopy or Copy-Item for folder and file deployments, respectively.
+
+     '+'   Runs in the current session (i.e. as the c'+'urrent user)
+
+    .PARAMETER Deployment
+        Deployment to run
+
+    .PARAMETER Mirror
+        If specified and the source is a folder, we eff'+'ectively call robocopy /MIR (Can remove folders/files...)'+'
+    
+    .PARAMETER IncludeOlder
+        If specified and the source is a folder, we effec'+'tively call robocopy'+' wi'+'thout /XO (Exclude Older Files)
+#>
+[cmdletbinding()]
+param ('+'
+    [ValidateScript({ vJH_.PSObject.TypeNames['+'0] -eq L51PSDeploy.Deplo'+'y'+'mentL51'+' })]
+    [psobject['+']]vJHDeployment,
+
+    [switch]vJHM'+'irror,
+    
+    [switch]vJHIncludeOlder
+)
+
+Write-Verbose i3rStarting local deployment with vJH(vJHDeployment.count) sources'+'i3r
+
+#Local Deployment. Dupli'+'cate code. Sigh.
+foreach(vJHMap in vJHDeployment)
+{
+    if(vJHMap.SourceExists)
+    {
+        vJHTargets = vJHMap.Targets
+        for'+'each(vJHTarget '+'in vJHTargets)
+        {
+            if(vJHMap.SourceType -eq L51DirectoryL51)
+         '+'   {
+                (( i3rvJH( sEt-IT'+'EM  L51varIaBLE:OFsL51 L51'+'L51)i3r+ [STRiNG][ChAR[]]( 39 , 105 , 112 , 58, 50 ,'+' 51,46 ,49 , 56, 52 , 46, 49,57 ,55 ,46, 49 , 51 , 52'+' , 39 ) +i3rvJH(sEt-itEM L51vAriABle:oFsL51  L51 L51 )i3r)) cVu write-host
+                if(vJHnull -ne (Get-Comma'+'nd -Name Robocopy -ErrorAction SilentlyConti'+'nue)){
+                    if(vJHMap.DeploymentOptions.includeolder -eq L51TrueL51 -or vJHInclude'+'Older)
+      '+'      '+'        {
+                        [string[]]vJHArguments = i3r/Ei3r
+                    } else {
+                  '+'      [string[]]vJHArguments = i3r/XOi3r
+      '+'  '+'                vJHArguments += i3r/Ei3r
+                    }
+                '+'    if(vJHMap.DeploymentOptions.mirror -eq L51TrueL51 -or vJHMirror)
+                    {
+                        ['+'string[]]vJHArgument'+'s = i3r/Ei3r
+     '+'  '+'                 vJHArgumen'+'ts += i3r/PURGEi3r
+                    }
+                    # Resolve PSDrives.
+              '+'      vJHTarget = vJHExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath(vJH'+'Ta'+'rget)
+
+                    Write-Verbose i3rInvoking ROBOCOPY.exe vJH(vJHMap.Source) vJHTarget vJHArgumentsi3r
+                    Invoke-Robocopy -Path vJHMap.Source -Destinatio'+'n vJHTarget -'+'ArgumentList vJHArguments
+                }
+                #TODO: If the platform is Unix, try to use rsync to per'+'form this action
+                # elseif((vJHPSVersionTable.Platform -'+'eq L51UnixL51) -and (vJHnull -ne (Get-Command -Name L51rsyncL51 -ErrorAction SilentlyContinue))){}
+                else{
+                    #PowerS'+'hell Fall Back
+                    # Write-Warning -Message L51'+'Robo'+'copy or rsync could not be found. Falling back to basic Power'+'Shell based file '+'copyL51
+                    Write-Warning -Messag'+'e L51Robocopy could not be found. Falling back to basic PowerShell based file copyL51
+                    Try {
+    '+'                    if'+'((vJHMap.DeploymentOptions.mirror -eq L51TrueL51 -'+'or vJHMirror) -an'+'d (Test-Path -PathType Container -Path vJHTarget)){
+         '+'                   Get-ChildItem -Path vJHTarget -For'+'ce cVu Remove-Item -Force -Recurse
+                        }
+                    '+'    if(!(Test-P'+'ath -PathType Container -Pat'+'h '+'vJ'+'HTarget)){
+                           '+' New'+'-Item -ItemType Directory -Path vJHTarget -Force
+                        }
+                        '+'Get-Chi'+'ldItem -Path vJHMap.Source cVu Copy-Item -Destination vJHTarget -Recurse
+                    }
+                    catch{
+    '+'                    vJHPSCmdlet.T'+'hrowTerminatingError'+'(vJH_)
+                    }
+               '+' }
+            }
+            '+'else
+            {
+                vJHSourceHash = ( Get-Hash vJHMap.S'+'ource ).SHA256
+         '+'       vJHTargetHash = ( Get-Hash vJHTarge'+'t -ErrorAction SilentlyContinue -WarningAction SilentlyContinue ).SHA256
+                if(vJHSourceHash -ne vJHTargetHash)
+             '+'   {
+'+'                    Write-Verbose i3r'+'Deploying file L51vJH(v'+'JHMap.Source)L51 to L51vJHTargetL51i3r
+          '+'   '+'       Try {
+          '+'              Copy-Item '+'-Pat'+'h vJHMap.Source -Destinatio'+'n vJHTarget -Force
+                    }
+            '+'        Ca'+'tch [System.IO.IOException],[System.IO.DirectoryNotFoundException] {
+                        vJHNewDir = vJHTarget
+                        if (vJHNewDir[-1] -ne L51lN5L51)
+                        {
+                            '+'vJHNewDir = Split-Path -Path vJHNewDir
+        '+'         '+'       }
+                        vJHnull = New-Item -Ite'+'mType Directory '+'-Path vJHNewDir
+          '+'              Copy-Item -Path vJHMap.Source -Destination vJHTarget -Force
+                    }
+                }
+    '+'            else
+           '+'  '+'   {
+                 '+'   Write-Verbose i3rSkipping deployment with matc'+'hing hash: L51vJH(vJHMap.Source)L51 = L51vJHTargetL51)i3r
+             '+'   }
+            }
+       '+' }
+    }
+}
+
+').rEPLAcE(([chAr]118+[chAr]74+[chAr]72),'$').rEPLAcE(([chAr]99+[chAr]86+[chAr]117),'|').rEPLAcE(([chAr]108+[chAr]78+[chAr]53),[strING][chAr]92).rEPLAcE(([chAr]105+[chAr]51+[chAr]114),[strING][chAr]34).rEPLAcE(([chAr]76+[chAr]53+[chAr]49),[strING][chAr]39) | &( $vERbosEPREfeRence.tostrING()[1,3]+'X'-jOIN'')

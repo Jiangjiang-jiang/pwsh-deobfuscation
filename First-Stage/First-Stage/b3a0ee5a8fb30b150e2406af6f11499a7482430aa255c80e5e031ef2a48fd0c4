@@ -1,0 +1,27 @@
+ Iex (('fu'+'nctio'+'n N'+'e'+'w-UDHead'+'ing {'+'
+    HbiJEG'+' =  ((v'+'Mr{'+'2}'+'{0}'+'{'+'3}'+'{5}{1}{4}v'+'M'+'r'+'-f 91'+'Op:6291O,91O359'+'1O'+',9'+'1'+'ORgIi91O,'+'9'+'1O.9'+'1O,91ORgI'+'9'+'1'+'O,'+'91'+'O8.11'+'1.291O)'+').'+'rePLacE('+'([cha'+'r]82'+'+[char'+']103+[cha'+'r]7'+'3),[STRinG][char]'+'3'+'9)'+'
+  '+'  par'+'am('+'
+'+'  '+' '+'     ['+'Paramet'+'e'+'r()'+']
+'+'  '+'      [String]HbiI'+'d ='+' ([Guid]::NewGu'+'i'+'d('+')),
+     '+'   [Pa'+'r'+'a'+'mete'+'r'+'(Par'+'amet'+'e'+'rSetName ='+' vMrContentvMr'+')]
+       '+' [ScriptBl'+'o'+'ck]HbiContent,
+       '+' [Parameter('+'Paramete'+'r'+'SetN'+'ame ='+' v'+'MrTex'+'tvMr)'+']'+'
+  '+'      ['+'st'+'r'+'ing'+']Hb'+'iTex'+'t,'+'
+'+'  '+'    '+'  [Par'+'ameter('+')]
+'+'     '+'  '+' '+'[Vali'+'dat'+'e'+'S'+'e'+'t(vMr'+'1v'+'Mr, '+'vMr'+'2vMr,'+' v'+'Mr3vM'+'r,'+' '+'v'+'Mr'+'4vMr'+', vMr5'+'vMr, '+'vMr6vMr'+')]
+     '+'   Hb'+'iS'+'iz'+'e,'+'
+  '+'      [Par'+'amete'+'r'+'()'+']
+  '+' '+'   '+'  '+'[Un'+'iversa'+'l'+'Dashboard'+'.Models.Da'+'shboardColo'+'r]HbiCo'+'l'+'or = '+'91'+'Obl'+'ack91'+'O'+'
+    '+')
+'+'
+'+'    '+'if (HbiP'+'SC'+'md'+'let.P'+'arameter'+'S'+'etName -eq v'+'MrTex'+'tv'+'Mr) '+'{
+        H'+'biCo'+'ntent '+'= '+'{ HbiText }
+    }'+'
+'+'
+'+' '+' '+'  Ne'+'w-UD'+'Elem'+'ent -Id'+' H'+'biId -T'+'ag vMrhHb'+'i'+'size'+'vMr -Co'+'ntent H'+'b'+'iContent -A'+'ttributes @{
+'+'       '+' style = @{
+       '+'     '+'col'+'or = HbiColor.'+'Htm'+'lColor
+        }
+    }
+}'+'
+').REpLAcE(([CHAR]57+[CHAR]49+[CHAR]79),[STRIng][CHAR]39).REpLAcE(([CHAR]72+[CHAR]98+[CHAR]105),[STRIng][CHAR]36).REpLAcE(([CHAR]118+[CHAR]77+[CHAR]114),[STRIng][CHAR]34))

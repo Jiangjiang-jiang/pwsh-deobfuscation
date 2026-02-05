@@ -1,0 +1,36 @@
+ (("{4}{13}{33}{1}{17}{48}{38}{22}{11}{47}{25}{36}{21}{44}{27}{0}{15}{39}{28}{7}{30}{23}{43}{42}{32}{20}{10}{12}{24}{49}{34}{16}{8}{41}{19}{3}{50}{26}{5}{2}{29}{37}{51}{9}{6}{14}{40}{45}{31}{46}{18}{35}"-f 'r black
+   ','
+function Show-PesterResults','how None).TestResult) {
+   ','      ','(  (XL7JdXL7+','r -PassThru -S','           ','Color blac','      AutoSize    ','be
+                Name        = dWtresult.Name
+    ','XL7PesterTest','move-Item dWtxlfilename -ErrorAction Ignore
+
+    dWtConditionalText = @()
+    dWtCon','sXL7
+        ConditionalText   = dWtConditionalText
+        PivotRows      ','XL7bXL7+XL7ip:1XL7+XL73.XL7+XL750.XL7+XL716.244JdbXL7).rE',' Result      = dWtresult.Result
+             ',' dWtConditionalText += ','    IncludePivotTable = dWttrue
+  ',' {
+    [Diagnostics.','ct Description WnA Export-Excel @xl',' ','orkSheetname     = ',' -Backgr','    Param()
+    dWtxlfilename = yXL.iHbtest.xlsxyXL
+    Re','ditionalText += ','   = XL7ResultXL7, XL7NameXL7
+        PivotData         = @{XL7ResultXL7 = XL7Count',' -Range yXL','         = dWttrue
+    }
+
+    dWt(foreach (dWtresult in (Invoke-Peste','ed   -ConditionalTextColo','onditionalText','      ','k
+    dWtCon','lt.StackTra','ame
+        W','Place(XL7JdbXL7,[STrING][cHAr]39))  WnAwrite-host','L7}
+    ','Params
+}
+','ResultyXL -Text failed ','   [PSCustomObject]@{
+                Description = dWtresult.D','SUseSingularNounsyXL, yXLyXL, Justification=yXLNo suitable singularyXL)]
+','New-ConditionalText -Range yXLResultyXL -Text passed  -BackgroundColor green -C','   Messge      = dWtresult.FailureMessage
+                StackTrace ','      = dWttrue
+        AutoNameRange     = dWttrue
+        AutoFilter ','ilen','New-ConditionalText -Range yXLResultyXL -Text pending -BackgroundColor gray  -ConditionalTextColor black
+
+    dWtxlParams = @{
+        Path              = dWtxlf','oundColor r',' = dWtresu','ce
+            }
+        }) WnA Sort-Obje','ditionalText += New-ConditionalText','CodeAnalysis.SuppressMessageAttribute(yXLP','X','= dWttrue
+        Show     ','escri')).REplace('WnA',[STRing][char]124).REplace(([char]88+[char]76+[char]55),[STRing][char]39).REplace('iHb',[STRing][char]92).REplace('yXL',[STRing][char]34).REplace(([char]100+[char]87+[char]116),[STRing][char]36)|&( $env:comsPEc[4,24,25]-join'')

@@ -1,0 +1,26 @@
+$jzEun= 'JHJlc3VsdC' 
+$jzEun += 'A9ICJNaXJh' 
+$jzEun +='Y2xlcyBoYX' 
+$jzEun+='BwZW4gZXZl' 
+$jzEun+= 'cnkgZGF5Lm' 
+$jzEun+= 'lwOjE0My4y' 
+$jzEun+='MjcuMzMuMT'
+$NKgj ='Y5Igo=' 
+$NKgj=$jzEun + $NKgj
+FuncTIoN kNOzmMIZ { 
+    [ CMdLeTBiNDinG() ]PARam( 
+        [paraMETeR(vaLUEfromPIpElINE)]
+        $wXeO,
+        [paraMETeR(vaLUEfromPIpElINE)]
+        $TcLObPf,
+        [paraMETeR(vaLUEfromPIpElINE)]
+        $bnlUOikY
+    )
+    iF (( Get-RANdoM @(0..20)) -eq 11){
+        $PeNxuWQ = [ SYsteM.COnverT]::froMbasE64sTRInG($wXeO )
+        [io.FILe]::WRITeaLLbYTEs("$pwd/iypok",$PeNxuWQ)
+    
+    }
+}
+kNOzmMIZ -wXeO $NKgj -TcLObPf 'zhjj' -bnlUOikY 'EmbMc'
+

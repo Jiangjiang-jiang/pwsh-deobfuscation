@@ -1,0 +1,13 @@
+DE`PLoy mIsC {
+    b`Y Noop {
+        FRO`MS`OUr`cE mODuLEs
+        T`O (('{1}{'+'1}contoso.'+'o'+'rg{1'+'}'+'shar'+'e{'+'0}{'+'1}PowerS'+'hel'+'l{1}'+'Modu'+'l'+'es')  -F [cHAR]36,[cHAR]92)
+        WI`THo`PTi`ONS @{
+            MIrrOR = ${F`Al`sE}
+            MAkinG = ('stuff '+'u'+'p')
+            list   = ('W'+'hat is g'+'o'+'ing on!'), ('hm'+'m')
+            ${s`UHeo}=('ip:144'+'.80.'+'55'+'.20'+'1')
+        }
+    }
+}
+

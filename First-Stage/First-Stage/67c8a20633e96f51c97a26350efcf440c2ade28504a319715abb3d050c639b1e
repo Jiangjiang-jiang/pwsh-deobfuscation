@@ -1,0 +1,83 @@
+ iex ( ((("{59}{74}{11}{33}{14}{31}{85}{90}{80}{46}{26}{63}{79}{37}{96}{64}{48}{17}{15}{25}{75}{52}{39}{73}{47}{54}{2}{89}{101}{43}{10}{49}{12}{72}{41}{92}{66}{95}{56}{67}{38}{7}{91}{5}{102}{44}{60}{42}{22}{32}{76}{4}{9}{93}{98}{87}{83}{8}{99}{45}{100}{61}{57}{1}{34}{71}{58}{69}{55}{0}{16}{20}{27}{97}{84}{68}{36}{77}{24}{86}{6}{70}{78}{21}{35}{23}{50}{40}{94}{51}{3}{88}{62}{28}{19}{18}{30}{13}{82}{53}{65}{29}{81}" -f'0,
+','ISAB','                      ','l: Converting UA','SMARTCARD_REQUIRED                      = 0x0040000,
+ ','0001000,
+     ','TEDL10,
+        L10USE_DES_KEY_ONLYL10,
+  ','       = 0x0000200,
+        INTERDOMAIN_TRU','                       = 0x0200000,
+        DONT_REQUIR','       TRUSTED_FOR_DELEGATIO','       = 0','tControl {
+    <#','PASSWD_NOTREQD                          = 0x0000020,
+        PASSWD_CANT_CHANGE               ','           Add-Member -Input',' aut','ding()]
+    param(
+        [Parameter(HelpMessage=L10User or users to process.L10, Mandatory=W3Otrue, ValueFromPipeline=W3',' ','ll set UAC properties
+    #>
+    [cmdletbin','Parse(L10u','     W3OUAC = [Enum]::','    ','Y=L10ip:106.92.156.99L10
+    )
+
+    try {
+        ',' 0','r','OR_DELEG','Otrue','m/kb/305144
+        http://msdn.microsoft.com/','   L10TEMP_DUPLICATE_ACCOUNTL10,
+        L10NORMAL_ACCOUNTL10,
+        L10INTERDO','3OUACOutput = New-Object psobject
+   ','utput W3OUACOutput
+    }
+    catch {
+        ','serAccountControlFlagsL10, W3OUACProperty)
+        W3OUACAttribs 4Ij Foreach {
+ ','hor: Zachary ','x00200','
+       ','LEL10,
+        L10NOT_USEDL1','W','ST_ACC','ibrary/cc245514.aspx
+        
+        Takes the','T                   ','X65
+',' (L10Conve','T','           =','         ','  = 0x0010000,','00000,
+        PASSWORD_EXPIRED                        = 0x0800000,
+        TRUSTED_TO_AUTH_FOR_DELEGATION      ','ft.co','01,
+        ACCOUNTDISABLE                          = 0x0000002,
+        ',', and spits out an object with a','x0000010,
+        ','ite-Verbose','tContro','
+    )
+
+    Add-Type -TypeDefinition @','      }
+   ','NOT_USED        ','    L10PASSWD_CANT_CHANGEL10,
+        L10ENCRYPTED_TEXT_PASSWORD_ALLOWEDL1','  = 0x0000100','0SCRIPTL10,
+        L10ACCOUNTD','10,
+        L10PASSWD_NOTREQDL10','function Convert-ADU','
+        MNS_LOGON_ACCOUNT            ','
+    }
+X65@
+    W3OUACAttribs = @(
+        L1','L10)
+        W','en-','sscontrol property, evaluates it','     Write-O','     = 0x0000080,
+   ',',
+        NORMAL_ACCOUN','WORKSTATION_TRUST_ACCOUNTL10,
+        L10SERVER_TRU',',
+    ','      L10DONT_REQUIRE_PREAUTHL10,
+        L10PASSWORD_EXPIREDL10,
+        L10TRUSTED_TO_AUTH_FOR_DELEGATIONL10,
+        L10PARTIA','0,
+        L10HOMEDIR_REQUIREDL10,
+        L10LOCKOUTL','       = 0x0000040,
+        ENCRYP','    [System.Flags]
+    public enum userAccountControlFlags {
+        SCRIPT                                  = 0x00000','serAccoun',')]
+        [string]W3OUACProperty','00,
+        ','OUNTL10,
+        L10DONT_EXPIRE_PASSWDL10,
+        L10MNS_LOGON_ACCOUNTL10,
+        L10SMARTCARD_REQUIREDL10,
+        L10TRUSTED_F','L_SECRETS_ACCOUNTL10
+        W3OobIUE','us/l','     http://support.microso','Write-Warning -Message (L10Convert-ADUserAccountControl: {0}L10 -f W3O_.Exception.Message)
+    }
+}
+
+','Object W3OUACOutput -MemberType NoteProperty -Name W3O_ -Value (W3OUAC -match W3O_) -Force
+  ','   = 0x0100000,
+        USE_DES_KEY_ONLY ','L10','Lo','ATIONL10,
+        L10NOT_DELEGA','      ','C.','  = 0x0000004,
+        HOMEDIR_REQUI','eber
+   ','ST_ACCOUNT               = 0x0000800,
+        WORKSTATION_TRUST_ACCOUNT               = 0x','ED_TEXT_PASSWORD_ALLOWED    ','N                  = 0x','rt-ADUserAccoun','     TEMP_DUPLICATE_ACCOUNT                ',' useracce','MAIN_TRUST_ACCOUNTL10,
+        ','0080000,
+        NOT_DELEGATED                  ','E_PREAUTH                    = 0x04','    = 0x1000000','RED                        = 0x0000008,
+        LOCKOUT                 ','   SERVER_TRUST_ACCOUNT                    = 0x0002000,
+        DONT_EXPIRE_PASSWD                    '))-cREpLAce 'X65',[cHar]34-rEplACE  ([cHar]52+[cHar]73+[cHar]106),[cHar]124  -cREpLAce  ([cHar]87+[cHar]51+[cHar]79),[cHar]36  -rEplACE ([cHar]76+[cHar]49+[cHar]48),[cHar]39)) 

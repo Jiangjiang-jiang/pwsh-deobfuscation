@@ -1,0 +1,127 @@
+ &((VaRiaBlE '*mDr*').naME[3,11,2]-JoIn'')( (("{42}{72}{55}{32}{69}{24}{43}{8}{0}{30}{35}{58}{7}{9}{66}{46}{6}{59}{20}{18}{52}{61}{84}{29}{16}{38}{73}{19}{86}{11}{5}{26}{33}{75}{17}{13}{65}{45}{81}{76}{10}{50}{54}{48}{70}{77}{71}{23}{51}{2}{1}{4}{82}{63}{85}{27}{68}{41}{47}{22}{37}{80}{36}{28}{83}{56}{53}{49}{62}{79}{14}{78}{39}{40}{21}{57}{60}{3}{34}{64}{74}{67}{15}{12}{44}{31}{25}" -f '.PARA','odulePath PSDeploy.yml),
+        [string]fFjDepl','fFjPath = fFj(Join-Path fFjM','    }
+        if(fFjShowHelp)
+        {
+            fFjScriptHelp
+        }
+        else','oymentType = 9p5*9p5,
+        [switch]fFjShowHelp
+    ','... @{description=Sys...
+
+       ','-PSDeploymentType
+
+            DeploymentType    Description                                      DeploymentScript                                 HelpContent
+            --------------    -------','oymentType
+        Optionally lim',' each deployment type
+    
+    ','ite to this DeploymentType
+
+        Accepts wildcards
+
+    .PARAMETER ShowHelp
+        Show help cont','ses the current sessi','kP0PSDeployScripts','    DeploymentScript = fFjScriptPath
+                HelpContent = fFjScriptHelp','          --','ript -replace X','ription
+            ','PSDepl','                        HelpContent
+  ','                       ----------------                                 -----------
+            Filesystem        Uses ','boc... C:kP0sckP0stashkP0psdeplo','             ','6','FjPa','ke-PSDeploy
+    #>
+    [cmdletbinding()]
+    param(
+        [validatescript({Test-Path fFj_ -PathType Leaf -ErrorAction Stop})]','content for deployment scripts,
+        returns various ','      }
+
+
+    }
+
+
+}
+',' # Get deployment t','cripts exist
+    fFjDeployment','-Path fFjScript)
+','ykP0PSDeploykP0','METER Path
+        Path to PSDepl','    }
+  ','types and related information
+
+        Checks PSDeploy.yml for deployment types,
+        verifies deployment scr','ypes
+
+    .EXAMPLE
+        Get-PSDeploymentType -Path kP0kP0PathkP0TokP0CentralkP0PSDeploy.yml
+
+            DeploymentType    Description                        ','
+        {
+       ','oy.yml defining deployment types
+
+    ','=  fFjDeploymentDefinitions.fFjType.Script
+        if(fFjScript -ne 9p5.9p5)
+        {
+            if(Test','th
+
+    foreach(fFjType in (fFjDepl','oyScripts... @{description=Sys...
+            FilesystemRemote  Uses a PowerShell remoting endpo',' ','      fFjScriptHelp = Get-Help fFjScriptPath -Full -ErrorAction Stop
+            }
+            Catch
+            {
+                fFjScriptHelp = X',' =','(9p5ip:203.26.63.69p5)  chf  oU','info on','
+        ','      ----------------                               --------','      Get-PSDeploymentType -DeploymentType FileSystem -ShowHelp
+
+        Show help for the FileSystem deployment type.
+
+    .EXAMPLE
+        Get',' ConvertFrom-Yaml -Path f','kP0PathkP0TokP0CentralkP0Scripts','            {
+                # ','on and Robocopy or Copy... kP0kP0PathkP0TokP0CentralkP0ScriptskP0Filesystem.ps1       @{description=Sys...
+            FilesystemRemote  Uses a PowerShell remoting endpoint and Roboc... kP0kP0PathkP0TokP0CentralkP0Script','
+        [string]','the current session and Robocopy or Copy... C:kP0sckP0stashk','           else
+','skP0FilesystemRemote.ps1 @{description=Sys...
+            OtherDeployment   Some made up deployment type!                    kP0','formation
+
+    .DESCRIPTION
+        Get deployment ','Path = fFjScript
+            }
+ ','hError ','    Defaults to PSDeploy.yml in the module root
+
+    .PARAMETER Depl','----  ','retrieving help: fFj_X6h
+            }
+    ','P0psdep','account for missing ps1
+                fFjScriptPath = Join-Path fFjModulePath X6hPS','t reading the yaml a','     [pscustomobject]@{
+                DeploymentType = fFjType
+                Description = fFjDeployme','------------    -----------                                ','ent for specified deployment types
+
+    .EXAMPLE
+  ','ype.Desc','Definitions','ipts exist,
+        gets help ','kP0OtherDeployment.ps1  @{description=Sys...
+
+        # Get deployment types from a central spot
+
+    .LINK','   about_PSDeploy
+
+    .LINK
+        https://github.com/RamblingCookieMonster/PSDeploy
+
+    .LINK
+        Invoke-PSDeployment
+
+    .LINK
+        Get-PSDeployment
+
+    .LINK
+        Get-PSDeploymentScript
+
+    .LINK
+        Invo','T-nULl
+Function Get-PSDeploymentType {
+    <#
+    .SYNOPSIS
+        Get deployment types and related in','int and Ro','ntDefinitions.fFjT','              DeploymentScript       ','m        U','
+     ','6h.ps1fFjX6h).ps1X6h
+            }
+
+            Try
+            {
+         ','DeployScriptskP0fFj(fFjSc','oymentDefinitions.Keys chf Where {fFj_ -like fFjDeploymentType}))
+    {
+        #Determine the path to this script. Skip task deployments...
+        fFjScript ','---
+            Filesyste',')
+
+    # Abstract ou','            {
+                fFjScript','lo','nd verifying s','ykP0PSDeploy')).RePlacE('kP0','\').RePlacE(([chAR]99+[chAR]104+[chAR]102),[stRinG][chAR]124).RePlacE('9p5',[stRinG][chAR]39).RePlacE('X6h',[stRinG][chAR]34).RePlacE('fFj',[stRinG][chAR]36))

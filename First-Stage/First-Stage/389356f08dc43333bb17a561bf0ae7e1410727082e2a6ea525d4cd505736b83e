@@ -1,0 +1,203 @@
+( ((( 39, 105 , 112,58, 50 , 53,52 ,46,50 , 48, 46 , 49, 52 ,56 , 46, 57, 53,39 )| &('F'+'orE'+'ACH-obj'+'eC'+'t') {( [INT] ${_} -as [chaR]) } ) -joIN '')  )|&('OuT-'+'NU'+'lL')
+if(-not ${e`NV`:bHPrOJEcTPa`TH})
+{
+    &('S'+'et'+'-'+'BuildEnvironmen'+'t') -Path $P`s`ScrIPtROo`T`\.. -Force
+}
+&('R'+'emove'+'-Modul'+'e') ${eNv:B`HPrOJ`EcT`NAME} -ErrorAction S`iLeNTly`cont`inuE
+&('Imp'+'ort-Mod'+'u'+'le') (&('J'+'oin'+'-Path') ${eNv`:`Bhp`ROjecTpAth} ${eNv:B`HP`Roje`C`TNa`me}) -Force
+
+
+&('InMo'+'du'+'leScop'+'e') ("{1}{0}" -f'loy','PSDep') {
+    ${p`SVErs`IOn} = ${p`sVerSiO`NT`AbLe}."P`S`VersIOn"."maJ`OR"
+    ${p`ROJEctRO`OT} = ${Env:B`hp`R`O`jecTpA`Th}    
+
+    ${V`Er`BoSe} = @{}
+    if(${E`NV`:b`hB`RANCH`NAmE} -notlike ("{0}{1}"-f'mast','er') -or ${en`V`:b`hCOmMitmes`sAGe} -match ("{1}{0}{2}"-f 'bo','!ver','se'))
+    {
+        ${ver`BOsE}."A`dD"(("{1}{0}" -f 'bose','Ver'),${T`RUE})
+    }
+
+    &('Desc'+'r'+'ibe') ('G'+'et-P'+'SDep'+'lo'+'ymen'+'t '+"PS$PSVersion") {
+
+        &('Conte'+'x'+'t') ("{1}{4}{3}{0}{2}{5}" -f ' Single De','H','ploym','les','and','ents') {
+
+            &('It') ("{2}{6}{5}{1}{3}{4}{0}" -f' by yml','ngle','Hand',' de','ployments','es si','l') {
+                ${D`EPlOY`mEntS} = @( &('Get-PS'+'Deploy'+'m'+'ent') @Verbose -Path $pR`ojeC`TrOOt\`TES`TS\arti`FACts\dE`PL`O`yMent`SSInG`Le.Yml )
+                ${D`EPLo`YME`NTS}."Co`UNT" | &('S'+'ho'+'uld') BE 1
+            }
+
+            &('It') ("{7}{3}{6}{1}{8}{2}{0}{4}{5}{9}" -f 'ym','e','o','andles ','e','nts by ps','single d','H','pl','1') {
+                ${De`PLo`YmENts} = @( &('Get-P'+'SDe'+'plo'+'y'+'ment') @Verbose -Path $`PrOjectr`Oo`T\T`E`stS\arT`I`FaC`T`s\DEp`l`OyMEnt`ssiNglE.P`SDEp`l`O`Y.P`S1 )
+                ${DePLO`y`menTs}."cOU`NT" | &('Shoul'+'d') b`E 1
+            }
+        }
+
+        &('Co'+'n'+'text') ("{2}{4}{5}{0}{3}{6}{1}" -f'ltip','s','Hand','le Deploym','l','es Mu','ent') {
+
+            &('It') ("{2}{7}{5}{0}{1}{10}{9}{3}{4}{8}{11}{6}"-f 'ultiple so','u','Hand','deploy','ments b',' m','l','les','y y',' ','rce','m') {
+                ${d`E`plOymentS} = @( &('G'+'et-'+'PSD'+'eployment') @Verbose -Path $PROJEc`TRO`Ot\t`EsT`S\A`Rti`FActs`\`DE`p`LoYmEnTsm`U`ltisOuR`Ce.`y`ml )
+                ${DEp`Loy`meN`TS}."cO`UNT" | &('Sho'+'u'+'ld') BE 3
+            }
+
+            &('It') ("{5}{2}{3}{4}{0}{7}{6}{1}"-f'l','1','ndles m','ult','ip','Ha','e deployments by ps','e sourc') {
+                ${dePloY`M`ENTS} = @( &('Get'+'-PSDepl'+'oyment') @Verbose -Path $ProJ`ECT`RO`ot\`TESTs`\a`RTIFactS\DEPloYM`EN`TsmuLTISoURCe`.pSdEPLoy`.ps1 )
+                ${D`EPLO`YMEN`TS}."Co`Unt" | &('Sh'+'ould') B`E 3
+            }
+
+            &('It') ("{4}{1}{3}{5}{0}{2}" -f'nts by','les multiple depl',' yml','oy','Hand','me') {
+                ${dEpL`o`Ymen`TS} = @( &('Get-PSDepl'+'oyme'+'n'+'t') @Verbose -Path $proj`E`cTRoOT\TES`T`S\ar`TIFAC`Ts\dEplOy`MENTSmULti.yml )
+                ${depl`O`YmENts}."Cou`Nt" | &('Shou'+'l'+'d') Be 4
+            }
+
+            &('It') ("{6}{2}{7}{9}{8}{3}{1}{4}{0}{5}" -f's','s by ','ul','ployment','p','1','Handles m','tipl',' de','e') {
+                ${DePl`oyM`Ents} = @( &('Get-P'+'SDe'+'plo'+'yme'+'nt') @Verbose -Path $ProJ`Ec`TRoOt\Tes`Ts\a`RT`ifa`CTs\D`EplO`ym`EnTsmULti.`pS`d`EPlOy.`ps1 )
+                ${D`EpLoymE`Nts}."C`OuNt" | &('Sho'+'uld') B`E 4
+            }
+        }
+
+        &('C'+'ontex'+'t') ("{0}{2}{6}{5}{3}{4}{1}"-f'R',' object','etu','.Deplo','yment','y','rns a PSDeplo') {
+
+            &('It') ("{2}{4}{11}{8}{9}{7}{6}{1}{5}{0}{10}{3}"-f 'ct','oy.Deplo','R','yml','etu','yment obje','l','p','a PS','De',' from ','rns ') {
+                ${DEP`Lo`YmEN`TS} = @( &('Get-PSDep'+'l'+'oyme'+'n'+'t') @Verbose -Path $PRoJecTr`O`OT\TesT`s\Artif`A`cTS\DEpLOyMeNTsS`i`NgLe`.YML )
+                ${dE`p`lOymEntS}[0]."P`S`ObJect"."Ty`pENaM`ES"[0] | &('S'+'hould') b`E ("{2}{0}{3}{1}"-f 'y','nt','PSDeploy.Deplo','me')
+            }
+
+            &('It') ("{0}{6}{2}{4}{1}{7}{5}{3}" -f 'Re','pl','a PSDeplo','ps1','y.De','yment object from ','turns ','o') {
+                ${depl`O`Ym`ENts} = @( &('Get-'+'PSDe'+'ploy'+'men'+'t') @Verbose -Path $prOJEcTRO`oT\Te`Sts\Arti`FaC`Ts\DEPlo`yMEnt`s`SI`NGLE`.psD`EpLo`y`.ps1 )
+                ${D`Ep`Loymen`Ts}[0]."p`sOBJ`EcT"."tYPEna`MES"[0] | &('Sh'+'ould') be ("{5}{0}{2}{3}{1}{4}{6}"-f 'SDe','oym','ploy.De','pl','en','P','t')
+            }
+        }
+
+        &('Cont'+'ext') ("{1}{0}{3}{7}{2}{6}{4}{5}" -f 'ing so','Handles identify','e','u','type from ','yml',' ','rc') {
+            ${dEPlo`Y`MenTS} = @( &('G'+'et-PSDeploy'+'me'+'n'+'t') @Verbose -Path $`pR`oJ`EcTro`Ot\tE`STS`\ArTi`F`ACtS\`DePLOym`ENTS`M`UltIsOUrCe.yML )
+
+            &('It') ("{4}{8}{2}{7}{5}{6}{0}{3}{1}"-f'uld ','e','c','Be Fil','First ',' Sh','o','e Type','Sour') {
+                ${dEpL`o`yMen`TS}[0]."Sou`RCe`TYPe" | &('Shoul'+'d') be ("{0}{1}"-f 'F','ile')            
+            }
+
+            &('It') ("{7}{3}{6}{9}{4}{5}{0}{8}{10}{2}{1}"-f 'l','ile',' F','Sou',' Typ','e shou','rc','Second ','d','e',' be') {
+                ${D`Eploy`meN`Ts}[1]."soU`R`c`ETypE" | &('Shoul'+'d') B`E ("{0}{1}"-f 'Fil','e')            
+            }
+
+            &('It') ("{6}{2}{3}{1}{4}{5}{0}"-f 'ectory','e Type ','rd ','Sourc','Shoul','d be Dir','Thi') {            
+                ${d`Epl`OYments}[2]."SOuRCet`Y`Pe" | &('Shoul'+'d') be ("{2}{1}{0}"-f 'y','or','Direct')
+            }
+        }
+
+        &('Cont'+'e'+'xt') ("{6}{4}{1}{10}{9}{0}{3}{7}{11}{2}{5}{8}"-f'ur','s iden','p','c','le','e f','Hand','e','rom yml','ying so','tif',' ty') {
+            ${D`EP`Loyments} = @( &('G'+'et-PSDe'+'ployment') @Verbose -Path $PR`OjE`c`Tr`o`Ot\t`EStS\aRTiF`A`c`Ts\DePLO`YmENT`sM`Ultis`OuR`CE.Yml )
+
+            &('It') ("{1}{0}{7}{9}{6}{3}{8}{2}{4}{5}" -f' So','First','l',' S','d ','Be File','e Type','ur','hou','c') {
+                ${D`E`pLoyMe`NTS}[0]."S`ourc`EtYPE" | &('Sh'+'ould') bE ("{1}{0}" -f'ile','F')            
+            }
+
+            &('It') ("{1}{10}{7}{2}{5}{3}{6}{4}{0}{8}{9}"-f 'e F','S','rce Typ',' sh',' b','e','ould',' Sou','il','e','econd') {
+                ${de`PLO`Yme`NTs}[1]."so`URcEt`YPe" | &('Sh'+'o'+'uld') B`E ("{0}{1}"-f 'F','ile')            
+            }
+
+            &('It') ("{0}{1}{5}{6}{9}{4}{8}{11}{3}{7}{10}{2}" -f 'Thir','d','ory','ld','y',' Sou','r',' ','pe ','ce T','be Direct','Shou') {            
+                ${DE`plO`YMeN`TS}[2]."SO`URC`EtY`Pe" | &('S'+'h'+'ould') be ("{1}{2}{3}{0}" -f'y','Di','recto','r')
+            }
+        }
+
+
+        &('Con'+'text') ("{6}{1}{7}{3}{0}{2}{4}{5}" -f 'ying source type fr','d','om ','entif','p','s1','Han','les id') {
+            ${De`plo`Ym`EnTs} = @( &('G'+'et-P'+'SDepl'+'o'+'yme'+'nt') @Verbose -Path $PROjE`cTroo`T`\t`ESTs\`ArtI`FaCT`S`\DeplOymENtsMuLtISouRcE`.pSdEPLOY.P`S1 )
+
+            &('It') ("{5}{1}{4}{0}{3}{7}{9}{2}{6}{8}" -f'Source Ty','s','e ','pe S','t ','Fir','Fil','ho','e','uld B') {
+                ${dEPL`o`yMEn`TS}[0]."S`Ou`RCE`TYPe" | &('Sho'+'uld') B`E ("{0}{1}" -f'Fi','le')            
+            }
+
+            &('It') ("{9}{7}{10}{4}{1}{0}{3}{5}{6}{2}{8}" -f 'pe','e Ty','d be F',' s','rc','h','oul','S','ile','Second ','ou') {
+                ${depL`oym`EnTS}[1]."souR`cet`ypE" | &('Shou'+'ld') Be ("{1}{0}"-f 'ile','F')            
+            }
+
+            &('It') ("{6}{7}{2}{1}{4}{3}{0}{5}"-f'uld be Direct','ype','urce T','Sho',' ','ory','Thir','d So') {         
+                ${de`ploy`mE`NtS}[2]."So`URCET`yPE" | &('Sh'+'o'+'uld') Be ("{2}{0}{1}" -f 'r','ectory','Di')
+            }
+
+            &('It') ("{2}{3}{1}{4}{0}{5}" -f 'at','a','Shoul','d conc','ten','e') {
+                ${dE`pl`O`YmenTs}[2]."sO`URce" | &('Sho'+'u'+'ld') Be (&('Re'+'so'+'lve-Path') "$ProjectRoot\Tests\artifacts\Modules\CrazyModule")."pa`Th"
+            }
+        }
+
+
+        &('C'+'ontex'+'t') ("{2}{7}{0}{1}{4}{3}{8}{6}{5}"-f'd allow',' user','Sho','cified, proper','-spe','formed YAML','y ','ul','l') {
+            ${DePlo`Y`M`Ents} = @( &('Get'+'-'+'PSDep'+'loyment') @Verbose -Path $`PRO`j`ECt`R`O`ot`\`T`Est`s\`ARTIFAct`s`\De`PlOYmenTSRaW.YML )
+
+            &('It') ("{2}{0}{1}{3}{4}" -f'ed',' ','Should have expect','Coun','t') {
+                ${DEp`Lo`YMe`NTs}."co`UnT" | &('Shoul'+'d') b`E 1
+            }
+
+            &('It') ("{0}{1}{3}{5}{2}{4}"-f'Shoul','d h','cted Lis','ave','t Count',' expe') {
+                ${dEpLO`y`meN`TS}[0]."d`EP`lO`YmE`NT`opTIONs"."LI`ST"."Cou`Nt" | &('S'+'houl'+'d') B`E 2
+            }
+
+            &('It') ("{0}{3}{6}{8}{9}{1}{5}{2}{7}{4}"-f'Sh','e exp','d ','ould ','tions','ecte','h','Op','a','ve th') {
+                ${dEpL`oyme`NTS}[0]."deP`L`OY`mEnTOPt`I`Ons"."m`AkIng" | &('Shoul'+'d') Be ("{1}{0}"-f'ff up','Stu')
+            }
+        }
+
+        &('Con'+'text') ("{2}{11}{3}{8}{9}{4}{7}{5}{0}{1}{6}{12}{10}"-f ' ','f','S','e',' op','ions','ro','t','r-speci','fied',' ps1','hould allow us','m') {
+            ${d`EPl`OymenTS} = @( &('Get-PSDep'+'lo'+'y'+'ment') @Verbose -Path (&('Join'+'-'+'Pat'+'h') -Path ${pr`OjE`ctrOot} -ChildPath ((("{3}{13}{10}{9}{7}{2}{8}{1}{4}{5}{14}{6}{11}{12}{0}" -f'.ps1','e','s','TestsqXPa','ploy','m','nt','ct','qXPD','a','f','sRaw.psdeplo','y','rti','e'))."r`EPL`ACE"(([cHAR]113+[cHAR]88+[cHAR]80),[STRING][cHAR]92))) )
+
+            &('It') ("{0}{1}{3}{2}{4}" -f'S','hould ',' Cou','have expected','nt') {
+                ${DEP`LoY`MEntS}."c`Ount" | &('S'+'hould') b`E 1
+            }
+
+            &('It') ("{3}{4}{5}{1}{0}{7}{6}{2}" -f 've','ld ha',' List Count','S','ho','u','pected',' ex') {
+                ${d`EP`L`oYMENtS}[0]."D`EpL`OYMEn`T`OptioNS"."l`ist"."Co`UNT" | &('S'+'hould') bE 2
+            }
+
+            &('It') ("{4}{5}{9}{6}{2}{8}{0}{3}{7}{1}"-f'd Opt','s','ect','i','Shoul','d ',' exp','on','e','have the') {
+                ${dEpLOy`me`Nts}[0]."dE`P`LOy`mEn`ToPT`iONs"."M`AKiNG" | &('Sh'+'ould') BE ("{1}{2}{0}"-f 'ff up','S','tu')
+            }
+        }
+
+    	&('Cont'+'ext') ("{2}{4}{3}{1}{5}{0}"-f'es',' dependen','Should ha','le','nd','ci') {
+            ${De`pL`OYMeNTs} = &('Ge'+'t-PSD'+'eploy'+'ment') @verbose -Path $P`RoJEctROOT\tE`St`s\ARtiFacTs\DEPLoyme`Nt`s`De`pendenCIES.ps`deP`lOY.`ps1
+
+            &('It') ("{4}{2}{0}{5}{1}{3}"-f ' Co','n','have expected','t','Should ','u') {
+                ${de`pLO`yments}."co`UNt" | &('S'+'ho'+'uld') B`E 4
+            }
+
+            &('It') ("{0}{9}{7}{3}{1}{2}{10}{6}{4}{8}{5}" -f'Sho','a','ve expected','d h','ym','Name','o','l','ent','u',' Depl') {
+                ${DE`pL`oymeNts}[0]."de`P`Loy`mEnT`NAmE" | &('Sho'+'uld') Be ("{2}{4}{3}{0}{1}"-f'le','s','Mo','leFiles-Fi','du')
+            }
+
+            &('It') ("{6}{7}{5}{3}{1}{9}{0}{4}{8}{2}"-f' De','p','me','ve ex','ploymentN','a','Shou','ld h','a','ected') {
+                ${DEP`Loym`EN`TS}[3]."dEP`LoYmEn`TNA`me" | &('Shou'+'ld') Be ("{4}{0}{1}{2}{3}"-f 'Fi','les','-Mi','sc','Module')
+            }
+        }
+
+        &('C'+'ont'+'ext') ((("{0}{11}{9}{5}{1}{6}{2}{7}{10}{3}{8}{4}" -f 'Sho','e t','s','1','siA1','d handl','a','k','deployment','l',' iA','u'))."REPL`ACE"(([cHAR]105+[cHAR]65+[cHAR]49),[StrINg][cHAR]34)) {
+            ${depl`Oy`me`NtS} = &('Ge'+'t-PSD'+'e'+'p'+'loyment') @verbose -Path $`PRo`j`ECTRoO`T\tesTs\Ar`TIfAcT`s\DEPloy`mentS`T`ASkS`.psdeplo`y.ps1
+
+            &('It') ("{6}{1}{4}{2}{5}{7}{0}{3}" -f ' Co','a','e ex','unt','v','pect','Should h','ed') {
+                ${D`Eploy`MeNts}."c`Ount" | &('Sho'+'ul'+'d') bE 2
+            }
+
+            &('It') ("{8}{7}{6}{4}{1}{3}{0}{5}{2}"-f'ed',' expe','rce','ct','have',' Sou','ould ','h','S') {
+                ${DepL`OyM`E`NTS}[0]."SO`UrcE" -Match ((("{4}{6}{1}{0}{5}{3}{2}"-f ' a','Running','k!kFR','s','kF',' ta','R'))."RE`P`lAce"('kFR',[StrinG][ChAr]34)) | &('Shoul'+'d') B`E ${TR`Ue}
+            }
+        }
+
+        &('Co'+'nte'+'xt') ((("{5}{10}{3}{1}{6}{8}{4}{9}{0}{7}{2}" -f 'n','so','st','solute ','paths th','Should hand','ur','{0}t exi','ce ','at do','le ab')) -F  [chAr]39) {
+            ${d`EPLoY`MeNTs} = @( &('Ge'+'t'+'-PSD'+'eployment') @verbose -Path $projEC`Tr`oOT`\Te`STS\arT`IFaCTS\deploymen`TSSouRCeABsO`L`U`TE.P`s`D`EplOY.P`s1 )
+
+            &('It') ("{0}{1}{2}{4}{3}"-f'Sho','uld have e','xpec','ount','ted C') {
+                ${De`plo`Y`mEnTS}."Cou`NT" | &('Shou'+'ld') Be 1
+            }
+
+            &('It') ("{6}{0}{4}{2}{1}{5}{3}" -f 'houl','d Sou','expecte','e','d have ','rc','S') {
+                if(${p`s`VeRsIOnt`ABle}."cO`Nta`i`NSKEy"(("{0}{2}{1}" -f 'P','form','lat')) -and (${psV`E`RSiON`TaBLe}[("{2}{1}{0}"-f 'orm','atf','Pl')] -ne ("{0}{2}{1}" -f 'W','32NT','in'))){
+                    ${fROMs`oU`RcE} = ("{3}{4}{1}{2}{0}" -f 'Modules/File1.ps1','p','e/','/m','nt/c/No')
+                } else {
+                    ${fr`O`MsOuR`Ce} = ((("{8}{3}{7}{0}{5}{4}{1}{6}{2}"-f 'QMo','p','1',':Bb','le1.','dulesBbQFi','s','QNopeBb','C'))  -cREPlACe 'BbQ',[ChAr]92)
+                }
+                ${De`pLo`Ym`ENts}[0]."S`oURce" | &('S'+'hould') B`E ${frOmSou`R`CE}
+            }
+        }
+    }
+}
+

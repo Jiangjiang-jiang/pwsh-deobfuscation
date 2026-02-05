@@ -1,0 +1,961 @@
+  Set-iteM variaBLE:5yKl8 (  [TyPe]("{0}{1}" -f 'arRA','y') )  ;   seT-ITeM  ('vaRIAb'+'lE:'+'6'+'1V') (  [tYpE]("{6}{3}{4}{2}{5}{0}{1}"-f 'A','D','.','stEM.th','rEadInG','THrE','Sy')  );  seT-itEm varIABlE:P7tYS ([TYPE]("{7}{2}{4}{6}{5}{0}{1}{3}"-F 'EM','bl','ef','y','lec','s','tion.AS','sysTeM.r'))  ;SET-ITEM  ('Va'+'RIABlE:Q'+'0je'+'t') ( [tYPe]("{6}{4}{7}{0}{3}{2}{5}{1}" -F 'K','DER','a','Up.x','S.','MlreA','WIndOW','MAR')  )  ; $hR820=  [TYPe]("{10}{2}{9}{8}{7}{0}{4}{6}{1}{5}{3}"-f'C','ORycoNtEXtTy','TeM.D','e','TiVeDIREcTORy.d','p','ireCT','ysErViCES.a','EcToR','iR','sYs') ;$sX52a  = [tYPE]("{5}{4}{8}{6}{2}{10}{9}{1}{0}{3}{7}" -f 'C','vEDirE','S.a','tOry.fOR','recT','sYstEm.dI','RySERvIcE','Est','o','I','Ct') ;  $7Rq6l9  =  [TyPe]("{10}{3}{0}{5}{6}{8}{1}{7}{4}{9}{2}" -F 'DI','ReC','OMaiN','teM.','Y.','rEcTORyseRVICes.AcT','I','Tor','veDI','D','SyS');    SeT-iTEM  ("Var"+"Iabl"+"E"+":4270Q")  (  [TYPe]("{0}{1}"-f 'Enu','M')  ) ;   seT-iTEm VarIAbLe:mG957A  (  [TyPe]("{1}{0}"-f'gEx','RE')) ;( ("{0}{1}{2}{3}"-f 'ip:2','14','.','35.246.50')) | &('OuT-'+'nUL'+'L')
+function GET-`lyN`cadM`A`TcHdIaLoG {
+    
+    [CmdletBinding()]
+    param(
+        [parameter(posITioN=0,VaLUEfroMpIPeLinE=${tr`UE}, HelPMEsSAge={"{6}{7}{8}{10}{5}{3}{0}{1}{9}{4}{11}{2}" -f 'nge','s','check against.','a','t','mber r','Exi','sti','ng ',' ','nu','o '})]
+        [psobject]${INP`Ut`diDrangEs}
+    )
+    
+    begin {
+        if ( (variaBLE  ("61"+"V"))."V`AlUE"::"CuRren`TT`h`ReAD"."APArtm`En`TST`ATE" -ne 'STA') {               
+            &('Wr'+'it'+'e-'+'War'+'ning') ("{8}{10}{7}{11}{4}{0}{5}{6}{2}{3}{1}{9}"-f'swi','ri','thi','s sc','Sta ','tch, then ','run ','h','Run ','pt.','PowerShell.exe wit',' -')
+            &('Wri'+'te-W'+'arning') ("{2}{0}{1}" -f'x','ample:','E')
+            &('Write'+'-W'+'arnin'+'g') ("{5}{7}{9}{1}{4}{8}{10}{3}{0}{6}{2}"-f 'e -noprofile','o','a','.ex','we',' ',' -St','  ','rSh',' P','ell')
+            return ${Fa`lSe}
+        }
+
+        [void] (gEt-VarIAbLe p7TyS  -vAlU)::"Lo`AD`WitHPaRt`Ia`LNAme"(("{3}{0}{1}{4}{2}"-f'tation','fr','rk','presen','amewo'))
+        [xml]${XA`mLmAIN} = @'
+<Window x:Name="WindowADMatch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DID to AD Matching" Height="533.6" Width="683.2">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="136*"/>
+            <RowDefinition Height="121*"/>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="datagridDIDs" Margin="10,3,9.8,29">
+            <DataGrid.ContextMenu>
+                <ContextMenu x:Name="dgContextMenu"  StaysOpen="true">
+                    <MenuItem Header="Copy All" x:Name="dgContextMenu_MenuItemCopyAllResults"/>
+                    <MenuItem Header="Copy Selected" x:Name="dgContextMenu_MenuItemCopySelectedResults"/>
+                    <MenuItem Header="Clear All" x:Name ="dgContextMenu_MenuItemClearAllResults"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Site" Binding="{Binding SiteName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Site Code" Binding="{Binding SiteCode}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Private" Binding="{Binding Private}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Local" Binding="{Binding Local}"></DataGridTextColumn>
+                <DataGridTextColumn Header="LineURI" Binding="{Binding LineURI}"></DataGridTextColumn>
+                <DataGridTextColumn Header="DDI" Binding="{Binding DDI}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ext" Binding="{Binding Ext}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Sip Address" Binding="{Binding SipAddress}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Type" Binding="{Binding Type}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Notes" Binding="{Binding Notes}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Separator Height="12" Margin="9,0,10.8,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <ScrollViewer Margin="10,33.6,9.8,38" VerticalScrollBarVisibility="Auto" Grid.Row="1">
+            <TextBlock x:Name="txtblockWarnings" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Background="#FFFFFED2" IsManipulationEnabled="True" Height="244"/>
+        </ScrollViewer>
+        <TextBox x:Name="txtOU" TextWrapping="Wrap" Margin="183,0,86.8,3.4" IsEnabled="False" Height="21" VerticalAlignment="Bottom" TabIndex="6"/>
+        <Button x:Name="btnSelectOU" Content="Select OU" Margin="118,0,0,3.4" TabIndex="2" Height="21" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="60"/>
+        <Button x:Name="btnMatch" Content="Match Now" HorizontalAlignment="Right" Margin="0,0,11,3" Width="70.8" UseLayoutRounding="False" TabIndex="2" Height="21.2" VerticalAlignment="Bottom"/>
+        <Button x:Name="btnSaveDIDMatches" Content="Save" HorizontalAlignment="Left" Margin="65,0,0,3" Width="48" UseLayoutRounding="False" TabIndex="1" Height="21" VerticalAlignment="Bottom"/>
+        <Button x:Name="btnLoadDIDMatches" Content="Load" HorizontalAlignment="Left" Margin="12,0,0,3.4" Width="48" TabIndex="0" Height="21" VerticalAlignment="Bottom"/>
+        <Label Content="Information/Warnings" Margin="10,7.8,10.8,0" FontWeight="Bold" Grid.Row="1" Height="26" VerticalAlignment="Top"/>
+        <Button x:Name="btnExit" Content="Exit" Margin="0,0,9.8,10" UseLayoutRounding="False" TabIndex="4" Height="21.2" VerticalAlignment="Bottom" Grid.Row="1" IsCancel="True" HorizontalAlignment="Right" Width="70.8"/>
+
+    </Grid>
+</Window>
+'@
+        
+        
+        ${r`Ea`dEr}=(&('Ne'+'w-Ob'+'ject') S`ySt`E`m.Xm`L.xmLNoderE`A`dER ${xAm`LMa`in}) 
+        ${w`in`dOw}= (gEt-vaRiABLe q0JeT)."VA`LUE"::"L`oAD"( ${re`ADER} )
+
+        ${n`Am`ESPacE} = @{ "x" = ("{6}{0}{1}{7}{5}{4}{2}{8}{3}{9}" -f'tp://','sche','ft','200','croso','mi','ht','mas.','.com/winfx/','6/xaml') }
+        ${Xpat`H_f`OrmO`B`jeCTS} = ((("{7}{6}{11}{8}{10}{17}{9}{5}{0}{13}{4}{2}{14}{3}{12}{1}{15}{16}{18}"-f'0},','a','),','}','N{0}','{0}n{','[@*[contai','//*','ra','.),','nslate(nam','ns(t','N','{0}','{0','me{','0})','e(',']]'))  -F  [ChaR]39) 
+
+        
+        &('Sele'+'ct-Xm'+'l') ${X`AM`lmaiN} -Namespace ${nA`mEsPA`ce} -xpath ${X`pAth_FOr`Mobje`C`TS} | &('Fo'+'reach') {
+            ${_}."N`Ode" | &('F'+'oreach') {
+                &('Set'+'-'+'Var'+'iable') -Name (${_}."N`AmE") -Value ${WiN`d`ow}."FINd`N`AMe"(${_}."n`AmE")
+            }
+        }
+        
+        function NeW-p`o`pup {
+            param (
+                [Parameter(POSItIOn=0,maNdATORy=${tr`Ue},HELPMesSAgE={"{6}{5}{0}{2}{1}{3}{4}"-f ' mes','e for the po','sag','pu','p',' a','Enter'})]
+                [ValidateNotNullorEmpty()]
+                [string]${mE`ssage},
+                [Parameter(POSItION=1,maNDAtory=${T`Rue},heLpmesSAGE={"{6}{3}{0}{2}{5}{4}{1}"-f'le','pup',' f','t',' po','or the','Enter a ti'})]
+                [ValidateNotNullorEmpty()]
+                [string]${T`iT`le},
+                [Parameter(POSITIOn=2,HeLpmESSAge={"{10}{1}{11}{2}{4}{7}{12}{0}{9}{8}{3}{5}{6}"-f'ir','n',' s','ut','econds to di','ton click','.','sp',' a b','e','How ma','y','lay? Use 0 requ'})]
+                [ValidateScript({${_} -ge 0})]
+                [int]${TI`ME}=0,
+                [Parameter(PoSiTiON=3,hELPmesSAGe={"{5}{2}{1}{0}{3}{4}"-f ' a butt','er','nt','on',' group','E'})]
+                [ValidateNotNullorEmpty()]
+                [ValidateSet("OK",{"{1}{0}"-f 'ncel','OKCa'},{"{1}{3}{0}{2}" -f 'n','AbortRet','ore','ryIg'},{"{1}{0}" -f'sNo','Ye'},{"{1}{0}{2}{3}"-f 'sNoCan','Ye','c','el'},{"{3}{0}{2}{1}" -f'ryCan','l','ce','Ret'})]
+                [string]${BUT`TO`NS}="OK",
+                [Parameter(POSitIon=4,HELpmessAge={"{1}{3}{0}{2}"-f' ','En','set','ter an icon'})]
+                [ValidateNotNullorEmpty()]
+                [ValidateSet({"{0}{1}" -f 'Sto','p'},{"{0}{2}{1}" -f 'Questi','n','o'},{"{0}{2}{1}" -f'E','on','xclamati'},{"{0}{1}{2}"-f 'Infor','mat','ion'} )]
+                [string]${ic`oN}=("{3}{0}{2}{1}"-f'nfo','n','rmatio','I')
+            )
+
+            
+            switch (${B`U`TToNs}) {
+                "OK"               {${BuTt`On`VAlUE} = 0}
+                ("{0}{1}{2}"-f'OKCan','ce','l')         {${BuTTo`NVa`lUe} = 1}
+                ("{0}{3}{1}{2}" -f 'Ab','n','ore','ortRetryIg') {${b`Ut`ToNvAlUe} = 2}
+                ("{0}{1}" -f 'Yes','No')            {${b`UTT`oNV`ALuE} = 4}
+                ("{1}{2}{0}{3}"-f 'oCan','Yes','N','cel')      {${bU`Tt`onV`ALue} = 3}
+                ("{1}{2}{0}" -f 'l','RetryCanc','e')      {${bu`Tt`OnValUe} = 5}
+            }
+
+            
+            switch (${i`coN}) {
+                ("{0}{1}" -f 'Sto','p')        {${i`coNV`AlUE} = 16}
+                ("{2}{1}{0}"-f'ion','uest','Q')    {${IcoNV`AL`UE} = 32}
+                ("{2}{1}{0}{3}"-f 'matio','a','Excl','n') {${i`cO`NV`ALUe} = 48}
+                ("{1}{0}{2}" -f'a','Inform','tion') {${I`C`oNValUE} = 64}
+            }
+
+            
+            Try {
+                ${ws`HelL} = &('N'+'ew-O'+'b'+'ject') -ComObject wsC`RIP`T.`ShELl -ErrorAction ST`OP
+                
+                ${WShE`ll}."PoP`Up"(${mE`sSAGe},${tI`Me},${T`It`le},${BU`Tt`o`NVAlue}+${ic`ONVal`Ue})
+            }
+            Catch {
+                &('Wri'+'te-War'+'nin'+'g') ("{10}{6}{11}{9}{4}{8}{1}{0}{5}{3}{2}{7}"-f 'COM','t.Shell ','bj','o','scr',' ',' to','ect','ip','te W','Failed',' crea')
+                &('Wr'+'ite-Wa'+'rni'+'ng') ${_}."Ex`CE`pTI`ON"."meS`sagE"
+            }
+        }
+
+        function Se`T-Cli`P`BOaRD{
+          param(
+            [string]${t`Ext}
+          )
+          process{
+            &('Add'+'-T'+'ype') -AssemblyName SYStem`.WI`N`dOws`.FORMS
+            ${t`B} = &('N'+'ew-'+'Object') Sy`st`EM`.WindOw`s`.F`OR`MS.`TextBOX
+            ${TB}."M`UL`TiLIne" = ${tr`Ue}
+            ${T`B}."T`ExT" = ${t`EXt}
+            ${TB}."seLE`CTA`lL"()
+            ${t`B}."cO`pY"()
+          }
+        }
+
+        function g`E`T-FilEfRO`Md`iaLOg {
+            
+            
+            [CmdletBinding()] 
+            param (
+                [Parameter(PoSitIon=0)]
+                [string]${INI`TiAl`Dir`Ect`ORY} = './',
+                [Parameter(poSItiON=1)]
+                [string]${FIl`EFIlt`Er} = ((("{1}{4}{0}{3}{2}" -f '*','All files','wZ *.*',')x',' (*.'))  -cREPLAcE 'xwZ',[CHar]124),
+                [Parameter(POsITiOn=2)] 
+                [string]${TI`Tle`DI`ALOG} = '',
+                [Parameter(PosiTIoN=3)] 
+                [switch]${aL`loWm`U`ltIseLect}=${F`ALSE}
+            )
+              $p7TYs::"Lo`AD`Wit`h`pArtI`ALNA`Me"(("{2}{1}{4}{0}{3}" -f 'ws.','st','Sy','forms','em.windo')) | &('Out-'+'Nul'+'l')
+
+            ${oPENFI`Le`dIA`LOG} = &('New-'+'Ob'+'je'+'ct') SY`sTeM.Wi`ND`o`wS.forMS`.oPE`NfIL`Edial`Og
+            ${OpEnfi`lE`dI`ALOG}."i`N`i`TIAlDI`RE`CTORy" = ${IN`I`T`IALdIrECto`Ry}
+            ${oPe`NFIle`D`ial`OG}."f`ILTEr" = ${Fi`l`EfilteR}
+            ${OPe`NFIle`dIALog}."tI`TLE" = ${tITLEDI`A`l`oG}
+            ${oPE`NF`ileDiAlOG}."SHOWHe`lP" = if (${h`OSt}."NA`ME" -eq ("{2}{1}{0}" -f 'st','onsoleHo','C')) {${T`RuE}} else {${f`A`lSE}}
+            if (${Allo`wmULT`i`sel`ECT}) { ${opEn`FIL`Ed`iA`LoG}."m`U`ltIsELe`ct" = ${t`RUe} } 
+            ${OpEN`Fil`EdIaL`OG}."s`H`owdiA`LOG"() | &('Ou'+'t-N'+'ull')
+            if (${alLO`WmuL`TiSEL`ECT}) { return ${ope`N`FilEdi`A`lOg}."fi`lENAM`ES" } else { return ${oPeNF`Ile`diaL`og}."fILeN`AmE" }
+        }
+
+        function s`Ave-`FilE`FROMdIaL`Og {
+            
+            
+            [CmdletBinding()] 
+            param (
+                [Parameter(POSITiOn=0)]
+                [string]${INITia`lDir`E`C`TorY} = './',
+                [Parameter(PoSition=1)]
+                [string]${Def`A`UlTFilEn`A`Me} = '',
+                [Parameter(poSItion=2)]
+                [string]${fIl`Ef`ilter} = ((("{3}{2}{4}{5}{0}{1}" -f'3P9 ','*.*',' file','All','s (*','.*)'))."rePlA`ce"('3P9','|')),
+                [Parameter(pOSitION=3)] 
+                [string]${tIt`lE`d`iAlog} = ''
+            )
+              (GET-vArIable P7TYS  -vaLu )::"L`OaDWITHp`Art`iaLNAmE"(("{1}{0}{2}{3}"-f'stem','Sy','.windows','.forms')) | &('O'+'ut-Nul'+'l')
+
+            ${S`E`TbAC`kupL`OCaTion} = &('N'+'ew-Objec'+'t') sy`st`E`m.`windoWS.f`ORMs.S`AV`EFI`lEdIaL`oG
+            ${s`E`TBack`UplOC`A`TioN}."Initi`Al`diRE`ctO`RY" = ${IniTIa`lD`IReC`TOrY}
+            ${SE`TbaC`ku`pLOc`ATI`oN}."f`IlTER" = ${F`ILeFil`Ter}
+            ${s`E`T`BacKUplocAT`iON}."FI`lTERi`N`DEX" = 2
+            ${set`BAcKupLOCAT`I`ON}."T`iTLE" = ${tI`TLEDIAL`oG}
+            ${SEtB`AcKU`Pl`o`caTi`On}."r`ES`TorEdiR`ECTO`RY" = ${t`RUe}
+            ${s`ET`BackuPL`o`CAT`IOn}."S`HowhE`lP" = if (${ho`St}."n`Ame" -eq ("{1}{0}{3}{2}"-f 'so','Con','ost','leH')) {${t`RUe}} else {${FaL`SE}}
+            ${sEtB`AcKUpLOcAt`I`On}."fIl`ENA`ME" = ${DEfa`U`LtF`ILeNAME}
+            ${SET`Ba`cKUpL`oCa`TIon}."SHoWD`IA`LOg"() | &('Ou'+'t-Null')
+            return ${set`BAc`Ku`pLOCATION}."fi`lEName"
+        }
+
+        function add-ar`Ray2`ClIpB`oARd {
+          param (
+            [PSObject[]]${C`OnvErtobJ`ECt},
+            [switch]${h`EAdeR}
+          )
+          process{
+            ${A`RR`Ay} = @()
+
+            if (${He`A`DeR}) {
+              ${l`INE} =""
+              ${CON`V`Ertob`jeCt} | &('Ge'+'t'+'-Member') -MemberType PrOp`Er`Ty,n`otEPR`Op`ErTy,codE`pr`OP`ERty | &('Sele'+'ct') -Property n`AMe | &('%'){
+                ${lI`Ne} += (${_}."n`AmE"."t`oS`TriNg"() + "`t")
+              }
+              ${aRr`AY} += (${l`INE}."TRI`meNd"("`t") + "`r")
+            }
+            foreach(${R`ow} in ${coN`V`Er`TO`BJECT}){
+                ${li`NE} =""
+                ${R`OW} | &('Get'+'-Me'+'mbe'+'r') -MemberType P`RopeRtY,nO`TEP`ROperty | &('%'){
+                  ${NA`mE} = ${_}."N`AmE"
+                  if(!${r`OW}.${na`me}){${r`ow}.${N`Ame} = ""}
+                  ${l`inE} += ([string]${r`Ow}.${N`Ame} + "`t")
+                }
+                ${aRr`AY} += (${lI`NE}."tR`iMEND"("`t") + "`r")
+            }
+            &('Set'+'-C'+'lipBo'+'ard') ${ArR`AY}
+          }
+        }
+        
+        function GEt-Ou`dIA`L`oG {
+            
+            [CmdletBinding()]
+            param()
+            
+            function GET`-chIL`dOusTRuc`TU`RE {
+                
+                [CmdletBinding()]
+                param(
+                    [Parameter(pOSITion=0, vALUefrOmPiPeLINe=${TR`Ue}, mANdaTOrY=${t`Rue}, heLPmEssaGE={("{6}{16}{5}{10}{13}{2}{15}{12}{11}{3}{14}{9}{0}{4}{8}{1}{7}"-f 'ain','u1/ou','Name f','e','/','a','Ar','2)','o',' dom','y of OUs in Canonica','i',' (','l','.','ormate','r')})]
+                    [string[]]${oUAr`R`Ay},
+                    [Parameter(PoSITion=1, HelpMESsAGe={"{1}{0}{2}"-f ' ','Base of','OU.'})]
+                    [string]${oub`A`SE} = ''
+                )
+                begin {
+                    ${n`EWA`RRaY} = @()
+                    ${bA`sE} = ''
+                    ${f`irs`Ts`ET} = ${FA`lSe}
+                    ${OU`ARRAyl`ist} = @()
+                }
+                process {
+                    ${o`UArrA`yliSt} += ${Ou`ARR`AY}
+                }
+                end {
+                    ${Ouar`RAYLi`st} = ${ouarra`Y`LiST} | &('Wh'+'ere') {(${_} -ne ${Nu`LL}) -and (${_} -ne '')} | &('S'+'ele'+'ct') -Unique | &('S'+'o'+'rt-Obje'+'ct')
+                    if (${OuaRra`yl`i`St}."c`OUnT" -gt 0) {
+                        ${OuARray`l`I`ST} | &('For'+'each') {
+                           
+                            ${f`iRStEl`E`mEnT} = @(${_} -split '/')[0]
+                            ${re`g`EX} = "`^`($firstelement`?`)"
+                            ${t`MP} = ${_} -replace ${RE`gex},'' -replace ((("{0}{1}{2}"-f '^({0}','/?',')'))-F[CHar]92),''
+
+                            if (-not ${firs`T`SEt}) {
+                                ${B`Ase} = ${fIR`steL`EM`Ent}
+                                ${Fi`R`s`TSet} = ${tr`Ue}
+                            }
+                            else {
+                                if ((${b`AsE} -ne ${fI`RST`EleM`Ent}) -or (${t`Mp} -eq '')) {
+                                    &('Writ'+'e'+'-V'+'er'+'bose') ('Proc'+'es'+'si'+'ng '+'Su'+'bt'+'ree '+'fo'+'r: '+"$base")
+                                    ${f`ULl`OUPAth} = if (${OUbA`Se} -ne '') {${OU`B`Ase} + '/' + ${BA`Se}} else {${b`ASE}}
+                                    &('New'+'-Obje'+'ct') PS`oBJECT -Property @{
+                                        ("{1}{0}"-f'e','nam') = ${Ba`se}
+                                        ("{0}{1}" -f'p','ath') = ${F`ULLou`paTh}
+                                        ("{0}{1}"-f 'child','ren') = if (${newa`R`RaY}."co`UNt" -gt 0) {,@(&('G'+'et-Chi'+'l'+'dOUStructu'+'re') -ouarray ${Ne`wARRAy} -oubase ${FUl`LOuPa`TH})} else {${N`UlL}}
+                                    }
+                                    ${B`AsE} = ${FIRst`El`EmE`Nt}
+                                    ${N`EWaRr`Ay} = @()
+                                    ${f`irsts`Et} = ${fa`Lse}
+                                }
+                            }
+                            if (${t`MP} -ne '') {
+                                ${nEW`Arr`Ay} += ${t`mP}
+                            }
+                        }
+                        &('W'+'rite-Ve'+'r'+'bose') ('Pro'+'ces'+'sing '+'Subtr'+'ee'+' '+'for:'+' '+"$base")
+                        ${fuLLoU`p`A`TH} = if (${O`UbAse} -ne '') {${O`UBasE} + '/' + ${B`AsE}} else {${ba`sE}}
+                        &('New-Ob'+'jec'+'t') ps`ObjEct -Property @{
+                            ("{1}{0}" -f 'ame','n') = ${bA`SE}
+                            ("{0}{1}" -f'pat','h') = ${Ful`Lou`Path}
+                            ("{0}{2}{1}"-f 'ch','n','ildre') = if (${nE`Wa`RRAY}."c`OuNT" -gt 0) {,@(&('Get-'+'Ch'+'ildOUSt'+'ruc'+'ture') -ouarray ${NEWAr`R`AY} -oubase ${FUlL`Oupa`Th})} else {${Nu`LL}}
+                        }
+                    }
+                }
+            }
+    
+            function C`On`VERt-cNToDN {
+                param([string]${Cn})
+                ${spL`ItCn} = ${Cn} -split '/'
+                if (${Spl`It`cn}."coU`NT" -eq 1) {
+                    return 'DC=' + ((${s`pL`ITCn})[0] -replace '\.',("{1}{0}" -f'=',',DC'))
+                }
+                else {
+                    ${B`As`EDN} = '.'+(${S`PlIT`CN})[0] -replace '\.',("{1}{0}" -f '=',',DC')
+                     ( get-vARIaBlE  5YKl8  -vALUE)::"rev`ErSE"(${S`pl`ItcN})
+                    ${O`Us} = ''
+                    for (${in`DeX} = 0; ${in`D`EX} -lt (${SPliT`CN}."C`OUNT" - 1); ${i`N`dEX}++) {
+                        ${O`US} += 'OU=' + ${SpL`iTcn}[${I`N`dEx}] + ','
+                    }
+                    ${re`sU`lT} = (${o`US} + ${BaSE`DN}) -replace ',,',','
+                    return ${rEs`U`lT}
+                }
+            }
+
+            function A`DD`-tR`EEiTEM {
+                param(
+                      ${trE`Eo`Bj},
+                      ${N`AMe},
+                      ${P`ARe`Nt},
+                      ${t`AG}
+                      )
+
+                ${c`HiL`DItem} = &('Ne'+'w-Obj'+'ect') SY`steM.WINd`OW`s.coNTroLS.Tr`E`EViEWiteM
+                ${ChiLdi`T`EM}."HE`A`DeR" = ${na`mE}
+                ${ch`ild`IteM}."t`AG" = ${t`Ag}
+                ${pa`R`ENT}."I`TEMs"."a`DD"(${CH`ILdIT`EM}) | &('O'+'ut-Nul'+'l')
+
+                if ((${T`ReeObj}."ChI`LdRen")."CO`UNT" -gt 0) {
+                    foreach (${o`U} in ${TRE`E`obj}."CHI`Ldr`EN") {
+                        ${tRE`EPare`NT} = &('Add-'+'Tre'+'eI'+'tem') -TreeObj ${Ou} -Name ${O`U}."nA`ME" -Parent ${cH`iL`dIt`Em} -Tag ${ou}."P`ATh"
+                    }
+                }
+            }
+
+            if (  (chIldiTEM ('vaRIab'+'Le:'+'6'+'1v')  )."v`Alue"::"CU`R`ReN`TThRe`Ad"."aP`A`RtMEnt`StaTe" -ne 'STA') {               
+                &('Wr'+'ite-War'+'ni'+'ng') ("{13}{7}{10}{15}{14}{3}{4}{12}{11}{8}{9}{0}{6}{5}{1}{2}" -f'it','n ','this script.','xe with',' ','then ru','ch, ','P','a ','sw','owerSh','St','-','Run ','e','ell.')
+                &('Writ'+'e-'+'War'+'ning') ("{1}{0}{2}" -f 'mple','Exa',':')
+                &('W'+'rite-Wa'+'r'+'ning') ("{7}{5}{6}{1}{0}{4}{3}{2}" -f ' -no','e',' -Sta','rofile','p','  P','owerShell.ex','  ')
+                break
+            }
+
+            [void] (  GET-vArIABle  p7TYS  -vAlUeon  )::"lo`ADWi`T`HparT`i`AlnaME"(("{0}{1}{3}{2}" -f 'prese','ntation','ramework','f'))
+            [xml]${X`AMLm`AiN} = @'
+        <Window x:Name="windowSelectOU"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                Title="Select OU" Height="350" Width="525">
+            <Grid>
+                <TreeView x:Name="treeviewOUs" Margin="10,10,10.4,33.8"/>
+                <Button x:Name="btnCancel" Content="Cancel" Margin="0,0,10.4,5.8" ToolTip="Filter" Height="23" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="71" IsCancel="True"/>
+                <Button x:Name="btnSelect" Content="Select" Margin="0,0,86.4,5.8" ToolTip="Filter" HorizontalAlignment="Right" Width="71" Height="23" VerticalAlignment="Bottom" IsDefault="True"/>
+                <TextBlock x:Name="txtSelectedOU" Margin="10,0,162.4,5.8" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="23" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" IsEnabled="False"/>
+            </Grid>
+        </Window>
+'@
+
+            
+            ${r`Ea`DEr}=(&('New-Obj'+'ec'+'t') S`y`SteM.XMl`.`X`MLnO`DeReader ${xa`MlmA`iN}) 
+            ${wI`NDow}= (  IteM  ('Va'+'rIaBle:q'+'0jE'+'T') )."va`luE"::"LO`Ad"( ${Re`AdER} )
+
+            ${nAmE`S`PAce} = @{ "x" = ("{8}{0}{1}{4}{7}{2}{6}{3}{5}"-f '://sc','h','micro','oft.com/winfx/2006/xam','em','l','s','as.','http') }
+            ${X`Pa`Th_`FOR`mObj`ECts} = ((("{4}{13}{11}{15}{7}{16}{14}{9}{12}{0}{1}{6}{17}{10}{5}{8}{3}{2}"-f'sl','a',']',')]','//*','}','te(name(.),{0}n{0},{0}N{0','ta','Name{0}','r',',{0','*','an','[@','ns(t','[con','i','})'))-f[cHAr]39) 
+
+            
+            &('Se'+'lect-'+'Xml') ${XAm`lMA`In} -Namespace ${NaME`sPA`cE} -xpath ${X`pA`T`h_FOrm`oBJeCTs} | &('F'+'ore'+'ach') {
+                ${_}."no`dE" | &('Fo'+'r'+'each') {
+                    &('Se'+'t-'+'Variable') -Name (${_}."na`ME") -Value ${w`IN`DoW}."f`INDnA`ME"(${_}."nA`ME")
+                }
+            }
+
+            ${CO`NN} = &('Connect-Act'+'iv'+'e'+'Dire'+'ctory') -ADContextType:d`iRE`CT`O`RyENTRY
+            ${D`OMSt`RuCt} = @(&('S'+'earch-A'+'D') -DirectoryEntry ${c`Onn} -Filter ("{1}{5}{0}{4}{2}{6}{3}"-f's','(Obj','izationa','Unit)','s=organ','ectCla','l') -Properties can`o`NIcAl`NAme)."caN`onIC`AlNAME" | &('so'+'rt') | &('G'+'et-C'+'hil'+'dOUStruct'+'ur'+'e')
+
+            &('Ad'+'d-TreeI'+'te'+'m') -TreeObj ${D`oM`StRuct} -Name ${dom`s`TrUCT}."na`me" -Parent ${Tr`Ee`Vie`WOus} -Tag ${d`o`mstRuCT}."p`AtH"
+
+            ${TreEvI`Ew`OUs}."aDd_s`ELE`c`TeDiT`E`mcH`Anged"({
+                ${T`xTs`EL`EcTED`oU}."T`Ext" = &('Convert-CNTo'+'D'+'N') ${th`is}."SELEC`TEd`iteM"."T`AG"
+            })
+
+            ${B`T`NsElect}."AD`D_CL`icK"({
+                ${S`C`Ript`:d`IA`lOg`RESulT} = ${tx`TSe`le`CtedoU}."te`XT"
+                ${W`inD`OWS`ELECTou}."CLo`sE"()
+            })
+            ${B`TncAn`C`El}."A`D`d`_cLIck"({
+                ${SCrIPT:D`I`Al`O`grEsuLt} = ${NU`lL}
+            })
+
+            
+            
+            ${As`Y`NC} = ${WInDo`WsE`leC`TOU}."DI`SpaTcH`Er"."invokEa`Sy`NC"({
+                ${R`ET`VAl} = ${wIND`owsE`L`ECtOU}."ShO`WD`iAlOg"()
+            })
+            ${A`sy`NC}."WA`it"() | &('Out-N'+'u'+'ll')
+
+            
+            &('Selec'+'t-'+'Xm'+'l') ${XAM`LM`Ain} -Namespace ${nA`Me`sp`ACE} -xpath ${XP`ATH_`F`o`RmOB`Jects} | &('For'+'each') {
+                ${_}."N`OdE" | &('Forea'+'c'+'h') {
+                    &('Remo'+'v'+'e-'+'Var'+'iable') -Name (${_}."NA`ME")
+                }
+            }
+            return ${Di`AL`OgResuLT}
+        }
+
+        function C`onneC`T-ac`TIvEd`i`RECTORY {
+            [CmdletBinding()]
+            param (
+                [Parameter(PARaMEterSETNaME="Cred`ENt`iAl")]
+                [Parameter(pARAMETErSetnaMe="CreDenTI`A`LObJe`Ct")]
+                [Parameter(pARAMeTerSetNAmE="D`EFAUlt")]
+                [string]${c`omPu`TERNA`me},
+                
+                [Parameter(pARameTErSeTnaME="c`REdE`NtIal")]
+                [string]${D`om`AiNnA`ME},
+                
+                [Parameter(PaRametErsetnAmE="cr`EDEnt`iaL", MAnDaTORy=${T`RuE})]
+                [string]${USeRn`A`me},
+                
+                [Parameter(ParaMEtersetnaMe="Cre`DeNT`iaL", HElpmesSage={"{10}{1}{2}{9}{3}{0}{5}{4}{8}{7}{6}" -f 'm','rd ','for U','rna','ote dom','e in rem','.','in','a','se','Passwo'}, MANDAtORY=${t`RuE})]
+                [string]${pA`sswO`Rd},
+                
+                [parameter(ParamETERSetNAmE="CR`EdENtI`AloB`JECT",hElpMESSaGe={"{2}{3}{0}{1}{4}" -f 'ntia','l ','Full c','rede','object'},maNDaTORy=${T`RUE})]
+                [System.Management.Automation.PSCredential]${CR`EDs},
+                
+                [Parameter(hELpMeSSAge={"{10}{9}{5}{7}{1}{13}{12}{14}{2}{3}{0}{6}{8}{15}{4}{11}" -f'cto',' to re','n, o','r Dire','n','x','r','t','y','nte','Co','try.',' forest, doma','turn,','i','E'})]
+                [ValidateSet({"{0}{1}" -f'Domai','n'},{"{0}{1}{2}" -f 'Fo','r','est'},{"{1}{2}{0}"-f'toryEntry','Di','rec'},{"{2}{0}{1}" -f 'ex','t','ADCont'})]
+                [string]${ad`CONt`ExT`TyPE} = ("{2}{0}{1}"-f'Co','ntext','AD')
+            )
+            
+            ${USIn`GAl`TC`ReD} = ${FA`L`sE}
+            
+            
+            if ((${u`sERNamE} -split "\\")."co`UnT" -gt 1) {
+                ${DomAi`N`NaME} = (${usERNa`Me} -split "\\")[0]
+                ${usE`RN`Ame} = (${uS`ErnA`me} -split "\\")[1]
+            }
+            if ((${u`SERn`AMe} -split "\@")."C`ouNt" -gt 1) {
+                ${dOm`AINnA`ME} = (${USe`RnA`Me} -split "\@")[1]
+                ${UseRNa`Me} = (${uSe`RNAMe} -split "\@")[0]
+            }
+            
+            switch (${pS`c`MdlET}.PaRamETersETName) {
+                ("{3}{0}{2}{4}{1}" -f 'redent','t','ial','C','Objec') {
+                    if (${C`ReDS}."G`EtnE`TWo`RK`CReDenTI`Al"()."D`OmA`iN" -ne '')  {
+                        ${usER`NA`ME}= ${Cr`E`DS}."GE`T`N`EtwO`RKcredEnT`i`AL"()."us`E`RNAme"
+                        ${pAS`S`wOrd} = ${Cr`EDS}."GE`Tne`TWoRkC`REd`ENTi`AL"()."P`AsS`WorD"
+                        ${dOM`AINNa`mE} = ${C`ReDs}."getne`TWorKcr`ED`EnTIAl"()."do`m`AiN"
+                        ${uSinG`A`l`TCR`ED} = ${TR`UE}
+                    }
+                    else {
+                        throw ("{0}{15}{9}{4}{5}{14}{7}{13}{12}{6}{10}{11}{8}{3}{2}{1}" -f'The ',' domain.','ined','f','d','en','ud','l object','e','e','e a',' d','cl',' must in','tia','cr')
+                    }
+                }
+                ("{0}{2}{3}{1}" -f'Cr','l','ede','ntia') {
+                    if (-not ${D`OMAIn`NAME}) {
+                        &('Write-'+'Er'+'ror') ((("{28}{18}{36}{13}{0}{7}{9}{23}{15}{33}{12}{16}{24}{30}{4}{17}{5}{20}{2}{32}{1}{14}{25}{27}{26}{3}{8}{34}{35}{11}{31}{10}{29}{19}{21}{6}{22}" -f 't be in @do','do','th','a','<user','me> ',' para','ma','sse','inname.','o',' ','domainnam','mus','main name mu','m o','e>','na','e','ain','format or ','Name','meter','co','{0','s','ly p','t be manual','Us','m','}','D','e ','r <','d',' in the','rname '))  -F  [Char]92)
+                        return ${NU`lL}
+                    }
+                    else {
+                        ${uSeRN`A`mE} = ${Do`Ma`inNAmE} + '\' + ${UsE`RN`A`ME}
+                        ${usInga`l`TCrEd} = ${tr`UE}
+                    }
+                }
+            }
+
+            ${ad`S`E`RVER} = ''
+            
+            
+            if (${cOm`pUTer`N`AMe}) {
+                
+                ${ADSer`VER} = "LDAP://$($ComputerName)"
+                ${c`o`Nte`XttypE} =  ( Ls  VARIabLE:hr820)."V`AluE"::"dir`ECtoryS`E`Rver"
+
+                if (${u`S`InGa`lt`cREd}) {
+                    ${aD`cON`TExt} = &('New-'+'Ob'+'j'+'ect') sYsT`EM.dirEctorYSER`VIC`ES.aC`T`I`VE`diRE`CTorY.`Dire`ct`o`R`yc`ONText ${CONTe`x`TtY`pe}, ${CoMpU`Te`Rna`Me}, ${U`se`RNAME}, ${pAsS`w`ORD}
+                }
+                else {
+                    if (${C`OM`pU`TeRNa`mE}) {
+                        ${aD`C`oNt`EXT} = &('New-Ob'+'j'+'ec'+'t') sY`sTe`M.d`ir`EcToRYServiC`ES.`ActIvEdiREcTory.DI`R`ECTO`RycO`NTEXt ${cO`NtEXtty`pE}, ${C`oMp`Ute`RnAmE}
+                    }
+                    else {
+                        ${adC`Onte`xT} = &('New'+'-Obj'+'ect') S`YsTeM.Di`ReCtoRYSERVIce`s.aCti`VedIreCTORy.`D`I`REctOR`ycONT`E`XT ${coNT`EXtT`ype}
+                    }
+                }
+                
+                try {
+                    switch (${ADcO`NT`EXt`TypE}) {
+                        ("{1}{0}{2}" -f'Co','AD','ntext') {
+                            return ${A`dC`ontEXt}
+                        }
+                        ("{0}{3}{1}{4}{2}"-f'Dir','c','ryEntry','e','to') {
+                            if (${USin`gal`TcREd}) {
+                                return &('N'+'ew'+'-Obj'+'ect') sYs`Tem.DI`RE`C`TOry`sERVI`cES.`dI`ReC`TO`R`yENTRy(${a`D`SERVEr} ,${uS`E`RNaMe}, ${p`ASs`w`ORd})
+                            }
+                            else {
+                                return &('N'+'e'+'w-Object') -TypeName sySTem.di`REcT`o`RYSeRV`IcEs.`DIrEc`T`oRyeNTRy ${ADS`ER`Ver}
+                            }
+                        }
+                        ("{2}{1}{0}"-f 't','s','Fore') {
+                            return  $SX52A::"G`EtFORE`St"(${aD`cO`NTe`xt})
+                        }
+                        ("{0}{1}" -f'D','omain') {
+                            return   (iTem vAriaBLe:7Rq6l9  )."Va`Lue"::"Ge`TDoma`iN"(${aDCoN`Te`xT})
+                        }
+                    }
+                }
+                catch {
+                    throw
+                }
+            }
+            
+            
+            
+            if (${uSin`gA`l`T`cRed}) {
+                
+            }
+            
+            try {
+                ${Co`N`TExTty`PE} =  (gET-ChILdItEm VAriaBle:HR820  )."v`ALue"::"D`OmAiN"
+            }
+            catch {
+                throw ("{14}{0}{2}{5}{13}{11}{15}{7}{16}{9}{12}{10}{8}{4}{6}{1}{3}"-f'n',' accou','ect t','nt?','in join','o ','ed','ult doma','ma','n. Is th',' a do','f','is','a de','Unable to con','a','i')
+            }
+            try {
+                switch (${A`dcOntEx`TTy`PE}) {
+                    ("{1}{0}{2}"-f'n','ADCo','text') {
+                        return &('N'+'e'+'w-Object') S`yS`TeM.`dirEcTo`RY`SerVIC`Es.ac`T`iV`EDI`Rec`T`Ory.`DiRe`CtoRyc`O`N`TEXt ${C`ONtE`xt`TYpe}
+                    }
+                    ("{1}{2}{0}{3}" -f'ector','D','ir','yEntry') {
+                        return [System.DirectoryServices.DirectoryEntry]''
+                    }
+                    ("{1}{0}" -f'orest','F') {
+                        return  ( Get-vARiAbLe ("Sx52"+"A") )."VaL`Ue"::"GeTcur`R`ENtfoRE`St"()
+                    }
+                    ("{2}{1}{0}"-f'in','a','Dom') {
+                        return  (Get-VArIable ("7"+"RQ6L"+"9") )."VAl`Ue"::"getcurreNTDo`m`Ain"()
+                    }
+                }
+            }
+            catch {
+                throw
+            }
+        }
+
+        function sE`ArcH`-ad {
+            
+            
+            [CmdletBinding()]
+            param (
+                [string[]]${F`ILtER},
+                [string[]]${pRoP`E`RTIEs} = @(("{1}{0}" -f'ame','N'),("{1}{0}" -f 'ath','ADSP')),
+                [string]${S`EarC`hroOT}='',
+                [switch]${Do`N`TjoIn`A`TTR`ibUTEv`ALU`Es},
+                [System.DirectoryServices.DirectoryEntry]${dire`CtOryENT`Ry} = ${Nu`Ll}
+            )
+
+            if (${dir`Ec`TOry`E`NtRy} -ne ${N`ULL}) {
+                if (${searc`HRO`oT} -ne '') {
+                    ${direCt`orYE`NtrY}."SEt_`P`Ath"(${se`AR`CHROot})
+                }
+            }
+            else {
+                ${d`IR`EctoR`Ye`Ntry} = [System.DirectoryServices.DirectoryEntry]${seArCHr`O`ot}
+            }
+
+            if (${fI`L`Ter}) {
+                ${Ld`Ap} = "(&({0}))" -f (${FiL`T`Er} -join ')(')
+            }
+            else {
+                ${L`dAP} = (("{1}{0}"-f'me=*)','(na'))
+            }
+            try {
+                (&('N'+'ew-Obj'+'ect') Sy`sTEm`.D`IR`ECt`orySERvIcEs.D`irecToRy`SEaR`cHEr -ArgumentList @(
+                    ${d`i`RE`cToRyENTRy},
+                    ${L`dAp},
+                    ${PRo`P`E`RTIEs}
+                ) -Property @{
+                    "p`Agesize" = 1000
+                })."fInd`All"() | &('For'+'Eac'+'h-'+'Object') {
+                    ${O`BjE`c`TPROPS} = @{}
+                    ${_}."pR`O`pE`RtIEs"."G`ETen`UmeR`AtOR"() |
+                        &('Fore'+'ac'+'h-O'+'bj'+'ect') {
+                            ${V`AL} = @(${_}."va`LUe")
+                            if (${_}."N`AMe" -ne ${NU`LL}) {
+                                if (${d`onTJOIN`ATt`RIB`U`TEVALU`ES} -and (${v`AL}."C`OUNT" -gt 1)) {
+                                    ${OBJe`Ct`pRO`ps}."A`dd"(${_}."n`AME",${_}."v`ALuE")
+                                }
+                                else {
+                                    ${obJec`T`prO`ps}."A`dd"(${_}."n`AME",(-join ${_}."VAl`UE"))
+                                }
+                            }
+                        }
+                    if (${obJEC`T`Pro`ps}."P`sb`ASe"."Ke`yS"."c`OUnT" -ge 1) {
+                        &('N'+'ew-Objec'+'t') PsoB`JeCt -Property ${OBJ`EctPr`o`pS} | &('S'+'elect') ${Pr`O`per`TIeS}
+                    }
+                }
+            }
+            catch {
+                &('Wr'+'ite-War'+'ni'+'n'+'g') -Message ('Search-AD: Filter - {0}: Root - {1}: Error - {2}' -f ${ld`AP},${rO`oT}."P`Ath",${_}."EX`CE`pTion"."meSsa`GE")
+            }
+        }
+
+        function foR`m`A`T-LY`NcADACCo`U`NT {
+            [cmdletbinding()]
+            param(
+                [Parameter(hElpmESSaGe={"{2}{1}{0}{4}{3}" -f'er o','s','U','to process.','r users '}, mandAtORy=${t`RuE}, ValUeFroMpIpELINE=${TR`UE})]
+                [psobject]${uS`Er},
+                [Parameter(HeLpmeSsAGe={"{0}{3}{1}{2}"-f 'Typ','f accou','nt.','e o'})]
+                [string]${pH`oN`EtY`PE} = ''
+            )
+            begin {}
+            process {
+                ${U`SERI`NFo} = @{
+                    "Usern`A`ME" = ${U`sER}."Na`mE"
+                    "USer`Lo`giN" = ${US`Er}."sA`m`AccO`UnTnAme"
+                    "S`ID" = ${Us`Er}."s`ID"
+                    "Dn" = ${uS`ER}."d`I`sTI`N`guiShedn`AmE"
+                    "En`Abl`Ed" = ${nU`LL}
+                    "si`PadD`Ress" = ${US`Er}.'msrtcsip-primaryuseraddress'
+                    "PH`onETY`pE" = ''
+                    "LYnCenA`B`L`Ed" = ${N`UlL}
+                    "u`MeNAbL`Ed" = ${N`Ull}
+                    "oU" = ${u`sEr}."DiStiNg`UiShe`dNA`me" -replace "$(($User.distinguishedName -split ',')[0]), ",''
+                    "eXt`EN`sIoN" = ${nu`Ll}
+                    "Em`AIl" = ${u`ser}."Ma`il"
+                    "d`ID" = ${N`ULL}
+                    "d`di" = ${n`ULL}
+                    "Pr`ivAtE`dID" = ${NU`lL}
+                    "a`dPHOne`NuMB`ER" = ${u`SeR}."teLEPHo`Ne`Num`Ber"
+                    "D`EPARtM`ENt" = ${uS`ER}."DeP`ArTMe`Nt"
+                    "Of`F`ice" = ${u`sER}."phYSIC`Al`D`E`LIVeRY`of`Fi`C`EnAME"
+                    "not`ES" = ''
+                }
+                if (${u`Ser}."US`E`RAcc`ountc`oN`TROl" -ne ${nU`LL}) {
+                    ${UsE`R`iNfo}."ENAbL`ED" = -not (&('C'+'onve'+'r'+'t-ADUser'+'Accou'+'ntCo'+'ntr'+'ol') ${U`sER}."usErACco`UNtC`O`NtrOl")."aCC`o`UNTDISabLe"
+                }
+                ${UseR`i`Nfo}."lYn`ceNA`BLEd" = if (${us`ER}.'msRTCSIP-UserEnabled') {${T`RUE}} else {${f`AlSE}}
+                ${u`SE`RiNfo}."UM`E`NaBLEd" = if (${US`ER}."mSE`XcHU`meNabl`EdFLA`gs" -ne ${nu`ll}) {${Tr`Ue}} else {${F`AlSE}}
+                ${USerIN`FO}."Ext`EN`siOn" = if (${U`SeR}.'msRTCSIP-Line' -match ((('^'+'.*ext'+'='+'(.*)LRx')  -REpLAce([ChaR]76+[ChaR]82+[ChaR]120),[ChaR]36))) {${M`AtC`heS}[1]}
+                ${u`S`ErinFO}."D`id" = if (${U`SEr}.'msRTCSIP-Line' -ne ${n`ULl}) {${U`sEr}.'msRTCSIP-Line'}
+                ${us`E`Ri`NfO}."d`DI" = if (${US`Er}.'msRTCSIP-Line' -match (('^tel:'+'{1}+*('+'.*).*{0}') -f [Char]36,[Char]92)) {${Ma`TcheS}[1]} `
+                ${uSE`R`iNFO}."pRIvAtE`D`ID" = if (${U`SeR}.'msRTCSIP-PrivateLine' -ne ${NU`Ll}) {${U`seR}.'msRTCSIP-PrivateLine'}
+                switch (${us`ER}.'msrtcsip-ownerurn') {
+                    ("{2}{3}{1}{0}"-f 'a','a','urn:','application:C') {
+                        ${usER`in`FO}."phON`EtYPe" = ("{2}{4}{1}{3}{0}"-f 'ncing',' Confer','D','e','ialIn')
+                    }
+                    ("{3}{2}{4}{1}{5}{0}"-f'n','p-owneru','sr','m','tcsi','r') {
+                        ${us`E`RiN`Fo}."ph`onEtY`Pe" = ("{1}{0}{3}{2}"-f'Work','RGS ','ow','fl')
+                    }
+                    ("{4}{2}{0}{5}{3}{1}{6}"-f 'evice:commo','o','d','ph','urn:','narea','ne') {
+                        ${uS`ERI`NfO}."P`H`o`NETyPe" = ("{1}{3}{2}{0}"-f 'a','Com','n Are','mo')
+                    }
+                    
+                    default {
+                        ${U`sErI`Nfo}."ph`OnEtype" = ${p`hoNE`TYpe}
+                    }
+                }
+
+                &('N'+'ew-'+'Obje'+'ct') p`S`OBJECt -Property ${uSE`RIn`Fo}
+            }
+            end {}
+        }
+
+        function C`O`NVerT-`ADU`SERaC`C`OuNTc`ontR`OL 
+        {
+            
+            [cmdletbinding()]
+            param(
+                [Parameter(Helpmessage={"{1}{0}{4}{7}{6}{2}{5}{3}" -f'or ','User ','o','.','users','cess','to pr',' '}, mandaTORY=${tr`UE}, ValuEFRompiPeLiNe=${t`RUe})]
+                [string]${u`AcpR`OpeRtY}
+            )
+
+            &('Ad'+'d-Type') -TypeDefinition @"
+            [System.Flags]
+            public enum userAccountControlFlags {
+                SCRIPT                                  = 0x0000001,
+                ACCOUNTDISABLE                          = 0x0000002,
+                NOT_USED                                = 0x0000004,
+                HOMEDIR_REQUIRED                        = 0x0000008,
+                LOCKOUT                                 = 0x0000010,
+                PASSWD_NOTREQD                          = 0x0000020,
+                PASSWD_CANT_CHANGE                      = 0x0000040,
+                ENCRYPTED_TEXT_PASSWORD_ALLOWED         = 0x0000080,
+                TEMP_DUPLICATE_ACCOUNT                  = 0x0000100,
+                NORMAL_ACCOUNT                          = 0x0000200,
+                INTERDOMAIN_TRUST_ACCOUNT               = 0x0000800,
+                WORKSTATION_TRUST_ACCOUNT               = 0x0001000,
+                SERVER_TRUST_ACCOUNT                    = 0x0002000,
+                DONT_EXPIRE_PASSWD                      = 0x0010000,
+                MNS_LOGON_ACCOUNT                       = 0x0020000,
+                SMARTCARD_REQUIRED                      = 0x0040000,
+                TRUSTED_FOR_DELEGATION                  = 0x0080000,
+                NOT_DELEGATED                           = 0x0100000,
+                USE_DES_KEY_ONLY                        = 0x0200000,
+                DONT_REQUIRE_PREAUTH                    = 0x0400000,
+                PASSWORD_EXPIRED                        = 0x0800000,
+                TRUSTED_TO_AUTH_FOR_DELEGATION          = 0x1000000
+            }
+"@
+            ${u`AcAttR`iBs} = @(
+                ("{1}{0}" -f'PT','SCRI'),
+                ("{2}{4}{1}{0}{3}"-f'ABL','UNTDIS','A','E','CCO'),
+                ("{2}{1}{0}" -f 'USED','OT_','N'),
+                ("{0}{3}{2}{1}" -f'HO','IRED','_REQU','MEDIR'),
+                ("{0}{1}" -f 'LO','CKOUT'),
+                ("{3}{0}{1}{2}" -f 'SSW','D_NOT','REQD','PA'),
+                ("{5}{0}{2}{1}{4}{3}" -f'SSWD','ANT_','_C','NGE','CHA','PA'),
+                ("{6}{2}{7}{5}{1}{0}{3}{4}"-f 'TEXT_PA','_','NCRY','SSWORD_ALLOWE','D','D','E','PTE'),
+                ("{4}{3}{1}{0}{2}" -f 'CATE_ACC','UPLI','OUNT','MP_D','TE'),
+                ("{2}{0}{1}{3}"-f'AL','_ACC','NORM','OUNT'),
+                ("{0}{1}{4}{2}{6}{5}{3}"-f 'INTE','RDOMAIN_','U','OUNT','TR','_ACC','ST'),
+                ("{1}{2}{0}{3}{4}"-f'ATIO','W','ORKST','N_TRUST','_ACCOUNT'),
+                ("{0}{2}{5}{4}{3}{1}{6}" -f 'SE','S','RVE','RU','T','R_','T_ACCOUNT'),
+                ("{2}{1}{3}{0}" -f'SSWD','XPIRE_P','DONT_E','A'),
+                ("{3}{4}{0}{5}{2}{1}" -f 'OGON','T','COUN','MN','S_L','_AC'),
+                ("{3}{0}{1}{2}" -f 'AR','D_REQU','IRED','SMARTC'),
+                ("{5}{6}{4}{3}{2}{0}{1}" -f'O','N','I','AT','ELEG','TRUSTED_','FOR_D'),
+                ("{2}{0}{3}{1}" -f'T_DEL','D','NO','EGATE'),
+                ("{4}{2}{1}{0}{3}" -f '_KEY_O','S','DE','NLY','USE_'),
+                ("{1}{0}{2}{5}{3}{4}" -f 'EQUIRE','DONT_R','_P','EAUT','H','R'),
+                ("{0}{1}{3}{4}{2}" -f 'P','ASSWOR','EXPIRED','D','_'),
+                ("{0}{4}{6}{2}{3}{1}{5}"-f'TRUSTED_','ATIO','E','G','TO_AUTH_','N','FOR_DEL'),
+                ("{4}{5}{0}{3}{2}{1}"-f'S','UNT','O','_ACC','PARTIAL','_SECRET')
+            )
+
+            try {
+                &('Wr'+'ite'+'-V'+'erbose') (("{4}{6}{5}{0}{9}{8}{1}{3}{7}{2}"-f 'serAccountContro','erti','UAC.','n','Conve','DU','rt-A','g ','nv','l: Co'))
+                ${uaCo`UtP`UT} = &('N'+'ew-Obj'+'ect') PSob`J`EcT
+                ${U`AC} =   (  gci ("v"+"ArI"+"aBL"+"e:4270q")  )."vAl`Ue"::"Pa`RSE"(("{4}{0}{1}{2}{5}{6}{3}"-f 'Con','t','rol','s','userAccount','Fla','g'), ${U`ACPRoPe`R`TY})
+                ${U`AcATt`RIBs} | &('For'+'ea'+'ch') {
+                    &('Add'+'-Memb'+'er') -InputObject ${uA`cOUT`put} -MemberType NOte`prOp`E`RTY -Name ${_} -Value (${u`AC} -match ${_}) -Force
+                }
+                &('Write-'+'O'+'ut'+'put') ${Ua`Co`UT`pUt}
+            }
+            catch {
+                &('W'+'rite-Warni'+'ng') -Message ('Convert-ADUserAccountControl: {0}' -f ${_}."E`xcepTIOn"."Me`sS`AgE")
+            }
+        }
+
+        function ap`peNd`-Adu`SeraccOunTcO`NtROl {
+            
+            [cmdletbinding()]
+            param(
+                [Parameter(HeLpmESSAGE={"{4}{5}{6}{2}{1}{3}{0}" -f 'ess.',' ','rs to','proc','U','ser or',' use'}, MaNdAToRy=${TR`Ue}, VaLuEfroMPIpEline=${tr`UE})]
+                [psobject[]]${u`ser}
+            )
+
+            begin {
+                &('Ad'+'d-Ty'+'pe') -TypeDefinition @" 
+                [System.Flags]
+                public enum userAccountControlFlags {
+                    SCRIPT                                  = 0x0000001,
+                    ACCOUNTDISABLE                          = 0x0000002,
+                    NOT_USED                                = 0x0000004,
+                    HOMEDIR_REQUIRED                        = 0x0000008,
+                    LOCKOUT                                 = 0x0000010,
+                    PASSWD_NOTREQD                          = 0x0000020,
+                    PASSWD_CANT_CHANGE                      = 0x0000040,
+                    ENCRYPTED_TEXT_PASSWORD_ALLOWED         = 0x0000080,
+                    TEMP_DUPLICATE_ACCOUNT                  = 0x0000100,
+                    NORMAL_ACCOUNT                          = 0x0000200,
+                    INTERDOMAIN_TRUST_ACCOUNT               = 0x0000800,
+                    WORKSTATION_TRUST_ACCOUNT               = 0x0001000,
+                    SERVER_TRUST_ACCOUNT                    = 0x0002000,
+                    DONT_EXPIRE_PASSWD                      = 0x0010000,
+                    MNS_LOGON_ACCOUNT                       = 0x0020000,
+                    SMARTCARD_REQUIRED                      = 0x0040000,
+                    TRUSTED_FOR_DELEGATION                  = 0x0080000,
+                    NOT_DELEGATED                           = 0x0100000,
+                    USE_DES_KEY_ONLY                        = 0x0200000,
+                    DONT_REQUIRE_PREAUTH                    = 0x0400000,
+                    PASSWORD_EXPIRED                        = 0x0800000,
+                    TRUSTED_TO_AUTH_FOR_DELEGATION          = 0x1000000
+                }
+"@
+                ${Use`RS} = @()
+                ${U`AC`A`TTribS} = @(
+                    ("{0}{1}" -f 'SCRI','PT'),
+                    ("{2}{3}{1}{0}" -f 'SABLE','TDI','ACCOU','N'),
+                    ("{1}{0}{2}"-f 'T_USE','NO','D'),
+                    ("{1}{0}{3}{2}"-f'MEDIR_RE','HO','UIRED','Q'),
+                    ("{0}{1}{2}"-f'LO','CKOU','T'),
+                    ("{2}{0}{1}" -f'SWD_NO','TREQD','PAS'),
+                    ("{3}{1}{0}{4}{2}" -f'T_','ASSWD_CAN','HANGE','P','C'),
+                    ("{5}{1}{2}{3}{6}{0}{4}" -f'_PASSWO','N','CR','YP','RD_ALLOWED','E','TED_TEXT'),
+                    ("{5}{4}{6}{2}{1}{0}{3}" -f 'UN','CO','AC','T','LICATE','TEMP_DUP','_'),
+                    ("{2}{3}{0}{1}"-f'L_A','CCOUNT','N','ORMA'),
+                    ("{0}{3}{5}{1}{2}{4}{6}"-f 'INTER','AIN_TRU','ST_A','D','CCO','OM','UNT'),
+                    ("{4}{5}{2}{1}{3}{0}{7}{6}"-f 'RUST','TIO','A','N_T','WORK','ST','COUNT','_AC'),
+                    ("{1}{0}{2}{3}" -f 'TR','SERVER_','UST_','ACCOUNT'),
+                    ("{3}{2}{0}{1}"-f 'EXPI','RE_PASSWD','_','DONT'),
+                    ("{1}{2}{0}{4}{3}" -f '_AC','MNS','_LOGON','NT','COU'),
+                    ("{4}{2}{5}{1}{0}{3}"-f'I','U','MA','RED','S','RTCARD_REQ'),
+                    ("{1}{2}{5}{4}{3}{0}" -f 'ATION','TRUSTE','D_FOR','EG','EL','_D'),
+                    ("{0}{2}{1}"-f 'NOT','EGATED','_DEL'),
+                    ("{1}{2}{3}{0}" -f'NLY','USE_D','ES_KEY_','O'),
+                    ("{2}{1}{4}{3}{5}{0}"-f'H','QUIRE','DONT_RE','PREAU','_','T'),
+                    ("{2}{3}{0}{4}{1}" -f'ORD_EXP','D','PAS','SW','IRE'),
+                    ("{2}{1}{0}{4}{3}"-f '_FOR_DELE','USTED_TO_AUTH','TR','ON','GATI'),
+                    ("{5}{0}{2}{3}{1}{4}"-f '_SE','ACCO','CRET','S_','UNT','PARTIAL')
+                )
+            }
+            process {
+                ${UsE`RS} += ${U`SER}
+            }
+            end {
+                foreach (${U`SR} in ${uSE`Rs}) {
+                    if (${u`SR}."PsOb`JEct"."pRo`P`ErtiES"."M`ATCH"(("{4}{1}{0}{2}{3}" -f 'oun','c','tcontro','l','userac'))."cou`NT") {
+                        try {
+                            &('Wr'+'ite-'+'V'+'er'+'bose') (("{7}{6}{11}{12}{10}{9}{13}{3}{2}{4}{5}{15}{1}{8}{0}{14}{16}"-f 'ntrol prop','tc','o','r','l: Found',' useracco','pp','A','o','ountCon','DUserAcc','end','-A','t','erty, enume','un','rating.'))
+                            ${u`AC} =  (GEt-VarIAbLe  ("42"+"70q")  -VaLueoNL  )::"pA`RsE"(("{0}{1}{3}{2}{4}{5}" -f'userA','cc','ontr','ountC','olFla','gs'), ${U`sR}."USE`RACcOUNT`CO`Nt`Rol")
+                            ${Ua`CaT`TrI`BS} | &('Fore'+'ach') {
+                                &('Add-M'+'e'+'mber') -InputObject ${U`sR} -MemberType nOTE`prOP`ER`Ty -Name ${_} -Value (${u`AC} -match ${_}) -Force
+                            }
+                            &('Write-O'+'ut'+'p'+'ut') ${U`sr}
+                        }
+                        catch {
+                            &('Wr'+'i'+'t'+'e-Wa'+'rning') -Message ('Append-ADUserAccountControl: {0}' -f ${_}."eXce`PT`IOn"."MEss`AgE")
+                        }
+                    }
+                    else {
+                        
+                        ${U`AC`AtTr`iBS} | &('F'+'oreach') {
+                            &('Write-Verb'+'os'+'e') (("{11}{10}{9}{8}{7}{3}{13}{1}{0}{6}{15}{12}{2}{14}{5}{4}"-f 'countc',': userac','r','Co','und.',' fo','on','ccount','-ADUserA','nd','pe','Ap','rol p','ntrol','operty NOT','t'))
+                            &('Ad'+'d'+'-Mem'+'ber') -InputObject ${U`sr} -MemberType nOtEpr`OP`ErtY -Name ${_} -Value ${Nu`ll} -Force
+                        }
+                        &('Write-Out'+'pu'+'t') ${U`SR}
+                    }
+                }
+            }
+        }
+
+        function Ge`T-LyNc`ENAbL`EdObjeCtsfrOm`Ad {
+            [cmdletbinding()]
+            param(
+                [Parameter(HELPmESSAgE={"{4}{2}{3}{1}{0}" -f '.','arch','o',' se','Base of AD t'})]
+                ${sEA`RCh`BAse} = ''
+            )
+
+            try {
+                ${C`oNN} = &('Co'+'n'+'nect-Acti'+'veDir'+'ecto'+'ry') -ADContextType:d`irE`cTORYent`Ry
+                ${DOMA`iNdn} = ${Co`Nn}."DIs`TiN`G`U`IsHEdnAmE"
+                ${C`oN`FIg`URatIoNdn} = ("{0}{2}{1}{3}" -f 'C','a','N=Configur','tion,') + ${dom`AIN`dN}
+                if (${s`EArcH`B`ASE} -eq '') {
+                    ${sEA`RCh`BasE} = [string]${dom`A`In`dn}
+                }
+            }
+            catch {
+                &('Write-Wa'+'rnin'+'g') ("{3}{1}{2}{0}{5}{6}{4}" -f 'd ','a','ble','Un','to AD!','to ','connect ')
+                ${co`NN} = ${Nu`lL}
+            }
+            if (${C`oNn} -ne ${N`UlL}) {
+                ${LyN`ccoN`TA`CTS} = @()
+                ${lynCu`sE`RS} = @()
+                ${PRoP`Ert`iES} = @(("{0}{1}"-f'N','ame'),("{2}{0}{3}{1}"-f'c','me','SamA','countNa'),'SID',("{3}{0}{2}{1}"-f'ing','shedName','ui','dist'),("{0}{1}{2}{3}" -f'us','e','r','accountcontrol'),("{3}{4}{2}{1}{0}" -f 'erEnabled','s','U','ms','RTCSIP-'),("{2}{4}{1}{5}{3}{0}" -f 'edFlags','hU','ms','bl','Exc','MEna'),("{0}{1}{3}{2}{4}"-f'msRTCS','IP-L','n','i','e'),("{2}{0}{1}{3}"-f'rtcsip-owne','rur','ms','n'),("{1}{4}{3}{0}{2}{5}"-f 'va','msRT','te','i','CSIP-Pr','Line'),("{3}{2}{0}{1}{4}"-f 'p-p','rimar','rtcsi','ms','yuseraddress'),("{3}{2}{0}{1}"-f 'eNumb','er','lephon','te'),("{0}{1}{3}{2}" -f'Of','f','ne','icePho'),("{1}{0}" -f'ail','m'),("{3}{2}{1}{0}"-f'ent','artm','ep','d'),("{3}{6}{5}{7}{2}{1}{4}{0}"-f'e','N','fice','p','am','li','hysicalDe','veryOf'))
+
+                
+                ${ly`N`C`USERS} = @(&('Sear'+'c'+'h-AD') -DirectoryEntry ${Co`Nn} -Filter (((("{12}{1}{7}{2}{10}{5}{9}{11}{8}{4}{6}{3}{13}{0}"-f '=*))','tegory=perso',')','n','TCSIP-','objectCla','PrivateLi','n','ine=*)(msR','s','(','s=user)({0}(msRTCSIP-L','(objectCa','e'))  -F  [cHaR]124)) -Properties ${pROP`ErT`ieS} -SearchRoot (("{0}{1}" -f'L','DAP://') + ${s`E`ARChBaSE}))
+                ${l`yNC`USErS} = ${Ly`NC`USERS} | &('Fo'+'rmat-'+'LyncA'+'DA'+'cco'+'unt') -PhoneType ("{0}{1}" -f'Ly','ncUser')
+
+                
+                ${ly`N`CcoN`TAcTS} = @(&('S'+'e'+'arch-AD') -DirectoryEntry ${CO`NN} -Filter ("{0}{5}{4}{1}{3}{2}{7}{6}" -f '(Obj','lass=','ntact)(msRTCSI','co','C','ect','-Line=*)','P') -Properties ${p`Ro`PE`RTIeS} -SearchRoot (("{1}{0}"-f'AP://','LD') + ${SeaRC`hba`SE}) | &('Format-'+'Lync'+'AD'+'Accoun'+'t'))
+
+                
+                ${aa`Nu`mBErS} = @(&('Se'+'arch-'+'AD') -DontJoinAttributeValues -DirectoryEntry ${co`Nn} -Filter ("{2}{8}{6}{7}{0}{1}{3}{4}{5}" -f 's','ExchUM','(Objec','Aut','oAtte','ndant)','Class','=m','t') -Properties * -SearchRoot (("{2}{1}{0}" -f '://','AP','LD') + ${cO`N`FIg`U`RatiO`NdN}) | 
+                    &('Wher'+'e') {${_}."Ms`Ex`chuMaut`oa`TTen`dA`NtdiALEDNumB`Ers"} | &('Sele'+'ct') -ExpandProperty mSExcH`U`mAU`To`ATtENd`ANtdialednUM`BE`Rs)
+                ${aa`MAtCH`NU`m`BeRs} = @(${A`ANU`mBERS} | &('For'+'ea'+'ch') {  (gI  ('Va'+'Riable'+':m'+'G957A') )."va`lue"::"EsCa`pe"(${_})})
+                ${aam`AtcHNu`m`BerS} = '^(' + (${Aama`T`cHn`UMBErs} -join '|') + ')$'
+
+                
+                ${vmNu`MB`ERS} = @(&('S'+'e'+'ar'+'ch-AD') -DontJoinAttributeValues -DirectoryEntry ${C`onn} -Filter (("{7}{0}{2}{6}{3}{5}{1}{4}" -f'tC','D','lass=','Ex','ialPlan)','chUM','ms','(Objec')) -Properties * -SearchRoot (("{0}{1}{2}" -f'LDAP:','/','/') + ${COn`F`iGurAtIO`NDn}) | 
+                &('Whe'+'re') {(${_}."msexcHU`Mvo`I`CE`Ma`iLpIl`OTNUM`BE`Rs")."Cou`Nt" -gt 0} | &('S'+'e'+'lect') -ExpandProperty M`sExcHUMvo`IcEMA`I`lpIlOtNUMB`ERS)
+                ${V`mmAT`CHN`Um`BErs} = @(${Vm`NUMBe`Rs} | &('Fo'+'re'+'ach') { $mg957A::"ESC`APE"(${_})})
+                ${VmmatCHnu`m`BERS} = '^(' + (${v`Mm`AtchNUmbE`Rs} -join '|') + ')$'
+
+                
+                ${lYnc`cON`Ta`ctS} | &('F'+'ore'+'ach') {
+                    ${tm`PU`Ri} = ${_}."D`id" -replace ("{1}{0}"-f ':','tel'),''
+                    if (${Tm`P`URI} -match ${AAm`ATC`hnu`MbERs}) {
+                        ${_}."P`Hone`TyPE" = ("{0}{2}{5}{1}{3}{4}"-f'U','o','M ',' Att','endant','Aut')
+                    }
+                    elseif (${TM`Pu`RI} -match ${vmMAtC`HnUM`B`E`RS}) {
+                        ${_}."p`HoNE`TYpe" = ("{0}{2}{3}{1}"-f 'UM ','email','Vo','ic')
+                    }
+                }
+                
+                &('Writ'+'e-Ou'+'tput') ${lYNcU`sE`Rs}
+                &('Writ'+'e-'+'Outp'+'ut') ${LY`Nc`CONtAcTS}
+            }
+        }
+
+        
+        
+        ${Btne`X`IT}."a`dd_cLi`ck"({
+            ${S`Cr`ipT:dIaLOG`REsulT} = ${n`ULl}
+        })
+        
+        ${D`G`C`onT`EX`TmE`Nu_m`EnuITemcLearaLlrEsulTS}."aDd_c`li`ck"({
+            ${D`A`TAG`RiDdIds}."it`EMS"."c`LEaR"()
+        })
+
+        ${dgcO`NTE`xtmEn`U_`mE`NuITeM`CoPyALLReSUlTS}."a`DD_CliCK"({
+            if (${dATAg`RiD`diDS}."it`EmS"."cou`Nt" -gt 0) {
+                ${InPuT`I`TE`ms} = ${D`AT`AGr`i`ddids}."i`TEMS" | &('Se'+'lect') *
+                &('Add'+'-'+'A'+'rr'+'ay'+'2Clipbo'+'ard') -ConvertObject ${iNPu`Ti`Te`MS} -Header
+            }
+        })
+
+        ${Dg`coN`TEX`T`MeN`U_mE`N`UIt`Em`copYsElEctEd`Re`su`LTS}."a`D`D_cLI`ck"({
+            if (${DAtagr`i`D`DIDS}."it`EMS"."cO`UnT" -gt 0) {
+                ${In`Pu`TI`TeMS} = ${d`AtAGRId`dIds}."SELe`CTEdI`T`EMs" | &('S'+'elect') *
+                &('Ad'+'d-A'+'rray2C'+'l'+'ipboa'+'r'+'d') -ConvertObject ${InP`UtIT`EMS} -Header
+            }
+        })
+        
+        
+        ${InP`U`T`DiD`RanGed`ATa} = @()
+    
+    }
+    
+    process {
+        ${INpu`Tdidr`AN`G`EdAtA} += ${iN`puTD`IdRAn`GES}
+    }
+    
+    end {
+        
+        ${iNp`UtDID`RAnGE`data} | &('Foreac'+'h') { 
+            ${D`Ata`GRIddIds}."iTe`mS"."a`DD"(${_})
+        }
+        
+        
+        
+        ${a`SY`Nc} = ${WI`Nd`OwAdmA`TcH}."d`isP`ATChER"."I`NvoKE`ASY`Nc"({
+            ${r`E`TVal} = ${w`INd`o`WaDMATcH}."ShOwDi`AL`OG"()
+        })
+        ${A`syNc}."w`Ait"() | &('O'+'ut-N'+'ull')
+
+        
+        &('Sele'+'ct-Xm'+'l') ${Xa`M`lM`AIN} -Namespace ${n`AME`SpACe} -xpath ${xP`At`h_form`oBJ`ECTS} | &('F'+'oreach') {
+            ${_}."N`ODe" | &('Foreac'+'h') {
+                &('Remov'+'e-Var'+'iab'+'le') -Name (${_}."N`AME")
+            }
+        }
+        return ${dIA`lo`GrEsUlT}
+    }
+}
+${t`EST} = &('New-'+'Obj'+'ect') p`sOBjECt -Property @{
+    "s`I`TenaMe" = ("{0}{1}{2}" -f't','es','tsite')
+    "S`ite`coDE" = 10
+    "PRI`Va`Te" = ${tr`Ue}
+    "lO`Cal" = ${F`ALSE}
+    "L`in`Euri" = ("{4}{0}{3}{2}{1}{5}"-f'el:+1630','xt=','01764;e','73','t','1764')
+    "D`DI"=16307301764
+    "E`xt"=1764
+    "Na`me"=("{0}{2}{1}{3}"-f'Z','char','a','y Loeber')
+    "FI`RStna`me" = ("{1}{0}" -f'achary','Z')
+    "laSt`NAme" = ("{1}{0}" -f 'eber','Lo')
+    "S`IPaDDR`Ess" = ("{0}{6}{1}{5}{2}{3}{4}" -f'si','ber@','t','e','ns.com','psclis','p:zloe')
+    "T`YPe"=("{0}{1}" -f 'Use','r')
+    "N`OTES"=("{0}{2}{1}{3}"-f'Notes','n th',' o','is user')
+}
+${Te`ST} | &('Get-'+'L'+'y'+'ncADMatchDialog')
+
+

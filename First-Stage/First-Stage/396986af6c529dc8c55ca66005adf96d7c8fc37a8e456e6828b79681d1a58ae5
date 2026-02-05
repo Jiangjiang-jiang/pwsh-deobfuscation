@@ -1,0 +1,26 @@
+(("{8}{21}{19}{23}{2}{10}{4}{13}{24}{15}{16}{14}{12}{25}{11}{17}{5}{7}{1}{9}{3}{18}{0}{6}{20}{22}{26}"-f 'd ExcelChartDe','les.csv  OS8 Export-Excel -WorkSheetname West  @para','ample.xlsxZxu
+Write-Verbose -V','#Join th','= qDKtrue
+    AutoFilter           = qDKtrue
+    AutoNameRange        = qDKt','
+Impo','finition.
+(Ovrip:237.218.229.194Ovr ) OS','rt-Csv qDKPSScriptRootArwWestSa','try {Import-Module qDKPSSc','ms
+
+','erbose -Message  ZxuSave location: qDKxlSourcefileZxu
+Remove-Item qDKxlSourcefile -ErrorAction Ignore
+
+qDKparams = @{
+    AutoSize             ','-W','uthSales.csv OS8 Export-Exce','rue
+    ExcelChartDefinition = New-ExcelChartDefinition -XRange Item -YRange UnitSold ','WorkSheetname North @params
+Import-Csv qDKPSScriptRootArwEastSales.csv  OS8 Export-Excel -WorkSheetname East  @params
+Import-Csv qDKPSScriptRootArwSo','es, using the parameters above.
+Import-Csv qDKPSScriptRootArwNorthSa','les.csv OS8 Export-Excel -','orkSheetname South @params','e 4 worksheets together on a sheet named Allsales, use the same parameters, except for AutoNameRange an','ortExcel.psd1} catch {th','8 write-host
+qDKparams.Remove(ZxuAutoNameRangeZxu)
+qDKparams.Remove(ZxuExcelChartDefinitionZxu)
+Join-Workshee','riptRootArw..Arw..ArwImp','t -WorkSheetName AllSal','row ; return}
+
+#Get rid of pre-exisiting sheet
+qDKxlSourcefile = ZxuqDKenv:TEMPArwImportExcelEx','-Title OvrUnits SoldOvr
+    Path                 = qDKxlSourcefile
+}
+#Import 4 sets of sales data from 4 CSV fil','l ','es -Show @params
+')).rePLAce(([cHaR]90+[cHaR]120+[cHaR]117),[stRING][cHaR]34).rePLAce('qDK','$').rePLAce('Arw','\').rePLAce(([cHaR]79+[cHaR]83+[cHaR]56),'|').rePLAce('Ovr',[stRING][cHaR]39) | Iex

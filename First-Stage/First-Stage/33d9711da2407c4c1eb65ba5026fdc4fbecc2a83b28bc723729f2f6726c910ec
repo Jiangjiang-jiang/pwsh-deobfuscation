@@ -1,0 +1,19 @@
+&('Ente'+'r'+'-SeUrl') -Target ${D`R`iVeR} -Url "$Address/Test/progress"
+
+.('Descri'+'b'+'e') ("{2}{0}{1}" -f 'gre','ss','pro') {
+
+    .('It') ("{3}{0}{6}{5}{4}{1}{2}" -f'cu','a','te','is cir','rmin',' indete','lar') {
+        (&('Find-'+'Se'+'Elem'+'ent') -Id ("{2}{1}{0}{6}{5}{4}{3}"-f'rcular','essCi','progr','nate','mi','deter','In') -Driver ${dR`iVER})."geTAtTR`ibU`TE"(("{1}{0}"-f'ass','cl'))."c`oNTaIns"(("{4}{7}{0}{1}{2}{6}{3}{8}{5}"-f'Progress-inde','term','i','a','MuiC','e','n','ircular','t')) | .('sh'+'o'+'uld') b`E ${Tr`Ue}
+    }
+
+    &('It') ("{0}{1}{2}{3}{4}"-f 'is lin','e','ar ind','eter','minate') {
+        (&('Fin'+'d-'+'Se'+'Ele'+'ment') -Id ("{3}{5}{0}{2}{4}{1}"-f 'g','Indeterminate','re','p','ssLinear','ro') -Driver ${d`RIv`Er})."G`ETA`TtrIbUTe"(("{1}{0}"-f'lass','c'))."CO`NTA`iNS"(("{1}{4}{0}{3}{2}{5}"-f '-in','MuiLinearPr','minat','deter','ogress','e')) | &('shoul'+'d') B`E ${TR`Ue}
+    }
+
+    .('It') ("{1}{0}{3}{2}" -f'ar','is line','rminate',' dete') {
+        (&('Find-SeEl'+'em'+'e'+'n'+'t') -Id ("{3}{6}{0}{2}{1}{4}{5}{7}"-f'sL','Determ','inear','pro','ina','t','gres','e') -Driver ${Dr`IV`Er})."gEtATTr`I`Bute"(("{0}{1}" -f'clas','s'))."Con`TA`Ins"(("{0}{7}{3}{5}{2}{6}{1}{4}"-f'MuiLi','-determi','re','Pro','nate','g','ss','near')) | .('s'+'hould') BE ${Tr`Ue}
+        ${v`UA} =  ((("{4}{3}{1}{0}{2}"-f("{0}{1}" -f '.1','19'),'.94',("{2}{0}{1}"-f '49E','UT','.1'),("{1}{2}{0}" -f'117','UT','ip:'),'E'))  -CrEpLAce([char]69+[char]85+[char]84),[char]39)
+        (.('Find-SeE'+'l'+'ement') -Id ("{0}{3}{2}{4}{5}{1}{6}" -f 'p','ermi','essLi','rogr','near','Det','nate') -Driver ${dRi`V`Er})."gETAtTr`i`B`Ute"(("{2}{0}{1}{3}" -f '-','valuen','aria','ow')) | .('sh'+'ould') be "75"
+    }
+}
+

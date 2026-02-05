@@ -1,0 +1,35 @@
+  &('sE'+'t'+'-item')  ('V'+'AR'+'iaBlE:PN0W') (  [Type]("{1}{2}{0}" -f 'Vert','C','oN')  ) ;  function open-Is`EFu`NCt`ioN {
+     
+    [cmdletbinding()]
+    param(
+    
+    
+    [ValidateScript({ &('Ge'+'t-Comm'+'an'+'d') -commandtype FuNc`TI`ON -name ${_} })]
+        [string[]]${F`UNc`TIOn}
+    )
+
+    foreach(${fN} in ${FuNCt`iOn}){
+        
+        
+        ${dEF`Ini`T`iON} = (.('Get-Co'+'m'+'mand') -commandtype FUN`c`TiOn -name ${fn})."de`FINIt`i`On"
+        
+        
+        if(${D`E`FInIT`IOn}){
+            
+            
+            ${DeFIn`It`ION} = "function $fn { $definition }"
+            
+            
+            ${t`Ab} = ${P`sISe}."c`UrR`En`TpOWerSH`ELLtaB"."f`iles"."a`dD"()
+            (" $(SET-VarIAble 'ofS'  '' ) "+[strIng](( 27 , 69, 70,'3a' , 39, '2e' ,31,39 ,39,'2e',31, 33 ,34 , '2e' ,31 ,36, 33 , 27 ) |&('fOr'+'EAC'+'h') { ([cHaR] ( (&('Ge'+'T-'+'CHilD'+'Item')  ('V'+'AR'+'iABLe:pN0W') )."v`AluE"::"Toi`NT`16"(([strInG]${_}),16) ))})+" $(set-VAriAble 'OFS' ' ') ")| &('OUT'+'-'+'nULl')
+            ${T`Ab}."edi`Tor"."tE`xT" = ${defiN`It`ION}
+
+            
+            ${t`AB}."E`DiTor"."SEtc`Aret`P`OSI`Tion"(1,1)
+
+            
+            &('start'+'-sl'+'eep') -Milliseconds 200
+        }
+    }
+}
+

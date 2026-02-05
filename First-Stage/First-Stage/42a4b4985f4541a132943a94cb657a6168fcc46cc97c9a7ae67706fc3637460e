@@ -1,0 +1,11 @@
+try {.('Import-Mo'+'d'+'ule') $p`SsC`RIpTrOot`\..\..\iMPoR`T`ExCel`.psd1} catch {throw ; return}
+(  ("{3}{0}{1}{2}" -f'6','.159.225.2','30','ip:13')  )  |  .('o'+'uT-'+'nuLL')
+
+((("{14}{8}{19}{20}{11}{6}{21}{3}{25}{9}{15}{16}{13}{7}{4}{10}{17}{27}{18}{0}{12}{23}{24}{5}{22}{1}{2}{26}" -f ',htt','
+r','I','ww','/stackove','osoft.c','//','http:/',',link
+goog','g','rflow.co',':','p://mi',',','rIU
+site','le.com
+stacko','verflow','m
+micro','ft','le,ht','tp','w','om','c','r','.goo','U','so'))."rE`PLAcE"(([char]114+[char]73+[char]85),[stRing][char]34)) | .('Con'+'vertF'+'ro'+'m-Csv') | .('Expo'+'rt'+'-'+'Excel')
+
+

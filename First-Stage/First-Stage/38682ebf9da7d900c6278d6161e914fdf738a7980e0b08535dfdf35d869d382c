@@ -1,0 +1,202 @@
+ iEX( (('xqNDJUGMl= ( ( I7z27<69Y70R3a<32j30_36G2e}33Y34>2e<37j33j2e_31j30<36_27I7z -SpLiT I7z}I7z -splitI7z>I7z-spliT I7zYI7z -SPLit I7zRI7z -SplITI7zjI7z -sPLit I7z_I7z -SPLiTI7z<I7z -sPlitI7zGI7zEKy %{ ( [cHar] ([CONverT]::ToInT16(( [sTRi'+'ng]xqN_),16 ) ))})-JOIN I7zI7z)
+function Compare-Worksheet {
+    [CmdletBi'+'nding(DefaultParameterSetName)]
+    [Diagnostics.CodeAnalysis.'+'SuppressMessageAttribute(I7zPSAvoidUsingWriteHostI7z, I7zI7z, '+'Justification=LjnWrite host used for sub-warning level message to operator which '+'does not form outpu'+'tLjn)]
+    [Diagnostics.CodeAnaly'+'sis.SuppressMessageAttribute(I7zPSUseDeclaredVar'+'sMoreThanAssignmentsI7z, I7zI7z, J'+'ustifi'+'cation=LjnFalse positives when init'+'ializing variable in begin bloc'+'kLjn)]
+    param(
+'+'        [parameter(Mandatory=xqNtrue,Position=0)]
+        xqNReferencefile ,
+        [parameter(Mandatory=xqNtrue,Position=1)]
+       '+' xqNDifferencefile   ,
+        xqNWorksheetName   = LjnSheet1Ljn,
+        xqNPropert'+'y        = Ljn*Ljn    ,
+        xqNExcludeP'+'roperty ,
+        [Parameter(ParameterSetName=I7zBI7z, Ma'+'ndatory)]
+  '+'      [String[]]xqNHe'+'adername,
+        [Parameter(ParameterSetName=I7zCI7z, Mandatory)]
+        [switch]xqNNoHead'+'er,
+        ['+'int]xqNStartrow = 1,
+  '+'      xqNAllDataBackgroundColor,
+        xqNBackground'+'Color'+',
+        xqNTabCol'+'or,
+        xqNKey             = LjnNameLjn ,
+        xqNFo'+'ntColo'+'r,
+        [Switch]xqNShow'+',
+        [sw'+'itch]xqNGridView,
+        [Switch]xqNPassThru,
+        [Switch'+']xqNIncludeEqual,
+        [Switch]xqN'+'ExcludeD'+'ifferent
+ '+'   )
+
+    #if the filenames donI7zt resol'+'ve, give up now.
+    try    { xqNoneFile = ((Resolve-Path -Path xqNReferencefile -ErrorActio'+'n Stop).path'+' -eq (Resolve-P'+'ath -Path xqNDifferencefi'+'le  -ErrorAction Stop).path)}
+    catch  { Write-Warn'+'ing -Message LjnCould not Resolve the filenames.Ljn ; '+'return }
+
+    #If we have one file , we must have tw'+'o different worksheet names. If we have two files we can have a single string or two strings.
+   '+' if     (xqNonefile -and ( (xqNWorksheetName.count -ne 2) -or xqNWorksheetName[0] -eq xqNWorksheetName[1] ) )'+' {
+        Wr'+'ite-Warning -Message LjnIf both the Reference and difference file are the same then '+'worksheet name m'+'ust provide 2 different namesLjn
+        return'+'
+    }
+    if     ('+'xqNWorksheetName.count -eq 2)       {xqNworksheet1 = xqNWorksheetName[0] ;   xqNworksheet2 = xqNWorksheetName[1]}
+    elseif (xqNWorksheetNa'+'me -is [string])      '+'{xqNworkshee'+'t1 = xqNworksheet2 = xqNWorksheetName}
+    else   {Write-Warning -Message LjnYou must prov'+'ide either a single worksheet name or two names.Ljn ; return'+' }
+
+'+'    xqNparams= @{ E'+'rrorAction = [Syst'+'em.M'+'anagement.Automation.ActionPreference]::Stop }
+    foreach (xqNp in @(LjnHeaderNameLjn,LjnNoHeaderLjn,LjnSta'+'rtRowLjn)) {if (xqNP'+'SBoundParameters[xqNp]) {xqNparams[xqNp] = xqNPSBoundParameters[xqNp]}}
+    try    {
+        xqNsheet1 = Import-Excel -Path xqNReferencefile  -WorksheetName xqNworksheet1 @params
+  '+'      '+'xqNsheet2 = I'+'mp'+'ort-Excel -Path xqNDifferencefile -WorksheetName xqNworksheet2 @Param'+'s
+ '+'   }
+    catch  {Write-Warning -Message LjnCould not read the works'+'heet'+' from xqNReferencefile and/or xqNDifferencefile.Ljn ; return }
+
+    #Get Column hea'+'dings and create a hash table of Name to column letter.
+    xqNheadi'+'ngs = xqNSheet1[-1].psobject.Properties.name # This preserves the sequence - using Get-member would sort them alphabetically!
+    xqNheadings EKy ForEach-Object -Begin {xqNcolumns  = @{}  ; xqNi= 1 } -Process  {xqNColumns[xqN_] = [OfficeOpenXml.ExcelAddre'+'ss]::GetAddress(1,(xqN'+'i ++)) -replace Ljn5WNdLjn,LjnLjn }
+
+    #Make a list of property '+'headings using the Property (default Ljn*Lj'+'n) and ExcludeProperty parameters
+    if (xqNKey -eq LjnNameLjn -and xqNNoHeader) {xqNKey  = Ljnp1Ljn'+'}
+    xqNp'+'ropList = @()
+   '+' foreach (xqNp in xqNProperty)           {xqNpropList += (xqNheadings.where({xqN_ -like    xqNp}) )}
+    foreach (xqNp in xqNExcludeProperty)    {xqNpropList  =  xqNpropList.where'+'({xqN_ -notlike xqNp'+'}) '+' }
+    '+'if ((xqNheadings -contains xqNKey) -and (xqNpropList -no'+'tcontains xqNKey'+')) {xqNpropLi'+'st += xqNKey}
+    xqNpropList = xqNpropList EKy Select-Object -Un'+'ique
+    if (xqNpropList.Count'+' -eq 0)  {Write-Warning -Message '+'LjnNo Columns are selected with -Proper'+'ty = I7zxqNPropertyI7z and -excl'+'udeProperty = I7zxqNExcludePropertyI7z.Ljn ; return}
+
+    #Add RowNumber, Sheetname and file name to every row
+    xqNfirstDataRow = xqNstartRow + 1
+    if (xqNHe'+'adername -or xqNNoHeader) {xqNfirstDat'+'aRow -- }
+    xqNi = xqNfirstDataRow ; foreach (xqNrow in xqNSheet1) {Add-Member -InputOb'+'ject xqNr'+'ow -MemberType NoteProperty -Name Ljn_RowLjn   -Value ('+'xqNi ++)
+             '+'                                       Add-Member -InputO'+'bject xqNrow -Member'+'Type NoteProperty -Name Ljn_SheetLjn -Value  xqNworksheet1
+       '+'                 '+'                            Add-Member -InputObject xqNrow -MemberType Not'+'eProperty -Name Ljn_FileLjn  -Value  xqNReferencefile'+'}
+    xqNi = xqNfirstDataRow ; foreach (xqNrow in xqNSheet2) {Add-Member -Inpu'+'tObject xqNrow -MemberType NoteProperty -Name Ljn_RowLjn   -Val'+'ue (x'+'qNi ++)
+            '+'                                   '+'     Add-Member -InputObject xqNrow -MemberType NoteProperty -Name Ljn_SheetLjn -Value  xqNworksheet2'+'
+                                                    Add-Member -InputObject xqNrow -MemberType NoteProperty -Name Ljn_FileLjn  -Value  xqNDifferencefile}
+
+'+'    if (xqNExcludeDifferent -and -not xqNIncludeEqual) {xqNIncludeEqual = xqNtrue}
+    #Do the comparison and add file'+',sheet and row to the '+'result - these are prefixed with Ljn_Ljn to show they are added the addition will fail if the sheet has these pr'+'operti'+'es so split the'+' operations
+    [PSCustomObject[]]xqNd'+'iff = Compare-Object -Re'+'fer'+'enceObject xqNSheet1 -Diff'+'erenceObject xqNSheet2 -Proper'+'ty xqNpropList -PassThru -IncludeEqual:xqNInclud'+'eEqual -ExcludeDifferent:xqNExcludeDifferent  EKy
+                Sort-Object -Property Ljn_RowLjn,LjnFileLjn
+
+    #if BackgroundColor was spe'+'cified, set it on extra or extra or changed rows
+    if      (xqNd'+'iff -and xqNBackgroundColor) {
+     '+'  '+' #Differen'+'ces may only exist in one file.'+' So gather the changes for each file; open the file, update each imp'+'acted row in the sh'+'ee, save the file
+        xqNupdates = xqNdiff.where('+'{xqN_.Sid'+'eIndicator -ne Ljn==Ljn}) EKy Group-object -Property Ljn_FileLjn
+        foreach   (xqNfile in xqNupdates) {
+            try   {xqNxl  = Open-ExcelPackage -Path xqNfile.name }
+            catch {Write-warnin'+'g'+' -Message LjnCanI7zt open xqN(xqNfile.Name) for writing.Ljn ;'+' return}
+            if  (xqNPSBoundParameters.ContainsKey(LjnAllDataBackgroundColorLjn)) {
+                xqNfile.Group._sheet EKy S'+'ort-Object -'+'Unique EKy ForEach-'+'Object {
+                    xqNws =  xqNxl.Workbook.Worksheets[xqN_]
+                    if ('+'xqNheaderName)'+' {xqNrange = LjnALjn +  xqNstartrow      + Ljn:Ljn + xqNws.dimension.end.address}
+                    else  '+'           {xqNr'+'ange = LjnALjn + (xqNstartrow + 1) + Ljn:Ljn + xqNws.dimension.end.address}
+                    Set-ExcelRange -Worksheet xqNws -BackgroundColor xqNAllDataBackgroundColor -Range xqNRange
+     '+'           }
+            }
+            foreach (xqNrow in xqNfile.gr'+'oup)  {
+                xqNws    = xqNxl.'+'Wor'+'k'+'book.Works'+'heets[xqNrow._Sheet]
+                xqNrange = xqNws.Dimension -replace Ljn5WNd+Ljn,xqNrow._row
+                Set-ExcelRan'+'ge -Worksheet xqNws -Range xqNrang'+'e -BackgroundColor xqNBackgroundColor
+            }
+            if  (xqNPSBoundParameters.ContainsKey('+'LjnTabColorLjn)) {
+                if (xq'+'NTabColor -is [string])         {xqNTabColor = [System.Drawing.Color]::xqNTabColor }
+                foreach (xqNt'+'ab in (xqNfile.group._sheet EKy Selec'+'t-Object -Unique)) {
+                    xqNxl.Workbook.Work'+'sheets[x'+'qNtab].TabColor = xqNTabColor
+                 }
+            }
+            xqNxl.save()  ; xqNxl.Stream.Close() ; xqNxl.'+'Dispose()
+        }
+    }
+    #if font color was speci'+'fied, set i'+'t o'+'n changed properties where the same key a'+'p'+'pears in both sheets.
+ '+'   if      (xqNdiff -and xqNFontColor -a'+'nd ((xqNpropList -contains xqNKey) -or (xqNKey -is [hashtable]))  ) {
+        xqNupdates'+' = xqNdiff.where({xqN_.SideInd'+'i'+'cator -ne Ljn==Ljn})  EKy Group-object -Proper'+'ty xqNKey EKy Where-Object {xqN_.count -eq 2}
+        if (xqNupdates) {
+            xqNXL1 = Open-Exce'+'lPackage -path xqNReferencefile'+'
+            if (xqNoneFile ) {xqNxl2 = xqNxl1}
+            else           {xqNxl'+'2 = Open-ExcelPackage -p'+'ath xqNDifferencefile }
+            foreach (xqNu in xqNupdates) {
+                 foreach (xqNp in xqNpropList) {
+                    if ('+'xqNu'+'.group[0]._file -eq x'+'qNReferencefile) {
+   '+'                   '+'  x'+'qNw'+'s1 =  xqN'+'xl1.Workbook.Worksheets[xqNu.Group[0]'+'._sheet]
+       '+'                 xqNw'+'s2 =  xqNxl2.Workbook.Worksheets[xqNu.Group[1]._sheet]
+   '+'                 }
+               '+'     else {
+           '+'             xqNws1 =  xqNxl2.Workbook.Worksheets[xqNu.Group[0]._sheet]
+                        xq'+'Nws2 =  xqNxl1.Workbook.Worksheets[xqNu.Group[1]._sheet]
+ '+'                   }
+                '+'    if(xqNu.Group[0].xqNp -ne xqNu.Group[1].xqNp ) {
+                 '+'       Set-ExcelRange -Worksheet xqNws1 -Range (xqNColumns[xqNp] + xqNu.Group[0]'+'._Row) -FontColor xqNFontColor
+                        Set-ExcelRange -Worksh'+'eet xqNws2 -Range (xqNColumns[xqNp] + xqNu.Grou'+'p[1]._Row) -FontColor xqNFontColor
+                    }
+                }
+            }
+    '+'        xqNxl1.Save()'+'                     ; xq'+'Nxl1.Stream.Clos'+'e() ; xqNxl1.Dispose()
+            if (-not xqN'+'oneFile) {xqNxl2.Save() ; xqNxl2.Stream.Clo'+'se() ; xqNxl2.Dispose()}
+  '+'     '+' }
+    }
+    elseif  (xqNdiff -and xqNFontColor) {Write-Warning -Message LjnTo match rows to set changed cells, you must specify -Key a'+'nd it must match one of the inc'+'luded properties.Ljn }
+
+    #'+'if nothing was found write a message which will not be redirected
+    if (-not xqNdiff) {Write-Host LjnComparison of xqNReferencefile::xqNworksheet1 and xqNDifferencefile::xqNworksheet2 returned no results.Ljn  }
+
+    if      (xqNShow)               {
+        Star'+'t-Process -Fi'+'lePath xqNReferencefile
+        if  (-not xqNoneFile)  { Start-Process -File'+'Path xqNDifferen'+'cefile }
+        if  (xqNGridView)      { Write-Warning -Mess'+'a'+'ge Ljn-GridView is ignored when '+'-Show is specifiedLjn }
+    }
+'+'    elseif  (xqNGridView -and xqNpropList -contai'+'ns xqNKey) {
+
+
+             if (xqNIncludeEqual -and -not xqNExcludeDifferent) {
+                xqNGroupedRows = xqNd'+'iff EKy Group-Object -Property xqNKey
+             }
+             else { #to get the right now numbers on the grid we nee'+'d to have all the rows.
+                xqNGroupedRows = Co'+'mpare-Object -ReferenceObject xqNSheet1 -DifferenceObject xqNSheet2 -Property xqNpropList -Pa'+'ssThr'+'u -IncludeEqual  EKy
+                                        Group-Object -Property xqNKey
+             }
+      '+'       #Additions, deletions and unchanged rows will give a group of 1; changes will give a group of 2 .
+
+             #If one sheet has extra rows we can get a single Ljn==Ljn result from compare, but with the row from the reference sheet
+             #but the row in the'+' other sheet might so'+' we will look up the row number from the key field build a hash table for that
+             xqNSheet2 EKy'+' For'+'Each-Object'+' -Begin {xqNrowHash = @{} } -Process {xqNrowHash[xq'+'N_.xqNKey] = xqN_._row }
+
+       '+'   '+'   xqNExpandedDiff = ForEach (xqN'+'g in xqNGroupedRows)  {
+                #weI7zre going to create a custom object from a hash '+'table. We wa'+'nt the fields to be'+' ordered
+                xqNhash = [ordered]@{}
+                foreach (xqNresult IN xqNg.Gro'+'up) '+'{
+                    # if '+'re'+'sult indicates eq'+'ual or Ljnin ReferenceLjn set the reference side row. If we '+'did '+'that on a previous result keep it. Otherwise set to LjnblankLjn
+                    if     (xqNresul'+'t.sideindicator -ne Ljn=>Ljn)      {xqNhash[Ljn<RowLjn] = xqNresu'+'lt._Row  '+'}
+                    elseif (-not xqNhash[Ljn<RowLjn])  '+'          '+'      {xqNhash[Ljn<RowLjn] = LjnLjn '+'}
+                    #if we have already set'+' the side, this is the second record, so set side to indicate Ljnchang'+'edLjn
+                    if     (xqNhash.Side) {x'+'qNhash.side = Ljn<>Ljn} else {xqN'+'hash[Lj'+'nSideLjn] = xqNresult.sideindicator}
+                    #if result is Ljnin referenceLjn and we donI7zt have '+'a matching Ljnin differen'+'ceLjn (meaning a cha'+'nge) the lookup w'+'ill be blank. Which we want.
+           '+'         xqNhash[Ljn>RowLjn] = xqNrowHash[xqNg.Name]
+                    #position the key as the next field (only appears once)
+                '+'    xqNHash[xq'+'NKey]    = xqNg.Name
+             '+'       #For all the other fields we care about create <=FieldName and/or =>FieldName
+         '+'           foreach (xqNp in xqNpropList.Where({xqN_'+' -ne xqNKey})) {
+                        if  (xqNresult.SideIndicator -'+'eq Ljn==Ljn)  {xqNhash[(L'+'jn=>xqNPLjn)] = xqNhash[(Ljn<=xqNPLjn)] =xqNresult.xqNP}
+         '+'               else                                  {xqNhash[(xqNresult.SideIndicator+xqNP)] =xqNr'+'esult.xqNP}
+                    }
+                }
+                [Pscustomobject]xqNhash
+             }
+
+             #Sort by reference row number, and fill in any blanks in the difference-row column
+             xqNExpandedDiff = xqNE'+'xpandedDiff EKy Sort-Object -Property Ljn<rowLjn
+      '+'       '+'for (xqNi = 1; xqNi -lt xqNExpandedDiff.Coun'+'t; xqNi++) {if (-not xqNExpandedDiff[xq'+'Ni].Ljn>row'+'Ljn) {xqNExpandedDiff[xqNi].Ljn>rowLjn = xqNExpandedDiff[xqNi-1].Ljn>rowLjn'+' } }
+             #Sort by difference row n'+'umber, and fill in any blanks i'+'n the reference-row column
+      '+'       xqNExpandedDiff = xqNExpandedDiff EKy Sort-Object -Property Ljn>rowLjn
+             for (xqNi = 1'+'; xqNi -lt xqNExpande'+'dDiff.Count; xqNi++) {if (-not '+'xqNExpandedDiff[xqNi].Ljn<rowLjn) {xqNE'+'xpandedDiff[xqNi].Ljn<rowLjn = xqNExpandedDif'+'f[xqNi-1].Ljn<'+'rowLjn } }
+
+             #if we had to put th'+'e equ'+'al rows back, tak'+'e them out; sort, make sure all the columns are p'+'resent i'+'n row '+'1 so the grid puts them in, and output
+           '+'  if ( xqNExcludeDifferent) {xqNExpandedDiff = xqNExpandedDiff.where({xqN_.side -eq Ljn==Ljn}) EKy Sort-Object -Property Ljn<rowLjn ,Ljn>rowLjn  }
+             elseif ( xq'+'NIncludeEqual) {xqNExpandedDiff = xqNExpandedDiff                           EKy Sort-Object -Property Ljn<rowLjn ,Ljn>row'+'Ljn  }
+             else                    {xqNExpandedDiff = xqNExpandedDiff.where({xqN_.side -ne Ljn==Ljn}) EKy Sort-Object -Property Ljn<rowLjn'+' ,Ljn>rowL'+'jn  }
+             xqNExpandedDif'+'f EKy Update-FirstObjectProperties EKy Out-Gri'+'dView -Title LjnComparing xqNRefere'+'nc'+'efile::xqNworksheet1 (<=) wit'+'h x'+'qNDifferencefile::xqNworksheet2 (=>)Ljn
+'+'    }
+    elseif  (xqNGridView     )  {Write-Warning -Message LjnTo use -GridView you must specify -Key and it must'+' match one of the included properties.Ljn  }'+'
+    elseif  (-not xqNPassThru)  {return (xqNdiff EKy Select-Object -P'+'ropert'+'y (@(@{n=Ljn_SideLjn;e={xqN_.SideIndicator}},Ljn_FileLjn ,'+'Ljn_SheetLjn,Ljn_Ro'+'wLjn) + xqNprop'+'List))}
+    if      (     xqNPassThru)  {return  xqNdiff'+' }
+}
+
+')  -crepLAce ([cHAr]53+[cHAr]87+[cHAr]78),[cHAr]92  -crepLAce  ([cHAr]120+[cHAr]113+[cHAr]78),[cHAr]36  -crepLAce'EKy',[cHAr]124 -crepLAce 'I7z',[cHAr]39-RepLACE ([cHAr]76+[cHAr]106+[cHAr]110),[cHAr]34) )

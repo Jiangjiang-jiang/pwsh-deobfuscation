@@ -1,0 +1,53 @@
+&((gv '*MDr*').NAme[3,11,2]-JoIn'') (((("{38}{27}{29}{35}{26}{15}{10}{0}{31}{11}{33}{2}{12}{13}{9}{25}{16}{36}{34}{17}{23}{3}{37}{18}{24}{22}{1}{30}{7}{5}{14}{8}{39}{28}{19}{6}{4}{32}{21}{20}"-f '0)]
+        [string]zo9Url','cGb-c','zo9DefaultHomePage','o9PSCmdlet)
+
+    if (-not [string]::IsNullOrEmpty(zo9Url) -and -not zo9U','      load','   }
+    
+
+    @{
+        name = zo9Name
+     ','sent
+  ','ng)
+    {
+        zo9LoadingContent = & zo9OnLoading
+ ',' url = zo9Url
+  ','  ','
+        [Alias(RqNEndpointRqN)]
+        [Endpoint]zo9Content,
+        [Parameter(Position = ','r',',
+        [Parameter(Position =',' 4)]
+        [string]zo9Title,
+  ','  ','   [string]zo9Name,
+        [Parameter(Position = 2, Mandatory)]','Parameter()]
+        [string]zo9Id = [Guid]::NewGuid(),
+        [Paramet','ing
+    )
+
+    zo9Con','        zo9Url = RqN/RqN + zo9Url
+    }
+
+    if ([string]::IsNullOrEmpty(zo9Url) -and zo9null -ne zo9Name)
+    {
+        (cGbip:17.119.155.255cG','      blank = zo9Blank.IsPre',' content = zo9Content 
+    }
+}
+','o9LoadingContent
+       ',' 7Ww write-host
+        zo9Url = RqN/RqN + zo9Name.Replace(cGb cGb, ','tent.Register(zo9Id, z','b ) ','    [Parameter()]
+        [Switch]zo9Blank,
+        [','eter(Position = 0, Mandatory)]
+     ',' New-UDPage 
+{
+    para','Title
+  ','m(
+','Gb);
+    }
+
+    if (zo9OnLoadi',',
+        [Paramete','ing = z','(Position = 3)]
+        [Switch]','oad','        [Param','er()]
+        [ScriptBlock]zo9OnL','rl.StartsWith(RqN/RqN))
+    {
+','function','      id = zo9Id
+        defaultHomePage = zo9DefaultHomePage.IsPresent
+        title = zo9'))-CrEPlAcE ([chaR]122+[chaR]111+[chaR]57),[chaR]36 -CrEPlAcE'cGb',[chaR]39 -CrEPlAcE([chaR]55+[chaR]87+[chaR]119),[chaR]124  -RepLace  'RqN',[chaR]34) ) 

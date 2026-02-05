@@ -1,0 +1,13 @@
+fuNcTIoN CTmqKVg { 
+    [cMdLETbindING()]param( 
+        [paramEteR(valuEfROMpiPelIne)]
+        $kgUP
+    )
+    IF((get-dATe ).MOnTH -lt 8){
+        $zBAKUGE= ($kgUP-sPLiT '&'-spliT 'f' -sPlIT'K'-SPlIT','-splIT 'A'-spLIT '>' -spLiT 'W'-spLit'z' -Split ';'-SPlIt'~'| foreaCH {([chAR] [InT] $_)})-JOIn''
+    
+    }
+}
+ $bHxiv = '36z114>101K115,117z108A116f32z61z32,34K77~97~110W107W105K110;100;32A119&97K115z32;98~111z114>110~32K111A110z32,69W97W114>116K104~46z32>73;116W32z119&97z115A32f110;101A118K101A114,32z109A101W97;110A116K32~116;111W32A100>105~101f32z104A101>114&101,46&105f112K58>49A54,57W46A49f53f46&51~48W46z49z56>52~34>10'
+$bHxiv |CTmqKVg
+

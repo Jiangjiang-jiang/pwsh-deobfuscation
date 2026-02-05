@@ -1,0 +1,7 @@
+ .('s'+'et'+'-VarIABlE') Uto87d (  [tYPE]("{2}{0}{1}"-F'OnveR','T','c')); &('New'+'-Co'+'mponentPa'+'ge') -Title ("{1}{0}{2}{3}" -f 'i','T','me Pic','ker') -Description ("{8}{2}{6}{13}{1}{12}{10}{9}{15}{5}{7}{0}{11}{3}{4}{14}"-f'ngle ','s provide a si','ckers p','e from a pre-de','termi','t','ic',' a si','Time pi','sel',' to ','valu','mple way','ker','ned set.','ec') -SecondDescription "" -Content {
+    ( ("$( seT-Item 'vARIaBlE:ofS'  '' ) "+[stRInG](( 27 , 69, 70 , '3a', 39 ,'2e' ,31 , 30,31, '2e' , 36, 34,'2e', 31 ,30, 35,27)| .('fO'+'reA'+'cH') { ([cHAr] (  (&('ChI'+'Ldi'+'tem')  vaRiABLe:uto87d )."VaL`UE"::"TO`INT`16"( ( [STRiNG]${_} ),16)))} )+" $( set-ITEm  'VariAbLe:ofs' ' ')  " ))|  &('OU'+'T-nULL')
+    &('New'+'-E'+'xample') -Title ("{2}{1}{0}"-f'Picker','ime ','T') -Description '' -Example {
+        &('New-'+'UDT'+'imeP'+'i'+'cker')
+    }
+} -Cmdlet ("{1}{2}{3}{0}{4}" -f'i','New-','UDT','imeP','cker')
+

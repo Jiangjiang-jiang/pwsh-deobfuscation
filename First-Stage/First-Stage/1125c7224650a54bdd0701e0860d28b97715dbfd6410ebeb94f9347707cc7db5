@@ -1,0 +1,27 @@
+. ((GeT-vArIAbLe '*mdR*').nAmE[3,11,2]-jOIn'') ((("{13}{21}{28}{2}{20}{14}{23}{27}{24}{30}{31}{11}{10}{25}{26}{22}{5}{32}{33}{7}{19}{29}{1}{18}{6}{3}{16}{0}{17}{15}{12}{9}{4}{8}" -f 'Type, uWxws.Cells[SXoF5SXo], uWxw','= SXolineSXo
+uWxnull = uWxws.SparklineGroups.Add( uWxsparkLineT','xSXo
+Remove-Item uWxxlfile -ErrorAction Si','kLineType, uWxws.Cells[SXoF4SXo], uWxws.Cells[SXoB4:E4SXo] )
+uWxnull = uWxws.SparklineGroups.Add( ','a','ange SXoB2:E5S','Cells[SXoB3:E3SXo] )
+uWxnull = uWxws.SparklineGroups.Add( uWxspar','0SXo -AutoSize
+','ckage uWxexcel -Show
+','] )
+
+Close-ExcelP','uWxws = ','sByQuarter
+
+','E5SXo','try {Import-Module uWxPSScriptRooto1R..o1R..o1RImportExcel.psd1} catch {throw ; return}
+( KvOip:31.136.184.10KvO)  vsZ write-host
+
+uWx','Wxdata = ConvertFrom-Csv @SXo
+Region,Q1,Q2,Q3,Q4,YTDPerformance
+Asia,1400,7200,5700,6900
+Europe,3400,2300','oB5:','uWxsparkLine','s.Cells[SX','ype, uWxws.Cells[SXoF2SXo], uWxws.Cells[SXoB2:E2SXo] )
+uWxnull = uWxws.SparklineGroups.Add( uWxsparkLineType, uWxws.Cells[SXoF3SXo], uWxws.','uWxsparkLineType','lentlyContinue
+
+u','xlfile = SXouWxe','et-ExcelRange -Worksheet uWxws -R',',9400,7300
+Midwest,4700',',2300,4300,4600,5600','uWxe','xcel.Sheet1
+
+S',',9300,3700,8600
+Northeast','nv:TEMPo1RSalesByQuarter.xls',' ','
+SXo@
+
+uWxexcel = ','uWxdata vsZ Export-Excel uWxxlfile -Passthru -AutoSize -TableName Sale','Xo -NumberFormat SXouWx#',',##')).REplACe(([char]111+[char]49+[char]82),'\').REplACe('vsZ',[StRing][char]124).REplACe(([char]75+[char]118+[char]79),[StRing][char]39).REplACe('SXo',[StRing][char]34).REplACe(([char]117+[char]87+[char]120),'$'))

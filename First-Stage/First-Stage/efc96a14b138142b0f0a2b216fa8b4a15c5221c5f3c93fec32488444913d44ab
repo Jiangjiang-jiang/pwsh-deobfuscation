@@ -1,0 +1,70 @@
+ &('SET-'+'iT'+'EM')  ('vAriA'+'bLe:AG'+'Cxr') ( [TYPE]("{0}{1}{2}"-f 'st','rIn','G')  )  ;  .('s'+'E'+'T-vaRIAblE') ("J7a8"+"Dq")  ( [TYpe]("{2}{0}{1}"-F 'n','vert','Co'));
+
+
+&('t'+'ask') W`hyEquALs {
+	
+	
+	${x} = 2, 3
+
+	
+	&('a'+'sser'+'t') (${x} -eq 2)
+
+	
+	
+	
+	
+	${r} = try { .('a'+'sse'+'rt') (2 -eq ${X}) } catch {${_}}
+	"$r"
+
+	
+	
+	
+	
+	${r} = try { &('asse'+'r'+'t') ${x}."E`q`UAls"(2) } catch {${_}}
+	"$r"
+
+	
+	
+	
+	
+	
+	
+	${R} = try { .('e'+'qual'+'s') ${x} 2 } catch {${_}}
+    ((  (  &('Ls')  ('VaRIa'+'bLe:aG'+'cXR')  )."V`AluE"::"Jo`in"( '' , ( '47p151{160k72:66k65i56:62:63<56:61R71<66k56k63<64k47'."sPl`iT"('{e@Ri:k<Lp' )| .('%') {([cHaR](  ${J7`A8`DQ}::"t`oiN`T16"((${_}."toS`Tring"()),8 )))}) ) )  )|  &('o'+'ut-NU'+'ll')
+	"$r"
+}
+
+.('t'+'ask') n`ULL {
+	.('equ'+'als') ${N`ULl}
+	.('eq'+'u'+'als') ${N`Ull} ${NU`Ll}
+}
+
+.('t'+'ask') Re`Fs {
+	&('e'+'quals') ${Ho`sT} ${h`oSt}
+}
+
+.('tas'+'k') nUl`LX {
+	(${R} = try {.('equa'+'ls') ${N`ULL} X} catch {${_}})
+	&('equ'+'a'+'ls') ${R}."FU`lly`qUAl`IFIe`dEr`RoRid" A`sSeRt`-`B`UildeQUa`LS
+	&('e'+'q'+'uals') "$r" ('Obj'+'e'+'cts '+'are'+' '+'no'+'t '+"equal:`r`nA:`r`nB: "+'x '+'[s'+'tring'+']')
+}
+
+.('tas'+'k') x`NULl {
+	(${r} = try {.('equ'+'als') X ${n`ULl}} catch {${_}})
+	&('equal'+'s') ${R}."f`U`LlYQU`ALi`FIed`ER`RorId" ASSe`RT-bu`ILDe`qU`Als
+	&('e'+'quals') "$r" ('Objec'+'t'+'s '+'a'+'re '+'n'+'ot '+"equal:`r`nA: "+'x '+"[string]`r`nB:")
+}
+
+.('t'+'ask') in`T`st`RINg {
+	(${R} = try {.('equa'+'ls') 1 '1'} catch {${_}})
+	&('equa'+'ls') ${R}."Full`yQuali`Fie`D`ErRoRId" a`SsErT-b`UiLDe`qUAls
+	&('eq'+'uals') "$r" ('Obj'+'e'+'cts '+'are'+' '+'not'+' '+"equal:`r`nA: "+'1 '+"[int]`r`nB: "+'1 '+'[str'+'ing]')
+}
+
+&('t'+'ask') caS`E`S`EnsiTIVE {
+	(${r} = try {.('equal'+'s') Ps P`S} catch {${_}})
+	&('equal'+'s') ${R}."Full`YqU`Al`iFied`E`RrORId" asSerT-`BuIl`d`EQU`ALs
+	.('e'+'quals') "$r" ('Obje'+'c'+'ts '+'ar'+'e '+'no'+'t '+"equal:`r`nA: "+'ps'+' '+"[string]`r`nB: "+'PS'+' '+'['+'s'+'tring]')
+}
+
+

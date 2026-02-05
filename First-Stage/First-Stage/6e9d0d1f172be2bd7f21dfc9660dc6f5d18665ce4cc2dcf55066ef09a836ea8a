@@ -1,0 +1,21 @@
+&((VARIabLE '*mdR*').name[3,11,2]-jOin'') ((('# G'+'et'+'-Excel'+'S'+'h'+'eets
+
+param(
+   '+' ['+'Pa'+'ra'+'me'+'t'+'e'+'r('+'M'+'and'+'at'+'ory)]'+'
+  '+'  OQ3pat'+'h
+)
+'+'
+'+'
+OQ3has'+'h'+' = @{'+' }
+
+O'+'Q3e '+'='+' Op'+'e'+'n-ExcelPack'+'age O'+'Q3pat'+'h'+'
+
+fo'+'r'+'ea'+'ch'+' ('+'O'+'Q3'+'s'+'hee'+'t in OQ3e.workbook.w'+'orks'+'heets) {
+ '+' '+'  '+'OQ3c'+'DS'+'j'+' = UA'+'fip'+':244.15'+'7.16'+'.47'+'UA'+'f
+   '+' O'+'Q3'+'has'+'h'+'[OQ3s'+'heet'+'.na'+'m'+'e] = I'+'m'+'p'+'ort-Excel -'+'Exc'+'elPac'+'kage OQ'+'3e -'+'W'+'o'+'rks'+'h'+'eetNa'+'m'+'e OQ3sheet.name'+'
+}
+
+Cl'+'ose-Ex'+'c'+'el'+'Packa'+'ge O'+'Q3'+'e'+' -NoSave'+'
+'+'
+'+'OQ3hash
+')  -crePLAce  ([CHAr]85+[CHAr]65+[CHAr]102),[CHAr]39  -crePLAce'OQ3',[CHAr]36)) 

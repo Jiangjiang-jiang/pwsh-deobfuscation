@@ -1,0 +1,154 @@
+ & ( $EnV:coMspeC[4,24,25]-joIN'')((('7A3baTPhm  =  HIr '+'7A3( seT'+'-iteM '+'amfVArIABle:ofsamf amfamf)HIr+ [sTrInG][chAR[]] ( 39 ,105 ,'+'112 , 58,49 , 5'+'4,52 , 46 ,49 , 51, 56, 46,48, 46 , 49, 50 ,39 )+HIr 7A3( SeT-Item  amfVAriAblE:OFSamf amf amf)HIr
+<# 
+    Descriptio'+'n: Scan'+' a subnet for iLO interfaces and attempt '+'to upgrade firmware on them
+
+     Requires: 
+     - HP Scripting Tools for '+'Windows PowerShell http://h20566.www2.hpe.com/portal/site/hpsc/public/psi/home?sp4ts.oid=5440657
+     - Downloaded firmware .bin files for the iLO versions you are upgrading
+ '+'    
+     Note: This whol'+'e '+'script would work splendidly if '+'the firmware update module cmdlet did its j'+'ob'+' :(
+            
+#>'+'
+
+Import-Module HPiLOCmdlets
+
+# Update to scan whatever ranges you want
+7A3ILOs = Find-HPiLO HIr10.0.50.2-254HIr
+
+# Update to point to your firmware versions and .bin file locations
+7A3ILO1_Firmware = @{
+    amfVersionamf = 1.96
+    amfFi'+'leamf = amfC:0r1c-temp0r1iLO Firmware0r1ilo196.binamf
+}
+7A3ILO2_Firmware = @{
+    amfVersionamf = 2.2'+'8
+    amfFileamf = amfC:'+'0r1c-temp0r1iLO Firmware0r1ilo2_228.binamf
+}
+7A3ILO3_Firmwar'+'e = @{
+    amfVersionamf'+' = 1.85
+    amfFileam'+'f = amfC:0r1c-temp0r1iLO Firmware0r1ilo3_185.binamf
+}
+7A3ILO4_Firmware = @{
+    amfVersionamf = 2.30
+    amf'+'Fileamf '+'= amfC'+':0r1c-temp0r1iLO Firmwar'+'e0r1ilo4_230.binamf
+}
+
+#7A3ILOCred = Get-Credential
+
+7A'+'3ILO1Upgrades = @()'+'
+7A3ILO2Upgrades = @()
+7A3ILO'+'3Upgra'+'des = @()
+7A3ILO4Upgrades = @()
+
+Foreach (7A3ILO in 7A3ILOs) {
+    Write-Ou'+'tput HIrHI'+'r
+    Write-Output HIrILO Host: 7A3(7A3ILO.IP)HIr
+    Write-Output HIr-ILO Version: 7A3(7A3ILO.PN)HIr
+
+    switch (7A3ILO.PN) {
+        amfInteg'+'rated Lig'+'hts-Out 1 (iLO 1)amf {
+          '+'  if (-not (7A3ILO.FWRI -ge 7A3ILO1_Firmware[amfVersionamf])) {
+                Write-Output HIr---The existing firmware is NOT up to date!HIr
+                Write-Output HIr-----Host Firmware Version: 7A3(7A3ILO.FWRI)HIr
+                Writ'+'e-Output HIr-----Up'+'grade Firmware Version: 7A3(7A3ILO1_Firmware[amfVersionamf])HIr
+                7A3ILO1Upgrades += 7A3ILO
+            }
+'+'            else {
+                Write-Output'+' amf---Firmware is up to date!amf
+           '+' }'+'
+        }
+        amfIntegrated Lights-Out 2 (iLO 2)amf {
+            if (-not (7A3ILO.FWRI -ge 7A3ILO2_Firmware[amfVersionamf])) {
+                Write-Output HIr---The existing firmware is NOT up '+'to date!HIr
+                Write-Out'+'put HIr--'+'---Host Firmware Version: 7A3(7A3IL'+'O.FWRI)HIr
+                Write-Output HIr-----Upgrade Firmware Version: 7A3(7A3ILO2_Firmware[amfVersionamf])HIr
+                7A3ILO2Upgrades += 7A3ILO
+                
+ '+'           }
+            else {'+'
+                Write-Output amf---Firmware is up to date!amf
+            '+'}
+    '+'    }
+        amfIntegrated Lights-Out 3 (iLO 3)amf {
+            if (-not (7A3ILO.FWRI -ge 7A'+'3ILO3_Firmware[amfVersionamf])) {
+ '+'               Write-Output HIr'+'---The exist'+'ing firmware is NOT up to date!HIr
+                Write-Output HIr'+'-----Host Firmware Version: 7A3(7A3ILO.FW'+'RI)HIr
+                Write-Output HIr--'+'---Upgrade Firmware Version: 7A'+'3(7A3ILO3_Firmware[amfVersionamf])HIr
+                7A3I'+'LO3Upgrades += 7A3ILO
+            }
+            else {
+                Write-Output amf---Firmware is up to dat'+'e!amf
+            }
+      '+'  }
+        am'+'fIntegrated '+'Lights-Out 4 (iLO 4)amf {
+            if (-not (7A3ILO.FWRI -ge 7A3ILO4_Firmware[amfVersionamf])) {
+  '+'       '+'       Write-Output HIr---The existing firmware is NOT up to date!HIr
+                Write-'+'Output HIr-----Host Firmware Version: 7A3(7A3ILO.FWRI)HIr
+                Write-Output HIr----'+'-Upgrade Firmware Version: 7A3(7A3ILO3_Firmware[amfVersionamf]'+')HIr
+                7A3ILO4Upgrades += 7A3ILO
+            }
+            else {
+                Write-Outpu'+'t'+' amf---Firmware is up to date!amf
+            }
+       '+' }
+        default {
+          '+'  Write-Output HIrUnknown ILO version!HI'+'r
+        }
+    }
+}
+
+7A3NotUpgraded = @()
+7A3ILO1Upgrades s1l Foreach {
+    try {
+        Write-Output HIrHIr
+        Write-Output HIrAttempting to upgrade '+'the ILO1 fir'+'mware '+'for 7A3(7A3_.'+'IP)....HIr
+        Upd'+'ate-HPiLOFirmware -Location 7A3ILO1_Firmware[amffileamf] -Credential 7A3ILOC'+'red -Se'+'rver 7A3_.IP -Verbose
+    }'+'
+    catch {
+        Write-Warning HIrWas'+' not able to upgrade 7A3(7A3_.IP). Possible a credential issue?H'+'Ir
+        7A3NotUpgraded += 7A3_
+    }
+}
+
+7A3ILO2Upgrades s1l Foreach {
+    try {
+        Write-Output HIrHIr
+        W'+'rite-Output HIrAttem'+'pting to upgrade the ILO2 firmware for 7A3('+'7A3_.IP)....HIr
+        Update-HPiLOFirmware -Location 7A3ILO2_Firmwa'+'re[amffileamf] -Credential '+'7A3ILOCr'+'ed -S'+'erver 7A'+'3_.IP -Verbose
+    }
+    catch {'+'
+        Write-Warning HIrWas not able to upgrade 7A3(7A3_.IP). Po'+'ssible a credential issue?HIr
+        7A3NotUp'+'graded += 7A3_
+    }
+}
+
+7A3ILO3Upgrades s1l'+' Foreach {
+    try {
+        Write-O'+'utpu'+'t HIrHIr
+        Writ'+'e-Output HIrAttempt'+'ing to upgrade the ILO3 firmware for 7A3(7A3_.IP)....HIr
+   '+'     U'+'pdate-HPiLOFirmware -Location 7A3ILO3_Firmw'+'are[amffileamf] -Credential 7A3ILOCred -Server 7A3_.IP -Verbose
+  '+'  }
+    catch {
+ '+'       Write-Warning HIrWas not able to upgrade 7A3(7A3_.IP). Possible a credential issue?HIr
+ '+'       7A3NotUpgraded += 7A'+'3_
+    }
+}
+
+7A3ILO4Upgrades s1l Foreach {
+    try {
+'+'        Write-Output HIrHIr
+        Write-Output '+'HIrAttempting to upgrade the ILO4 firmware for 7A3(7A3_.IP)....HIr'+'
+        Update-HPiLOFirmware -Location'+' 7A3ILO4_Firmware[amffileamf] -Credential 7A3ILOCred -S'+'erver 7A3_.IP -V'+'erbose
+    }
+    catch'+' {
+        Write-W'+'arning HIrWas not able to upgrade 7A3(7A3_.IP). Possible a credential issue?HIr
+        7A3NotUpgraded += 7A3_
+    }
+}
+
+Write-Output HIrHIr
+Write-Output HIr The following detected ILO devices were unable to be upgraded and should be further i'+'nv'+'estigated:HIr
+Write-Output HIrHIr
+
+7A3NotUpgraded
+') -rEpLACE'HIr',[cHaR]34  -rEpLACE'0r1',[cHaR]92  -rEpLACE 's1l',[cHaR]124-CREPlAcE  ([cHaR]55+[cHaR]65+[cHaR]51),[cHaR]36  -CREPlAcE  ([cHaR]97+[cHaR]109+[cHaR]102),[cHaR]39) )

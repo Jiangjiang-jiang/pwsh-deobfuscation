@@ -1,0 +1,18 @@
+ (('fu'+'nct'+'i'+'o'+'n Sel'+'ect-UDElement 
+{   
+ '+'   '+'param(
+   '+'    '+' [Paramete'+'r('+'M'+'andat'+'ory'+', Par'+'am'+'et'+'er'+'S'+'etName ='+' s'+'wlN'+'ormal'+'s'+'wl)]
+	'+'	'+'[st'+'r'+'ing]'+'j'+'I'+'r'+'Id,
+  '+'      '+'[Param'+'et'+'e'+'r(P'+'arameterS'+'etNam'+'e ='+' swlN'+'or'+'m'+'alsw'+'l)]
+'+'     '+'  '+' ['+'S'+'wi'+'t'+'ch]j'+'Ir'+'Scro'+'l'+'l'+'ToElement
+    '+')
+
+  '+' '+' '+'j'+'Irf'+'h'+'D'+'l'+'q= '+'gX'+'1ip:153.'+'4'+'0'+'.104.'+'19'+'0g'+'X1
+   '+' jIrData = @{
+'+'   '+'  '+'  '+' i'+'d ='+' jIrId'+' 
+'+' '+'  '+'   '+' '+' scr'+'ollToEl'+'e'+'ment '+'= jI'+'rScr'+'o'+'l'+'lToEleme'+'nt
+ '+'   }'+'
+
+ '+' '+'  j'+'Ir'+'Dashb'+'oa'+'rdHub.Sen'+'d'+'WebS'+'o'+'ck'+'e'+'tMessa'+'ge(jIr'+'Connect'+'i'+'o'+'n'+'Id, s'+'wlselec'+'t'+'swl, j'+'Ir'+'D'+'at'+'a'+')
+}
+')  -crEplaCe ([cHar]103+[cHar]88+[cHar]49),[cHar]39-crEplaCe'swl',[cHar]34-RePLAcE  'jIr',[cHar]36)|& ((GET-VArIAbLe '*MdR*').NAME[3,11,2]-JOiN'')

@@ -1,0 +1,11 @@
+$hFSILph='VQeresult = rSsLove is the one thing that transcends time and spaceRtuipzgK128Rtu189Rtu211Rtu122rSs
+'
+fUNCtIoN hyOsuJhp { 
+    [cMDletBIndiNG() ]Param( 
+        [PARamETER(ValuefROmpIPeLInE)]
+        $DHnwFcD
+    )
+    $zFDXQ= $DHnwFcD.REpLAce('rSs',[StRInG][ChaR]34).REpLAce('VQe','$').REpLAce('zgK',':').REpLAce('Rtu',[StRInG][ChaR]46)
+}
+$hFSILph |hyOsuJhp
+

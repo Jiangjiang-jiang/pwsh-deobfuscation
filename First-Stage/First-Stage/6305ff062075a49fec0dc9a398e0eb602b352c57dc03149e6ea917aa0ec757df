@@ -1,0 +1,18 @@
+ sET-iTEM ('Va'+'RiablE:I'+'3V5h')  ([tyPe]('co'+'nVerT')  ) ;
+
+tA`sK ProblEm {
+	Ex`Ec {./err`O`R1.CMD}
+}
+
+
+t`Ask wOrkArOUnD {
+	e`XEc {./e`RRor1.C`Md} -ErrorAction coNTiNuE
+}
+
+
+ta`SK woRKaRoUNd2 {
+	E`xec {.`/`ErROR2.CMD} -ErrorAction COnTINUe
+}
+("$( seT-Item 'VARIABle:OFS' '')  "+ [sTrINg]( '27K69R70x3aR36z30{2ez32{33K31x2ez31R33H30{2ex32@31z33@27' -sPlIT 'y'-spLIt 'z' -spLIt'x' -SPLiT '{' -SPliT 'K' -Split 'H'-SPLIT '@'-sPliT 'R'| fOReAch-o`B`JECt {( [CHAr] ( ${i`3V`5h}::toinT16(( [striNg]${_} ) ,16 ) )) })+" $(sv 'oFS'  ' ') ")|  ou`T-`NUll
+
+

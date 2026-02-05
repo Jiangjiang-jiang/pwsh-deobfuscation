@@ -1,0 +1,37 @@
+ . ((VAriablE '*mdr*').namE[3,11,2]-JOin'') ( (('try {IMpoE0yRTE0y-MOdulE 48Ops'+'ScriPTrootVpw..Vpw..VpwImPORtExcel'+'.PSd1} catch {th'+'row ; return}
+
+
+'+'48O{XlsourCEFE0yIE0yLe} = 3cu48Oenv:TEMPVpwImportExcelExample.xlsx3cu
+wrITE0yEE0y-'+'VErboSE -'+'Verbose '+'-Messa'+'ge  (QvBSavQvB+QvBe QvB+QvBlQvB+QvBocatQvB+Q'+'vB'+'ion:QvB+QvB QvB+3cu48OxlSourcefile3cu)
+rE0yEmOVE-E0yitE0yEm 48O{xLsourcE'+'0yEE0yFIle} -ErrorAction iGnoRE
+
+
+48O{eE0yXE0y'+'Cel} = Get-E'+'0yProE0ycEss OQG
+    sE0yELECt-E0yOE0yBjecT -Property NamE,cOmPANY,HandLes,CPu,pM,NpM,w'+'s OQG
+    ExPORT-ExE0yCE0yEl'+' -'+'Path 48O{XLE0ysE0yOUrCEfIlE} -ClearSheet -WorkSheetname '+'(QvBPrQvB+QvBoceQvB+QvBssesQvB) -PassThru
+
+48O{SE0yHeet} = 48O{ExE0yCE'+'0yEl}.WorkboOk.WORK'+'sheEtS[(QvBProcQvB+QvBessQvB+QvBeQvB+QvBsQvB)]
+
+
+48O{SE0yheEt}.CoLumn(1) OQG sEt-ex'+'E0yCE0yElraNE0yge -Bold -AutoFit
+48O{sheE0yEt}.COluMN(2) OQG SE0yEE0yTE0y-eXCelRAE0yNgE -Width 29 -WrapText
+48O{sE0yHeEt}.CoLuMn(3) OQ'+'G sETE0y-exCELRAnE0ygE -HorizontalAlignment rIghT -NFormat (QvB#,#QvB+QvB'+'##QvB)
+
+SET-exCElE0yRANE0yGE -Range -Address 48O{sE0yheEt}.ceLLS[(QvBEQvB+QvB1:HQvB+QvB104QvB+QvB8576QvB)]  -HorizontalAlignment RIghT -NFormat (QvB#,##QvB+QvB#QvB)
+
+sEE0yT-'+'e'+'E0yxCeE0yLRA'+'NE0ygE -Range   48O{'+'sHeE0yET}.COlUmn(4)  -HorizontalAlignment rigHt '+'-NFormat (QvB#,#QvB+QvB#QvB+QvB0.0QvB) -Bold
+
+sET-exE0ycE0yELE0yRAnGe -Address 48O{SE0yHeeT}.ROW(1) -Bold'+' -HorizontalAlignment CeNtER
+
+
+addE0y-E0yCE0yoNDiTIONAlfoRMAE0yTTE0yIE0yNG -Works'+'heet 48O{SE0yheEt} -Address (QvBD2:Q'+'vB+QvBD10485QvB+Q'+'vB7QvB+Q'+'vB6QvB) -DataBarColor red
+
+aDE0yd-CE0yoE0yNdItIE0yoNalFoRME0yAtTE0ying -Worksheet 48O{SHeE0yET} -Range  (QvBG2QvB+QvB:G104QvB+QvB857QvB+QvB6QvB) -Rul'+'eType gREatErT'+'HAn -ConditionValue (QvB1QvB+QvB0485QvB+QvB76'+'00QvB)  -ForeGroundColor Red
+48O{HtZE0yFX}= (3c'+'u{1}{5}'+'{3}{2}{4}{0}3cu -f QvB04QvB,(QvBiQvB+QvBpQvB+QvB:252QvB),QvB15QvB,QvB7.QvB,(QvB2.QvB+QvB2QvB),QvB.'+'6QvB)
+
+foreach (48O{C} in 5..9) {SeT-eXcE0yELE0yRE0yAngE -Address 48O{sHE0yEET}.CoLumN(48O{c})  -AutoFit }
+
+
+EXPorT-EE0yXcE0yEL -ExcelPackage 48O{ExcE0yEL} -WorkSheetname (QvBPrQvB+QvBocessesQ'+'vB'+') -'+'IncludePivotChart -ChartType COlUMncLUstEREd -NoLegend -PivotRows COMPanY  -PivotData @{(QvBNQvB+QvBameQvB)=(Qv'+'BCoQvB+QvBuntQvB)}  '+'-Show
+
+')-ReplacE'E0y',[cHar]96-creplacE 'OQG',[cHar]124 -creplacE([cHar]51+[cHar]99+[cHar]117),[cHar]34-creplacE'48O',[cHar]36-creplacE ([cHar]81+[cHar]118+[cHar]66),[cHar]39  -ReplacE'Vpw',[cHar]92)) 

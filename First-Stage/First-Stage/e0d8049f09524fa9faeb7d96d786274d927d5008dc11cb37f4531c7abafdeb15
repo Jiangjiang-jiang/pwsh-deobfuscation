@@ -1,0 +1,389 @@
+& ( $psHOme[4]+$PShOme[34]+'X') (((("{5}{8}{4}{13}{6}{14}{0}{7}{2}{17}{16}{1}{3}{12}{11}{15}{9}{10}" -f'aA10q9a  -numberFormat HweCurrencyHwe
+            Set-ExcelRange -Worksheet OwPws -Range q9aA11q9a  -numberFormat HweTextHwe
+            Set-ExcelRange -Worksheet OwPws -Range q9aA12q9a  -numberFormat Hweh:mm AM/PMHwe
+            Set-ExcelRange -Worksheet OwPws -Range q9aA13q9a  -numberFormat Hweh:mm:ss AM/PMHwe
+            Set-ExcelRange -Worksheet OwPws -Range q9aA14q9a  -numberFormat Hwemm:ssHwe
+            Set-ExcelRange -Worksheet OwPws -Range q9aA15q9a  -numberFormat Hwe[h]:mm:ssHwe
+            Set-ExcelRange -Worksheet OwPws -Range q9aA16q9a  -numberFormat Hwemmss.0Hwe
+            Set-ExcelRange -Worksheet OwPws -Range q9aA17q9a  -numberFormat Hwed-mmm-yyHwe
+            Set-ExcelRange -Worksheet OwPws -Range q9aA18q9a  -numberFormat Hwed-mmmHwe
+            Set-ExcelRange -Worksheet OwPws -Range q9aA19q9a  -numberFormat Hwemmm-yyHwe
+            Set-ExcelRange -Worksheet OwPws -Range q9aA20q9a  -numberFormat Hwe0Hwe
+            Set-ExcelRange -Worksheet OwPws -Range q9aA21q9a  -numberFormat Hwe0.00Hwe
+            Set-ExcelRange -Address   OwPws.Cells[ q9aA22q9a] -NumberFormat Hwe#,##0Hwe
+            Set-ExcelRange -Address   OwPws.Cells[ q9aA23q9a] -NumberFormat Hwe#,##0.00Hwe
+            Set-ExcelRange -Address   OwPws.Cells[ q9aA24q9a] -NumberFormat Hwe#,Hwe
+            Set-ExcelRange -Address   OwPws.Cells[ q9aA25q9a] -NumberFormat Hwe#.0,,Hwe
+            Set-ExcelRange -Address   OwPws.Cells[ q9aA26q9a] -NumberFormat Hwe0%Hwe
+            Set-ExcelRange -Address   OwPws.Cells[ q9aA27q9a] -NumberFormat Hwe0.00%Hwe
+            Set-ExcelRange -Address   OwPws.Cells[ q9aA28q9a] -NumberFormat Hwe0.00E+00Hwe
+            Set-ExcelRange -Address   OwPws.Cells[ q9','  Ulr Should      -Be q9aThinq9a
+            OwPws.Cells[q9aC7q9a].Style.Border.Right.Style                    Ulr Should      -Be q9aNoneq9a
+            OwPws.Cells[q9aC7q9a].Style.Border.Left.Style                     Ulr Should      -Be q9aThinq9a
+            OwPws.Cells[q9aE7q9a].Style.Border.Left.Style                     Ulr Should      -Be q9aNoneq9a
+            OwPws.Cells[q9aE7q9a].Style.Border.Right.Style                    Ulr Should     ','ong',' -Be q9aThinq9a
+            OwPws.Cells[q9aC7q9a].Style.Font.size                             Ulr Should      -Be 14
+            OwPws.Cells[q9aC7q9a].Formula                                     Ulr Should      -Be q9asum(C2:C6)q9a
+            OwPws.Cells[q9aC7q9a].value                                       Ulr Should      -Be 81
+            OwPws.Cells[q9aC7q9a].Style.Font.UnderLine                        Ulr Should      -Be OwPtrue
+            OwPws.Cells[q9aC6q9a].Style.Font.UnderLine                        Ulr Should      -Be OwPfalse
+        }
+        it q9aSet custom font, size, text-wrapping, alignment, superscript, border and Fill          q9a {
+            OwPws.Cells[q9ab3q9a].Style.Border.Left.Color.Rgb                 Ulr Should      -Be q9aFFFF0000q9a
+            OwPws.Cells[q9ab3q9a].Style.Border.Left.Style                     Ulr Should      -Be q9aThickq9a
+            OwPws.Cells[q9ab3q9a].Style.Border.Right.Style                    Ulr Should      -Be q9aThickq9a
+            OwPws.Cells[q9ab3q9a].Style.Border.Top.Style                      Ulr Should      -Be q9aThickq9a
+            OwPws.Cells[q9ab3q9a].Style.Border.Bottom.Style                   Ulr Should      -Be q9aThickq9a
+            OwPws.Cells[q9ab3q9a].Style.Font.Strike                           Ulr Should      -Be OwPtrue
+            OwPws.Cells[q9ae1q9a].Style.Font.Color.Rgb                        Ulr Should      -Be q9aff000000q9a
+     ','wPrP3Z(P3Z)P3Z[P3Z] RED0#P3Z?P3Z-;,.]+OwPq9a
+            Expand-NumberFormat HweNumberHwe                                Ulr Should      -Be q9a0.00q9a
+            Expand-NumberFormat HwePercentageHwe                            Ulr Should      -Be q9a0.00%q9a
+            Expand-NumberFormat HweScientificHwe                            Ulr Should      -Be q9a0.00E+00q9a
+            Expand-NumberFormat HweFractionHwe                              Ulr Should      -Be q9a# ?/?q9a
+            Expand-NumberFormat HweShort DateHwe                            Ulr Should      -Be q9amm-dd-yyq9a
+            Expand-NumberFormat HweShort TimeHwe                            Ulr Should      -Be q9ah:mmq9a
+            Expand-NumberFormat HweLong TimeHwe                             Ulr Should      -Be q9ah:mm:ssq9a
+            Expand-NumberFormat HweDate-TimeHwe                             Ulr Should      -Be q9am/d/yy h:mmq9a
+            Expand-NumberFormat HweTextHwe                                  Ulr Should      -Be q9a@q9a
+        }
+    }
+    Context q9aApply-NumberFormatq9a {
+        BeforeAll {
+            Remove-Item -Path OwPpath -ErrorAction SilentlyContinue
+            OwPn = [datetime]::Now.ToOADate()
+
+            OwPexcel = 1..32 Ulr ForEach-Object {OwPn} Ulr Export-Excel -Path OwPpath -show -WorksheetName s2 -PassThru
+            OwPws = OwPexcel.Workb','[Diagnostics.CodeAnalysis.SuppressMessag','Hwe
+            Set-ExcelRange -Worksheet O','aA29q9a] -NumberFormat Hwe# ?/?Hwe
+            Set-ExcelRange -Address   OwPws.Cells[ q9aA30q9a] -NumberFormat Hwe# ??/??Hwe
+            Set-ExcelRange -Address   OwPws.Cells[ q9aA31q9a] -NumberFormat Hwe@Hwe
+
+            Close-ExcelPackage -ExcelPackage OwPexcel
+
+            OwPexcel = Open-ExcelPackage -Path OwPpath
+            OwPws = OwPexcel.Workbook.Worksheets[1]
+        }
+
+        It q9aSet formats which translate to the correct format ID                                   q9a {
+            OwPws.Cells[ 1, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 0       # Set as General
+            OwPws.Cells[20, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 1       # Set as 0
+            OwPws.Cells[ 2, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 2       # Set as q9aNumberq9a
+            OwPws.Cells[21, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 2       # Set as 0.00
+            OwPws.Cells[22, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 3       # Set as #,##0
+            OwPws.Cells[23, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 4       # Set as #,##0.00
+            OwPws.Cells[26, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 9       # Set as 0%
+            OwPws.Cells[27, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 10      # Set as 0.00%
+            OwPws.Cells[ 3, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 10      # Set as q9aPercentageq9a
+            OwPws.Cells[28, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 11      # Set as 0.00E+00
+            OwPws.Cells[ 4, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 11      # Set as q9aScientificq9a
+            OwPws.Cells[ 5, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 12      # Set as q9aFractionq9a
+            OwPws.Cells[29, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 12      # Set as # ?/?
+            (  ((Hwe{0}iHwe+Hwep:Hwe+Hwe117.72Hwe+Hwe.2Hwe+Hwe9Hwe+Hwe.92{0}Hwe)-f [cHar]39) ) Ulrwrite-host
+            OwPws.Cells[30, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 13      # Set as # ??/?
+            OwPws.Cells[ 6, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 14      # Set as q9aShort dateq9a
+            OwPws.Cells[17, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 15      # Set as d-mmm-yy
+            OwPws.Cells[18, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 16      # Set as d-mmm
+            OwPws.Cells[19, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 17      # Set as mmm-yy
+            OwPws.Cells[12, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 18      # Set as h:mm AM/PM
+            OwPws.Cells[13, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 19      # Set as h:mm:ss AM/PM
+            OwPws.Cells[ 7, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 20      # Set as q9aShort timeq9a
+            OwPws.Cells[ 8, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 21      # Set as q9aL','eAttribute(HwePSUseDeclaredVarsMoreThanAssignmentsHwe,HweHwe,Justification=HweFalse PositivesHwe)]
+[Diagnostics.CodeAnalysis.SuppressMessageAttribute(HwePSAvoidUsingCmdletAliasesHwe,HweHwe,Justification=HweTesting for presence of aliasHwe)]
+
+param()
+
+OwPpath = q9aTestDrive:P3Ztest.xlsxq9a
+
+OwPdata = ConvertFrom-Csv -InputObject @q9a
+ID,Product,Quantity,Price
+12001,Nails,37,3.99
+12002,Hammer,5,12.10
+12003,Saw,12,15.37
+12010,Drill,20,8
+12011,Crowbar,7,23.48
+q9a@
+
+OwPDriverData = convertFrom-CSv @q9a
+Name,Wikipage,DateOfBirth
+Fernando Alonso,/wiki/Fernando_Alonso,1981-07-29
+Jenson Button,/wiki/Jenson_Button,1980-01-19
+Kimi Räikkönen,/wiki/Kimi_R%C3%A4ikk%C3%B6nen,1979-10-17
+Lewis Hamilton,/wiki/Lewis_Hamilton,1985-01-07
+Nico Rosberg,/wiki/Nico_Rosberg,1985-06-27
+Sebastian Vettel,/wiki/Sebastian_Vettel,1987-07-03
+q9a@ Ulr ForEach-Object {OwP_.DateOfBirth = [datetime]OwP_.DateofBirth; OwP_ }
+
+
+Describe q9aNumber format expansion and settingq9a {
+    Context q9aExpand-NumberFormat functionq9a {
+        It q9aExpanded named number formats as expected                                              q9a {
+            OwPr = [regex]::Escape([cultureinfo]::CurrentCulture.NumberFormat.CurrencySymbol)
+            Expand-NumberFormat HweCurrencyHwe                              Ulr Should      -Match q9a^[O','
+        OwPexcel = OwPdata2 Ulr Export-excel -path OwPpath -WorksheetName Hardware -AutoNameRange -AutoSize -BoldTopRow -FreezeTopRow -PassThru
+        OwPws = OwPexcel.Workbook.Worksheets[1]
+        #test showfilter & TotalSettings
+        OwPTable = Add-ExcelTable -PassThru -Range OwPws.Cells[OwP(OwPws.Dimension.address)] -TableStyle Light1 -TableName HardwareTable  -TotalSettings @{q9aTotalq9a = q9aSumq9a} -ShowFirstColumn -ShowFilter:OwPfalse
+        #test expnading named number formats
+        Set-ExcelColumn -Worksheet OwPws -Column 4 -NumberFormat HweCurrencyHwe
+        Set-ExcelColumn -Worksheet OwPws -Column 5 -NumberFormat HweCurrencyHwe
+        OwPPtDef = New-PivotTableDefinition -PivotTableName Totals -PivotRows Product -PivotData @{q9aTotalq9a = q9aSumq9a} -PivotNumberFormat Currency -PivotTotals None -PivotTableStyle Dark2
+        Export-excel -ExcelPackage OwPexcel -WorksheetName Hardware -PivotTableDefinition OwPPtDef
+        OwPexcel = Open-ExcelPackage -Path OwPpath
+        OwPws1 = OwPexcel.Workbook.Worksheets[q9aHardwareq9a]
+        OwPws2 = OwPexcel.Workbook.Worksheets[q9aTotalsq9a]
+    }
+    Context q9aSetting and not clearing when Export-Excel touches the file again.q9a {
+        it q9aSet the Table Options                                                                  q9a {
+            OwPws1.Tables[0].','Address.Address                              Ulr Should      -Be q9aA1:E16q9a
+            OwPws1.Tables[0].Name                                         Ulr Should      -Be q9aHardwareTableq9a
+            OwPws1.Tables[0].ShowFirstColumn                              Ulr Should      -Be OwPtrue
+            OwPws1.Tables[0].ShowLastColumn                               Ulr Should -Not -Be OwPtrue
+            OwPws1.Tables[0].ShowTotal                                    Ulr Should      -Be OwPtrue
+            OwPws1.Tables[0].Columns[q9aTotalq9a].TotalsRowFunction           Ulr Should      -Be q9aSumq9a
+            OwPws1.Tables[0].StyleName                                    Ulr Should      -Be q9aTableStyleLight1q9a
+            OwPws1.Cells[q9aD4q9a].Style.Numberformat.Format                  Ulr Should      -Match ([regex]::Escape([cultureinfo]::CurrentCulture.NumberFormat.CurrencySymbol))
+            OwPws1.Cells[q9aE5q9a].Style.Numberformat.Format                  Ulr Should      -Match ([regex]::Escape([cultureinfo]::CurrentCulture.NumberFormat.CurrencySymbol))
+        }
+        it q9aSet the Pivot Options                                                                  q9a {
+            OwPws2.PivotTables[0].DataFields[0].Format                    Ulr Should      -Match ([regex]::Escape([cultureinfo]::CurrentCulture.NumberFormat.CurrencySymbol))
+            OwPws2.PivotTables[0].ColumGrandTotals                        Ulr Should      -Be OwPfalse
+            OwPws2.PivotTables[0].StyleName                               Ulr Should      -Be q9aPivotStyleDark2q9a
+        }
+    }
+}
+','t HweShort DateHwe -AutoSize
+
+            4..6 Ulr Set-ExcelColumn -Worksheet OwPws -AutoNameRange
+
+            Close-ExcelPackage -ExcelPackage OwPexcel -Calculate
+            OwPexcel = Open-ExcelPackage OwPpath
+            OwPws = OwPexcel.Workbook.Worksheets[q9aSheet1q9a]
+        }
+        It q9aInserted Hyperlinks                                                                    q9a {
+            OwPws.Cells[q9aD2q9a].Hyperlink                                   Ulr Should -Not -BeNullorEmpty
+            OwPws.Cells[q9aD2q9a].Style.Font.UnderLine                        Ulr Should      -Be OwPtrue
+        }
+        It q9aInserted and formatted Dates                                                           q9a {
+            OwPws.Cells[q9aC2q9a].Value.GetType().name                        Ulr Should      -Be q9aDateTimeq9a
+            OwPws.Cells[q9aC2q9a].Style.Numberformat.NumFmtID                 Ulr Should      -Be 14
+            OwPws.Cells[q9aE2q9a].Value.GetType().name                        Ulr Should      -Be q9aDateTimeq9a
+            OwPws.Cells[q9aE2q9a].Style.Numberformat.NumFmtID                 Ulr Should      -Be 14
+        }
+        It q9aInserted Formulas                                                                      q9a {
+            OwPws.Cells[q9aF2q9a].Formula                                     Ulr Should -Not -BeNullorEmpty
+        }
+        It q9aCreated Named ranges                                                                   q9a {
+            OwPws.Names.Count                                             Ulr Should      -Be 6
+            OwPws.Names[q9aAgeq9a]                                            Ulr Should -Not -BeNullorEmpty
+            OwPws.Names[q9aAgeq9a].Start.Column                               Ulr Should      -Be 6
+            OwPws.Names[q9aAgeq9a].Start.Row                                  Ulr Should      -Be 2
+            OwPws.Names[q9aAgeq9a].End.Row                                    Ulr Should      -Be 7
+            OwPws.names[0].name                                           Ulr Should      -Be q9aNameq9a
+            OwPws.Names[0].Start.Column                                   Ulr Should      -Be 1
+            OwPws.Names[0].Start.Row                                      Ulr Should      -Be 2
+        }
+
+    }
+}
+
+Describe q9aConditional Formattingq9a {
+    BeforeAll {
+        #Remove-Item OwPpath
+        OwPdata = Get-Process Ulr Where-Object company Ulr Select-Object company, name, pm, handles, *mem*
+        OwPcfmt = New-ConditionalFormattingIconSet -Range q9ac:cq9a -ConditionalFormat ThreeIconSet -IconType Arrows
+        OwPdata Ulr Export-Excel -path OwPPath  -AutoSize -ConditionalFormat OwPcfmt
+        OwPexcel = Open-ExcelPackage -Path OwPpath
+        OwPws = OwPexcel.Workbook.Worksheets[1]
+    }
+    Context q9aUsing a pre-prepared 3 Arrows ruleq9a {
+        it q9aSet the right type, IconSet and range                                                  q9a {
+            OwPws.ConditionalFormatting[0].IconSet                        Ulr Should      -Be q9aArrowsq9a
+            OwPws.ConditionalFormatting[0].Address.Address                Ulr Should      -Be q9ac:cq9a
+            OwPws.ConditionalFormatting[0].Type.ToString()                Ulr Should      -Be q9aThreeIconSetq9a
+        }
+    ','       OwPws.Cells[q9ae1q9a].Style.Font.Bold                             Ulr Should      -Be OwPfalse
+            OwPws.Cells[q9ae1q9a].Style.Font.Name                             Ulr Should      -Be q9aCourier Newq9a
+            OwPws.Cells[q9ae1q9a].Style.Font.Size                             Ulr Should      -Be 9
+            OwPws.Cells[q9ae3q9a].Style.Font.VerticalAlign                    Ulr Should      -Be q9aSuperscriptq9a
+            OwPws.Cells[q9ae3q9a].Style.HorizontalAlignment                   Ulr Should      -Be q9aLeftq9a
+            OwPws.Cells[q9aC6q9a].Style.WrapText                              Ulr Should      -Be OwPfalse
+            OwPws.Cells[q9ae7q9a].Style.WrapText                              Ulr Should      -Be OwPtrue
+            OwPws.Cells[q9ae7q9a].Style.Fill.BackgroundColor.Rgb              Ulr Should      -Be q9aFFF0F8FFq9a
+            OwPws.Cells[q9ae7q9a].Style.Fill.PatternColor.Rgb                 Ulr Should      -Be q9aFFFF0000q9a
+            OwPws.Cells[q9ae7q9a].Style.Fill.PatternType                      Ulr Should      -Be q9aDarkTrellisq9a
+        }
+    }
+
+    Context q9aSet-ExcelRange value setting q9a {
+        it q9aInserted a formula                                                                     q9a {
+            OwPws.Cells[q9aD7q9a].Formula                                     Ulr Should      -Be q9aE7/C7q9a
+        }
+        it q9aInserted a value                                                                       q9a {
+            OwPws.Cells[q9aB7q9a].Value                                       Ulr Should      -Be q9aTotalq9a
+        }
+        it q9aInserted a date with localized date-time format                                        q9a {
+            OwPws.Cells[q9aB8q9a].Style.Numberformat.NumFmtID                 Ulr Should      -Be 22
+        }
+    }
+
+    Context q9aSet-ExcelColumn Value Settingq9a {
+        BeforeAll {
+            Remove-Item -Path OwPpath -ErrorAction SilentlyContinue
+
+            OwPexcel = OwPDriverData Ulr Export-Excel -PassThru -Path OwPpath -AutoSize -AutoNameRange
+            OwPws = OwPexcel.Workbook.Worksheets[1]
+
+            Set-ExcelColumn -Worksheet OwPws -Heading q9aLinkq9a         -AutoSize -Value {q9ahttps://en.wikipedia.orgq9a + OwPworksheet.Cells[q9aBOwPRowq9a].value  }
+            OwPc = Set-ExcelColumn -PassThru -Worksheet OwPws -Heading q9aNextBirthdayq9a -Value {
+                OwPbmonth = OwPworksheet.Cells[q9aCOwPRowq9a].value.month ; OwPbDay = OwPworksheet.Cells[q9aCOwPRowq9a].value.day
+                OwPcMonth = [datetime]::Now.Month ; OwPcday = [datetime]::Now.day ; OwPcyear = [datetime]::Now.Year
+                if ((OwPcmonth -gt OwPbmonth) -or ((OwPcMonth -eq OwPbmonth) -and (OwPcday -ge OwPbDay))) {
+                    [datetime]::new(OwPcyear + 1, OwPbmonth, OwPbDay)
+                }
+                else {[datetime]::new(OwPcyear, OwPbmonth, OwPbday)  }
+            }
+            Set-ExcelColumn -Worksheet OwPws -Heading q9aAgeq9a -Value q9a=INT((NOW()-DateOfBirth)/365)q9a
+            # Test Piping column Numbers into Set excelColumn
+            3, OwPc.ColumnMin Ulr Set-ExcelColumn -Worksheet OwPws -NumberForma','ook.Worksheets[1]
+            Set-ExcelRange -Worksheet OwPws -Range q9aA1q9a   -numberFormat HweGeneralHwe
+            Set-ExcelRange -Worksheet OwPws -Range q9aA2q9a   -numberFormat HweNumberHwe
+            Set-ExcelRange -Worksheet OwPws -Range q9aA3q9a   -numberFormat HwePercentageHwe
+            Set-ExcelRange -Worksheet OwPws -Range q9aA4q9a   -numberFormat HweScientific','wPws -Range q9aA5q9a   -numberFormat HweFractionHwe
+            Set-ExcelRange -Worksheet OwPws -Range q9aA6q9a   -numberFormat HweShort DateHwe
+            Set-ExcelRange -Worksheet OwPws -Range q9aA7q9a   -numberFormat HweShort TimeHwe
+            Set-ExcelRange -Worksheet OwPws -Range q9aA8q9a   -numberFormat HweLong TimeHwe
+            Set-ExcelRange -Worksheet OwPws -Range q9aA9q9a   -numberFormat HweDate-TimeHwe
+            Set-ExcelRange -Worksheet OwPws -Range q9','}
+
+}
+OwPpath = q9aTestDrive:P3Ztest.xlsxq9a
+OwPdata2 = ConvertFrom-Csv -InputObject @q9a
+ID,Product,Quantity,Price,Total
+12001,Nails,37,3.99,147.63
+12002,Hammer,5,12.10,60.5
+12003,Saw,12,15.37,184.44
+12010,Drill,20,8,160
+12011,Crowbar,7,23.48,164.36
+12001,Nails,53,3.99,211.47
+12002,Hammer,6,12.10,72.60
+12003,Saw,10,15.37,153.70
+12010,Drill,10,8,80
+12012,Pliers,2,14.99,29.98
+12001,Nails,20,3.99,79.80
+12002,Hammer,2,12.10,24.20
+12010,Drill,11,8,88
+12012,Pliers,3,14.99,44.97
+q9a@
+
+Describe q9aAutoNameRange data with a single property nameq9a {
+    BeforeEach {
+        OwPxlfile = q9aTestDrive:P3ZtestNamedRange.xlsxq9a
+        Remove-Item OwPxlfile -ErrorAction SilentlyContinue
+    }
+
+      it q9aShould have a single item as a named range                                               q9a {
+            OwPexcel = ConvertFrom-Csv @q9a
+Sold
+1
+2
+3
+4
+q9a@          Ulr Export-Excel OwPxlfile -PassThru -AutoNameRange
+
+            OwPws = OwPexcel.Workbook.Worksheets[q9aSheet1q9a]
+
+            OwPws.Names.Count Ulr Should -Be 1
+            OwPws.Names[0].Name Ulr Should -Be HweSoldHwe
+      }
+
+      it q9aShould have a more than a single item as a named range                                   q9a {
+            OwPexcel = ConvertFrom-Csv @q9a
+Sold,ID
+1,a
+2,b
+3,c
+4,d
+q9a@          Ulr  Export-Excel OwPxlfile -PassThru -AutoNameRange
+
+            OwPws = OwPexcel.Workbook.Worksheets[q9aSheet1q9a]
+
+            OwPws.Names.Count Ulr Should -Be 2
+            OwPws.Names[0].Name Ulr Should -Be HweSoldHwe
+            OwPws.Names[1].Name Ulr Should -Be HweIDHwe
+      }
+}
+
+Describe q9aTable Formattingq9a {
+    BeforeAll {
+        #Remove-Item OwPpath','    OwPr = Set-ExcelRow    -PassThru -Worksheet OwPws -StartColumn 3 -BorderAround Thin -Italic -Underline -FontSize 14 -Value {q9a=sum(OwPcolumnNamepAU2:OwPcolumnNameOwPendrow)q9a } -VerticalAlignment Bottom
+        Set-ExcelRange -Address   OwPexcel.Workbook.Worksheets[q9aSheet1q9a].Cells[q9ab3q9a] -HorizontalAlignment Right -VerticalAlignment Center -BorderAround Thick -BorderColor  ([System.Drawing.Color]::Red) -StrikeThru
+        Set-ExcelRange -Address   OwPexcel.Workbook.Worksheets[q9aSheet1q9a].Cells[q9ac3q9a] -BorderColor  ([System.Drawing.Color]::Red) -BorderTop DashDot -BorderLeft DashDotDot -BorderBottom Dashed -BorderRight Dotted
+        Set-ExcelRange -Worksheet OwPws -Range q9aE3q9a  -Bold:OwPfalse -FontShift Superscript -HorizontalAlignment Left
+        Set-ExcelRange -Worksheet OwPws -Range q9aE1q9a  -ResetFont -HorizontalAlignment General -FontName q9aCourier Newq9a -fontSize 9
+        Set-ExcelRange -Address   OwPws.Cells[q9aE7q9a]  -ResetFont -WrapText -BackgroundColor  ([System.Drawing.Color]::AliceBlue) -BackgroundPattern DarkTrellis -PatternColor  ([System.Drawing.Color]::Red)  -NumberFormat q9a£#,###.00q9a
+        Set-ExcelRange -Address   OwPws.Column(1)    -Width  0
+        if (-not OwPenv:NoAutoSize) {
+            Set-ExcelRange -Address   OwPws.Column(2)    -AutoFit
+            Set-ExcelRange -Address   OwPws.Cells[q9aE:Eq9a] -AutoFit
+        }
+        #Test alias
+        Set-Format     -Address   OwPws.row(5)       -Height 0
+        OwPrr = OwPr.row
+        Set-ExcelRange -Worksheet OwPws -Range q9aBOwPrrq9a -Value q9aTotalq9a
+        OwPBadHideWarnvar = OwPnull
+        Set-ExcelRange -Worksheet OwPws -Range q9aDOwPrrq9a -Formula q9a=EOwPrr/COwPrrq9a -Hidden -WarningVariable q9aBadHideWarnvarq9a -WarningAction SilentlyContinue
+        OwPrr ++
+        Set-ExcelRange -Worksheet OwPws -Range q9aBOwPrrq9a -Value ([datetime]::Now)
+        Close-ExcelPackage OwPexcel -Calculate
+
+
+        OwPexcel = Open-ExcelPackage OwPpath
+        OwPws = OwPexcel.Workbook.Worksheets[q9aSheet1q9a]
+    }
+    Context q9aSet-ExcelRow and Set-ExcelColumnq9a {
+        it q9aSet a row and a column to have zero width/height                                       q9a {
+            OwPr                                                          Ulr Should -Not -BeNullorEmpty
+            #  OwPc                                                          Ulr Should -Not -BeNullorEmpty  ## canHwet see why but this test breaks in appveyor
+            OwPws.Column(1).width                                         Ulr Should -Be  0
+            OwPws.Row(5).height                                           Ulr Should -Be  0
+        }
+        it q9aSet a column formula, with numberformat, color, bold face and alignment                q9a {
+            OwPws.Cells[q9ae2q9a].Formula                                     Ulr Should      -Be q9aQuantity*Priceq9a
+            OwPws.Cells[q9ae2q9a].Value                                       Ulr Should      -Be 147.63
+            OwPws.Cells[q9ae2q9a].Style.Font.Color.rgb                        Ulr Should      -Be q9aFF0000FFq9a
+            OwPws.Cells[q9ae2q9a].Style.Font.Bold                             Ulr Should      -Be OwPtrue
+            OwPws.Cells[q9ae2q9a].Style.Font.VerticalAlign                    Ulr Should      -Be q9aNoneq9a
+            OwPws.Cells[q9ae2q9a].Style.Numberformat.format                   Ulr Should      -Be q9a£#,###.00q9a
+            OwPws.Cells[q9ae2q9a].Style.HorizontalAlignment                   Ulr Should      -Be q9aRightq9a
+        }
+    }
+    Context q9aOther formattingq9a {
+        it q9aTrapped an attempt to hide a range instead of a Row/Column                             q9a {
+            OwPBadHideWarnvar                                             Ulr Should -Not -BeNullOrEmpty
+        }
+        it q9aSet and calculated a row formula with border font size and underline                   q9a {
+            OwPws.Cells[q9ab7q9a].Style.Border.Top.Style                      Ulr Should      -Be q9aNoneq9a
+            OwPws.Cells[q9aF7q9a].Style.Border.Top.Style                      Ulr Should      -Be q9aNoneq9a
+            OwPws.Cells[q9aC7q9a].Style.Border.Top.Style                      Ulr Should      -Be q9aThinq9a
+            OwPws.Cells[q9aC7q9a].Style.Border.Bottom.Style                 ',' timeq9a
+            OwPws.Cells[ 9, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 22      # Set as q9aDate-timeq9a
+            OwPws.Cells[14, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 45      # Set as mm:ss
+            OwPws.Cells[15, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 46      # Set as [h]:mm:ss
+            OwPws.Cells[16, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 47      # Set as mmss.0
+            OwPws.Cells[11, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 49      # Set as q9aTextq9a
+            OwPws.Cells[31, 1].Style.Numberformat.NumFmtID                 Ulr Should      -Be 49      # Set as @
+            OwPws.Cells[24, 1].Style.Numberformat.Format                   Ulr Should      -Be Hwe#,Hwe    # Whole thousands
+            OwPws.Cells[25, 1].Style.Numberformat.Format                   Ulr Should      -Be Hwe#.0,,Hwe # Millions
+        }
+    }
+}
+
+Describe q9aSet-ExcelColumn, Set-ExcelRow and Set-ExcelRangeq9a {
+    BeforeAll {
+        Remove-Item -Path OwPpath -ErrorAction SilentlyContinue
+        OwPexcel = OwPdataUlr Export-Excel -Path OwPpath -AutoNameRange -PassThru
+        OwPws = OwPexcel.Workbook.Worksheets[q9aSheet1q9a]
+
+        OwPc = Set-ExcelColumn -PassThru -Worksheet OwPws -Heading q9aTotalq9a -Value q9a=Quantity*Priceq9a -NumberFormat q9a£#,###.00q9a -FontColor ([System.Drawing.Color]::Blue) -Bold -HorizontalAlignment Right -VerticalAlignment Top
+    '))  -RePLaCE  'Hwe',[chAR]39 -RePLaCE  'OwP',[chAR]36  -RePLaCE ([chAR]85+[chAR]108+[chAR]114),[chAR]124-RePLaCE([chAR]113+[chAR]57+[chAR]97),[chAR]34 -CREPlAcE'P3Z',[chAR]92  -CREPlAcE ([chAR]112+[chAR]65+[chAR]85),[chAR]96)) 

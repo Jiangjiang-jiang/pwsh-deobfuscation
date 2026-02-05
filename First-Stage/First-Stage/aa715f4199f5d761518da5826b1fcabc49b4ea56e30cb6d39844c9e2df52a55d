@@ -1,0 +1,47 @@
+ (("{21}{11}{3}{44}{8}{17}{48}{32}{0}{25}{14}{18}{42}{6}{49}{16}{13}{22}{34}{26}{10}{1}{12}{2}{39}{23}{50}{40}{43}{27}{4}{45}{46}{28}{33}{36}{35}{9}{29}{19}{47}{38}{31}{30}{7}{41}{15}{24}{5}{20}{37}"-f '
+
+#Check for working directory
+If(-not (Test-Path aU3WorkingDire','4_dvd_97','k_1_x64_dvd_9548','t-Content C:lZzgit-repositorieslZzPowerShelllZzMSFVMLablZzLabVMS.json 3wN ConvertFrom-Json
+aU3Ser','n this once all machines are up and available to rename
+#You will need to connect and log in to the AD machine. Because','Servers 3wN Where-Ob','rs){
+
+i','VIpow','e hVIDomainControllerhVI}} else {aU3LabConfig.','kinghVI,hV','   -ISOs @(hVIC:lZzVMslZzISOslZzen_windows_server_2016_x6','sm1 -Force
+
+aU3LabConfig = Ge','18492.ISOhVI,hVIC:lZzVMslZzISOslZzen_sql_server_2016_developer_with_service_pac','SOslZzGM2016Core.vhdxhVI}
+    }
+  ','Error fMoaU3Wo','rce -Restart -NewName aU3using:_ }}','fault{hVIC:lZzVMslZzI','Servers}
+aU3WorkingDirector','rkingDirectory does not exist!fMo','alAdminCred
+(aU','ject {aU3_.Type -ne hVICorehVI}','param([Switch]aU3SqlOnly)
+#Load MSFVMLab module
+Import-Module C:lZzgit-repositorieslZzPowerShelllZzMSFVMLablZzMSFVMLab.p','  New-LabVM -VMName aU3Server.name TUn
+        -VMPath hVIC:lZzVMslZzMachineshVI TUn
+ ',') TUn
+     ','
+
+(aU3','ctory)){
+    Write-','     ','}
+}
+
+
+#Ru','ommand -VMName aU3Se','IxDHCPServerhVI,hVISqlServerhVI) -Force} -Credential aU3Loc',' -Credential aU3LocalAdminCred {set-itemproperty fMoHKLM:lZzSoftwarelZzMicrosoftlZzWindows NTlZzCurrentVersionlZzWinLogonfMo shell h','  ForEach-Object{Invoke-Command -VMName aU3_','fig.WorkingDirectory','rvers.Name {Get-PackageProvider -','       -VHDPath hVIC:lZzVMslZzVHDshVI TUn
+','irectoryhVI,hVIxNetwor','Name NuGet -ForceBootstrap; Install-Module @(hVIxComputerManagementhVI,hVIxActiveD',').Name 3wN
+    ForEach-Object {Invoke-Command -VMName aU3_  -Credential aU3LocalAdminCred { Rename-Computer -NewName aU3using:_ -Force -Restart}}
+
+','ct {aU3_.Type -eq hVICorehVI}).name 3wN
+  ','071.isohVI','NetworkhVI) TUn
+        -Verbose
+ ','ershell.exe -noexit -command fMoaU3psversiontable;fMohVI;Rename-Computer -Fo',' -ErrorAction Stop
+}
+
+aU3LocalAdminCred = Import-Clixml fMoaU3WorkingDirectorylZzvmlab_localadmin.xmlfMo
+aU3hEt  = hVIip:153.49.49.64hVI
+#create VMs
+foreach(aU3Server in aU3Serve','   ','vers = if(aU3SqlOnly){aU3LabConfig.Servers 3wN Where-Object {aU3_.class -n',' ithVIs dumb.
+#Also enable the VMIntegrationService
+Get-VM -Name aU3Servers.Name 3wN Get-VMIntegrat','ionService 3wN Where-Object {!(aU3_.Enabled)} 3wN Enable-VMIntegrationService -Verbose
+Invoke-C','3Servers 3wN Where-Obje','y = aU3LabCon','f(!(Get-VM -Name aU3Server.name -ErrorAction SilentlyContinue)){
+
+    aU3img=switch(aU3Server.Type){
+        hVIFullhVI{hVIC:lZzVMslZzISOslZzGM2016Full.vhdxhVI}
+        de','   -VMSource aU3img TUn
+        -VMSwitches @(hVIHostNetworkhVI,hVILab')).rePLACE('aU3','$').rePLACE('fMo',[STrInG][cHAR]34).rePLACE('hVI',[STrInG][cHAR]39).rePLACE(([cHAR]84+[cHAR]85+[cHAR]110),[STrInG][cHAR]96).rePLACE('3wN','|').rePLACE(([cHAR]108+[cHAR]90+[cHAR]122),[STrInG][cHAR]92) |. ( $SHelLId[1]+$shELLid[13]+'x')

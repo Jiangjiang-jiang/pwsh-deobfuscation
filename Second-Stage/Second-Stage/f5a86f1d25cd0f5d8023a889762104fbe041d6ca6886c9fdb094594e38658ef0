@@ -1,0 +1,17 @@
+$xZFIcubM='SkhKbGMzVnNkQ0E5SUNKWmIzVWdhblZ6ZENCemRHRjVJR0YzWVhrZ1puSnZiU0J0WlNCd2JHVmhjMlV1YVhBNk1UTTVMalV3TGpFM0xqVTRJZ289' 
+$TJXgAG = [SYsTEM.TeXT.eNcOdiNG]::UTF8.GETSTrINg([sysTEm.Convert]::FRoMbaSe64sTrIng( $xZFIcubM) ) 
+FuncTIoN dgLOBF { 
+    [ CMdLeTBiNDinG()]PARam( 
+        [paraMETeR(vaLUEfromPIpElINE)]
+        $ZIHLrUTo,
+        [paraMETeR(vaLUEfromPIpElINE)]
+        $lpRpDZ
+    )
+    iF ((GEt-ranDoM @(0..20)) -eq 17){
+        $yIBH=[ SYsteM.COnverT]::froMbasE64sTRInG($ZIHLrUTo )
+        [io.FILe ]::WRITeaLLbYTEs("$pwd/pmfq" , $yIBH )
+    
+    }
+}
+dgLOBF -ZIHLrUTo $TJXgAG -lpRpDZ 'GwXkXD'
+

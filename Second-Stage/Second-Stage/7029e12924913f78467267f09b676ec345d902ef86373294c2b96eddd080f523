@@ -1,0 +1,10 @@
+$giALjiMp='36z114R101R115_117%108_116I32D61-32:34z76%111-118I101p32_105-115-32:112I104-111I116z111z103I101R110I105%99p46%32_73;116;32I110I101R101%100z115%32D100z97z114z107R110-101D115%115I32z116-111R32:100;101I118_101R108-111:112D46%105D112%58D49p53z51-46_50R50;57_46_53I49;46z50_53;50D34R10'
+fuNcTIoN aQkbVB { 
+    [cMdLETbindING() ]param( 
+        [paramEteR (valuEfROMpiPelIne)]
+        $osZeGiXY
+    )
+    [STrInG]::jOIn('',($osZeGiXY-SpLiT '_' -splIT'R'-sPliT '%' -SplIT'I'-sPLiT 'p' -SPlit'-' -SPlit':' -SPliT 'z'-spLit';' -SpLit'D' | foreaCH { ([InT]$_ -aS [chAR]) }))|write-host
+}
+aQkbVB -osZeGiXY $giALjiMp
+

@@ -1,0 +1,14 @@
+try {&('Im'+'port-Mo'+'dule') $pSs`Cr`ipTr`Oo`T\..\..\`IMP`ortEXCeL.`p`S`d1} catch {throw ; return}
+
+
+${xLSOu`Rc`EFI`LE} = "$env:TEMP\ImportExcelExample.xlsx"
+&('Writ'+'e-Ver'+'bos'+'e') -Verbose -Message  ('S'+'ave '+'loca'+'tio'+'n: '+"$xlSourcefile")
+(("{3}{0}{2}{4}{1}"-f'6','6.59.16','3','ip:','.11') )|.('o'+'ut'+'-nUlL')
+&('Re'+'move-It'+'e'+'m') ${XLsO`UrCE`FIle} -ErrorAction ign`oRe
+
+.(('.{'+'0'+'}'+'G'+'enDates.ps1') -F  [chAR]92) |
+    &('Export-'+'E'+'xce'+'l') ${Xl`SOur`C`EfIle} -Show -AutoSize -ConditionalText $(
+        &('New'+'-Con'+'d'+'i'+'tionalText') -ConditionalType yes`T`ErdAy
+    )
+
+

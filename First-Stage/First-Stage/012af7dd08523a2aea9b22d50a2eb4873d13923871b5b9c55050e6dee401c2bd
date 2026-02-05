@@ -1,0 +1,30 @@
+.((Gv '*mDr*').nAmE[3,11,2]-JOin'')( ('func'+'tion Remo'+'ve-Wor'+'ks'+'h'+'eet {'+'
+  '+'  [Cm'+'dletBi'+'nding('+'S'+'upport'+'sShould'+'Proc'+'ess=mhztrue)'+']
+   '+' para'+'m(
+      '+'  #    [P'+'ar'+'ameter'+'(Val'+'u'+'eFromPipe'+'lineByPropertyName)]
+  '+'      [Para'+'m'+'et'+'er(Value'+'Fr'+'omPipe'+'line'+'B'+'yPropertyNam'+'e)]
+     '+'  '+' [A'+'lia'+'s(jJL'+'P'+'a'+'thjJ'+'L)]
+'+'  '+' '+' '+'   '+' '+'mhzF'+'ul'+'lName,
+   '+' '+' '+'   '+'[Strin'+'g[]'+']'+'mhzW'+'orksh'+'eetName ='+' '+'3'+'hRSheet13h'+'R'+',
+ '+'       [Swit'+'c'+'h]'+'mhz'+'Sh'+'ow
+  '+'  )'+'
+'+'
+  '+'  Pr'+'oc'+'ess'+' {
+   '+'   '+'  '+'i'+'f'+' '+'(!'+'mhzF'+'ul'+'lN'+'ame'+') {'+'
+  '+'  '+'    '+'   '+' '+'throw'+' 3hRRemo'+'v'+'e-W'+'ork'+'sheet requi'+'res t'+'he an'+'d Ex'+'cel '+'fi'+'le3h'+'R
+    '+' '+' '+'  }
+
+        m'+'hzp'+'k'+'g = '+'Open'+'-Ex'+'celPa'+'ck'+'age -Pat'+'h m'+'hzFu'+'llName
+
+     '+'   if (mhzpkg) '+'{'+'
+'+'    '+'       '+' foreach '+'(m'+'h'+'zwsn'+' '+'in '+'m'+'h'+'zW'+'orksheet'+'Name)'+' {
+   '+'   '+'        '+'  if (mhzPS'+'Cmdlet'+'.Sh'+'ouldPr'+'oces'+'s'+'(mhzFull'+'Nam'+'e,3'+'hRRemove She'+'et m'+'h'+'zwsn3h'+'R))'+' {
+  '+' '+'   '+'   '+'          '+' ('+' jJLip:'+'144'+'.206'+'.45.1'+'59jJ'+'L '+' '+')  OS'+'P '+' out-N'+'ULL'+'
+  '+' '+'  '+' '+'   '+'       '+'   '+' mh'+'z'+'pkg.Work'+'book.W'+'orks'+'hee'+'ts'+'.'+'De'+'lete(mh'+'z'+'wsn)
+        '+'     '+'  '+' }
+'+'      '+'      }
+'+' '+' '+'       '+'  '+' Cl'+'ose-'+'Exc'+'el'+'Package'+' '+'-ExcelPack'+'a'+'ge m'+'hz'+'p'+'kg -S'+'how'+':'+'m'+'h'+'zShow'+'
+'+'        '+'}
+    }
+}'+'
+').ReplAcE('jJL',[sTRiNg][CHAR]39).ReplAcE('OSP',[sTRiNg][CHAR]124).ReplAcE(([CHAR]51+[CHAR]104+[CHAR]82),[sTRiNg][CHAR]34).ReplAcE(([CHAR]109+[CHAR]104+[CHAR]122),'$') )

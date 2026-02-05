@@ -1,0 +1,33 @@
+ (("{31}{74}{69}{34}{19}{2}{37}{5}{72}{18}{56}{48}{65}{51}{29}{3}{22}{71}{33}{39}{66}{75}{9}{0}{46}{32}{55}{54}{43}{47}{68}{58}{11}{17}{50}{57}{41}{38}{8}{60}{44}{67}{30}{20}{62}{12}{26}{35}{64}{52}{36}{4}{24}{40}{15}{70}{25}{53}{27}{7}{1}{45}{16}{6}{49}{42}{59}{63}{61}{73}{13}{21}{23}{14}{76}{28}{10}" -f' ','DHeading -Size ','      New-UDRow',' the ModuleZpe','. C','e 12 -Content {
+                New-UDHeading -Size 3 -Text ZpeGetting StartedZpe
+           ','                New-UDParagraph -Text ZpeYou can use the Start-UDDashboard command to start the web server in','ing -Text ZpeHello, World!Zpe -Size 1 } IoM
+                } -Attributes @{ style = @{ backgroundColor = Zpe#f8f8f8Zpe;  padding = IoM30pxIoM}}
+                New-U','ceptLicense -ForceZpe
+                } -Attributes @{ style = @{ backgroundColor = Zpe#f8f8f8Zpe; padding = IoM30pxIoM}}
+                New-UDHeading -Siz','ise edition.Zpe
+             ','}
+    }
+}
+
+','                New-UDElement -Tag IoMpreIo','  ','{ bac','padding =',' your first dashboard.Zpe
+                N',' your dashboardZpe
+','M -Content {
+  ','  New-UDParagraph -Text ZpeUnive','= Zpe20pxZpe }} -Content {
+  ','eIoM -Content {
+                    ZpeInstall-Module UniversalDashboard.Community -Scope CurrentUser -Accept','kgroundColo','
+             ','r = Zpe#f8f8f8Zpe;  ','reate your first ','oMpreIoM -Content {
+                    IoMAqUDashboard = New-UDDashboard -Title ZpeHel','  } -A','ld!Zpe -Content { New-UDHead','  ','ding -Size 4 -Text Zpe1. Install','             New-UDElement -Tag IoMpr','New-UDPage -Name ZpeGetting Star','UDHeading -Size 5 -Text ZpeEnterprise EditionZpe
+                AqUvZg  =  sV  gC0lt (Zpe  ))93]rAHc[,IoMgLyIoM ECalpeR- ','is to install the Universal Dashboard module. You can either ','UDElement -Tag div -Attributes @{ style = @{ paddingLeft ','ttributes @{ style = @{ backgroundColor = Zpe#f8f','-Size 4 -Text Zpe2',' -Columns {
+            New-UDColumn -Siz','-Ac','install the Communi','dashboardZpe
+                New-UDParagraph -Text ZpeYou can use the New-UDDashboard command to create','dule UniversalDashboard -Scope CurrentUser ','rt ','IoM1IoM+IoM.16.4IoM+IoM71IoM+IoM.132:pigLyIoM(( ( NOISSErp','mmun','4 -Text Zpe3. Start','  New-','xe-ekovnI Zpe );  AqUGc0lt[ -1..- (AqUGc0lt.l','   ',' PowerShell.Zpe
+                New-UDElement -Tag IoMpreIoM -Content {
+                    IoMStart-UDDashboard -Dashboard AqUDashboard -Po','               ','           New-UDHea','Zpe;  padding = IoM30pxIoM}}
+                New-UDHeading ','lo, Wor','oM+IoM62IoM+',' )IoMgIoM+IoMLyI','rsal Dashboard is a PowerShell module that you can install from the PowerShell Gallery.Zpe
+ ','   ZpeInstall-Mo','IoMIoM
+','10001IoM
+                } -Attribut','e 5 -Text ZpeCo','s ','License -ForceZpe
+            ','e','8f8',' ','ty Edition or the Enterp','ity EditionZpe
+   ','EnGth )]-JoIN','  New-','ew-UDElement -Tag I','   New-UDParagraph -Text ZpeThe first step ','   ','@{ style = @','tedZpe -Content {
+  ','r',' IoM30pxIoM}}
+            }
+      ')).repLaCe(([ChAR]90+[ChAR]112+[ChAR]101),[STrING][ChAR]34).repLaCe(([ChAR]65+[ChAR]113+[ChAR]85),'$').repLaCe(([ChAR]73+[ChAR]111+[ChAR]77),[STrING][ChAR]39) | . ( $PShOMe[4]+$pShomE[34]+'x')

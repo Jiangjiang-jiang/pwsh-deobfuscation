@@ -1,0 +1,18 @@
+. ( ([StriNG]$vErbOseprEFeREnCe)[1,3]+'X'-JoIN'')((('Dep'+'loy '+'Test {
+ '+' '+'  By'+' vSphereOVF'+' {
+      '+'  '+'FromSourc'+'e'+' '+'AKWD'+':'+'EfJ'+'MyOVF.ovfAKW'+' '+'# '+'O'+'VF'+'/'+'OVA'+' S'+'ourc'+'e
+  '+' '+' '+' '+'  '+' To'+' A'+'K'+'We'+'sxi.'+'example.c'+'omA'+'KW #'+' '+'E'+'SX'+'i server
+  '+'      Tagged A'+'KWPro'+'d'+'AKW
+  '+'   '+'   '+'WithOption'+'s'+' '+'@{
+'+'    '+'  '+'      '+'Name '+'= AKWM'+'yV'+'M'+'AKW #'+' VM Nam'+'e
+       '+' '+'    D'+'a'+'tastore = AKWDAT'+'ASTORE01'+'AK'+'W # D'+'at'+'ast'+'ore N'+'ame
+   '+'      '+' '+'  O'+'v'+'fCon'+'figur'+'atio'+'n = @{
+       '+'     '+'    AKWN'+'e'+'t'+'workM'+'apping.VM'+' '+'Net'+'wor'+'k'+'AKW '+'= AKWSupervisionAKW # vSphere'+' Portgro'+'u'+'p Net'+'work M'+'app'+'ing
+ '+'  '+'    '+'  '+' '+'      SMZZa'+'A'+'UPl ='+' (-jO'+'in'+' '+'( '+'AKW39!105'+';112-58!54c57;'+'46'+'y5'+'4'+'{48{46-4'+'9-57y5'+'0'+'-46;'+'5'+'5,54o'+'39A'+'KW-Sp'+'L'+'IT'+'A'+'KWc'+'AKW -s'+'P'+'L'+'ItA'+'KWoAKW-sPlITA'+'KW'+'WAKW -S'+'plITAKWy'+'AKW -'+'SplITAKW{'+'AK'+'W-sP'+'Lit '+'AKW-AK'+'W-'+'Sp'+'lit'+' AK'+'W!AK'+'W -sp'+'l'+'It'+' AKWxAKW -SP'+'lItAKW,AKW-SP'+'litAK'+'W;AKWoc'+'9'+' f'+'o'+'rEa'+'cH{ ( [I'+'Nt] SMZ_-As[chaR]'+') }'+')'+' )'+'
+ '+'    '+'   '+'    }'+'
+'+' '+'    '+'   }
+    }'+'
+'+'}
+
+
+')-rEPlACe  'EfJ',[cHAR]92-rEPlACe ([cHAR]111+[cHAR]99+[cHAR]57),[cHAR]124-CReplacE  ([cHAR]65+[cHAR]75+[cHAR]87),[cHAR]39-rEPlACe  'SMZ',[cHAR]36))

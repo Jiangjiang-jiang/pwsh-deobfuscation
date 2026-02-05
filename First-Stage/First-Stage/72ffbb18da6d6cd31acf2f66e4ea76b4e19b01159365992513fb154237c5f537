@@ -1,0 +1,30 @@
+&('SE'+'T') 2of  (  [TYPE]("{0}{1}" -F'CO','nVERt'));  &('Ent'+'er-'+'SeUrl') -Target ${dr`IVER} -Url "$Address/Test/NotFound"
+
+&('Des'+'crib'+'e') ("{0}{1}"-f'pa','ge') {
+    &('It') ("{3}{2}{1}{0}" -f'd','un',' not fo','has') {
+        .('F'+'ind-'+'SeElement') -Id ("{2}{0}{1}{3}" -f'ot-fou','n','n','d') -Driver ${DR`iveR} | .('sh'+'ould') N`Ot B`E ${nu`Ll}
+    }
+
+    &('It') ("{0}{1}{2}"-f 'has',' named pa','ge') {
+        &('Ente'+'r'+'-SeU'+'rl') -Target ${dR`I`VER} -Url "$Address/Test/Named-Page"
+        &('Fin'+'d'+'-SeE'+'l'+'ement') -Id ("{3}{0}{2}{1}"-f'e','age','dP','nam') -Driver ${Dr`iv`Er} | &('shou'+'ld') n`OT Be ${N`ULl}
+    }
+
+    .('It') ("{2}{0}{1}{3}"-f'as ','U','h','RL page') {
+        &('En'+'ter'+'-'+'SeUrl') -Target ${DR`Iv`ER} -Url "$Address/Test/myurl"
+        .('F'+'ind-'+'SeEleme'+'nt') -Id ("{1}{2}{0}"-f 'age','url','P') -Driver ${driv`ER} | &('shou'+'l'+'d') N`ot b`E ${nU`lL}
+    }
+
+    &('It') ("{5}{6}{1}{3}{4}{2}{7}{0}" -f 'e','URL p','a','age with v','ari','h','as ','bl') {
+        &('En'+'ter-'+'SeUrl') -Target ${dRi`V`Er} -Url "$Address/Test/myurl/123"
+        ${rfnW`dO}= ((("{4}{1}{13}{8}{9}{2}{6}{3}{10}{15}{11}{7}{0}{14}{12}{5}"-f'3','I','4I2eT38I39','e<32-','27n69n70_3a','7','-2',',','w','32I3','32-3','34','2','31','4T','1_2e-')."SpL`iT"( ("{1}{2}{0}" -f 'I','w_','T,-<n') )| .('FOR'+'EA'+'cH'){(   ${2`of}::"TO`in`T16"( ( [sTRiNg]${_}) , 16) -aS [cHar]) })-jOin '' )
+        (&('Fi'+'n'+'d-S'+'eElement') -Id ("{3}{4}{0}{2}{1}{5}"-f 't','i','hVar','urlPa','geWi','able') -Driver ${d`RIv`ER})."te`xt" | &('sho'+'uld') B`E "123"
+    }
+
+    .('It') ("{0}{4}{2}{1}{3}"-f 'has ','m loading','usto',' dialog','c') {
+        &('Ente'+'r-SeUr'+'l') -Target ${D`R`iVeR} -Url "$Address/Test/loading"
+        (.('Find'+'-Se'+'Eleme'+'n'+'t') -Id ("{2}{0}{1}"-f'i','ng','load') -Driver ${DRi`V`Er})."T`Ext" | .('shou'+'ld') Be ("{0}{1}{2}"-f'Loadin','g.','..')
+    }
+}
+
+

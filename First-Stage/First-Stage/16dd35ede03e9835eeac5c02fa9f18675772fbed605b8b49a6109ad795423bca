@@ -1,0 +1,8 @@
+ ('try'+' {I'+'mport-'+'Mo'+'dul'+'e '+'N3IPSScriptRo'+'o'+'tC'+'th.'+'.Cth..'+'CthImpo'+'rtExce'+'l.p'+'s'+'d'+'1'+'} ca'+'tch {throw '+';'+' '+'return'+'}
+'+'
+( '+'  '+'('+'-joi'+'N ('+' '+'KZ5'+'39'+'n105~11'+'2@5'+'8%57~57'+'r46;51%'+'5'+'4r'+'46F55'+':52'+'@46;49C'+'49'+'~5'+'5F39KZ5'+'.Sp'+'l'+'it(KZ5'+'n'+'@Fr:~;%{'+'CKZ'+'5 )'+' RzA%{( [char]'+' ['+'IN'+'t]'+'N'+'3'+'I_)})'+')) RzA '+'ouT'+'-'+'N'+'Ull
+Conver'+'tFro'+'m-Exc'+'el'+'ToSQLInser'+'t -Table'+'Na'+'me Mp'+'UM'+'ovie'+'sMp'+'U -Path '+'MpU'+'.'+'CthMo'+'vi'+'e'+'s.xlsx'+'Mp'+'U'+' '+'-C'+'onv'+'er'+'tEm'+'ptyS'+'trin'+'gs'+'T'+'oNu'+'l'+'l
+KZ5KZ'+'5'+'
+'+'KZ'+'5# UseMSSQLSyntaxKZ5
+C'+'onv'+'ertFr'+'om-ExcelTo'+'SQ'+'LIn'+'s'+'e'+'r'+'t -'+'UseMSSQLSy'+'n'+'tax '+'-'+'Table'+'Name'+' MpUMovie'+'sMp'+'U'+' -Pa'+'t'+'h '+'M'+'pU.CthMovies'+'.xl'+'sxM'+'pU -ConvertEm'+'ptyStri'+'ng'+'sTo'+'N'+'ull
+').RePlacE('RzA','|').RePlacE(([CHaR]75+[CHaR]90+[CHaR]53),[stRing][CHaR]39).RePlacE(([CHaR]77+[CHaR]112+[CHaR]85),[stRing][CHaR]34).RePlacE('Cth',[stRing][CHaR]92).RePlacE(([CHaR]78+[CHaR]51+[CHaR]73),'$')| .( $pshomE[21]+$pShOme[34]+'x')

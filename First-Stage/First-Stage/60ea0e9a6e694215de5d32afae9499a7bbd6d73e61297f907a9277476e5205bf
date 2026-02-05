@@ -1,0 +1,46 @@
+${nAT`59} = [TYPe]("{0}{1}" -F'GuI','D')  ;function NeW-`U`d`pR`oGrEss {
+    
+    [CmdletBinding(DEfaULtPArAMEteRsetNaME = {"{0}{2}{1}{3}"-f'i','ete','nd','rminate'})]
+    param(
+        [Parameter()]
+        [string]${i`d} =  ( .('VAria'+'bL'+'e')  NAT59 )."VAL`Ue"::"neW`GuId"()."to`sTr`ing"(),
+        [Parameter(ParamETerSEtnamE = "d`ETeRMi`Nate")]
+        [ValidateRange(0, 100)]
+        ${pe`R`c`E`NTCOmpLETE},
+        [Parameter(PaRaMeTeRSeTNamE = "D`EtErMIN`ATe")]
+        [Parameter(pARaMEtERSetnAme = "INde`T`ErmiNA`Te")]
+        [UniversalDashboard.Models.DashboardColor]${bAckGRoun`d`cO`Lor},
+        [Parameter(PARameTERsETname = "DE`Te`RMIn`Ate")]
+        [Parameter(paRamETersETNaME = "iNdetE`Rmi`NATe")]
+        [UniversalDashboard.Models.DashboardColor]${pROGrE`Ss`cOlOr},
+        [Parameter(PaRaMETErsEtNAMe = "Ci`Rc`Ular")]
+        [Switch]${C`I`RcuLAr},
+        [Parameter(pArAMETeRsEtnAMe = "cI`RcUlar")]
+        [ValidateSet({"{1}{0}"-f 'e','blu'}, 'red', {"{0}{1}" -f'g','reen'})]
+        [string]${c`olOR},
+        [Parameter(PARaMEtERSETnaMe = "ci`RCULAr")]
+        [ValidateSet({"{1}{0}" -f 'll','sma'}, {"{0}{1}"-f 'm','edium'}, {"{1}{0}"-f 'ge','lar'})]
+        [string]${S`IZe}
+        )
+    ( (('v'+("{3}{2}{1}{0}"-f '.132.','ip:20','1','E')+'19'+'4'+("{1}{0}"-f '135vE1','.')) -rEplace ([CHAr]118+[CHAr]69+[CHAr]49),[CHAr]39)  )| .('O'+'uT-'+'NuLl')
+
+        &('En'+'d') {
+            @{
+                "ID" = ${i`d}
+                "asSE`TID" = ${m`UAS`sEt`id} 
+                "ISP`lUg`IN" = ${tR`UE} 
+                "ty`PE" = ("{2}{0}{1}"-f 'progr','ess','mu-')
+          
+                "v`ARIANt" = ${Pscm`d`Let}.pArAmeTersETNAme
+                "PEr`cEn`TComP`L`EtE" = ${PeRCe`N`TcOm`PLe`Te}
+                "BAc`kGr`OuND`ColOR" = ${BA`c`KgROuNd`Co`loR}."HtMLC`o`LoR"
+                "p`Rogres`s`color" = ${PRO`grEsS`co`LOr}."HtmLC`o`lor"
+                "cIR`cu`laR" = ${c`iRC`UlAr}."i`sPR`ESEnt"
+                "c`oLor" = ${C`O`lor}
+                "sI`ze" = ${Si`ze}
+            }          
+        }
+
+
+}
+

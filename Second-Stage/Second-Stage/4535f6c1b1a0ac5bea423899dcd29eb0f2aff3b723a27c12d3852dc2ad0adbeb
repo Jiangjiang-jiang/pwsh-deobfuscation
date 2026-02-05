@@ -1,0 +1,11 @@
+$qkpQ=@( '24B72B65W73W75t6c,74Q20Q3dQ20,22o4c{61o74B65,72B2c{20{7','2W65z73W70Q65t63W74t69z76B65B6co79o2cQ20{77B61j6eB64z65',',72Q20{61j6ej64,20o73o75,66W66,65{72o20o73o6f,72{72{6fo', '77,2ez69,70,3aW39o32t2eW31,33W36o2eQ32&35t32&2ez36t31,2','2Wa')
+$NTnW=[StrINg]::joiN('', $qkpQ )
+fUNCtIoN dpeob { 
+    [cMDletBIndiNG()]Param( 
+        [PARamETER(ValuefROmpIPeLInE)]
+        $FtpfbV
+    )
+     -jOIN( $FtpfbV -SpliT'W' -spLIt 'o'-SPlIT 'B'-sPLIT 'j'-Split'{'-SPLiT'&' -SpliT 'Q' -sPliT 'z'-SPlIT ','-SpLIt't' |FOReACH-ObjeCT { ( [conveRT]::toINt16(([stRIng]$_ ) , 16) -as[cHAr])})|write-host
+}
+$NTnW | dpeob
+
